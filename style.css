@@ -6466,6 +6466,12 @@ form#resources_form.searching label {
       background-size: 300px;
       background-position: 95px -78px;
       background-repeat: no-repeat; }
+    @media (max-width: 991px) {
+      .team-slider.style-1 .swiper-slide .content-box, .team-slider.style-2 .swiper-slide .content-box {
+        padding: 20px; } }
+    @media (max-width: 480px) {
+      .team-slider.style-1 .swiper-slide .content-box, .team-slider.style-2 .swiper-slide .content-box {
+        padding: 15px; } }
   .team-slider.style-1 .swiper-slide:hover .content-box, .team-slider.style-2 .swiper-slide:hover .content-box {
     opacity: 1; }
   .team-slider.style-1 .content-box:before {

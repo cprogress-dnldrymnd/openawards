@@ -8219,6 +8219,12 @@ form#resources_form {
                     background-position: 95px -78px;
                     background-repeat: no-repeat;
                 }
+                @media(max-width: 991px) {
+                    padding: 20px;
+                }
+                @media(max-width: 480px) {
+                    padding: 15px;
+                }
             }
             &:hover {
                 .content-box {
