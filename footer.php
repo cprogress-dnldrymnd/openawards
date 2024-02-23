@@ -18,18 +18,14 @@
           </div>
           <div class="contact-details">
             <ul>
-              <li><i class="fas fa-map-marker-alt"></i><span
-                  class="location"><?php echo $redux_demo['opt-location'] ?></span></li>
-              <li><i class="fas fa-phone-alt"></i><span class="phone"><a
-                    href="tel:<?php echo $redux_demo['opt-phone'] ?>"><?php echo $redux_demo['opt-phone'] ?></a></span>
+              <li><i class="fas fa-map-marker-alt"></i><span class="location"><?php echo $redux_demo['opt-location'] ?></span></li>
+              <li><i class="fas fa-phone-alt"></i><span class="phone"><a href="tel:<?php echo $redux_demo['opt-phone'] ?>"><?php echo $redux_demo['opt-phone'] ?></a></span>
               </li>
-              <li><i class="fas fa-envelope"></i><span class="email"><a
-                    href="mailto:<?php echo $redux_demo['opt-email'] ?>"><?php echo $redux_demo['opt-email'] ?></a></span>
+              <li><i class="fas fa-envelope"></i><span class="email"><a href="mailto:<?php echo $redux_demo['opt-email'] ?>"><?php echo $redux_demo['opt-email'] ?></a></span>
               </li>
             </ul>
           </div>
-          <a class="btn btn-outline-primary light"
-            href="<?php echo $redux_demo['opt-button-link'] ?>"><?php echo $redux_demo['opt-button-text'] ?></a>
+          <a class="btn btn-outline-primary light" href="<?php echo $redux_demo['opt-button-link'] ?>"><?php echo $redux_demo['opt-button-text'] ?></a>
         </div>
         <div class="col-lg-2 col-md-2">
           <?php dynamic_sidebar('footer4'); ?>
@@ -70,12 +66,12 @@
 </footer>
 
 <script>
-  jQuery(document).ready(function () {
+  jQuery(document).ready(function() {
 
     if (jQuery('.select-input, .select-input-wrapper select').length > 0) {
       jQuery('.select-input, .select-input-wrapper select').select2();
     }
-    jQuery('[data-toggle="offcanvas"]').on('click', function () {
+    jQuery('[data-toggle="offcanvas"]').on('click', function() {
       jQuery('.offcanvas').toggleClass('open on');
       jQuery('.offcanvas-collapse').toggleClass('open');
       jQuery('body').toggleClass('lockscroll');
@@ -95,6 +91,29 @@
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+  });
+
+
+  $key = 1;
+
+  jQuery('.team-swiper').each(function(index, element) {
+
+    var $id = 'swiper' + $key;
+    var $id = new Swiper(".team-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    $key++;
   });
 </script>
 <?php wp_footer();

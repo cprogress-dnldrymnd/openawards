@@ -76,13 +76,14 @@ function action_team_slider($atts)
     <div class="team-slider <?= $style ?>">
         <div class="swiper team-swiper">
             <div class="swiper-wrapper">
-
                 <?php foreach ($teams as $team) { ?>
                     <div class="swiper-slide">
                         <?= $team->post_title ?>
                     </div>
-                    <?php } ?>
+                <?php } ?>
             </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </div>
 <?php
