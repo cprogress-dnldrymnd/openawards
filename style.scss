@@ -8075,9 +8075,20 @@ form#resources_form {
     padding-left: 100px;
     padding-right: 100px;
     position: relative;
+    .swiper-button-prev,
+    .swiper-button-prev {
+        width: 56px;
+        height: 56px;
+        border: 1px solid var(--opal-black);
+        border-radius: 50%;
+        font-size: 20px;
+        font-weight: bold;
+    }
     .heading-box {
         margin-bottom: 40px;
         h2 {
+            color: var(--black-color);
+            font-family: var(--primary-font);
             font-weight: 600;
             @media (min-width: 1400px) {
                 font-size: 40px;
@@ -8104,7 +8115,7 @@ form#resources_form {
         }
 
         .content-box {
-            content: '';
+            content: "";
             z-index: 2;
             opacity: 0;
             transition: 500ms;

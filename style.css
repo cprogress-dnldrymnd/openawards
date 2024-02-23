@@ -6356,9 +6356,19 @@ form#resources_form.searching label {
   padding-left: 100px;
   padding-right: 100px;
   position: relative; }
+  .team-slider .swiper-button-prev,
+  .team-slider .swiper-button-prev {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--opal-black);
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 800; }
   .team-slider .heading-box {
     margin-bottom: 40px; }
     .team-slider .heading-box h2 {
+      color: var(--black-color);
+      font-family: var(--primary-font);
       font-weight: 600; }
       @media (min-width: 1400px) {
         .team-slider .heading-box h2 {
@@ -6378,7 +6388,7 @@ form#resources_form.searching label {
     bottom: 0;
     border-radius: 10px; }
   .team-slider .swiper-slide .content-box {
-    content: '';
+    content: "";
     z-index: 2;
     opacity: 0;
     transition: 500ms;
