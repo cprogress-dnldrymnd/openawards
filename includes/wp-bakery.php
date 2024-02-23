@@ -81,7 +81,7 @@ function action_team_slider($atts)
                     <div class="swiper-slide">
                         <?= $team->post_title ?>
                     </div>
-                    <?php } ?>>
+                    <?php } ?>
             </div>
         </div>
     </div>
