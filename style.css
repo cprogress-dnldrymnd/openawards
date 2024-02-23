@@ -6378,6 +6378,7 @@ form#resources_form.searching label {
     bottom: 0;
     border-radius: 10px; }
   .team-slider .swiper-slide .content-box {
+    content: '';
     z-index: 2;
     opacity: 0;
     transition: 500ms;
