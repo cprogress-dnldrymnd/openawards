@@ -8216,6 +8216,11 @@ form#resources_form {
 
     &.style-2 {
         background-color: var(--opal-black);
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: var(--white-color);
+            border-color: var(--white-color);
+        }
         .heading-box {
             h2 {
                 color: var(--white-color);
