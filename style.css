@@ -1095,7 +1095,8 @@ body {
   --purple-heather: #7a4294;
   --blush-pink: #fab0ff;
   --go-green: #00ed8c;
-  --white-color: #fff; }
+  --white-color: #fff;
+  --black-color: #000; }
 
 html {
   overflow-x: hidden; }
@@ -6351,33 +6352,49 @@ form#resources_form.searching label {
     background-color: var(--purple-heather) !important;
     color: var(--white-color) !important; }
 
-.team-slider .swiper-slide {
+.team-slider .swiper-slide .inner {
   position: relative;
   border-radius: 10px;
   overflow: hidden; }
-  .team-slider .swiper-slide .content-box {
+.team-slider .swiper-slide .content-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0; }
+.team-slider .swiper-slide .content-box {
+  z-index: 2;
+  opacity: 0;
+  transition: 500ms;
+  background-color: var(--white-color);
+  padding: 30px; }
+  .team-slider .swiper-slide .content-box .name {
+    font-family: var(--primary-font);
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--black-color); }
+  .team-slider .swiper-slide .content-box .desc {
+    color: #06263F;
+    font-size: 16px; }
+  .team-slider .swiper-slide .content-box > div:not(:last-child) {
+    margin-bottom: 1rem; }
+.team-slider .swiper-slide .image-box {
+  position: relative;
+  z-index: 1;
+  padding: 70% 0; }
+  .team-slider .swiper-slide .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0; }
-  .team-slider .swiper-slide .content-box {
-    z-index: 2;
-    opacity: 0;
-    transition: 500ms;
-    background-color: var(--white-color); }
-  .team-slider .swiper-slide .image-box {
-    position: relative;
-    z-index: 1;
-    padding: 60%; }
-    .team-slider .swiper-slide .image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      left: 0;
-      top: 0; }
-  .team-slider .swiper-slide:hover .content-box {
-    opacity: 1; }
+    top: 0; }
+.team-slider .swiper-slide:hover .content-box {
+  opacity: 1; }
+.team-slider .swiper-slide .position {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--black-color);
+  margin-top: 1rem; }
 
 /*# sourceMappingURL=style.css.map */

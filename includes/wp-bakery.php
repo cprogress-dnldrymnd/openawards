@@ -77,17 +77,28 @@ function action_team_slider($atts)
         <div class="swiper team-swiper">
             <div class="swiper-wrapper">
                 <?php foreach ($teams as $team) { ?>
+
+                    <?php
+                    $position = carbon_get_post_meta($team->ID, 'position');
+                    $linked_in = carbon_get_post_meta($team->ID, 'linked_in');
+                    ?>
                     <div class="swiper-slide">
-                        <div class="content-box">
-                            <div class="name">
-                                <?= $team->post_title ?>
+                        <div class="inner">
+                            <div class="content-box">
+                                <div class="name">
+                                    <?= $team->post_title ?>
+                                </div>
+                                <div class="desc">
+                                    <?= wpautop($team->post_content) ?>
+                                </div>
                             </div>
-                            <div class="desc">
-                                <?= wpautop($team->post_content) ?>
+                            <div class="image-box">
+                                <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" alt="<?= $team->post_title ?>">
                             </div>
                         </div>
-                        <div class="image-box">
-                            <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" alt="<?= $team->post_title ?>">
+
+                        <div class="position">
+                            <?= $position ?>
                         </div>
                     </div>
                 <?php } ?>
