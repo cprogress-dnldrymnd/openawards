@@ -100,8 +100,6 @@
 
     var $id = 'swiper' + $key;
     var $id = new Swiper(".team-swiper", {
-      slidesPerView: 4,
-      spaceBetween: 40,
       loop: true,
       breakpoints: {
         575: {
