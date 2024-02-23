@@ -20,6 +20,7 @@ if (function_exists('vc_map')) {
         $style = array(
             'Style 1' => 'style-1',
             'Style 2' => 'style-2',
+            'Style 3' => 'style-3',
         );
 
         vc_map(array(
