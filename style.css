@@ -6502,7 +6502,7 @@ form#resources_form.searching label {
     .team-slider.style-3 .swiper-slide .image-box img {
       border-radius: 10px; }
   .team-slider.style-3 .swiper-slide .name {
-    margin-bottom: 0; }
+    margin-bottom: 0 !important; }
   .team-slider.style-3 .swiper-slide .position {
     font-size: 20px; }
 
