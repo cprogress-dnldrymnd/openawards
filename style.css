@@ -6357,13 +6357,15 @@ form#resources_form.searching label {
   padding-right: 100px;
   position: relative; }
   .team-slider .swiper-button-prev,
-  .team-slider .swiper-button-prev {
+  .team-slider .swiper-button-next {
     width: 56px;
     height: 56px;
     border: 1px solid var(--opal-black);
     border-radius: 50%;
-    font-size: 20px;
     font-weight: bold; }
+    .team-slider .swiper-button-prev:after,
+    .team-slider .swiper-button-next:after {
+      font-size: 20px; }
   .team-slider .heading-box {
     margin-bottom: 40px; }
     .team-slider .heading-box h2 {
@@ -6378,7 +6380,6 @@ form#resources_form.searching label {
     position: static; }
   .team-slider .swiper-slide .inner {
     position: relative;
-    border-radius: 10px;
     overflow: hidden; }
   .team-slider .swiper-slide .content-box {
     z-index: 2;
@@ -6418,6 +6419,8 @@ form#resources_form.searching label {
     font-weight: 600;
     color: var(--black-color);
     margin-top: 1rem; }
+  .team-slider.style-1 .inner, .team-slider.style-2 .inner {
+    border-radius: 10px; }
   .team-slider.style-1 .swiper-slider .content-box, .team-slider.style-2 .swiper-slider .content-box {
     position: absolute;
     left: 0;

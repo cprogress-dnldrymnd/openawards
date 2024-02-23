@@ -8076,13 +8076,15 @@ form#resources_form {
     padding-right: 100px;
     position: relative;
     .swiper-button-prev,
-    .swiper-button-prev {
+    .swiper-button-next {
         width: 56px;
         height: 56px;
         border: 1px solid var(--opal-black);
         border-radius: 50%;
-        font-size: 20px;
         font-weight: bold;
+        &:after {
+            font-size: 20px;
+        }
     }
     .heading-box {
         margin-bottom: 40px;
@@ -8102,7 +8104,6 @@ form#resources_form {
     .swiper-slide {
         .inner {
             position: relative;
-            border-radius: 10px;
             overflow: hidden;
         }
 
@@ -8163,6 +8164,9 @@ form#resources_form {
     }
     &.style-1,
     &.style-2 {
+        .inner {
+            border-radius: 10px;
+        }
         .swiper-slider {
             .content-box {
                 position: absolute;
