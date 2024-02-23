@@ -207,7 +207,7 @@ function change_sortable_columns($columns){
 
 
 $Team = new newPostType();
-$Team->name = 'Sliders';
+$Team->name = 'Slider';
 $Team->singular_name = 'Slider';
 $Team->icon = 'dashicons-slides';
 $Team->supports = array('title');
