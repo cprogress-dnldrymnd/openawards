@@ -8175,18 +8175,18 @@ form#resources_form {
                 top: 0;
             }
         }
-
-      
+        .position {
+            font-family: var(--primary-font);
+            font-weight: 600;
+            color: var(--black-color);
+        }
     }
     &.style-1,
     &.style-2 {
         .position {
-            font-family: var(--primary-font);
             font-size: 26px;
-            font-weight: 600;
-            color: var(--black-color);
             margin-top: 1rem;
-            @media(max-width: 991px) {
+            @media (max-width: 991px) {
                 font-size: 20px;
             }
         }

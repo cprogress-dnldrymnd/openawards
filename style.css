@@ -6431,10 +6431,11 @@ form#resources_form.searching label {
       position: absolute;
       left: 0;
       top: 0; }
-  .team-slider.style-1 .position, .team-slider.style-2 .position {
+  .team-slider .swiper-slide .position {
     font-family: var(--primary-font);
+    font-weight: 600; }
+  .team-slider.style-1 .position, .team-slider.style-2 .position {
     font-size: 26px;
-    font-weight: 600;
     color: var(--black-color);
     margin-top: 1rem; }
     @media (max-width: 991px) {
