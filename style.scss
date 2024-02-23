@@ -8104,6 +8104,7 @@ form#resources_form {
         }
 
         .content-box {
+            content: '';
             z-index: 2;
             opacity: 0;
             transition: 500ms;
