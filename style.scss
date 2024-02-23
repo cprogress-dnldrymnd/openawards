@@ -8245,6 +8245,9 @@ form#resources_form {
         .swiper-slide {
             .image-box {
                 margin-bottom: 1rem;
+                img {
+                    border-radius: 10px;
+                }
             }
             .name {
                 margin-bottom: 0;
