@@ -6455,6 +6455,7 @@ form#resources_form.searching label {
     padding: 30px; }
     .team-slider.style-1 .swiper-slide .content-box:before, .team-slider.style-2 .swiper-slide .content-box:before {
       content: "";
+      z-index: -1;
       width: 100%;
       height: 155px;
       display: block;

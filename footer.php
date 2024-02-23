@@ -102,7 +102,7 @@
     var $id = new Swiper(".team-swiper", {
       loop: true,
       breakpoints: {
-        575: {
+        0: {
           slidesPerView: 2,
           spaceBetween: 20,
         },

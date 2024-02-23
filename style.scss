@@ -8208,6 +8208,7 @@ form#resources_form {
 
                 &:before {
                     content: "";
+                    z-index: -1;
                     width: 100%;
                     height: 155px;
                     display: block;
