@@ -11,7 +11,7 @@ if (function_exists('vc_map')) {
 
         $category = array();
 
-        $category['all'] = 'All';
+        $category['All'] = 'all';
 
         foreach ($terms as $term) {
             $category[$term->name] = $term->term_id;
