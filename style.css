@@ -6469,9 +6469,11 @@ form#resources_form.searching label {
     @media (max-width: 991px) {
       .team-slider.style-1 .swiper-slide .content-box, .team-slider.style-2 .swiper-slide .content-box {
         padding: 20px; } }
-    @media (max-width: 480px) {
+    @media (max-width: 767px) {
       .team-slider.style-1 .swiper-slide .content-box, .team-slider.style-2 .swiper-slide .content-box {
         padding: 15px; }
+        .team-slider.style-1 .swiper-slide .content-box .name, .team-slider.style-2 .swiper-slide .content-box .name {
+          font-size: 20px; }
         .team-slider.style-1 .swiper-slide .content-box .desc, .team-slider.style-2 .swiper-slide .content-box .desc {
           font-size: 14px; } }
   .team-slider.style-1 .swiper-slide:hover .content-box, .team-slider.style-2 .swiper-slide:hover .content-box {

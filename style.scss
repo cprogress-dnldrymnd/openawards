@@ -8222,8 +8222,11 @@ form#resources_form {
                 @media (max-width: 991px) {
                     padding: 20px;
                 }
-                @media (max-width: 480px) {
+                @media (max-width: 767px) {
                     padding: 15px;
+                    .name {
+                        font-size: 20px;
+                    }
                     .desc {
                         font-size: 14px;
                     }
