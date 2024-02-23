@@ -6377,7 +6377,8 @@ form#resources_form.searching label {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start; }
+    align-items: flex-start;
+    border: 1px solid var(--high-violet); }
     .team-slider .swiper-slide .content-box .name {
       font-family: var(--primary-font);
       font-size: 26px;
@@ -6411,5 +6412,8 @@ form#resources_form.searching label {
     font-weight: 600;
     color: var(--black-color);
     margin-top: 1rem; }
+  .team-slider.style-1 .content-box:before {
+    width: 100%;
+    height: 155px; }
 
 /*# sourceMappingURL=style.css.map */
