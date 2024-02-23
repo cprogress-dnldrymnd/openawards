@@ -14,7 +14,7 @@ if (function_exists('vc_map')) {
         $category['all'] = 'All';
 
         foreach ($terms as $term) {
-            $category['"'.$term->term_id.'"'] = $term->name;
+            $category[$term->name] = $term->term_id;
         }
 
         $style = array(
