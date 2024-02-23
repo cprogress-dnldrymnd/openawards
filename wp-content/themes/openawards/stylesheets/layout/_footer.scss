@@ -1,0 +1,147 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+footer {
+  .main-footer {
+    padding: 100px 0;
+    background-color: $dark-blue;
+    @include respond-to("lg") {
+      padding: 80px 0;
+    }
+    @include respond-to("md") {
+      padding: 60px 0;
+    }
+    @include respond-to("sm-down") {
+      padding: 50px 0;
+    }
+    .logo-holder {
+      position: relative;
+      width: 200px;
+      img {
+        margin-bottom: 35px;
+        width: 100%;
+        @include respond-to("md-down") {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .contact-details, .contact-details a {
+      color: #fff;
+    }
+    .contact-details {
+      ul {
+        list-style: none;
+        padding-left: 30px;
+        li {
+          position: relative;
+          margin-bottom: 10px;
+          font-size: 13px;
+          color: #FFFFFF;
+          @include respond-to("md-down") {
+            font-size: 12px;
+          }
+          i {
+            position: absolute;
+            margin-left: -25px;
+            margin-top: 3px;
+          }
+          span {
+            opacity: .5;
+          }
+        }
+      }
+    }
+    a.btn.btn-outline-primary.light {
+      margin-top: 15px;
+      font-size: 13px;
+      padding: 10px 30px;
+      @include respond-to("md") {
+        font-size: 12px;
+      }
+      @include respond-to("sm-down") {
+        margin-bottom: 30px;
+      }
+    }
+    h5.widget-title {
+      color: $white !important;
+      @include respond-to("sm-down") {
+        margin-top: 10px;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 5px;
+      @include respond-to("md-down") {
+        margin-bottom: 0;
+      }
+      a {
+        color: $white !important;
+        font-size: 13px;
+        opacity: .5;
+        @include on-event() {
+          opacity: 1;
+        }
+        @include respond-to("md-down") {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .bottom-footer {
+    position: relative;
+    background-color: $darker-blue;
+    padding: 12px 0;
+    .copyright-text {
+      float: left;
+      font-size: 12px;
+      color: $white;
+      opacity: .5;
+      @include respond-to("md") {
+        font-size: 10px !important;
+      }
+      @include respond-to("sm-down") {
+        float: none;
+        margin-bottom: 5px;
+        text-align: center;
+        font-size: 10px !important;
+      }
+      p {
+        margin-top: 8px;
+        margin-bottom: 0;
+      }
+    }
+    .other-links {
+      float: right;
+      margin-bottom: 0;
+      @include respond-to("sm-down") {
+        float: none;
+        text-align: center;
+      }
+      &.inline {
+        li {
+          font-size: 12px;
+          display: inline-block;
+          margin-left: 20px;
+          @include respond-to("md") {
+            a {
+              font-size: 10px !important;
+            }
+          }
+          @include respond-to("sm-down") {
+            a {
+              font-size: 10px !important;
+              margin-bottom: 5px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '../assets/' !default;
+
+$font-url: '../../assets/fonts/' !default;
+
+$font-cabin: 'Cabin', sans-serif;
+$font-open-sans: 'Open Sans', sans-serif;
+
+$main-color: #B28564;
+
+$light-gray-color: #F1F1F1;
+
+$sub-color: #041F30;
+
+$primary: #492482 !default;
+$dark-primary: #2f115d !default;
+$purple: #492583 !default;
+$secondary: #FEB321 !default;
+$dark-secondary: #d6961b !default;
+$white: #fff !default;
+$black: #000 !default;
+$dirtyWhite: #F1F5FA !default;
+$dark-grey: #06263F !default;
+$mid-grey: #707070 !default;
+$light-grey: #9D9AAD !default;
+$blue-link: #0590E4 !default;
+$dark-blue: #052036 !default;
+$darker-blue: #03192B !default;
+$blue: #0590E4;

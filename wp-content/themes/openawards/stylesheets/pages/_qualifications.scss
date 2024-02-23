@@ -1,0 +1,221 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+.qualificationListing {
+  .main-content {
+    position: relative;
+    background: $dirtyWhite;
+    .filter-bar {
+      .pagination-number {
+        font-family: $font-cabin;
+        color: $dark-grey;
+        font-weight: 700;
+        font-size: 18px;
+        @include respond-to(md) {
+          font-size: 16px;
+        }
+        @include respond-to(sm-down) {
+          font-size: 14px;
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .filter {
+        max-width: 150px;
+        float: right;
+        @include respond-to(sm-down) {
+          .form-group {
+            margin-bottom: 0;
+          }
+        }
+        select.form-control {
+          margin-top: -7px;
+          background: transparent;
+          border: none;
+          width: 100%;
+          font-family: $font-cabin;
+          font-weight: 700;
+          color: $dark-grey;
+          @include respond-to(sm-down) {
+            margin-top: -10px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .card-holder {
+      margin-bottom: 60px;
+      .card {
+        position: relative;
+        display: block;
+        padding: 35px 25px;
+        margin-bottom: 35px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 9px 21px #3F8AC50F;
+        @include respond-to(sm-down) {
+          padding: 25px;
+        }
+        .image-holder {
+          position: relative;
+          &:before {
+            position: absolute;
+            content: "";
+            background: #ECE9F2;
+            height: 85%;
+            width: 90%;
+            z-index: 0;
+            border-radius: 50%;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            @include respond-to(sm-down) {
+              max-height: 225px;
+              max-width: 225px;
+            }
+          }
+          img {
+            width: 80%;
+            display: block;
+            margin: 25px auto 0;
+            z-index: 2;
+            position: relative;
+            @include respond-to(sm-down) {
+              max-height: 250px;
+              width: auto;
+            }
+          }
+        }
+        .col-md-8 { position: relative; }
+        .details {
+          margin-top: 10px;
+          @include respond-to(md-down) {
+            margin-top: 0;
+          }
+        }
+        h2 {
+          margin-bottom: 25px;
+          font-family: $font-cabin;
+          font-weight: 700;
+          color: $dark-grey;
+          @include respond-to(md) {
+            font-size: 26px;
+          }
+          @include respond-to(sm-down) {
+            font-size: 24px;
+          }
+        }
+        .meta-details {
+          position: relative;
+          display: flex;
+          margin-bottom: 12px;
+          @include respond-to(md-down) {
+            display: block;
+          }
+          .meta-item {
+            flex:auto;
+            @include respond-to(md) {
+              flex:none;
+              display: inline-block;
+              width: 50%;
+              &:first-child,
+              &:nth-child(3) {
+                float: left;
+              }
+            }
+            @include respond-to(sm) {
+              flex:none;
+              display: inline-block;
+              width: 50%;
+              &:first-child,
+              &:nth-child(3) {
+                float: left;
+              }
+            }
+            label {
+              font-family: $font-opensans;
+              font-weight: 600;
+              font-size: 13px;
+              color: $dark-blue;
+            }
+            p {
+              font-family: $font-opensans;
+              font-weight: 400;
+              font-size: 13px;
+              color: $light-grey;
+            }
+          }
+        }
+        .btn-group {
+          a {
+            margin-right: 15px;
+            height: 45px;
+            line-height: 45px;
+            border-radius: 5px !important;
+            font-family: $font-cabin;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 0 50px;
+            &.btn-outline-primary {
+              border-width: 2px;
+            }
+            @include respond-to(md) {
+              padding: 0 35px;
+            }
+            @include respond-to(sm-down) {
+              padding: 0 25px;
+            }
+            @include respond-to(xs) {
+              margin-bottom: 10px;
+              width: 100%;
+            }
+          }
+          @include respond-to(xs) {
+            display: block;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+    .page-holder {
+      .pagination {
+        justify-content: center;
+        ul {
+          li {
+            margin-right: 5px;
+            a {
+              background: transparent;
+              border: none;
+              font-family: $font-cabin;
+              font-weight: 700;
+              font-size: 16px;
+              color: $dark-grey;
+              text-align: center;
+              i {
+                font-size: 15px;
+              }
+            }
+            &.disabled {
+              color: $light-grey;
+              opacity: .5;
+            }
+            &.current {
+              background: $purple;
+              height: 35px;
+              width: 35px;
+              border-radius: 50%;
+              a {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

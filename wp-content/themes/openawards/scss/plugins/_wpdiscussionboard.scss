@@ -1,0 +1,156 @@
+section#open-awards-discussion-board {
+	.create-topic {
+		margin-bottom: 40px;
+		text-align: right;
+		.btn {
+			max-width: 250px;
+			width: 100%;
+			border: none;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-weight: bold;
+			font-family: $font-cabin;
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+	}
+	table {
+		tr {
+			border-bottom: 1px solid #707070;
+			td {
+				padding-top: 40px;
+				padding-bottom: 40px;
+				border-top: none;
+				vertical-align: middle;
+				h2 {
+					margin-bottom: 0;
+					a {
+						font-size: 28px;
+						font-family: $font-cabin;
+						color: $dark-grey !important;
+						@media (max-width: 767px) {
+							font-size: 22px;
+							line-height: 1.1 !important;
+							display: block;
+							text-align: center;
+						}
+					}
+				}
+				&.meta {
+					span {
+						display: block;
+						color: 	#9D9AAD;
+						text-align: center;
+						font-weight: bold;
+						&:first-child {
+							font-size: 32px;
+							font-family: $font-cabin;
+							@media (max-width: 991px) {
+								font-size: 26px;
+							}
+						}
+						&:last-child {
+							font-size: 16px;
+							font-weight: 400;
+						}
+					}
+					&.date {
+						width: 200px;
+						@media (max-width: 991px) {
+							width: 160px;
+						}
+						@media (max-width: 360px) {
+							flex: 0 0 100%;
+							padding-top: 10px;
+						}
+					}
+					&.number {
+						padding-left: 20px;
+						padding-right: 20px;
+						@media (max-width: 767px) {
+							padding-left: 10px;
+							padding-right: 10px;
+						}
+						@media (max-width: 360px) {
+							padding-top: 10px;
+							padding-bottom: 0;
+						}
+					}
+				}
+				&:first-child {
+					@media (max-width: 767px) {
+						flex: 0 0 100%;
+						padding-bottom: 0;
+					}
+				}
+			}
+			@media (max-width: 767px) {
+				@include display-flex;
+				@include justify-content(center);
+				flex-wrap: wrap;
+			}
+		}
+	}
+}
+#ctdb-new-topic {
+	form#new-topic {
+		input:not([type='submit']), textarea {
+			@include input-style-bordered;
+			outline: none;
+		}
+		textarea {
+			max-height: 350px;
+		}
+		input[type='submit'] {
+			@include button-style;
+			border: none;
+			outline: none;
+			display: block;
+			margin: auto;
+			width: 100%;
+			max-width: 300px;
+			cursor: pointer;
+		}
+	}
+	&+p {
+		display: none;
+	}
+}
+.new-topic-holder > p {
+	font-family: $font-cabin !important;
+	margin-bottom: 48px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px !important;
+	.btn {
+		max-width: 250px;
+		width: 100%;
+		border: none;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: bold;
+		font-family: $font-cabin;
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+}
+.single-discussion-topics {
+	.woocommerce-products-header {
+		@include dark-header;
+		h1 {
+			text-align: left;
+		}
+	}
+	.ctdb-content-area {
+		padding-top: 50px;
+		.container {
+			.entry-content {
+				.ctdb-content-wrap {
+					p {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}

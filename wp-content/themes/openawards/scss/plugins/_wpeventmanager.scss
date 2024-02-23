@@ -1,0 +1,625 @@
+.event-holder {
+	margin-bottom: 40px;
+	> .row {
+		.column-holder {
+			.image-box {
+				width: 100%;
+				height: 315px;
+				overflow: hidden;
+				border-radius: 10px;
+				position: relative;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+				}
+				.date {
+					position: absolute;
+					bottom: 0;
+					background-color: $blue;
+					left: 20px;
+					padding: 13px;
+					color: $white;
+					font-family: $font-cabin;
+					font-weight: 500;
+					line-height: 1;
+					text-align: center;
+					span {
+						display: block;
+						&.day {
+							font-size: 47px;
+						}
+						&.month {
+							font-size: 14px;
+							text-transform: uppercase;
+						}
+					}
+				}
+				@include respond-to(xxxs) {
+					height: 250px;
+				}
+			}
+
+			.event-categories {
+				padding-left: 0;
+				list-style: none;
+				li {
+					display: inline-block;
+					a {
+						font-size: 14px;
+						display: inline-block;
+						padding: 10px 15px;
+						background-color: $blue;
+						border-radius: 5px;
+						color: $white !important;
+						font-family: $font-cabin;
+						font-weight: 500px;
+						line-height: 1;
+						@include on-event {
+							background-color: $purple;
+						}
+					}
+				}
+			}
+			.desc-box {
+				margin-bottom: 30px;
+				color: #9D9AAD;
+				p {
+					font-size: 16px !important;
+				}
+			}
+			.price-box {
+				margin-bottom: 30px;
+				color: #F04E3D;
+				font-size: 25px;
+				font-weight: 500;
+				text-transform: uppercase;
+			}
+			
+			.heading-box {
+				margin-bottom: 25px;
+				h2 {
+					font-size: 34px;
+					display: inline-block;
+					font-weight: bold;
+					margin-bottom: 0;
+					a {
+						color: $dark-grey !important;
+					}
+				}
+				span {
+					font-size: 13px;
+					font-family: $font-cabin;
+					font-weight: bold;
+					color: $purple;
+					margin-left: 10px;
+				}
+				&:not(.heading-box-single) {
+					border-bottom: 1px solid #D4D4D4;
+					padding-bottom: 25px;
+				}
+			}
+			.button-box {
+				margin-left: -10px;
+				margin-right: -10px;
+				@include display-flex;
+				.button {
+					text-align: center;
+					font-weight: 500;
+					line-height: 1;
+					margin: 0 10px;
+					letter-spacing: 0;
+					&.purple-bordered {
+						@include button-style-purple-bordered;
+					}
+					&.primary {
+						@include button-style;
+					}
+
+				}
+				&:not(.button-box-single) {
+					.button {
+						width: calc(50% - 20px);
+					}				
+				}
+				&.button-box-single {
+					.button {
+						min-width: 250px;
+						border: none;
+						outline: none;
+						cursor: pointer;
+					}
+				}
+			}
+			&.event-details {
+				padding-top: 20px;
+				padding-left: 20px;
+				padding-bottom: 20px;
+				@include respond-to(xs) {
+					padding-left: 0px;
+					padding-bottom: 0px;
+				}
+				&.event-details-single {
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+	.meta-box {
+		margin-bottom: 25px;
+		.meta-holder {
+			span {
+				font-size: 16px;
+				display: block;
+				&.meta-label {
+					margin-bottom: 5px;
+				}
+				&.meta-value {
+					color: #9D9AAD;
+				}
+			}
+			@include respond-to(xxxs) {
+				margin-bottom: 10px;
+			}
+		}
+		&.meta-box-single {
+			border-bottom: 1px solid #D4D4D4;
+			padding-bottom: 25px;
+			margin-bottom: 25px;
+			.col {
+				flex-basis: initial;
+				width: auto;
+				flex-grow: 0;
+			}
+		}	
+	}
+	.google-map-box {
+		background-color: #9D9AAD;
+		min-height: 300px;
+		border-radius: 10px;
+	}
+	&:not(.event-holder-single) {
+		@include box-shadow(0px 9px 21px #3F8AC50F);
+		background-color: $white;
+		border-radius: 10px;
+		padding: 30px;
+		.row {
+			@include align-items(center);
+		}
+	}
+	&.event-holder-single {
+		.image-box {
+			margin-bottom: 30px;	
+		}
+	}
+
+}
+.css-events-list + p, .css-cats-list + p, .css-locations-list + p{
+	display: none;
+}
+.em-search-wrapper {
+	.em-events-search {
+		border-radius: 40px 10px 10px 40px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-bottom: 45px;
+		overflow: hidden;
+		border: none;
+		@include box-shadow(0px 9px 21px #3F8AC50F);
+		.em-search-main {
+			@include display-flex;
+			flex-wrap: wrap;
+			width: calc(100% - 110px);
+			.em-search-submit {
+				background: $blue;
+				height: 100%;
+				top: 0;
+				border: none;
+				right: 0;
+				width: 120px;
+				outline: none;
+				border-radius: 0;
+				cursor: pointer;
+				@include transition(300ms);
+
+				i {
+					color: $white;
+				}
+				@include respond-to(xxs) {
+					width: 70px;
+				}
+				&:hover {
+					background: $secondary;
+				}
+			}
+			i {
+				font-size: 19px;
+				color: #0590E4;
+				@include transform(rotateY(180deg));
+			}
+			.em-search-field {
+				margin: 0;
+				padding: 0;
+				flex: 0 0 50%;
+				max-width: 50%;
+				position: relative;
+				i{
+					position: absolute;
+					top: 14px;
+					left: 5px;
+				}
+				label {
+					display: block;
+					margin-bottom: 0;
+					input {
+						width: 100%;
+						font-family: $font-cabin;
+						font-size: 20px;
+						font-weight: 400;
+						padding-top: 12px;
+						padding-bottom: 12px;
+						padding-left: 40px;
+						&::placeholder {
+							color: #9C9C9C;
+						}
+					}
+				}
+				&.em-search-geo {
+					i{
+						left: 10px;
+						@include respond-to(xxs) {
+							left: 5px;
+						}
+					}
+				}
+				&:first-child {
+					label {
+						input {
+							border-right: 3px solid #E2E2E2;
+							@include respond-to(xxs) {
+								border-right: none;
+								border-bottom: 3px solid #E2E2E2;
+								width: calc(100% - 10px);
+							}
+						}
+					}
+				}
+				@include respond-to(xxs) {
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+			}
+			@include respond-to(xxs) {
+				width: calc(100% - 70px);
+			}
+		}
+		@include respond-to(xxs) {
+			border-radius: 10px;
+		}
+	}
+}
+
+.em-calendar-wrapper {
+	@include box-shadow(0px 9px 21px #3F8AC50F);
+	background-color: $white;
+	border-radius: 10px;
+	padding: 20px;
+	max-width: 290px;
+	margin: auto;
+	table {
+		width: 100%;
+		font-family: $font-cabin;
+		tr {
+			td {
+				.em-calnav {
+					font-family: "Font Awesome 5 Free";
+					font-weight: 900;
+					font-size: 0;
+					&:before {
+						color: #3D3D3D;
+						font-size: 16px;
+					}
+					&.em-calnav-prev {
+						&:before {
+							content: "\f053";
+						}
+					}
+					&.em-calnav-next {
+						&:before {
+							content: "\f054";
+						}
+
+					}
+				}
+
+			}
+			&.days-names {
+				td {
+					padding-top: 20px;
+					padding-bottom: 20px;
+					font-size: 10px;
+					color: #CFCFCF;
+					font-weight: bold;
+					&:nth-child(1) {
+						&:after {
+							content: 'ON';
+						}
+					}
+					&:nth-child(2) {
+						&:after {
+							content: 'UE';
+						}
+					}
+					&:nth-child(3) {
+						&:after {
+							content: 'ED';
+						}
+					}
+					&:nth-child(4) {
+						&:after {
+							content: 'HU';
+						}
+					}
+					&:nth-child(5) {
+						&:after {
+							content: 'RI';
+						}
+					}
+					&:nth-child(6) {
+						&:after {
+							content: 'AT';
+						}
+					}
+					&:nth-child(7) {
+						&:after {
+							content: 'UN';
+						}
+					}
+				}
+			}
+			&:not(.days-names) {
+				td {
+					font-size: 13px;
+					font-weight: bold;
+					padding: 5px;
+					&.month_name {
+						font-size: 24px;
+						font-weight: 500;
+						color: $dark-grey;
+					}
+					&.eventless-pre {
+						color: #CFCFCF;
+					}
+					&.eventless-today, &[class*='eventful'] {
+						position: relative;
+						color: $white;
+						z-index: 1;
+						background-color: transparent;
+						&:before {
+							content: '';
+							position: absolute;
+							background-color: $purple;
+							border-radius: 50%;
+							width: 28px;
+							height: 28px;
+							z-index: -1;
+							left: 50%;
+							top: 50%;
+							@include transform(translate(-50%, -50%));
+						}
+					}
+					&[class*='eventful'] {
+						a {
+							color: inherit !important;
+						}
+						&:before {
+							background-color: $secondary;
+						}
+					}
+				}
+			}
+		}
+	}
+	@include respond-to(xs-md) {
+		padding: 10px;
+	}
+	@include respond-to(xs) {
+		padding: 40px;
+		max-width: 100%;
+	}
+	@include respond-to(xxs) {
+		padding: 20px;
+	}
+
+}
+.event-sidebar {
+	padding-left: 30px;
+	.row {
+		[class*='col-'] {
+			@include respond-to(xs-sm) {
+				padding-left: 10px;	
+				padding-right: 10px;	
+			}
+		}
+		@include respond-to(xs-sm) {
+			margin-right: -10px;
+			margin-left: -10px;
+		}
+	}
+
+	.list-box {
+		max-width: 290px;
+		margin: auto;
+	}
+	@include respond-to(xs-md) {
+		padding-left: 10px;
+	}
+	@include respond-to(xs-sm) {
+		padding-left: 15px;
+	}
+}
+
+.single-event, .single-location {
+	background-color: #f1f5fa;
+}
+
+#bookModal {
+	.modal-dialog {
+		top: 50%;
+		transform: translateY(-40%);
+		.modal-content {
+			border-radius: 0;
+			border: none;
+			.modal-header {
+				border-radius: 0;
+				border: none;
+				background-color: $blue;
+				color: $white;
+				.close {
+					color: $white;
+				}
+			}
+			.modal-footer {
+				.btn-primary {
+					@include button-style;
+					padding: 8px 20px;
+					border: none;
+				}
+			}
+		}
+	}
+	&.show {
+		.modal-dialog {
+			transform: translateY(-50%);
+		}
+	}
+}
+body {
+	&:not(.not-logged-in) {
+		#em-booking {
+			.em-booking-buttons {
+				display: none;
+			}
+		}
+	}
+	&.not-logged-in {
+		#em-booking {
+			.em-booking-buttons {
+				.em-booking-submit {
+					@include button-style;
+					border: none;
+					padding: 13px 20px;
+					width: 100%;
+				}
+			}
+		}
+		#bookModal {
+			#pseudo-send-booking {
+				display: none;
+			}
+		}
+	}
+}
+#em-booking {
+	br {
+		display: none;
+	}
+	select, textarea, input:not([type="checkbox"]) {
+		@include input-style-bordered;
+	}
+	p {
+		font-family: $font-cabin !important;
+		font-size: 16px !important;
+	}
+	.em-tickets {
+		margin: 10px;
+		width: calc(100% - 20px);
+		td, th {
+			padding-bottom: 10px;
+			font-family: $font-cabin !important;
+			font-size: 16px !important;
+		}
+		select, input:not([type="checkbox"]) {
+			width: 100%;
+		}
+	}
+	.em-booking-form-details {
+		width: 100%;
+		float: none;
+
+		textarea, select, input:not([type="checkbox"]) {
+			width: calc(100% - 100px);
+		}
+
+	}
+	.em-booking-login {
+		margin: 0;
+		border: none;
+		padding: 10px;
+		label {
+			font-size: 16px !important;
+			width: auto;
+			font-family: $font-cabin !important;
+		}
+
+		p {
+			label {
+				width: 100px;
+			}
+			input:not([type="submit"]) {
+				width: calc(100% - 105px);
+			}
+		}
+		input[name="redirect_to"] + br + a{
+			float: right;
+			font-size: 16px !important;
+			
+		}
+		#em_wp-submit {
+			@include button-style;
+			border: none;
+			padding: 13px 20px;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.category-list-holder {
+	.column-holder {
+		height: 100%;
+	}
+	.category-holder {
+		@include box-shadow(0px 9px 21px #00000029);
+		max-width: 304px;
+		margin: auto;
+		text-align: center;
+		padding: 25px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 30px;
+		border-radius: 10px;
+		background-color: $white;
+		height: calc(100% - 30px);
+		@include transition(300ms);
+		.heading-box {
+			color: $dark-grey;
+			font-size: 20px;
+		}
+		.image-box {
+			margin-bottom: 20px;
+			img {
+				max-width: 150px;
+				height: auto;
+				width: 100%;
+			}
+		}
+		&:hover {
+			background-color: #f1f5fa;
+		}
+	}
+}

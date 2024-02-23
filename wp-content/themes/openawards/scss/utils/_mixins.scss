@@ -1,0 +1,297 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+    @else {
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+    #{$context} & {
+        @content;
+    }
+}
+
+@mixin font-face($fontFamily, $path, $fileName, $fontWeight: normal, $fontStyle: normal) {
+    @font-face {
+
+        font-family: $fontFamily;
+        src: url('#{$path + $fileName}.eot');
+        src: url('#{$path + $fileName}.eot?#iefix') format('embedded-opentype'),
+        url('#{$path + $fileName}.woff2') format('woff2'),
+        url('#{$path + $fileName}.woff') format('woff'),
+        url('#{$path + $fileName}.ttf') format('truetype'),
+        url('#{$path + $fileName}.svg##{$fileName}') format('svg');
+
+        font-weight: $fontWeight;
+        font-style: $fontStyle;
+    }
+}
+@mixin respond-to($breakpoint) {
+
+    @if $breakpoint == "xxxs" {
+        @media screen and (max-width: 360px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "xxs" {
+        @media screen and (max-width: 480px) {
+            @content;
+        }
+    }
+    @if $breakpoint == "mobile" {
+        @media screen and (max-width: 575px) {
+            @content;
+        }
+    }
+
+
+    @if $breakpoint == "xs" {
+        @media screen and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "xs-sm" {
+        @media screen and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "xs-md" {
+        @media screen and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "sm" {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "sm-lg" {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "sm-md" {
+        @media (min-width: 768px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "md" {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "md-lg" {
+        @media screen and (min-width: 992px)  {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "lg" {
+        @media screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "md2" {
+        @media (min-width: 992px) and (max-width: 1225px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "small-lg" {
+        @media (min-width: 1200px) and (max-width: 1439px) {
+            @content;
+        }
+    }
+}
+
+@mixin background-image($position:center, $size:cover, $repeat:no-repeat) {
+    background-position: $position;
+    background-size: $size;
+    background-repeat: $repeat;
+}
+
+@mixin display-flex {
+    display: -webkit-box; 
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex; 
+    display: flex;
+}
+
+@mixin align-items($align) {
+    -webkit-box-align: $align;
+    -moz-box-align: $align;
+    -ms-flex-align: $align;
+    -webkit-align-items: $align;
+    align-items: $align;
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+@mixin justify-content($justify_content) {
+    -webkit-justify-content: $justify_content ;
+    -ms-flex-pack: $justify_content;
+    justify-content: $justify_content;
+}
+@mixin transition($transition: 300ms) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin box-shadow($shadow:  0px 0px 7px 0px rgba(0,0,0,0.75)) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin filter($filter) {
+    -webkit-filter: $filter;
+    filter: $filter;
+}
+
+@mixin button-style {
+    border-radius: 5px;
+    font-family: $font-cabin;
+    padding: 15px 20px;
+    background-color: $secondary;
+    color: $white !important;
+    display: inline-block;
+    text-decoration: none !important;
+    @include transition(300ms);
+    @include on-event {
+        background-color: $dark-secondary;
+    }
+}
+
+@mixin button-style-purple {
+    border-radius: 5px;
+    font-family: $font-cabin;
+    padding: 15px 20px;
+    background-color: $primary;
+    color: $white !important;
+    display: inline-block;
+    text-decoration: none !important;
+    @include transition(300ms);
+    @include on-event {
+        background-color: $dark-primary;
+    }
+}
+
+@mixin button-style-purple-bordered {
+    border-radius: 5px;
+    font-family: $font-cabin;
+    padding: 15px 20px;
+    border: 2px solid $primary;
+    color: $primary !important;
+    display: inline-block;
+    text-decoration: none !important;
+    @include transition(300ms);
+    @include on-event {
+        background-color: $dark-primary;
+        color: $white !important;
+    }
+}
+
+@mixin dark-header {
+    z-index: 0;
+    height: auto !important;
+    padding: 0;
+    .page-shop-banner {
+        height: 100%;
+        padding-top: 150px;
+        background: #06263F;
+        text-align: center;
+        min-height: 300px;
+        padding-bottom: 50px;
+        h1 {
+            font-family: $font-cabin;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #fff !important;
+        }
+        h3 {
+            color: #fff;
+            font-weight: 400;
+            font-size: 18px;
+            font-family: $font-open-sans;
+        }
+        @media (max-width: 575px) {
+            min-height: 275px;
+        }
+    }
+}
+
+@mixin input-style {
+    background-color: $white;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    font-family: $font-open-sans;
+}
+
+
+@mixin input-style-bordered {
+    background-color: $white;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    font-family: $font-open-sans;
+}
+
+
+@mixin width1640 {
+    @media (min-width: 1300px) {
+        width: 1240px;
+    }
+    @media (min-width: 1400px) {
+        width: 1340px;
+    }
+    @media (min-width: 1500px) {
+        width: 1440px;
+    }
+    @media (min-width: 1600px) {
+        width: 1540px;
+    }
+    @media (min-width: 1700px) {
+        width: 1640px;
+    }
+}

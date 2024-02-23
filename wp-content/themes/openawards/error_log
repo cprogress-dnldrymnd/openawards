@@ -1,0 +1,40 @@
+[30-Dec-2021 03:49:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[01-Jan-2022 18:03:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[03-Jan-2022 08:12:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[05-Jan-2022 20:58:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[06-Jan-2022 16:53:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[23-Jan-2022 18:49:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[25-Jan-2022 12:34:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[05-Feb-2022 09:05:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[06-Feb-2022 23:04:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1
+[09-Feb-2022 02:19:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/oalearncp/public_html/wp-content/themes/openawards/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/oalearncp/public_html/wp-content/themes/openawards/404.php on line 1

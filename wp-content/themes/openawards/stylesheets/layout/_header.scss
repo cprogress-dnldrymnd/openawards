@@ -1,0 +1,204 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+header {
+  position: relative;
+  padding: 30px;
+  z-index: 99;
+  display: block;
+  @include respond-to("xs") {
+    .row {
+      .col-xs-6:first-child {
+        display: inline-block;
+        width: 75%;
+        .logo-holder {
+          a.logo,
+          a.logo img {
+            margin-top: 0;
+            height: 35px;
+            width: auto;
+          }
+        }
+      }
+      .col-xs-6:last-child {
+        display: inline-block;
+        width: 25%;
+        .navbar-toggleable-md  {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .logo-holder {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    a img {
+      height: 100%;
+    }
+  }
+  nav.navbar {
+    float: right;
+    .toggle-mnu {
+      display: block;
+      width: 35px;
+      height: 35px;
+      padding: 6px 6px;
+      @include respond-to("lg-up") {
+        display: none !important;
+      }
+      span {
+        position: relative;
+        display: block;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 18px;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 9px;
+        }
+      }
+      span, span:after, span:before {
+        width: 100%;
+        height: 2px;
+        background-color: $dark-grey !important;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+        border-radius: 2px;
+      }
+      &.on span {
+        background-color: transparent !important;
+        &:before {
+          transform: rotate(45deg) translate(-1px, 0px);
+        }
+        &:after {
+          transform: rotate(-45deg) translate(6px, -7px);
+        }
+      }
+    }
+    .offcanvas {
+      z-index: 9;
+      outline: none!important;
+      &.open {
+        border-color: $white;
+        background-color: $white;
+      }
+    }
+    ul.navbar-nav {
+      li {
+        padding: 0 10px;
+        @include respond-to("lg") {
+          padding: 0 5px;
+        }
+        &.current-menu-item {
+          a {
+            color: $blue-link!important;
+          }
+        }
+        .dropdown-menu {
+          @include respond-to("lg") {
+            font-size: 14px !important;
+          }
+        }
+        a {
+          font-family: $font-cabin;
+          font-size: 16px;
+          font-weight: 600;
+          color: $mid-grey;
+          padding: 0;
+          @include respond-to("lg") {
+            font-size: 14px;
+          }
+          &.btn-outline-primary {
+            margin-top: -12px;
+            i {
+              margin-right: 8px;
+            }
+          }
+          &.btn-secondary {
+            margin-top: -12px;
+          }
+          &.dropdown-item {
+            padding: 3px 1.5rem!important;
+          }
+        }
+        &.button-holder {
+          padding: 0 7px;
+          @include respond-to("lg") {
+            padding: 0 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to("md-down") {
+  .offcanvas-collapse {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    padding: 50px;
+    overflow-y: auto;
+    background-color: $dark-blue;
+    transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    .show {
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      li {
+        margin-bottom: 35px;
+        .dropdown-menu {
+          background: transparent !important;
+        }
+        a {
+          color: #fff!important;
+          font-size: 18px!important;
+          &.btn.btn-outline-primary {
+            border-color: $white !important;
+            color: $white !important;
+            font-weight: 600;
+            @include on-event {
+              background-color: $white;
+              color: $dark-blue!important;
+            }
+          }
+        }
+      }
+    }
+    &.open {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+}
+
+@include respond-to("xs") {
+  header {
+    .col-xs-6 {
+      display: inline-block;
+      width: 50%;
+    }
+    .offcanvas.toggle-mnu {
+      margin-right: -20px;
+    }
+  }
+}

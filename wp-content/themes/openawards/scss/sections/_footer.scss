@@ -1,0 +1,13 @@
+footer {
+	.copyright-text {
+		opacity: 1 !important;
+		p {
+			font-size: 13px;
+			font-family: $font-open-sans;
+			color: #fff;
+		}
+	}
+	a.btn.btn-outline-primary.light:active, a.btn.btn-outline-primary.light:focus, a.btn.btn-outline-primary.light:hover {
+		color: #fff !important;
+	}
+}

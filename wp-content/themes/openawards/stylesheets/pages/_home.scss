@@ -1,0 +1,258 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+main {
+  section {
+    &.hero-banner {
+      height: 85vh;
+      margin-top: -150px;
+      padding-top: 120px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top right;
+      z-index: -2;
+      @include respond-to("lg") {
+        height: 90vh;
+        background-position: top right;
+      }
+      @include respond-to("md") {
+        height: 90vh;
+        background-position: top right;
+      }
+      @include respond-to("sm") {
+        height: 100vh;
+        margin-top: 0;
+        padding-top: 0;
+        background-position: top right;
+      }
+      @include respond-to("xs") {
+        height: 100vh;
+        margin-top: 0;
+        padding-top: 0;
+        background-position: top;
+      }
+      .container {
+        height: 100%;
+        .content {
+          display: flex;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          @include respond-to("sm-down") {
+              .row {
+                flex-wrap: wrap-reverse !important;
+              }
+          }
+          .col-lg-6 {
+            flex: auto;
+            justify-content: center;
+            align-self: center;
+            height: 100%;
+            .banner-image {
+              position: relative;
+              width: 100%;
+              @include respond-to("sm") {
+                margin-top: 25px;
+                margin-bottom: 25px;
+                height: 300px;
+                img {
+                  height: 100%;
+                }
+              }
+              @include respond-to("xs") {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                height: 250px;
+                img {
+                  height: 100%;
+                }
+              }
+              img {
+                width: 100%;
+              }
+            }
+            .banner-content {
+              position: relative;
+              display: block;
+              z-index: 5;
+              h1 {
+                margin-bottom: 30px;
+                font-family: $font-cabin;
+                font-weight: 900;
+                font-size: 50px;
+                color: $dark-grey;
+                @include respond-to("lg") {
+                  font-size: 45px;
+                  margin-bottom: 25px;
+                }
+                @include respond-to("md") {
+                  font-size: 36px;
+                  margin-bottom: 15px;
+                }
+                @include respond-to("sm-down") {
+                  font-size: 30px;
+                  margin-bottom: 10px;
+                }
+              }
+              .btn {
+                margin-right: 10px;
+                @include respond-to("md-down") {
+                  margin-right: 7px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .main-content {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: url('../assets/images/marketing-home-bg.png');
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -2;
+    }
+    section {
+      padding: 100px 0;
+      @include respond-to("lg") {
+        padding: 80px 0;
+      }
+      @include respond-to("md") {
+        padding: 60px 0;
+      }
+      @include respond-to("sm-down") {
+        padding: 50px 0;
+      }
+      &.benefits {
+        .card {
+          border-radius: 10px;
+          padding: 20px;
+          background: #FFFFFF 0% 0% no-repeat padding-box;
+          box-shadow: 0px 14px 21px #0000000f;
+          border: none;
+          p {
+            font-family: $font-opensans;
+            font-size: 13px;
+            line-height: 26px;
+            color: $light-grey;
+            @include respond-to("lg-down") {
+              line-height: 22px;
+            }
+          }
+          a.card-link {
+            font-family: $font-cabin;
+            font-weight: 700;
+            font-size: 13px;
+            color: $purple;
+            text-transform: uppercase;
+            .arrow {
+              margin-left: 5px;
+              font-size: 11px;
+              font-weight: 400;
+            }
+          }
+          @include respond-to("md") {
+            margin-bottom: 25px;
+          }
+          @include respond-to("sm-down") {
+            margin-bottom: 15px;
+          }
+        }
+      }
+      &.qualifications {
+        .row {
+          display: flex;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          .col-lg-6 {
+            flex: auto;
+            justify-content: center;
+            align-self: center;
+            height: 100%;
+            h2 {
+              @include respond-to("md-down") {
+                margin-bottom: 15px;
+              }
+            }
+          }
+        }
+        .section-image {
+          position: relative;
+          width: 100%;
+          @include respond-to("sm") {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            height: 300px;
+            img {
+              height: 100%;
+            }
+          }
+          @include respond-to("xs") {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            height: 250px;
+            img {
+              height: 100%;
+            }
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .content {
+          margin-left: 12px;
+        }
+      }
+      &.shop {
+        h2 {
+          @include respond-to("md-down") {
+            margin-bottom: 15px;
+          }
+        }
+        .item {
+          margin: 25px 0;
+          border-radius: 10px;
+          padding: 20px;
+          background: #FFFFFF 0% 0% no-repeat padding-box;
+          box-shadow: 0px 14px 21px #0000000f;
+          border: none;
+          .product-image {
+            position: relative;
+            margin-bottom: 25px;
+            width: 100%;
+            img {
+              width: 100%;
+            }
+          }
+          h4.product-name {
+            font-family: $font-cabin;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 5px;
+            a {
+              color: $dark-grey !important;
+              text-decoration: none !important;
+            }
+          }
+          h5.product-price {
+            text-align: center;
+          }
+        }
+        .btn-secondary.big {
+          display: block;
+          margin: 35px auto 0;
+          width: 200px;
+        }
+      }
+    }
+  }
+}
