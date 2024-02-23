@@ -206,6 +206,17 @@ function change_sortable_columns($columns){
 
 
 
+$Team = new newPostType();
+$Team->name = 'Sliders';
+$Team->singular_name = 'Slider';
+$Team->icon = 'dashicons-slides';
+$Team->supports = array('title');
+$Team->exclude_from_search = true;
+$Team->publicly_queryable = false;
+$Team->show_in_admin_bar = false;
+$Team->has_archive = false;
+
+
 
 $Team = new newPostType();
 $Team->name = 'Teams';
