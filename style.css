@@ -6365,7 +6365,8 @@ form#resources_form.searching label {
   .team-slider .swiper-slide .content-box {
     z-index: 2;
     opacity: 0;
-    transition: 500ms; }
+    transition: 500ms;
+    background-color: var(--white-color); }
   .team-slider .swiper-slide .image-box {
     position: relative;
     z-index: 1;
