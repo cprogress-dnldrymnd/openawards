@@ -149,3 +149,14 @@ Container::make('theme_options', 'E-Campus')
             Field::make('text', 'newsroom_url', __('URL')),
         )
     );
+
+//Teams
+Container::make('post_meta', 'Slider Settings')
+    ->set_priority('high')
+    ->or_where('post_type', '=', 'teams')
+    ->add_fields(
+        array(
+            Field::make('text', 'position', __('Position'))->set_width(50),
+            Field::make('text', 'linked_in', __('Linked In'))->set_width(50),
+        )
+    );
