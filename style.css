@@ -6396,6 +6396,8 @@ form#resources_form.searching label {
     .team-slider .swiper-slide .content-box .desc {
       color: #06263f;
       font-size: 16px; }
+      .team-slider .swiper-slide .content-box .desc p:last-child {
+        margin-bottom: 0; }
     .team-slider .swiper-slide .content-box .socials {
       display: flex; }
       .team-slider .swiper-slide .content-box .socials a:not(:last-child) {

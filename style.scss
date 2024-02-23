@@ -8124,6 +8124,11 @@ form#resources_form {
             .desc {
                 color: #06263f;
                 font-size: 16px;
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
             }
             .socials {
                 display: flex;
