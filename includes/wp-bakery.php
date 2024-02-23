@@ -18,8 +18,8 @@ if (function_exists('vc_map')) {
         }
 
         $style = array(
-            'style-1' => 'Style 1',
-            'style-2' => 'Style 2',
+            'Style 1' => 'style-1',
+            'Style 2' => 'style-2',
         );
 
         vc_map(array(
