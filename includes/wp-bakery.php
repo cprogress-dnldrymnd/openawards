@@ -67,6 +67,15 @@ function action_team_slider($atts)
                 'terms'    => $category
             )
         );
+
+
+        $term = get_term($category, 'teams_category');
+
+
+
+        $heading = $term->name;
+    } else {
+        $heading = 'Teams';
     }
 
 
@@ -74,10 +83,14 @@ function action_team_slider($atts)
 
 ?>
     <div class="team-slider <?= $style ?>">
+        <div class="heading-box text-center">
+            <h2>
+                <?= $heading ?>
+            </h2>
+        </div>
         <div class="swiper team-swiper">
             <div class="swiper-wrapper">
                 <?php foreach ($teams as $team) { ?>
-
                     <?php
                     $position = carbon_get_post_meta($team->ID, 'position');
                     $linked_in = carbon_get_post_meta($team->ID, 'linked_in');
