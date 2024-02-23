@@ -8072,6 +8072,12 @@ form#resources_form {
 }
 
 .team-slider {
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+    .swiper, .swiper-wrapper {
+        position: static;
+    }
     .swiper-slide {
         .inner {
             position: relative;
