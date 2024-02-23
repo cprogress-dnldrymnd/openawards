@@ -8075,6 +8075,16 @@ form#resources_form {
     padding-left: 100px;
     padding-right: 100px;
     position: relative;
+    @media (max-width: 991px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .swiper-button-prev {
+        left: 0 !important;
+    }
+    .swiper-button-next {
+        right: 0 !important;
+    }
     .swiper-button-prev,
     .swiper-button-next {
         width: 56px;
@@ -8084,6 +8094,13 @@ form#resources_form {
         font-weight: bold;
         &:after {
             font-size: 20px;
+        }
+        @media (max-width: 991px) {
+            width: 30px;
+            height: 30px;
+            &:after {
+                font-size: 16px;
+            }
         }
     }
     .heading-box {

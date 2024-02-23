@@ -6356,6 +6356,12 @@ form#resources_form.searching label {
   padding-left: 100px;
   padding-right: 100px;
   position: relative; }
+  @media (max-width: 991px) {
+    .team-slider {
+      padding-left: 50px;
+      padding-right: 50px; } }
+  .team-slider .swiper-button-prev {
+    left: 0 !important; }
   .team-slider .swiper-button-prev,
   .team-slider .swiper-button-next {
     width: 56px;
@@ -6366,6 +6372,14 @@ form#resources_form.searching label {
     .team-slider .swiper-button-prev:after,
     .team-slider .swiper-button-next:after {
       font-size: 20px; }
+    @media (max-width: 991px) {
+      .team-slider .swiper-button-prev,
+      .team-slider .swiper-button-next {
+        width: 30px;
+        height: 30px; }
+        .team-slider .swiper-button-prev:after,
+        .team-slider .swiper-button-next:after {
+          font-size: 16px; } }
   .team-slider .heading-box {
     margin-bottom: 40px; }
     .team-slider .heading-box h2 {
