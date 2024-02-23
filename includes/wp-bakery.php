@@ -125,7 +125,7 @@ function action_team_slider($atts)
                             </div>
 
                         </div>
-                        <?php if ($style == 'style-3' && $position) { ?>
+                        <?php if ($style != 'style-3' && $position) { ?>
                             <div class="position">
                                 <?= $position ?>
                             </div>
