@@ -6449,13 +6449,14 @@ form#resources_form.searching label {
     background-color: var(--opal-black); }
     .team-slider.style-2 .heading-box h2 {
       color: var(--white-color); }
-    .team-slider.style-2 .swiper-slide {
+    .team-slider.style-2 .swiper-slide .position {
       color: var(--white-color); }
-      .team-slider.style-2 .swiper-slide .content-box {
-        background-color: var(--blush-pink); }
-        .team-slider.style-2 .swiper-slide .content-box .name, .team-slider.style-2 .swiper-slide .content-box .desc {
-          color: var(--white-color); }
-        .team-slider.style-2 .swiper-slide .content-box .socials svg path {
-          fill: var(--white-color); }
+    .team-slider.style-2 .swiper-slide .content-box {
+      background-color: var(--blush-pink); }
+      .team-slider.style-2 .swiper-slide .content-box .name,
+      .team-slider.style-2 .swiper-slide .content-box .desc {
+        color: var(--white-color); }
+      .team-slider.style-2 .swiper-slide .content-box .socials svg path {
+        fill: var(--white-color); }
 
 /*# sourceMappingURL=style.css.map */

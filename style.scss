@@ -8212,16 +8212,19 @@ form#resources_form {
             }
         }
         .swiper-slide {
-            color: var(--white-color);
+            .position {
+                color: var(--white-color);
+            }
             .content-box {
                 background-color: var(--blush-pink);
-                .name, .desc {
+                .name,
+                .desc {
                     color: var(--white-color);
                 }
                 .socials {
                     svg {
                         path {
-                            fill: var(--white-color)
+                            fill: var(--white-color);
                         }
                     }
                 }
