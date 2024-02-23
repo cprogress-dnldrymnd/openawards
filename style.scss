@@ -8176,16 +8176,20 @@ form#resources_form {
             }
         }
 
+      
+    }
+    &.style-1,
+    &.style-2 {
         .position {
             font-family: var(--primary-font);
             font-size: 26px;
             font-weight: 600;
             color: var(--black-color);
             margin-top: 1rem;
+            @media(max-width: 991px) {
+                font-size: 20px;
+            }
         }
-    }
-    &.style-1,
-    &.style-2 {
         .inner {
             border-radius: 10px;
         }
@@ -8276,7 +8280,6 @@ form#resources_form {
             }
             .position {
                 font-size: 20px;
-                margin-top: 0;
             }
         }
     }

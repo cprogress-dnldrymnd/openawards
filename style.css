@@ -6431,12 +6431,15 @@ form#resources_form.searching label {
       position: absolute;
       left: 0;
       top: 0; }
-  .team-slider .swiper-slide .position {
+  .team-slider.style-1 .position, .team-slider.style-2 .position {
     font-family: var(--primary-font);
     font-size: 26px;
     font-weight: 600;
     color: var(--black-color);
     margin-top: 1rem; }
+    @media (max-width: 991px) {
+      .team-slider.style-1 .position, .team-slider.style-2 .position {
+        font-size: 20px; } }
   .team-slider.style-1 .inner, .team-slider.style-2 .inner {
     border-radius: 10px; }
   .team-slider.style-1 .swiper-slide .content-box, .team-slider.style-2 .swiper-slide .content-box {
@@ -6489,7 +6492,6 @@ form#resources_form.searching label {
   .team-slider.style-3 .swiper-slide .name {
     margin-bottom: 0; }
   .team-slider.style-3 .swiper-slide .position {
-    font-size: 20px;
-    margin-top: 0; }
+    font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */
