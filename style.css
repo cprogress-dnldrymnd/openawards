@@ -6356,6 +6356,13 @@ form#resources_form.searching label {
   padding-left: 100px;
   padding-right: 100px;
   position: relative; }
+  .team-slider .heading-box {
+    margin-bottom: 40px; }
+    .team-slider .heading-box h2 {
+      font-weight: 600; }
+      @media (min-width: 1400px) {
+        .team-slider .heading-box h2 {
+          font-size: 40px; } }
   .team-slider .swiper,
   .team-slider .swiper-wrapper {
     position: static; }

@@ -8075,6 +8075,15 @@ form#resources_form {
     padding-left: 100px;
     padding-right: 100px;
     position: relative;
+    .heading-box {
+        margin-bottom: 40px;
+        h2 {
+            font-weight: 600;
+            @media (min-width: 1400px) {
+                font-size: 40px;
+            }
+        }
+    }
     .swiper,
     .swiper-wrapper {
         position: static;
