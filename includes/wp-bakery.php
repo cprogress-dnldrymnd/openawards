@@ -53,7 +53,7 @@ function action_team_slider($atts)
     ob_start();
     extract(shortcode_atts(array(
         'category' => 'all',
-        'param_name' => 'style-1',
+        'style' => 'style-1',
     ), $atts));
 
     $args['post_type'] = 'teams';
@@ -73,7 +73,7 @@ function action_team_slider($atts)
     $teams = get_posts($args);
 
 ?>
-    <div class="team-slider">
+    <div class="team-slider <?= $style ?>">
         <div class="swiper team-swiper">
             <div class="swiper-wrapper">
 
