@@ -8152,11 +8152,7 @@ form#resources_form {
                 top: 0;
             }
         }
-        &:hover {
-            .content-box {
-                opacity: 1;
-            }
-        }
+
         .position {
             font-family: var(--primary-font);
             font-size: 26px;
@@ -8167,29 +8163,36 @@ form#resources_form {
     }
     &.style-1,
     &.style-2 {
-        .content-box {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 10px;
-            opacity: 0;
-            transition: 500ms;
-            border: 1px solid var(--high-violet);
-            padding: 30px;
-
-            &:before {
-                content: "";
-                width: 100%;
-                height: 155px;
-                display: block;
+        .swiper-slider {
+            .content-box {
                 position: absolute;
+                left: 0;
                 top: 0;
                 right: 0;
-                background-size: 300px;
-                background-position: 95px -78px;
-                background-repeat: no-repeat;
+                bottom: 0;
+                border-radius: 10px;
+                opacity: 0;
+                transition: 500ms;
+                border: 1px solid var(--high-violet);
+                padding: 30px;
+
+                &:before {
+                    content: "";
+                    width: 100%;
+                    height: 155px;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-size: 300px;
+                    background-position: 95px -78px;
+                    background-repeat: no-repeat;
+                }
+            }
+            &:hover {
+                .content-box {
+                    opacity: 1;
+                }
             }
         }
     }
