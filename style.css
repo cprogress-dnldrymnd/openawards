@@ -6362,6 +6362,8 @@ form#resources_form.searching label {
       padding-right: 50px; } }
   .team-slider .swiper-button-prev {
     left: 0 !important; }
+  .team-slider .swiper-button-next {
+    right: 0 !important; }
   .team-slider .swiper-button-prev,
   .team-slider .swiper-button-next {
     width: 56px;
