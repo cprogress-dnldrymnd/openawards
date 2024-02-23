@@ -8108,6 +8108,14 @@ form#resources_form {
                 font-size: 16px;
 
             }
+            .socials {
+                display: flex;
+                a {
+                    &:not(:last-child) {
+                        margin-right: 1rem;
+                    }
+                }
+            }
             > div {
                 &:not(:last-child) {
                     margin-bottom: 1rem;
