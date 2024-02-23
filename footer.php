@@ -100,8 +100,8 @@
 
     var $id = 'swiper' + $key;
     var $id = new Swiper(".team-swiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
+      slidesPerView: 4,
+      spaceBetween: 40,
       loop: true,
       pagination: {
         el: ".swiper-pagination",

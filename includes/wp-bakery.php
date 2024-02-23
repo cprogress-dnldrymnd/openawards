@@ -78,7 +78,17 @@ function action_team_slider($atts)
             <div class="swiper-wrapper">
                 <?php foreach ($teams as $team) { ?>
                     <div class="swiper-slide">
-                        <?= $team->post_title ?>
+                        <div class="content-box">
+                            <div class="name">
+                                <?= $team->post_title ?>
+                            </div>
+                            <div class="desc">
+                                <?= wpautop($team->post_content) ?>
+                            </div>
+                        </div>
+                        <div class="image-box">
+                            <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" alt="<?= $team->post_title ?>">
+                        </div>
                     </div>
                 <?php } ?>
             </div>
