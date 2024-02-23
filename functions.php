@@ -76,6 +76,7 @@ require_once('includes/post-types.php');
 require_once('includes/shortcodes.php');
 require_once('includes/woocommerce.php');
 require_once('includes/ajax.php');
+require_once('includes/wp-bakery.php');
 
 /*-----------------------------------------------------------------------------------*/
 /* Enqueue Styles and Scripts
