@@ -105,6 +105,11 @@ function action_team_slider($atts)
                                 <div class="name">
                                     <?= $team->post_title ?>
                                 </div>
+                                <?php if ($style == 'style-3' && $position) { ?>
+                                    <div class="position">
+                                        <?= $position ?>
+                                    </div>
+                                <?php } ?>
                                 <div class="desc">
                                     <?= wpautop($team->post_content) ?>
                                 </div>
@@ -120,10 +125,11 @@ function action_team_slider($atts)
                             </div>
 
                         </div>
-
-                        <div class="position">
-                            <?= $position ?>
-                        </div>
+                        <?php if ($style == 'style-3' && $position) { ?>
+                            <div class="position">
+                                <?= $position ?>
+                            </div>
+                        <?php } ?>
                     </div>
                 <?php } ?>
             </div>

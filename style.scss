@@ -8108,15 +8108,11 @@ form#resources_form {
 
         .content-box {
             z-index: 2;
-            opacity: 0;
-            transition: 500ms;
             background-color: var(--white-color);
-            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: flex-start;
-            border: 1px solid var(--high-violet);
             .name {
                 font-family: var(--primary-font);
                 font-size: 26px;
@@ -8178,6 +8174,11 @@ form#resources_form {
             right: 0;
             bottom: 0;
             border-radius: 10px;
+            opacity: 0;
+            transition: 500ms;
+            border: 1px solid var(--high-violet);
+            padding: 30px;
+
             &:before {
                 content: "";
                 width: 100%;

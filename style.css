@@ -6382,15 +6382,11 @@ form#resources_form.searching label {
     overflow: hidden; }
   .team-slider .swiper-slide .content-box {
     z-index: 2;
-    opacity: 0;
-    transition: 500ms;
     background-color: var(--white-color);
-    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
-    border: 1px solid var(--high-violet); }
+    align-items: flex-start; }
     .team-slider .swiper-slide .content-box .name {
       font-family: var(--primary-font);
       font-size: 26px;
@@ -6430,7 +6426,11 @@ form#resources_form.searching label {
     top: 0;
     right: 0;
     bottom: 0;
-    border-radius: 10px; }
+    border-radius: 10px;
+    opacity: 0;
+    transition: 500ms;
+    border: 1px solid var(--high-violet);
+    padding: 30px; }
     .team-slider.style-1 .content-box:before, .team-slider.style-2 .content-box:before {
       content: "";
       width: 100%;
