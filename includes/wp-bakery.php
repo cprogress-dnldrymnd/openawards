@@ -9,11 +9,18 @@ if (function_exists('vc_map')) {
             'hide_empty' => false,
         ));
 
-        $arr = array();
+        $category = array();
+
+        $category['all'] = 'All';
 
         foreach ($terms as $term) {
             $arr[$term->term_id] = $term->name;
         }
+
+        $style = array(
+            'style-1' => 'Style 1',
+            'style-2' => 'Style 2',
+        );
 
         vc_map(array(
             "name" => "Team Slider",
@@ -24,8 +31,16 @@ if (function_exists('vc_map')) {
                     "type" => "dropdown",
                     "heading" => "Category",
                     "param_name" => "category",
-                    "value" => $arr,
+                    "value" => $category,
                     "description" => "Select the team category you want to display."
+                ),
+
+                array(
+                    "type" => "dropdown",
+                    "heading" => "Style",
+                    "param_name" => "style",
+                    "value" => $style,
+                    "description" => "Select the team category style."
                 ),
             )
 
