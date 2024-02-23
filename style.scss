@@ -8076,7 +8076,6 @@ form#resources_form {
         padding: 60% 0;
         border-radius: 10px;
         overflow: hidden;
-        .image-box,
         .content-box {
             position: absolute;
             left: 0;
@@ -8092,7 +8091,9 @@ form#resources_form {
         }
 
         .image-box {
+            position: relative;
             z-index: 1;
+            padding: 60%;
             img {
                 width: 100%;
                 height: 100%;
