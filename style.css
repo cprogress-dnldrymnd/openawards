@@ -6459,5 +6459,7 @@ form#resources_form.searching label {
         fill: var(--white-color); }
   .team-slider.style-3 .swiper-slide .image-box {
     margin-bottom: 1rem; }
+  .team-slider.style-3 .swiper-slide .position {
+    font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */
