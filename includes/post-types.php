@@ -216,3 +216,16 @@ $Team->exclude_from_search = true;
 $Team->publicly_queryable = false;
 $Team->show_in_admin_bar = false;
 $Team->has_archive = false;
+
+
+$Events_Category = new newTaxonomy();
+$Events_Category->taxonomy = 'teams_category';
+$Events_Category->post_type = 'teams';
+$Events_Category->args = array(
+    'label'        => 'Teams Categories',
+    'rewrite'      => array('slug' => 'teams-category'),
+    'hierarchical' => true,
+    'query_var'    => false,
+    'has_archive'  => false,
+    'show_in_rest' => false,
+);
