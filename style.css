@@ -6464,7 +6464,10 @@ form#resources_form.searching label {
         fill: var(--white-color); }
   .team-slider.style-3 .swiper-slide .image-box {
     margin-bottom: 1rem; }
+  .team-slider.style-3 .swiper-slide .name {
+    margin-bottom: 0; }
   .team-slider.style-3 .swiper-slide .position {
-    font-size: 20px; }
+    font-size: 20px;
+    margin-top: 0; }
 
 /*# sourceMappingURL=style.css.map */

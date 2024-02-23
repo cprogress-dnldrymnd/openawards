@@ -8246,8 +8246,12 @@ form#resources_form {
             .image-box {
                 margin-bottom: 1rem;
             }
+            .name {
+                margin-bottom: 0;
+            }
             .position {
                 font-size: 20px;
+                margin-top: 0;
             }
         }
     }
