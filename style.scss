@@ -8105,17 +8105,8 @@ form#resources_form {
             border-radius: 10px;
             overflow: hidden;
         }
-        .content-box {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 10px;
-        }
 
         .content-box {
-            content: "";
             z-index: 2;
             opacity: 0;
             transition: 500ms;
@@ -8181,6 +8172,12 @@ form#resources_form {
     &.style-1,
     &.style-2 {
         .content-box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
             &:before {
                 content: "";
                 width: 100%;
@@ -8228,6 +8225,13 @@ form#resources_form {
                         }
                     }
                 }
+            }
+        }
+    }
+    &.style-3 {
+        .swiper-slide {
+            .image-box {
+                margin-bottom: 1rem;
             }
         }
     }

@@ -98,6 +98,9 @@ function action_team_slider($atts)
                     ?>
                     <div class="swiper-slide">
                         <div class="inner">
+                            <div class="image-box">
+                                <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" alt="<?= $team->post_title ?>">
+                            </div>
                             <div class="content-box">
                                 <div class="name">
                                     <?= $team->post_title ?>
@@ -115,9 +118,7 @@ function action_team_slider($atts)
                                     <?php } ?>
                                 </div>
                             </div>
-                            <div class="image-box">
-                                <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" alt="<?= $team->post_title ?>">
-                            </div>
+
                         </div>
 
                         <div class="position">
