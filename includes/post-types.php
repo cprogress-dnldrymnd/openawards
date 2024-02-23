@@ -205,3 +205,14 @@ function change_sortable_columns($columns){
 }
 
 
+
+
+$Team = new newPostType();
+$Team->name = 'Teams';
+$Team->singular_name = 'Team';
+$Team->icon = 'dashicons-groups';
+$Team->supports = array('title', 'revisions', 'thumbnail');
+$Team->exclude_from_search = true;
+$Team->publicly_queryable = false;
+$Team->show_in_admin_bar = false;
+$Team->has_archive = false;
