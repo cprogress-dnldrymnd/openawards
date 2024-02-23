@@ -8218,6 +8218,13 @@ form#resources_form {
                 .name, .desc {
                     color: var(--white-color);
                 }
+                .socials {
+                    svg {
+                        path {
+                            fill: var(--white-color)
+                        }
+                    }
+                }
             }
         }
     }
