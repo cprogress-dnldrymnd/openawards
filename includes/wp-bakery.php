@@ -50,12 +50,42 @@ if (function_exists('vc_map')) {
 
 function action_team_slider($atts)
 {
+    ob_start();
     extract(shortcode_atts(array(
-        'button_text' => 'Click Me',
-        'button_color' => '#ff9900',
+        'category' => 'all',
+        'param_name' => 'style-1',
     ), $atts));
 
-    $output = 'xxxxxxxxxxxxxxxxx';
-    return $output;
+    $args['post_type'] = 'teams';
+    $args['posts_per_page'] = -1;
+
+    if ($category != 'all') {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'teams_category',
+                'field'    => 'term_id',
+                'terms'    => $category
+            )
+        );
+    }
+
+
+    $teams = get_posts($args);
+
+?>
+    <div class="team-slider">
+        <div class="swiper team-swiper">
+            <div class="swiper-wrapper">
+
+                <?php foreach ($teams as $team) { ?>
+                    <div class="swiper-slide">
+                        <?= $team->post_title ?>
+                    </div>
+                    <?php } ?>>
+            </div>
+        </div>
+    </div>
+<?php
+    return ob_get_clean();
 }
 add_shortcode('team_slider', 'action_team_slider');
