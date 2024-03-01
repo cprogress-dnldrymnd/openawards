@@ -8343,7 +8343,7 @@ form#resources_form {
                 }
                 &.btn-primary {
                     background-color: var(--high-violet);
-                    @include on-event {
+                    &:hover {
                         background-color: var(--purple-heather);
                     }
                 }
