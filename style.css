@@ -6575,6 +6575,13 @@ form#resources_form.searching label {
   box-shadow: none; }
   #applyModal .wpcf7 .form-label {
     margin-bottom: 0; }
+  #applyModal .wpcf7 textarea {
+    height: 100px; }
+  #applyModal .wpcf7 .form-group-checkbox p {
+    display: flex; }
+    #applyModal .wpcf7 .form-group-checkbox p .wpcf7-list-item {
+      margin-left: 0;
+      margin-right: 1rem; }
   #applyModal .wpcf7 .form-file {
     position: relative; }
     #applyModal .wpcf7 .form-file .fake-input {

@@ -8394,6 +8394,18 @@ form#resources_form {
         .form-label {
             margin-bottom: 0;
         }
+        textarea {
+            height: 100px;
+        }
+        .form-group-checkbox {
+            p{
+                display: flex;
+                .wpcf7-list-item {
+                    margin-left: 0;
+                    margin-right: 1rem;
+                }
+            }
+        }
         .form-file {
             position: relative;
             .fake-input {
