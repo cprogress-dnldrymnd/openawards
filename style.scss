@@ -8397,6 +8397,7 @@ form#resources_form {
         .form-file {
             position: relative;
             .fake-input {
+                min-height: 54px;
                 border: 1px solid #cccccc;
                 padding: 15px;
                 border-radius: 5px;

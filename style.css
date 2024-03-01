@@ -6578,6 +6578,7 @@ form#resources_form.searching label {
   #applyModal .wpcf7 .form-file {
     position: relative; }
     #applyModal .wpcf7 .form-file .fake-input {
+      min-height: 54px;
       border: 1px solid #cccccc;
       padding: 15px;
       border-radius: 5px;
