@@ -8443,9 +8443,22 @@ form#resources_form {
             color: var(--high-violet);
         }
     }
+    .top-content {
+        border-bottom: 1px solid var(--purple);
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+    p:last-child {
+        margin-bottom: 0 !important;
+    }
     .main-content {
         font-size: 26px;
-        h1,h2,h3,h4,h5,h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: var(--high-violet);
             font-weight: 600;
         }
@@ -8455,11 +8468,12 @@ form#resources_form {
         strong {
             font-weight: 600;
         }
-        ul,ol {
+        ul,
+        ol {
             color: #333;
         }
         p {
-            color: #5B5B5B;
+            color: #5b5b5b;
         }
         > * {
             &:not(:last-child) {

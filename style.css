@@ -6612,19 +6612,31 @@ form#resources_form.searching label {
     font-weight: 600; }
     .single-jobs .meta-details-box .meta-label {
       color: var(--high-violet); }
+  .single-jobs .top-content {
+    border-bottom: 1px solid var(--purple);
+    margin-bottom: 40px;
+    padding-bottom: 40px; }
+  .single-jobs p:last-child {
+    margin-bottom: 0 !important; }
   .single-jobs .main-content {
     font-size: 26px; }
-    .single-jobs .main-content h1, .single-jobs .main-content h2, .single-jobs .main-content h3, .single-jobs .main-content h4, .single-jobs .main-content h5, .single-jobs .main-content h6 {
+    .single-jobs .main-content h1,
+    .single-jobs .main-content h2,
+    .single-jobs .main-content h3,
+    .single-jobs .main-content h4,
+    .single-jobs .main-content h5,
+    .single-jobs .main-content h6 {
       color: var(--high-violet);
       font-weight: 600; }
     .single-jobs .main-content h4 {
       font-size: 26px; }
     .single-jobs .main-content strong {
       font-weight: 600; }
-    .single-jobs .main-content ul, .single-jobs .main-content ol {
+    .single-jobs .main-content ul,
+    .single-jobs .main-content ol {
       color: #333; }
     .single-jobs .main-content p {
-      color: #5B5B5B; }
+      color: #5b5b5b; }
     .single-jobs .main-content > *:not(:last-child) {
       margin-bottom: 2rem; }
 
