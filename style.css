@@ -6522,7 +6522,8 @@ form#resources_form.searching label {
   .job-wrapper .job-holder .body .description,
   .job-wrapper .job-holder .body .accordion-body {
     font-size: 18px;
-    font-weight: 400; }
+    font-weight: 400;
+    color: #5B5B5B; }
   .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button {
     color: #333333;
     font-size: 26px;
@@ -6540,6 +6541,7 @@ form#resources_form.searching label {
       .job-wrapper .job-holder .footer .btn.btn-link {
         color: var(--high-violet); }
       .job-wrapper .job-holder .footer .btn.btn-primary {
+        border-color: var(--high-violet);
         background-color: var(--high-violet); }
         .job-wrapper .job-holder .footer .btn.btn-primary:hover {
           background-color: var(--purple-heather); }

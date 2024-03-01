@@ -8320,6 +8320,7 @@ form#resources_form {
             .accordion-body {
                 font-size: 18px;
                 font-weight: 400;
+                color: #5B5B5B;
             }
             .accordion-holder .accordion-item .accordion-header .accordion-button {
                 color: #333333;
@@ -8342,6 +8343,7 @@ form#resources_form {
                     color: var(--high-violet);
                 }
                 &.btn-primary {
+                    border-color: var(--high-violet);
                     background-color: var(--high-violet);
                     &:hover {
                         background-color: var(--purple-heather);
