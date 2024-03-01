@@ -6635,7 +6635,7 @@ form#resources_form.searching label {
   .single-jobs .main-content {
     font-size: 26px; }
     .single-jobs .main-content a {
-      text-decoration: underline;
+      text-decoration: underline !important;
       color: var(--high-violet); }
     .single-jobs .main-content h1,
     .single-jobs .main-content h2,
