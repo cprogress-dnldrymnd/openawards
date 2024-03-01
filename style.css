@@ -6606,9 +6606,10 @@ form#resources_form.searching label {
       border-radius: 0 0 0 10px; }
       .single-jobs .jobs-buttons .btn-link:hover {
         background-color: var(--purple-heather);
-        color: var(--white-color); }
+        color: var(--white-color);
+        border-color: var(--purple-heather); }
     .single-jobs .jobs-buttons .btn-primary {
-      border-radius: 0 0 10px; }
+      border-radius: 0 0 10px 0; }
   .single-jobs .salary-box {
     font-size: 34px;
     color: var(--high-violet);
