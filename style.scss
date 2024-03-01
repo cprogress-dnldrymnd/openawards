@@ -8472,6 +8472,10 @@ form#resources_form {
     }
     .main-content {
         font-size: 26px;
+        a {
+            text-decoration: underline;
+            color: var(--high-violet);
+        }
         h1,
         h2,
         h3,

@@ -6633,6 +6633,9 @@ form#resources_form.searching label {
     margin-bottom: 0 !important; }
   .single-jobs .main-content {
     font-size: 26px; }
+    .single-jobs .main-content a {
+      text-decoration: underline;
+      color: var(--high-violet); }
     .single-jobs .main-content h1,
     .single-jobs .main-content h2,
     .single-jobs .main-content h3,
