@@ -6544,7 +6544,8 @@ form#resources_form.searching label {
         border-color: var(--high-violet);
         background-color: var(--high-violet); }
         .job-wrapper .job-holder .footer .btn.btn-primary:hover {
-          background-color: var(--purple-heather); }
+          background-color: var(--purple-heather);
+          border-color: var(--purple-heather); }
 
 .jobs-title-section {
   font-family: var(--primary-font); }

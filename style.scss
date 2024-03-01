@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 /*
 Theme Name: Open Awards
 Author: Tecniqode
@@ -8320,7 +8320,7 @@ form#resources_form {
             .accordion-body {
                 font-size: 18px;
                 font-weight: 400;
-                color: #5B5B5B;
+                color: #5b5b5b;
             }
             .accordion-holder .accordion-item .accordion-header .accordion-button {
                 color: #333333;
@@ -8347,6 +8347,7 @@ form#resources_form {
                     background-color: var(--high-violet);
                     &:hover {
                         background-color: var(--purple-heather);
+                        border-color: var(--purple-heather);
                     }
                 }
             }
@@ -8355,7 +8356,7 @@ form#resources_form {
 }
 .jobs-title-section {
     font-family: var(--primary-font);
-    .description-box{ 
+    .description-box {
         font-size: 18px;
         counter-reset: #707070;
     }
