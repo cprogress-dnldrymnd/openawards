@@ -8423,6 +8423,24 @@ form#resources_form {
 
 .single-jobs {
     font-family: var(--primary-font);
+    .jobs-buttons {
+        margin-top: 60px;
+        .row {
+            --bs-gutter-x: 0;
+        }
+        .btn-link {
+            border: 1px solid;
+            border-radius: 0 0 0 10px;
+
+            &:hover {
+                background-color: var(--purple-heather);
+                color: var(--white-color);
+            }
+        }
+        .btn-primary {
+            border-radius: 0 0 10px 0;
+        }
+    }
     .salary-box {
         font-size: 34px;
         color: var(--high-violet);

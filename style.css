@@ -6597,6 +6597,18 @@ form#resources_form.searching label {
 
 .single-jobs {
   font-family: var(--primary-font); }
+  .single-jobs .jobs-buttons {
+    margin-top: 60px; }
+    .single-jobs .jobs-buttons .row {
+      --bs-gutter-x: 0; }
+    .single-jobs .jobs-buttons .btn-link {
+      border: 1px solid;
+      border-radius: 0 0 0 10px; }
+      .single-jobs .jobs-buttons .btn-link:hover {
+        background-color: var(--purple-heather);
+        color: var(--white-color); }
+    .single-jobs .jobs-buttons .btn-primary {
+      border-radius: 0 0 10px; }
   .single-jobs .salary-box {
     font-size: 34px;
     color: var(--high-violet);
