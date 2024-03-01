@@ -8308,10 +8308,19 @@ form#resources_form {
             }
             .salary {
                 font-size: 34px;
-                color: #A7A7A6;
+                color: #a7a7a6;
             }
             .location {
                 color: var(--high-violet);
+                font-size: 23px;
+            }
+            .description,
+            .accordion-body {
+                font-size: 18px;
+            }
+            .job-wrapper .career-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button {
+                color: #333333;
+                font-size: 26px;
             }
         }
     }
