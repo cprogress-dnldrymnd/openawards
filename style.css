@@ -6595,4 +6595,32 @@ form#resources_form.searching label {
   #applyModal .wpcf7 br {
     display: none; }
 
+.single-jobs {
+  font-family: var(--primary-font); }
+  .single-jobs .salary-box {
+    font-size: 34px;
+    color: var(--high-violet);
+    margin-bottom: 2rem; }
+  .single-jobs .title-box {
+    margin-bottom: 2rem; }
+    .single-jobs .title-box h2 {
+      font-size: 42px;
+      font-weight: bold;
+      color: #333333; }
+  .single-jobs .meta-details-box {
+    font-size: 26px; }
+  .single-jobs .main-content {
+    font-size: 26px; }
+    .single-jobs .main-content h1, .single-jobs .main-content h2, .single-jobs .main-content h3, .single-jobs .main-content h4, .single-jobs .main-content h5, .single-jobs .main-content h6 {
+      color: var(--high-violet);
+      font-weight: 600; }
+    .single-jobs .main-content strong {
+      font-weight: 600; }
+    .single-jobs .main-content ul, .single-jobs .main-content ol {
+      color: #333; }
+    .single-jobs .main-content p {
+      color: #5B5B5B; }
+    .single-jobs .main-content > *:not(:last-child) {
+      margin-bottom: 2rem; }
+
 /*# sourceMappingURL=style.css.map */
