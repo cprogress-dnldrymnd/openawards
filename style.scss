@@ -8321,6 +8321,9 @@ form#resources_form {
             .job-wrapper .career-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button {
                 color: #333333;
                 font-size: 26px;
+                svg {
+                    color: va(--high-violet);
+                }
             }
         }
     }
