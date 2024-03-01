@@ -6508,21 +6508,23 @@ form#resources_form.searching label {
 
 .job-wrapper {
   font-family: var(--primary-font); }
-  .job-wrapper .career-holder .body .job-title h3 {
+  .job-wrapper .job-holder .body .job-title h3 {
     font-size: 42px;
     color: #333333; }
-  .job-wrapper .career-holder .body .salary {
+  .job-wrapper .job-holder .body .salary {
     font-size: 34px;
     color: #a7a7a6; }
-  .job-wrapper .career-holder .body .location {
+  .job-wrapper .job-holder .body .location {
     color: var(--high-violet);
     font-size: 23px; }
-  .job-wrapper .career-holder .body .description,
-  .job-wrapper .career-holder .body .accordion-body {
-    font-size: 18px; }
-  .job-wrapper .career-holder .body .job-wrapper .career-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button {
-    padding: 0;
+  .job-wrapper .job-holder .body .description,
+  .job-wrapper .job-holder .body .accordion-body {
+    font-size: 18px;
+    font-weight: 400; }
+  .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button {
     color: #333333;
     font-size: 26px; }
+    .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button svg {
+      color: va(--high-violet); }
 
 /*# sourceMappingURL=style.css.map */
