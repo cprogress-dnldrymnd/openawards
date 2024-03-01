@@ -8357,10 +8357,12 @@ form#resources_form {
     font-family: var(--primary-font);
     .description-box{ 
         font-size: 18px;
+        counter-reset: #707070;
     }
     h1 {
         color: var(--black-color);
         font-size: 69px;
+        font-weight: bold;
     }
 }
 #jobs-main {
