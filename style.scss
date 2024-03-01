@@ -8376,3 +8376,32 @@ form#resources_form {
     font-family: var(--primary-font);
     font-weight: 300;
 }
+
+#applyModal {
+    .modal-title {
+        margin-bottom: 2rem;
+    }
+    .wpcf7 {
+        padding: 0;
+        box-shadow: none;
+        .form-label {
+            margin-bottom: 0;
+        }
+        .form-file {
+            .select-file {
+                position: absolute;
+                right: 0;
+                bottom: 20px;
+                text-decoration: underline;
+                color: $accent-color;
+                cursor: pointer;
+            }
+            .wpcf7-form-control-wrap {
+                display: none;
+            }
+        }
+        br {
+            display: none;
+        }
+    }
+}
