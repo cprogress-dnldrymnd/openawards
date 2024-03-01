@@ -6561,4 +6561,8 @@ form#resources_form.searching label {
   background-position: top right;
   background-repeat: no-repeat; }
 
+.filter-wrapper {
+  font-family: var(--primary-font);
+  font-weight: 300; }
+
 /*# sourceMappingURL=style.css.map */
