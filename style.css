@@ -6573,14 +6573,23 @@ form#resources_form.searching label {
   box-shadow: none; }
   #applyModal .wpcf7 .form-label {
     margin-bottom: 0; }
-  #applyModal .wpcf7 .form-file .select-file {
-    position: absolute;
-    right: 0;
-    bottom: 20px;
-    text-decoration: underline;
-    cursor: pointer; }
-  #applyModal .wpcf7 .form-file .wpcf7-form-control-wrap {
-    display: none; }
+  #applyModal .wpcf7 .form-file {
+    position: relative; }
+    #applyModal .wpcf7 .form-file .fake-input {
+      border: 1px solid #cccccc;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+      display: block; }
+    #applyModal .wpcf7 .form-file .select-file {
+      position: absolute;
+      right: 10px;
+      bottom: 16px;
+      text-decoration: underline;
+      cursor: pointer; }
+    #applyModal .wpcf7 .form-file .wpcf7-form-control-wrap {
+      display: none; }
   #applyModal .wpcf7 br {
     display: none; }
 
