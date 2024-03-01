@@ -52,20 +52,17 @@ function get_resource_image($resource_type, $resource_thumbnail)
 	if ($resource_type == 'Brochure') {
 
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-3.jpg"/>';
-	}
-	else if ($resource_type == 'Technical Data') {
+	} else if ($resource_type == 'Technical Data') {
 
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-1.jpg"/>';
-	}
-	else {
+	} else {
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-2.jpg"/>';
 	}
 
 	if ($resource_thumbnail) {
 
 		$return = '<img src="' . wp_get_attachment_image_url($resource_thumbnail, 'large') . '"/>';
-	}
-	else {
+	} else {
 		$return = $thumb;
 	}
 
@@ -428,8 +425,9 @@ function tissue_paper_register_custom_fields()
 
 
 
-function action_jobs_before_main_content() {
-	return get_template_part('template-parts/page', 'breadcrumbs');
+function action_jobs_before_main_content()
+{
+	get_template_part('template-parts/page', 'breadcrumbs');
 }
 
 add_action('jobs_before_main_content', 'action_jobs_before_main_content');
