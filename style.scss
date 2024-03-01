@@ -8299,11 +8299,19 @@ form#resources_form {
 }
 
 .job-wrapper {
+    font-family: var(--primary-font);
     .career-holder {
         .body {
             .job-title h3 {
                 font-size: 42px;
                 color: #333333;
+            }
+            .salary {
+                font-size: 34px;
+                color: #A7A7A6;
+            }
+            .location {
+                color: var(--high-violet);
             }
         }
     }
