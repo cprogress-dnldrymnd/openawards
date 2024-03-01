@@ -6535,18 +6535,19 @@ form#resources_form.searching label {
       color: var(--high-violet); }
   .job-wrapper .job-holder .footer {
     border-top: 1px solid var(--high-violet); }
-    .job-wrapper .job-holder .footer .btn {
-      font-size: 23px;
-      letter-spacing: 0.57px;
-      padding: 30px 24px; }
-      .job-wrapper .job-holder .footer .btn.btn-link {
-        color: var(--high-violet); }
-      .job-wrapper .job-holder .footer .btn.btn-primary {
-        border-color: var(--high-violet);
-        background-color: var(--high-violet); }
-        .job-wrapper .job-holder .footer .btn.btn-primary:hover {
-          background-color: var(--purple-heather);
-          border-color: var(--purple-heather); }
+
+.jobs-buttons .btn {
+  font-size: 23px;
+  letter-spacing: 0.57px;
+  padding: 30px 24px; }
+  .jobs-buttons .btn.btn-link {
+    color: var(--high-violet); }
+  .jobs-buttons .btn.btn-primary {
+    border-color: var(--high-violet);
+    background-color: var(--high-violet); }
+    .jobs-buttons .btn.btn-primary:hover {
+      background-color: var(--purple-heather);
+      border-color: var(--purple-heather); }
 
 .jobs-title-section {
   font-family: var(--primary-font); }

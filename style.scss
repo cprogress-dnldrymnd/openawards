@@ -8337,22 +8337,24 @@ form#resources_form {
         }
         .footer {
             border-top: 1px solid var(--high-violet);
+        }
+    }
+}
 
-            .btn {
-                font-size: 23px;
-                letter-spacing: 0.57px;
-                padding: 30px 24px;
-                &.btn-link {
-                    color: var(--high-violet);
-                }
-                &.btn-primary {
-                    border-color: var(--high-violet);
-                    background-color: var(--high-violet);
-                    &:hover {
-                        background-color: var(--purple-heather);
-                        border-color: var(--purple-heather);
-                    }
-                }
+.jobs-buttons {
+    .btn {
+        font-size: 23px;
+        letter-spacing: 0.57px;
+        padding: 30px 24px;
+        &.btn-link {
+            color: var(--high-violet);
+        }
+        &.btn-primary {
+            border-color: var(--high-violet);
+            background-color: var(--high-violet);
+            &:hover {
+                background-color: var(--purple-heather);
+                border-color: var(--purple-heather);
             }
         }
     }
