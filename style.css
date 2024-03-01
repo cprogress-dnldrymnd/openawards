@@ -6513,17 +6513,20 @@ form#resources_form.searching label {
     color: #333333; }
   .job-wrapper .job-holder .body .salary {
     font-size: 34px;
-    color: #a7a7a6; }
+    color: #a7a7a6;
+    font-weight: 300; }
   .job-wrapper .job-holder .body .location {
     color: var(--high-violet);
-    font-size: 23px; }
+    font-size: 23px;
+    font-weight: 300; }
   .job-wrapper .job-holder .body .description,
   .job-wrapper .job-holder .body .accordion-body {
     font-size: 18px;
     font-weight: 400; }
   .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button {
     color: #333333;
-    font-size: 26px; }
+    font-size: 26px;
+    font-weight: 600; }
     .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button svg {
       color: va(--high-violet); }
 

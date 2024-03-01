@@ -8309,10 +8309,12 @@ form#resources_form {
             .salary {
                 font-size: 34px;
                 color: #a7a7a6;
+                font-weight: 300;
             }
             .location {
                 color: var(--high-violet);
                 font-size: 23px;
+                font-weight: 300;
             }
             .description,
             .accordion-body {
@@ -8322,6 +8324,7 @@ form#resources_form {
             .accordion-holder .accordion-item .accordion-header .accordion-button {
                 color: #333333;
                 font-size: 26px;
+                font-weight: 600;
                 svg {
                     color: va(--high-violet);
                 }
