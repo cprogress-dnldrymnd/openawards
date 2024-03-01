@@ -6546,4 +6546,12 @@ form#resources_form.searching label {
         .job-wrapper .job-holder .footer .btn.btn-primary:hover {
           background-color: var(--purple-heather); }
 
+.jobs-title-section {
+  font-family: var(--primary-font); }
+  .jobs-title-section .description-box {
+    font-size: 18px; }
+  .jobs-title-section h1 {
+    color: var(--black-color);
+    font-size: 16px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -8353,3 +8353,13 @@ form#resources_form {
         }
     }
 }
+.jobs-title-section {
+    font-family: var(--primary-font);
+    .description-box{ 
+        font-size: 18px;
+    }
+    h1 {
+        color: var(--black-color);
+        font-size: 16px;
+    }
+}
