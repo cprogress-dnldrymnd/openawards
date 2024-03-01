@@ -426,3 +426,10 @@ function tissue_paper_register_custom_fields()
 	require_once('includes/post-meta.php');
 }
 
+
+
+function action_jobs_before_main_content() {
+	return get_template_part('template-parts/page', 'breadcrumbs');
+}
+
+add_action('jobs_before_main_content', 'action_jobs_before_main_content');
