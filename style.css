@@ -6617,6 +6617,8 @@ form#resources_form.searching label {
     .single-jobs .main-content h1, .single-jobs .main-content h2, .single-jobs .main-content h3, .single-jobs .main-content h4, .single-jobs .main-content h5, .single-jobs .main-content h6 {
       color: var(--high-violet);
       font-weight: 600; }
+    .single-jobs .main-content h4 {
+      font-size: 26px; }
     .single-jobs .main-content strong {
       font-weight: 600; }
     .single-jobs .main-content ul, .single-jobs .main-content ol {
