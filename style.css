@@ -6528,6 +6528,6 @@ form#resources_form.searching label {
     font-size: 26px;
     font-weight: 600; }
     .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button svg {
-      color: va(--high-violet); }
+      color: var(--high-violet); }
 
 /*# sourceMappingURL=style.css.map */
