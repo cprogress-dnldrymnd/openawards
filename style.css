@@ -6508,6 +6508,9 @@ form#resources_form.searching label {
 
 .job-wrapper {
   font-family: var(--primary-font); }
+  .job-wrapper .job-holder .inner {
+    border-radius: 0 0 10px 10px;
+    overflow: hidden; }
   .job-wrapper .job-holder .body .job-title h3 {
     font-size: 42px;
     color: #333333; }
@@ -6531,9 +6534,7 @@ form#resources_form.searching label {
     .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button svg {
       color: var(--high-violet); }
   .job-wrapper .job-holder .footer {
-    border-top: 1px solid var(--high-violet);
-    border-radius: 0 0 10px 10px;
-    overflow: hidden; }
+    border-top: 1px solid var(--high-violet); }
     .job-wrapper .job-holder .footer .btn {
       font-size: 23px;
       letter-spacing: 0.57px;
