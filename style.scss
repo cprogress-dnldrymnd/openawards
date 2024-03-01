@@ -8438,7 +8438,9 @@ form#resources_form {
     }
     .meta-details-box {
         font-size: 26px;
+        font-weight: 600;
         .meta-label {
+            color: var(--high-violet);
         }
     }
     .main-content {
