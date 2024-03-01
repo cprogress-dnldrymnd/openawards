@@ -8330,5 +8330,24 @@ form#resources_form {
                 }
             }
         }
+        .footer {
+            border-top: 1px solid var(--high-violet);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            .btn {
+                font-size: 23px;
+                letter-spacing: 0.57px;
+                padding: 30px 24px;
+                &.btn-link {
+                    color: var(--high-violet);
+                }
+                &.btn-primary {
+                    background-color: var(--high-violet);
+                    @include on-event {
+                        background-color: var(--purple-heather);
+                    }
+                }
+            }
+        }
     }
 }
