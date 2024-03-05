@@ -1416,10 +1416,10 @@ main#page-components p a:not(.btn) {
   .wpcf7 form p label {
     font-family: var(--primary-font);
     font-size: 16px;
-    color: var(--opal-black);
+    color: var(--black-color);
     display: block;
-    margin-bottom: 24px;
-    font-weight: 600; }
+    font-weight: 600;
+    font-size: 26px; }
     .wpcf7 form p label span.wpcf7-form-control-wrap {
       margin-top: 10px;
       display: block; }
@@ -1432,12 +1432,11 @@ main#page-components p a:not(.btn) {
         border-radius: 0 0 5px 5px;
         font-size: 12px; }
   .wpcf7 form p input:not([type="submit"]),
-  .wpcf7 form p .wpcf7 form p textarea {
+  .wpcf7 form p textarea {
     background-color: var(--white-color);
     border: none;
     border-radius: 0;
     font-size: 16px;
-    font-family: "Arial", sans-serif;
     border: 1px solid #cccccc;
     padding: 15px;
     border-radius: 5px;
