@@ -23,6 +23,6 @@ $client->__setSoapHeaders($header);
 
 $fcs = $client->__getFunctions();
 
-$res_FetchPropertyInfo = $client->QUBA_AddLearnerPhotoIds();
+$res_FetchPropertyInfo = $client->QUBA_AddLearnerPhotoId();
 
 var_dump($res_FetchPropertyInfo);
