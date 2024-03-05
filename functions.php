@@ -8,13 +8,6 @@
 define('NAKED_VERSION', 1.0);
 
 /*-----------------------------------------------------------------------------------*/
-/*  Set the maximum allowed width for any content in the theme
-/*-----------------------------------------------------------------------------------*/
-require_once(dirname(__FILE__) . '/redux/barebones-config.php');
-
-if (!isset($content_width)) $content_width = 900;
-
-/*-----------------------------------------------------------------------------------*/
 /* Add Rss feed support to Head section
 /*-----------------------------------------------------------------------------------*/
 add_theme_support('automatic-feed-links');
@@ -243,20 +236,6 @@ function logo()
 	} else {
 		return $theme_settings['logo_url'];
 	}
-	/*if(is_account_page()) {
-		if(is_user_logged_in()) {
-			echo $redux_demo['opt-logo-white']['url'];
-		} else {
-			echo $redux_demo['opt-logo']['url'];
-		}
-	} else {
-		if($post_type == 'location' || $post_type == 'event' || $page_template == 'templates/page-with-dark-header.php' || $page_template == 'templates/page-event.php' || $post_type == 'discussion-topics') {
-			echo $redux_demo['opt-logo-white']['url'];
-		} else {
-			echo $redux_demo['opt-logo']['url'];
-		}
-	}
-	*/
 
 }
 

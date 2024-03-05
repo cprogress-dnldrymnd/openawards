@@ -27,9 +27,9 @@ get_header( 'shop' );
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
 do_action( 'woocommerce_before_main_content' );
-global $redux_demo;
+global $theme_settings;
 ?>
-<input id="darkLogo" type="hidden" value="<?php echo $redux_demo['opt-logo-white']['url']; ?>"/>
+<input id="darkLogo" type="hidden" value="<?php echo $theme_settings['alt_logo_url'] ?>"/>
 <header class="woocommerce-products-header <?php if( get_field('dark_header', 140)) { echo 'dark'; } ?>">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<div class="page-shop-banner">
