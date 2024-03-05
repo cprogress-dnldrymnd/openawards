@@ -208,6 +208,7 @@ function action_icon_box($atts)
                         $icon_box_items_img = $items['icon_box_items_img'];
                         $icon_box_items_heading = $items['icon_box_items_heading'];
                         $icon_box_items_description = $items['icon_box_items_description'];
+                        var_dump($icon_box_items);
                         ?>
                         <div class="col-lg-4">
                             <div class="icon-box-holder">
