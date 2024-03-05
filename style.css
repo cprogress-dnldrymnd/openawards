@@ -6768,6 +6768,9 @@ form#resources_form.searching label {
         .icon-box-wrapper .row .icon-box-holder {
           display: flex;
           align-items: center; } }
+      @media (max-width: 767px) and (min-width: 575px) {
+        .icon-box-wrapper .row .icon-box-holder {
+          text-align: left; } }
 
 .vc_btn3.vc_btn3.vc_btn3.vc_btn3-style-modern {
   background-image: none;
