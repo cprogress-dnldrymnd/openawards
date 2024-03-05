@@ -198,17 +198,18 @@ function action_icon_box($atts)
         'icon_box_items' => '',
     ), $atts));
 
+    $items = vc_param_group_parse_atts($icon_box_items);
+
 ?>
-    <?php if ($icon_box_items) { ?>
+    <?php if ($items) { ?>
         <div class="icon-box-wrapper">
             <div class="container">
                 <div class="row">
-                    <?php  var_dump($icon_box_items); ?>
-                    <?php foreach ($icon_box_items as $items) { ?>
+                    <?php foreach ($items as $item) { ?>
                         <?php
-                        $icon_box_items_img = $items['icon_box_items_img'];
-                        $icon_box_items_heading = $items['icon_box_items_heading'];
-                        $icon_box_items_description = $items['icon_box_items_description'];
+                        $icon_box_items_img = $item['icon_box_items_img'];
+                        $icon_box_items_heading = $item['icon_box_items_heading'];
+                        $icon_box_items_description = $item['icon_box_items_description'];
                         ?>
                         <div class="col-lg-4">
                             <div class="icon-box-holder">
