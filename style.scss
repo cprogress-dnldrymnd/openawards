@@ -8568,3 +8568,38 @@ form#resources_form {
         width: 100% !important;
     }
 }
+
+.icon-box-wrapper {
+    max-width: 1060px;
+    margin-left: auto;
+    margin-right: auto;
+    .row {
+        .icon-box-holder {
+            --bs-gutter-x: 5vw;
+            --bs-gutter-y: 1rem;
+            border: 1px solid var(--high-violet);
+            padding: 30px 20px;
+            text-align: center;
+            h4 {
+                margin-bottom: 0;
+                font-family: var(--primary-font);
+                color: var(--opal-black);
+                font-size: 26px;
+            }
+            .description-box {
+                font-size: 16px;
+                color: var(--opal-black);
+                li,
+                p {
+                    font-size: 16px;
+                    color: var(--opal-black);
+                }
+            }
+            > div {
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}
