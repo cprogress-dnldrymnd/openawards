@@ -195,37 +195,46 @@ function action_icon_box($atts)
 {
     ob_start();
     extract(shortcode_atts(array(
-        'icon_box_items_heading' => '',
-        'icon_box_items_description' => '',
-        'icon_box_items_img' => '',
+        'icon_box_items' => '',
     ), $atts));
 
 ?>
-    <div class="icon-box-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="icon-box-holder">
-                        <?php if ($icon_box_items_img) { ?>
-                            <div class="icon-box">
-                                <img src="<?= wp_get_attachment_image_url($icon_box_items_img, 'large') ?>" alt="<?= $icon_box_items_heading ?>">
+    <?php if ($icon_box_items) { ?>
+        <div class="icon-box-wrapper">
+            <div class="container">
+                <div class="row">
+                    <?php foreach ($icon_box_items as $items) { ?>
+                        <?php
+                        $icon_box_items_img = $items['icon_box_items_img'];
+                        $icon_box_items_heading = $items['icon_box_items_heading'];
+                        $icon_box_items_description = $items['icon_box_items_description'];
+                        ?>
+                        <div class="col-lg-4">
+                            <div class="icon-box-holder">
+                                <?php if ($icon_box_items_img) { ?>
+                                    <div class="icon-box">
+                                        <img src="<?= wp_get_attachment_image_url($icon_box_items_img, 'large') ?>" alt="<?= $icon_box_items_heading ?>">
+                                    </div>
+                                <?php } ?>
+                                <?php if ($icon_box_items_heading) { ?>
+                                    <div class="heading-box">
+                                        <h4><?= $icon_box_items_heading ?></h4>
+                                    </div>
+                                <?php } ?>
+                                <?php if ($icon_box_items_description) { ?>
+                                    <div class="description-box">
+                                        <?= wpautop($icon_box_items_description) ?>
+                                    </div>
+                                <?php } ?>
                             </div>
-                        <?php } ?>
-                        <?php if ($icon_box_items_heading) { ?>
-                            <div class="heading-box">
-                                <h4><?= $icon_box_items_heading ?></h4>
-                            </div>
-                        <?php } ?>
-                        <?php if ($icon_box_items_description) { ?>
-                            <div class="description-box">
-                               <?= wpautop($icon_box_items_heading) ?>
-                            </div>
-                        <?php } ?>
-                    </div>
+                        </div>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>
-    </div>
+    <?php } ?>
+
 <?php
     return ob_get_clean();
 }
