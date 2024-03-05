@@ -4,7 +4,7 @@
 Template name: Page Template : Test
 */
 
-$client = new SoapClient("http://stage-chartsweb.chartspms.com.au/webservices/service.asmx?wsdl", array('trace' => 1));
+$client = new SoapClient("https://quba.quartz-system.com/QuartzWSExtra/OCNNWR_ST/WSQUBA_UB_V3.asmx?wsdl", array('trace' => 1));
 
 $ns = 'ChartsWeb'; //Namespace of the WS. 
 
