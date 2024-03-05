@@ -32,10 +32,6 @@ add_theme_support('woocommerce');
 register_nav_menus(
 	array(
 		'primary'	=>	__('Primary Menu', 'naked'), // Register the Primary menu
-		'footer-1'	=>	__('Footer Menu 1', 'naked'),
-		'footer2'	=>	__('Footer Menu 2', 'naked'),
-		'footer3'	=>	__('Footer Menu 3', 'naked'),
-		'footer-bottom-links'	=>	__('Footer Bottom Links', 'naked'),
 		// Copy and paste the line above right here if you want to make another menu, 
 		// just change the 'primary' to another name
 	)
@@ -122,7 +118,6 @@ function naked_register_sidebars()
 	register_sidebar(array(				// Start a series of sidebars to register
 		'id' => 'footer1', 					// Make an ID
 		'name' => 'Footer 1',				// Name it
-		'description' => 'What do you want to put on the first column of the footer', // Dumb description for the admin side
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
 		'after_widget' => '</div>',	// What to display following each widget
 		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
@@ -133,7 +128,6 @@ function naked_register_sidebars()
 	register_sidebar(array(				// Start a series of sidebars to register
 		'id' => 'footer2', 					// Make an ID
 		'name' => 'Footer 2',				// Name it
-		'description' => 'What do you want to put on the first column of the footer', // Dumb description for the admin side
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
 		'after_widget' => '</div>',	// What to display following each widget
 		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
@@ -144,7 +138,6 @@ function naked_register_sidebars()
 	register_sidebar(array(				// Start a series of sidebars to register
 		'id' => 'footer3', 					// Make an ID
 		'name' => 'Footer 3',				// Name it
-		'description' => 'What do you want to put on the first column of the footer', // Dumb description for the admin side
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
 		'after_widget' => '</div>',	// What to display following each widget
 		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
@@ -155,7 +148,15 @@ function naked_register_sidebars()
 	register_sidebar(array(				// Start a series of sidebars to register
 		'id' => 'footer4', 					// Make an ID
 		'name' => 'Footer Opening Hours',				// Name it
-		'description' => 'What do you want to put on the first column of the footer', // Dumb description for the admin side
+		'before_widget' => '',	// What to display before each widget
+		'after_widget' => '',	// What to display following each widget
+		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title' => '</h5>',		// What to display following each widget's title
+		'empty_title' => '',					// What to display in the case of no title defined for a widget
+	));
+	register_sidebar(array(				// Start a series of sidebars to register
+		'id' => 'footer_bottom_links', 					// Make an ID
+		'name' => 'Footer Bottom Links',				// Name it
 		'before_widget' => '',	// What to display before each widget
 		'after_widget' => '',	// What to display following each widget
 		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title

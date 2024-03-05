@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-4">
-          <?php dynamic_sidebar('footer-bottom-links'); ?>
+          <?php dynamic_sidebar('footer_bottom_links'); ?>
         </div>
       </div>
     </div>
