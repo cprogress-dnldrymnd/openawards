@@ -6715,6 +6715,9 @@ form#resources_form.searching label {
   max-width: 1060px;
   margin-left: auto;
   margin-right: auto; }
+  .icon-box-wrapper .container {
+    max-width: 100%;
+    width: 100%; }
   .icon-box-wrapper .row {
     --bs-gutter-x: 5vw;
     --bs-gutter-y: 1rem; }
