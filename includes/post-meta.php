@@ -165,6 +165,13 @@ Container::make('post_meta', 'Team Settings')
 
 Container::make('theme_options', 'Theme Options')
     ->add_tab(
+        'General Settings',
+        array(
+            Field::make('image', 'logo', __('Image')),
+            Field::make('text', 'alt_logo', __('Image')),
+        )
+    )
+    ->add_tab(
         'Brand Details',
         array(
             Field::make('text', 'contact_number', __('Contact Number')),
