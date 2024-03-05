@@ -8628,7 +8628,7 @@ form#resources_form {
                 }
             }
             .icon-box {
-                @media (max-width: 767px) {
+                @media (max-width: 767px) and (min-width: 575px) {
                     flex: 0 0 70px;
                     width: 70px;
                     margin-right: 1rem;
@@ -8646,8 +8646,9 @@ form#resources_form {
                     }
                 }
             }
-            @media (max-width: 767px) {
+            @media (max-width: 767px) and (min-width: 575px) {
                 display: flex;
+                align-items: center;
             }
         }
     }
