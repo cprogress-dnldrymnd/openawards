@@ -6755,8 +6755,18 @@ form#resources_form.searching label {
           color: var(--opal-black); }
         .icon-box-wrapper .row .icon-box-holder .description-box p:last-child {
           margin-bottom: 0; }
+      @media (max-width: 767px) {
+        .icon-box-wrapper .row .icon-box-holder .icon-box {
+          flex: 0 0 70px;
+          width: 70px;
+          margin-right: 1rem; } }
       .icon-box-wrapper .row .icon-box-holder > div:not(:last-child) {
         margin-bottom: 1.5rem; }
+      .icon-box-wrapper .row .icon-box-holder .content-box > div:not(:last-child) {
+        margin-bottom: 1.5rem; }
+      @media (max-width: 767px) {
+        .icon-box-wrapper .row .icon-box-holder {
+          display: flex; } }
 
 .vc_btn3.vc_btn3.vc_btn3.vc_btn3-style-modern {
   background-image: none;

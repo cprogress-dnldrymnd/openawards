@@ -8627,10 +8627,27 @@ form#resources_form {
                     }
                 }
             }
+            .icon-box {
+                @media (max-width: 767px) {
+                    flex: 0 0 70px;
+                    width: 70px;
+                    margin-right: 1rem;
+                }
+            }
             > div {
                 &:not(:last-child) {
                     margin-bottom: 1.5rem;
                 }
+            }
+            .content-box {
+                > div {
+                    &:not(:last-child) {
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+            @media (max-width: 767px) {
+                display: flex;
             }
         }
     }

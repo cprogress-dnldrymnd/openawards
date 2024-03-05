@@ -211,23 +211,25 @@ function action_icon_box($atts)
                         $icon_box_items_heading = $item['icon_box_items_heading'];
                         $icon_box_items_description = $item['icon_box_items_description'];
                         ?>
-                        <div class="col-lg-4">
+                        <div class="col-md-4">
                             <div class="icon-box-holder">
                                 <?php if ($icon_box_items_img) { ?>
                                     <div class="icon-box">
                                         <img src="<?= wp_get_attachment_image_url($icon_box_items_img, 'large') ?>" alt="<?= $icon_box_items_heading ?>">
                                     </div>
                                 <?php } ?>
-                                <?php if ($icon_box_items_heading) { ?>
-                                    <div class="heading-box">
-                                        <h4><?= $icon_box_items_heading ?></h4>
-                                    </div>
-                                <?php } ?>
-                                <?php if ($icon_box_items_description) { ?>
-                                    <div class="description-box">
-                                        <?= wpautop($icon_box_items_description) ?>
-                                    </div>
-                                <?php } ?>
+                                <div class="content-box">
+                                    <?php if ($icon_box_items_heading) { ?>
+                                        <div class="heading-box">
+                                            <h4><?= $icon_box_items_heading ?></h4>
+                                        </div>
+                                    <?php } ?>
+                                    <?php if ($icon_box_items_description) { ?>
+                                        <div class="description-box">
+                                            <?= wpautop($icon_box_items_description) ?>
+                                        </div>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
                     <?php } ?>
