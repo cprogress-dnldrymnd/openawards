@@ -1457,7 +1457,8 @@ main#page-components p a:not(.btn) {
     transition: 300ms;
     border: none;
     display: block;
-    cursor: pointer; }
+    cursor: pointer;
+    font-weight: bold; }
     .wpcf7 form p input[type="submit"]:hover, .wpcf7 form p input[type="submit"]:active, .wpcf7 form p input[type="submit"]:focus {
       background-color: var(--opal-black) !important; }
   .wpcf7 form .wpcf7-response-output {
