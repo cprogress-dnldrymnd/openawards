@@ -25,4 +25,4 @@ $fcs = $client->__getFunctions();
 
 $res_FetchPropertyInfo = $client->QUBA_AddLearnerPhotoId();
 
-var_dump($client->__getLastRequest());
+var_dump($res_FetchPropertyInfo);
