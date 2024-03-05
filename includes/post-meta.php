@@ -184,6 +184,7 @@ Container::make('theme_options', 'Theme Options')
         array(
             Field::make('text', 'footer_button_text', __('Footer Button Text')),
             Field::make('text', 'footer_button_url', __('Footer Button URL')),
+            Field::make('textarea', 'footer_copyright', __('Footer Copyright')),
         )
     );
 
