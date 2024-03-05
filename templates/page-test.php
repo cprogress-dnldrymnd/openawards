@@ -23,7 +23,7 @@ $client->__setSoapHeaders($header);
 
 $fcs = $client->__getFunctions();
 
-$res_FetchPropertyInfo = $client->QUBA_GetQualificationGuide();
+$res_FetchPropertyInfo = $client->QUBA_GetQualificationGuide(1);
 
 echo '<pre>';
 var_dump($fcs);
