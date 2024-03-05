@@ -8628,6 +8628,11 @@ form#resources_form {
                 }
             }
             .icon-box {
+                img {
+                    width: 87px;
+                    height: 87px;
+                    object-fit: contain;
+                }
                 @media (max-width: 767px) and (min-width: 575px) {
                     flex: 0 0 70px;
                     width: 70px;

@@ -6755,6 +6755,10 @@ form#resources_form.searching label {
           color: var(--opal-black); }
         .icon-box-wrapper .row .icon-box-holder .description-box p:last-child {
           margin-bottom: 0; }
+      .icon-box-wrapper .row .icon-box-holder .icon-box img {
+        width: 87px;
+        height: 87px;
+        object-fit: contain; }
       @media (max-width: 767px) and (min-width: 575px) {
         .icon-box-wrapper .row .icon-box-holder .icon-box {
           flex: 0 0 70px;
