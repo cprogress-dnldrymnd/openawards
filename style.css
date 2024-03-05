@@ -7,6 +7,14 @@ Version: 1.0
 License: GNU General Public License
 */
 /*Start of from main.min.css*/
+@media (max-width: 991px) {
+  #wpadminbar {
+    display: none !important; } }
+
+@media (max-width: 991px) {
+  html.vc_transform.vc_transform {
+    margin-top: 0 !important; } }
+
 .btn,
 a {
   transition: all 0.2s ease-in-out;

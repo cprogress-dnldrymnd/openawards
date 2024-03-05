@@ -9,7 +9,18 @@ License: GNU General Public License
 
 /*Start of from main.min.css*/
 $image-url: "./assets/images/" !default;
-
+#wpadminbar {
+    @media (max-width: 991px) {
+        display: none !important;
+    }
+}
+html {
+    @media (max-width: 991px) {
+        &.vc_transform.vc_transform {
+            margin-top: 0 !important;
+        }
+    }
+}
 .btn,
 a {
     transition: all 0.2s ease-in-out;
