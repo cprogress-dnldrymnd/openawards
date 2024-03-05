@@ -289,7 +289,7 @@ function action_contact_details_box($atts)
 
     global $theme_settings;
 
-    
+
 ?>
 
     <div class="contact-details-wrapper">
@@ -303,6 +303,36 @@ function action_contact_details_box($atts)
                 </div>
                 <div class="contact-detail">
                     <a href="tel:<?= $theme_settings['contact_number'] ?>"> <?= $theme_settings['contact_number'] ?> </a>
+                </div>
+            </div>
+        <?php } ?>
+
+        <?php if ($display_address && $theme_settings['address']) { ?>
+            <div class="contact-details-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="map-pin-bolt" width="54.121" height="54.121" viewBox="0 0 54.121 54.121">
+                        <path id="Path_2266" data-name="Path 2266" d="M0,0H54.121V54.121H0Z" fill="none" />
+                        <path id="Path_2267" data-name="Path 2267" d="M9,14.765A6.765,6.765,0,1,0,15.765,8,6.765,6.765,0,0,0,9,14.765" transform="translate(11.295 10.04)" fill="none" stroke="#b57dff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                        <path id="Path_2268" data-name="Path 2268" d="M25.229,43.366a4.51,4.51,0,0,1-6.375,0L9.283,33.8A18.04,18.04,0,1,1,39.932,23.359" transform="translate(5.02 3.765)" fill="none" stroke="#b57dff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                        <path id="Path_2269" data-name="Path 2269" d="M21.51,16,17,22.765h9.02L21.51,29.53" transform="translate(21.336 20.081)" fill="none" stroke="#b57dff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="contact-detail">
+                    <span> <?= $theme_settings['address'] ?> </span>
+                </div>
+            </div>
+        <?php } ?>
+        <?php if ($display_email_address && $theme_settings['email_address']) { ?>
+            <div class="contact-details-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="mail" width="59.818" height="59.818" viewBox="0 0 59.818 59.818">
+                        <path id="Path_2270" data-name="Path 2270" d="M0,0H59.818V59.818H0Z" fill="none" />
+                        <path id="Path_2271" data-name="Path 2271" d="M3,9.985A4.985,4.985,0,0,1,7.985,5H42.879a4.985,4.985,0,0,1,4.985,4.985V34.909a4.985,4.985,0,0,1-4.985,4.985H7.985A4.985,4.985,0,0,1,3,34.909Z" transform="translate(4.477 7.462)" fill="none" stroke="#b57dff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                        <path id="Path_2272" data-name="Path 2272" d="M3,7,25.432,21.955,47.864,7" transform="translate(4.477 10.447)" fill="none" stroke="#b57dff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="contact-detail">
+                    <a href="mailto:<?= $theme_settings['email_address'] ?>"> <?= $theme_settings['email_address'] ?> </a>
                 </div>
             </div>
         <?php } ?>
