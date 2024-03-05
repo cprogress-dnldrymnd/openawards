@@ -46,19 +46,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-4">
-          <ul class="other-links links inline">
-            <li><a href="<?php echo $redux_demo['opt-cookies'] ?>">Cookies Policy</a></li>
-            <li><a href="<?php echo $redux_demo['opt-privacy'] ?>">Privacy Policy</a></li>
-            <?php if ($redux_demo['opt-additional-1-text']) { ?>
-              <li><a href="<?= $redux_demo['opt-additional-1-url'] ?>"><?= $redux_demo['opt-additional-1-text'] ?></a>
-              </li>
-            <?php } ?>
-            <?php if ($redux_demo['opt-additional-2-text']) { ?>
-              <li><a href="<?= $redux_demo['opt-additional-2-url'] ?>"><?= $redux_demo['opt-additional-2-text'] ?></a>
-              </li>
-            <?php } ?>
-
-          </ul>
+          <?php dynamic_sidebar('footer-bottom-links'); ?>
         </div>
       </div>
     </div>

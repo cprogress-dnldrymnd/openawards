@@ -35,6 +35,7 @@ register_nav_menus(
 		'footer-1'	=>	__('Footer Menu 1', 'naked'),
 		'footer2'	=>	__('Footer Menu 2', 'naked'),
 		'footer3'	=>	__('Footer Menu 3', 'naked'),
+		'footer-bottom-links'	=>	__('Footer Bottom Links', 'naked'),
 		// Copy and paste the line above right here if you want to make another menu, 
 		// just change the 'primary' to another name
 	)
