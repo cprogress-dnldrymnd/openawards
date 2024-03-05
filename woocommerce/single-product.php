@@ -25,7 +25,7 @@ get_header('shop'); ?>
 <?php
 global $theme_settings;
 ?>
-<input id="darkLogo" type="hidden" value="<?php echo $redux_demo['alt_logo_url']; ?>" />
+<input id="darkLogo" type="hidden" value="<?php echo $theme_settings['alt_logo_url']; ?>" />
 <header class="woocommerce-products-header dark">
 	<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
 		<div class="page-shop-banner">
