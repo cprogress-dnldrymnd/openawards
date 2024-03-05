@@ -147,61 +147,64 @@ $Providers->show_in_admin_bar = false;
 
 
 
-add_action( 'restrict_manage_posts', 'filter_by_taxonomy' , 10, 2);
+add_action('restrict_manage_posts', 'filter_by_taxonomy', 10, 2);
 
-function filter_by_taxonomy( $post_type, $which ) {
+function filter_by_taxonomy($post_type, $which)
+{
 
-	// Apply this only on a specific post type
-	if ( 'resources' !== $post_type )
-		return;
+    // Apply this only on a specific post type
+    if ('resources' !== $post_type)
+        return;
 
-	// A list of taxonomy slugs to filter by
-	$taxonomies = array('industry_category');
+    // A list of taxonomy slugs to filter by
+    $taxonomies = array('industry_category');
 
-	foreach ( $taxonomies as $taxonomy_slug ) {
+    foreach ($taxonomies as $taxonomy_slug) {
 
-		// Retrieve taxonomy data
-		$taxonomy_obj = get_taxonomy( $taxonomy_slug );
-		$taxonomy_name = $taxonomy_obj->labels->name;
+        // Retrieve taxonomy data
+        $taxonomy_obj = get_taxonomy($taxonomy_slug);
+        $taxonomy_name = $taxonomy_obj->labels->name;
 
-		// Retrieve taxonomy terms
-		$terms = get_terms( $taxonomy_slug );
+        // Retrieve taxonomy terms
+        $terms = get_terms($taxonomy_slug);
 
-		// Display filter HTML
-		echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
-		echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $taxonomy_name ) . '</option>';
-		foreach ( $terms as $term ) {
-			printf(
-				'<option value="%1$s" %2$s>%3$s (%4$s)</option>',
-				$term->slug,
-				( ( isset( $_GET[$taxonomy_slug] ) && ( $_GET[$taxonomy_slug] == $term->slug ) ) ? ' selected="selected"' : '' ),
-				$term->name,
-				$term->count
-			);
-		}
-		echo '</select>';
-	}
-
+        // Display filter HTML
+        echo "<select name='{$taxonomy_slug}' id='{$taxonomy_slug}' class='postform'>";
+        echo '<option value="">' . sprintf(esc_html__('Show All %s', 'text_domain'), $taxonomy_name) . '</option>';
+        foreach ($terms as $term) {
+            printf(
+                '<option value="%1$s" %2$s>%3$s (%4$s)</option>',
+                $term->slug,
+                ((isset($_GET[$taxonomy_slug]) && ($_GET[$taxonomy_slug] == $term->slug)) ? ' selected="selected"' : ''),
+                $term->name,
+                $term->count
+            );
+        }
+        echo '</select>';
+    }
 }
 add_filter('manage_resources_posts_columns', 'change_table_column_titles');
 add_filter('manage_resources_posts_custom_column', 'change_column_rows', 10, 2);
-add_filter('manage_edit-resources_sortable_columns', 'change_sortable_columns' );
-function change_table_column_titles($columns) {
-    unset($columns['date']);// temporarily remove, to have custom column before date column
+add_filter('manage_edit-resources_sortable_columns', 'change_sortable_columns');
+function change_table_column_titles($columns)
+{
+    unset($columns['date']); // temporarily remove, to have custom column before date column
     $columns['industry_category'] = 'Industry Categories';
-    $columns['date'] = 'Date';// readd the date column
+    $columns['date'] = 'Date'; // readd the date column
     return $columns;
 }
 
-function change_column_rows($column_name, $post_id){
-	if($column_name == 'industry_category'){
-		echo get_the_term_list($post_id, 'industry_category', '', ', ', '').PHP_EOL;
-	}
+function change_column_rows($column_name, $post_id)
+{
+    if ($column_name == 'industry_category') {
+        echo get_the_term_list($post_id, 'industry_category', '', ', ', '') . PHP_EOL;
+    }
 }
 
-function change_sortable_columns($columns){
-	$columns['industry_category'] = 'industry_category';
-	return $columns;
+function change_sortable_columns($columns)
+{
+    $columns['industry_category'] = 'industry_category';
+    return $columns;
 }
 
 
@@ -240,3 +243,25 @@ $Events_Category->args = array(
     'has_archive'  => false,
     'show_in_rest' => false,
 );
+
+// Add the custom columns to the slider post type:
+add_filter('manage_slider_posts_columns', 'set_custom_edit_slider_columns');
+function set_custom_edit_slider_columns($columns)
+{
+    unset($columns['author']);
+    $columns['shortcode'] = __('Shortcode', 'your_text_domain');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the slider post type:
+add_action('manage_slider_posts_custom_column', 'custom_slider_column', 10, 2);
+function custom_slider_column($column, $post_id)
+{
+    switch ($column) {
+
+        case 'shortcode':
+            echo '<input value="[slider slider_id='.$post_id.']" />';
+            break;
+    }
+}
