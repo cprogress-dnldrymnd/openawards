@@ -8206,9 +8206,7 @@ form#resources_form {
                 transition: 500ms;
                 border: 1px solid var(--high-violet);
                 padding: 30px;
-                background-image: url($image-url + "violet-bg.png");
-                background-size: cover;
-                background-position: center;
+               
                 &:before {
                     content: "";
                     z-index: -1;
@@ -8268,6 +8266,9 @@ form#resources_form {
             }
             .content-box {
                 background-color: var(--blush-pink);
+                background-image: url($image-url + "violet-bg.png");
+                background-size: cover;
+                background-position: center;
                 .name,
                 .desc {
                     color: var(--white-color);
