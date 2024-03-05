@@ -6764,6 +6764,8 @@ form#resources_form.searching label {
 .vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-violet {
   background-color: var(--high-violet);
   border-color: var(--high-violet); }
+.vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-white {
+  color: var(--opal-black); }
 
 .fw-normal * {
   font-weight: normal; }

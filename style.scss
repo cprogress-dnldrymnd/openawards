@@ -8583,7 +8583,7 @@ form#resources_form {
         width: 100% !important;
     }
 }
-.medium-container{
+.medium-container {
     max-width: 1320px !important;
     width: 100% !important;
     margin-left: auto !important;
@@ -8644,7 +8644,10 @@ form#resources_form {
         background-color: var(--high-violet);
         border-color: var(--high-violet);
     }
+    &.vc_btn3-color-white {
+        color: var(--opal-black);
+    }
 }
-.fw-normal *{
+.fw-normal * {
     font-weight: normal;
 }
