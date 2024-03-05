@@ -4841,6 +4841,12 @@ body.wpb-js-composer .vc_tta-accordion .vc_tta-panels-container .vc_tta-panels .
     }
 }
 
+@media (max-width: 480px) {
+    h2.vc_custom_heading {
+        font-size: 30px !important;
+    }
+}
+
 section#open-awards-discussion-board .create-topic {
     margin-bottom: 40px;
     text-align: right;
