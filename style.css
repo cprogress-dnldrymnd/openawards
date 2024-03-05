@@ -6719,7 +6719,7 @@ form#resources_form.searching label {
     max-width: 100%;
     width: 100%; }
   .icon-box-wrapper .row {
-    --bs-gutter-x: 5vw;
+    --bs-gutter-x: 4vw;
     --bs-gutter-y: 1rem; }
     .icon-box-wrapper .row .icon-box-holder {
       border: 1px solid var(--high-violet);
