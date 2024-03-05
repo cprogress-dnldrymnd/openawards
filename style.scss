@@ -1958,6 +1958,9 @@ main#page-components p a:not(.btn) {
                         font-size: 12px;
                     }
                 }
+                @media(max-width: 575px) {
+                    font-size: 20px;
+                }
             }
             input:not([type="submit"]),
             textarea {

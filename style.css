@@ -1430,6 +1430,9 @@ main#page-components p a:not(.btn) {
         text-align: center;
         border-radius: 0 0 5px 5px;
         font-size: 12px; }
+    @media (max-width: 575px) {
+      .wpcf7 form p label {
+        font-size: 20px; } }
   .wpcf7 form p input:not([type="submit"]),
   .wpcf7 form p textarea {
     background-color: var(--white-color);
