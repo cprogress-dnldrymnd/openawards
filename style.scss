@@ -1976,7 +1976,7 @@ main#page-components p a:not(.btn) {
                 border-radius: 5px;
                 font-family: var(--primary-font);
                 padding: 15px 20px;
-                background-color: var(--sun-orange);
+                background-color: var(--high-violet);
                 color: var(--white-color) !important;
                 display: inline-block;
                 text-decoration: none !important;
@@ -1986,18 +1986,14 @@ main#page-components p a:not(.btn) {
                 -o-transition: 300ms;
                 transition: 300ms;
                 border: none;
-                min-width: 250px;
                 display: block;
-                margin: 40px auto auto auto;
                 cursor: pointer;
                 &:hover,
                 &:active,
                 &:focus {
                     background-color: var(--opal-black) !important;
                 }
-                @media (max-width: 480px) {
-                    min-width: 100%;
-                }
+               
             }
         }
         .wpcf7-response-output {

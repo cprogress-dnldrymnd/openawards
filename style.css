@@ -1446,7 +1446,7 @@ main#page-components p a:not(.btn) {
     border-radius: 5px;
     font-family: var(--primary-font);
     padding: 15px 20px;
-    background-color: var(--sun-orange);
+    background-color: var(--high-violet);
     color: var(--white-color) !important;
     display: inline-block;
     text-decoration: none !important;
@@ -1456,15 +1456,10 @@ main#page-components p a:not(.btn) {
     -o-transition: 300ms;
     transition: 300ms;
     border: none;
-    min-width: 250px;
     display: block;
-    margin: 40px auto auto auto;
     cursor: pointer; }
     .wpcf7 form p input[type="submit"]:hover, .wpcf7 form p input[type="submit"]:active, .wpcf7 form p input[type="submit"]:focus {
       background-color: var(--opal-black) !important; }
-    @media (max-width: 480px) {
-      .wpcf7 form p input[type="submit"] {
-        min-width: 100%; } }
   .wpcf7 form .wpcf7-response-output {
     margin: 0;
     border: none;
