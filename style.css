@@ -1413,82 +1413,74 @@ main#page-components p a:not(.btn) {
   max-width: 535px;
   border-radius: 10px;
   margin-left: auto; }
-
-.wpcf7 form p label {
-  font-family: var(--primary-font);
-  font-size: 16px;
-  color: var(--opal-black);
-  display: block;
-  margin-bottom: 24px; }
-
-.wpcf7 form p label span.wpcf7-form-control-wrap {
-  margin-top: 10px;
-  display: block; }
-
-.wpcf7 form p label span.wpcf7-form-control-wrap span.wpcf7-not-valid-tip {
-  margin-top: 0 !important;
-  background-color: #dc3232;
-  color: var(--white-color);
-  padding: 2px;
-  text-align: center;
-  border-radius: 0 0 5px 5px;
-  font-size: 12px; }
-
-.wpcf7 form p input:not([type="submit"]),
-.wpcf7 form p textarea {
-  background-color: var(--white-color);
-  border: none;
-  border-radius: 0;
-  font-size: 16px;
-  font-family: "Arial", sans-serif;
-  border: 1px solid #cccccc;
-  padding: 15px;
-  border-radius: 5px;
-  width: 100%;
-  font-size: 16px; }
-
-.wpcf7 form p input[type="submit"] {
-  border-radius: 5px;
-  font-family: var(--primary-font);
-  padding: 15px 20px;
-  background-color: var(--sun-orange);
-  color: var(--white-color) !important;
-  display: inline-block;
-  text-decoration: none !important;
-  -webkit-transition: 300ms;
-  -moz-transition: 300ms;
-  -ms-transition: 300ms;
-  -o-transition: 300ms;
-  transition: 300ms;
-  border: none;
-  min-width: 250px;
-  display: block;
-  margin: 40px auto auto auto;
-  cursor: pointer; }
-
-.wpcf7 form p input[type="submit"]:hover,
-.wpcf7 form p input[type="submit"]:active,
-.wpcf7 form p input[type="submit"]:focus {
-  background-color: var(--opal-black) !important; }
-
-@media (max-width: 480px) {
+  .wpcf7 form p label {
+    font-family: var(--primary-font);
+    font-size: 16px;
+    color: var(--opal-black);
+    display: block;
+    margin-bottom: 24px;
+    font-weight: 600; }
+    .wpcf7 form p label span.wpcf7-form-control-wrap {
+      margin-top: 10px;
+      display: block; }
+      .wpcf7 form p label span.wpcf7-form-control-wrap span.wpcf7-not-valid-tip {
+        margin-top: 0 !important;
+        background-color: #dc3232;
+        color: var(--white-color);
+        padding: 2px;
+        text-align: center;
+        border-radius: 0 0 5px 5px;
+        font-size: 12px; }
+  .wpcf7 form p input:not([type="submit"]),
+  .wpcf7 form p .wpcf7 form p textarea {
+    background-color: var(--white-color);
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px; }
   .wpcf7 form p input[type="submit"] {
-    min-width: 100%; } }
-.wpcf7 form .wpcf7-response-output {
-  margin: 0;
-  border: none;
-  border-top: 2px solid;
-  padding-top: 15px;
-  text-align: center;
-  font-size: 16px; }
+    border-radius: 5px;
+    font-family: var(--primary-font);
+    padding: 15px 20px;
+    background-color: var(--sun-orange);
+    color: var(--white-color) !important;
+    display: inline-block;
+    text-decoration: none !important;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+    border: none;
+    min-width: 250px;
+    display: block;
+    margin: 40px auto auto auto;
+    cursor: pointer; }
+    .wpcf7 form p input[type="submit"]:hover, .wpcf7 form p input[type="submit"]:active, .wpcf7 form p input[type="submit"]:focus {
+      background-color: var(--opal-black) !important; }
+    @media (max-width: 480px) {
+      .wpcf7 form p input[type="submit"] {
+        min-width: 100%; } }
+  .wpcf7 form .wpcf7-response-output {
+    margin: 0;
+    border: none;
+    border-top: 2px solid;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 16px; }
+  @media (max-width: 991px) {
+    .wpcf7 {
+      max-width: 100%; } }
 
 .wpcf7 form.invalid input:not([type="submit"]),
 .wpcf7 form.invalid textarea {
   border-radius: 5px 5px 0 0; }
 
-@media (max-width: 991px) {
-  .wpcf7 {
-    max-width: 100%; } }
 .pagination {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -4883,9 +4875,6 @@ footer .wp-block-social-links {
 
 .wpcf7 {
   max-width: 100%; }
-
-.wpcf7 form p label {
-  font-weight: 600; }
 
 @media (max-width: 991px) {
   .main-content .vc_column-inner > .wpb_wrapper .vc_row {
