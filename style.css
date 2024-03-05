@@ -6453,7 +6453,10 @@ form#resources_form.searching label {
     opacity: 0;
     transition: 500ms;
     border: 1px solid var(--high-violet);
-    padding: 30px; }
+    padding: 30px;
+    background-image: "../assets/images/violet-bg.png";
+    background-size: cover;
+    background-position: center; }
     .team-slider.style-1 .swiper-slide .content-box:before, .team-slider.style-2 .swiper-slide .content-box:before {
       content: "";
       z-index: -1;

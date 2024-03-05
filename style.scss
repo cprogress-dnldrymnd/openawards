@@ -8,6 +8,7 @@ License: GNU General Public License
 */
 
 /*Start of from main.min.css*/
+$image-url: "../assets/images/" !default;
 
 .btn,
 a {
@@ -8205,7 +8206,9 @@ form#resources_form {
                 transition: 500ms;
                 border: 1px solid var(--high-violet);
                 padding: 30px;
-
+                background-image: $image-url + "violet-bg.png";
+                background-size: cover;
+                background-position: center;
                 &:before {
                     content: "";
                     z-index: -1;
