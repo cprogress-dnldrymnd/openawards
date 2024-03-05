@@ -5975,18 +5975,17 @@ body.not-logged-in #bookModal #pseudo-send-booking {
         }
     }
 }
-.vc_column_container {
+.vc_row {
     &:not(.vc_row-no-padding) {
-        > .vc_column-inner {
-            padding-left: 15px !important;
-            padding-right: 15px !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        .vc_column_container {
+            > .vc_column-inner {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
         }
     }
-}
-
-.vc_row {
-    margin-left: -15px !important;
-    margin-right: -15px !important;
 }
 
 .container-wrapper {
