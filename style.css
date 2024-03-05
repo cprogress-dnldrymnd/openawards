@@ -6817,11 +6817,15 @@ form#resources_form.searching label {
     background-color: var(--white-color);
     margin-bottom: 1rem;
     border-radius: 5px;
-    box-shadow: 0px 29px 35px #0000000D;
-    align-items: center; }
+    box-shadow: 0px 29px 35px #0000000d;
+    align-items: center;
+    max-width: 410px; }
     .contact-details-wrapper .contact-details-box .icon {
       flex: 0 0 57px;
       width: 57px;
       margin-right: 20px; }
+    .contact-details-wrapper .contact-details-box .contact-detail .label {
+      font-size: 26px;
+      font-weight: 600; }
 
 /*# sourceMappingURL=style.css.map */

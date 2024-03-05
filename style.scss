@@ -8715,12 +8715,19 @@ form#resources_form {
         background-color: var(--white-color);
         margin-bottom: 1rem;
         border-radius: 5px;
-        box-shadow: 0px 29px 35px #0000000D;
+        box-shadow: 0px 29px 35px #0000000d;
         align-items: center;
+        max-width: 410px;
         .icon {
-            flex: 0 0 57px ;
+            flex: 0 0 57px;
             width: 57px;
             margin-right: 20px;
+        }
+        .contact-detail {
+            .label {
+                font-size: 26px;
+                font-weight: 600;
+            }
         }
     }
 }

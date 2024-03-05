@@ -302,6 +302,7 @@ function action_contact_details_box($atts)
                     </svg>
                 </div>
                 <div class="contact-detail">
+                    <div class="label">Call us</div>
                     <a href="tel:<?= $theme_settings['contact_number'] ?>"> <?= $theme_settings['contact_number'] ?> </a>
                 </div>
             </div>
@@ -318,6 +319,7 @@ function action_contact_details_box($atts)
                     </svg>
                 </div>
                 <div class="contact-detail">
+                    <div class="label">Location</div>
                     <span> <?= $theme_settings['address'] ?> </span>
                 </div>
             </div>
@@ -332,6 +334,7 @@ function action_contact_details_box($atts)
                     </svg>
                 </div>
                 <div class="contact-detail">
+                    <div class="label">Email us</div>
                     <a href="mailto:<?= $theme_settings['email_address'] ?>"> <?= $theme_settings['email_address'] ?> </a>
                 </div>
             </div>
