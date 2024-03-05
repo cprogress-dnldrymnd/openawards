@@ -6813,7 +6813,8 @@ form#resources_form.searching label {
 
 .footer-bottom-links.footer-bottom-links ul {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 0; }
   .footer-bottom-links.footer-bottom-links ul li:not(:last-child) {
     margin-right: 1rem; }
 

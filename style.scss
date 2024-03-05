@@ -8719,6 +8719,7 @@ form#resources_form {
     ul {
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 0 ;
         li {
             &:not(:last-child) {
                 margin-right: 1rem;
