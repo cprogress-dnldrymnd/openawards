@@ -10,8 +10,8 @@ $ns = 'ChartsWeb'; //Namespace of the WS.
 
 //Body of the Soap Header. 
 $headerbody = array(
-    'Username' => $username,
-    'Password' => $password,
+    'Username' => 'test',
+    'Password' => 'test',
     'LoggingRequest' => True
 );
 
