@@ -6712,7 +6712,8 @@ form#resources_form.searching label {
     --bs-gutter-y: 1rem;
     border: 1px solid var(--high-violet);
     padding: 30px 20px;
-    text-align: center; }
+    text-align: center;
+    border-radius: 10px; }
     .icon-box-wrapper .row .icon-box-holder h4 {
       margin-bottom: 0;
       font-family: var(--primary-font);
