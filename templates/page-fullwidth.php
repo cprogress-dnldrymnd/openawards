@@ -5,8 +5,7 @@
  */
 ?>
 <?php get_header();  ?>
-<main id="page-components">
-
+<main>
 
     <div id="content" role="main">
         <?php if (have_posts()) :
