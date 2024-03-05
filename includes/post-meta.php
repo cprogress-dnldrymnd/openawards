@@ -200,6 +200,7 @@ function theme_settings()
     $theme_settings['alt_logo'] = wp_get_attachment_image_url(carbon_get_theme_option('alt_logo'));
     $theme_settings['footer_button_text'] = carbon_get_theme_option('footer_button_text');
     $theme_settings['footer_button_url'] = carbon_get_theme_option('footer_button_url');
+    $theme_settings['footer_copyright'] = carbon_get_theme_option('footer_copyright');
 
 }
 

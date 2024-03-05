@@ -25,7 +25,7 @@
               </li>
             </ul>
           </div>
-          <a class="btn btn-outline-primary light" href="<?php echo $redux_demo['opt-button-link'] ?>"><?php echo $redux_demo['opt-button-text'] ?></a>
+          <a class="btn btn-outline-primary light" href="<?php echo $theme_settings['footer_button_url'] ?>"><?php echo $theme_settings['footer_button_text'] ?></a>
         </div>
         <div class="col-lg-2 col-md-2">
           <?php dynamic_sidebar('footer4'); ?>
@@ -42,7 +42,7 @@
       <div class="row align-items-center">
         <div class="col-lg-8 col-md-8">
           <div class="copyright-text">
-            <p><?php echo $redux_demo['opt-copyright'] ?></p>
+            <p><?php echo $theme_settings['footer_copyright'] ?></p>
           </div>
         </div>
         <div class="col-lg-4 col-md-4">
