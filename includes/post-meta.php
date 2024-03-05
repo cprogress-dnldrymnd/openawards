@@ -167,8 +167,8 @@ Container::make('theme_options', 'Theme Options')
     ->add_tab(
         'General Settings',
         array(
-            Field::make('image', 'logo', __('Image')),
-            Field::make('text', 'alt_logo', __('Image')),
+            Field::make('image', 'logo', __('Logo')),
+            Field::make('image', 'alt_logo', __('Alt Logo')),
         )
     )
     ->add_tab(
