@@ -178,6 +178,13 @@ Container::make('theme_options', 'Theme Options')
             Field::make('text', 'email_address', __('Email Address')),
             Field::make('textarea', 'address', __('Address')),
         )
+    )
+    ->add_tab(
+        'Footer',
+        array(
+            Field::make('text', 'footer_button_text', __('Footer Button Text')),
+            Field::make('text', 'footer_button_url', __('Footer Button URL')),
+        )
     );
 
 
@@ -188,6 +195,11 @@ function theme_settings()
     $theme_settings['contact_number'] = carbon_get_theme_option('contact_number');
     $theme_settings['email_address'] = carbon_get_theme_option('email_address');
     $theme_settings['address'] = carbon_get_theme_option('address');
+    $theme_settings['logo'] = wp_get_attachment_image_url(carbon_get_theme_option('logo'));
+    $theme_settings['alt_logo'] = wp_get_attachment_image_url(carbon_get_theme_option('alt_logo'));
+    $theme_settings['footer_button_text'] = carbon_get_theme_option('footer_button_text');
+    $theme_settings['footer_button_url'] = carbon_get_theme_option('footer_button_url');
+
 }
 
 add_action('init', 'theme_settings');

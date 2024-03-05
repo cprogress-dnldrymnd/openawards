@@ -7,21 +7,21 @@
 
 </div><!-- / end page container, begun in the header -->
 
-<?php global $redux_demo; ?>
+<?php global $theme_settings; ?>
 <footer>
   <div class="main-footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-4">
           <div class="logo-holder">
-            <img src="<?php echo $redux_demo['opt-logo-white']['url']; ?>" alt="White Logo" />
+            <img src="<?php echo $theme_settings['alt_logo'] ?>" alt="White Logo" />
           </div>
           <div class="contact-details">
             <ul>
-              <li><i class="fas fa-map-marker-alt"></i><span class="location"><?php echo $redux_demo['opt-location'] ?></span></li>
-              <li><i class="fas fa-phone-alt"></i><span class="phone"><a href="tel:<?php echo $redux_demo['opt-phone'] ?>"><?php echo $redux_demo['opt-phone'] ?></a></span>
+              <li><i class="fas fa-map-marker-alt"></i><span class="location"><?php echo $theme_settings['address'] ?></span></li>
+              <li><i class="fas fa-phone-alt"></i><span class="phone"><a href="tel:<?php echo $theme_settings['contact_number'] ?>"><?php echo $theme_settings['contact_number'] ?></a></span>
               </li>
-              <li><i class="fas fa-envelope"></i><span class="email"><a href="mailto:<?php echo $redux_demo['opt-email'] ?>"><?php echo $redux_demo['opt-email'] ?></a></span>
+              <li><i class="fas fa-envelope"></i><span class="email"><a href="mailto:<?php echo $theme_settings['email_address'] ?>"><?php echo $theme_settings['email_address'] ?></a></span>
               </li>
             </ul>
           </div>
