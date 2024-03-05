@@ -59,7 +59,7 @@
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
 				<div class="logo-holder">
 					<a class="logo" href="<?= get_site_url() ?>">
-						<img src="<?php logo() ?>" alt="logo" />
+						<img src="<?= logo() ?>" alt="logo" />
 					</a>
 				</div>
 			</div>
