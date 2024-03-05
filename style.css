@@ -6716,7 +6716,10 @@ form#resources_form.searching label {
     left: 0;
     top: 0;
     height: 100%;
-    width: 50%; }
+    width: calc(50% + 15px);
+    background-size: 859px;
+    background-position: right bottom;
+    background-repeat: no-repeat; }
 
 #content.wide-width .container {
   max-width: 1640px !important;
