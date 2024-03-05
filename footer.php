@@ -45,7 +45,7 @@
             <p><?php echo $theme_settings['footer_copyright'] ?></p>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4">
+        <div class="col-lg-4 col-md-4 footer-bottom-links">
           <?php dynamic_sidebar('footer_bottom_links'); ?>
         </div>
       </div>

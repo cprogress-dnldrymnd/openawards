@@ -1993,7 +1993,6 @@ main#page-components p a:not(.btn) {
                 &:focus {
                     background-color: var(--opal-black) !important;
                 }
-               
             }
         }
         .wpcf7-response-output {
@@ -8711,6 +8710,18 @@ form#resources_form {
             .label {
                 font-size: 26px;
                 font-weight: 600;
+            }
+        }
+    }
+}
+
+.footer-bottom-links.footer-bottom-links {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            &:not(:last-child) {
+                margin-right: 1rem;
             }
         }
     }
