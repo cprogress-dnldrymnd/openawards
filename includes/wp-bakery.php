@@ -201,7 +201,7 @@ function action_icon_box($atts)
     ), $atts));
 
 ?>
-    <div class="icon-box">
+    <div class="icon-box-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
