@@ -8635,3 +8635,12 @@ form#resources_form {
         }
     }
 }
+.vc_btn3.vc_btn3.vc_btn3 {
+    &.vc_btn3-style-modern {
+        background-image: none;
+        font-size: 23px;
+    }
+    &.vc_btn3-color-violet {
+        background-color: var(--high-violet);
+    }
+}

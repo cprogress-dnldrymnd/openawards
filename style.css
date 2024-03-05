@@ -6758,4 +6758,10 @@ form#resources_form.searching label {
       .icon-box-wrapper .row .icon-box-holder > div:not(:last-child) {
         margin-bottom: 1.5rem; }
 
+.vc_btn3.vc_btn3.vc_btn3.vc_btn3-style-modern {
+  background-image: none;
+  font-size: 23px; }
+.vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-violet {
+  background-color: var(--high-violet); }
+
 /*# sourceMappingURL=style.css.map */
