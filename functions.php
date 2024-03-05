@@ -257,7 +257,8 @@ function logo()
 		}
 	}
 	*/
-	return var_dump($theme_settings);
+
+	return $theme_settings['logo_url'];
 }
 
 /*-----------------------------------------------------------------------------------*/
