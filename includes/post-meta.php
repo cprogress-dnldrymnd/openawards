@@ -160,3 +160,15 @@ Container::make('post_meta', 'Team Settings')
             Field::make('text', 'linked_in', __('Linked In')),
         )
     );
+
+//Theme Settings 
+
+Container::make('theme_options', 'Theme Options')
+    ->add_tab(
+        'Brand Details',
+        array(
+            Field::make('text', 'contact_number', __('Contact Number')),
+            Field::make('text', 'email_address', __('Email Address')),
+            Field::make('textarea', 'address', __('Address')),
+        )
+    );
