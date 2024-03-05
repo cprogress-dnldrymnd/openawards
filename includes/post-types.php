@@ -261,7 +261,7 @@ function custom_slider_column($column, $post_id)
     switch ($column) {
 
         case 'shortcode':
-            echo '<input value="[slider slider_id='.$post_id.']" />';
+            echo '<input type="text" value="[slider slider_id='.$post_id.']" />';
             break;
     }
 }
