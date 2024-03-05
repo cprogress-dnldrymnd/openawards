@@ -189,19 +189,3 @@ Container::make('theme_options', 'Theme Options')
     );
 
 
-function theme_settings()
-{
-    global $theme_settings;
-
-    $theme_settings['contact_number'] = carbon_get_theme_option('contact_number');
-    $theme_settings['email_address'] = carbon_get_theme_option('email_address');
-    $theme_settings['address'] = carbon_get_theme_option('address');
-    $theme_settings['logo_url'] = wp_get_attachment_image_url(carbon_get_theme_option('logo'), 'medium');
-    $theme_settings['alt_logo_url'] = wp_get_attachment_image_url(carbon_get_theme_option('alt_logo'), 'medium');
-    $theme_settings['footer_button_text'] = carbon_get_theme_option('footer_button_text');
-    $theme_settings['footer_button_url'] = carbon_get_theme_option('footer_button_url');
-    $theme_settings['footer_copyright'] = carbon_get_theme_option('footer_copyright');
-
-}
-
-add_action('init', 'theme_settings');
