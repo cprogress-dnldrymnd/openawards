@@ -202,3 +202,5 @@ function theme_settings()
     $theme_settings['footer_button_url'] = carbon_get_theme_option('footer_button_url');
     $theme_settings['footer_copyright'] = carbon_get_theme_option('footer_copyright');
 }
+
+add_action('init', 'theme_settings');
