@@ -172,3 +172,15 @@ Container::make('theme_options', 'Theme Options')
             Field::make('textarea', 'address', __('Address')),
         )
     );
+
+
+function theme_settings()
+{
+    global $theme_settings;
+
+    $theme_settings['contact_number'] = carbon_get_theme_option('contact_number');
+    $theme_settings['email_address'] = carbon_get_theme_option('email_address');
+    $theme_settings['address'] = carbon_get_theme_option('address');
+}
+
+add_action('init', 'theme_settings');

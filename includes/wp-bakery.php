@@ -282,14 +282,30 @@ function action_contact_details_box($atts)
 {
     ob_start();
     extract(shortcode_atts(array(
-        'category' => 'all',
-        'style' => 'style-1',
+        'display_contact_number' => '',
+        'display_email_address' => '',
+        'display_address' => '',
     ), $atts));
-?>
-    <div class="contact-details-wrapper">
-        <div class="contact-details-box">
 
-        </div>
+    global $theme_settings;
+
+    
+?>
+
+    <div class="contact-details-wrapper">
+        <?php if ($display_contact_number && $theme_settings['contact_number']) { ?>
+            <div class="contact-details-box">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="phone" width="56.258" height="56.258" viewBox="0 0 56.258 56.258">
+                        <path id="Path_2264" data-name="Path 2264" d="M0,0H56.258V56.258H0Z" fill="rgba(0,0,0,0)" />
+                        <path id="Path_2265" data-name="Path 2265" d="M7.688,4h9.376l4.688,11.72-5.86,3.516a25.785,25.785,0,0,0,11.72,11.72l3.516-5.86,11.72,4.688v9.376a4.688,4.688,0,0,1-4.688,4.688A37.505,37.505,0,0,1,3,8.688,4.688,4.688,0,0,1,7.688,4" transform="translate(4.032 5.376)" fill="rgba(0,0,0,0)" stroke="#b57dff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="contact-detail">
+                    <a href="tel:<?= $theme_settings['contact_number'] ?>"> <?= $theme_settings['contact_number'] ?> </a>
+                </div>
+            </div>
+        <?php } ?>
     </div>
 <?php
     return ob_get_clean();
