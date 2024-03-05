@@ -14,7 +14,9 @@
       <div class="row">
         <div class="col-lg-4 col-md-4">
           <div class="logo-holder">
-            <img src="<?php echo $theme_settings['alt_logo_url'] ?>" alt="White Logo" />
+            <a href="<?= get_site_url() ?>">
+              <img src="<?php echo $theme_settings['alt_logo_url'] ?>" alt="White Logo" />
+            </a>
           </div>
           <div class="contact-details">
             <ul>
