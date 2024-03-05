@@ -6669,4 +6669,15 @@ form#resources_form.searching label {
   margin-left: auto;
   margin-right: auto; }
 
+.background-image-style-1:before {
+  background-position: left center !important;
+  background-image: url("data:image/svg+xml,");
+  position: absolute;
+  left: -26%;
+  top: -30px;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
 /*# sourceMappingURL=style.css.map */

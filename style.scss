@@ -8398,7 +8398,7 @@ form#resources_form {
             height: 100px;
         }
         .form-group-checkbox {
-            p{
+            p {
                 display: flex;
                 .wpcf7-list-item {
                     margin-left: 0;
@@ -8523,4 +8523,18 @@ form#resources_form {
     max-width: 745px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.background-image-style-1 {
+    &:before {
+        background-position: left center !important;
+        background-image: url("data:image/svg+xml,");
+        position: absolute;
+        left: -26%;
+        top: -30px;
+        height: 100%;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
