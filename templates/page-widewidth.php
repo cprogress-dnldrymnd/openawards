@@ -7,7 +7,7 @@
 <?php get_header();  ?>
 <main>
 
-    <div id="content" role="main">
+    <div id="content" class="wide-width" role="main">
         <?php if (have_posts()) :
             // Do we have any posts/pages in the databse that match our query?
         ?>
@@ -30,7 +30,9 @@
                     </section>
                 <?php } ?>
 
-                <?php the_content() ?>
+                <div class="container">
+                    <?php the_content() ?>
+                </div>
 
 
             <?php endwhile; // OK, let's stop the page loop once we've displayed it 

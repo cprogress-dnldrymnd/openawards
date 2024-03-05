@@ -6680,4 +6680,8 @@ form#resources_form.searching label {
   background-size: contain;
   background-repeat: no-repeat; }
 
+#content.wide-width .container {
+  max-width: 1640px !important;
+  width: 100% !important; }
+
 /*# sourceMappingURL=style.css.map */
