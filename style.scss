@@ -8650,6 +8650,9 @@ form#resources_form {
                 display: flex;
                 align-items: center;
             }
+            @media (max-width: 767px) and (min-width: 575px) {
+                text-align: left;
+            }
         }
     }
 }
