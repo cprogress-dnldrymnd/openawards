@@ -8594,6 +8594,11 @@ form#resources_form {
                     font-size: 16px;
                     color: var(--opal-black);
                 }
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
             }
             > div {
                 &:not(:last-child) {

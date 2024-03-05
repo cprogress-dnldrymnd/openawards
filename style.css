@@ -6725,6 +6725,8 @@ form#resources_form.searching label {
       .icon-box-wrapper .row .icon-box-holder .description-box p {
         font-size: 16px;
         color: var(--opal-black); }
+      .icon-box-wrapper .row .icon-box-holder .description-box p:last-child {
+        margin-bottom: 0; }
     .icon-box-wrapper .row .icon-box-holder > div:not(:last-child) {
       margin-bottom: 1.5rem; }
 
