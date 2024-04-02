@@ -88,8 +88,9 @@
 
                let myStr = jQuery(this).text();
                let month = myStr.split(" ")[0];
-               let daynum = myStr.split(" ")[1];
-               let dayword = myStr.split(" ")[2];
+               let year = myStr.split(" ")[1];
+               let daynum = myStr.split(" ")[2];
+               let dayword = myStr.split(" ")[3];
 
                $new_text = jQuery('<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
                $month = jQuery('<span class="day-month"> ' + month + ' </span>');
