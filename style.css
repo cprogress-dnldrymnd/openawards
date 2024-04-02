@@ -6835,10 +6835,15 @@ form#resources_form.searching label {
   .footer-bottom-links.footer-bottom-links ul li:not(:last-child) {
     margin-right: 1rem; }
 
-.custom-boxes ul li {
-  background-color: rgba(181, 125, 255, 0.5) !important;
-  color: #001F2B; }
-  .custom-boxes ul li:not(:last-child) {
-    margin-right: 40px; }
+.custom-boxes ul {
+  display: flex; }
+  .custom-boxes ul li {
+    background-color: rgba(181, 125, 255, 0.5) !important;
+    color: #001f2b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .custom-boxes ul li:not(:last-child) {
+      margin-right: 40px; }
 
 /*# sourceMappingURL=style.css.map */

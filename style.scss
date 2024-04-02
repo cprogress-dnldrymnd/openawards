@@ -8752,9 +8752,13 @@ form#resources_form {
 
 .custom-boxes {
     ul {
+        display: flex;
         li {
             background-color: rgba(181, 125, 255, 0.5) !important;
-            color: #001F2B;
+            color: #001f2b;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             &:not(:last-child) {
                 margin-right: 40px;
             }
