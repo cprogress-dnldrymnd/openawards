@@ -18,18 +18,21 @@
                <?php } else { ?>
                     <div class="spacing" style="margin-bottom: 50px;"></div>
                <?php } ?>
+               <div class="title-wrapper">
+                    <div class="container">
+                         <div class="heading-box">
+                              <h2>
+                                   <?php the_title() ?>
+                              </h2>
+                         </div>
+                         <div class="subheading">
+                              <p>Take a look at some of our upcoming events</p>
+                         </div>
+                    </div>
+               </div>
                <div class="container-holder">
                     <div class="container wide width1400">
-                         <div class="title-wrapper">
-                              <div class="heading-box">
-                                   <h2>
-                                        <?php the_title() ?>
-                                   </h2>
-                              </div>
-                              <div class="subheading">
-                                   <p>Take a look at some of our upcoming events</p>
-                              </div>
-                         </div>
+
                          <?php while (have_posts()) : the_post();
                               // If we have a page to show, start a loop that will display it
                          ?>
