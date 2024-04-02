@@ -16,7 +16,7 @@ get_header(); // This fxn gets the header.php file and renders it
 		}
 		?>
 
-
+		<?php get_template_part('template-parts/page-event', 'breadcrumbs'); ?>
 		<div class="title-wrapper">
 			<div class="container text-center">
 				<div class="heading-box">
@@ -29,7 +29,6 @@ get_header(); // This fxn gets the header.php file and renders it
 				</div>
 			</div>
 		</div>
-		<?php get_template_part('template-parts/page-event', 'breadcrumbs'); ?>
 		<?php if (have_posts()) :
 			// Do we have any posts in the databse that match our query?
 			// In the case of the home page, this will call for the most recent posts 
