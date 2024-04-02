@@ -80,3 +80,17 @@
      </div><!-- #content .site-content -->
 </main>
 <?php get_footer();
+?>
+
+<script>
+     jQuery(document).ready(function() {
+          jQuery('.event-date-list-header').each(function(index, element) {
+
+               let myStr = "Hello World"
+               let firstWord = myStr.split(" ")[0]
+               console.log(firstWord);
+               // element == this
+
+          });
+     });
+</script>
