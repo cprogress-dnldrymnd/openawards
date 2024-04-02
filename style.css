@@ -6964,6 +6964,7 @@ form#resources_form.searching label {
     color: var(--black-color);
     opacity: 0.5; }
     #em-wrapper .events-holder-v2 .event-location:before {
+      margin-right: 10px;
       content: '';
       width: 15px;
       height: 15px;

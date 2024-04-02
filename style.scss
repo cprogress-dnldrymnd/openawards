@@ -8924,6 +8924,7 @@ form#resources_form {
             color: var(--black-color);
             opacity: 0.5;
             &:before {
+                margin-right: 10px;
                 content: '';
                 width: 15px;
                 height: 15px;
