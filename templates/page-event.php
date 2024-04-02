@@ -129,33 +129,33 @@
                key++;
 
           });
+          setTimeout(function() {
+               $key = 1;
+               jQuery('.eventList-Swiper').each(function(index, element) {
 
-          $key = 1;
-          jQuery('.eventList-Swiper').each(function(index, element) {
+                    var $id = 'swiper' + $key;
+                    var $id = new Swiper(".eventList-Swiper", {
+                         loop: false,
+                         breakpoints: {
+                              480: {
+                                   slidesPerView: 2,
+                                   spaceBetween: 20,
+                              },
+                              768: {
+                                   slidesPerView: 3,
+                                   spaceBetween: 30,
+                              },
 
-               var $id = 'swiper' + $key;
-               var $id = new Swiper(".eventList-Swiper", {
-                    loop: false,
-                    breakpoints: {
-                         480: {
-                              slidesPerView: 2,
-                              spaceBetween: 20,
                          },
-                         768: {
-                              slidesPerView: 3,
-                              spaceBetween: 30,
+                         navigation: {
+                              nextEl: ".swiper-button-next-" + $key,
+                              prevEl: ".swiper-button-prev-" + $key,
                          },
+                    });
 
-                    },
-                    navigation: {
-                         nextEl: ".swiper-button-next-" + $key,
-                         prevEl: ".swiper-button-prev-" + $key,
-                    },
+                    $key++;
                });
-
-               $key++;
-          });
-
+          }, 1000);
 
      });
 </script>
