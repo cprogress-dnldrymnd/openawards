@@ -128,11 +128,11 @@
           slidesPerView: 3,
           spaceBetween: 30,
         },
-        
+
       },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next-" + $key,
+        prevEl: ".swiper-button-prev-" + $key,
       },
     });
 
