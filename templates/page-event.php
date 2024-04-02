@@ -122,6 +122,8 @@
                          $new_text = '<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
                          console.log('equals');
                     }
+               } else {
+                    $new_text = '<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
                }
                jQuery(this).html(new_text);
 
