@@ -6891,9 +6891,11 @@ form#resources_form.searching label {
       height: 100%;
       display: flex;
       align-items: flex-end;
-      justify-content: center; }
-      .boxes-style-1.boxes-style-1.boxes-style-1 > .wpb_column > .vc_column-inner .vc_row {
-        margin: 0 !important; }
+      justify-content: center;
+      overflow: hidden; }
+      .boxes-style-1.boxes-style-1.boxes-style-1 > .wpb_column > .vc_column-inner .vc_row.vc_row {
+        margin-left: 0 !important;
+        margin-left: 0 !important; }
       .boxes-style-1.boxes-style-1.boxes-style-1 > .wpb_column > .vc_column-inner p {
         font-size: 16px; }
   .boxes-style-1.boxes-style-1.boxes-style-1 .no-padding-top .vc_column-inner {
