@@ -19,7 +19,7 @@
                     <div class="spacing" style="margin-bottom: 50px;"></div>
                <?php } ?>
                <div class="title-wrapper">
-                    <div class="container">
+                    <div class="container wide width1400">
                          <div class="heading-box">
                               <h2>
                                    <?php the_title() ?>
