@@ -8831,7 +8831,17 @@ form#resources_form {
     .no-padding-top {
         .vc_column-inner {
             align-items: flex-start;
-            padding-top: 40px !important;
+            padding-top: 0 !important;
+        }
+    }
+    .no-padding-right {
+        .vc_column-inner {
+            padding-right: 0 !important;
+        }
+    }
+    .no-padding-bottom {
+        .vc_column-inner {
+            padding-bottom: 0 !important;
         }
     }
 }
