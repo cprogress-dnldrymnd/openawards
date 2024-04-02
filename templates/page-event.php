@@ -108,7 +108,7 @@
           });
 
           jQuery('.event-date-list-header').each(function(index, element) {
-               let new_text = jQuery(this).attr('new_text');
+               let new_text = jQuery(jQuery(this).attr('new_text'));
                jQuery(this).html(new_text);
           });
 
