@@ -111,7 +111,8 @@
 
 
                if (key != 1) {
-                    let myStrPrev = jQuery('.event-date-list-header[key="' + parseInt(key - 1) + '"]').text();
+                    key_prev = parseInt(key - 1);
+                    let myStrPrev = jQuery('.event-date-list-header[key="' + key_prev + '"]').text();
                     let monthPrev = myStrPrev.attr('month');
                     let yearPrev = myStrPrev.attr('year');
 
@@ -122,6 +123,7 @@
                          $new_text = '<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
                          console.log('equals');
                     }
+                    console.log(key_prev);
                } else {
                     $new_text = '<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
                }
