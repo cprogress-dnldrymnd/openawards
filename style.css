@@ -7003,4 +7003,7 @@ form#resources_form.searching label {
     border-radius: 50%;
     background-color: var(--high-violet) !important; }
 
+.em.em-view-container + p {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */

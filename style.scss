@@ -8972,3 +8972,7 @@ form#resources_form {
         }
     }
 }
+
+.em.em-view-container  + p {
+    display: none !important;
+}
