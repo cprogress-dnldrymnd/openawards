@@ -98,11 +98,9 @@
 
 
                if (monthPrev != month && yearPrev != year) {
-                    console.log('not-equals');
-                    $new_text = jQuery('<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
+                    $new_text = '<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
                } else {
-                    console.log('equals');
-                    $new_text = jQuery('<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
+                    $new_text = '<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
                }
                jQuery(this).attr('new_text', $new_text);
           });
