@@ -8904,6 +8904,7 @@ form#resources_form {
         .event-title {
             h3 {
                 margin-bottom: 0 !important;
+                font-size: 24px !important;
             }
             a {
                 font-size: 24px;
@@ -8911,11 +8912,17 @@ form#resources_form {
                 font-weight: 600;
             }
         }
+        .event-time {
+            font-size: 16px;
+            color: var(--black-color);
+            overflow: 0.5;
+        }
         &:not(:last-child) {
             border-bottom: 1px solid #d4d4d4;
             padding-bottom: 30px;
         }
     }
+  
     .event-date {
         .day-num {
             width: 50px;
