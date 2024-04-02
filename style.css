@@ -7032,4 +7032,8 @@ form#resources_form.searching label {
       font-size: 69px;
       max-width: 1000px; } }
 
+.required {
+  color: var(--high-violet);
+  font-size: 16px; }
+
 /*# sourceMappingURL=style.css.map */
