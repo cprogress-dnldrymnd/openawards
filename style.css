@@ -6944,6 +6944,8 @@ form#resources_form.searching label {
     background-color: var(--white-color);
     border-radius: 10px;
     border: 1px solid var(--high-violet); }
+    #em-wrapper .events-holder-v2 .inner > div:not(:last-child) {
+      margin-bottom: 1rem; }
   #em-wrapper .events-holder-v2 .event-date .day-num {
     width: 50px;
     height: 50px;
@@ -6959,7 +6961,7 @@ form#resources_form.searching label {
     font-size: 26px;
     font-weight: 500; }
   #em-wrapper .events-holder-v2 .event-title h2 {
-    margin-bottom: 0; }
+    margin-bottom: 0 !important; }
   #em-wrapper .events-holder-v2 .event-title a {
     color: var(--opal-black);
     font-size: 24px; }

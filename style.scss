@@ -8894,6 +8894,11 @@ form#resources_form {
             background-color: var(--white-color);
             border-radius: 10px;
             border: 1px solid var(--high-violet);
+            > div {
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+            }
         }
         .event-date {
             .day-num {
@@ -8915,7 +8920,7 @@ form#resources_form {
         }
         .event-title {
             h2 {
-                margin-bottom: 0;
+                margin-bottom: 0 !important;
             }
             a {
                 color: var(--opal-black);
