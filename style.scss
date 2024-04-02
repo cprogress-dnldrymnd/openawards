@@ -9014,7 +9014,7 @@ form#resources_form {
     padding-bottom: 50px;
     background-color: var(--white-color);
     h2 {
-        @media (max-width: 1200px) {
+        @media (min-width: 1200px) {
             font-size: 69px;
             max-width: 1000px;
         }

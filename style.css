@@ -7031,7 +7031,7 @@ form#resources_form.searching label {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: var(--white-color); }
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     .title-wrapper.title-wrapper h2 {
       font-size: 69px;
       max-width: 1000px; } }
