@@ -6843,7 +6843,11 @@ form#resources_form.searching label {
     color: #001f2b;
     display: flex;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center; }
     .custom-boxes li:not(:last-child) {
       margin-right: 40px; }
 

@@ -8759,6 +8759,10 @@ form#resources_form {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-size: 25px;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
         &:not(:last-child) {
             margin-right: 40px;
         }
