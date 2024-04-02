@@ -8756,7 +8756,8 @@ form#resources_form {
     font-family: "Poppins";
     padding-left: 0;
     flex-wrap: wrap;
-
+    margin-left: -1vw;
+    margin-right: -1vw;
     li {
         background-color: rgba(181, 125, 255, 0.5) !important;
         color: #001f2b;

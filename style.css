@@ -6840,7 +6840,9 @@ form#resources_form.searching label {
   justify-content: space-between;
   font-family: "Poppins";
   padding-left: 0;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-left: -1vw;
+  margin-right: -1vw; }
   .custom-boxes li {
     background-color: rgba(181, 125, 255, 0.5) !important;
     color: #001f2b;
