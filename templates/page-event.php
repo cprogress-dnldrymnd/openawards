@@ -86,10 +86,13 @@
      jQuery(document).ready(function() {
           jQuery('.event-date-list-header').each(function(index, element) {
 
-               let myStr = "Hello World"
-               let firstWord = myStr.split(" ")[0]
-               console.log(firstWord);
-               // element == this
+               let myStr = jQuery(this).text();
+               let daynum = myStr.split(" ")[0];
+               let dayword = myStr.split(" ")[2];
+
+               $new_text = jQuery('<span class="list-date"><span class="day-num"> '+daynum+' </span><span class="day-word"> '+dayword+' </span></span>');
+              
+               jQuery(this).html($new_text);
 
           });
      });
