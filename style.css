@@ -6923,6 +6923,9 @@ form#resources_form.searching label {
     margin-top: calc(var(--bs-gutter-y) * -1);
     margin-right: calc(var(--bs-gutter-x) * -0.5);
     margin-left: calc(var(--bs-gutter-x) * -0.5); }
+    #em-wrapper .event-list-holder:not(:last-child) {
+      border-bottom: 1px solid #d4d4d4;
+      padding-bottom: 30px; }
   #em-wrapper .events-holder-v2 {
     flex-shrink: 0;
     width: 100%;
@@ -6965,9 +6968,6 @@ form#resources_form.searching label {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center; }
-    #em-wrapper .events-holder-v2:not(:last-child) {
-      border-bottom: 1px solid #d4d4d4;
-      padding-bottom: 30px; }
   #em-wrapper .event-date-list-header {
     font-size: 26px;
     font-weight: 500; }
@@ -6980,7 +6980,7 @@ form#resources_form.searching label {
     align-items: center;
     justify-content: center;
     font-size: 26px;
-    colaor: var(--white-color);
+    color: var(--white-color);
     font-weight: 600; }
 
 .calendar-box.calendar-box {
