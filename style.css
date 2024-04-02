@@ -6997,7 +6997,7 @@ form#resources_form.searching label {
       color: var(--opal-black); }
   .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day span {
     color: var(--opal-black); }
-  .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventless-today .em-cal-day-date.em-cal-day-date a, .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventfull-today .em-cal-day-date.em-cal-day-date a {
+  .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventless-today .em-cal-day-date.em-cal-day-date a, .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventless-today .em-cal-day-date.em-cal-day-date span, .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventfull-today .em-cal-day-date.em-cal-day-date a, .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventfull-today .em-cal-day-date.em-cal-day-date span {
     color: var(--white-color) !important;
     font-weight: 600;
     border-radius: 50%;

@@ -8961,7 +8961,7 @@ form#resources_form {
                 &.eventless-today,
                 &.eventfull-today {
                     .em-cal-day-date.em-cal-day-date {
-                        a {
+                        a, span {
                             color: var(--white-color) !important;
                             font-weight: 600;
                             border-radius: 50%;
