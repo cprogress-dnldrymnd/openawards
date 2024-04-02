@@ -7027,4 +7027,14 @@ form#resources_form.searching label {
   padding: 20px;
   margin-top: 2rem; }
 
+.title-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--white-color); }
+  @media (max-width: 1200px) {
+    .title-wrapper h2 {
+      font-size: 69px;
+      font-size: 69px;
+      max-width: 1000px; } }
+
 /*# sourceMappingURL=style.css.map */
