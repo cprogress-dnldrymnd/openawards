@@ -8788,12 +8788,18 @@ form#resources_form {
 
 .heading-dot:after {
     content: ".";
-    color: #b57dff;
+    color: var(--high-violet);
 }
 
 .color-white {
     * {
-        color: white !important;
+        color: var(--white-color) !important;
+    }
+}
+
+.color-opal {
+    * {
+        color: var(--opal-black) !important;
     }
 }
 
