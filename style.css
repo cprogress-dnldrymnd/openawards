@@ -6956,7 +6956,7 @@ form#resources_form.searching label {
   #em-wrapper .events-holder-v2 .event-time {
     font-size: 16px;
     color: var(--black-color);
-    overflow: 0.5; }
+    opacity: 0.5; }
   #em-wrapper .events-holder-v2:not(:last-child) {
     border-bottom: 1px solid #d4d4d4;
     padding-bottom: 30px; }

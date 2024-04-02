@@ -8915,7 +8915,7 @@ form#resources_form {
         .event-time {
             font-size: 16px;
             color: var(--black-color);
-            overflow: 0.5;
+            opacity: 0.5;
         }
         &:not(:last-child) {
             border-bottom: 1px solid #d4d4d4;
