@@ -6879,7 +6879,8 @@ form#resources_form.searching label {
     content: none !important; }
   .boxes-style-1.boxes-style-1.boxes-style-1 .wpb_column {
     padding-left: 15px;
-    padding-right: 15px; }
+    padding-right: 15px;
+    margin-bottom: 30px; }
   .boxes-style-1.boxes-style-1.boxes-style-1 .vc_column-inner {
     padding: 200px 40px 0 !important;
     border-radius: 10px;
