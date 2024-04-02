@@ -117,12 +117,12 @@
                     let yearPrev = myStrPrev.attr('year');
 
                     if (monthPrev != month || yearPrev != year) {
-                         $new_text = '<div class="day-nav"><div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next"></div> <div class="swiper-button-prev"></div></div>';
+                         $new_text = '<div class="day-nav"><div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next swiper-button-next-' + key + '"></div> <div class="swiper-button-prev-' + key + '"></div></div>';
                     } else {
-                         $new_text = '<div class="day-nav"><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next"></div> <div class="swiper-button-prev"></div></div>';
+                         $new_text = '<div class="day-nav"><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next-' + key + '"></div> <div class="swiper-button-prev-' + key + '"></div></div>';
                     }
                } else {
-                    $new_text = '<div class="day-nav"><div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next"></div> <div class="swiper-button-prev"></div></div>';
+                    $new_text = '<div class="day-nav"><div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next-' + key + '"></div> <div class="swiper-button-prev-' + key + '"></div></div>';
                }
                jQuery(this).html($new_text);
 
