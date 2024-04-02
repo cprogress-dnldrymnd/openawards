@@ -12,7 +12,7 @@
           <?php if (have_posts()) :
                // Do we have any posts/pages in the databse that match our query?
           ?>
-           
+
                <?php if (!get_field('hide_breadcrumbs')) { ?>
                     <?php get_template_part('template-parts/page-event', 'breadcrumbs'); ?>
                <?php } else { ?>
@@ -20,7 +20,16 @@
                <?php } ?>
                <div class="container-holder">
                     <div class="container wide width1400">
-
+                         <div class="title-wrapper">
+                              <div class="heading-box">
+                                   <h2>
+                                        <?php the_title() ?>
+                                   </h2>
+                              </div>
+                              <div class="subheading">
+                                   <p>Take a look at some of our upcoming events</p>
+                              </div>
+                         </div>
                          <?php while (have_posts()) : the_post();
                               // If we have a page to show, start a loop that will display it
                          ?>
