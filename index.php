@@ -16,7 +16,7 @@ get_header(); // This fxn gets the header.php file and renders it
 		}
 		?>
 
-		<?php get_template_part('template-parts/page-event', 'breadcrumbs'); ?>
+		<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
 		<div class="title-wrapper">
 			<div class="container text-center">
 				<div class="heading-box">
