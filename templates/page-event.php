@@ -84,6 +84,12 @@
 
 <script>
      jQuery(document).ready(function() {
+
+          key = 1;
+          jQuery('.event-date-list-header').each(function(index, element) {
+               jQuery(this).attr('key', key);
+               key++;
+          });
           jQuery('.event-date-list-header').each(function(index, element) {
                let myStr = jQuery(this).text();
                let month = myStr.split(" ")[0];
