@@ -151,7 +151,8 @@ section.breadcrumbs nav ol.breadcrumb li:before {
   font-size: 10px; }
 
 section.breadcrumbs nav ol.breadcrumb li a {
-  color: var(--opal-black); }
+  color: var(--opal-black);
+  font-weight: bold; }
 
 section.breadcrumbs nav ol.breadcrumb li.active {
   opacity: 0.75; }
@@ -1110,8 +1111,8 @@ html {
   overflow-x: hidden; }
 
 .breadcrumbs.wocom {
-  padding-top: 40px;
-  padding-bottom: 40px; }
+  padding-top: 30px;
+  padding-bottom: 30px; }
 
 .breadcrumbs.wocom ol {
   margin-bottom: 0; }
@@ -1174,7 +1175,7 @@ img {
   padding-right: 15px !important; }
 
 section.breadcrumbs {
-  background-color: #f1f5fa; }
+  background-color: #F2F2F2; }
 
 section.breadcrumbs div.container li a {
   color: var(--opal-black) !important; }
