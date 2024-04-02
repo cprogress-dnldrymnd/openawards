@@ -5380,9 +5380,6 @@ section#open-awards-discussion-board table tr td.meta.number {
     margin-bottom: 45px;
     overflow: hidden;
     border: none;
-    -webkit-box-shadow: 0px 9px 21px #3f8ac50f;
-    -moz-box-shadow: 0px 9px 21px #3f8ac50f;
-    box-shadow: 0px 9px 21px #3f8ac50f;
 }
 
 .em-search-wrapper .em-events-search .em-search-main {
@@ -8996,6 +8993,7 @@ form#resources_form {
 .em-search-wrapper.em-search-wrapper {
     .em-events-search {
         border-radius: 10px;
+        border: 1px solid #f1f1f1;
     }
 }
 
