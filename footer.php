@@ -113,6 +113,34 @@
 
     $key++;
   });
+  $key = 1;
+  jQuery('.eventList-Swiper').each(function(index, element) {
+
+    var $id = 'swiper' + $key;
+    var $id = new Swiper(".eventList-Swiper", {
+      loop: true,
+      breakpoints: {
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    $key++;
+  });
 </script>
 <?php wp_footer();
 // This fxn allows plugins to insert themselves/scripts/css/files (right here) into the footer of your website. 
