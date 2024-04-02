@@ -41,13 +41,13 @@
                                                        <div class="col-lg-12 col-md-4">
                                                             <div class="calendar-box">
                                                                  <?= do_shortcode('[events_calendar]') ?>
-                                                                 <?= do_shortcode('[events_list]') ?>
+                                                                 
                                                             </div>
                                                        </div>
-                                                       <div class="col-lg-12 col-md-4 col-sm-6">
+                                                       <div class="col-lg-12 col-md-4 col-sm-6 d-none">
                                                             <?php get_template_part('template-parts/page-event', 'upcoming-events'); ?>
                                                        </div>
-                                                       <div class="col-lg-12 col-md-4 col-sm-6">
+                                                       <div class="col-lg-12 col-md-4 col-sm-6 d-none">
                                                             <?php get_template_part('template-parts/page-event', 'categories'); ?>
                                                        </div>
 
