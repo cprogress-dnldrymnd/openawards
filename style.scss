@@ -5668,7 +5668,6 @@ section#open-awards-discussion-board table tr td.meta.number {
     }
 }
 
-
 @media screen and (max-width: 1199px) {
     .event-sidebar {
         padding-left: 10px;
@@ -8918,18 +8917,22 @@ form#resources_form {
     .event-date-list-header {
         font-size: 26px;
         font-weight: 500;
-    }
-    .day-num {
-        width: 50px;
-        height: 50px;
-        display: inline-flex;
-        background-color: var(--high-violet);
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        color: var(--white-color);
-        font-weight: 600;
+        .day-month {
+            margin-bottom: 3rem;
+        }
+
+        .day-num {
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            background-color: var(--high-violet);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--white-color);
+            font-weight: 600;
+        }
     }
 }
 
@@ -8957,7 +8960,8 @@ form#resources_form {
                 &.eventless-today,
                 &.eventfull-today {
                     .em-cal-day-date.em-cal-day-date {
-                        a, span {
+                        a,
+                        span {
                             color: var(--white-color) !important;
                             font-weight: 600;
                             border-radius: 50%;
