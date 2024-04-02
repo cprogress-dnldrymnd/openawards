@@ -91,9 +91,10 @@
                let daynum = myStr.split(" ")[1];
                let dayword = myStr.split(" ")[2];
 
-               $new_text = jQuery('<span class="list-date"><span class="day-num"> '+daynum+' </span><span class="day-word"> '+dayword+' </span></span>');
-              
+               $new_text = jQuery('<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
+               $month = jQuery('<span class="day-month"> ' + month + ' </span>');
                jQuery(this).html($new_text);
+               console.log(month);
 
           });
      });
