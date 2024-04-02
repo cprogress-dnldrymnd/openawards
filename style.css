@@ -6836,7 +6836,8 @@ form#resources_form.searching label {
     margin-right: 1rem; }
 
 .custom-boxes {
-  display: flex; }
+  display: flex;
+  font-family: 'Poppins'; }
   .custom-boxes li {
     background-color: rgba(181, 125, 255, 0.5) !important;
     color: #001f2b;
