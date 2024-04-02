@@ -8976,3 +8976,9 @@ form#resources_form {
 .em.em-view-container  + p {
     display: none !important;
 }
+
+.em-search-wrapper.em-search-wrapper {
+    .em-events-search {
+        border-radius: 10px;
+    }
+}

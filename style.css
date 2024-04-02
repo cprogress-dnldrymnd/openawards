@@ -7006,4 +7006,7 @@ form#resources_form.searching label {
 .em.em-view-container + p {
   display: none !important; }
 
+.em-search-wrapper.em-search-wrapper .em-events-search {
+  border-radius: 10px; }
+
 /*# sourceMappingURL=style.css.map */
