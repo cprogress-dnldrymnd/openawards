@@ -125,16 +125,13 @@
                }
                console.log(monthPrev + ' ' + monthPrev);
                console.log(year + ' ' + yearPrev);
-               jQuery(this).attr('new_text', $new_text);
+               jQuery(this).html(new_text);
 
                key++;
 
           });
 
-          jQuery('.event-date-list-header').each(function(index, element) {
-               let new_text = jQuery(jQuery(this).attr('new_text'));
-               jQuery(this).html(new_text);
-          });
+         
 
      });
 </script>
