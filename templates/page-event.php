@@ -98,6 +98,8 @@
                jQuery(this).attr('year', year);
                jQuery(this).attr('daynum', daynum);
                jQuery(this).attr('dayword', dayword);
+
+               jQuery(this).next().find('.eventList-Swiper').addClass('eventList-Swiper-' + key);
                key++;
           });
 
