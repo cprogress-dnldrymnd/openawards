@@ -6966,6 +6966,8 @@ form#resources_form.searching label {
       font-size: 26px;
       color: var(--white-color);
       font-weight: 600; }
+    #em-wrapper .event-date-list-header .day-nav {
+      position: relative; }
 
 .calendar-box.calendar-box {
   font-family: var(--primary-font);
