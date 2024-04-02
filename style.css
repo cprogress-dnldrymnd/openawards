@@ -6926,7 +6926,8 @@ form#resources_form.searching label {
     flex-direction: row-reverse; }
     #em-wrapper .swiper-nav-holder > div {
       position: static;
-      transform: none; }
+      transform: none;
+      margin-top: 0; }
       #em-wrapper .swiper-nav-holder > div:after {
         font-size: 20px;
         font-weight: bold; }
