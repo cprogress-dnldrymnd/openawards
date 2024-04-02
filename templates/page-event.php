@@ -125,7 +125,7 @@
                } else {
                     $new_text = '<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
                }
-               jQuery(this).html(new_text);
+               jQuery(this).html($new_text);
 
                key++;
 
