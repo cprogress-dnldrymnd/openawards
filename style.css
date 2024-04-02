@@ -7030,10 +7030,12 @@ form#resources_form.searching label {
   font-family: var(--primary-font); }
   .title-wrapper.title-wrapper .container {
     max-width: 800px; }
-  @media (min-width: 1200px) {
-    .title-wrapper.title-wrapper h2 {
-      font-size: 69px;
-      max-width: 1000px; } }
+  .title-wrapper.title-wrapper h2 {
+    color: var(--black-color); }
+    @media (min-width: 1200px) {
+      .title-wrapper.title-wrapper h2 {
+        font-size: 69px;
+        max-width: 1000px; } }
 
 .required {
   color: var(--high-violet);
