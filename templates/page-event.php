@@ -35,7 +35,7 @@
                          ?>
                               <article class="post">
                                    <div class="the-content">
-                                        <div class="row">
+                                        <div class="row g-5">
                                              <div class="col-lg-3 event-sidebar">
                                                   <div class="row no-gutters">
                                                        <div class="col-lg-12 col-md-4">
