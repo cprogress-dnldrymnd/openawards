@@ -15,7 +15,7 @@
                <header class="woocommerce-products-header dark page-dark-header">
                     <div class="page-shop-banner text-left">
                          <div class="container wide width1400">
-                              <h1 class="woocommerce-products-header__title page-title"><?php the_title() </h1>
+                              <h1 class="woocommerce-products-header__title page-title"><?php the_title() ?></h1>
                               <div class="subheading">
                                    <p>Take a look at some of our upcoming events</p>
                               </div>
