@@ -8786,14 +8786,24 @@ form#resources_form {
     }
 }
 
-
 .heading-dot:after {
-    content: '.';
-    color: #B57DFF;
+    content: ".";
+    color: #b57dff;
 }
 
 .color-white {
     * {
         color: white !important;
+    }
+}
+
+.boxes-style-1.boxes-style-1.boxes-style-1 {
+    .vc_column-inner {
+        padding: 200px 40px 0 !important;
+        border-radius: 10px;
+        background-size: 102% !important;
+        p {
+            font-size: 16px;
+        }
     }
 }
