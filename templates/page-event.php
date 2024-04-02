@@ -87,23 +87,33 @@
 
           key = 1;
           jQuery('.event-date-list-header').each(function(index, element) {
-               jQuery(this).attr('key', key);
-               key++;
-          });
-
-          key = 1;
-          jQuery('.event-date-list-header').each(function(index, element) {
                let myStr = jQuery(this).text();
                let month = myStr.split(" ")[0];
                let year = myStr.split(" ")[1];
                let daynum = myStr.split(" ")[2];
                let dayword = myStr.split(" ")[3];
 
+               jQuery(this).attr('key', key);
+               jQuery(this).attr('month', key);
+               jQuery(this).attr('year', year);
+               jQuery(this).attr('daynum', daynum);
+               jQuery(this).attr('dayword', dayword);
+               key++;
+          });
+
+          key = 1;
+          jQuery('.event-date-list-header').each(function(index, element) {
+         
+               let month = jQuery(this).attr('month');
+               let year = jQuery(this).attr('year');
+               let daynum = jQuery(this).attr('daynum');
+               let dayword = jQuery(this).attr('dayword');
+
 
                if (key != 1) {
                     let myStrPrev = jQuery('.event-date-list-header[key="' + key + '"]').text();
-                    let monthPrev = myStrPrev.split(" ")[0];
-                    let yearPrev = myStrPrev.split(" ")[1];
+                    let monthPrev = jQuery(this).attr('month');
+                    let yearPrev = jQuery(this).attr('year');
 
                     if (monthPrev != month && yearPrev != year) {
                          $new_text = '<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
@@ -113,11 +123,18 @@
                          console.log('equals');
                     }
                }
-               jQuery(this).html(new_text);
+               console.log(monthPrev + ' ' + monthPrev);
+               console.log(year + ' ' + yearPrev);
+               jQuery(this).attr('new_text', $new_text);
+
                key++;
 
           });
 
+          jQuery('.event-date-list-header').each(function(index, element) {
+               let new_text = jQuery(jQuery(this).attr('new_text'));
+               jQuery(this).html(new_text);
+          });
 
      });
 </script>
