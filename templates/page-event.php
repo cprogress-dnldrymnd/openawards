@@ -117,20 +117,44 @@
                     let yearPrev = myStrPrev.attr('year');
 
                     if (monthPrev != month || yearPrev != year) {
-                         $new_text = '<div class="day-nav"><div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next swiper-button-next-' + key + '"></div> <div class="swiper-button-prev-' + key + '"></div></div>';
+                         $new_text = '<div class="day-nav"><div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next swiper-button-next-' + key + '"></div> <div class="swiper-button-prev swiper-button-prev-' + key + '"></div></div>';
                     } else {
-                         $new_text = '<div class="day-nav"><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next-' + key + '"></div> <div class="swiper-button-prev-' + key + '"></div></div>';
+                         $new_text = '<div class="day-nav"><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next swiper-button-next-' + key + '"></div> <div class="swiper-button-prev swiper-button-prev-' + key + '"></div></div>';
                     }
                } else {
-                    $new_text = '<div class="day-nav"><div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next-' + key + '"></div> <div class="swiper-button-prev-' + key + '"></div></div>';
+                    $new_text = '<div class="day-nav"><div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span><div class="swiper-button-next swiper-button-next-' + key + '"></div> <div class="swiper-button-prev swiper-button-prev-' + key + '"></div></div>';
                }
                jQuery(this).html($new_text);
 
                key++;
 
           });
-          
 
+          $key = 1;
+          jQuery('.eventList-Swiper').each(function(index, element) {
+
+               var $id = 'swiper' + $key;
+               var $id = new Swiper(".eventList-Swiper", {
+                    loop: false,
+                    breakpoints: {
+                         480: {
+                              slidesPerView: 2,
+                              spaceBetween: 20,
+                         },
+                         768: {
+                              slidesPerView: 3,
+                              spaceBetween: 30,
+                         },
+
+                    },
+                    navigation: {
+                         nextEl: ".swiper-button-next-" + $key,
+                         prevEl: ".swiper-button-prev-" + $key,
+                    },
+               });
+
+               $key++;
+          });
 
 
      });
