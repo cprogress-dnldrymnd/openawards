@@ -8911,6 +8911,10 @@ form#resources_form {
                 font-weight: 600;
             }
         }
+        &:not(:last-child) {
+            border-bottom: 1px solid #d4d4d4;
+            padding-bottom: 30px;
+        }
     }
     .event-date {
         .day-num {
