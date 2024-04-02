@@ -7026,7 +7026,10 @@ form#resources_form.searching label {
 .title-wrapper.title-wrapper {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: var(--white-color); }
+  background-color: var(--white-color);
+  font-family: var(--primary-font); }
+  .title-wrapper.title-wrapper .container {
+    max-width: 800px; }
   @media (min-width: 1200px) {
     .title-wrapper.title-wrapper h2 {
       font-size: 69px;

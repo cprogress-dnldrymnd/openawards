@@ -9009,6 +9009,10 @@ form#resources_form {
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: var(--white-color);
+    font-family: var(--primary-font);
+    .container {
+        max-width: 800px;
+    }
     h2 {
         @media (min-width: 1200px) {
             font-size: 69px;
