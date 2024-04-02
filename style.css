@@ -6989,7 +6989,9 @@ form#resources_form.searching label {
     #em-wrapper .event-date-list-header .day-nav {
       display: flex;
       justify-content: space-between;
-      position: relative; }
+      position: relative;
+      border-top: 1px solid #d4d4d4;
+      padding-top: 30px; }
 
 .calendar-box.calendar-box {
   font-family: var(--primary-font);
