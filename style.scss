@@ -5668,10 +5668,6 @@ section#open-awards-discussion-board table tr td.meta.number {
     }
 }
 
-.event-sidebar .list-box {
-    max-width: 290px;
-    margin: auto;
-}
 
 @media screen and (max-width: 1199px) {
     .event-sidebar {
@@ -8982,4 +8978,12 @@ form#resources_form {
     .em-events-search {
         border-radius: 10px;
     }
+}
+
+.event-sidebar .list-box {
+    background-color: var(--white);
+    border: 2px solid #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 2rem;
 }
