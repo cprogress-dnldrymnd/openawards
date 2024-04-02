@@ -136,7 +136,8 @@
                jQuery('.eventList-Swiper').each(function(index, element) {
 
                     var $id = 'swiper' + $key;
-                    var $id = new Swiper(".eventList-Swiper", {
+                    var $name = '.eventList-Swiper-' + $key;
+                    var $id = new Swiper($name, {
                          loop: false,
                          breakpoints: {
                               480: {
