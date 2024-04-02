@@ -111,7 +111,7 @@
 
 
                if (key != 1) {
-                    let myStrPrev = jQuery('.event-date-list-header[key="' + key - 1 + '"]').text();
+                    let myStrPrev = jQuery('.event-date-list-header[key="' + parseInt(key - 1) + '"]').text();
                     let monthPrev = myStrPrev.attr('month');
                     let yearPrev = myStrPrev.attr('year');
 
