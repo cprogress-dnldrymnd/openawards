@@ -103,7 +103,7 @@
 
           key = 1;
           jQuery('.event-date-list-header').each(function(index, element) {
-         
+
                let month = jQuery(this).attr('month');
                let year = jQuery(this).attr('year');
                let daynum = jQuery(this).attr('daynum');
@@ -111,7 +111,7 @@
 
 
                if (key != 1) {
-                    let myStrPrev = jQuery('.event-date-list-header[key="' + key + '"]').text();
+                    let myStrPrev = jQuery('.event-date-list-header[key="' + key - 1 + '"]').text();
                     let monthPrev = myStrPrev.attr('month');
                     let yearPrev = myStrPrev.attr('year');
 
@@ -131,7 +131,7 @@
 
           });
 
-         
+
 
      });
 </script>
