@@ -102,6 +102,8 @@
                     $new_text = jQuery('<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
                }
 
+               jQuery(this).html($new_text);
+
 
 
 
