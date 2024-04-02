@@ -93,7 +93,7 @@
                let dayword = myStr.split(" ")[3];
 
                $prev = jQuery(this).prev().prev();
-               let myStrPrev = prev.text();
+               let myStrPrev = $prev.text();
                let monthPrev = myStrPrev.split(" ")[0];
                let yearPrev = myStrPrev.split(" ")[1];
 
