@@ -112,8 +112,8 @@
 
                if (key != 1) {
                     let myStrPrev = jQuery('.event-date-list-header[key="' + key + '"]').text();
-                    let monthPrev = jQuery(this).attr('month');
-                    let yearPrev = jQuery(this).attr('year');
+                    let monthPrev = myStrPrev.attr('month');
+                    let yearPrev = myStrPrev.attr('year');
 
                     if (monthPrev != month && yearPrev != year) {
                          $new_text = '<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
