@@ -54,7 +54,7 @@
                                                   </div>
                                              </div>
                                              <div class="col-lg-9">
-
+                                             <?= do_shortcode('[events_list_grouped mode="monthly" country="US"]#_EVENTLINK - #_EVENTDATES at #_EVENTTIMES<br />[/events_list_grouped]') ?>
                                                   <?php the_content();
                                                   // This call the main content of the page, the stuff in the main text box while composing.
                                                   // This will wrap everything in p tags
