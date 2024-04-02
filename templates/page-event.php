@@ -123,8 +123,6 @@
                          console.log('equals');
                     }
                }
-               console.log(monthPrev + ' ' + monthPrev);
-               console.log(year + ' ' + yearPrev);
                jQuery(this).html(new_text);
 
                key++;
