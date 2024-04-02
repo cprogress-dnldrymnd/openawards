@@ -8801,12 +8801,14 @@ form#resources_form {
     .vc_row {
         display: flex;
         flex-wrap: wrap;
-        &:before, &:after {
+        &:before,
+        &:after {
             content: none !important;
         }
     }
     .wpb_column {
         padding-left: 15px;
+        padding-right: 15px;
     }
     .vc_column-inner {
         padding: 200px 40px 0 !important;
@@ -8821,8 +8823,10 @@ form#resources_form {
         }
     }
     .no-padding-top {
-        align-items: flex-start;
-        padding-top: 40px;
+        .vc_column-inner {
+            align-items: flex-start;
+            padding-top: 40px;
+        }
     }
 }
 

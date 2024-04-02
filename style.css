@@ -6878,7 +6878,8 @@ form#resources_form.searching label {
   .boxes-style-1.boxes-style-1.boxes-style-1 .vc_row:before, .boxes-style-1.boxes-style-1.boxes-style-1 .vc_row:after {
     content: none !important; }
 .boxes-style-1.boxes-style-1.boxes-style-1 .wpb_column {
-  padding-left: 15px; }
+  padding-left: 15px;
+  padding-right: 15px; }
 .boxes-style-1.boxes-style-1.boxes-style-1 .vc_column-inner {
   padding: 200px 40px 0 !important;
   border-radius: 10px;
@@ -6889,7 +6890,7 @@ form#resources_form.searching label {
   justify-content: center; }
   .boxes-style-1.boxes-style-1.boxes-style-1 .vc_column-inner p {
     font-size: 16px; }
-.boxes-style-1.boxes-style-1.boxes-style-1 .no-padding-top {
+.boxes-style-1.boxes-style-1.boxes-style-1 .no-padding-top .vc_column-inner {
   align-items: flex-start;
   padding-top: 40px; }
 
