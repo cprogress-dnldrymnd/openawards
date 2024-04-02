@@ -6980,10 +6980,10 @@ form#resources_form.searching label {
     align-items: center;
     justify-content: center;
     font-size: 26px;
-    color: var(--white-color);
+    colaor: var(--white-color);
     font-weight: 600; }
 
-.calendar-box {
+.calendar-box.calendar-box {
   font-family: var(--primary-font);
   font-family: "Poppins";
   background-color: var(--white);
@@ -6991,16 +6991,16 @@ form#resources_form.searching label {
   border-radius: 10px;
   padding: 20px;
   font-size: 17px; }
-  .calendar-box .em.em-calendar .em-cal-head {
+  .calendar-box.calendar-box .em.em-calendar .em-cal-head {
+    font-weight: 600; }
+    .calendar-box.calendar-box .em.em-calendar .em-cal-head .em-cal-day {
+      color: var(--opal-black); }
+  .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day span {
+    color: var(--opal-black); }
+  .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventless-today .em-cal-day-date.em-cal-day-date a, .calendar-box.calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventfull-today .em-cal-day-date.em-cal-day-date a {
+    color: var(--white-color) !important;
     font-weight: 600;
-    color: var(--opal-black); }
-  .calendar-box .em.em-calendar .em-cal-body .em-cal-day {
-    color: var(--opal-black); }
-    .calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventful .em-cal-day-date.em-cal-day-date a,
-    .calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventful .em-cal-day-date.em-cal-day-date span {
-      font-weight: 500; }
-    .calendar-box .em.em-calendar .em-cal-body .em-cal-day.eventful .em-cal-day-date.em-cal-day-date a {
-      color: var(--purple-heather) !important;
-      font-weight: bold; }
+    border-radius: 50%;
+    background-color: var(--high-violet) !important; }
 
 /*# sourceMappingURL=style.css.map */
