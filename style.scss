@@ -8859,14 +8859,6 @@ form#resources_form {
             
     }
     .events-holder-v2 {
-        
-        flex-shrink: 0;
-        width: 100%;
-        max-width: 100%;
-        padding-right: calc(var(--bs-gutter-x) * 0.5);
-        padding-left: calc(var(--bs-gutter-x) * 0.5);
-        margin-top: var(--bs-gutter-y);
-        width: 33.333333%;
         .inner {
             padding: 22px;
             background-color: var(--white-color);
