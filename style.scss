@@ -8752,19 +8752,23 @@ form#resources_form {
 
 .custom-boxes {
     display: flex;
-    font-family: 'Poppins';
+    justify-content: space-between;
+    font-family: "Poppins";
+    padding-left: 0;
     li {
         background-color: rgba(181, 125, 255, 0.5) !important;
         color: #001f2b;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         font-size: 25px;
         font-weight: bold;
-        padding: 10px;
+        padding: 30px 10px;
+        border-radius: 10px;
         text-align: center;
+        flex: 0 0 calc(16.666666% - 2vw);
         &:not(:last-child) {
-            margin-right: 40px;
+            margin-right: 2vw;
         }
     }
 }
