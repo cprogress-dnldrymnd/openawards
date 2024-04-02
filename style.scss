@@ -8865,6 +8865,7 @@ form#resources_form {
             position: static;
             transform: none;
             margin-top: 0;
+            display: inline-block !important;
             &:after {
                 font-size: 20px;
                 font-weight: bold;
