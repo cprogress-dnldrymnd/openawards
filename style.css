@@ -6872,6 +6872,13 @@ form#resources_form.searching label {
 .color-white * {
   color: white !important; }
 
+.boxes-style-1.boxes-style-1.boxes-style-1 .vc_row {
+  display: flex;
+  flex-wrap: wrap; }
+  .boxes-style-1.boxes-style-1.boxes-style-1 .vc_row:before, .boxes-style-1.boxes-style-1.boxes-style-1 .vc_row:after {
+    content: none !important; }
+.boxes-style-1.boxes-style-1.boxes-style-1 .wpb_column {
+  padding-left: 15px; }
 .boxes-style-1.boxes-style-1.boxes-style-1 .vc_column-inner {
   padding: 200px 40px 0 !important;
   border-radius: 10px;
