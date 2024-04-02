@@ -87,8 +87,9 @@
           jQuery('.event-date-list-header').each(function(index, element) {
 
                let myStr = jQuery(this).text();
-               let daynum = myStr.split(" ")[0];
-               let dayword = myStr.split(" ")[1];
+               let month = myStr.split(" ")[0];
+               let daynum = myStr.split(" ")[1];
+               let dayword = myStr.split(" ")[2];
 
                $new_text = jQuery('<span class="list-date"><span class="day-num"> '+daynum+' </span><span class="day-word"> '+dayword+' </span></span>');
               
