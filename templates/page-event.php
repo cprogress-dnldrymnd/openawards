@@ -54,13 +54,7 @@
                                                   </div>
                                              </div>
                                              <div class="col-lg-9">
-                                                  <?php the_content();
-                                                  // This call the main content of the page, the stuff in the main text box while composing.
-                                                  // This will wrap everything in p tags
-                                                  ?>
-
-                                                  <?php wp_link_pages(); // This will display pagination links, if applicable to the page 
-                                                  ?>
+                                                  
                                              </div>
 
                                         </div>
@@ -88,7 +82,7 @@
 
                let myStr = jQuery(this).text();
                let daynum = myStr.split(" ")[0];
-               let dayword = myStr.split(" ")[2];
+               let dayword = myStr.split(" ")[1];
 
                $new_text = jQuery('<span class="list-date"><span class="day-num"> '+daynum+' </span><span class="day-word"> '+dayword+' </span></span>');
               
