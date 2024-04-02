@@ -6911,17 +6911,9 @@ form#resources_form.searching label {
 
 #em-wrapper {
   font-family: "Poppins", sans-serif; }
-  #em-wrapper .event-list-holder {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x) * -0.5);
-    margin-left: calc(var(--bs-gutter-x) * -0.5); }
-    #em-wrapper .event-list-holder:not(:last-child) {
-      border-bottom: 1px solid #d4d4d4;
-      padding-bottom: 30px; }
+  #em-wrapper .event-list-holder:not(:last-child) {
+    border-bottom: 1px solid #d4d4d4;
+    padding-bottom: 30px; }
   #em-wrapper .events-holder-v2 {
     flex-shrink: 0;
     width: 100%;
