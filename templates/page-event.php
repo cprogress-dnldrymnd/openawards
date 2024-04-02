@@ -54,7 +54,13 @@
                                                   </div>
                                              </div>
                                              <div class="col-lg-9">
-                                                  
+                                                  <?php the_content();
+                                                  // This call the main content of the page, the stuff in the main text box while composing.
+                                                  // This will wrap everything in p tags
+                                                  ?>
+
+                                                  <?php wp_link_pages(); // This will display pagination links, if applicable to the page 
+                                                  ?>
                                              </div>
 
                                         </div>
