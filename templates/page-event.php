@@ -102,7 +102,8 @@
                     console.log('equals');
                }
 
-               console.log(monthPrev + ' ' + yearPrev);
+               console.log(monthPrev + ' ' + monthPrev);
+               console.log(year + ' ' + yearPrev);
                jQuery(this).attr('new_text', $new_text);
           });
 
