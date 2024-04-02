@@ -8822,6 +8822,9 @@ form#resources_form {
             display: flex;
             align-items: flex-end;
             justify-content: center;
+            .vc_row {
+                margin: 0 !important;
+            }
             p {
                 font-size: 16px;
             }
@@ -8859,4 +8862,10 @@ form#resources_form {
         background-size: contain;
         background-repeat: no-repeat;
     }
+}
+
+
+
+.contact-section {
+    box-shadow: 0px 25px 38px #0000000D !important;
 }
