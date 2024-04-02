@@ -84,6 +84,7 @@
 
 <script>
      jQuery(document).ready(function() {
+          key = 1;
           jQuery('.event-date-list-header').each(function(index, element) {
                let myStr = jQuery(this).text();
                let month = myStr.split(" ")[0];
@@ -99,16 +100,21 @@
                console.log(monthPrev);
                console.log(yearPrev);
 
-               if (monthPrev != month && yearPrev != year) {
+               if (key == 1) {
                     $new_text = jQuery('<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
                } else {
-                    $new_text = jQuery('<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
+                    if (monthPrev != month && yearPrev != year) {
+                         $new_text = jQuery('<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
+                    } else {
+                         $new_text = jQuery('<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
+                    }
                }
+
+
 
                jQuery(this).html($new_text);
 
-
-
+               key++;
 
           });
      });
