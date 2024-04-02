@@ -6859,6 +6859,7 @@ form#resources_form.searching label {
     margin-right: 1vw; }
     @media (max-width: 1199px) {
       .custom-boxes li {
-        flex: 0 0 calc(33.33333333% - 2vw); } }
+        flex: 0 0 calc(33.33333333% - 2vw);
+        margin-bottom: 1rem; } }
 
 /*# sourceMappingURL=style.css.map */
