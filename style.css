@@ -6931,7 +6931,6 @@ form#resources_form.searching label {
   margin-right: calc(var(--bs-gutter-x) * -0.5);
   margin-left: calc(var(--bs-gutter-x) * -0.5); }
 #em-wrapper .events-holder-v2 {
-  font-family: "Poppins", sans-serif;
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;

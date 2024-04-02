@@ -8871,6 +8871,8 @@ form#resources_form {
 }
 
 #em-wrapper {
+    font-family: "Poppins", sans-serif;
+
     .event-list-holder {
         --bs-gutter-x: 1.5rem;
         --bs-gutter-y: 1.5rem;
@@ -8881,7 +8883,6 @@ form#resources_form {
         margin-left: calc(var(--bs-gutter-x) * -0.5);
     }
     .events-holder-v2 {
-        font-family: "Poppins", sans-serif;
         flex-shrink: 0;
         width: 100%;
         max-width: 100%;
