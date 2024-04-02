@@ -98,7 +98,6 @@
                let yearPrev = myStrPrev.split(" ")[1];
 
         
-              
 
                if(monthPrev != month && yearPrev != year) {
                     console.log('not-equals');
@@ -109,7 +108,7 @@
                }
 
 
-               jQuery(this).html($new_text);
+              // jQuery(this).html($new_text);
 
                key++;
 
