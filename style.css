@@ -6920,6 +6920,16 @@ form#resources_form.searching label {
     border-top: 1px solid #d4d4d4;
     padding-top: 30px;
     margin-top: 30px; }
+  #em-wrapper .swiper-nav-holder {
+    display: flex;
+    justify-content: flex-end; }
+    #em-wrapper .swiper-nav-holder > div {
+      position: static; }
+      #em-wrapper .swiper-nav-holder > div:after {
+        font-size: 20px;
+        font-weight: bold; }
+      #em-wrapper .swiper-nav-holder > div:not(:last-child) {
+        margin-right: 1rem; }
   #em-wrapper .events-holder-v2 {
     width: 33.333333333%; }
     #em-wrapper .events-holder-v2 .inner {
@@ -6973,6 +6983,8 @@ form#resources_form.searching label {
       color: var(--white-color);
       font-weight: 600; }
     #em-wrapper .event-date-list-header .day-nav {
+      display: flex;
+      justify-content: space-between;
       position: relative; }
 
 .calendar-box.calendar-box {

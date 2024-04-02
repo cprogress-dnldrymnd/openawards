@@ -8856,9 +8856,20 @@ form#resources_form {
         padding-top: 30px;
         margin-top: 30px;
     }
-   
-    .swiper-nav-holder{
-        
+
+    .swiper-nav-holder {
+        display: flex;
+        justify-content: flex-end;
+        > div {
+            position: static;
+            &:after {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
     }
     .events-holder-v2 {
         width: 33.333333333%;
@@ -8930,6 +8941,8 @@ form#resources_form {
         }
 
         .day-nav {
+            display: flex;
+            justify-content: space-between;
             position: relative;
         }
     }
