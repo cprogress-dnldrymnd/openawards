@@ -212,7 +212,7 @@ function header_class()
 {
 	$page_template = get_page_template_slug(get_the_ID());
 	$post_type = get_post_type();
-	if ($post_type == 'location' || $post_type == 'event' || $page_template == 'templates/page-with-dark-header.php' ||  $post_type == 'discussion-topics' || $page_template == 'templates/page-community.php') {
+	if ($post_type == 'location' || $post_type == 'event' || $page_template == 'templates/page-with-dark-header.php' || $page_template == 'templates/page-event.php' || $post_type == 'discussion-topics' || $page_template == 'templates/page-community.php') {
 		echo 'class="darkHeader"';
 	}
 	/*if(is_account_page()) {
@@ -231,7 +231,7 @@ function logo()
 	global $theme_settings;
 	$page_template = get_page_template_slug(get_the_ID());
 	$post_type = get_post_type();
-	if ($post_type == 'location' || $post_type == 'event' || $page_template == 'templates/page-with-dark-header.php'  || $post_type == 'discussion-topics' || $page_template == 'templates/page-community.php') {
+	if ($post_type == 'location' || $post_type == 'event' || $page_template == 'templates/page-with-dark-header.php' || $page_template == 'templates/page-event.php' || $post_type == 'discussion-topics' || $page_template == 'templates/page-community.php') {
 		return $theme_settings['alt_logo_url'];
 	} else {
 		return $theme_settings['logo_url'];
