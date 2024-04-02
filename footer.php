@@ -118,7 +118,7 @@
 
     var $id = 'swiper' + $key;
     var $id = new Swiper(".eventList-Swiper", {
-      loop: true,
+      loop: false,
       breakpoints: {
         480: {
           slidesPerView: 2,
