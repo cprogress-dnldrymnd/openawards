@@ -84,34 +84,33 @@
 
 <script>
      jQuery(document).ready(function() {
-          key = 1;
           jQuery('.event-date-list-header').each(function(index, element) {
                let myStr = jQuery(this).text();
                let month = myStr.split(" ")[0];
                let year = myStr.split(" ")[1];
                let daynum = myStr.split(" ")[2];
                let dayword = myStr.split(" ")[3];
-
                $prev = jQuery(this).prev().prev();
                let myStrPrev = $prev.text();
                let monthPrev = myStrPrev.split(" ")[0];
                let yearPrev = myStrPrev.split(" ")[1];
 
-        
 
-               if(monthPrev != month && yearPrev != year) {
+
+               if (monthPrev != month && yearPrev != year) {
                     console.log('not-equals');
                     $new_text = jQuery('<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
                } else {
                     console.log('equals');
                     $new_text = jQuery('<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
                }
-
-
-              // jQuery(this).html($new_text);
-
-               key++;
-
+               jQuery(this).attr('new_text', $new_text);
           });
+
+          jQuery('.event-date-list-header').each(function(index, element) {
+               let new_text = jQuery(this).attr('new_text');
+               jQuery(this).html(new_text);
+          });
+
      });
 </script>
