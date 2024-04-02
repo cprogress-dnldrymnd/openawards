@@ -6839,7 +6839,8 @@ form#resources_form.searching label {
   display: flex;
   justify-content: space-between;
   font-family: "Poppins";
-  padding-left: 0; }
+  padding-left: 0;
+  flex-wrap: wrap; }
   .custom-boxes li {
     background-color: rgba(181, 125, 255, 0.5) !important;
     color: #001f2b;
@@ -6854,5 +6855,8 @@ form#resources_form.searching label {
     flex: 0 0 calc(16.666666% - 2vw); }
     .custom-boxes li:not(:last-child) {
       margin-right: 2vw; }
+    @media (max-width: 1199px) {
+      .custom-boxes li {
+        flex: 0 0 calc(33.33333333% - 2vw); } }
 
 /*# sourceMappingURL=style.css.map */
