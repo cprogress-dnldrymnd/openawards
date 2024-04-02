@@ -18,7 +18,7 @@ get_header(); // This fxn gets the header.php file and renders it
 
 
 		<div class="title-wrapper">
-			<div class="container">
+			<div class="container text-center">
 				<div class="heading-box">
 					<h2>
 						<?= $title ?>
