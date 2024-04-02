@@ -6881,16 +6881,16 @@ form#resources_form.searching label {
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 30px; }
-  .boxes-style-1.boxes-style-1.boxes-style-1 .vc_column-inner {
-    padding: 200px 40px 0 !important;
-    border-radius: 10px;
-    background-size: cover !important;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center; }
-    .boxes-style-1.boxes-style-1.boxes-style-1 .vc_column-inner p {
-      font-size: 16px; }
+    .boxes-style-1.boxes-style-1.boxes-style-1 .wpb_column > .vc_column-inner {
+      padding: 200px 40px 0 !important;
+      border-radius: 10px;
+      background-size: cover !important;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center; }
+      .boxes-style-1.boxes-style-1.boxes-style-1 .wpb_column > .vc_column-inner p {
+        font-size: 16px; }
   .boxes-style-1.boxes-style-1.boxes-style-1 .no-padding-top .vc_column-inner {
     align-items: flex-start;
     padding-top: 40px !important; }
