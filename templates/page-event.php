@@ -100,6 +100,11 @@
         
                $new_text = jQuery('<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
 
+               if(monthPrev != month && yearPrev != year) {
+                    console.log('not-equals');
+               } else {
+                    console.log('equals');
+               }
 
 
                jQuery(this).html($new_text);
