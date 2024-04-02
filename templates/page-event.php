@@ -94,7 +94,7 @@
                let dayword = myStr.split(" ")[3];
 
                jQuery(this).attr('key', key);
-               jQuery(this).attr('month', key);
+               jQuery(this).attr('month', month);
                jQuery(this).attr('year', year);
                jQuery(this).attr('daynum', daynum);
                jQuery(this).attr('dayword', dayword);
