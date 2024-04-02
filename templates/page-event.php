@@ -41,6 +41,7 @@
                                                        <div class="col-lg-12 col-md-4">
                                                             <div class="calendar-box">
                                                                  <?= do_shortcode('[events_calendar]') ?>
+                                                                 <?= do_shortcode('[events_list]') ?>
                                                             </div>
                                                        </div>
                                                        <div class="col-lg-12 col-md-4 col-sm-6">
