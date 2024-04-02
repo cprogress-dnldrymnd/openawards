@@ -8756,6 +8756,7 @@ form#resources_form {
     font-family: "Poppins";
     padding-left: 0;
     flex-wrap: wrap;
+
     li {
         background-color: rgba(181, 125, 255, 0.5) !important;
         color: #001f2b;
@@ -8768,9 +8769,9 @@ form#resources_form {
         border-radius: 10px;
         text-align: center;
         flex: 0 0 calc(16.666666% - 2vw);
-        &:not(:last-child) {
-            margin-right: 2vw;
-        }
+        margin-left: 1vw;
+        margin-right: 1vw;
+
         @media (max-width: 1199px) {
             flex: 0 0 calc(33.33333333% - 2vw);
         }

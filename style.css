@@ -6852,9 +6852,9 @@ form#resources_form.searching label {
     padding: 30px 10px;
     border-radius: 10px;
     text-align: center;
-    flex: 0 0 calc(16.666666% - 2vw); }
-    .custom-boxes li:not(:last-child) {
-      margin-right: 2vw; }
+    flex: 0 0 calc(16.666666% - 2vw);
+    margin-left: 1vw;
+    margin-right: 1vw; }
     @media (max-width: 1199px) {
       .custom-boxes li {
         flex: 0 0 calc(33.33333333% - 2vw); } }
