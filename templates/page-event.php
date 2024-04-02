@@ -96,7 +96,8 @@
                let monthPrev = myStrPrev.split(" ")[0];
                let yearPrev = myStrPrev.split(" ")[1];
 
-               
+               console.log(monthPrev);
+               console.log(yearPrev);
 
                if (monthPrev != month && yearPrev != year) {
                     $new_text = jQuery('<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>');
