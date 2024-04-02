@@ -8900,32 +8900,34 @@ form#resources_form {
                 }
             }
         }
-        .event-date {
-            .day-num {
-                width: 50px;
-                height: 50px;
-                display: inline-flex;
-                background-color: var(--high-violet);
-                border-radius: 50%;
-                align-items: center;
-                justify-content: center;
-                font-size: 26px;
-                color: var(--white-color);
-                font-weight: 600;
-            }
-            .date-word {
-                font-size: 26px;
-                font-weight: 500;
-            }
-        }
+
         .event-title {
-            h2 {
+            h3 {
                 margin-bottom: 0 !important;
             }
             a {
-                color: var(--opal-black);
                 font-size: 24px;
+                color: var(--opal-black) !important;
+                font-weight: 600;
             }
+        }
+    }
+    .event-date {
+        .day-num {
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            background-color: var(--high-violet);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--white-color);
+            font-weight: 600;
+        }
+        .date-word {
+            font-size: 26px;
+            font-weight: 500;
         }
     }
 }
