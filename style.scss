@@ -8849,17 +8849,14 @@ form#resources_form {
         display: block !important;
     }
     .event-list-holder {
-    
-        &:not(:last-child) {
-            border-bottom: 1px solid #d4d4d4;
-            padding-bottom: 30px;
-        }
-
-       
+        border-bottom: 1px solid #d4d4d4;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-top: 1px solid #d4d4d4;
+        padding-top: 30px;
+        margin-top: 30px;
     }
-    .even-holder-inner {
-            
-    }
+   
     .events-holder-v2 {
         width: 33.333333333%;
         .inner {
