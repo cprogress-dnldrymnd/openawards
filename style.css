@@ -6869,4 +6869,7 @@ form#resources_form.searching label {
   content: '.';
   color: #B57DFF; }
 
+.color-white * {
+  color: white !important; }
+
 /*# sourceMappingURL=style.css.map */
