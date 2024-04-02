@@ -8845,7 +8845,9 @@ form#resources_form {
 
 #em-wrapper {
     font-family: "Poppins", sans-serif;
-
+    .em.em-list {
+        display: block !important;
+    }
     .event-list-holder {
     
         &:not(:last-child) {

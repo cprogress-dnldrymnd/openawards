@@ -6911,6 +6911,8 @@ form#resources_form.searching label {
 
 #em-wrapper {
   font-family: "Poppins", sans-serif; }
+  #em-wrapper .em.em-list {
+    display: block !important; }
   #em-wrapper .event-list-holder:not(:last-child) {
     border-bottom: 1px solid #d4d4d4;
     padding-bottom: 30px; }
