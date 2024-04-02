@@ -94,13 +94,12 @@
                let myStrPrev = $prev.text();
                let monthPrev = myStrPrev.split(" ")[0];
                let yearPrev = myStrPrev.split(" ")[1];
-
-
-
                if (monthPrev != month && yearPrev != year) {
                     $new_text = '<div class="day-month"> ' + month + ' ' + year + ' </div><span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
+                    console.log('not-equals');
                } else {
                     $new_text = '<span class="list-date"><span class="day-num"> ' + daynum + ' </span><span class="day-word"> ' + dayword + ' </span></span>';
+                    console.log('equals');
                }
                jQuery(this).attr('new_text', $new_text);
           });
