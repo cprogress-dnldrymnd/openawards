@@ -9030,3 +9030,9 @@ form#resources_form {
     color: var(--high-violet);
     font-size: 16px;
 }
+
+#teamModal {
+    .modal-content {
+        max-width:     max-width: 1000px;;
+    }
+}
