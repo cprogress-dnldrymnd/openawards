@@ -9141,6 +9141,10 @@ section.archive-section {
     background-color: #f8f8f8;
     padding: 3rem;
     border-radius: 10px;
+    .image-box {
+        border-radius: 10px;
+    overflow: hidden;
+    }
     .swiper-button-next {
     }
 }

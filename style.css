@@ -7121,6 +7121,9 @@ section.archive-section {
   background-color: #f8f8f8;
   padding: 3rem;
   border-radius: 10px; }
+  .swiperPostSlider-holder .image-box {
+    border-radius: 10px;
+    overflow: hidden; }
 
 .custom-button a {
   padding-top: 18px;
