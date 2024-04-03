@@ -9110,47 +9110,48 @@ body.modal-open {
 section.archive-section {
     font-family: var(--primary-font);
     padding-bottom: 100px;
-    .post-box {
-        background-color: var(--white-color);
-        box-shadow: 0px 29px 35px #0000000d;
-        border-radius: 10px;
-        overflow: hidden;
+}
+
+.post-box.post-box {
+    background-color: var(--white-color);
+    box-shadow: 0px 29px 35px #0000000d;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    .image-box {
         position: relative;
-        .image-box {
-            position: relative;
-            padding: 32%;
-            img {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                left: 0;
-                top: 0;
+        padding: 32%;
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 0;
+            top: 0;
+        }
+    }
+    .content-box {
+        padding: 25px;
+        h4 {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        .description-box {
+            font-size: 14px;
+            color: #5b5b5b;
+        }
+        .button-box {
+            a {
+                color: var(--high-violet);
+                font-size: 18px;
             }
         }
-        .content-box {
-            padding: 25px;
-            h4 {
-                margin-bottom: 0;
-                font-weight: 500;
-                color: var(--primary-color);
-                font-size: 20px;
-            }
-
-            .description-box {
-                font-size: 14px;
-                color: #5b5b5b;
-            }
-            .button-box {
-                a {
-                    color: var(--high-violet);
-                    font-size: 18px;
-                }
-            }
-            > div {
-                &:not(:last-child) {
-                    margin-bottom: 1rem;
-                }
+        > div {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
             }
         }
     }
