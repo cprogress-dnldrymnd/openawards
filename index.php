@@ -57,8 +57,9 @@ get_header(); // This fxn gets the header.php file and renders it
 					<?php } ?>
 				</div>
 
-				<div class="button-box">
-					<a href="">Load More</a>
+		
+				<div class="vc_btn3-container custom-button text-center mt-5">
+					<a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" href="#" title="">Load More</a>
 				</div>
 			</div>
 		</section>

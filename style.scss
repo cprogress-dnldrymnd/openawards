@@ -8685,6 +8685,7 @@ form#resources_form {
     &.vc_btn3-color-violet {
         background-color: var(--high-violet);
         border-color: var(--high-violet);
+        color: var(--white-color);
     }
     &.vc_btn3-color-white {
         color: var(--opal-black);
@@ -9138,7 +9139,7 @@ section.archive-section {
 
             .description-box {
                 font-size: 14px;
-                color: #5B5B5B;
+                color: #5b5b5b;
             }
             .button-box {
                 a {
@@ -9152,5 +9153,17 @@ section.archive-section {
                 }
             }
         }
+    }
+}
+
+.custom-button {
+    a {
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 25px;
+        padding-right: 25px;
+        display: inline-block;
+        border-radius: 5px;
+        color: var(--white-color);
     }
 }

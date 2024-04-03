@@ -6796,7 +6796,8 @@ form#resources_form.searching label {
   font-size: 23px; }
 .vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-violet {
   background-color: var(--high-violet);
-  border-color: var(--high-violet); }
+  border-color: var(--high-violet);
+  color: var(--white-color); }
 .vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-white {
   color: var(--opal-black); }
 
@@ -7128,11 +7129,20 @@ section.archive-section {
         font-size: 20px; }
       section.archive-section .post-box .content-box .description-box {
         font-size: 14px;
-        color: #5B5B5B; }
+        color: #5b5b5b; }
       section.archive-section .post-box .content-box .button-box a {
         color: var(--high-violet);
         font-size: 18px; }
       section.archive-section .post-box .content-box > div:not(:last-child) {
         margin-bottom: 1rem; }
+
+.custom-button a {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+  border-radius: 5px;
+  color: var(--white-color); }
 
 /*# sourceMappingURL=style.css.map */
