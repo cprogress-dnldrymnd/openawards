@@ -17,7 +17,7 @@ function footer_functions() {
 
 function team_modal_trigger() {
     jQuery('.team-modal-trigger').click(function (e) {
-        team_name = jQuery(this).attr('name');
+        team_name = jQuery(this).attr('team_name');
         body = jQuery(this).attr('content');
         image = jQuery(this).attr('image');
         position = jQuery(this).attr('position');
