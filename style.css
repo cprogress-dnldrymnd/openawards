@@ -6494,7 +6494,8 @@ form#resources_form.searching label {
   .team-slider.style-3 .swiper-slide .image-box {
     margin-bottom: 1rem;
     overflow: hidden;
-    border-radius: 10px; }
+    border-radius: 10px;
+    position: relative; }
     .team-slider.style-3 .swiper-slide .image-box img {
       border-radius: 10px;
       transition: 300ms; }
