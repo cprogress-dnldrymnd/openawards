@@ -24,7 +24,7 @@ function team_modal_trigger() {
         jQuery('#teamModal .description-box').html(body);
         jQuery('#teamModal .modal-title').html(title);
         jQuery('#teamModal .linkedin').attr('href', linkedin);
-        jQuery('#teamModal .image-box img').attr('src', image);
+        jQuery('#teamModal .image').attr('src', image);
 
         
         e.preventDefault();
