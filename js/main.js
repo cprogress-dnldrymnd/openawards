@@ -17,14 +17,14 @@ function footer_functions() {
 
 function team_modal_trigger() {
     jQuery('.team-modal-trigger').click(function (e) {
-        title = jQuery(this).attr('title');
+        team_name = jQuery(this).attr('name');
         body = jQuery(this).attr('content');
         image = jQuery(this).attr('image');
         position = jQuery(this).attr('position');
         linkedin = jQuery(this).attr('linkedin');
         jQuery('#teamModal .description-box').html(body);
         jQuery('#teamModal .position').html(position);
-        jQuery('#teamModal .modal-title').html(title);
+        jQuery('#teamModal .modal-title').html(team_name);
         jQuery('#teamModal .linkedin').attr('href', linkedin);
         jQuery('#teamModal .image').attr('src', image);
 
