@@ -68,9 +68,9 @@ get_header(); // This fxn gets the header.php file and renders it
 								</div>
 							<?php } ?>
 						</div>
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
 					</div>
+					<div class="swiper-button-next swiper-button-next-post"></div>
+					<div class="swiper-button-prev swiper-button-next-post"></div>
 				</div>
 
 			</div>
