@@ -1277,16 +1277,13 @@ main#page-components p a:not(.btn) {
 
 @media (min-width: 1300px) {
   .container.wide.width1300 {
-    width: 1240px;
-    max-width: 100%; } }
+    max-width: 1240px; } }
 @media (min-width: 1300px) {
   .container.wide.width1400 {
-    width: 1240px;
-    max-width: 100%; } }
+    max-width: 1240px; } }
 @media (min-width: 1400px) {
   .container.wide.width1400 {
-    width: 1340px;
-    max-width: 100%; } }
+    max-width: 1340px; } }
 .icons-holder {
   margin-top: 40px;
   margin-bottom: 100px; }
