@@ -9077,17 +9077,17 @@ form#resources_form {
     }
     .team-modal-close {
         position: absolute;
-        right: 20px;
-        top: 20px;
+        right: 0;
+        top: 0;
         background-color: var(--high-violet);
         opacity: 1;
         color: var(--white-color);
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         border: none;
         display: flex;
         align-items: center;
-        border-radius: 5px;
+        border-radius: 0 10px 0;
         justify-content: center;
         padding: 0;
         font-size: 16px;
