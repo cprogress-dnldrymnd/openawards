@@ -7141,7 +7141,7 @@ section.archive-section {
 .swiper-button-style-1 .swiper-button-prev {
   left: -70px !important; }
 .swiper-button-style-1 .swiper-button-next {
-  right: 0 !important; }
+  right: -70px !important; }
 .swiper-button-style-1 .swiper-button-prev,
 .swiper-button-style-1 .swiper-button-next {
   width: 56px;
