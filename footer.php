@@ -61,7 +61,8 @@
       <div class="modal-body">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <img class="image" src="">
-
+        <h5 class="modal-title" id="teamModalLabel">Modal title</h5>
+        <p class="position"></p>
         <div class="description-box">
 
         </div>

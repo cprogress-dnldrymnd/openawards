@@ -20,8 +20,10 @@ function team_modal_trigger() {
         title = jQuery(this).attr('title');
         body = jQuery(this).attr('content');
         image = jQuery(this).attr('image');
+        position = jQuery(this).attr('position');
         linkedin = jQuery(this).attr('linkedin');
         jQuery('#teamModal .description-box').html(body);
+        jQuery('#teamModal .position').html(position);
         jQuery('#teamModal .modal-title').html(title);
         jQuery('#teamModal .linkedin').attr('href', linkedin);
         jQuery('#teamModal .image').attr('src', image);
