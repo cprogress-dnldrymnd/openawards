@@ -100,11 +100,17 @@ function action_team_slider($atts)
                         <div class="inner">
                             <div class="image-box">
                                 <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" alt="<?= $team->post_title ?>">
+                                <?php if ($style == 'style-3') { ?>
+                                    <button class="button-trigger team-modal-trigger" position="<?= $position ?>" linkedin="<?= $linked_in ?>" image="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" team_name="<?= $team->post_title ?>" content="<?= wpautop($team->post_content) ?>" data-bs-toggle="modal" data-bs-target="#teamModal">
+                                    </button>
+                                <?php } ?>
                             </div>
                             <div class="content-box">
-                                <button class="button-trigger team-modal-trigger" position="<?= $position ?>" linkedin="<?= $linked_in ?>" image="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" team_name="<?= $team->post_title ?>" content="<?= wpautop($team->post_content) ?>" data-bs-toggle="modal" data-bs-target="#teamModal">
+                                <?php if ($style != 'style-3') { ?>
+                                    <button class="button-trigger team-modal-trigger" position="<?= $position ?>" linkedin="<?= $linked_in ?>" image="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" team_name="<?= $team->post_title ?>" content="<?= wpautop($team->post_content) ?>" data-bs-toggle="modal" data-bs-target="#teamModal">
+                                    </button>
+                                <?php } ?>
 
-                                </button>
                                 <div class="name">
                                     <?= $team->post_title ?>
                                 </div>
