@@ -9025,7 +9025,6 @@ form#resources_form {
     }
 }
 
-
 .required {
     color: var(--high-violet);
     font-size: 16px;
@@ -9033,14 +9032,21 @@ form#resources_form {
 
 #teamModal {
     .modal-dialog {
-        max-width: 1000px
+        max-width: 1000px;
     }
 
     img {
         margin-right: 2rem;
         border-radius: 10px;
     }
-
+    .description-box {
+        font-size: 18px;
+        p {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
     .modal-title {
         color: var(--opal-black);
         font-size: 2rem;
