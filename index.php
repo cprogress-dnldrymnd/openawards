@@ -46,19 +46,19 @@ get_header(); // This fxn gets the header.php file and renders it
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col-lg-6">
-										<div class="column-holder">
+										<div class="col-lg-6">
+											<div class="column-holder">
 
-											<div class="content-box">
-												<div class="heading-box">
-													<h4><?php the_title() ?></h4>
-												</div>
-												<div class="description-box">
-													<?php the_excerpt() ?>
-												</div>
-												<div class="button-box">
-													<a href="<?php the_permalink() ?>">Read more</a>
+												<div class="content-box">
+													<div class="heading-box">
+														<h4><?php the_title() ?></h4>
+													</div>
+													<div class="description-box">
+														<?php the_excerpt() ?>
+													</div>
+													<div class="button-box">
+														<a href="<?php the_permalink() ?>">Read more</a>
+													</div>
 												</div>
 											</div>
 										</div>
