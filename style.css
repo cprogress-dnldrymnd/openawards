@@ -6384,7 +6384,10 @@ form#resources_form.searching label {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start; }
+    align-items: flex-start;
+    border: none;
+    padding: 0;
+    text-align: left; }
     .team-slider .swiper-slide .content-box .name {
       font-family: var(--primary-font);
       font-size: 26px;

@@ -8109,6 +8109,9 @@ form#resources_form {
             flex-direction: column;
             justify-content: flex-end;
             align-items: flex-start;
+            border: none;
+            padding: 0;
+            text-align: left;
             .name {
                 font-family: var(--primary-font);
                 font-size: 26px;
