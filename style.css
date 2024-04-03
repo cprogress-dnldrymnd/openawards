@@ -7134,27 +7134,27 @@ section.archive-section {
   border-radius: 5px;
   color: var(--white-color); }
 
-.swiper-button .swiper-button-prev {
+.swiper-button-style-1 .swiper-button-prev {
   left: 0 !important; }
-.swiper-button .swiper-button-next {
+.swiper-button-style-1 .swiper-button-next {
   right: 0 !important; }
-.swiper-button .swiper-button-prev,
-.swiper-button .swiper-button-next {
+.swiper-button-style-1 .swiper-button-prev,
+.swiper-button-style-1 .swiper-button-next {
   width: 56px;
   height: 56px;
   border: 1px solid var(--opal-black);
   border-radius: 50%;
   font-weight: bold; }
-  .swiper-button .swiper-button-prev:after,
-  .swiper-button .swiper-button-next:after {
+  .swiper-button-style-1 .swiper-button-prev:after,
+  .swiper-button-style-1 .swiper-button-next:after {
     font-size: 20px; }
   @media (max-width: 991px) {
-    .swiper-button .swiper-button-prev,
-    .swiper-button .swiper-button-next {
+    .swiper-button-style-1 .swiper-button-prev,
+    .swiper-button-style-1 .swiper-button-next {
       width: 30px;
       height: 30px; }
-      .swiper-button .swiper-button-prev:after,
-      .swiper-button .swiper-button-next:after {
+      .swiper-button-style-1 .swiper-button-prev:after,
+      .swiper-button-style-1 .swiper-button-next:after {
         font-size: 16px; } }
 
 /*# sourceMappingURL=style.css.map */
