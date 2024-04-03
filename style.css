@@ -7049,5 +7049,11 @@ form#resources_form.searching label {
 #teamModal img {
   margin-right: 2rem;
   border-radius: 10px; }
+#teamModal .modal-title {
+  color: var(--opal-black);
+  font-size: 2rem; }
+#teamModal .position {
+  font-family: var(--primary-font);
+  font-weight: 500; }
 
 /*# sourceMappingURL=style.css.map */

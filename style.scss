@@ -9040,4 +9040,13 @@ form#resources_form {
         margin-right: 2rem;
         border-radius: 10px;
     }
+
+    .modal-title {
+        color: var(--opal-black);
+        font-size: 2rem;
+    }
+    .position {
+        font-family: var(--primary-font);
+        font-weight: 500;
+    }
 }
