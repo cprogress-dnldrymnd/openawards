@@ -68,7 +68,7 @@
             <div class="image-box mb-3">
               <img class="image" src="">
             </div>
-            <h5 class="modal-title" id="teamModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="teamModalLabel"></h5>
             <p class="position mb-3"></p>
             <a class="linkedin" href="" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
