@@ -7055,5 +7055,20 @@ form#resources_form.searching label {
 #teamModal .position {
   font-family: var(--primary-font);
   font-weight: 500; }
+#teamModal .modal-content {
+  border-radius: 10px;
+  border: none; }
+#teamModal .modal-body {
+  padding: 2rem; }
+#teamModal .team-modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: var(--high-violet);
+  opacity: 1;
+  color: var(--white-color);
+  padding: 10px;
+  width: 25px;
+  height: 25px; }
 
 /*# sourceMappingURL=style.css.map */
