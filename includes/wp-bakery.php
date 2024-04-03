@@ -94,6 +94,7 @@ function action_team_slider($atts)
                     <?php
                     $position = carbon_get_post_meta($team->ID, 'position');
                     $linked_in = carbon_get_post_meta($team->ID, 'linked_in');
+                    $short_description = carbon_get_post_meta($team->ID, 'short_description');
                     ?>
                     <div class="swiper-slide">
                         <div class="inner">
@@ -110,7 +111,7 @@ function action_team_slider($atts)
                                     </div>
                                 <?php } ?>
                                 <div class="desc">
-                                    <?= wpautop($team->post_content) ?>
+                                    <?= wpautop($short_description) ?>
                                 </div>
                                 <div class="socials">
                                     <?php if ($linked_in) { ?>
