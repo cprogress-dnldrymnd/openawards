@@ -39,7 +39,7 @@ get_header(); // This fxn gets the header.php file and renders it
 						<div class="col-lg-4">
 							<div class="column-holder post-box">
 								<div class="image-box">
-									<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
+									<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
 								</div>
 								<div class="content-box">
 									<div class="heading-box">
@@ -55,6 +55,10 @@ get_header(); // This fxn gets the header.php file and renders it
 							</div>
 						</div>
 					<?php } ?>
+				</div>
+
+				<div class="button-box">
+					<a href="">Load More</a>
 				</div>
 			</div>
 		</section>
