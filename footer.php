@@ -84,7 +84,56 @@
   </div>
 </div>
 
->
+<script>
+  jQuery(document).ready(function() {
+   
+  })
+</script>
+<script>
+  var swiper = new Swiper(".mySwiperSlider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+
+  $key = 1;
+  jQuery('.team-swiper').each(function(index, element) {
+
+    var $id = 'swiper' + $key;
+    var $id = new Swiper(".team-swiper", {
+      loop: true,
+      breakpoints: {
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    $key++;
+  });
+</script>
 <?php wp_footer();
 // This fxn allows plugins to insert themselves/scripts/css/files (right here) into the footer of your website. 
 // Removing this fxn call will disable all kinds of plugins. 
