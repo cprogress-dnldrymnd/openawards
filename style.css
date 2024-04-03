@@ -7082,5 +7082,14 @@ form#resources_form.searching label {
   font-size: 16px;
   font-weight: bold;
   line-height: 1; }
+#teamModal .socials {
+  position: relative;
+  z-index: 1; }
+#teamModal .button-trigger {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */

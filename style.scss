@@ -9082,4 +9082,15 @@ form#resources_form {
         font-weight: bold;
         line-height: 1;
     }
+    .socials {
+        position: relative;
+        z-index: 1;
+    }
+    .button-trigger {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
