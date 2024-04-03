@@ -6492,9 +6492,14 @@ form#resources_form.searching label {
     .team-slider.style-2 .swiper-slide .content-box:before {
       background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="287" height="156" viewBox="0 0 287 156"><defs><clipPath id="clip-path"><rect id="Rectangle_391" data-name="Rectangle 391" width="287" height="156" rx="10" transform="translate(-98 18197)" fill="%23fff"/></clipPath></defs><g id="Mask_Group_12" data-name="Mask Group 12" transform="translate(98 -18197)" clip-path="url(%23clip-path)"><path id="Path_2158" data-name="Path 2158" d="M439.9,94c6.173-38.847-20.122-80.217-57.915-91.118S299.9,12.992,284.441,49.159s-.057,82.7,33.935,102.495c19.8,11.528,47.625-8.578,46.8-31.473s-24.248-40.729-47.152-40.238-43.557,15.761-55.94,35.036-17.746,42.158-21.636,64.735c-5.889,34.174-38.97,61.5-73.641,60.828s-66.669-29.257-71.23-63.633,18.876-70.317,52.172-80.006c11.866-3.453,25.735,2.034,32.027,12.671s4.421,25.434-4.321,34.171a114.042,114.042,0,0,1-92.921,32.039A114.041,114.041,0,0,1,0,122.408" transform="matrix(-0.087, -0.996, 0.996, -0.087, 45.406, 18591.045)" fill="none" stroke="%23fff" stroke-width="20"/></g></svg>'); }
   .team-slider.style-3 .swiper-slide .image-box {
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 10px; }
     .team-slider.style-3 .swiper-slide .image-box img {
-      border-radius: 10px; }
+      border-radius: 10px;
+      transition: 300ms; }
+    .team-slider.style-3 .swiper-slide .image-box:hover img {
+      transform: scale(1.1); }
   .team-slider.style-3 .swiper-slide .name {
     margin-bottom: 0 !important; }
   .team-slider.style-3 .swiper-slide .position {

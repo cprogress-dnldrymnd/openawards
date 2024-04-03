@@ -8278,8 +8278,16 @@ form#resources_form {
         .swiper-slide {
             .image-box {
                 margin-bottom: 1rem;
+                overflow: hidden;
+                border-radius: 10px;
                 img {
                     border-radius: 10px;
+                    transition: 300ms;
+                }
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
                 }
             }
             .name {
