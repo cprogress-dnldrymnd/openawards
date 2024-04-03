@@ -1,7 +1,6 @@
 jQuery(document).ready(function () {
     footer_functions();
     team_modal_trigger();
-    swiper_sliders();
 });
 
 
@@ -25,51 +24,5 @@ function team_modal_trigger() {
         jQuery('#teamModal .description-box').html(body);
         jQuery('#teamModal .modal-title').html(title);
         e.preventDefault();
-    });
-}
-
-function swiper_sliders() {
-    var swiper = new Swiper(".mySwiperSlider", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-
-
-    $key = 1;
-    jQuery('.team-swiper').each(function (index, element) {
-
-        var $id = 'swiper' + $key;
-        var $id = new Swiper(".team-swiper", {
-            loop: true,
-            breakpoints: {
-                480: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-                1200: {
-                    slidesPerView: 4,
-                    spaceBetween: 40,
-                },
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-
-        $key++;
     });
 }
