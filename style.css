@@ -7044,7 +7044,7 @@ form#resources_form.searching label {
   color: var(--high-violet);
   font-size: 16px; }
 
-#teamModal .modal-content {
+#teamModal .modal-dialog {
   max-width: 1000px; }
 
 /*# sourceMappingURL=style.css.map */
