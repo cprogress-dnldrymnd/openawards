@@ -6388,6 +6388,12 @@ form#resources_form.searching label {
     border: none;
     padding: 0;
     text-align: left; }
+    .team-slider .swiper-slide .content-box .button-trigger {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0; }
     .team-slider .swiper-slide .content-box .name {
       font-family: var(--primary-font);
       font-size: 26px;
@@ -7085,11 +7091,5 @@ form#resources_form.searching label {
 #teamModal .socials {
   position: relative;
   z-index: 1; }
-#teamModal .button-trigger {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */

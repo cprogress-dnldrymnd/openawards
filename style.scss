@@ -8112,6 +8112,13 @@ form#resources_form {
             border: none;
             padding: 0;
             text-align: left;
+            .button-trigger {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+            }
             .name {
                 font-family: var(--primary-font);
                 font-size: 26px;
@@ -9086,12 +9093,6 @@ form#resources_form {
         position: relative;
         z-index: 1;
     }
-    .button-trigger {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-    }
+  
 }
 
