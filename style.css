@@ -7094,4 +7094,7 @@ form#resources_form.searching label {
   font-weight: bold;
   line-height: 1; }
 
+body.modal-open {
+  overflow: hidden; }
+
 /*# sourceMappingURL=style.css.map */
