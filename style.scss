@@ -8098,7 +8098,16 @@ form#resources_form {
             position: relative;
             overflow: hidden;
         }
-
+        .button-trigger {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+        }
         .content-box {
             z-index: 2;
             background-color: var(--white-color);
@@ -8109,16 +8118,7 @@ form#resources_form {
             border: none;
             padding: 0;
             text-align: left;
-            .button-trigger {
-                position: absolute;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                padding: 0;
-                border: none;
-                background-color: transparent;
-            }
+            
             .name {
                 font-family: var(--primary-font);
                 font-size: 26px;

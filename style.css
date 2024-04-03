@@ -6375,6 +6375,15 @@ form#resources_form.searching label {
   .team-slider .swiper-slide .inner {
     position: relative;
     overflow: hidden; }
+  .team-slider .swiper-slide .button-trigger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent; }
   .team-slider .swiper-slide .content-box {
     z-index: 2;
     background-color: var(--white-color);
@@ -6385,15 +6394,6 @@ form#resources_form.searching label {
     border: none;
     padding: 0;
     text-align: left; }
-    .team-slider .swiper-slide .content-box .button-trigger {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0;
-      border: none;
-      background-color: transparent; }
     .team-slider .swiper-slide .content-box .name {
       font-family: var(--primary-font);
       font-size: 26px;
