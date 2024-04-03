@@ -101,7 +101,7 @@ function action_team_slider($atts)
                             <div class="image-box">
                                 <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" alt="<?= $team->post_title ?>">
                             </div>
-                            <button class="content-box team-modal-trigger" linkedin="<?= $linked_in ?>" image="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium'), 'Medium' ?>" title="<?= $team->post_title ?>" content="<?= wpautop($team->post_content) ?>" data-bs-toggle="modal" data-bs-target="#teamModal">
+                            <button class="content-box team-modal-trigger" linkedin="<?= $linked_in ?>" image="<?= wp_get_attachment_image_url(get_post_thumbnail_id($team->ID), 'Medium') ?>" title="<?= $team->post_title ?>" content="<?= wpautop($team->post_content) ?>" data-bs-toggle="modal" data-bs-target="#teamModal">
                                 <div class="name">
                                     <?= $team->post_title ?>
                                 </div>
