@@ -7124,6 +7124,10 @@ section.archive-section {
   .swiperPostSlider-holder .image-box {
     border-radius: 10px;
     overflow: hidden; }
+  .swiperPostSlider-holder .swiper-button-prev {
+    left: -30px !important; }
+  .swiperPostSlider-holder .swiper-button-next {
+    right: 0 !important; }
 
 .custom-button a {
   padding-top: 18px;
@@ -7135,7 +7139,7 @@ section.archive-section {
   color: var(--white-color); }
 
 .swiper-button-style-1 .swiper-button-prev {
-  left: 0 !important; }
+  left: -70px !important; }
 .swiper-button-style-1 .swiper-button-next {
   right: 0 !important; }
 .swiper-button-style-1 .swiper-button-prev,

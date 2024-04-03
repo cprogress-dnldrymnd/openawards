@@ -9145,7 +9145,11 @@ section.archive-section {
         border-radius: 10px;
     overflow: hidden;
     }
+    .swiper-button-prev {
+        left: -30px!important;
+    }
     .swiper-button-next {
+        right: 0 !important;
     }
 }
 
@@ -9163,10 +9167,10 @@ section.archive-section {
 
 .swiper-button-style-1 {
     .swiper-button-prev {
-        left: 0 !important;
+        left: -70px !important;
     }
     .swiper-button-next {
-        right: 0 !important;
+        right: -70px !important;
     }
     .swiper-button-prev,
     .swiper-button-next {
