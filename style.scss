@@ -9113,13 +9113,14 @@ section.archive-section {
 }
 
 .post-box.post-box {
-    background-color: var(--white-color);
-    box-shadow: 0px 29px 35px #0000000d;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
     font-family: var(--primary-font);
-
+    &:not(.post-box-slider) {
+        background-color: var(--white-color);
+        box-shadow: 0px 29px 35px #0000000d;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
     .image-box {
         position: relative;
         padding: 32%;
