@@ -63,11 +63,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="row">
           <div class="col-lg-4">
-            <div class="image-box">
+            <div class="image-box mb-3">
               <img class="image" src="">
-              <h5 class="modal-title" id="teamModalLabel">Modal title</h5>
-              <p class="position"></p>
             </div>
+            <h5 class="modal-title mb-3" id="teamModalLabel">Modal title</h5>
+            <p class="position"></p>
           </div>
           <div class="col-lg-8">
             <div class="description-box">
@@ -81,7 +81,7 @@
           </div>
         </div>
       </div>
-    
+
     </div>
   </div>
 </div>

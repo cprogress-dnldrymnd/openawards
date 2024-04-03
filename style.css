@@ -7045,7 +7045,7 @@ form#resources_form.searching label {
   font-size: 16px; }
 
 #teamModal .modal-dialog {
-  max-width: 1200px; }
+  max-width: 100px; }
 #teamModal img {
   margin-right: 2rem;
   border-radius: 10px; }
