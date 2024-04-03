@@ -37,7 +37,7 @@ get_header(); // This fxn gets the header.php file and renders it
 					<?php while (have_posts()) {
 						the_post(); ?>
 						<div class="col-lg-4">
-							<div class="column-holder">
+							<div class="column-holder post-box">
 								<div class="image-box">
 									<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
 								</div>
