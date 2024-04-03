@@ -158,6 +158,7 @@ Container::make('post_meta', 'Team Settings')
         array(
             Field::make('text', 'position', __('Position')),
             Field::make('text', 'linked_in', __('Linked In')),
+            Field::make('textarea', 'short_description', __('Short Description')),
         )
     );
 
