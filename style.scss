@@ -8054,30 +8054,7 @@ form#resources_form {
         padding-left: 50px;
         padding-right: 50px;
     }
-    .swiper-button-prev {
-        left: 0 !important;
-    }
-    .swiper-button-next {
-        right: 0 !important;
-    }
-    .swiper-button-prev,
-    .swiper-button-next {
-        width: 56px;
-        height: 56px;
-        border: 1px solid var(--opal-black);
-        border-radius: 50%;
-        font-weight: bold;
-        &:after {
-            font-size: 20px;
-        }
-        @media (max-width: 991px) {
-            width: 30px;
-            height: 30px;
-            &:after {
-                font-size: 16px;
-            }
-        }
-    }
+
     .heading-box {
         margin-bottom: 40px;
         h2 {
@@ -9161,8 +9138,11 @@ section.archive-section {
 }
 
 .swiperPostSlider-holder {
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
     padding: 3rem;
+    border-radius: 10px;
+    .swiper-button-next {
+    }
 }
 
 .custom-button {
@@ -9174,5 +9154,32 @@ section.archive-section {
         display: inline-block;
         border-radius: 5px;
         color: var(--white-color);
+    }
+}
+
+.swiper-button {
+    .swiper-button-prev {
+        left: 0 !important;
+    }
+    .swiper-button-next {
+        right: 0 !important;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 56px;
+        height: 56px;
+        border: 1px solid var(--opal-black);
+        border-radius: 50%;
+        font-weight: bold;
+        &:after {
+            font-size: 20px;
+        }
+        @media (max-width: 991px) {
+            width: 30px;
+            height: 30px;
+            &:after {
+                font-size: 16px;
+            }
+        }
     }
 }

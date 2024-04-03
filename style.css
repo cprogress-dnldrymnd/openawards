@@ -6338,28 +6338,6 @@ form#resources_form.searching label {
     .team-slider {
       padding-left: 50px;
       padding-right: 50px; } }
-  .team-slider .swiper-button-prev {
-    left: 0 !important; }
-  .team-slider .swiper-button-next {
-    right: 0 !important; }
-  .team-slider .swiper-button-prev,
-  .team-slider .swiper-button-next {
-    width: 56px;
-    height: 56px;
-    border: 1px solid var(--opal-black);
-    border-radius: 50%;
-    font-weight: bold; }
-    .team-slider .swiper-button-prev:after,
-    .team-slider .swiper-button-next:after {
-      font-size: 20px; }
-    @media (max-width: 991px) {
-      .team-slider .swiper-button-prev,
-      .team-slider .swiper-button-next {
-        width: 30px;
-        height: 30px; }
-        .team-slider .swiper-button-prev:after,
-        .team-slider .swiper-button-next:after {
-          font-size: 16px; } }
   .team-slider .heading-box {
     margin-bottom: 40px; }
     .team-slider .heading-box h2 {
@@ -7140,8 +7118,9 @@ section.archive-section {
       margin-bottom: 1rem; }
 
 .swiperPostSlider-holder {
-  background-color: #F8F8F8;
-  padding: 3rem; }
+  background-color: #f8f8f8;
+  padding: 3rem;
+  border-radius: 10px; }
 
 .custom-button a {
   padding-top: 18px;
@@ -7151,5 +7130,28 @@ section.archive-section {
   display: inline-block;
   border-radius: 5px;
   color: var(--white-color); }
+
+.swiper-button .swiper-button-prev {
+  left: 0 !important; }
+.swiper-button .swiper-button-next {
+  right: 0 !important; }
+.swiper-button .swiper-button-prev,
+.swiper-button .swiper-button-next {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--opal-black);
+  border-radius: 50%;
+  font-weight: bold; }
+  .swiper-button .swiper-button-prev:after,
+  .swiper-button .swiper-button-next:after {
+    font-size: 20px; }
+  @media (max-width: 991px) {
+    .swiper-button .swiper-button-prev,
+    .swiper-button .swiper-button-next {
+      width: 30px;
+      height: 30px; }
+      .swiper-button .swiper-button-prev:after,
+      .swiper-button .swiper-button-next:after {
+        font-size: 16px; } }
 
 /*# sourceMappingURL=style.css.map */

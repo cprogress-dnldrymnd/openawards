@@ -88,7 +88,7 @@ function action_team_slider($atts)
                 <?= $heading ?>
             </h2>
         </div>
-        <div class="swiper team-swiper">
+        <div class="swiper team-swiper swiper-button-style-1">
             <div class="swiper-wrapper">
                 <?php foreach ($teams as $team) { ?>
                     <?php
