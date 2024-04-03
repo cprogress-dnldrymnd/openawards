@@ -72,7 +72,9 @@
     </div>
   </div>
 </div>
-
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
 <script>
   jQuery(document).ready(function() {
     if (jQuery('.select-input, .select-input-wrapper select').length > 0) {
