@@ -27,7 +27,7 @@ Container::make('post_meta', 'Slider Settings')
                     )
                 )
                 ->set_header_template('<%- heading %>')
-                ->set_layout('tabbed-horizontal')
+                ->set_layout('tabbed-vertical')
         )
     );
 
