@@ -33,27 +33,6 @@ Container::make('post_meta', 'Slider Settings')
     );
 
 
-Container::make('post_meta', 'Slider Settings')
-    ->set_priority('high')
-    ->or_where('post_type', '=', 'slider')
-    ->add_fields(
-        array(
-            Field::make('complex', 'slides', __('Slides'))
-                ->add_fields(
-                    array(
-                        Field::make('image', 'image', __('Image'))->set_width(50),
-                        Field::make('image', 'background_image', __('Background Image'))->set_width(50),
-                        Field::make('text', 'heading', __('Heading')),
-                        Field::make('rich_text', 'description', __('Description')),
-                        Field::make('text', 'button_text_1', __('Button Text[1]'))->set_width(50),
-                        Field::make('text', 'button_link_1', __('Button Link[1]'))->set_width(50),
-                        Field::make('text', 'button_text_2', __('Button Text[2]'))->set_width(50),
-                        Field::make('text', 'button_link_2', __('Button Link[2]'))->set_width(50),
-                    )
-                )
-                ->set_header_template('<%- heading %>')
-        )
-    );
 
 
 Container::make('post_meta', 'Product Data')
