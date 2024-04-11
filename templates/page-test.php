@@ -16,7 +16,7 @@ $headerbody = array(
 );
 
 //Create Soap Header.        
-$header = new SOAPHeader($ns, 'ChannelCredentials', $headerbody);
+$header = new SOAPHeader($ns, '2dfb523c-711b-42bc-a82f-476e4eb06fa5', $headerbody);
 
 // //set the Headers of Soap Client. 
 $client->__setSoapHeaders($header);
