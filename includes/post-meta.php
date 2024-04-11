@@ -18,6 +18,7 @@ Container::make('post_meta', 'Slider Settings')
                     array(
                         Field::make('image', 'image', __('Image'))->set_width(50),
                         Field::make('image', 'background_image', __('Background Image'))->set_width(50),
+                        Field::make('text', 'title', __('Title')),
                         Field::make('text', 'heading', __('Heading')),
                         Field::make('rich_text', 'description', __('Description')),
                         Field::make('text', 'button_text_1', __('Button Text[1]'))->set_width(50),
@@ -26,7 +27,7 @@ Container::make('post_meta', 'Slider Settings')
                         Field::make('text', 'button_link_2', __('Button Link[2]'))->set_width(50),
                     )
                 )
-                ->set_header_template('<%- heading %>')
+                ->set_header_template('<%- title %>')
                 ->set_layout('tabbed-vertical')
         )
     );
