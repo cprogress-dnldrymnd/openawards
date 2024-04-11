@@ -18,7 +18,7 @@ Container::make('post_meta', 'Slider Settings')
                     array(
                         Field::make('image', 'image', __('Image'))->set_width(50),
                         Field::make('image', 'background_image', __('Background Image'))->set_width(50),
-                        Field::make('text', 'title', __('Title')),
+                        Field::make('text', 'title', __('Title'))->set_help_text('For labeling purposes only'),
                         Field::make('text', 'heading', __('Heading')),
                         Field::make('rich_text', 'description', __('Description')),
                         Field::make('text', 'button_text_1', __('Button Text[1]'))->set_width(50),
