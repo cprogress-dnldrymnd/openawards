@@ -37,12 +37,22 @@ while (have_posts()) {
 
 			$args = array(
 				'post_type' => 'post',
-			
+
 			);
 			$query = new WP_Query($args);
 			?>
 			<section class="post-slider">
 				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="heading-box">
+								Latest News
+							</div>
+						</div>
+						<div class="col-auto">
+							<div class="vc_btn3-container vc_btn3-inline"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" href="#" title="">All News</a></div>
+						</div>
+					</div>
 					<div class="swiperPostSlider-holder position-relative swiper-button-style-1 p-0">
 						<div class="swiper swiperPostSlider-Related">
 							<div class="swiper-wrapper">
