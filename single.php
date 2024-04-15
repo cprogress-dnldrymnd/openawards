@@ -36,41 +36,39 @@ while (have_posts()) {
 
 			<section class="post-slider">
 				<div class="container">
-					<div class="swiperPostSlider-holder position-relative swiper-button-style-1 p-0">
+					<div class="swiperPostSlider-holder position-relative swiper-button-style-1 ">
 						<div class="swiper swiperPostSlider ">
 							<div class="swiper-wrapper">
-								<?php while (have_posts()) {
-									the_post(); ?>
-									<div class="swiper-slide">
-										<div class="post-box post-box-slider">
-											<div class="row g-4 align-items-center">
-												<div class="col-12">
-													<div class="column-holder">
-														<div class="image-box">
-															<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
-														</div>
+
+								<div class="swiper-slide">
+									<div class="post-box post-box-slider">
+										<div class="row g-4 align-items-center">
+											<div class="col-12">
+												<div class="column-holder">
+													<div class="image-box">
+														<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
 													</div>
 												</div>
-												<div class="col-12">
-													<div class="column-holder">
+											</div>
+											<div class="col-12">
+												<div class="column-holder">
 
-														<div class="content-box">
-															<div class="heading-box">
-																<h4><?php the_title() ?></h4>
-															</div>
-															<div class="description-box">
-																<?php the_excerpt() ?>
-															</div>
-															<div class="button-box">
-																<a href="<?php the_permalink() ?>">Read more</a>
-															</div>
+													<div class="content-box">
+														<div class="heading-box">
+															<h4><?php the_title() ?></h4>
+														</div>
+														<div class="description-box">
+															<?php the_excerpt() ?>
+														</div>
+														<div class="button-box">
+															<a href="<?php the_permalink() ?>">Read more</a>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								<?php } ?>
+								</div>
 							</div>
 						</div>
 						<div class="swiper-button-next swiper-button-next-post"></div>
