@@ -111,6 +111,20 @@
     },
   });
 
+  var swiperRelated = new Swiper(".swiperPostSlider-Related", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
 
   $key = 1;
   jQuery('.team-swiper').each(function(index, element) {
