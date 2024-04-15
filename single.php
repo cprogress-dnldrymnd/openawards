@@ -46,7 +46,7 @@ while (have_posts()) {
 					<div class="row">
 						<div class="col">
 							<div class="heading-box">
-								Latest News
+								<h2>Latest News</h2>
 							</div>
 						</div>
 						<div class="col-auto">
