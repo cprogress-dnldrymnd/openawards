@@ -46,7 +46,7 @@ while (have_posts()) {
 				),
 			);
 			$query = new WP_Query($args);
-			?>	
+			?>
 			<section class="post-slider">
 				<div class="container">
 					<div class="swiperPostSlider-holder position-relative swiper-button-style-1 [">
@@ -84,6 +84,7 @@ while (have_posts()) {
 										</div>
 									</div>
 								<?php } ?>
+								<?php wp_reset_postdata(); ?>
 							</div>
 						</div>
 						<div class="swiper-button-next swiper-button-next-post"></div>
