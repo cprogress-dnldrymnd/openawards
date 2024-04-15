@@ -37,13 +37,7 @@ while (have_posts()) {
 
 			$args = array(
 				'post_type' => 'post',
-				'tax_query' => array(
-					array(
-						'taxonomy' => 'people',
-						'field' => 'slug',
-						'terms' => 'bob',
-					),
-				),
+			
 			);
 			$query = new WP_Query($args);
 			?>
