@@ -26,7 +26,9 @@ while (have_posts()) {
 				<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
 			</div>
 			<section class="the-content">
-				<?php the_content() ?>
+				<div class="container">
+					<?php the_content() ?>
+				</div>
 			</section>
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
