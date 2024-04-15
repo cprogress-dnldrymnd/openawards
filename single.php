@@ -11,17 +11,13 @@ get_header(); // This fxn gets the header.php file and renders it
 <div id="primary" class="row-fluid">
 	<div id="content" role="main" class="span8 offset2">
 
-		<?php if (is_home()) {
-			$title = 'Latest News';
-		}
-		?>
 
 		<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
 		<div class="title-wrapper">
 			<div class="container text-center">
 				<div class="heading-box">
 					<h2>
-						<?= $title ?>
+						<?= get_the_title() ?>
 					</h2>
 				</div>
 				<div class="subheading">
