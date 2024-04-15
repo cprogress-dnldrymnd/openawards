@@ -22,11 +22,12 @@ while (have_posts()) {
 					</div>
 				</div>
 			</div>
-			<div class="image-box">
-				<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
-			</div>
+
 			<section class="the-content">
 				<div class="container">
+					<div class="image-box">
+						<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
+					</div>
 					<?php the_content() ?>
 				</div>
 			</section>
