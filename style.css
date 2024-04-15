@@ -7131,8 +7131,10 @@ section.archive-section {
     .post-box.post-box .content-box > div:not(:last-child) {
       margin-bottom: 1rem; }
 
+.bg-light {
+  background-color: #f8f8f8; }
+
 .swiperPostSlider-holder {
-  background-color: #f8f8f8;
   padding: 3rem;
   border-radius: 10px; }
   .swiperPostSlider-holder .image-box {
