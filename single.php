@@ -43,7 +43,7 @@ while (have_posts()) {
 			?>
 			<section class="post-slider">
 				<div class="container">
-					<div class="swiperPostSlider-holder position-relative swiper-button-style-1 [">
+					<div class="swiperPostSlider-holder position-relative swiper-button-style-1 p-0">
 						<div class="swiper swiperPostSlider-Related">
 							<div class="swiper-wrapper">
 								<?php while ($query->have_posts()) {
