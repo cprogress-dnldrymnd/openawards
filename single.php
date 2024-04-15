@@ -1,63 +1,112 @@
 <?php
+
 /**
- * The template for displaying any single post.
- *
+ * The template for displaying the home/index page.
+ * This template will also be called in any case where the Wordpress engine 
+ * doesn't know which template to use (e.g. 404 error)
  */
 
-get_header(); // This fxn gets the header.php file and renders it ?>
-	<div id="primary" class="row-fluid">
-		<div id="content" role="main" class="span8 offset2">
+get_header(); // This fxn gets the header.php file and renders it 
+?>
+<div id="primary" class="row-fluid">
+	<div id="content" role="main" class="span8 offset2">
 
-			<?php if ( have_posts() ) : 
-			// Do we have any posts in the databse that match our query?
-			?>
+		<?php if (is_home()) {
+			$title = 'Latest News';
+		}
+		?>
 
-				<?php while ( have_posts() ) : the_post(); 
-				// If we have a post to show, start a loop that will display it
-				?>
+		<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
+		<div class="title-wrapper">
+			<div class="container text-center">
+				<div class="heading-box">
+					<h2>
+						<?= $title ?>
+					</h2>
+				</div>
+				<div class="subheading">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa accusamus, quis optio vel ullam quae perferendis esse nostrum rem, odio ratione error asperiores soluta aperiam? Ratione deserunt molestiae qui eaque?</p>
+				</div>
+			</div>
+		</div>
 
-					<article class="post">
-					
-						<h1 class="title"><?php the_title(); // Display the title of the post ?></h1>
-						<div class="post-meta">
-							<?php the_time('m.d.Y'); // Display the time it was published ?>
-							<?php // the_author(); Uncomment this and it will display the post author ?>
-						
-						</div><!--/post-meta -->
-						
-						<div class="the-content">
-							<?php the_content(); 
-							// This call the main content of the post, the stuff in the main text box while composing.
-							// This will wrap everything in p tags
-							?>
-							
-							<?php wp_link_pages(); // This will display pagination links, if applicable to the post ?>
-						</div><!-- the-content -->
-						
-						<div class="meta clearfix">
-							<div class="category"><?php echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
-							<div class="tags"><?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); // Display the tags this post has, as links separated by spaces and pipes ?></div>
-						</div><!-- Meta -->
-						
-					</article>
+		<section class="post-slider">
+			<div class="container">
+				<div class="swiperPostSlider-holder position-relative swiper-button-style-1">
+					<div class="swiper swiperPostSlider ">
+						<div class="swiper-wrapper">
+							<?php while (have_posts()) {
+								the_post(); ?>
+								<div class="swiper-slide">
+									<div class="post-box post-box-slider">
+										<div class="row g-4 align-items-center">
+											<div class="col-lg-6">
+												<div class="column-holder">
+													<div class="image-box">
+														<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="column-holder">
 
-				<?php endwhile; // OK, let's stop the post loop once we've displayed it ?>
-				
-				<?php
-					// If comments are open or we have at least one comment, load up the default comment template provided by Wordpress
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template( '', true );
-				?>
+													<div class="content-box">
+														<div class="heading-box">
+															<h4><?php the_title() ?></h4>
+														</div>
+														<div class="description-box">
+															<?php the_excerpt() ?>
+														</div>
+														<div class="button-box">
+															<a href="<?php the_permalink() ?>">Read more</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="swiper-button-next swiper-button-next-post"></div>
+					<div class="swiper-button-prev swiper-button-next-post"></div>
+				</div>
 
+			</div>
+		</section>
+		<section class="archive-section">
+			<div class="container">
+				<div class="row g-4">
+					<?php while (have_posts()) {
+						the_post(); ?>
+						<div class="col-lg-4">
+							<div class="column-holder post-box">
+								<div class="image-box">
+									<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
+								</div>
+								<div class="content-box">
+									<div class="heading-box">
+										<h4><?php the_title() ?></h4>
+									</div>
+									<div class="description-box">
+										<?php the_excerpt() ?>
+									</div>
+									<div class="button-box">
+										<a href="<?php the_permalink() ?>">Read more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
 
-			<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
-				
-				<article class="post error">
-					<h1 class="404">Nothing has been posted like that yet</h1>
-				</article>
-
-			<?php endif; // OK, I think that takes care of both scenarios (having a post or not having a post to show) ?>
-
-		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
-<?php get_footer(); // This fxn gets the footer.php file and renders it ?>
+				<div class="vc_btn3-container custom-button text-center mt-5">
+					<a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" href="#" title="">Load More</a>
+				</div>
+			</div>
+		</section>
+	</div><!-- #content .site-content -->
+</div><!-- #primary .content-area -->
+<?php get_footer(); // This fxn gets the footer.php file and renders it 
+?>
