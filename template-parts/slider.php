@@ -32,9 +32,11 @@ $slider = carbon_get_post_meta($args['slider_id'], 'slides');
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
-                                            <div class="banner-image">
-                                                <img src="<?= $image_url ?>" alt="<?= esc_html($slide['heading']) ?>" />
-                                            </div>
+                                            <?php if ($image_url) { ?>
+                                                <div class="banner-image">
+                                                    <img src="<?= $image_url ?>" alt="<?= esc_html($slide['heading']) ?>" />
+                                                </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
