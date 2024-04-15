@@ -30,8 +30,18 @@ get_header(); // This fxn gets the header.php file and renders it
 			</div>
 		</div>
 
-		<section class="post-slider">
+		<section class="post-slider related-post">
 			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="heading-box">
+							Latest News
+						</div>
+					</div>
+					<div class="col-auto">
+						
+					</div>
+				</div>
 				<div class="swiperPostSlider-holder position-relative swiper-button-style-1">
 					<div class="swiper swiperPostSlider bg-light">
 						<div class="swiper-wrapper">
