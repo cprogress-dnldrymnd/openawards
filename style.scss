@@ -9382,7 +9382,10 @@ section.faqs-accordion {
 
 .accordion-style-2.accordion-style-2 {
     .accordion-item {
-        border: none;
+        border-bottom: 1px solid #f2f2f2;
+        .accordion-body {
+            font-size: 16px;
+        }
     }
     .accordion-button {
         justify-content: space-between;
@@ -9393,6 +9396,10 @@ section.faqs-accordion {
         box-shadow: none;
         background-color: transparent;
         color: var(--black-color) !important;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 0;
+        padding-right: 0;
         svg {
             color: var(--high-violet);
             width: 35px;
