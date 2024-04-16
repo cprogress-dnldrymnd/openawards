@@ -232,6 +232,8 @@ $Team->show_in_admin_bar = false;
 $Team->has_archive = false;
 
 
+
+
 $Events_Category = new newTaxonomy();
 $Events_Category->taxonomy = 'teams_category';
 $Events_Category->post_type = 'teams';
@@ -243,6 +245,29 @@ $Events_Category->args = array(
     'has_archive'  => false,
     'show_in_rest' => false,
 );
+
+
+$Team = new newPostType();
+$Team->name = 'Templates';
+$Team->singular_name = 'Template';
+$Team->icon = 'dashicons-format-aside';
+$Team->supports = array('title', 'editor', 'revisions');
+$Team->exclude_from_search = true;
+$Team->publicly_queryable = false;
+$Team->show_in_admin_bar = false;
+$Team->has_archive = false;
+
+
+$Team = new newPostType();
+$Team->name = 'FAQs';
+$Team->singular_name = 'FAQ';
+$Team->icon = 'dashicons-editor-alignleft';
+$Team->supports = array('title', 'revisions', 'editor');
+$Team->exclude_from_search = true;
+$Team->publicly_queryable = false;
+$Team->show_in_admin_bar = false;
+$Team->has_archive = false;
+
 
 // Add the custom columns to the slider post type:
 add_filter('manage_slider_posts_columns', 'set_custom_edit_slider_columns');
