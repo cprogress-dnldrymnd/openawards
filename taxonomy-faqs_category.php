@@ -45,37 +45,35 @@ $current_term = get_queried_object()->term_id;
             </div>
         </div>
 
-
-
-        <section class="faqs-categories">
+        <section class="faqs-accordion">
             <div class="container">
-                <div class="row  g-5">
-                    <div class="col-lg-4">
-                        <img src="https://openawards.theprogressteam.com/wp-content/uploads/2024/04/pexels-julia-m-cameron-4144222.png" class="h-100 faqs-img">
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="row row-cat g-5 h-100">
-                            <?php foreach ($terms as $term) { ?>
-                                <div class="col-lg-6">
-                                    <a href="<?= get_term_link($term->term_id) ?>" class="h-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40.997" height="51.246" viewBox="0 0 40.997 51.246">
-                                            <g id="gui-questions-svgrepo-com" transform="translate(-2.2 -1)">
-                                                <path id="Path_2315" data-name="Path 2315" d="M38.072,12.449V48.321H2.2V2.2H27.823Z" transform="translate(0 3.925)" fill="#9d9aad" />
-                                                <path id="Path_2316" data-name="Path 2316" d="M39.272,11.249V47.121H3.4V1H29.023Z" transform="translate(3.925)" fill="#fab0ff" />
-                                                <path id="Path_2317" data-name="Path 2317" d="M18.709,11.059H9.1V1.45Z" transform="translate(22.567 1.472)" fill="#f4f5f7" />
-                                                <path id="Path_2318" data-name="Path 2318" d="M10.29,19.573c0-6.021,4.612-5.637,4.612-9.224a2.393,2.393,0,0,0-2.562-2.69,2.421,2.421,0,0,0-2.69,2.562H6.19c0-.9.384-5.381,6.15-5.381,5.893,0,6.021,4.612,6.021,5.509,0,4.484-4.868,5.125-4.868,9.352h-3.2Zm-.256,4.484a1.774,1.774,0,0,1,1.922-1.922,1.863,1.863,0,0,1,1.922,1.922,1.745,1.745,0,0,1-1.922,1.794A1.745,1.745,0,0,1,10.033,24.057Z" transform="translate(13.049 12.559)" fill="#fff" />
-                                            </g>
+                <div class="accordion-holder accordion-style-1">
+                    <div class="accordion" id="accordion-<?= get_the_ID() ?>">
+
+                        <?php while (have_posts()) { ?>
+                            <?php the_post() ?>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading<?= get_the_ID() ?>">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= get_the_ID() ?>" aria-expanded="false" aria-controls="collapse<?= get_the_ID() ?>">
+                                        <span> <?= $acc['accordion_title'] ?></span>
+
+                                        <svg class="icon-inactive" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
                                         </svg>
-                                        <div class="faq-cat-title">
-                                            <?= $term->name ?>
-                                        </div>
-                                        <div class="faq-cat-desc">
-                                            <?= wpautop($term->description) ?>
-                                        </div>
-                                    </a>
+                                        <svg class="icon-active" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </button>
+                                </h2>
+                                <div id="collapse<?= get_the_ID() ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= get_the_ID() ?>" data-bs-parent="#accordion-<?= get_the_ID() ?>">
+                                    <div class="accordion-body">
+                                        <?= wpautop($acc['accordion_content']) ?>
+                                    </div>
                                 </div>
-                            <?php } ?>
-                        </div>
+                            </div>
+                        <?php } ?>
+                        <?php wp_reset_postdata() ?>
+
                     </div>
                 </div>
             </div>
