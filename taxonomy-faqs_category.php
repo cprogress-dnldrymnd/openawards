@@ -29,8 +29,11 @@ $terms = get_terms(array(
             <div class="container">
                 <div class="row faqs-filter-holder">
                     <?php foreach ($terms as $term) { ?>
+                        <?php
+                        $color = carbon_get_term_meta($term->term_id, 'color');
+                        ?>
                         <div class="col-auto">
-                            <a href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
+                            <a style="border-color: <?= $color ?>" href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
                         </div>
                     <?php } ?>
                 </div>
