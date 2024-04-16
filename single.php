@@ -16,7 +16,7 @@ while (have_posts()) {
 ?>
 	<div id="primary" class="row-fluid overflow-hidden">
 
-		<div id="content" role="main" class="span8 offset2">
+		<div id="content" role="main" class="span8 offset2 position-relative">
 			<div class="bg-accent"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1757.229" height="1005.347" viewBox="0 0 1757.229 1005.347">
 					<defs>
 						<clipPath id="clip-path">
