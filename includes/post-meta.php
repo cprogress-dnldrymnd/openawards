@@ -212,7 +212,7 @@ add_action('init', 'theme_settings');
 
 
 Container::make( 'term_meta', __( 'FAQs Category Properties' ) )
-    ->where( 'term_taxonomy', '=', 'category' )
+    ->where( 'term_taxonomy', '=', 'faqs_category' )
     ->add_fields( array(
         Field::make( 'color', 'color', __( 'Color' ) ),
     ) );
