@@ -261,6 +261,23 @@ function slider($atts)
 
 add_shortcode('slider', 'slider');
 
+function template($atts)
+{
+	extract(
+		shortcode_atts(
+			array(
+				'template_id' => '',
+			),
+			$atts
+		)
+	);
+
+	return get_the_content($template_id);
+	
+}
+
+add_shortcode('template', 'template');
+
 
 function e_campus()
 {

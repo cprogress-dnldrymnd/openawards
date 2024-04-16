@@ -309,7 +309,7 @@ function custom_templates_column($column, $post_id)
     switch ($column) {
 
         case 'shortcode':
-            echo '<input type="text" value="[template templates_id='.$post_id.']" readonly/>';
+            echo '<input type="text" value="[template template_id='.$post_id.']" readonly/>';
             break;
     }
 }
