@@ -290,3 +290,26 @@ function custom_slider_column($column, $post_id)
             break;
     }
 }
+
+
+// Add the custom columns to the templates post type:
+add_filter('manage_templates_posts_columns', 'set_custom_edit_templates_columns');
+function set_custom_edit_templates_columns($columns)
+{
+    unset($columns['author']);
+    $columns['shortcode'] = __('Shortcode', 'your_text_domain');
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the templates post type:
+add_action('manage_templates_posts_custom_column', 'custom_templates_column', 10, 2);
+function custom_templates_column($column, $post_id)
+{
+    switch ($column) {
+
+        case 'shortcode':
+            echo '<input type="text" value="[template templates_id='.$post_id.']" readonly/>';
+            break;
+    }
+}
