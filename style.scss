@@ -9189,9 +9189,9 @@ section.archive-section {
     }
     .swiperPostSlider {
         h4 {
-            font-weight: 600;
+            font-weight: 600 !important;
             @media(min-width: 992px) {
-                font-size: 26px;
+                font-size: 26px !important;
             }
         }
     }
