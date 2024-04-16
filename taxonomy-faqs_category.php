@@ -48,8 +48,7 @@ $current_term = get_queried_object()->term_id;
         <section class="faqs-accordion">
             <div class="container">
                 <div class="accordion-holder accordion-style-1">
-                    <div class="accordion" id="accordion-<?= get_the_ID() ?>">
-
+                    <div class="accordion" id="accordion-<?= $current_term ?>">
                         <?php while (have_posts()) { ?>
                             <?php the_post() ?>
                             <div class="accordion-item">
