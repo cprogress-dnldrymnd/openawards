@@ -55,7 +55,7 @@ $current_term = get_queried_object()->term_id;
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="heading<?= get_the_ID() ?>">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= get_the_ID() ?>" aria-expanded="false" aria-controls="collapse<?= get_the_ID() ?>">
-                                        <span> <?= $acc['accordion_title'] ?></span>
+                                        <span> <?php the_title() ?></span>
 
                                         <svg class="icon-inactive" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
@@ -67,7 +67,7 @@ $current_term = get_queried_object()->term_id;
                                 </h2>
                                 <div id="collapse<?= get_the_ID() ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= get_the_ID() ?>" data-bs-parent="#accordion-<?= get_the_ID() ?>">
                                     <div class="accordion-body">
-                                        <?= wpautop($acc['accordion_content']) ?>
+                                        <?php the_content() ?>
                                     </div>
                                 </div>
                             </div>
