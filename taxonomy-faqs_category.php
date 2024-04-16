@@ -30,7 +30,7 @@ $terms = get_terms(array(
                                 $color = carbon_get_term_meta($term->term_id, 'color');
                                 ?>
                                 <div class="col-auto">
-                                    <a style="border-color: <?= $color ?>" href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
+                                    <a style="--color: <?= $color ?>" href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
                                 </div>
                             <?php } ?>
                         </div>

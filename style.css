@@ -7291,6 +7291,7 @@ section.faqs-categories {
   color: var(--opal-black);
   border-radius: 50px;
   font-family: var(--primary-font);
-  display: inline-block; }
+  display: inline-block;
+  line-height: 1; }
 
 /*# sourceMappingURL=style.css.map */
