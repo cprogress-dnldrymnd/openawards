@@ -95,7 +95,7 @@ while (have_posts()) {
 									$query->the_post(); ?>
 									<div class="swiper-slide">
 										<div class="post-box post-box-slider">
-											<div class="row g-4 align-items-center">
+											<div class="row">
 												<div class="col-12">
 													<div class="column-holder">
 														<div class="image-box">
