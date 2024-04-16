@@ -2,7 +2,7 @@
 if (is_single() || is_page()) {
     $title = get_the_title();
 } else if (is_archive()) {
-    $title = get_the_archive_title();
+    $title = post_type_archive_title(false, false);
 } else if (is_home()) {
     $title = 'Latest News';
 }
