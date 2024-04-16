@@ -7,7 +7,6 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it 
-echo do_shortcode('[template template_id=2969]');
 while (have_posts()) {
 	the_post();
 	$cta_heading = carbon_get_the_post_meta('cta_heading');
