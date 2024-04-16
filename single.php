@@ -95,28 +95,18 @@ while (have_posts()) {
 									$query->the_post(); ?>
 									<div class="swiper-slide">
 										<div class="post-box post-box-slider">
-											<div class="row">
-												<div class="col-12">
-													<div class="column-holder">
-														<div class="image-box">
-															<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
-														</div>
-													</div>
+											<div class="image-box">
+												<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
+											</div>
+											<div class="content-box">
+												<div class="heading-box">
+													<h4><?php the_title() ?></h4>
 												</div>
-												<div class="col-12">
-													<div class="column-holder">
-														<div class="content-box">
-															<div class="heading-box">
-																<h4><?php the_title() ?></h4>
-															</div>
-															<div class="description-box">
-																<?php the_excerpt() ?>
-															</div>
-															<div class="button-box">
-																<a href="<?php the_permalink() ?>">Read more</a>
-															</div>
-														</div>
-													</div>
+												<div class="description-box">
+													<?php the_excerpt() ?>
+												</div>
+												<div class="button-box">
+													<a href="<?php the_permalink() ?>">Read more</a>
 												</div>
 											</div>
 										</div>
