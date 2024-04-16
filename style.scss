@@ -9322,6 +9322,9 @@ h6 {
 
 section.faqs-categories {
     margin-bottom: 50px;
+    .faqs-img {
+        object-fit: cover;
+    }
     .row-cat {
         a {
             background-color: #F4F5F7;
