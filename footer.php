@@ -113,7 +113,7 @@
 
   var swiperRelated = new Swiper(".swiperPostSlider-Related", {
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 0,
     loop: true,
     pagination: {
       el: ".swiper-pagination",

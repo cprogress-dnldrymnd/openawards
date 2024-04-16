@@ -7161,7 +7161,8 @@ section.archive-section {
     margin-left: -29px;
     margin-right: -29px; }
     .swiperPostSlider-holder .swiperPostSlider-Related .swiper-slide {
-      height: auto; }
+      height: auto;
+      padding: 30px; }
       .swiperPostSlider-holder .swiperPostSlider-Related .swiper-slide .post-box {
         box-shadow: 0px 29px 35px #0000000d;
         background-color: var(--white-color);
