@@ -6783,15 +6783,21 @@ form#resources_form.searching label {
         .icon-box-wrapper .row .icon-box-holder {
           text-align: left; } }
 
-.vc_btn3.vc_btn3.vc_btn3.vc_btn3-style-modern {
-  background-image: none;
-  font-size: 23px; }
-.vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-violet {
-  background-color: var(--high-violet);
-  border-color: var(--high-violet);
-  color: var(--white-color); }
-.vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-white {
-  color: var(--opal-black); }
+.vc_btn3.vc_btn3.vc_btn3 {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px; }
+  .vc_btn3.vc_btn3.vc_btn3.vc_btn3-style-modern {
+    background-image: none;
+    font-size: 23px; }
+  .vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-violet {
+    background-color: var(--high-violet);
+    border-color: var(--high-violet);
+    color: var(--white-color); }
+  .vc_btn3.vc_btn3.vc_btn3.vc_btn3-color-white {
+    color: var(--opal-black); }
 
 .fw-normal * {
   font-weight: normal; }
