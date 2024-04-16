@@ -37,7 +37,7 @@ while (have_posts()) {
 					</g>
 				</svg></div>
 			<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
-			<div class="title-wrapper title-wrapper-v2">
+			<div class="title-wrapper title-wrapper-v2 position-relative">
 				<div class="container text-center">
 					<div class="heading-box">
 						<h2>
@@ -50,7 +50,7 @@ while (have_posts()) {
 				</div>
 			</div>
 
-			<section class="the-content">
+			<section class="the-content position-relative">
 				<div class="container">
 					<div class="image-box content-holder">
 						<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
@@ -96,7 +96,7 @@ while (have_posts()) {
 			);
 			$query = new WP_Query($args);
 			?>
-			<section class="post-slider post-slider-related">
+			<section class="post-slider post-slider-related position-relative">
 				<div class="container">
 					<div class="row mb-5 mt-5">
 						<div class="col">

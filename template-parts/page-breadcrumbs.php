@@ -9,7 +9,7 @@ if (is_single() || is_page()) {
 ?>
 
 
-<section class="breadcrumbs wocom">
+<section class="breadcrumbs wocom position-relative">
     <nav aria-label="breadcrumb">
         <div class="container<?= container_width() ?>">
             <ol class="breadcrumb">
