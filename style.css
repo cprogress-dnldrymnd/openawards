@@ -7048,7 +7048,7 @@ form#resources_form.searching label {
   .title-wrapper.title-wrapper .date-box {
     color: var(--high-violet);
     font-size: 18px;
-    margin-bottom: 20px; }
+    margin-top: 20px; }
   .title-wrapper.title-wrapper:not(.title-wrapper-v2) .container {
     max-width: 800px; }
   @media (min-width: 1200px) {
@@ -7210,5 +7210,8 @@ section.the-content .cta-box {
 
 section.post-slider-related {
   padding-bottom: 140px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--primary-font); }
 
 /*# sourceMappingURL=style.css.map */
