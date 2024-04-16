@@ -7185,5 +7185,7 @@ section.archive-section {
 
 section.the-content .container {
   max-width: 850px; }
+section.the-content img {
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
