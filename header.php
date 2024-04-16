@@ -52,8 +52,6 @@
 	// and the list goes on. Look it up if you want more.
 ?>>
 <header <?php header_class() ?>>
-
-
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
