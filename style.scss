@@ -9321,14 +9321,20 @@ h6 {
 }
 
 section.faqs-categories {
+    margin-bottom: 50px;
     .row-cat {
         a {
             background-color: #F4F5F7;
             padding: 2rem;
             display: flex;
             align-items: center;
+            svg {
+                margin-bottom: 40px;
+            }
             .faq-cat-title {
                 color: var(--black-color);
+                margin-bottom: 10px;
+                font-family: var(--primary-font);
             }
             .faq-cat-desc {
                 color: var(--opal-black);
