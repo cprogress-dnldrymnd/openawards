@@ -48,12 +48,12 @@ $current_term = get_queried_object()->term_id;
         <section class="faqs-accordion">
             <div class="container">
                 <div class="accordion-holder accordion-style-2">
-                    <div class="accordion" id="accordion-<?= $current_term ?>">
+                    <div class="accordion" id="accordion">
                         <?php while (have_posts()) { ?>
                             <?php the_post() ?>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="heading<?= get_the_ID() ?>">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= get_the_ID() ?>" aria-expanded="false" aria-controls="collapse<?= get_the_ID() ?>">
+                                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= get_the_ID() ?>" aria-expanded="false" aria-controls="collapse<?= get_the_ID() ?>">
                                         <span> <?php the_title() ?></span>
 
                                         <svg class="icon-inactive" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
@@ -64,7 +64,7 @@ $current_term = get_queried_object()->term_id;
                                         </svg>
                                     </button>
                                 </h2>
-                                <div id="collapse<?= get_the_ID() ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= get_the_ID() ?>" data-bs-parent="#accordion-<?= get_the_ID() ?>">
+                                <div id="collapse<?= get_the_ID() ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= get_the_ID() ?>" data-bs-parent="#accordion">
                                     <div class="accordion-body">
                                         <?php the_content() ?>
                                     </div>
