@@ -9185,6 +9185,10 @@ section.archive-section {
     }
     .swiperPostSlider-Related {
         overflow-y: visible;
+        padding-left: 29px;
+        padding-right: 29px;
+        margin-left: -29px;
+        margin-right: -29px;
         .swiper-slide {
             height: auto;
             .post-box {

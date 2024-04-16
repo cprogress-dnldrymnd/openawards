@@ -7155,7 +7155,11 @@ section.archive-section {
     border-radius: 10px;
     overflow: hidden; }
   .swiperPostSlider-holder .swiperPostSlider-Related {
-    overflow-y: visible; }
+    overflow-y: visible;
+    padding-left: 29px;
+    padding-right: 29px;
+    margin-left: -29px;
+    margin-right: -29px; }
     .swiperPostSlider-holder .swiperPostSlider-Related .swiper-slide {
       height: auto; }
       .swiperPostSlider-holder .swiperPostSlider-Related .swiper-slide .post-box {
