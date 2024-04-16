@@ -50,6 +50,9 @@ while (have_posts()) {
 							</div>
 						</div>
 					</div>
+					<div class="content-holder">
+						<?php the_content() ?>
+					</div>
 				</div>
 			</section>
 			<?php
@@ -90,7 +93,6 @@ while (have_posts()) {
 												</div>
 												<div class="col-12">
 													<div class="column-holder">
-
 														<div class="content-box">
 															<div class="heading-box">
 																<h4><?php the_title() ?></h4>

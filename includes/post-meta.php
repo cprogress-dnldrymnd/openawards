@@ -143,6 +143,25 @@ Container::make('post_meta', 'Team Settings')
         )
     );
 
+//Post
+Container::make('post_meta', 'Post Settings')
+    ->set_priority('high')
+    ->or_where('post_type', '=', 'post')
+    ->add_tab(
+        'CTA',
+        array(
+            Field::make('text', 'cta_heading', __('CTA Heading')),
+            Field::make('text', 'button_text', __('Button Text')),
+            Field::make('text', 'button_link', __('Button Link')),
+        )
+    )
+    ->add_tab(
+        'Bottom Text',
+        array(
+            Field::make('rich_text', 'bottom_text', __('Bottom Text')),
+        )
+    );
+
 //Theme Settings 
 
 Container::make('theme_options', 'Theme Options')
@@ -169,6 +188,9 @@ Container::make('theme_options', 'Theme Options')
             Field::make('textarea', 'footer_copyright', __('Footer Copyright')),
         )
     );
+
+
+
 
 
 function theme_settings()
