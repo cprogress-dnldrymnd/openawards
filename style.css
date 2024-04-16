@@ -7261,7 +7261,8 @@ h6 {
 section.faqs-categories {
   margin-bottom: 50px; }
   section.faqs-categories .faqs-img {
-    object-fit: cover; }
+    object-fit: cover;
+    border-radius: 10px; }
   section.faqs-categories .row-cat a {
     background-color: #F4F5F7;
     padding: 2rem;
