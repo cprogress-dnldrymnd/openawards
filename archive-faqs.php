@@ -30,7 +30,7 @@ $terms = get_terms(array(
 
         <section class="faqs-categories">
             <div class="container">
-                <div class="row">
+                <div class="row  g-4">
                     <div class="col-lg-4">
                         <img src="https://openawards.theprogressteam.com/wp-content/uploads/2024/04/pexels-julia-m-cameron-4144222.png" class="h-100">
                     </div>
