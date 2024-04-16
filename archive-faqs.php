@@ -35,7 +35,7 @@ $terms = get_terms(array(
                         <img src="https://openawards.theprogressteam.com/wp-content/uploads/2024/04/pexels-julia-m-cameron-4144222.png" class="h-100">
                     </div>
                     <div class="col-lg-8">
-                        <div class="row">
+                        <div class="row g-4 h-100">
                             <?php foreach ($terms as $term) { ?>
                                 <div class="col-lg-6">
                                     <a href="<?= get_term_link($term->term_id) ?>" class="h-100">
