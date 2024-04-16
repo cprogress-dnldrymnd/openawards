@@ -272,7 +272,12 @@ function template($atts)
 		)
 	);
 
-	return get_the_content($template_id);
+	$content_post = get_post($template_id);
+	$content = $content_post->post_content;
+	$content = apply_filters('the_content', $content);
+	$content = str_replace(']]>', ']]&gt;', $content);
+
+	return get_the_content($content);
 	
 }
 
