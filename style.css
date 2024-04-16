@@ -7207,6 +7207,9 @@ section.the-content .cta-box {
   border-radius: 10px;
   padding: 3rem 1rem;
   color: var(--white-color); }
+  @media (min-width: 1200px) {
+    section.the-content .cta-box h2 {
+      font-size: 46px; } }
   section.the-content .cta-box .content-holder {
     max-width: 1050px; }
 

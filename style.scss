@@ -9250,6 +9250,11 @@ section.the-content {
         border-radius: 10px;
         padding: 3rem 1rem;
         color: var(--white-color);
+        h2 {
+            @media (min-width: 1200px) {
+                font-size: 46px;
+            }
+        }
         .content-holder {
             max-width: 1050px;
         }
