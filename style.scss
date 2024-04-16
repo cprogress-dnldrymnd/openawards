@@ -9038,7 +9038,7 @@ form#resources_form {
         margin-top: 20px;
     }
     &:not(.title-wrapper-v2) {
-    background-color: var(--white-color);
+        background-color: var(--white-color);
         .container {
             max-width: 800px;
         }
@@ -9195,7 +9195,7 @@ section.archive-section {
     .swiperPostSlider {
         h4 {
             font-weight: 600 !important;
-            @media(min-width: 992px) {
+            @media (min-width: 992px) {
                 font-size: 26px !important;
             }
         }
@@ -9333,7 +9333,7 @@ section.faqs-categories {
     }
     .row-cat {
         a {
-            background-color: #F4F5F7;
+            background-color: #f4f5f7;
             padding: 2rem;
             display: flex;
             border-radius: 10px;
@@ -9368,5 +9368,11 @@ section.faqs-categories {
         font-family: var(--primary-font);
         display: inline-block;
         line-height: 1;
+        border-color: var(--color);
+        &:hover,
+        &.active {
+            background-color: var(--color);
+            color: var(--white);
+        }
     }
 }

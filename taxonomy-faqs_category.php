@@ -11,6 +11,7 @@ $terms = get_terms(array(
     'taxonomy'   => 'faqs_category',
     'hide_empty' => false,
 ));
+$current_term = get_queried_object()->term_id;
 ?>
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
@@ -28,9 +29,14 @@ $terms = get_terms(array(
                             <?php foreach ($terms as $term) { ?>
                                 <?php
                                 $color = carbon_get_term_meta($term->term_id, 'color');
+                                if ($term->term_id == $current_term) {
+                                    $class = 'active';
+                                } else {
+                                    $class = '';
+                                }
                                 ?>
                                 <div class="col-auto">
-                                    <a style="--color: <?= $color ?>" href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
+                                    <a class="<?= $class ?>" style="--color: <?= $color ?>" href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
                                 </div>
                             <?php } ?>
                         </div>

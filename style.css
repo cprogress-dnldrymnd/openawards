@@ -7292,6 +7292,10 @@ section.faqs-categories {
   border-radius: 50px;
   font-family: var(--primary-font);
   display: inline-block;
-  line-height: 1; }
+  line-height: 1;
+  border-color: var(--color); }
+  .faqs-filter-holder a:hover, .faqs-filter-holder a.active {
+    background-color: var(--color);
+    color: var(--white); }
 
 /*# sourceMappingURL=style.css.map */
