@@ -9127,6 +9127,8 @@ section.archive-section {
 
 .post-box.post-box {
     font-family: var(--primary-font);
+    border-radius: 5px;
+    overflow: hidden;
     &:not(.post-box-slider) {
         background-color: var(--white-color);
         box-shadow: 0px 29px 35px #0000000d;
@@ -9144,6 +9146,7 @@ section.archive-section {
             object-fit: cover;
             left: 0;
             top: 0;
+            border: none;
         }
     }
     .content-box {
@@ -9183,6 +9186,7 @@ section.archive-section {
         border-radius: 10px;
         overflow: hidden;
     }
+   
     .swiperPostSlider-Related {
         overflow-y: visible;
         margin-left: -15px;

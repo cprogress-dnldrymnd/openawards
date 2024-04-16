@@ -7112,7 +7112,9 @@ section.archive-section {
   padding-top: 100px; }
 
 .post-box.post-box {
-  font-family: var(--primary-font); }
+  font-family: var(--primary-font);
+  border-radius: 5px;
+  overflow: hidden; }
   .post-box.post-box:not(.post-box-slider) {
     background-color: var(--white-color);
     box-shadow: 0px 29px 35px #0000000d;
@@ -7128,7 +7130,8 @@ section.archive-section {
       height: 100%;
       object-fit: cover;
       left: 0;
-      top: 0; }
+      top: 0;
+      border: none; }
   .post-box.post-box .content-box {
     padding: 25px; }
     .post-box.post-box .content-box h4 {
