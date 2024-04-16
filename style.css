@@ -7193,25 +7193,27 @@ section.archive-section {
       .swiper-button-style-1 .swiper-button-next:after {
         font-size: 16px; } }
 
-section.the-content .content-holder {
-  max-width: 850px;
-  margin-left: auto;
-  margin-right: auto; }
-section.the-content img {
-  width: 100%; }
-section.the-content .cta-box {
-  background-color: var(--high-violet);
-  background-image: url(https://openawards.theprogressteam.com/wp-content/uploads/2024/03/bg-2.png);
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  padding: 3rem 1rem;
-  color: var(--white-color); }
-  @media (min-width: 1200px) {
-    section.the-content .cta-box h2 {
-      font-size: 46px; } }
-  section.the-content .cta-box .content-holder {
-    max-width: 1050px; }
+section.the-content {
+  margin-bottom: 30px; }
+  section.the-content .content-holder {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto; }
+  section.the-content img {
+    width: 100%; }
+  section.the-content .cta-box {
+    background-color: var(--high-violet);
+    background-image: url(https://openawards.theprogressteam.com/wp-content/uploads/2024/03/bg-2.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 3rem 1rem;
+    color: var(--white-color); }
+    @media (min-width: 1200px) {
+      section.the-content .cta-box h2 {
+        font-size: 46px; } }
+    section.the-content .cta-box .content-holder {
+      max-width: 1050px; }
 
 section.post-slider-related {
   padding-bottom: 140px; }
