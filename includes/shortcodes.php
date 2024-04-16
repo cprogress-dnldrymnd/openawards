@@ -281,7 +281,7 @@ function template($atts)
 
 	while ($query->have_posts()) {
 		$query->the_post();
-		return get_the_content();
+		return do_shortcode(get_the_content());
 	}
 	wp_reset_postdata();
 	
