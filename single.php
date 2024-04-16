@@ -13,7 +13,7 @@ while (have_posts()) {
 	<div id="primary" class="row-fluid">
 		<div id="content" role="main" class="span8 offset2">
 			<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
-			<div class="title-wrapper">
+			<div class="title-wrapper title-wrapper-v2">
 				<div class="container text-center">
 					<div class="heading-box">
 						<h2>

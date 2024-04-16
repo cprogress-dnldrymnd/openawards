@@ -9026,15 +9026,21 @@ form#resources_form {
     padding-bottom: 50px;
     background-color: var(--white-color);
     font-family: var(--primary-font);
-    .container {
-        max-width: 800px;
+    &:not(.title-wrapper-v2) {
+        .container {
+            max-width: 800px;
+        }
+        h2 {
+            @media (min-width: 1200px) {
+                font-size: 69px;
+                max-width: 1000px;
+            }
+        }
     }
+
     h2 {
         color: var(--black-color);
-        @media (min-width: 1200px) {
-            font-size: 69px;
-            max-width: 1000px;
-        }
+        
     }
 }
 
@@ -9208,5 +9214,11 @@ section.archive-section {
                 font-size: 16px;
             }
         }
+    }
+}
+
+section.the-content {
+    .container {
+        max-width: 850px;
     }
 }

@@ -7038,14 +7038,14 @@ form#resources_form.searching label {
   padding-bottom: 50px;
   background-color: var(--white-color);
   font-family: var(--primary-font); }
-  .title-wrapper.title-wrapper .container {
+  .title-wrapper.title-wrapper:not(.title-wrapper-v2) .container {
     max-width: 800px; }
+  @media (min-width: 1200px) {
+    .title-wrapper.title-wrapper:not(.title-wrapper-v2) h2 {
+      font-size: 69px;
+      max-width: 1000px; } }
   .title-wrapper.title-wrapper h2 {
     color: var(--black-color); }
-    @media (min-width: 1200px) {
-      .title-wrapper.title-wrapper h2 {
-        font-size: 69px;
-        max-width: 1000px; } }
 
 .required {
   color: var(--high-violet);
@@ -7176,5 +7176,8 @@ section.archive-section {
       .swiper-button-style-1 .swiper-button-prev:after,
       .swiper-button-style-1 .swiper-button-next:after {
         font-size: 16px; } }
+
+section.the-content .container {
+  max-width: 850px; }
 
 /*# sourceMappingURL=style.css.map */
