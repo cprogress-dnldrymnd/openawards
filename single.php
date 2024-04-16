@@ -9,6 +9,10 @@
 get_header(); // This fxn gets the header.php file and renders it 
 while (have_posts()) {
 	the_post();
+	$cta_heading = carbon_get_the_post_meta('cta_heading');
+	$button_text = carbon_get_the_post_meta('button_text');
+	$button_link = carbon_get_the_post_meta('button_link');
+	$bottom_text = carbon_get_the_post_meta('bottom_text');
 ?>
 	<div id="primary" class="row-fluid">
 		<div id="content" role="main" class="span8 offset2">
@@ -34,25 +38,33 @@ while (have_posts()) {
 					<div class="content-holder">
 						<?php the_content() ?>
 					</div>
-					<div class="cta-box">
-						<div class="content-holder">
-							<div class="row align-items-center">
-								<div class="col-lg-8">
-									<div class="heading-box">
-										<h2>Talking <span class="underline">all things</span><br>
-											end-point assessment.
-										</h2>
+					<?php if ($cta_heading) { ?>
+						<div class="cta-box">
+							<div class="content-holder">
+								<div class="row align-items-center">
+									<div class="col-lg-8">
+										<div class="heading-box">
+											<h2>
+												<?= $cta_heading ?>
+											</h2>
+										</div>
 									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="vc_btn3-container vc_btn3-inline text-start  text-lg-end"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-white" href="#" title="">Find out more</a></div>
+									<?php if ($button_text) { ?>
+										<div class="col-lg-4">
+											<div class="vc_btn3-container vc_btn3-inline text-start  text-lg-end"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-white" href="<?= $button_link ?>"><?= $button_text ?></a></div>
+										</div>
+									<?php } ?>
+
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="content-holder">
-						<?php the_content() ?>
-					</div>
+					<?php } ?>
+					<?php if ($bottom_text) { ?>
+						<div class="content-holder">
+							<?= wpautop($bottom_text) ?>
+						</div>
+					<?php } ?>
+
 				</div>
 			</section>
 			<?php
