@@ -7196,6 +7196,8 @@ section.archive-section {
 
 section.the-content {
   margin-bottom: 30px; }
+  section.the-content .container > div:not(:last-child) {
+    margin-bottom: 2rem; }
   section.the-content .content-holder {
     max-width: 850px;
     margin-left: auto;

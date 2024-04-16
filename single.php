@@ -32,7 +32,7 @@ while (have_posts()) {
 
 			<section class="the-content">
 				<div class="container">
-					<div class="image-box content-holder mb-5">
+					<div class="image-box content-holder">
 						<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
 					</div>
 					<div class="content-holder">
