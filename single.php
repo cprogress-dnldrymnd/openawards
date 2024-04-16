@@ -31,8 +31,22 @@ while (have_posts()) {
 					<div class="image-box mb-5">
 						<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
 					</div>
-					<div class="content-box">
+					<div class="content-holder">
 						<?php the_content() ?>
+					</div>
+					<div class="cta-box">
+						<div class="row">
+							<div class="col-12 col-sm">
+								<div class="heading-box">
+									<h2>Talking <span class="underline">all things</span><br>
+										end-point assessment.
+									</h2>
+								</div>
+							</div>
+							<div class="col-12 col-sm-auto">
+								
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
