@@ -9183,7 +9183,7 @@ section.archive-section {
         overflow: hidden;
     }
     .swiperPostSlider-Related {
-        box-shadow: 0px 29px 35px #0000000D;
+        box-shadow: 0px 29px 35px #0000000d;
         background-color: var(--white-color);
     }
     .swiper-button-prev {
@@ -9243,7 +9243,13 @@ section.the-content {
         width: 100%;
     }
     .cta-box {
-        
+        background-color: var(--high-violet);
+        background-image: url(https://openawards.theprogressteam.com/wp-content/uploads/2024/03/bg-2.png);
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 3rem 1rem;
+        color: var(--white-color);
     }
 }
 
