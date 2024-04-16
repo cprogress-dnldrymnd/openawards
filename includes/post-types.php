@@ -253,8 +253,8 @@ $Team->singular_name = 'Template';
 $Team->icon = 'dashicons-format-aside';
 $Team->supports = array('title', 'editor', 'revisions');
 $Team->exclude_from_search = true;
-$Team->publicly_queryable = false;
-$Team->show_in_admin_bar = false;
+$Team->publicly_queryable = true;
+$Team->show_in_admin_bar = true;
 $Team->has_archive = false;
 
 
