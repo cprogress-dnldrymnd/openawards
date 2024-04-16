@@ -37,14 +37,14 @@ while (have_posts()) {
 					<div class="cta-box">
 						<div class="content-holder">
 							<div class="row">
-								<div class="col-12 col-sm">
+								<div class="col-lg-8">
 									<div class="heading-box">
 										<h2>Talking <span class="underline">all things</span><br>
 											end-point assessment.
 										</h2>
 									</div>
 								</div>
-								<div class="col-12 col-sm-auto">
+								<div class="col-lg-4">
 									<div class="vc_btn3-container vc_btn3-inline"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-white" href="#" title="">Find out more</a></div>
 								</div>
 							</div>

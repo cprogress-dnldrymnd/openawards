@@ -7196,7 +7196,7 @@ section.archive-section {
 section.the-content .content-holder {
   max-width: 850px;
   margin-left: auto;
-  margin-left: auto; }
+  margin-right: auto; }
 section.the-content img {
   width: 100%; }
 section.the-content .cta-box {
@@ -7207,11 +7207,19 @@ section.the-content .cta-box {
   border-radius: 10px;
   padding: 3rem 1rem;
   color: var(--white-color); }
+  section.the-content .cta-box .content-holder {
+    max-width: 1050px; }
 
 section.post-slider-related {
   padding-bottom: 140px; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--primary-font); }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+  font-weight: 600; }
 
 /*# sourceMappingURL=style.css.map */
