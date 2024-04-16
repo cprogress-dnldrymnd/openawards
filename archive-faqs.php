@@ -20,7 +20,7 @@ get_header(); // This fxn gets the header.php file and renders it
 					</h2>
 				</div>
 				<div class="subheading">
-					<p>LorOpen Awards believes in fair and transparent pricing. We believe this enables people to make decisions effectively. View our prices for the 2023/2024 courses below.</p>
+					<p>Open Awards believes in fair and transparent pricing. We believe this enables people to make decisions effectively. View our prices for the 2023/2024 courses below.</p>
 				</div>
 			</div>
 		</div>

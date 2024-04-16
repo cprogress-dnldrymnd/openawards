@@ -234,10 +234,10 @@ $Team->has_archive = false;
 
 
 
-$Events_Category = new newTaxonomy();
-$Events_Category->taxonomy = 'teams_category';
-$Events_Category->post_type = 'teams';
-$Events_Category->args = array(
+$Teams_Category = new newTaxonomy();
+$Teams_Category->taxonomy = 'teams_category';
+$Teams_Category->post_type = 'teams';
+$Teams_Category->args = array(
     'label'        => 'Teams Categories',
     'rewrite'      => array('slug' => 'teams-category'),
     'hierarchical' => true,
@@ -263,11 +263,22 @@ $Team->name = 'FAQs';
 $Team->singular_name = 'FAQ';
 $Team->icon = 'dashicons-editor-alignleft';
 $Team->supports = array('title', 'revisions', 'editor');
-$Team->exclude_from_search = true;
-$Team->publicly_queryable = false;
-$Team->show_in_admin_bar = false;
-$Team->has_archive = false;
+$Team->exclude_from_search = false;
+$Team->publicly_queryable = true;
+$Team->show_in_admin_bar = true;
+$Team->has_archive = true;
 
+$FAQs_Category = new newTaxonomy();
+$FAQs_Category->taxonomy = 'faqs_category';
+$FAQs_Category->post_type = 'faqs';
+$FAQs_Category->args = array(
+    'label'        => 'FAQs Categories',
+    'rewrite'      => array('slug' => 'faqs-category'),
+    'hierarchical' => true,
+    'query_var'    => false,
+    'has_archive'  => false,
+    'show_in_rest' => false,
+);
 
 // Add the custom columns to the slider post type:
 add_filter('manage_slider_posts_columns', 'set_custom_edit_slider_columns');
