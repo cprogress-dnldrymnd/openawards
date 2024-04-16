@@ -15,9 +15,9 @@ $terms = get_terms(array(
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
         <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
-        <div class="title-wrapper">
+        <div class="title-wrapper title-wrapper-v3">
             <div class="container text-center">
-                <div class="heading-box">
+                <div class="heading-box mb-3">
                     <h2>
                         Frequently Asked Questions
                     </h2>

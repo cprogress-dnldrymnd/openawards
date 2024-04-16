@@ -7055,7 +7055,9 @@ form#resources_form.searching label {
       max-width: 800px; }
     @media (min-width: 1200px) {
       .title-wrapper.title-wrapper:not(.title-wrapper-v2) h2 {
-        max-width: 1000px; } }
+        max-width: 1020px; } }
+  .title-wrapper.title-wrapper.title-wrapper-v3 .container {
+    max-width: 1000px; }
   .title-wrapper.title-wrapper h2 {
     color: var(--black-color); }
     @media (min-width: 1200px) {
