@@ -6514,19 +6514,20 @@ form#resources_form.searching label {
     color: var(--high-violet);
     font-size: 23px;
     font-weight: 300; }
-  .job-wrapper .job-holder .body .description,
-  .job-wrapper .job-holder .body .accordion-body {
-    font-size: 18px;
-    font-weight: 400;
-    color: #5b5b5b; }
-  .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button {
-    color: #333333;
-    font-size: 26px;
-    font-weight: 600; }
-    .job-wrapper .job-holder .body .accordion-holder .accordion-item .accordion-header .accordion-button svg {
-      color: var(--high-violet); }
   .job-wrapper .job-holder .footer {
     border-top: 1px solid var(--high-violet); }
+
+.accordion-style-1 .description,
+.accordion-style-1 .accordion-body {
+  font-size: 18px;
+  font-weight: 400;
+  color: #5b5b5b; }
+.accordion-style-1 .accordion-holder .accordion-item .accordion-header .accordion-button {
+  color: #333333;
+  font-size: 26px;
+  font-weight: 600; }
+  .accordion-style-1 .accordion-holder .accordion-item .accordion-header .accordion-button svg {
+    color: var(--high-violet); }
 
 .jobs-buttons .btn {
   font-size: 23px;

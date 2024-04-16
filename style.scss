@@ -8317,23 +8317,26 @@ form#resources_form {
                 font-size: 23px;
                 font-weight: 300;
             }
-            .description,
-            .accordion-body {
-                font-size: 18px;
-                font-weight: 400;
-                color: #5b5b5b;
-            }
-            .accordion-holder .accordion-item .accordion-header .accordion-button {
-                color: #333333;
-                font-size: 26px;
-                font-weight: 600;
-                svg {
-                    color: var(--high-violet);
-                }
-            }
         }
         .footer {
             border-top: 1px solid var(--high-violet);
+        }
+    }
+}
+
+.accordion-style-1 {
+    .description,
+    .accordion-body {
+        font-size: 18px;
+        font-weight: 400;
+        color: #5b5b5b;
+    }
+    .accordion-holder .accordion-item .accordion-header .accordion-button {
+        color: #333333;
+        font-size: 26px;
+        font-weight: 600;
+        svg {
+            color: var(--high-violet);
         }
     }
 }
