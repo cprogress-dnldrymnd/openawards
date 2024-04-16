@@ -283,6 +283,7 @@ function template($atts)
 		$query->the_post();
 		return get_the_content();
 	}
+	wp_reset_postdata();
 	
 }
 
