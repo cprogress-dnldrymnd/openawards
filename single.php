@@ -44,7 +44,7 @@ while (have_posts()) {
 								</div>
 							</div>
 							<div class="col-12 col-sm-auto">
-
+								<div class="vc_btn3-container vc_btn3-inline"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-white" href="#" title="">Find out more</a></div>
 							</div>
 						</div>
 					</div>
@@ -59,7 +59,7 @@ while (have_posts()) {
 			);
 			$query = new WP_Query($args);
 			?>
-			<section class="post-slider">
+			<section class="post-slider post-slider-related">
 				<div class="container">
 					<div class="row mb-5">
 						<div class="col">
