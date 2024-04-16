@@ -41,7 +41,7 @@ while (have_posts()) {
 					<?php if ($cta_heading) { ?>
 						<div class="cta-box">
 							<div class="content-holder">
-								<div class="row align-items-center">
+								<div class="row g-4 align-items-center">
 									<div class="col-lg-8">
 										<div class="heading-box">
 											<h2>
