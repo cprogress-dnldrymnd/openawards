@@ -6788,7 +6788,8 @@ form#resources_form.searching label {
   padding-bottom: 18px;
   padding-left: 25px;
   padding-right: 25px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  display: inline-block; }
   .vc_btn3.vc_btn3.vc_btn3.vc_btn3-style-modern {
     background-image: none;
     font-size: 23px; }
@@ -7194,6 +7195,7 @@ section.archive-section {
 
 section.the-content .content-holder {
   max-width: 850px;
+  margin-left: auto;
   margin-left: auto; }
 section.the-content img {
   width: 100%; }

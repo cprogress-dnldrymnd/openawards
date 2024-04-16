@@ -61,7 +61,7 @@ while (have_posts()) {
 			?>
 			<section class="post-slider">
 				<div class="container">
-					<div class="row">
+					<div class="row mb-5">
 						<div class="col">
 							<div class="heading-box">
 								<h2>Latest News</h2>
