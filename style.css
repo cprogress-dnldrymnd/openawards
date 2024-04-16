@@ -7236,6 +7236,12 @@ section.the-content {
     section.the-content .cta-box .content-holder {
       max-width: 1050px; }
 
+.bg-accent {
+  position: absolute;
+  right: 0;
+  top: -9%;
+  left: 60%; }
+
 section.post-slider-related {
   padding-bottom: 140px; }
 
