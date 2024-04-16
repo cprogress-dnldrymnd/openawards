@@ -7,6 +7,7 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it 
+echo do_shortcode('[template template_id=2969]');
 while (have_posts()) {
 	the_post();
 	$cta_heading = carbon_get_the_post_meta('cta_heading');
@@ -15,7 +16,7 @@ while (have_posts()) {
 	$bottom_text = carbon_get_the_post_meta('bottom_text');
 ?>
 	<div id="primary" class="row-fluid overflow-hidden">
-	<?= do_shortcode('[template template_id=2969]') ?>
+
 		<div id="content" role="main" class="span8 offset2 position-relative">
 			<div class="bg-accent"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1757.229" height="1005.347" viewBox="0 0 1757.229 1005.347">
 					<defs>
