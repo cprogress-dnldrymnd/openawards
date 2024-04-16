@@ -7050,7 +7050,7 @@ form#resources_form.searching label {
   .title-wrapper.title-wrapper h2 {
     color: var(--black-color); }
     @media (min-width: 1200px) {
-      .title-wrapper.title-wrapper h2 h2 {
+      .title-wrapper.title-wrapper h2 {
         font-size: 69px; } }
 
 .required {

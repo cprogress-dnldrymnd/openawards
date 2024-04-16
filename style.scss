@@ -9044,10 +9044,8 @@ form#resources_form {
 
     h2 {
         color: var(--black-color);
-        h2 {
-            @media (min-width: 1200px) {
-                font-size: 69px;
-            }
+        @media (min-width: 1200px) {
+            font-size: 69px;
         }
     }
 }
