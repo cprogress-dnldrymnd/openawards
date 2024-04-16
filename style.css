@@ -7283,4 +7283,12 @@ section.faqs-categories {
     section.faqs-categories .row-cat a:hover {
       transform: translateY(-10px); }
 
+.faqs-filter-holder a {
+  padding: 10px 20px;
+  border: 2px solid;
+  color: var(--opal-black);
+  border-radius: 50px;
+  font-family: var(--primary-font);
+  display: inline-block; }
+
 /*# sourceMappingURL=style.css.map */

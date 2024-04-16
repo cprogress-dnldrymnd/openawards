@@ -22,23 +22,24 @@ $terms = get_terms(array(
                         Frequently Asked Questions
                     </h2>
                 </div>
-            </div>
-        </div>
-
-        <div class="faqs-category-filter">
-            <div class="container">
-                <div class="row faqs-filter-holder">
-                    <?php foreach ($terms as $term) { ?>
-                        <?php
-                        $color = carbon_get_term_meta($term->term_id, 'color');
-                        ?>
-                        <div class="col-auto">
-                            <a style="border-color: <?= $color ?>" href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
+                <div class="faqs-category-filter">
+                    <div class="container">
+                        <div class="row justify-content-center faqs-filter-holder">
+                            <?php foreach ($terms as $term) { ?>
+                                <?php
+                                $color = carbon_get_term_meta($term->term_id, 'color');
+                                ?>
+                                <div class="col-auto">
+                                    <a style="border-color: <?= $color ?>" href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
+                                </div>
+                            <?php } ?>
                         </div>
-                    <?php } ?>
+                    </div>
                 </div>
             </div>
         </div>
+
+
 
         <section class="faqs-categories">
             <div class="container">
