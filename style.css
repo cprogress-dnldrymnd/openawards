@@ -6517,16 +6517,16 @@ form#resources_form.searching label {
   .job-wrapper .job-holder .footer {
     border-top: 1px solid var(--high-violet); }
 
-.accordion-style-1 .description,
-.accordion-style-1 .accordion-body {
+.accordion-style-1.accordion-style-1.accordion-style-1 .description,
+.accordion-style-1.accordion-style-1.accordion-style-1 .accordion-body {
   font-size: 18px;
   font-weight: 400;
   color: #5b5b5b; }
-.accordion-style-1 .accordion-holder .accordion-item .accordion-header .accordion-button {
+.accordion-style-1.accordion-style-1.accordion-style-1 .accordion-holder .accordion-item .accordion-header .accordion-button {
   color: #333333;
   font-size: 26px;
   font-weight: 600; }
-  .accordion-style-1 .accordion-holder .accordion-item .accordion-header .accordion-button svg {
+  .accordion-style-1.accordion-style-1.accordion-style-1 .accordion-holder .accordion-item .accordion-header .accordion-button svg {
     color: var(--high-violet); }
 
 .jobs-buttons .btn {
