@@ -208,3 +208,11 @@ function theme_settings()
 }
 
 add_action('init', 'theme_settings');
+
+
+
+Container::make( 'term_meta', __( 'FAQs Category Properties' ) )
+    ->where( 'term_taxonomy', '=', 'category' )
+    ->add_fields( array(
+        Field::make( 'color', 'color', __( 'Color' ) ),
+    ) );
