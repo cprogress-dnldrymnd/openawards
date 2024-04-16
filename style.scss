@@ -9312,3 +9312,10 @@ h6 {
     font-family: var(--primary-font);
     font-weight: 600;
 }
+
+.form-style-1 {
+    .wpcf7 {
+        padding: 0;
+        background-color: transparent;
+    }
+}
