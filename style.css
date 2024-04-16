@@ -7264,8 +7264,8 @@ section.faqs-categories {
     background-color: #F4F5F7;
     padding: 2rem;
     display: flex;
-    align-items: center;
-    border-radius: 10px; }
+    border-radius: 10px;
+    flex-direction: column; }
     section.faqs-categories .row-cat a svg {
       margin-bottom: 40px; }
     section.faqs-categories .row-cat a .faq-cat-title {
