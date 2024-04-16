@@ -9324,7 +9324,16 @@ section.faqs-categories {
     .row-cat {
         a {
             background-color: #F4F5F7;
-            padding: 2rem
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            .faq-cat-title {
+                color: var(--black-color);
+            }
+            .faq-cat-desc {
+                color: var(--opal-black);
+                font-size: 16px;
+            }
         }
     }
 }
