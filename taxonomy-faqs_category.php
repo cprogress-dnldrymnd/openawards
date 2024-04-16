@@ -53,7 +53,7 @@ $current_term = get_queried_object()->term_id;
                             <?php the_post() ?>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="heading<?= get_the_ID() ?>">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= get_the_ID() ?>" aria-expanded="false" aria-controls="collapse<?= get_the_ID() ?>">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= get_the_ID() ?>" aria-expanded="false" aria-controls="collapse<?= get_the_ID() ?>">
                                         <span> <?php the_title() ?></span>
 
                                         <svg class="icon-inactive" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
