@@ -7193,7 +7193,8 @@ section.archive-section {
         font-size: 16px; } }
 
 section.the-content .content-holder {
-  max-width: 850px; }
+  max-width: 850px;
+  margin-left: auto; }
 section.the-content img {
   width: 100%; }
 
