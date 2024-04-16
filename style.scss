@@ -9154,8 +9154,9 @@ section.archive-section {
         h4 {
             margin-bottom: 0;
             font-weight: 500;
-            color: var(--primary-color);
+            color: var(--black-color);
             font-size: 20px;
+            line-height: 1.3;
         }
 
         .description-box {
@@ -9186,7 +9187,14 @@ section.archive-section {
         border-radius: 10px;
         overflow: hidden;
     }
-   
+    .swiperPostSlider {
+        h4 {
+            font-weight: 600;
+            @media(min-width: 992px) {
+                font-size: 26px;
+            }
+        }
+    }
     .swiperPostSlider-Related {
         overflow-y: visible;
         margin-left: -15px;
