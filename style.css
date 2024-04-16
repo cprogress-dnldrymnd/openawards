@@ -7154,12 +7154,16 @@ section.archive-section {
   .swiperPostSlider-holder .image-box {
     border-radius: 10px;
     overflow: hidden; }
-  .swiperPostSlider-holder .swiperPostSlider-Related .swiper-slide {
-    height: auto; }
-    .swiperPostSlider-holder .swiperPostSlider-Related .swiper-slide .post-box {
-      box-shadow: 0px 29px 35px #0000000d;
-      background-color: var(--white-color);
-      height: 100%; }
+  .swiperPostSlider-holder .swiperPostSlider-Related {
+    overflow-y: visible;
+    padding-left: 3rem;
+    padding-right: 3rem; }
+    .swiperPostSlider-holder .swiperPostSlider-Related .swiper-slide {
+      height: auto; }
+      .swiperPostSlider-holder .swiperPostSlider-Related .swiper-slide .post-box {
+        box-shadow: 0px 29px 35px #0000000d;
+        background-color: var(--white-color);
+        height: 100%; }
   .swiperPostSlider-holder .swiper-button-prev {
     left: -30px !important; }
   .swiperPostSlider-holder .swiper-button-next {
