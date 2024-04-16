@@ -20,6 +20,9 @@ while (have_posts()) {
 							<?= get_the_title() ?>
 						</h2>
 					</div>
+					<div class="date-box">
+						<?= get_the_date() ?>
+					</div>
 				</div>
 			</div>
 
@@ -37,6 +40,7 @@ while (have_posts()) {
 
 			$args = array(
 				'post_type' => 'post',
+				'posts_per_page' => 5
 
 			);
 			$query = new WP_Query($args);
