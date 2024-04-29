@@ -7379,7 +7379,9 @@ section.blog-filter {
     transition: 300ms; }
   .load-more a svg {
     position: absolute;
-    right: -21px; }
+    right: -25px;
+    width: 25px;
+    height: 25px; }
   .load-more a.loading {
     padding-right: 30px; }
     .load-more a.loading svg {
