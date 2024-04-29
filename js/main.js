@@ -61,7 +61,7 @@ function ajax($offset, $event_type = 'html') {
 		},
 
 		success: function (response) {
-            console.log(event_type);
+            console.log($event_type);
 			if ($event_type == 'append') {
 				$result_holder_row = $result_holder.find('.row');
 				jQuery(response).appendTo($result_holder_row);
