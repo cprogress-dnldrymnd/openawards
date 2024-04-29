@@ -7338,12 +7338,14 @@ section.faqs-accordion {
   left: -30vw;
   top: 147px; }
 
-section.blog-filter select {
-  padding: 1rem;
-  border-radius: 5px;
-  border-color: var(--high-violet);
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold; }
+section.blog-filter {
+  margin-top: 70px; }
+  section.blog-filter select {
+    padding: 1rem;
+    border-radius: 5px;
+    border-color: var(--high-violet);
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

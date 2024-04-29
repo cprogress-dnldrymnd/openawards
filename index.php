@@ -59,7 +59,7 @@ get_header(); // This fxn gets the header.php file and renders it
 		));
 		?>
 		<?php if ($terms) { ?>
-			<div class="blog-filter position-relative">
+			<section class="blog-filter position-relative">
 				<div class="container text-end">
 					<select id="category" name="category">
 						<option value=""> Filter by Category </option>
@@ -68,7 +68,7 @@ get_header(); // This fxn gets the header.php file and renders it
 						<?php } ?>
 					</select>
 				</div>
-			</div>
+			</section>
 		<?php } ?>
 
 		<section class="archive-section position-relative">
