@@ -2,6 +2,7 @@ jQuery(document).ready(function () {
     footer_functions();
     team_modal_trigger();
     ajax_form();
+    load_more_button_listener();
 });
 
 function ajax_form() {
