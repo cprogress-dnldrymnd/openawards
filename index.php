@@ -50,7 +50,7 @@ get_header(); // This fxn gets the header.php file and renders it
 			</div>
 		</div>
 
-		<?php get_template_part('template-prats/blog/featured-blog') ?>
+		<?php get_template_part('template-parts/blog/featured-blog') ?>
 		
 		<section class="archive-section">
 			<div class="container">
