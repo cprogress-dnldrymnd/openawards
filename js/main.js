@@ -16,7 +16,6 @@ function load_more_button_listener($) {
 	jQuery(document).on("click", '#load-more', function (event) {
 		event.preventDefault();
 		var offset = jQuery('.post-item').length;
-        event.preventDefault();
 		ajax(offset, 'append');
 	});
 

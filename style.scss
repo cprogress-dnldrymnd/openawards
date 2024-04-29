@@ -9475,12 +9475,13 @@ section.blog-filter {
 	}
 }
 
-.load-more a {
+.load-more button {
 	position: relative;
 	transition: 300ms;
 	overflow: hidden;
 	display: inline-block;
 	padding-bottom: 2px;
+    border: none;
 	span {
 		transition: 300ms;
 	}
