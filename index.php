@@ -58,23 +58,16 @@ get_header(); // This fxn gets the header.php file and renders it
 			'hide_empty' => false,
 		));
 		?>
-		<div class="blog-filter">
-			<select id="category" name="category" class="nice-select-js nice-select-style-1 nice-select-transparent">
-				<option value=""> Filter by Category </option>
-				<?php if ($terms) { ?>
-					<?php foreach ($terms as $key => $term) { ?>
-						<?php
-						if ($main_query->term_id == $key) {
-							$selected = 'selected';
-						} else {
-							$selected = '';
-						}
-						?>
-						<option <?= $selected ?> value="<?= $key ?>"> <?= $term['name'] ?> </option>
+		<?php if ($terms) { ?>
+			<div class="blog-filter">
+				<select id="category" name="category" class="nice-select-js nice-select-style-1 nice-select-transparent">
+					<option value=""> Filter by Category </option>
+					<?php foreach ($terms as  $term) { ?>
+						<option value="<?= $term->term_id ?>"> <?= $term->name ?> </option>
 					<?php } ?>
-				<?php } ?>
-			</select>
-		</div>
+				</select>
+			</div>
+		<?php } ?>
 
 		<section class="archive-section">
 			<div class="container">
