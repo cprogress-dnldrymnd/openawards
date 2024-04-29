@@ -60,12 +60,14 @@ get_header(); // This fxn gets the header.php file and renders it
 		?>
 		<?php if ($terms) { ?>
 			<div class="blog-filter position-relative">
-				<select id="category" name="category" class="nice-select-js nice-select-style-1 nice-select-transparent">
-					<option value=""> Filter by Category </option>
-					<?php foreach ($terms as  $term) { ?>
-						<option value="<?= $term->term_id ?>"> <?= $term->name ?> </option>
-					<?php } ?>
-				</select>
+				<div class="container text-end">
+					<select id="category" name="category" class="nice-select-js nice-select-style-1 nice-select-transparent">
+						<option value=""> Filter by Category </option>
+						<?php foreach ($terms as  $term) { ?>
+							<option value="<?= $term->term_id ?>"> <?= $term->name ?> </option>
+						<?php } ?>
+					</select>
+				</div>
 			</div>
 		<?php } ?>
 
