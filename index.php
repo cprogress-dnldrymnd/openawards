@@ -52,7 +52,7 @@ get_header(); // This fxn gets the header.php file and renders it
 
 		<section class="post-slider">
 			<div class="container">
-				<div class="swiperPostSlider-holder position-relative swiper-button-style-1">
+				<div class="swiperPostSlider-holder swiperPostSlider-holder-shadow position-relative swiper-button-style-1">
 					<div class="swiper swiperPostSlider bg-light">
 						<div class="swiper-wrapper">
 							<?php while (have_posts()) {

@@ -9188,6 +9188,9 @@ section.archive-section {
 .swiperPostSlider-holder {
     padding: 3rem;
     border-radius: 10px;
+    &.swiperPostSlider-holder-shadow {
+        box-shadow: 0px 29px 35px #0000000D;
+    }
     .image-box {
         border-radius: 10px;
         overflow: hidden;
@@ -9424,6 +9427,6 @@ section.faqs-accordion {
 
 .blog {
     .bg-image {
-        
+
     }
 }
