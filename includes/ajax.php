@@ -163,6 +163,8 @@ function archive_ajax()
 
   $count = $the_query->found_posts;
   echo hide_load_more($count, $offset, $posts_per_page);
+
+  echo $offset;
 ?>
   <?php if (!$offset) { ?>
     <div class="row g-4">
