@@ -142,7 +142,7 @@ function archive_ajax()
   $category = $_POST['category'];
   $post_type = $_POST['post_type'];
   $offset = $_POST['offset'];
-  $posts_per_page = 6;
+  $posts_per_page = 2;
 
   $args = array(
     'post_type' => $post_type,
