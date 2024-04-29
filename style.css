@@ -7348,4 +7348,42 @@ section.blog-filter {
     font-family: 'Poppins', sans-serif;
     font-weight: bold; }
 
+.spinner {
+  animation-name: spin;
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+.loading-results {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto; }
+  .loading-results svg {
+    width: 50px;
+    height: 50px; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+.load-more a {
+  position: relative;
+  transition: 300ms;
+  overflow: hidden;
+  display: inline-block;
+  padding-bottom: 2px; }
+  .load-more a span {
+    transition: 300ms; }
+  .load-more a svg {
+    position: absolute;
+    right: -21px; }
+  .load-more a.loading {
+    padding-right: 30px; }
+    .load-more a.loading svg {
+      transform: translateX(0);
+      right: 0; }
+
 /*# sourceMappingURL=style.css.map */
