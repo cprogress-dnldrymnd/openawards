@@ -61,40 +61,27 @@ get_header(); // This fxn gets the header.php file and renders it
 		<?php if ($terms) { ?>
 			<section class="blog-filter position-relative">
 				<div class="container text-end">
-					<select id="category" name="category">
+					<select id="archive-form-filter" name="category">
 						<option value=""> Filter by Category </option>
 						<?php foreach ($terms as  $term) { ?>
 							<option value="<?= $term->term_id ?>"> <?= $term->name ?> </option>
 						<?php } ?>
 					</select>
+					<?php if (is_home()) { ?>
+						<input type="hidden" name="post-type" value="post">
+					<?php } ?>
 				</div>
 			</section>
 		<?php } ?>
 
+
+
 		<section class="archive-section position-relative">
 			<div class="container">
-				<div class="row g-4">
-					<?php while (have_posts()) {
-						the_post(); ?>
-						<div class="col-lg-4">
-							<div class="column-holder post-box h-100">
-								<div class="image-box">
-									<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
-								</div>
-								<div class="content-box">
-									<div class="heading-box">
-										<h4><?php the_title() ?></h4>
-									</div>
-									<div class="description-box">
-										<?php the_excerpt() ?>
-									</div>
-									<div class="button-box">
-										<a href="<?php the_permalink() ?>">Read more</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					<?php } ?>
+				<div id="results">
+					<div class="results-holder">
+
+					</div>
 				</div>
 
 				<div class="vc_btn3-container custom-button text-center mt-5">
@@ -106,3 +93,8 @@ get_header(); // This fxn gets the header.php file and renders it
 </div><!-- #primary .content-area -->
 <?php get_footer(); // This fxn gets the footer.php file and renders it 
 ?>
+<script>
+	jQuery(document).ready(function () {
+		ajax(0);
+	});
+</script>
