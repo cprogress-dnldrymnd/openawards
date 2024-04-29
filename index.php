@@ -51,7 +51,31 @@ get_header(); // This fxn gets the header.php file and renders it
 		</div>
 
 		<?php get_template_part('template-parts/blog/featured-blog') ?>
-		
+
+		<?php
+		$terms = get_terms(array(
+			'taxonomy'   => 'category',
+			'hide_empty' => false,
+		));
+		?>
+		<div class="blog-filter">
+			<select id="category" name="category" class="nice-select-js nice-select-style-1 nice-select-transparent">
+				<option value=""> Filter by Category </option>
+				<?php if ($terms) { ?>
+					<?php foreach ($terms as $key => $term) { ?>
+						<?php
+						if ($main_query->term_id == $key) {
+							$selected = 'selected';
+						} else {
+							$selected = '';
+						}
+						?>
+						<option <?= $selected ?> value="<?= $key ?>"> <?= $term['name'] ?> </option>
+					<?php } ?>
+				<?php } ?>
+			</select>
+		</div>
+
 		<section class="archive-section">
 			<div class="container">
 				<div class="row g-4">
