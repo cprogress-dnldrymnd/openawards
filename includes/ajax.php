@@ -211,8 +211,8 @@ function archive_ajax()
 function hide_load_more($count, $offset, $posts_per_page)
 {
 	if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) {
-		return '<style>.load-more {display: none} </style>';
+		return 'xxxx';
 	} else {
-		return '<style>.load-more {display: block !important} </style>';
+		return 'zzzzz';
   }
 }
