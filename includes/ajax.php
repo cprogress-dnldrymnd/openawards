@@ -172,7 +172,7 @@ function archive_ajax()
       while ($the_query->have_posts()) {
         $the_query->the_post();
     ?>
-        <div class="col-lg-4">
+        <div class="col-lg-4 post-item">
           <div class="column-holder post-box h-100">
             <div class="image-box">
               <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
