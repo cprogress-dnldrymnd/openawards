@@ -9190,6 +9190,7 @@ section.archive-section {
     border-radius: 10px;
     &.swiperPostSlider-holder-shadow {
         box-shadow: 0px 29px 35px #0000000D;
+        background-color: #F8F8F8;
     }
     .image-box {
         border-radius: 10px;
@@ -9427,6 +9428,8 @@ section.faqs-accordion {
 
 .blog {
     .bg-image {
-
+        position: absolute;
+        left: -30vw;
+        top: 147px;
     }
 }
