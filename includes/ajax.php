@@ -203,16 +203,31 @@ function archive_ajax()
   <?php } ?>
 
 
-<?php
+  <?php
 
   die();
 }
 
 function hide_load_more($count, $offset, $posts_per_page)
 {
-	if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) {
-		return 'xxxx';
-	} else {
-		return 'zzzzz';
+  ob_start();
+  if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) {
+  ?>
+    <script>
+      jQuery(document).ready(function() {
+        jQuery('#load-more').removeClass('d-none');
+      });
+    </script>
+  <?php
+  } else {
+  ?>
+    <script>
+      jQuery(document).ready(function() {
+        jQuery('#load-more').addClass('d-none');
+      });
+    </script>
+<?php
   }
+
+  return ob_get_clean();
 }
