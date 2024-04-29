@@ -215,7 +215,7 @@ function hide_load_more($count, $offset, $posts_per_page)
   ?>
     <script>
       jQuery(document).ready(function() {
-        jQuery('#load-more').removeClass('d-none');
+        jQuery('.load-more').removeClass('d-none');
       });
     </script>
   <?php
@@ -223,11 +223,10 @@ function hide_load_more($count, $offset, $posts_per_page)
   ?>
     <script>
       jQuery(document).ready(function() {
-        jQuery('#load-more').addClass('d-none');
+        jQuery('.load-more').addClass('d-none');
       });
     </script>
 <?php
   }
-
   return ob_get_clean();
 }
