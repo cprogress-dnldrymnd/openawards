@@ -9433,3 +9433,14 @@ section.faqs-accordion {
         top: 147px;
     }
 }
+
+section.blog-filter {
+    select {
+        padding: 1rem;
+        border-radius: 5px;
+        border-color: var(--high-violet);
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+    }
+}
