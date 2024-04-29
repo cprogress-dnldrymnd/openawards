@@ -59,7 +59,7 @@ get_header(); // This fxn gets the header.php file and renders it
 		));
 		?>
 		<?php if ($terms) { ?>
-			<div class="blog-filter">
+			<div class="blog-filter position-relative">
 				<select id="category" name="category" class="nice-select-js nice-select-style-1 nice-select-transparent">
 					<option value=""> Filter by Category </option>
 					<?php foreach ($terms as  $term) { ?>
@@ -69,7 +69,7 @@ get_header(); // This fxn gets the header.php file and renders it
 			</div>
 		<?php } ?>
 
-		<section class="archive-section">
+		<section class="archive-section position-relative">
 			<div class="container">
 				<div class="row g-4">
 					<?php while (have_posts()) {
