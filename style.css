@@ -7288,7 +7288,7 @@ section.faqs-categories {
     section.faqs-categories .row-cat a:hover {
       transform: translateY(-10px); }
 
-.faqs-filter-holder a {
+.faqs-category-filter .faqs-filter-holder a {
   padding: 10px 20px;
   border: 2px solid;
   color: var(--opal-black);
@@ -7297,9 +7297,22 @@ section.faqs-categories {
   display: inline-block;
   line-height: 1;
   border-color: var(--color); }
-  .faqs-filter-holder a:hover, .faqs-filter-holder a.active {
+  .faqs-category-filter .faqs-filter-holder a:hover, .faqs-category-filter .faqs-filter-holder a.active {
     background-color: var(--color);
     color: var(--white-color); }
+.faqs-category-filter .search-input {
+  margin-top: 25px; }
+  .faqs-category-filter .search-input input {
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    padding: 10px 30px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--opal-black); }
+    .faqs-category-filter .search-input input:placeholder {
+      color: #d4d4d4; }
 
 section.faqs-accordion {
   margin-bottom: 100px; }

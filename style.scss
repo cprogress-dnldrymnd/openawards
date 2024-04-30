@@ -9380,7 +9380,22 @@ section.faqs-categories {
             }
         }
     }
-    .
+    .search-input {
+        margin-top: 25px;
+        input {
+            border: 1px solid #d4d4d4;
+            border-radius: 5px;
+            padding: 10px 30px;
+            max-width: 500px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--opal-black);
+            &:placeholder {
+                color: #d4d4d4;
+            }
+        }
+    }
 }
 
 section.faqs-accordion {
