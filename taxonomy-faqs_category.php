@@ -40,6 +40,9 @@ $current_term = get_queried_object()->term_id;
                                 </div>
                             <?php } ?>
                         </div>
+                        <div class="search-input">
+                            <input type="text" name="faqs-search">
+                        </div>
                     </div>
                 </div>
             </div>
