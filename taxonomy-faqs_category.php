@@ -41,7 +41,7 @@ $current_term = get_queried_object()->term_id;
                             <?php } ?>
                         </div>
                         <div class="search-input">
-                            <input type="text" name="faqs-search">
+                            <input type="text" name="faqs-search" placeholder="Search for specific questions">
                         </div>
                     </div>
                 </div>

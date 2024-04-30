@@ -9362,24 +9362,27 @@ section.faqs-categories {
         }
     }
 }
-
-.faqs-filter-holder {
-    a {
-        padding: 10px 20px;
-        border: 2px solid;
-        color: var(--opal-black);
-        border-radius: 50px;
-        font-family: var(--primary-font);
-        display: inline-block;
-        line-height: 1;
-        border-color: var(--color);
-        &:hover,
-        &.active {
-            background-color: var(--color);
-            color: var(--white-color);
+.faqs-category-filter {
+    .faqs-filter-holder {
+        a {
+            padding: 10px 20px;
+            border: 2px solid;
+            color: var(--opal-black);
+            border-radius: 50px;
+            font-family: var(--primary-font);
+            display: inline-block;
+            line-height: 1;
+            border-color: var(--color);
+            &:hover,
+            &.active {
+                background-color: var(--color);
+                color: var(--white-color);
+            }
         }
     }
+    .
 }
+
 section.faqs-accordion {
     margin-bottom: 100px;
 }
