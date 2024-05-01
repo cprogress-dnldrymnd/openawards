@@ -71,3 +71,9 @@ $current_term = get_queried_object()->term_id;
 </div><!-- #primary .content-area -->
 <?php get_footer(); // This fxn gets the footer.php file and renders it 
 ?>
+
+<script>
+	jQuery(document).ready(function() {
+		ajax_faqs(0);
+	});
+</script>
