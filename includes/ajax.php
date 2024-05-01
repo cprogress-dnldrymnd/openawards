@@ -224,16 +224,7 @@ function faqs_ajax()
   );
 
 
-  $args = array(
-    'post_type' => 'post',
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'people',
-        'field' => 'slug',
-        'terms' => 'bob',
-      ),
-    ),
-  );
+ 
   if ($faqs_category) {
     $args['tax_query'] =  array(
       'taxonomy' => 'faqs_category',
