@@ -223,13 +223,13 @@ function faqs_ajax()
     'posts_per_page' => $posts_per_page,
   );
 
-
- 
   if ($faqs_category) {
-    $args['tax_query'] =  array(
-      'taxonomy' => 'faqs_category',
-      'field' => 'term_id',
-      'terms' => $faqs_category,
+    $args['tax_query'] = array(
+      array(
+        'taxonomy' => 'faqs_category',
+        'field' => 'term_id',
+        'terms' => $faqs_category,
+      ),
     );
   }
 
