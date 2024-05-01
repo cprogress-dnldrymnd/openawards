@@ -17,7 +17,7 @@ function ajax_form() {
 	});
 
 
-	
+
 
 	var typingTimer;
 	var doneTypingInterval = 500;
@@ -50,7 +50,7 @@ function load_more_button_listener($) {
 	});
 
 
-	
+
 
 
 }
@@ -76,7 +76,7 @@ function ajax_faqs($offset, $event_type = 'html') {
 		$loadmore.addClass('loading');
 		$loadmore.find('span').text('Loading');
 	}
-
+	console.log($faqs_category);
 	jQuery.ajax({
 
 		type: "POST",
