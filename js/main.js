@@ -19,6 +19,14 @@ function load_more_button_listener($) {
 		ajax(offset, 'append');
 	});
 
+	jQuery(document).on("click", '#load-more-faqs', function (event) {
+		event.preventDefault();
+		var offset = jQuery('.post-item').length;
+		ajax_faqs(offset, 'append');
+	});
+
+	
+
 }
 
 function ajax_faqs($offset, $event_type = 'html') {

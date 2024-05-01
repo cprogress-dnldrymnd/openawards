@@ -245,7 +245,7 @@ function faqs_ajax()
         while ($the_query->have_posts()) {
           $the_query->the_post();
       ?>
-          <div class="accordion-item">
+          <div class="accordion-item post-item">
             <h2 class="accordion-header" id="heading<?= get_the_ID() ?>">
               <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= get_the_ID() ?>" aria-expanded="false" aria-controls="collapse<?= get_the_ID() ?>">
                 <span> <?php the_title() ?></span>
