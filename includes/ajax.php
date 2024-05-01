@@ -203,10 +203,86 @@ function archive_ajax()
   <?php } ?>
 
 
+<?php
+
+  die();
+}
+
+
+add_action('wp_ajax_nopriv_faqs_ajax', 'faqs_ajax'); // for not logged in users
+add_action('wp_ajax_faqs_ajax', 'faqs_ajax');
+function faqs_ajax()
+{
+  $faqs_category = $_POST['category'];
+  $offset = $_POST['offset'];
+  $posts_per_page = 10;
+
+  $args = array(
+    'post_type' => 'faqs',
+    'posts_per_page' => $posts_per_page,
+  );
+
+  if ($offset) {
+    $args['offset'] = $offset;
+  }
+
+/*
+  if ($faqs_category) {
+    $args['cat'] = $faqs_category;
+  }*/
+
+  $the_query = new WP_Query($args);
+
+  $count = $the_query->found_posts;
+  echo hide_load_more($count, $offset, $posts_per_page);
+?>
+  <?php if (!$offset) { ?>
+    <div class="accordion-holder accordion-style-2">
+      <div class="accordion" id="accordion">
+      <?php } ?>
+      <?php
+      if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+          $the_query->the_post();
+      ?>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading<?= get_the_ID() ?>">
+              <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= get_the_ID() ?>" aria-expanded="false" aria-controls="collapse<?= get_the_ID() ?>">
+                <span> <?php the_title() ?></span>
+
+                <svg class="icon-inactive" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                </svg>
+                <svg class="icon-active" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
+                </svg>
+              </button>
+            </h2>
+            <div id="collapse<?= get_the_ID() ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= get_the_ID() ?>" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <?php the_content() ?>
+              </div>
+            </div>
+          </div>
+        <?php }
+      } else {
+        ?>
+        <h2>No Results Found</h2>
+      <?php
+      }
+      wp_reset_postdata();
+      ?>
+      <?php if (!$offset) { ?>
+      </div>
+    </div>
+  <?php } ?>
+
+
   <?php
 
   die();
 }
+
 
 function hide_load_more($count, $offset, $posts_per_page)
 {
@@ -230,6 +306,3 @@ function hide_load_more($count, $offset, $posts_per_page)
   }
   return ob_get_clean();
 }
-
-
-
