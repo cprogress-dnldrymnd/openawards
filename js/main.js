@@ -11,6 +11,14 @@ function ajax_form() {
 		ajax(0);
 	});
 
+	jQuery("input[name='faqs_category']").change(function (e) {
+		e.preventDefault();
+		ajax_faqs(0);
+	});
+
+
+	
+
 	var typingTimer;
 	var doneTypingInterval = 500;
 
@@ -41,6 +49,8 @@ function load_more_button_listener($) {
 		ajax_faqs(offset, 'append');
 	});
 
+
+	
 
 
 }
