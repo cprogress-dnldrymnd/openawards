@@ -15,7 +15,7 @@ if (is_single() || is_page()) {
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?= get_site_url() ?>">Home</a></li>
                 <?php if (is_tax('faqs_category')) { ?>
-                    <li class="breadcrumb-item"><a href="<?= get_post_type_archive_link('faqs') ?>">FAQs/a></li>
+                    <li class="breadcrumb-item"><a href="<?= get_post_type_archive_link('faqs') ?>">FAQs</a></li>
                 <?php } ?>
                 <li class="breadcrumb-item"><span><?= $title ?></span></li>
             </ol>
