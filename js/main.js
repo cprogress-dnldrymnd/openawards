@@ -52,7 +52,7 @@ function ajax_faqs($offset, $event_type = 'html') {
 
 	var $result_holder = jQuery('#results .results-holder');
 
-	var $faqs_category = jQuery("select[name='category']").val();
+	var $faqs_category = jQuery("input[name='faqs_category']:checked").val();
 
 	var $s = jQuery('input[name="faqs-search"]').val();
 
