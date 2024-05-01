@@ -213,8 +213,9 @@ add_action('wp_ajax_nopriv_faqs_ajax', 'faqs_ajax'); // for not logged in users
 add_action('wp_ajax_faqs_ajax', 'faqs_ajax');
 function faqs_ajax()
 {
-  $faqs_category = $_POST['category'];
+  $faqs_category = $_POST['faqs_category'];
   $offset = $_POST['offset'];
+  $s = $_POST['s'];
   $posts_per_page = 10;
 
   $args = array(
@@ -226,7 +227,11 @@ function faqs_ajax()
     $args['offset'] = $offset;
   }
 
-/*
+  if ($s) {
+    $args['s'] = $s;
+  }
+
+  /*
   if ($faqs_category) {
     $args['cat'] = $faqs_category;
   }*/
