@@ -1,13 +1,12 @@
 <?php
 if (is_single() || is_page()) {
     $title = get_the_title();
-} else if (is_archive()) {
+} else if (is_post_type_archive()) {
     $title = post_type_archive_title(false, false);
 } else if (is_home()) {
     $title = 'Latest News';
 }
 ?>
-x
 <section class="breadcrumbs wocom position-relative">
     <nav aria-label="breadcrumb">
         <div class="container<?= container_width() ?>">
