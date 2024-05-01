@@ -12,6 +12,8 @@ $terms = get_terms(array(
     'hide_empty' => false,
 ));
 $current_term = get_queried_object()->term_id;
+$count = $GLOBALS['wp_query']->post_count;
+echo hide_load_more($count, 0, 10);
 ?>
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
