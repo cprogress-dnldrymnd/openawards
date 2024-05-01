@@ -230,3 +230,6 @@ function hide_load_more($count, $offset, $posts_per_page)
   }
   return ob_get_clean();
 }
+
+
+
