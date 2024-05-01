@@ -7,6 +7,7 @@ if (is_single() || is_page()) {
     $title = 'Latest News';
 }
 ?>
+x
 <section class="breadcrumbs wocom position-relative">
     <nav aria-label="breadcrumb">
         <div class="container<?= container_width() ?>">
