@@ -46,7 +46,7 @@ function load_more_button_listener($) {
 }
 
 function ajax_faqs($offset, $event_type = 'html') {
-	var $loadmore = jQuery('#load-more');
+	var $loadmore = jQuery('#load-more-faqs');
 
 	var $archive_section = jQuery('.faqs-accordion');
 
