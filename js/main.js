@@ -18,7 +18,6 @@ function ajax_form() {
 
 
 
-
 	var typingTimer;
 	var doneTypingInterval = 500;
 
