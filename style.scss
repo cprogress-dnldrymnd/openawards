@@ -9364,7 +9364,16 @@ section.faqs-categories {
 }
 .faqs-category-filter {
     .faqs-filter-holder {
-        a {
+        input {
+            display: none;
+            &:checked {
+                & + label {
+                    background-color: var(--color);
+                    color: var(--white-color);
+                }
+            }
+        }
+        label {
             padding: 10px 20px;
             border: 2px solid;
             color: var(--opal-black);
@@ -9373,8 +9382,7 @@ section.faqs-categories {
             display: inline-block;
             line-height: 1;
             border-color: var(--color);
-            &:hover,
-            &.active {
+            &:hover {
                 background-color: var(--color);
                 color: var(--white-color);
             }
