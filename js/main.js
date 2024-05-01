@@ -10,6 +10,22 @@ function ajax_form() {
 		e.preventDefault();
 		ajax(0);
 	});
+
+	var typingTimer;
+	var doneTypingInterval = 500;
+
+	jQuery('input[name="faqs-search"]').on('keyup', function () {
+		clearTimeout(typingTimer);
+		typingTimer = setTimeout(doneTyping, doneTypingInterval);
+	});
+
+	jQuery('input[name="faqs-search"]').on('keydown', function () {
+		clearTimeout(typingTimer);
+	});
+
+	function doneTyping() {
+		ajax_faqs(0);
+	}
 }
 
 function load_more_button_listener($) {
@@ -25,7 +41,7 @@ function load_more_button_listener($) {
 		ajax_faqs(offset, 'append');
 	});
 
-	
+
 
 }
 
