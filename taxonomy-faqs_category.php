@@ -36,8 +36,8 @@ $current_term = get_queried_object()->term_id;
                                 }
                                 ?>
                                 <div class="col-auto">
-                                    <input type="radio" name="faqs_category" value="<?= $term->term_id ?>" <?= $checked ?>>
-                                    <label style="--color: <?= $color ?>"><?= $term->name ?></label>
+                                    <input id="faqs_category_<?= $term->term_id ?>" type="radio" name="faqs_category" value="<?= $term->term_id ?>" <?= $checked ?>>
+                                    <label for="faqs_category_<?= $term->term_id ?>" style="--color: <?= $color ?>"><?= $term->name ?></label>
                                 </div>
                             <?php } ?>
                         </div>
