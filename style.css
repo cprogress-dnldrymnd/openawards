@@ -7294,6 +7294,7 @@ section.faqs-categories {
     background-color: var(--color);
     color: var(--white-color); }
 .faqs-category-filter .faqs-filter-holder label {
+  transition: 500ms;
   padding: 10px 20px;
   border: 2px solid;
   color: var(--opal-black);
