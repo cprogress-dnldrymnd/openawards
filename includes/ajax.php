@@ -223,6 +223,27 @@ function faqs_ajax()
     'posts_per_page' => $posts_per_page,
   );
 
+
+  $args = array(
+    'post_type' => 'post',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'people',
+        'field' => 'slug',
+        'terms' => 'bob',
+      ),
+    ),
+  );
+  if ($faqs_category) {
+    $args['tax_query'] = array(
+      array(
+        'taxonomy' => 'faqs_category',
+        'field' => 'term_id',
+        'terms' => $faqs_category,
+      ),
+    );
+  }
+
   if ($offset) {
     $args['offset'] = $offset;
   }
