@@ -1,10 +1,12 @@
 <?php
 if (is_single() || is_page()) {
     $title = get_the_title();
-} else if (is_post_type_archive() || is_tax()) {
+} else if (is_post_type_archive()) {
     $title = post_type_archive_title(false, false);
 } else if (is_home()) {
     $title = 'Latest News';
+} else if (is_tax()) {
+    $title = get_queried_object()->name;
 }
 ?>
 <section class="breadcrumbs wocom position-relative">
