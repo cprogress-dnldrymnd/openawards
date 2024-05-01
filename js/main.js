@@ -51,7 +51,7 @@ function ajax_faqs($offset, $event_type = 'html') {
 
 			action: 'faqs_ajax',
 
-			category: $category,
+			faqs_category: $faqs_category,
 
 			offset: $offset
 		},
