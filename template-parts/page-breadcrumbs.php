@@ -1,7 +1,7 @@
 <?php
 if (is_single() || is_page()) {
     $title = get_the_title();
-} else if (is_post_type_archive()) {
+} else if (is_post_type_archive() || is_tax()) {
     $title = post_type_archive_title(false, false);
 } else if (is_home()) {
     $title = 'Latest News';
