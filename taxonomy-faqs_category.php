@@ -30,13 +30,14 @@ $current_term = get_queried_object()->term_id;
                                 <?php
                                 $color = carbon_get_term_meta($term->term_id, 'color');
                                 if ($term->term_id == $current_term) {
-                                    $class = 'active';
+                                    $checked = 'checked';
                                 } else {
-                                    $class = '';
+                                    $checked = '';
                                 }
                                 ?>
                                 <div class="col-auto">
-                                    <a class="<?= $class ?>" style="--color: <?= $color ?>" href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
+                                    <input type="radio" name="faqs_category" value="<?= $term->term_id ?>" <?= $checked ?>>
+                                    <label style="--color: <?= $color ?>"><?= $term->name ?></label>
                                 </div>
                             <?php } ?>
                         </div>
@@ -73,7 +74,7 @@ $current_term = get_queried_object()->term_id;
 ?>
 
 <script>
-	jQuery(document).ready(function() {
-		ajax_faqs(0);
-	});
+    jQuery(document).ready(function() {
+        ajax_faqs(0);
+    });
 </script>
