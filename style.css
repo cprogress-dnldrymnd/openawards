@@ -7496,8 +7496,9 @@ div.vc_custom_heading {
     margin-bottom: 32px; }
   .successstories .successstories-image {
     display: flex;
-    align-items: center;
-    margin-right: 32px; }
+    align-items: center; }
+    .successstories .successstories-image .image-box {
+      margin-right: 32px; }
     .successstories .successstories-image img {
       width: 61px;
       height: 61px;
