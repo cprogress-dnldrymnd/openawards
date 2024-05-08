@@ -9559,3 +9559,47 @@ div.vc_custom_heading {
 .poppins {
     font-family: var(--primary-font);
 }
+
+.student {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #F4F5F7;
+    border-radius: 10px;
+    * {
+        font-family: var(--primary-font) !important;
+    }
+    .student-image {
+        width: 30%;
+        flex: 0 0 30%;
+        margin-left: -15%;
+        margin-right: 25px;
+        img {
+            border: 10px solid var(--blush-pink);
+            border-radius: 50%;
+        }
+    }
+    .student-details {
+        > div {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+        .highlight {
+            color: var(--high-violet);
+            font-size: 18px;
+        }
+        .student-decs {
+            color: var(--opal-black);
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .congrats {
+            font-style: italic;
+            font-size: 18px;
+            color: var(--sun-orange);
+            font-weight: bold;
+        }
+    }
+}
