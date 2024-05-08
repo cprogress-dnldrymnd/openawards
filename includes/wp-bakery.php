@@ -464,13 +464,7 @@ if (function_exists('vc_map')) {
                     "value" => $successstories_array,
                     "description" => "Select the Success Stories you want to display."
                 ),
-                array(
-                    "type" => "textfield",
-                    "admin_label" => true,
-                    "heading" => __("BG Color", "my-text-domain"),
-                    "param_name" => "bg_color",
-                    "value" => __("", "my-text-domain"),
-                ),
+           
             )
         ));
     }
