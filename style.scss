@@ -9557,8 +9557,8 @@ div.vc_custom_heading {
 }
 
 .poppins {
-    font-family: var(--primary-font);
-}
+    font-family: var(--primary-font) !important;
+} 
 
 .student {
     display: flex;
@@ -9591,6 +9591,7 @@ div.vc_custom_heading {
         .highlight {
             color: var(--high-violet);
             font-size: 18px;
+            font-weight: 600;
         }
         .student-decs {
             color: var(--opal-black);
