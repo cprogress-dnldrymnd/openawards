@@ -7449,7 +7449,15 @@ div.vc_custom_heading {
   .student * {
     font-family: var(--primary-font) !important; }
   .student:before {
-    content: ""; }
+    content: "";
+    background-color: #F4F5F7;
+    position: absolute;
+    left: 15%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 10px; }
   .student .student-image {
     width: 30%;
     flex: 0 0 30%;
