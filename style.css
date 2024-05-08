@@ -6820,6 +6820,9 @@ form#resources_form.searching label {
 .fw-medium * {
   font-weight: 500 !important; }
 
+.fw-semibold * {
+  font-weight: 600 !important; }
+
 .underline {
   border-bottom: 7px solid var(--blush-pink); }
 
