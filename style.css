@@ -7443,15 +7443,16 @@ div.vc_custom_heading {
   align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #F4F5F7;
   border-radius: 10px;
-  padding-right: 35px; }
+  padding-right: 25px;
+  position: relative; }
   .student * {
     font-family: var(--primary-font) !important; }
+  .student:before {
+    content: ""; }
   .student .student-image {
     width: 30%;
     flex: 0 0 30%;
-    margin-left: -15%;
     margin-right: 25px;
     border: 10px solid var(--blush-pink) !important;
     border-radius: 50%; }
@@ -7467,7 +7468,7 @@ div.vc_custom_heading {
     color: var(--opal-black);
     font-size: 18px;
     font-weight: 500;
-    margin-right: 4vw; }
+    margin-right: 20px; }
   .student .student-details .congrats {
     font-style: italic;
     font-size: 18px;
