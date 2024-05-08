@@ -374,7 +374,7 @@ if (function_exists('vc_map')) {
 
         $student_array = array();
         foreach ($students as $student) {
-            $student_array[$student->post_id] = $student->post_title;
+            $student_array[$student->post_title] = $student->ID;
         }
 
 
