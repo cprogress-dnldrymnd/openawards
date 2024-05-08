@@ -350,7 +350,7 @@ function action_contact_details_box($atts)
             </div>
         <?php } ?>
     </div>
-<?php
+    <?php
     return ob_get_clean();
 }
 add_shortcode('contact_details_box', 'action_contact_details_box');
@@ -402,21 +402,22 @@ function action_student($atts)
         'student_id' => '',
     ), $atts));
 
+    if ($student_id) {
+    ?>
+        <div class="student">
+            <div class="student-image">
 
-?>
-  <div class="student">
-    <div class="student-image">
-        
-    </div>
-    <div class="student-details">
-        <div class="highlight"> Top Student </div>
-        <div class="student-decs">
-            <?= get_the_content(NULL, false, $student_id) ?>
+            </div>
+            <div class="student-details">
+                <div class="highlight"> Top Student </div>
+                <div class="student-decs">
+                    <?= get_the_content(NULL, false, $student_id) ?>
+                </div>
+                <div class="congrats">Congratulations! 🎉</div>
+            </div>
         </div>
-        <div class="congrats">Congratulations! 🎉</div>
-    </div>
-  </div>
 <?php
-    return ob_get_clean();
+        return ob_get_clean();
+    }
 }
 add_shortcode('student', 'action_student');
