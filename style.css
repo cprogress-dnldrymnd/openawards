@@ -7499,6 +7499,8 @@ div.vc_custom_heading {
     align-items: center; }
     .successstories .successstories-image .image-box {
       margin-right: 32px; }
+    .successstories .successstories-image .name {
+      font-weight: 600; }
     .successstories .successstories-image img {
       width: 61px;
       height: 61px;
@@ -7506,7 +7508,8 @@ div.vc_custom_heading {
       object-fit: cover; }
     .successstories .successstories-image .country {
       display: flex;
-      align-items: center; }
+      align-items: center;
+      font-weight: 500; }
       .successstories .successstories-image .country svg {
         margin-right: 10px; }
 

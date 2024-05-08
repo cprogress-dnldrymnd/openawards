@@ -9641,6 +9641,9 @@ div.vc_custom_heading {
         .image-box {
             margin-right: 32px;
         }
+        .name {
+            font-weight: 600;
+        }
         img {
             width: 61px;
             height: 61px;
@@ -9650,6 +9653,7 @@ div.vc_custom_heading {
         .country {
             display: flex;
             align-items: center;
+            font-weight: 500;
             svg {
                 margin-right: 10px;
             }
