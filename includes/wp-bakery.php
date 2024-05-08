@@ -486,14 +486,22 @@ function action_successstories($atts)
     if ($successstories_id) {
     ?>
         <div class="successstories">
+
+            <div class="successstories-decs">
+                <?= get_the_content(NULL, false, $successstories_id) ?>
+            </div>
             <div class="successstories-image">
-                <img src="<?= get_the_post_thumbnail_url($successstories_id, 'large') ?>" alt="<?= get_the_title($successstories_id) ?>">
+                <div class="image-box">
+                    <img src="<?= get_the_post_thumbnail_url($successstories_id, 'large') ?>" alt="<?= get_the_title($successstories_id) ?>">
+                </div>
+                <div class="name-box">
+                    <div class="name"><?= get_the_title($successstories_id) ?></div>
+                    <div class="country">France</div>
+                </div>
             </div>
             <div class="successstories-details">
                 <div class="highlight"> Top successstories </div>
-                <div class="successstories-decs">
-                    <?= get_the_content(NULL, false, $successstories_id) ?>
-                </div>
+
                 <div class="congrats">Congratulations! 🎉</div>
             </div>
             <div class="cert">
