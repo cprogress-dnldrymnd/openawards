@@ -7514,7 +7514,8 @@ div.vc_custom_heading {
         margin-right: 10px; }
 
 .title-section.title-section#title-section {
-  padding-top: 60px; }
+  padding-top: 60px;
+  padding-bottom: 80px; }
   @media (min-width: 1440px) {
     .title-section.title-section#title-section h1 {
       font-size: 69px !important; } }
