@@ -211,8 +211,15 @@ add_action('init', 'theme_settings');
 
 
 
-Container::make( 'term_meta', __( 'FAQs Category Properties' ) )
-    ->where( 'term_taxonomy', '=', 'faqs_category' )
-    ->add_fields( array(
-        Field::make( 'color', 'color', __( 'Color' ) ),
-    ) );
+Container::make('term_meta', __('FAQs Category Properties'))
+    ->where('term_taxonomy', '=', 'faqs_category')
+    ->add_fields(array(
+        Field::make('color', 'color', __('Color')),
+    ));
+
+
+Container::make('term_meta', __('Success Stories'))
+    ->where('term_taxonomy', '=', 'faqs_category')
+    ->add_fields(array(
+        Field::make('textarea', 'flag_svg', __('Flag SVG')),
+    ));
