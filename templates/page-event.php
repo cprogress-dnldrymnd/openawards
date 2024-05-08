@@ -21,10 +21,10 @@
                ?>
 
 
-                    <div class="title-section">
+                    <div class="title-section" id="title-section">
                          <div class="container">
-                              <div class="heading-box">
-                                   <h2>Training And Events For Learners And Visitors</h2>
+                              <div class="heading-box text-center">
+                                   <h1>Training And Events For Learners And Visitors</h1>
                               </div>
                          </div>
                     </div>

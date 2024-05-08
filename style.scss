@@ -9576,7 +9576,7 @@ div.vc_custom_heading {
     }
     &:before {
         content: "";
-        background-color: #F4F5F7;
+        background-color: #f4f5f7;
         position: absolute;
         left: 15%;
         top: 0;
@@ -9624,13 +9624,13 @@ div.vc_custom_heading {
 .successstories {
     padding: 50px 42px;
     border-radius: 10px;
-    background-color: #F4F5F7;
+    background-color: #f4f5f7;
     font-size: 18px;
     font-family: var(--primary-font);
     color: var(--opal-black);
-   
+
     &:hover {
-        background-color: #B57DFF33;
+        background-color: #b57dff33;
     }
     .successstories-decs {
         margin-bottom: 32px;
@@ -9661,6 +9661,15 @@ div.vc_custom_heading {
     }
 }
 
-.title-section {
+.title-section.title-section#title-section {
     padding-top: 60px;
+    h1 {
+        @media (min-width: 1440px) {
+            font-size: 69px !important;
+        }
+
+        @media (max-width: 1439px) and (min-width: 992px) {
+            font-size: 50px !important;
+        }
+    }
 }
