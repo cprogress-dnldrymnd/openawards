@@ -19,12 +19,14 @@
                <?php while (have_posts()) : the_post();
                     // If we have a page to show, start a loop that will display it
                ?>
-                    <?php the_content() ?>
+
+
 
                     <div class="container-holder">
                          <div class="container wide width1400">
-
-
+                              <div class="heading-box">
+                                   <h2>Training And Events For Learners And Visitors</h2>
+                              </div>
                               <article class="post">
                                    <div class="the-content">
                                         <div class="row g-5">
