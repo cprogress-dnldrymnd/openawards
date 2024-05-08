@@ -7490,5 +7490,7 @@ div.vc_custom_heading {
   .successstories * {
     font-family: var(--primary-font);
     color: var(--opal-black); }
+  .successstories:hover {
+    background-color: #B57DFF33; }
 
 /*# sourceMappingURL=style.css.map */
