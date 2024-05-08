@@ -286,7 +286,19 @@ $FAQs_Category->args = array(
 $Success_Stories = new newPostType();
 $Success_Stories->name = 'Success Stories';
 $Success_Stories->singular_name = 'Success Story';
-$Success_Stories->icon = 'dashicons-testimonials';
+$Success_Stories->icon = 'dashicons-testimonial';
+$Success_Stories->supports = array('title', 'revisions', 'editor', 'page-attributes');
+$Success_Stories->exclude_from_search = false;
+$Success_Stories->publicly_queryable = true;
+$Success_Stories->show_in_admin_bar = true;
+$Success_Stories->has_archive = true;
+
+
+
+$Success_Stories = new newPostType();
+$Success_Stories->name = 'Students';
+$Success_Stories->singular_name = 'Students';
+$Success_Stories->icon = 'dashicons-welcome-learn-more';
 $Success_Stories->supports = array('title', 'revisions', 'editor', 'page-attributes');
 $Success_Stories->exclude_from_search = false;
 $Success_Stories->publicly_queryable = true;
