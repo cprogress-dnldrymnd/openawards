@@ -424,8 +424,89 @@ function action_student($atts)
                 </svg>
             </div>
         </div>
-<?php
+    <?php
         return ob_get_clean();
     }
 }
 add_shortcode('student', 'action_student');
+
+//successstories
+if (function_exists('vc_map')) {
+    add_action('vc_before_init', 'vc_map_successstories');
+    function vc_map_successstories()
+    {
+
+
+        $args = array(
+            'post_type' => 'successstories',
+            'numberposts' => -1,
+        );
+
+
+
+        $successstories = get_posts($args);
+
+        $successstories_array = array();
+        foreach ($successstories as $successstories) {
+            $successstories_array[$successstories->post_title] = $successstories->ID;
+        }
+
+
+        vc_map(array(
+            "name" => "successstories",
+            "base" => "successstories",
+            "category" => "Open Awards",
+            "params" => array(
+                array(
+                    "type" => "dropdown",
+                    "heading" => "successstories",
+                    "param_name" => "successstories_id",
+                    "value" => $successstories_array,
+                    "description" => "Select the Success Stories you want to display."
+                ),
+                array(
+                    "type" => "textfield",
+                    "admin_label" => true,
+                    "heading" => __("BG Color", "my-text-domain"),
+                    "param_name" => "bg_color",
+                    "value" => __("", "my-text-domain"),
+                ),
+            )
+        ));
+    }
+}
+
+function action_successstories($atts)
+{
+    ob_start();
+    extract(shortcode_atts(array(
+        'successstories_id' => '',
+    ), $atts));
+
+    if ($successstories_id) {
+    ?>
+        <div class="successstories">
+            <div class="successstories-image">
+                <img src="<?= get_the_post_thumbnail_url($successstories_id, 'large') ?>" alt="<?= get_the_title($successstories_id) ?>">
+            </div>
+            <div class="successstories-details">
+                <div class="highlight"> Top successstories </div>
+                <div class="successstories-decs">
+                    <?= get_the_content(NULL, false, $successstories_id) ?>
+                </div>
+                <div class="congrats">Congratulations! 🎉</div>
+            </div>
+            <div class="cert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="76" viewBox="0 0 80 76">
+                    <g id="medal-ribbons-star-svgrepo-com" transform="translate(-2 -2)">
+                        <path id="Path_2313" data-name="Path 2313" d="M42,31.986,26.914,47.606c-2.16,2.237-3.241,3.356-4.156,3.743a4.3,4.3,0,0,1-5.494-1.793c-.481-.843-.631-2.363-.931-5.4a14.765,14.765,0,0,0-.511-3.294A5.732,5.732,0,0,0,12.484,37.4,13.4,13.4,0,0,0,9.3,36.873h0c-2.936-.31-4.4-.466-5.218-.964a4.621,4.621,0,0,1-1.732-5.688c.374-.947,1.454-2.066,3.615-4.3l9.855-10.2,4.953-4.953L42,31.986,63.224,10.762l4.953,4.953,9.855,10.2c2.161,2.237,3.241,3.355,3.615,4.3a4.621,4.621,0,0,1-1.732,5.688c-.814.5-2.282.654-5.218.964a13.405,13.405,0,0,0-3.181.529,5.732,5.732,0,0,0-3.339,3.457,14.772,14.772,0,0,0-.511,3.294h0c-.3,3.04-.45,4.56-.931,5.4a4.3,4.3,0,0,1-5.494,1.793c-.915-.387-1.995-1.506-4.155-3.743Z" transform="translate(0 26.285)" fill="#feb321" opacity="0.5" />
+                        <path id="Path_2314" data-name="Path 2314" d="M33,58A28,28,0,1,0,5,30,28,28,0,0,0,33,58Zm0-40c-1.136,0-1.9,1.363-3.416,4.09l-.393.705a4.4,4.4,0,0,1-.984,1.418,4.1,4.1,0,0,1-1.595.54l-.764.173c-2.952.668-4.428,1-4.779,2.131s.655,2.306,2.667,4.659l.521.609a4.421,4.421,0,0,1,.986,1.417,4.613,4.613,0,0,1,0,1.752l-.079.812c-.3,3.14-.456,4.709.463,5.407s2.3.062,5.065-1.211l.715-.329A4.1,4.1,0,0,1,33,39.63a4.1,4.1,0,0,1,1.594.542l.715.329c2.764,1.272,4.145,1.908,5.065,1.211s.767-2.268.463-5.407l-.079-.812a4.613,4.613,0,0,1,0-1.752,4.423,4.423,0,0,1,.986-1.417l.521-.609c2.012-2.353,3.018-3.53,2.667-4.659s-1.827-1.463-4.779-2.131l-.764-.173a4.1,4.1,0,0,1-1.595-.54A4.4,4.4,0,0,1,36.81,22.8l-.393-.705C34.9,19.363,34.136,18,33,18Z" transform="translate(9)" fill="#feb321" fill-rule="evenodd" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+<?php
+        return ob_get_clean();
+    }
+}
+add_shortcode('successstories', 'action_successstories');
