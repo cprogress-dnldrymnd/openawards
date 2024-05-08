@@ -247,26 +247,28 @@ $Teams_Category->args = array(
 );
 
 
-$Team = new newPostType();
-$Team->name = 'Templates';
-$Team->singular_name = 'Template';
-$Team->icon = 'dashicons-format-aside';
-$Team->supports = array('title', 'editor', 'revisions');
-$Team->exclude_from_search = true;
-$Team->publicly_queryable = true;
-$Team->show_in_admin_bar = true;
-$Team->has_archive = false;
+$Templates = new newPostType();
+$Templates->name = 'Templates';
+$Templates->singular_name = 'Template';
+$Templates->icon = 'dashicons-format-aside';
+$Templates->supports = array('title', 'editor', 'revisions');
+$Templates->exclude_from_search = true;
+$Templates->publicly_queryable = true;
+$Templates->show_in_admin_bar = true;
+$Templates->has_archive = false;
 
 
-$Team = new newPostType();
-$Team->name = 'FAQs';
-$Team->singular_name = 'FAQ';
-$Team->icon = 'dashicons-editor-alignleft';
-$Team->supports = array('title', 'revisions', 'editor');
-$Team->exclude_from_search = false;
-$Team->publicly_queryable = true;
-$Team->show_in_admin_bar = true;
-$Team->has_archive = true;
+$FAQs = new newPostType();
+$FAQs->name = 'FAQs';
+$FAQs->singular_name = 'FAQ';
+$FAQs->icon = 'dashicons-editor-alignleft';
+$FAQs->supports = array('title', 'revisions', 'editor');
+$FAQs->exclude_from_search = false;
+$FAQs->publicly_queryable = true;
+$FAQs->show_in_admin_bar = true;
+$FAQs->has_archive = true;
+
+
 
 $FAQs_Category = new newTaxonomy();
 $FAQs_Category->taxonomy = 'faqs_category';
@@ -279,6 +281,17 @@ $FAQs_Category->args = array(
     'has_archive'  => false,
     'show_in_rest' => false,
 );
+
+
+$Success_Stories = new newPostType();
+$Success_Stories->name = 'Success Stories';
+$Success_Stories->singular_name = 'Success Story';
+$Success_Stories->icon = 'dashicons-testimonials';
+$Success_Stories->supports = array('title', 'revisions', 'editor', 'page-attributes');
+$Success_Stories->exclude_from_search = false;
+$Success_Stories->publicly_queryable = true;
+$Success_Stories->show_in_admin_bar = true;
+$Success_Stories->has_archive = true;
 
 // Add the custom columns to the slider post type:
 add_filter('manage_slider_posts_columns', 'set_custom_edit_slider_columns');
