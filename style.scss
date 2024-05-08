@@ -9620,3 +9620,13 @@ div.vc_custom_heading {
         }
     }
 }
+
+.successstories {
+    padding: 50px 42px;
+    border-radius: 10px;
+    background-color: #B57DFF33;
+    * {
+        font-family: var(--primary-font);
+        color: var(--opal-black);
+    }
+}
