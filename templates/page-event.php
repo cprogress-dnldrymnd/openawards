@@ -12,16 +12,6 @@
           <?php if (have_posts()) :
                // Do we have any posts/pages in the databse that match our query?
           ?>
-               <header class="woocommerce-products-header dark page-dark-header">
-                    <div class="page-shop-banner text-left">
-                         <div class="container wide width1400">
-                              <h1 class="woocommerce-products-header__title page-title"><?php the_title() ?></h1>
-                              <div class="subheading">
-                                   <p>Take a look at some of our upcoming events</p>
-                              </div>
-                         </div>
-                    </div>
-               </header>
                <?php if (!get_field('hide_breadcrumbs')) { ?>
                     <?php get_template_part('template-parts/page-event', 'breadcrumbs'); ?>
                <?php } else { ?>
