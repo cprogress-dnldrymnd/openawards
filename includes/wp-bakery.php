@@ -406,7 +406,7 @@ function action_student($atts)
     ?>
         <div class="student">
             <div class="student-image">
-
+                <img src="<?= get_the_post_thumbnail_url($student_id, 'large') ?>" alt="<?= get_the_title($student_id) ?>">
             </div>
             <div class="student-details">
                 <div class="highlight"> Top Student </div>
