@@ -6815,7 +6815,10 @@ form#resources_form.searching label {
     background-color: var(--white-color); }
 
 .fw-normal * {
-  font-weight: normal; }
+  font-weight: normal !important; }
+
+.fw-medium * {
+  font-weight: 500 !important; }
 
 .underline {
   border-bottom: 7px solid var(--blush-pink); }

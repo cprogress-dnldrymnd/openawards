@@ -8710,7 +8710,10 @@ form#resources_form {
     }
 }
 .fw-normal * {
-    font-weight: normal;
+    font-weight: normal !important;
+}
+.fw-medium * {
+    font-weight: 500 !important;
 }
 
 .underline {
