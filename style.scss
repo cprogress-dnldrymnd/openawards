@@ -5931,7 +5931,7 @@ body.not-logged-in #bookModal #pseudo-send-booking {
             border-radius: 0 !important;
             background-color: transparent !important;
             &:hover {
-                background-color: transparent !important;
+                background-color: transparent !importa !importantnt;
             }
         }
     }
@@ -9549,5 +9549,5 @@ section.blog-filter {
 }
 
 div.vc_custom_heading {
-    font-weight: 500;
+    font-weight: 500 !important;
 }
