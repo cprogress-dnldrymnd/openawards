@@ -9665,6 +9665,9 @@ div.vc_custom_heading {
     padding-top: 60px;
     padding-bottom: 80px;
     h1 {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
         @media (min-width: 1440px) {
             font-size: 69px !important;
         }
