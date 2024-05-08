@@ -9567,6 +9567,7 @@ div.vc_custom_heading {
     padding-bottom: 10px;
     background-color: #F4F5F7;
     border-radius: 10px;
+    padding-right: 35px;
     * {
         font-family: var(--primary-font) !important;
     }
@@ -9575,9 +9576,10 @@ div.vc_custom_heading {
         flex: 0 0 30%;
         margin-left: -15%;
         margin-right: 25px;
+        border: 10px solid var(--blush-pink);
+        border-radius: 50%;
         img {
-            border: 10px solid var(--blush-pink);
-            border-radius: 50%;
+            border: none;
         }
     }
     .student-details {
@@ -9594,6 +9596,7 @@ div.vc_custom_heading {
             color: var(--opal-black);
             font-size: 18px;
             font-weight: 500;
+            margin-right: 4vw;
         }
         .congrats {
             font-style: italic;

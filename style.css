@@ -7441,17 +7441,19 @@ div.vc_custom_heading {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #F4F5F7;
-  border-radius: 10px; }
+  border-radius: 10px;
+  padding-right: 35px; }
   .student * {
     font-family: var(--primary-font) !important; }
   .student .student-image {
     width: 30%;
     flex: 0 0 30%;
     margin-left: -15%;
-    margin-right: 25px; }
+    margin-right: 25px;
+    border: 10px solid var(--blush-pink);
+    border-radius: 50%; }
     .student .student-image img {
-      border: 10px solid var(--blush-pink);
-      border-radius: 50%; }
+      border: none; }
   .student .student-details > div:not(:last-child) {
     margin-bottom: 16px; }
   .student .student-details .highlight {
@@ -7460,7 +7462,8 @@ div.vc_custom_heading {
   .student .student-details .student-decs {
     color: var(--opal-black);
     font-size: 18px;
-    font-weight: 500; }
+    font-weight: 500;
+    margin-right: 4vw; }
   .student .student-details .congrats {
     font-style: italic;
     font-size: 18px;
