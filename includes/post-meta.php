@@ -219,7 +219,7 @@ Container::make('term_meta', __('FAQs Category Properties'))
 
 
 Container::make('term_meta', __('Success Stories'))
-    ->where('term_taxonomy', '=', 'faqs_category')
+    ->where('term_taxonomy', '=', 'success_stories_location')
     ->add_fields(array(
         Field::make('textarea', 'flag_svg', __('Flag SVG')),
     ));
