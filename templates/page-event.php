@@ -7,7 +7,6 @@
 <?php get_header();  ?>
 <main id="page-components">
 
-
      <div id="content" role="main">
           <?php if (have_posts()) :
                // Do we have any posts/pages in the databse that match our query?
@@ -17,13 +16,15 @@
                <?php } else { ?>
                     <div class="spacing" style="margin-bottom: 50px;"></div>
                <?php } ?>
-            
-               <div class="container-holder">
-                    <div class="container wide width1400">
+               <?php while (have_posts()) : the_post();
+                    // If we have a page to show, start a loop that will display it
+               ?>
+                    <?php the_content() ?>
 
-                         <?php while (have_posts()) : the_post();
-                              // If we have a page to show, start a loop that will display it
-                         ?>
+                    <div class="container-holder">
+                         <div class="container wide width1400">
+
+
                               <article class="post">
                                    <div class="the-content">
                                         <div class="row g-5">
@@ -59,14 +60,15 @@
 
                               </article>
 
-                         <?php endwhile; // OK, let's stop the page loop once we've displayed it 
-                         ?>
-
-                    <?php endif ?>
 
 
+
+                         </div>
                     </div>
-               </div>
+
+               <?php endwhile; // OK, let's stop the page loop once we've displayed it 
+               ?>
+          <?php endif ?>
 
      </div><!-- #content .site-content -->
 </main>
