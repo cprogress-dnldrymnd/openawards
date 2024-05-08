@@ -354,3 +354,121 @@ function action_contact_details_box($atts)
     return ob_get_clean();
 }
 add_shortcode('contact_details_box', 'action_contact_details_box');
+
+
+//Students
+if (function_exists('vc_map')) {
+    add_action('vc_before_init', 'vc_map_student');
+    function vc_map_student()
+    {
+
+
+        $args = array(
+            'post_type' => 'students',
+            'numberposts' => -1,
+        );
+
+
+
+        $students = get_posts($args);
+
+        $student_array = array();
+        foreach ($students as $student) {
+            $student_array[$student->post_id] = $student->post_title;
+        }
+
+
+        vc_map(array(
+            "name" => "student",
+            "base" => "student",
+            "category" => "Open Awards",
+            "params" => array(
+                array(
+                    "type" => "dropdown",
+                    "heading" => "Student",
+                    "param_name" => "student_id",
+                    "value" => $student_array,
+                    "description" => "Select the student you want to display."
+                ),
+            )
+        ));
+    }
+}
+
+function action_student($atts)
+{
+    ob_start();
+    extract(shortcode_atts(array(
+        'student_id' => '',
+    ), $atts));
+
+
+?>
+    <div class="student-slider <?= $style ?>">
+        <div class="heading-box text-center">
+            <h2>
+                <?= $heading ?>
+            </h2>
+        </div>
+        <div class="swiper student-swiper swiper-button-style-1">
+            <div class="swiper-wrapper">
+                <?php foreach ($students as $student) { ?>
+                    <?php
+                    $position = carbon_get_post_meta($student->ID, 'position');
+                    $linked_in = carbon_get_post_meta($student->ID, 'linked_in');
+                    $short_description = carbon_get_post_meta($student->ID, 'short_description');
+                    ?>
+                    <div class="swiper-slide">
+                        <div class="inner">
+                            <div class="image-box">
+                                <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id($student->ID), 'Medium') ?>" alt="<?= $student->post_title ?>">
+                                <?php if ($style == 'style-3') { ?>
+                                    <button class="button-trigger student-modal-trigger" position="<?= $position ?>" linkedin="<?= $linked_in ?>" image="<?= wp_get_attachment_image_url(get_post_thumbnail_id($student->ID), 'Medium') ?>" student_name="<?= $student->post_title ?>" content="<?= wpautop($student->post_content) ?>" data-bs-toggle="modal" data-bs-target="#studentModal">
+                                    </button>
+                                <?php } ?>
+                            </div>
+                            <div class="content-box">
+                                <?php if ($style != 'style-3') { ?>
+                                    <button class="button-trigger student-modal-trigger" position="<?= $position ?>" linkedin="<?= $linked_in ?>" image="<?= wp_get_attachment_image_url(get_post_thumbnail_id($student->ID), 'Medium') ?>" student_name="<?= $student->post_title ?>" content="<?= wpautop($student->post_content) ?>" data-bs-toggle="modal" data-bs-target="#studentModal">
+                                    </button>
+                                <?php } ?>
+
+                                <div class="name">
+                                    <?= $student->post_title ?>
+                                </div>
+                                <?php if ($style == 'style-3' && $position) { ?>
+                                    <div class="position">
+                                        <?= $position ?>
+                                    </div>
+                                <?php } ?>
+                                <div class="desc">
+                                    <?= wpautop($short_description) ?>
+                                </div>
+                                <div class="socials">
+                                    <?php if ($linked_in) { ?>
+                                        <a href="<?= $linked_in ?>" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                                <path id="Icon_akar-linkedin-fill" data-name="Icon akar-linkedin-fill" d="M14.144,13.453h5.571v2.775c.8-1.6,2.861-3.03,5.952-3.03C31.593,13.2,33,16.375,33,22.2V33H27V23.532c0-3.319-.8-5.191-2.846-5.191-2.833,0-4.011,2.017-4.011,5.19V33h-6V13.453ZM3.855,32.745h6V13.2h-6V32.745Zm6.86-25.92a3.8,3.8,0,0,1-1.13,2.7A3.856,3.856,0,0,1,3,6.825a3.8,3.8,0,0,1,1.129-2.7,3.88,3.88,0,0,1,5.456,0A3.807,3.807,0,0,1,10.715,6.825Z" transform="translate(-3 -3)" fill="#b57cff" />
+                                            </svg>
+                                        </a>
+                                    <?php } ?>
+                                </div>
+                            </div>
+
+                        </div>
+                        <?php if ($style != 'style-3' && $position) { ?>
+                            <div class="position">
+                                <?= $position ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+<?php
+    return ob_get_clean();
+}
+add_shortcode('student', 'action_student');
