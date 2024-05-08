@@ -30,7 +30,6 @@
                     </div>
                     <div class="container-holder">
                          <div class="container wide width1400">
-                              lass="post">
                               <div class="the-content">
                                    <div class="row g-5">
                                         <div class="col-lg-3 event-sidebar">
