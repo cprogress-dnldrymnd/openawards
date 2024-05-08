@@ -4682,17 +4682,19 @@ body.not-logged-in #bookModal #pseudo-send-booking {
     letter-spacing: 1.2px;
     color: var(--purple-heather) !important;
     font-size: 16px; }
-.vc_btn3-container.button-link-underline .vc_btn3 {
-  padding: 0 !important;
-  border: none !important;
-  color: var(--high-violet) !important;
-  font-weight: 500;
-  font-size: 26px;
-  border-bottom: 1px solid !important;
-  border-radius: 0 !important;
-  background-color: transparent !important; }
-  .vc_btn3-container.button-link-underline .vc_btn3:hover {
+.vc_btn3-container.button-link-underline {
+  margin-bottom: 0 !important; }
+  .vc_btn3-container.button-link-underline .vc_btn3 {
+    padding: 0 !important;
+    border: none !important;
+    color: var(--high-violet) !important;
+    font-weight: 500;
+    font-size: 26px;
+    border-bottom: 1px solid !important;
+    border-radius: 0 !important;
     background-color: transparent !important; }
+    .vc_btn3-container.button-link-underline .vc_btn3:hover {
+      background-color: transparent !important; }
 
 .wpb_text_column h2,
 .wpcf7 h2 {
