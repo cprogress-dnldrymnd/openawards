@@ -9626,10 +9626,9 @@ div.vc_custom_heading {
     border-radius: 10px;
     background-color: #F4F5F7;
     font-size: 18px;
-    * {
-        font-family: var(--primary-font);
-        color: var(--opal-black);
-    }
+    font-family: var(--primary-font);
+    color: var(--opal-black);
+   
     &:hover {
         background-color: #B57DFF33;
     }
@@ -9645,6 +9644,13 @@ div.vc_custom_heading {
             height: 61px;
             border-radius: 50%;
             object-fit: cover;
+        }
+        .country {
+            display: flex;
+            align-items: center;
+            svg {
+                margin-right: 10px;
+            }
         }
     }
 }

@@ -7487,10 +7487,9 @@ div.vc_custom_heading {
   padding: 50px 42px;
   border-radius: 10px;
   background-color: #F4F5F7;
-  font-size: 18px; }
-  .successstories * {
-    font-family: var(--primary-font);
-    color: var(--opal-black); }
+  font-size: 18px;
+  font-family: var(--primary-font);
+  color: var(--opal-black); }
   .successstories:hover {
     background-color: #B57DFF33; }
   .successstories .successstories-decs {
@@ -7504,5 +7503,10 @@ div.vc_custom_heading {
       height: 61px;
       border-radius: 50%;
       object-fit: cover; }
+    .successstories .successstories-image .country {
+      display: flex;
+      align-items: center; }
+      .successstories .successstories-image .country svg {
+        margin-right: 10px; }
 
 /*# sourceMappingURL=style.css.map */

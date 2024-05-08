@@ -464,7 +464,7 @@ if (function_exists('vc_map')) {
                     "value" => $successstories_array,
                     "description" => "Select the Success Stories you want to display."
                 ),
-           
+
             )
         ));
     }
@@ -490,10 +490,17 @@ function action_successstories($atts)
                 </div>
                 <div class="name-box">
                     <div class="name"><?= get_the_title($successstories_id) ?></div>
-                    <div class="country">France</div>
+                    <div class="country">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="flag-for-flag-st-martin-svgrepo-com" width="18.692" height="13.5" viewBox="0 0 18.692 13.5">
+                            <path id="Path_2285" data-name="Path 2285" d="M30.231,16.423A2.077,2.077,0,0,1,28.154,18.5H24V5h4.154a2.077,2.077,0,0,1,2.077,2.077Z" transform="translate(-11.538 -5)" fill="#ed2939" />
+                            <path id="Path_2286" data-name="Path 2286" d="M2.077,5A2.077,2.077,0,0,0,0,7.077v9.346A2.077,2.077,0,0,0,2.077,18.5H6.231V5Z" transform="translate(0 -5)" fill="#002495" />
+                            <path id="Path_2287" data-name="Path 2287" d="M12,5h6.231V18.5H12Z" transform="translate(-5.769 -5)" fill="#eee" />
+                        </svg>
+                        <span>France</span>
+                    </div>
                 </div>
             </div>
-            
+
         </div>
 <?php
         return ob_get_clean();
