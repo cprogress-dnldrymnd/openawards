@@ -293,17 +293,32 @@ $Success_Stories->publicly_queryable = true;
 $Success_Stories->show_in_admin_bar = true;
 $Success_Stories->has_archive = true;
 
+$FAQs_Category = new newTaxonomy();
+$FAQs_Category->taxonomy = 'success_stories_location';
+$FAQs_Category->post_type = 'successstories';
+$FAQs_Category->args = array(
+    'label'        => 'Success Stories Locations',
+    'rewrite'      => array('slug' => 'success-stories-location'),
+    'hierarchical' => true,
+    'query_var'    => false,
+    'has_archive'  => false,
+    'show_in_rest' => false,
+);
 
 
-$Success_Stories = new newPostType();
-$Success_Stories->name = 'Students';
-$Success_Stories->singular_name = 'Students';
-$Success_Stories->icon = 'dashicons-welcome-learn-more';
-$Success_Stories->supports = array('title', 'revisions', 'editor', 'page-attributes', 'thumbnail');
-$Success_Stories->exclude_from_search = false;
-$Success_Stories->publicly_queryable = true;
-$Success_Stories->show_in_admin_bar = true;
-$Success_Stories->has_archive = true;
+
+$Students = new newPostType();
+$Students->name = 'Students';
+$Students->singular_name = 'Students';
+$Students->icon = 'dashicons-welcome-learn-more';
+$Students->supports = array('title', 'revisions', 'editor', 'page-attributes', 'thumbnail');
+$Students->exclude_from_search = false;
+$Students->publicly_queryable = true;
+$Students->show_in_admin_bar = true;
+$Students->has_archive = true;
+
+
+
 
 // Add the custom columns to the slider post type:
 add_filter('manage_slider_posts_columns', 'set_custom_edit_slider_columns');
