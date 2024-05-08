@@ -7486,11 +7486,23 @@ div.vc_custom_heading {
 .successstories {
   padding: 50px 42px;
   border-radius: 10px;
-  background-color: #F4F5F7s; }
+  background-color: #F4F5F7;
+  font-size: 18px; }
   .successstories * {
     font-family: var(--primary-font);
     color: var(--opal-black); }
   .successstories:hover {
     background-color: #B57DFF33; }
+  .successstories .successstories-decs {
+    margin-bottom: 32px; }
+  .successstories .successstories-image {
+    display: flex;
+    align-items: center;
+    margin-right: 32px; }
+    .successstories .successstories-image img {
+      width: 61px;
+      height: 61px;
+      border-radius: 50%;
+      object-fit: cover; }
 
 /*# sourceMappingURL=style.css.map */
