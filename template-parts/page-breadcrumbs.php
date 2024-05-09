@@ -11,7 +11,6 @@ if (is_single() || is_page()) {
 ?>
 <section class="breadcrumbs wocom position-relative">
     <div class="container<?= container_width() ?>">
-
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?= get_site_url() ?>">Home</a></li>

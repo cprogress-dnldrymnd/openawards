@@ -61,12 +61,6 @@
 
                                    </div>
                               </div><!-- the-content -->
-
-                              </article>
-
-
-
-
                          </div>
                     </div>
 
