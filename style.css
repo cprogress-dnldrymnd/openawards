@@ -7177,8 +7177,7 @@ section.archive-section {
     .post-box.post-box .content-box > div:not(:last-child) {
       margin-bottom: 1rem; }
 
-.post-box .description-box,
-.post-box .successstories-decs {
+.post-box .description-box, successstories-decs {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
