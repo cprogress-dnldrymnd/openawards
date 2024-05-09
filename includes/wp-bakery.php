@@ -483,7 +483,7 @@ function action_successstories($atts)
         <div class="successstories">
 
             <div class="successstories-decs">
-                <?= get_the_content(NULL, false, $successstories_id) ?>
+                <?= get_the_excerpt($successstories_id) ?>
             </div>
             <?php if ($read_more == 'true') { ?>
                 <div class="button-box button-readmore">
