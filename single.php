@@ -97,6 +97,24 @@ while (have_posts()) {
 			<?php
 			if ($post_type == 'post') {
 				echo do_shortcode('[post_slider post_type="post"]');
+			} else if ($post_type == 'successstories') {
+			?>
+				<section class="post-slider post-slider-related position-relative">
+					<div class="container">
+						<div class="row mb-5 mt-5">
+							<div class="col">
+								<div class="heading-box">
+									<h2>Other Success Stories</h2>
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="vc_btn3-container vc_btn3-inline"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" href="#" title="">All News</a></div>
+							</div>
+						</div>
+					</div>
+				</section>>
+
+			<?php
 			}
 			?>
 
