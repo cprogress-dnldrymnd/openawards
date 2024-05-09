@@ -173,7 +173,13 @@ function archive_ajax()
         $the_query->the_post();
     ?>
         <div class="col-lg-4 post-item">
-          <?= do_shortcode('[post_box id="' . get_the_ID() . '" class="column-holder -100"]') ?>
+          <?php
+          if ($post_type == 'post') {
+            echo do_shortcode('[post_box id="' . get_the_ID() . '" class="column-holder -100"]');
+          } else if ($post_type == 'successstories') {
+            echo do_shortcode('[successstories successstories_id="' . get_the_ID() . '"]');
+          }
+          ?>
         </div>
       <?php }
     } else {
