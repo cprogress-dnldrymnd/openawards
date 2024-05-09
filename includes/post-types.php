@@ -292,6 +292,9 @@ $Success_Stories->exclude_from_search = false;
 $Success_Stories->publicly_queryable = true;
 $Success_Stories->show_in_admin_bar = true;
 $Success_Stories->has_archive = true;
+$Success_Stories->rewrite = array(
+    'slug'  => 'success-stories',
+);
 
 $FAQs_Category = new newTaxonomy();
 $FAQs_Category->taxonomy = 'success_stories_location';
@@ -337,7 +340,7 @@ function custom_slider_column($column, $post_id)
     switch ($column) {
 
         case 'shortcode':
-            echo '<input type="text" value="[slider slider_id='.$post_id.']" readonly/>';
+            echo '<input type="text" value="[slider slider_id=' . $post_id . ']" readonly/>';
             break;
     }
 }
@@ -360,7 +363,7 @@ function custom_templates_column($column, $post_id)
     switch ($column) {
 
         case 'shortcode':
-            echo '<input type="text" value="[template template_id='.$post_id.']" readonly/>';
+            echo '<input type="text" value="[template template_id=' . $post_id . ']" readonly/>';
             break;
     }
 }
