@@ -8671,7 +8671,7 @@ form#resources_form {
                     }
                 }
             }
-            .content-box, .heading-excerpt-box {
+            .content-box {
                 > div {
                     &:not(:last-child) {
                         margin-bottom: 1.5rem;
@@ -9199,7 +9199,13 @@ section.archive-section {
             font-size: 14px;
             color: #5b5b5b;
         }
-     
+        .heading-excerpt-box {
+            > div {
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
         > div {
             &:not(:last-child) {
                 margin-bottom: 1rem;
@@ -9208,7 +9214,8 @@ section.archive-section {
     }
 }
 .post-box {
-    .description-box, .successstories-decs{
+    .description-box,
+    .successstories-decs {
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 3; /* number of lines to show */
@@ -9495,7 +9502,8 @@ section.faqs-accordion {
     }
 }
 
-.blog, .post-type-archive-successstories {
+.blog,
+.post-type-archive-successstories {
     .bg-image {
         position: absolute;
         left: -30vw;
