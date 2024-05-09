@@ -57,23 +57,26 @@ if (is_home()) {
 
 		<?php get_template_part('template-parts/blog/featured-blog') ?>
 
-		<?php
-		$terms = get_terms(array(
-			'taxonomy'   => 'category',
-			'hide_empty' => false,
-		));
-		?>
-		<?php if ($terms) { ?>
-			<section class="blog-filter position-relative">
-				<div class="container text-end">
-					<select id="archive-form-filter" name="category">
-						<option value=""> Filter by Category </option>
-						<?php foreach ($terms as  $term) { ?>
-							<option value="<?= $term->term_id ?>"> <?= $term->name ?> </option>
-						<?php } ?>
-					</select>
-				</div>
-			</section>
+		<?php if ($post_type == 'post') { ?>
+			<?php
+			$terms = get_terms(array(
+				'taxonomy'   => 'category',
+				'hide_empty' => false,
+			));
+			?>
+			<?php if ($terms) { ?>
+				<section class="blog-filter position-relative">
+					<div class="container text-end">
+						<select id="archive-form-filter" name="category">
+							<option value=""> Filter by Category </option>
+							<?php foreach ($terms as  $term) { ?>
+								<option value="<?= $term->term_id ?>"> <?= $term->name ?> </option>
+							<?php } ?>
+						</select>
+					</div>
+				</section>
+			<?php } ?>
+
 		<?php } ?>
 
 		<input type="hidden" name="post-type" value="<?= $post_type ?>">
