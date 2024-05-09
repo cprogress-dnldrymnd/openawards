@@ -7510,7 +7510,7 @@ div.vc_custom_heading {
   font-size: 18px;
   font-family: var(--primary-font);
   color: var(--opal-black); }
-  .successstories:hover {
+  .successstories.hover-effect:hover {
     background-color: #b57dff33; }
   .successstories .successstories-decs {
     margin-bottom: 1rem; }
@@ -7548,21 +7548,5 @@ div.vc_custom_heading {
     @media (max-width: 1439px) and (min-width: 992px) {
       .title-section.title-section#title-section h1 {
         font-size: 50px !important; } }
-
-.archive .successstories {
-  transition: 500ms; }
-  .archive .successstories:hover {
-    background-color: var(--high-violet);
-    color: var(--white-color); }
-    .archive .successstories:hover a {
-      color: var(--white-color); }
-
-.single-successstories .post-slider .successstories {
-  transition: 500ms; }
-  .single-successstories .post-slider .successstories:hover {
-    background-color: var(--high-violet);
-    color: var(--white-color); }
-    .single-successstories .post-slider .successstories:hover a {
-      color: var(--white-color); }
 
 /*# sourceMappingURL=style.css.map */

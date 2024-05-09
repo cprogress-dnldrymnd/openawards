@@ -9652,9 +9652,10 @@ div.vc_custom_heading {
     font-size: 18px;
     font-family: var(--primary-font);
     color: var(--opal-black);
-
-    &:hover {
-        background-color: #b57dff33;
+    &.hover-effect {
+        &:hover {
+            background-color: #b57dff33;
+        }
     }
     .successstories-decs {
         margin-bottom: 1rem;
@@ -9704,32 +9705,8 @@ div.vc_custom_heading {
         }
     }
 }
-.archive {
-    .successstories {
-        transition: 500ms;
-        &:hover {
-            background-color: var(--high-violet);
-            color: var(--white-color);
-            a {
-                color: var(--white-color);
-            }
-        }
-    }
-}
 
 .single-successstories {
     .success-stories-box {
-    }
-    .post-slider {
-        .successstories {
-            transition: 500ms;
-            &:hover {
-                background-color: var(--high-violet);
-                color: var(--white-color);
-                a {
-                    color: var(--white-color);
-                }
-            }
-        }
     }
 }

@@ -475,12 +475,13 @@ function action_successstories($atts)
     ob_start();
     extract(shortcode_atts(array(
         'successstories_id' => '',
-        'read_more' => 'true'
+        'read_more' => 'true',
+        'hover_effect' => 'true',
     ), $atts));
 
     if ($successstories_id) {
     ?>
-        <div class="successstories">
+        <div class="successstories <?= $hover_effect ? 'hover-effect' : '' ?>">
 
             <div class="successstories-decs">
                 <?= get_the_excerpt($successstories_id) ?>
@@ -506,7 +507,7 @@ function action_successstories($atts)
                     </div>
                 </div>
             </div>
-          
+
         </div>
 <?php
         return ob_get_clean();
