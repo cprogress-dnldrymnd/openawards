@@ -7136,7 +7136,9 @@ section.archive-section {
 .post-box.post-box {
   font-family: var(--primary-font);
   border-radius: 5px;
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; }
   .post-box.post-box:not(.post-box-slider) {
     background-color: var(--white-color);
     box-shadow: 0px 29px 35px #0000000d;
@@ -7156,6 +7158,11 @@ section.archive-section {
       border: none; }
   .post-box.post-box .content-box {
     padding: 25px; }
+    .post-box.post-box .content-box.content-box-v1 {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
     .post-box.post-box .content-box h4 {
       margin-bottom: 0;
       font-weight: 500;

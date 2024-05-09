@@ -17,7 +17,6 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="column-holder">
-
                                             <div class="content-box">
                                                 <div class="heading-box">
                                                     <h4><?php the_title() ?></h4>
