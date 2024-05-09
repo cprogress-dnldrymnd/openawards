@@ -7552,4 +7552,10 @@ div.vc_custom_heading {
 .single-successstories .success-stories-box {
   margin-bottom: 3rem; }
 
+.breadcrumbs h1 {
+  color: var(--opal-black); }
+  @media (min-width: 992px) {
+    .breadcrumbs h1 {
+      font-size: 69px; } }
+
 /*# sourceMappingURL=style.css.map */

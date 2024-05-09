@@ -9711,3 +9711,12 @@ div.vc_custom_heading {
         margin-bottom: 3rem;
     }
 }
+
+.breadcrumbs {
+    h1 {
+        color: var(--opal-black);
+        @media (min-width: 992px) {
+            font-size: 69px;
+        }
+    }
+}
