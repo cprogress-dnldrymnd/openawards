@@ -8671,7 +8671,7 @@ form#resources_form {
                     }
                 }
             }
-            .content-box {
+            .content-box, .heading-excerpt-box {
                 > div {
                     &:not(:last-child) {
                         margin-bottom: 1.5rem;
