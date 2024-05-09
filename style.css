@@ -7553,10 +7553,10 @@ div.vc_custom_heading {
   margin-bottom: 3rem; }
 
 .breadcrumbs h1 {
-  color: var(--opal-black); }
+  color: var(--opal-black) !important; }
   @media (min-width: 992px) {
     .breadcrumbs h1 {
-      font-size: 69px; } }
+      font-size: 69px !important; } }
 
 section.single-event-section {
   padding-top: 50px;

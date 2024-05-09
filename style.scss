@@ -9714,9 +9714,9 @@ div.vc_custom_heading {
 
 .breadcrumbs {
     h1 {
-        color: var(--opal-black);
+        color: var(--opal-black) !important; 
         @media (min-width: 992px) {
-            font-size: 69px;
+            font-size: 69px !important;
         }
     }
 }
