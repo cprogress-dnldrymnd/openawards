@@ -177,7 +177,7 @@ function archive_ajax()
           if ($post_type == 'post') {
             echo do_shortcode('[post_box id="' . get_the_ID() . '" class="column-holder -100"]');
           } else if ($post_type == 'successstories') {
-            echo do_shortcode('[successstories successstories_id="' . get_the_ID() . '" hover_effect="false"]');
+            echo do_shortcode('[successstories successstories_id="' . get_the_ID() . '" ]');
           }
           ?>
         </div>
