@@ -475,7 +475,7 @@ function action_successstories($atts)
     ob_start();
     extract(shortcode_atts(array(
         'successstories_id' => '',
-        'read_more' => 'true',
+        'readmore' => 'true',
         'hover_effect' => 'true',
     ), $atts));
 
@@ -486,7 +486,7 @@ function action_successstories($atts)
             <div class="successstories-decs">
                 <?= get_the_excerpt($successstories_id) ?>
             </div>
-            <?php if ($read_more == 'true') { ?>
+            <?php if ($readmore == 'true') { ?>
                 <div class="button-box button-readmore">
                     <a href="<?= get_the_permalink($successstories_id) ?>">Read more</a>
                 </div>
