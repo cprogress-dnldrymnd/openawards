@@ -7,6 +7,11 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it 
+if (is_home()) {
+	$post_type = 'post';
+} else if (is_post_type_archive('successstories')) {
+	$post_type = 'successstories';
+}
 ?>
 <div id="primary" class="row-fluid">
 	<div id="content" role="main" class="span8 offset2">
@@ -67,13 +72,11 @@ get_header(); // This fxn gets the header.php file and renders it
 							<option value="<?= $term->term_id ?>"> <?= $term->name ?> </option>
 						<?php } ?>
 					</select>
-					<?php if (is_home()) { ?>
-						<input type="hidden" name="post-type" value="post">
-					<?php } ?>
 				</div>
 			</section>
 		<?php } ?>
 
+		<input type="hidden" name="post-type" value="<?= $post_type ?>">
 
 
 		<section class="archive-section position-relative">
