@@ -9190,6 +9190,11 @@ section.archive-section {
         .description-box {
             font-size: 14px;
             color: #5b5b5b;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* number of lines to show */
+                    line-clamp: 3; 
+            -webkit-box-orient: vertical;
         }
         .button-box {
             a {

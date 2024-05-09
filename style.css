@@ -7164,7 +7164,13 @@ section.archive-section {
       line-height: 1.3; }
     .post-box.post-box .content-box .description-box {
       font-size: 14px;
-      color: #5b5b5b; }
+      color: #5b5b5b;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      /* number of lines to show */
+      line-clamp: 3;
+      -webkit-box-orient: vertical; }
     .post-box.post-box .content-box .button-box a {
       color: var(--high-violet);
       font-size: 18px; }
