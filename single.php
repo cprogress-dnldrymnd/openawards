@@ -13,6 +13,7 @@ while (have_posts()) {
 	$button_text = carbon_get_the_post_meta('button_text');
 	$button_link = carbon_get_the_post_meta('button_link');
 	$bottom_text = carbon_get_the_post_meta('bottom_text');
+	$post_type = get_post_type();
 ?>
 	<div id="primary" class="row-fluid overflow-hidden">
 
@@ -52,9 +53,11 @@ while (have_posts()) {
 
 			<section class="the-content position-relative">
 				<div class="container">
-					<div class="image-box content-holder">
-						<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
-					</div>
+					<?php if ($post_type == 'post') { ?>
+						<div class="image-box content-holder">
+							<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
+						</div>
+					<?php } ?>
 					<div class="content-holder">
 						<?php the_content() ?>
 					</div>
@@ -90,7 +93,7 @@ while (have_posts()) {
 			<?php
 
 			$args = array(
-				'post_type' => 'post',
+				'post_type' => $post_type,
 				'posts_per_page' => 5
 
 			);
