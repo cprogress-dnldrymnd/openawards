@@ -7549,8 +7549,15 @@ div.vc_custom_heading {
       .title-section.title-section#title-section h1 {
         font-size: 50px !important; } }
 
-.archive .successstories:hover,
-.single-successstories .successstories:hover {
-  background-color: var(--high-violet); }
+.archive .successstories,
+.single-successstories .successstories {
+  transition: 500ms; }
+  .archive .successstories:hover,
+  .single-successstories .successstories:hover {
+    background-color: var(--high-violet);
+    color: var(--white-color); }
+    .archive .successstories:hover a,
+    .single-successstories .successstories:hover a {
+      color: var(--white-color); }
 
 /*# sourceMappingURL=style.css.map */
