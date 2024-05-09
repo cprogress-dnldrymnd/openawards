@@ -59,7 +59,7 @@ while (have_posts()) {
 						</div>
 					<?php } else if ($post_type == 'successstories') { ?>
 						<div class="success-stories-box">
-							<?= do_shortcode('[successstories successstories_id="' . get_the_ID() . '"]') ?>
+							<?= do_shortcode('[successstories successstories_id="' . get_the_ID() . '" readmore="false"]') ?>
 						</div>
 					<?php } ?>
 					<div class="content-holder">
