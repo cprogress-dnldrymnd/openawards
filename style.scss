@@ -9725,3 +9725,11 @@ section.single-event-section {
     padding-top: 50px;
     padding-bottom: 80px;
 }
+
+.event-holder-single-v3 {
+    > div {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+}

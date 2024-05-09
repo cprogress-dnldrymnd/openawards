@@ -1,0 +1,95 @@
+<div class="event-holder event-holder-single">
+	<div class="row no-gutters">
+		<div class="col-md-6">
+			<div class="column-holder">
+				<div class="image-box">
+					#_EVENTIMAGE{300,300}
+					<div class="date">
+						<span class="month">
+							#_{F}
+						</span>
+						<span class="day">
+							#_{d}
+						</span>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+		<div class="col-md-6">
+			<div class="column-holder event-details event-details-single">
+				<div class="heading-box heading-box-single">
+					<h2>#_EVENTLINK</h2>
+				</div>
+				<div class="meta-box meta-box-single">
+					<div class="row">
+						<div class="col">
+							<div class="column-holder meta-holder meta-date">
+								<span class="meta-label"><strong>Date</strong></span>
+								<span class="meta-value">#_{d F Y}</span>
+							</div>  
+						</div>
+						<div class="col">
+							<div class="column-holder meta-holder meta-time">
+								<span class="meta-label"><strong>Time</strong></span>
+								<span class="meta-value">#_EVENTTIMES</span>
+							</div>  
+						</div>
+					</div>
+				</div>
+				
+				<div class="price-box">
+					<span>[event_price minvalue="#_EVENTPRICEMIN" maxvalue="#_EVENTPRICEMAX"]</span>
+				</div>
+				{has_bookings}
+				<div class="button-box button-box-single">
+					<button type="button" class="button primary" data-toggle="modal" data-target="#bookModal">
+						Book Tickets
+					</button>
+				</div>
+				{/has_bookings}
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters">
+		<div class="col-12">
+			<div class="meta-box">
+				<div class="meta-holder meta-location">
+					<span class="meta-label"><strong>Location</strong></span>
+					<span class="meta-value">#_LOCATIONADDRESS #_LOCATIONTOWN #_LOCATIONSTATE #_LOCATIONPOSTCODE</span>
+				</div>  
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{has_bookings}
+
+<!-- Modal -->
+<div class="modal fade" id="bookModal" aria-labelledby="bookModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="bookModalLabel">Book a Ticket</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				#_BOOKINGFORM
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="pseudo-send-booking">Send your booking</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+	jQuery('#pseudo-send-booking').click(function(event) {
+		jQuery('#em-booking-submit').click();
+	});
+
+{/has_bookings}
+[launch_modal]
