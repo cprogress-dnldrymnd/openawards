@@ -500,14 +500,12 @@ function action_successstories($atts)
                         <span>France</span>
                     </div>
                 </div>
-
             </div>
-
-            <?php if (read_more == 'true') { ?>
-                <div cass="button-box button-readmore">
-                    <ahref="<?= get_the_permalink($successstories_id) ?>">Read more</a>
-            <?php  } ?
-
+            <?php if ($read_more == 'true') { ?>
+                <div class="button-box button-readmore">
+                    <a href="<?= get_the_permalink($successstories_id) ?>">Read more</a>
+                </div>
+            <?php  } ?>
         </div>
 <?php
         return ob_get_clean();
