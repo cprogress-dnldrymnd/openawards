@@ -162,7 +162,7 @@ function launch_modal()
 				jQuery('#bookModal').modal('show');
 			});
 		</script>
-<?php
+	<?php
 		return ob_get_clean();
 	}
 }
@@ -312,10 +312,44 @@ function post_slider($atts)
 	ob_start();
 	if ($post_type == 'post') {
 		get_template_part('template-parts/blog/post-slider', null, $args);
-	} else if($post_type == 'successstories') {
+	} else if ($post_type == 'successstories') {
 		get_template_part('template-parts/blog/success-stories-slider', null, $args);
 	}
 	return ob_get_clean();
 }
 
 add_shortcode('post_slider', 'post_slider');
+
+function post_box($atts)
+{
+	extract(
+		shortcode_atts(
+			array(
+				'id' => '',
+			),
+			$atts
+		)
+	);
+	?>
+	<div class="post-box post-box-slider">
+		<div class="image-box">
+			<img src="<?= get_the_post_thumbnail_url($id, 'medium') ?>" alt="">
+		</div>
+		<div class="content-box content-box-v1">
+			<div class="heading-excerpt-box">
+				<div class="heading-box">
+					<h4><?= get_the_title($id) ?></h4>
+				</div>
+				<div class="description-box">
+					<?= get_the_excerpt($id) ?>
+				</div>
+			</div>
+			<div class="button-box button-readmore">
+				<a href="<?= get_the_permalink($id) ?>">Read more</a>
+			</div>
+		</div>
+	</div>
+<?php
+}
+
+add_shortcode('post_box', 'post_box');
