@@ -7567,7 +7567,9 @@ section.single-event-section {
 .event-holder-single-v3 .event-date-time h5 {
   font-weight: 500 !important;
   font-size: 20px !important;
-  margin-bottom: 0 !IMPORTANT; }
+  margin-bottom: 0 !important; }
+.event-holder-single-v3 .event-date-time > div:not(:last-child) {
+  margin-bottom: 30px; }
 .event-holder-single-v3 > div:not(:last-child) {
   margin-bottom: 40px; }
 

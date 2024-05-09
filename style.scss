@@ -9738,6 +9738,11 @@ section.single-event-section {
             font-size: 20px !important;
             margin-bottom: 0 !important;
         }
+        > div {
+            &:not(:last-child) {
+                margin-bottom: 30px;;
+            }
+        }
     }
     > div {
         &:not(:last-child) {
