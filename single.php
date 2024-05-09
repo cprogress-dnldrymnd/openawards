@@ -57,6 +57,10 @@ while (have_posts()) {
 						<div class="image-box content-holder">
 							<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
 						</div>
+					<?php } else if ($post_type == 'successstories') { ?>
+						<div class="success-stories-box">
+							<?= do_shortcode('[successstories successstories_id="' . get_the_ID() . '"]') ?>
+						</div>
 					<?php } ?>
 					<div class="content-holder">
 						<?php the_content() ?>
@@ -91,7 +95,6 @@ while (have_posts()) {
 				</div>
 			</section>
 			<?php
-
 			$args = array(
 				'post_type' => $post_type,
 				'posts_per_page' => 5
