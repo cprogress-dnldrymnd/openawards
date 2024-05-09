@@ -293,3 +293,23 @@ function e_campus()
 }
 
 add_shortcode('e_campus', 'e_campus');
+
+
+function post_slider($atts)
+{
+	extract(
+		shortcode_atts(
+			array(
+				'post_type' => '',
+			),
+			$atts
+		)
+	);
+
+	$args = array(
+		'post_type' => $post_type
+	);
+	ob_start();
+	get_template_part('template-parts/blog/post-slider', null, $args);
+	return ob_get_clean();
+}
