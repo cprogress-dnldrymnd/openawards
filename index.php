@@ -54,10 +54,9 @@ if (is_home()) {
 				</div>
 			</div>
 		</div>
-
-		<?php get_template_part('template-parts/blog/featured-blog') ?>
-
 		<?php if ($post_type == 'post') { ?>
+			<?php get_template_part('template-parts/blog/featured-blog') ?>
+
 			<?php
 			$terms = get_terms(array(
 				'taxonomy'   => 'category',
