@@ -101,13 +101,22 @@ while (have_posts()) {
 
 			);
 			$query = new WP_Query($args);
+
+			if($post_type == 'post') {
+				$title = 'Latest News';
+			} else if($post_type == 'successstories') {
+				$title = 'Other Success Stories';
+			}
 			?>
+
+
+
 			<section class="post-slider post-slider-related position-relative">
 				<div class="container">
 					<div class="row mb-5 mt-5">
 						<div class="col">
 							<div class="heading-box">
-								<h2>Latest News</h2>
+								<h2><?= $title ?></h2>
 							</div>
 						</div>
 						<div class="col-auto">
