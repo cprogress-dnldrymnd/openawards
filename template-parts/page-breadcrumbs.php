@@ -10,13 +10,8 @@ if (is_single() || is_page()) {
 }
 ?>
 <section class="breadcrumbs wocom position-relative">
-    <div class="container<?= container_width() ?>">
-        <?php if (get_post_type() == 'event') { ?>
-            <h1>
-                <?php the_title() ?>
-            </h1>
-        <?php } ?>
-        <nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb">
+        <div class="container<?= container_width() ?>">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?= get_site_url() ?>">Home</a></li>
                 <?php if (is_tax('faqs_category')) { ?>
@@ -24,6 +19,6 @@ if (is_single() || is_page()) {
                 <?php } ?>
                 <li class="breadcrumb-item"><span><?= $title ?></span></li>
             </ol>
-        </nav>
-    </div>
+        </div>
+    </nav>
 </section>
