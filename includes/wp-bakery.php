@@ -481,7 +481,7 @@ function action_successstories($atts)
 
     if ($successstories_id) {
     ?>
-        <div class="successstories <?= $hover_effect ? 'hover-effect' : '' ?>">
+        <div class="successstories <?= $hover_effect == 'true' ? 'hover-effect' : '' ?>">
 
             <div class="successstories-decs">
                 <?= get_the_excerpt($successstories_id) ?>
