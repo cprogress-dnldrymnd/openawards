@@ -7549,15 +7549,20 @@ div.vc_custom_heading {
       .title-section.title-section#title-section h1 {
         font-size: 50px !important; } }
 
-.archive .successstories,
-.single-successstories .successstories {
+.archive .successstories {
   transition: 500ms; }
-  .archive .successstories:hover,
-  .single-successstories .successstories:hover {
+  .archive .successstories:hover {
     background-color: var(--high-violet);
     color: var(--white-color); }
-    .archive .successstories:hover a,
-    .single-successstories .successstories:hover a {
+    .archive .successstories:hover a {
+      color: var(--white-color); }
+
+.single-successstories .post-slider .successstories {
+  transition: 500ms; }
+  .single-successstories .post-slider .successstories:hover {
+    background-color: var(--high-violet);
+    color: var(--white-color); }
+    .single-successstories .post-slider .successstories:hover a {
       color: var(--white-color); }
 
 /*# sourceMappingURL=style.css.map */

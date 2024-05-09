@@ -9704,9 +9704,7 @@ div.vc_custom_heading {
         }
     }
 }
-
-.archive,
-.single-successstories {
+.archive {
     .successstories {
         transition: 500ms;
         &:hover {
@@ -9714,6 +9712,23 @@ div.vc_custom_heading {
             color: var(--white-color);
             a {
                 color: var(--white-color);
+            }
+        }
+    }
+}
+
+.single-successstories {
+    .success-stories-box {
+    }
+    .post-slider {
+        .successstories {
+            transition: 500ms;
+            &:hover {
+                background-color: var(--high-violet);
+                color: var(--white-color);
+                a {
+                    color: var(--white-color);
+                }
             }
         }
     }
