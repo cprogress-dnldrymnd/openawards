@@ -9727,6 +9727,11 @@ section.single-event-section {
 }
 
 .event-holder-single-v3 {
+    .image-box {
+        img {
+            border-radius: 10px;
+        }
+    }
     > div {
         &:not(:last-child) {
             margin-bottom: 40px;
