@@ -475,6 +475,7 @@ function action_successstories($atts)
     ob_start();
     extract(shortcode_atts(array(
         'successstories_id' => '',
+        'read_more' => 'true'
     ), $atts));
 
     if ($successstories_id) {
@@ -499,6 +500,11 @@ function action_successstories($atts)
                         <span>France</span>
                     </div>
                 </div>
+                <?php if ($read_more == 'true') { ?>
+                    <div class="button-box button-readmore">
+                        <a href="<?= get_the_permalink($successstories_id) ?>">Read more</a>
+                    </div>
+                <?php  } ?>
             </div>
 
         </div>

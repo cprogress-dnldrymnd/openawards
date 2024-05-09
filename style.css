@@ -7178,11 +7178,12 @@ section.archive-section {
       /* number of lines to show */
       line-clamp: 3;
       -webkit-box-orient: vertical; }
-    .post-box.post-box .content-box .button-box a {
-      color: var(--high-violet);
-      font-size: 18px; }
     .post-box.post-box .content-box > div:not(:last-child) {
       margin-bottom: 1rem; }
+
+.button-box.button-readmore a {
+  color: var(--high-violet);
+  font-size: 18px; }
 
 .bg-light {
   background-color: #f8f8f8; }

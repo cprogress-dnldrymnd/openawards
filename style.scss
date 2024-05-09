@@ -9204,17 +9204,19 @@ section.archive-section {
             line-clamp: 3;
             -webkit-box-orient: vertical;
         }
-        .button-box {
-            a {
-                color: var(--high-violet);
-                font-size: 18px;
-            }
-        }
+     
         > div {
             &:not(:last-child) {
                 margin-bottom: 1rem;
             }
         }
+    }
+}
+
+.button-box.button-readmore {
+    a {
+        color: var(--high-violet);
+        font-size: 18px;
     }
 }
 

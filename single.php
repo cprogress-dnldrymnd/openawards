@@ -133,7 +133,7 @@ while (have_posts()) {
 														<?php the_excerpt() ?>
 													</div>
 												</div>
-												<div class="button-box">
+												<div class="button-box button-readmore">
 													<a href="<?php the_permalink() ?>">Read more</a>
 												</div>
 											</div>
