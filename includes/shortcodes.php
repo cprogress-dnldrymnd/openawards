@@ -310,7 +310,11 @@ function post_slider($atts)
 		'post_type' => $post_type
 	);
 	ob_start();
-	get_template_part('template-parts/blog/post-slider', null, $args);
+	if ($post_type == 'post') {
+		get_template_part('template-parts/blog/post-slider', null, $args);
+	} else if($post_type == 'successstories') {
+		get_template_part('template-parts/blog/success-stories-slider', null, $args);
+	}
 	return ob_get_clean();
 }
 

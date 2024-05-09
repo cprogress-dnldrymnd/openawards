@@ -110,7 +110,7 @@ while (have_posts()) {
 							</div>
 						</div>
 						<?= do_shortcode('[post_slider post_type="post"]'); ?>
-					
+
 					</div>
 				</section>
 			<?php
@@ -128,8 +128,9 @@ while (have_posts()) {
 								<div class="vc_btn3-container vc_btn3-inline"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" href="#" title="">All News</a></div>
 							</div>
 						</div>
+						<?= do_shortcode('[post_slider post_type="post"]'); ?>
 					</div>
-				</section>>
+				</section>
 
 			<?php
 			}
