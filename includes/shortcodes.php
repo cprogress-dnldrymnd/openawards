@@ -326,12 +326,13 @@ function post_box($atts)
 		shortcode_atts(
 			array(
 				'id' => '',
+				'class' => ''
 			),
 			$atts
 		)
 	);
 	?>
-	<div class="post-box post-box-slider">
+	<div class="post-box <?= $class ?>">
 		<div class="image-box">
 			<img src="<?= get_the_post_thumbnail_url($id, 'medium') ?>" alt="">
 		</div>

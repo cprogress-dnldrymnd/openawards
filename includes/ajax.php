@@ -173,24 +173,7 @@ function archive_ajax()
         $the_query->the_post();
     ?>
         <div class="col-lg-4 post-item">
-          <div class="column-holder post-box h-100">
-            <div class="image-box">
-              <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="">
-            </div>
-            <div class="content-box content-box-v1">
-              <div class="heading-excerpt-box">
-                <div class="heading-box">
-                  <h4><?php the_title() ?></h4>
-                </div>
-                <div class="description-box">
-                  <?php the_excerpt() ?>
-                </div>
-              </div>
-              <div class="button-box button-readmore">
-                <a href="<?php the_permalink() ?>">Read more</a>
-              </div>
-            </div>
-          </div>
+          <?= do_shortcode('[post_box id="' . get_the_ID() . '" class="column-holder -100"]') ?>
         </div>
       <?php }
     } else {

@@ -16,7 +16,7 @@ $query = new WP_Query($args);
             <?php while ($query->have_posts()) {
                 $query->the_post(); ?>
                 <div class="swiper-slide">
-                    <?= do_shortcode('[post_box id="' . get_the_ID() . '"]') ?>
+                    <?= do_shortcode('[post_box id="' . get_the_ID() . '" class="post-box-slider"]') ?>
                 </div>
             <?php } ?>
             <?php wp_reset_postdata(); ?>
