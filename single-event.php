@@ -21,7 +21,7 @@
             ?>
 
 
-                <div class="container-holder">
+                <section class="single-event-section">
                     <div class="container wide width1400">
 
                         <?php the_content();
@@ -32,9 +32,13 @@
                         <?php wp_link_pages(); // This will display pagination links, if applicable to the page 
                         ?>
                     </div>
+                </section>
 
-
-                </div>
+                <section class="newsletter">
+                    <div class="container wide width1400">
+                        <?= do_shortcode('[template template_id=2969]') ?>
+                    </div>
+                </section>
 
             <?php endwhile; // OK, let's stop the page loop once we've displayed it 
             ?>

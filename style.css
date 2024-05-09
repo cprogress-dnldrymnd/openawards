@@ -7558,4 +7558,8 @@ div.vc_custom_heading {
     .breadcrumbs h1 {
       font-size: 69px; } }
 
+section.single-event-section {
+  padding-top: 50px;
+  padding-bottom: 80px; }
+
 /*# sourceMappingURL=style.css.map */
