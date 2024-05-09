@@ -7564,6 +7564,10 @@ section.single-event-section {
 
 .event-holder-single-v3 .image-box img {
   border-radius: 10px; }
+.event-holder-single-v3 .event-date-time h5 {
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  margin-bottom: 0 !IMPORTANT; }
 .event-holder-single-v3 > div:not(:last-child) {
   margin-bottom: 40px; }
 
