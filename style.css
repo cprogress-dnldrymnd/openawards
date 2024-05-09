@@ -7171,15 +7171,17 @@ section.archive-section {
       line-height: 1.3; }
     .post-box.post-box .content-box .description-box {
       font-size: 14px;
-      color: #5b5b5b;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      /* number of lines to show */
-      line-clamp: 3;
-      -webkit-box-orient: vertical; }
+      color: #5b5b5b; }
     .post-box.post-box .content-box > div:not(:last-child) {
       margin-bottom: 1rem; }
+
+.swiperPostSlider-holder .description-box, .swiperPostSlider-holder .successstories-decs {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical; }
 
 .button-box.button-readmore a {
   color: var(--high-violet);
@@ -7507,7 +7509,9 @@ div.vc_custom_heading {
   .successstories:hover {
     background-color: #b57dff33; }
   .successstories .successstories-decs {
-    margin-bottom: 32px; }
+    margin-bottom: 1rem; }
+  .successstories .button-box {
+    margin-bottom: 2rem; }
   .successstories .successstories-image {
     display: flex;
     align-items: center; }

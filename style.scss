@@ -9198,11 +9198,6 @@ section.archive-section {
         .description-box {
             font-size: 14px;
             color: #5b5b5b;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3; /* number of lines to show */
-            line-clamp: 3;
-            -webkit-box-orient: vertical;
         }
      
         > div {
@@ -9212,7 +9207,15 @@ section.archive-section {
         }
     }
 }
-
+.swiperPostSlider-holder {
+    .description-box, .successstories-decs{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}
 .button-box.button-readmore {
     a {
         color: var(--high-violet);
@@ -9648,7 +9651,10 @@ div.vc_custom_heading {
         background-color: #b57dff33;
     }
     .successstories-decs {
-        margin-bottom: 32px;
+        margin-bottom: 1rem;
+    }
+    .button-box {
+        margin-bottom: 2rem;
     }
     .successstories-image {
         display: flex;

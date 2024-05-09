@@ -485,6 +485,11 @@ function action_successstories($atts)
             <div class="successstories-decs">
                 <?= get_the_content(NULL, false, $successstories_id) ?>
             </div>
+            <?php if ($read_more == 'true') { ?>
+                <div class="button-box button-readmore">
+                    <a href="<?= get_the_permalink($successstories_id) ?>">Read more</a>
+                </div>
+            <?php  } ?>
             <div class="successstories-image">
                 <div class="image-box">
                     <img src="<?= get_the_post_thumbnail_url($successstories_id, 'large') ?>" alt="<?= get_the_title($successstories_id) ?>">
@@ -501,11 +506,7 @@ function action_successstories($atts)
                     </div>
                 </div>
             </div>
-            <?php if ($read_more == 'true') { ?>
-                <div class="button-box button-readmore">
-                    <a href="<?= get_the_permalink($successstories_id) ?>">Read more</a>
-                </div>
-            <?php  } ?>
+          
         </div>
 <?php
         return ob_get_clean();
