@@ -7388,7 +7388,7 @@ section.faqs-accordion {
   .accordion-style-2.accordion-style-2 .accordion-button:not(.collapsed) .icon-active {
     display: none; }
 
-.blog .bg-image {
+.blog .bg-image, .post-type-archive-successstories .bg-image {
   position: absolute;
   left: -30vw;
   top: 147px; }
