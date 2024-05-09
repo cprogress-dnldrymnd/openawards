@@ -7178,7 +7178,7 @@ section.archive-section {
       margin-bottom: 1rem; }
 
 .post-box .description-box,
-.successstories-decs {
+.successstories-decs.successstories-decs {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -7549,7 +7549,8 @@ div.vc_custom_heading {
       .title-section.title-section#title-section h1 {
         font-size: 50px !important; } }
 
-.archive .successstories:hover, .single-successstories .successstories:hover {
+.archive .successstories:hover,
+.single-successstories .successstories:hover {
   background-color: var(--high-violet); }
 
 /*# sourceMappingURL=style.css.map */

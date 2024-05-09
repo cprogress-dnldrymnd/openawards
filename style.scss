@@ -9214,7 +9214,7 @@ section.archive-section {
     }
 }
 .post-box .description-box,
-.successstories-decs {
+.successstories-decs.successstories-decs {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3; /* number of lines to show */
@@ -9705,7 +9705,8 @@ div.vc_custom_heading {
     }
 }
 
-.archive , .single-successstories {
+.archive,
+.single-successstories {
     .successstories {
         &:hover {
             background-color: var(--high-violet);
