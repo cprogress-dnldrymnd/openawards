@@ -9,8 +9,10 @@
 get_header(); // This fxn gets the header.php file and renders it 
 if (is_home()) {
 	$post_type = 'post';
+	$title = 'Latest News';
 } else if (is_post_type_archive('successstories')) {
 	$post_type = 'successstories';
+	$title = 'Success Stories';
 }
 ?>
 <div id="primary" class="row-fluid">
@@ -36,10 +38,6 @@ if (is_home()) {
 				</g>
 			</svg>
 		</div>
-		<?php if (is_home()) {
-			$title = 'Latest News';
-		}
-		?>
 
 		<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
 		<div class="title-wrapper">
