@@ -34,16 +34,16 @@
                     </div>
                 </section>
 
-                <section class="newsletter">
-                    <div class="container wide width1400">
-                        <?= do_shortcode('[template template_id=2969]') ?>
-                    </div>
-                </section>
+
 
             <?php endwhile; // OK, let's stop the page loop once we've displayed it 
             ?>
         <?php endif ?>
-
+        <section class="newsletter">
+            <div class="container wide width1400">
+                <?= do_shortcode('[template template_id=2969]') ?>
+            </div>
+        </section>
     </div><!-- #content .site-content -->
 </main>
 <?php get_footer();
