@@ -313,3 +313,5 @@ function post_slider($atts)
 	get_template_part('template-parts/blog/post-slider', null, $args);
 	return ob_get_clean();
 }
+
+add_shortcode('post_slider', 'post_slider');
