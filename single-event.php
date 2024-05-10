@@ -31,7 +31,6 @@
 
                         <?php
                         $event_code = carbon_get_the_post_meta('event_code');
-                        echo $event_code;
                         $args = array(
                             'post_type' => 'event',
                             'numberposts' => -1,
@@ -45,9 +44,7 @@
                         $posts = get_posts($args);
                         if ($posts) {
                         ?>
-                            <pre>
-                            <?php var_dump(get_post_meta(get_the_ID())) ?>
-                        </pre>
+                        
                             <div class="booking-table poppins">
                                 <table class="table">
                                     <tr>
