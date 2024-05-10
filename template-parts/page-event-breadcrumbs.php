@@ -3,9 +3,11 @@
 <section class="breadcrumbs wocom">
 	<nav aria-label="breadcrumb">
 		<div class="container wide width1400">
-			<h1>
-				<?php the_title() ?>
-			</h1>
+			<?php if (is_single()) { ?>
+				<h1>
+					<?php the_title() ?>
+				</h1>
+			<?php } ?>
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?= get_site_url() ?>">Home</a></li>
 
