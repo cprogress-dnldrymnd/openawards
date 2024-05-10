@@ -226,12 +226,12 @@ Container::make('term_meta', __('Success Stories'))
 
 
 //Events
-Container::make('post_meta', 'Team Settings')
+Container::make('post_meta', 'Event Settings')
     ->set_priority('high')
     ->or_where('post_type', '=', 'event')
     ->add_fields(
         array(
-            Field::make('association', 'related_events', __('Association'))
+            Field::make('association', 'related_events', __('Related Events'))
                 ->set_types(array(
                     array(
                         'type'      => 'post',
