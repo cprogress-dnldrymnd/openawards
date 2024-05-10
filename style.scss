@@ -9774,12 +9774,12 @@ section.single-event-section {
             .button-box-v2 {
                 &.button-accent {
                     a {
-                        background-color: var(--sun-orange);
-                        color: var(--white-violet);
+                        background-color: var(--sun-orange) !important;
+                        color: var(--white-violet) !important;
                         &:hover {
-                            background-color: var(--opal-black);
-                            border-color: var(--opal-black);
-                            color: var(--white-color);
+                            background-color: var(--opal-black) !important;
+                            border-color: var(--opal-black) !important;
+                            color: var(--white-color) !important;
                         }
                     }
                 }
@@ -9795,7 +9795,7 @@ section.single-event-section {
     }
 }
 
-.button-box-v2.button-box-v2.button-box-v2 {
+.button-box-v2 {
     a {
         padding: 5px 15px;
         border-radius: 5px;
