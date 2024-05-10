@@ -7581,8 +7581,19 @@ section.single-event-section {
   .booking-table tr.active {
     background-color: var(--high-violet);
     color: var(--white-color); }
-  .booking-table tr td, .booking-table tr th {
-    padding-top: 10px;
-    padding-bottom: 10px; }
+    .booking-table tr.active .button-box.button-accent a {
+      background-color: var(--white-color);
+      color: var(--high-violet); }
+  .booking-table tr td,
+  .booking-table tr th {
+    padding-top: 20px;
+    padding-bottom: 20px; }
+
+.button-box.button-accent a {
+  background: var(--high-violet);
+  color: var(--white-color);
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 18px; }
 
 /*# sourceMappingURL=style.css.map */

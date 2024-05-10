@@ -9714,7 +9714,7 @@ div.vc_custom_heading {
 
 .breadcrumbs {
     h1 {
-        color: var(--opal-black) !important; 
+        color: var(--opal-black) !important;
         @media (min-width: 992px) {
             font-size: 69px !important;
         }
@@ -9740,7 +9740,7 @@ section.single-event-section {
         }
         > div {
             &:not(:last-child) {
-                margin-bottom: 30px;;
+                margin-bottom: 30px;
             }
         }
     }
@@ -9760,10 +9760,31 @@ section.single-event-section {
         &.active {
             background-color: var(--high-violet);
             color: var(--white-color);
+            .button-box {
+                &.button-accent {
+                    a {
+                        background-color: var(--white-color);
+                        color: var(--high-violet);
+                    }
+                }
+            }
         }
-        td,th {
-            padding-top: 10px;
-            padding-bottom: 10px;
+        td,
+        th {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+.button-box {
+    &.button-accent {
+        a {
+            background: var(--high-violet);
+            color: var(--white-color);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 18px;
         }
     }
 }
