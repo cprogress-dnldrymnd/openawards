@@ -9761,5 +9761,9 @@ section.single-event-section {
             background-color: var(--high-violet);
             color: var(--white-color);
         }
+        td,th {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
 }

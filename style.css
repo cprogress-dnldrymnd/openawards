@@ -7581,5 +7581,8 @@ section.single-event-section {
   .booking-table tr.active {
     background-color: var(--high-violet);
     color: var(--white-color); }
+  .booking-table tr td, .booking-table tr th {
+    padding-top: 10px;
+    padding-bottom: 10px; }
 
 /*# sourceMappingURL=style.css.map */
