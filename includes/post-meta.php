@@ -231,12 +231,6 @@ Container::make('post_meta', 'Event Settings')
     ->or_where('post_type', '=', 'event')
     ->add_fields(
         array(
-            Field::make('association', 'related_events', __('Related Events'))
-                ->set_types(array(
-                    array(
-                        'type'      => 'post',
-                        'post_type' => 'event',
-                    )
-                ))
+            Field::make('text', 'event_code', __('Event Code'))
         )
     );
