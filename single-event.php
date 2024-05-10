@@ -77,7 +77,7 @@
                                                 <?= _date_format($_event_start_time, 'g:i a') ?>
                                             </td>
                                             <td>
-                                                <div class="button-group-box d-flex">
+                                                <div class="button-group-box d-inline-flex">
                                                     <div class="button-box-v2 button-accent">
                                                         <a href="<?= $_eventbrite_event_url ?>" target="_blank">Book Now</a>
                                                     </div>
