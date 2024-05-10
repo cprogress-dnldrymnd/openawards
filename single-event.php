@@ -81,8 +81,17 @@
                                                     <div class="button-box-v2 button-accent">
                                                         <a href="<?= $_eventbrite_event_url ?>" target="_blank">Book Now</a>
                                                     </div>
-                                                    <div class="button-box-v2 button-bordered">
-                                                        <a href="<?= $_eventbrite_event_url ?>" target="_blank">Add to calendar</a>
+                                                    <div class="button-box-v2 button-bordered button-icon">
+                                                        <a href="<?= $_eventbrite_event_url ?>" target="_blank">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                                                                <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                                                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                                            </svg>
+                                                            <span>Add to calendar</span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                                                            </svg>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </td>
