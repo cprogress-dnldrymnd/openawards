@@ -75,7 +75,7 @@
                                             </td>
                                             <td>
                                                 <div class="button-box button-readmore">
-                                                    <a href="<?= get_the_permalink($) ?>">Book Now</a>
+                                                    <a href="<?= get_the_permalink($post->ID) ?>">Book Now</a>
                                                 </div>
                                             </td>
                                         </tr>
