@@ -18,6 +18,7 @@
             <?php } ?>
             <?php while (have_posts()) : the_post();
                 // If we have a page to show, start a loop that will display it
+                $post_id = get_the_ID();
             ?>
 
 
@@ -67,7 +68,7 @@
                                         $_event_start_date = get_post_meta($post->ID, '_event_start_date', true);
                                         $_event_start_time = get_post_meta($post->ID, '_event_start_time', true);
                                         ?>
-                                        <tr class="<?= $post->ID == get_the_ID() ? 'active' : '' ?>">
+                                        <tr class="<?= $post->ID == $post_id ? 'active' : '' ?>">
                                             <td>
                                                 <?= _date_format($_event_start_date) ?>
                                             </td>
