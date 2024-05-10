@@ -33,7 +33,7 @@
 
                         $args = array(
                             'post_type' => 'event',
-                            'title' => 'New Provider Administration - 10th July 2024',
+                            'title' => 'New Provider Administration',
                         );
                         $posts = get_posts($args);
 
