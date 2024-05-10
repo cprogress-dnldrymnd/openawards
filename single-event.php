@@ -48,7 +48,9 @@
                         $posts = get_posts($args);
                         if ($posts) {
                         ?>
-
+    <pre>
+        <?php var_dump(get_post_meta(get_the_ID())) ?>
+    </pre>
                             <div class="booking-table poppins">
                                 <h4 class="mb-3">Click on any of the following dates to book your place:</h4>
                                 <table class="table">
