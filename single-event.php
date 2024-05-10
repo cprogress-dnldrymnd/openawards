@@ -71,6 +71,7 @@
                                         $_eventbrite_event_url = get_post_meta($post->ID, '_eventbrite_event_url', true);
                                         $title = $post->post_title;
                                         $title = $post->post_title;
+                                        $google_calendar = _googe_calendar_date_format($_event_start);
                                         ?>
                                         <tr class="<?= $post->ID == $post_id ? 'active' : '' ?>">
                                             <td>
