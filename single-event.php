@@ -82,7 +82,7 @@
                                                         <a href="<?= $_eventbrite_event_url ?>" target="_blank">Book Now</a>
                                                     </div>
                                                     <div class="button-box-v2 button-bordered">
-                                                        <a href="<?= $_eventbrite_event_url ?>" target="_blank">Book Now</a>
+                                                        <a href="<?= $_eventbrite_event_url ?>" target="_blank">Add to calendar</a>
                                                     </div>
                                                 </div>
                                             </td>
