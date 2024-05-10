@@ -48,36 +48,38 @@
                             <pre>
                             <?php var_dump(get_post_meta(get_the_ID())) ?>
                         </pre>
-                            <table class="table">
-                                <tr>
-                                    <th>
-                                        Date
-                                    </th>
-                                    <th>
-                                        Time
-                                    </th>
-                                    <th>
-                                        Action
-                                    </th>
-                                </tr>
-                                <?php foreach ($posts as $post) { ?>
-                                    <?php
-                                    $_event_start_date = get_post_meta($post->ID, '_event_start_date', true);
-                                    $_event_start_time = get_post_meta($post->ID, '_event_start_time', true);
-                                    ?>
+                            <div class="booking-table poppins">
+                                <table class="table">
                                     <tr>
                                         <th>
-                                            <?= _date_format($_event_start_date) ?>
+                                            Date
                                         </th>
                                         <th>
-                                        <?= _date_format($_event_start_time, 'g:i a') ?>
+                                            Time
                                         </th>
                                         <th>
-                                            x
+                                            Action
                                         </th>
                                     </tr>
-                                <?php } ?>
-                            </table>
+                                    <?php foreach ($posts as $post) { ?>
+                                        <?php
+                                        $_event_start_date = get_post_meta($post->ID, '_event_start_date', true);
+                                        $_event_start_time = get_post_meta($post->ID, '_event_start_time', true);
+                                        ?>
+                                        <tr>
+                                            <th>
+                                                <?= _date_format($_event_start_date) ?>
+                                            </th>
+                                            <th>
+                                                <?= _date_format($_event_start_time, 'g:i a') ?>
+                                            </th>
+                                            <th>
+                                                x
+                                            </th>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
+                            </div>
                         <?php } ?>
                     </div>
                 </section>
