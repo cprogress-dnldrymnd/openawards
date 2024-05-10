@@ -9828,7 +9828,12 @@ section.single-event-section {
     }
     &.button-icon {
         a {
-           
+            display: flex;
+            align-items: center;
+            span {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
         }
     }
 }

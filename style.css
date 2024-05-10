@@ -7623,6 +7623,12 @@ section.single-event-section {
     background-color: var(--opal-black);
     border-color: var(--opal-black);
     color: var(--white-color); }
+.button-box-v2.button-icon a {
+  display: flex;
+  align-items: center; }
+  .button-box-v2.button-icon a span {
+    margin-left: 10px;
+    margin-right: 10px; }
 
 .button-group-box > div:not(:last-child) {
   margin-right: 1rem; }
