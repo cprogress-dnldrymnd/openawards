@@ -7623,8 +7623,6 @@ section.single-event-section {
     background-color: var(--sun-orange);
     border-color: var(--sun-orange);
     color: var(--white-color); }
-.button-box-v2.button-calendar a:before {
-  content: ''; }
 
 .button-group-box > div:not(:last-child) {
   margin-right: 1rem; }
