@@ -38,7 +38,7 @@
                             'meta_query' => array(
                                 array(
                                     'key'   => '_event_code',
-                                    'value' => 'yes',
+                                    'value' => $event_code,
                                 )
                             )
                         );
