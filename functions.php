@@ -418,9 +418,9 @@ function action_jobs_before_main_content()
 add_action('jobs_before_main_content', 'action_jobs_before_main_content');
 
 
-function _date_format($string)
+function _date_format($string, $format = 'D M j Y')
 {
 	$date = strtotime($string);
 
-	return date('Y-m-d', $date);
+	return date($format, $date);
 }
