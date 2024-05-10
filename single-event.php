@@ -67,6 +67,7 @@
                                         <?php
                                         $_event_start_date = get_post_meta($post->ID, '_event_start_date', true);
                                         $_event_start_time = get_post_meta($post->ID, '_event_start_time', true);
+                                        $_eventbrite_event_url = get_post_meta($post->ID, '_eventbrite_event_url', true);
                                         ?>
                                         <tr class="<?= $post->ID == $post_id ? 'active' : '' ?>">
                                             <td>
@@ -77,7 +78,7 @@
                                             </td>
                                             <td>
                                                 <div class="button-box button-accent">
-                                                    <a href="<?= get_the_permalink($post->ID) ?>">Book Now</a>
+                                                    <a href="<?= $_eventbrite_event_url ?>" target="_blank">Book Now</a>
                                                 </div>
                                             </td>
                                         </tr>
