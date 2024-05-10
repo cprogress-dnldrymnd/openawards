@@ -7595,5 +7595,7 @@ section.single-event-section {
   padding: 5px 15px;
   border-radius: 5px;
   font-size: 18px; }
+  .button-box.button-accent a:hover {
+    background-color: var(--sun-orange); }
 
 /*# sourceMappingURL=style.css.map */
