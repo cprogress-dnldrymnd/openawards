@@ -7584,6 +7584,8 @@ section.single-event-section {
     margin-bottom: 0 !important; }
   .booking-table table {
     margin-bottom: 0; }
+  .booking-table th {
+    width: 33%; }
   .booking-table tr.active {
     background-color: var(--high-violet);
     color: var(--white-color); }
