@@ -45,7 +45,7 @@
                         $posts = get_posts($args);
                         if ($posts) {
                         ?>
-                        <pre>
+                            <pre>
                             <?php var_dump(get_post_meta(get_the_ID())) ?>
                         </pre>
                             <table class="table">
@@ -61,9 +61,13 @@
                                     </th>
                                 </tr>
                                 <?php foreach ($posts as $post) { ?>
+                                    <?php
+                                    $_event_start_date = get_post_meta($post->ID, '_event_start_date', true);
+                                    $_event_start_date = get_post_meta($post->ID, '_event_start_time', true);
+                                    ?>
                                     <tr>
                                         <th>
-                                            x
+                                            <?= _date_format($_event_start_date) ?>
                                         </th>
                                         <th>
                                             x

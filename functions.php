@@ -236,7 +236,6 @@ function logo()
 	} else {
 		return $theme_settings['logo_url'];
 	}
-
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -417,3 +416,11 @@ function action_jobs_before_main_content()
 }
 
 add_action('jobs_before_main_content', 'action_jobs_before_main_content');
+
+
+function _date_format($string)
+{
+	$string = strtotime('10/16/2003');
+
+	return date('Y-m-d', $string);
+}
