@@ -7585,7 +7585,7 @@ section.single-event-section {
     color: var(--white-color); }
     .booking-table tr.active .button-box-v2.button-accent a {
       background-color: var(--sun-orange);
-      color: var(--high-violet); }
+      color: var(--white-violet); }
       .booking-table tr.active .button-box-v2.button-accent a:hover {
         background-color: var(--opal-black);
         border-color: var(--opal-black);
