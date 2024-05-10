@@ -9755,7 +9755,6 @@ section.single-event-section {
     margin-top: 2rem;
     border: 1px solid var(--high-violet);
     border-radius: 10px;
-    padding: 1rem;
     tr {
         &.active {
             background-color: var(--high-violet);
@@ -9771,8 +9770,7 @@ section.single-event-section {
         }
         td,
         th {
-            padding-top: 20px;
-            padding-bottom: 20px;
+            padding: 20px;
         }
     }
 }

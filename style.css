@@ -7576,8 +7576,7 @@ section.single-event-section {
 .booking-table {
   margin-top: 2rem;
   border: 1px solid var(--high-violet);
-  border-radius: 10px;
-  padding: 1rem; }
+  border-radius: 10px; }
   .booking-table tr.active {
     background-color: var(--high-violet);
     color: var(--white-color); }
@@ -7586,8 +7585,7 @@ section.single-event-section {
       color: var(--high-violet); }
   .booking-table tr td,
   .booking-table tr th {
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    padding: 20px; }
 
 .button-box-v2 a {
   padding: 5px 15px;
