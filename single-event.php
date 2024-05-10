@@ -64,7 +64,7 @@
                                         $_event_start_date = get_post_meta($post->ID, '_event_start_date', true);
                                         $_event_start_time = get_post_meta($post->ID, '_event_start_time', true);
                                         ?>
-                                        <tr>
+                                        <tr class="<?= $post->ID == get_the_ID() ? 'active' : '' ?>">
                                             <td>
                                                 <?= _date_format($_event_start_date) ?>
                                             </td>
