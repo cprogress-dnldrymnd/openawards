@@ -37,7 +37,7 @@
                         );
                         $posts = get_posts($args);
 
-                        $posts[0]->ID;
+                       echo $posts[0]->ID;
                         ?>
 
                         <?php wp_link_pages(); // This will display pagination links, if applicable to the page 
