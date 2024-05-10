@@ -9804,25 +9804,25 @@ section.single-event-section {
     }
     &.button-accent {
         a {
-            background: var(--high-violet);
-            color: var(--white-color);
-            border: 1px solid var(--high-violet);
+            background: var(--high-violet) !important;
+            color: var(--white-color) !important;
+            border: 1px solid var(--high-violet) !important;
             &:hover {
-                background-color: var(--sun-orange);
-                border-color: var(--sun-orange);
-                color: var(--white-color);
+                background-color: var(--sun-orange) !important;
+                border-color: var(--sun-orange) !important;
+                color: var(--white-color) !important;
             }
         }
     }
     &.button-bordered {
         a {
-            background: var(--white-color);
-            color: var(--high-violet);
-            border: 1px solid var(--high-violet);
+            background: var(--white-color) !important;
+            color: var(--high-violet) !important;
+            border: 1px solid var(--high-violet) !important;
             &:hover {
-                background-color: var(--opal-black);
-                border-color: var(--opal-black);
-                color: var(--white-color);
+                background-color: var(--opal-black) !important;
+                border-color: var(--opal-black) !important;
+                color: var(--white-color) !important;
             }
         }
     }
