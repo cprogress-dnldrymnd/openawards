@@ -79,7 +79,7 @@
                                                 <?= _date_format($_event_start_time, 'g:i a') ?>
                                             </td>
                                             <td>
-                                                <?= do_shortcode(['event_button_actions id="' . $post->ID . '"']) ?>
+                                                <?= do_shortcode('[event_button_actions id="' . $post->ID . '"]') ?>
                                             </td>
                                         </tr>
                                     <?php } ?>

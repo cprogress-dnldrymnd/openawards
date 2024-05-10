@@ -393,3 +393,4 @@ function event_button_actions($atts)
 
 	return ob_get_clean();
 }
+add_shortcode('event_button_actions', 'event_button_actions');
