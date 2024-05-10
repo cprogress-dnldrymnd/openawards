@@ -67,15 +67,17 @@
                                         $_event_start_time = get_post_meta($post->ID, '_event_start_time', true);
                                         ?>
                                         <tr>
-                                            <th>
+                                            <td>
                                                 <?= _date_format($_event_start_date) ?>
-                                            </th>
-                                            <th>
+                                            </td>
+                                            <td>
                                                 <?= _date_format($_event_start_time, 'g:i a') ?>
-                                            </th>
-                                            <th>
-                                                x
-                                            </th>
+                                            </td>
+                                            <td>
+                                                <div class="button-box button-readmore">
+                                                    <a href="https://openawards.theprogressteam.com/success-stories/lauren-potter/">Book Now</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </table>
