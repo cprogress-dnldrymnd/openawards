@@ -43,12 +43,35 @@
                             )
                         );
                         $posts = get_posts($args);
-
-                        echo $posts[0]->ID;
+                        if ($posts) {
                         ?>
-
-                        <?php wp_link_pages(); // This will display pagination links, if applicable to the page 
-                        ?>
+                            <table class="table">
+                                <tr>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Time
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </tr>
+                                <?php foreach ($posts as $post) { ?>
+                                    <tr>
+                                        <th>
+                                            x
+                                        </th>
+                                        <th>
+                                            x
+                                        </th>
+                                        <th>
+                                            x
+                                        </th>
+                                    </tr>
+                                <?php } ?>
+                            </table>
+                        <?php } ?>
                     </div>
                 </section>
 
