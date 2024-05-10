@@ -72,7 +72,7 @@
                                                 <?= _date_format($_event_start_time, 'g:i a') ?>
                                             </td>
                                             <td>
-                                                <div class="button-box button-readmore">
+                                                <div class="button-box button-accent">
                                                     <a href="<?= get_the_permalink($post->ID) ?>">Book Now</a>
                                                 </div>
                                             </td>
