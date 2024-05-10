@@ -9792,7 +9792,9 @@ section.single-event-section {
             border: 1px solid var(--high-violet);
             &:hover {
                 background-color: var(--sun-orange) !important;
-                border-color: var(--sun-orange);
+                border-color: var(--sun-orange) !important;
+                color: var(--white-color) !important;
+
             }
         }
     }
