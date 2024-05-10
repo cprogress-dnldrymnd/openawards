@@ -44,8 +44,9 @@
                         $posts = get_posts($args);
                         if ($posts) {
                         ?>
-                        
+
                             <div class="booking-table poppins">
+                                <h4 class="mb-3">Click on any of the following dates to book your place:</h4>
                                 <table class="table">
                                     <tr>
                                         <th>
