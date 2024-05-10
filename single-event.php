@@ -30,14 +30,21 @@
                         ?>
 
                         <?php
-
+                        $event_code = carbon_get_the_post_meta('event_code');
+                        echo $event_code;
                         $args = array(
                             'post_type' => 'event',
-                            'title' => 'New Provider Administration',
+                            'numberposts' => -1,
+                            'meta_query' => array(
+                                array(
+                                    'key'   => '_event_code',
+                                    'value' => 'yes',
+                                )
+                            )
                         );
                         $posts = get_posts($args);
 
-                       echo $posts[0]->ID;
+                        echo $posts[0]->ID;
                         ?>
 
                         <?php wp_link_pages(); // This will display pagination links, if applicable to the page 
