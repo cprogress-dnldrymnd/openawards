@@ -9786,7 +9786,7 @@ section.single-event-section {
             border-radius: 5px;
             font-size: 18px;
             &:hover {
-                background-color: var(--sun-orange);
+                background-color: var(--sun-orange) !important;
             }
         }
     }
