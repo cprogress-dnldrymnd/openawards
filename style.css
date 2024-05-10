@@ -7589,13 +7589,24 @@ section.single-event-section {
     padding-top: 20px;
     padding-bottom: 20px; }
 
-.button-box.button-accent a {
-  background: var(--high-violet);
-  color: var(--white-color);
+.button-box-v2 a {
   padding: 5px 15px;
   border-radius: 5px;
   font-size: 18px; }
-  .button-box.button-accent a:hover {
-    background-color: var(--sun-orange) !important; }
+.button-box-v2.button-accent a {
+  background: var(--high-violet);
+  color: var(--white-color);
+  border: 1px solid var(--high-violet); }
+  .button-box-v2.button-accent a:hover {
+    background-color: var(--sun-orange) !important;
+    border-color: var(--sun-orange); }
+.button-box-v2.button-bordered a {
+  background: var(--white-color);
+  color: var(--high-violet);
+  border: 1px solid var(--high-violet); }
+  .button-box-v2.button-bordered a:hover {
+    background-color: var(--sun-orange) !important;
+    border-color: var(--sun-orange);
+    color: var(--white-color); }
 
 /*# sourceMappingURL=style.css.map */
