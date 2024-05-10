@@ -7620,8 +7620,8 @@ section.single-event-section {
   color: var(--high-violet);
   border: 1px solid var(--high-violet); }
   .button-box-v2.button-bordered a:hover {
-    background-color: var(--opal-orange);
-    border-color: var(--sun-orange);
+    background-color: var(--opal-black);
+    border-color: var(--opal-black);
     color: var(--white-color); }
 
 .button-group-box > div:not(:last-child) {
