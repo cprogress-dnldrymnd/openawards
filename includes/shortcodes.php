@@ -370,7 +370,7 @@ function event_button_actions($atts)
 		)
 	);
 	$_eventbrite_event_url = get_post_meta($id, '_eventbrite_event_url', true);
-	$title = get_the_ID();
+	$title = get_the_title($id);
 ?>
 	<div class="button-group-box d-inline-flex">
 		<div class="button-box-v2 button-accent">
