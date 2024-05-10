@@ -231,6 +231,7 @@ Container::make('post_meta', 'Event Settings')
     ->or_where('post_type', '=', 'event')
     ->add_fields(
         array(
-            Field::make('text', 'event_code', __('Event Code'))
+            Field::make('text', 'event_code', __('Event Code')),
+            Field::make('text', 'eventbrite_event_url', __('Eventbrite Event URL')),
         )
     );
