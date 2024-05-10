@@ -9761,7 +9761,7 @@ section.single-event-section {
     }
     tr {
         &.active {
-            background-color: var(--high-violet);
+            background-color: var(--sun-orange);
             color: var(--white-color);
             .button-box {
                 &.button-accent {
@@ -9784,6 +9784,7 @@ section.single-event-section {
         padding: 5px 15px;
         border-radius: 5px;
         font-size: 18px;
+        display: inline-block;
     }
     &.button-accent {
         a {
@@ -9794,7 +9795,6 @@ section.single-event-section {
                 background-color: var(--sun-orange) !important;
                 border-color: var(--sun-orange) !important;
                 color: var(--white-color) !important;
-
             }
         }
     }
@@ -9808,6 +9808,13 @@ section.single-event-section {
                 border-color: var(--sun-orange);
                 color: var(--white-color);
             }
+        }
+    }
+}
+.button-group-box {
+    > div {
+        &:not(:last-child) {
+            margin-right: 1rem;
         }
     }
 }
