@@ -75,7 +75,7 @@
                                             </td>
                                             <td>
                                                 <div class="button-box button-readmore">
-                                                    <a href="https://openawards.theprogressteam.com/success-stories/lauren-potter/">Book Now</a>
+                                                    <a href="<?= get_the_permalink($) ?>">Book Now</a>
                                                 </div>
                                             </td>
                                         </tr>
