@@ -63,14 +63,14 @@
                                 <?php foreach ($posts as $post) { ?>
                                     <?php
                                     $_event_start_date = get_post_meta($post->ID, '_event_start_date', true);
-                                    $_event_start_date = get_post_meta($post->ID, '_event_start_time', true);
+                                    $_event_start_time = get_post_meta($post->ID, '_event_start_time', true);
                                     ?>
                                     <tr>
                                         <th>
                                             <?= _date_format($_event_start_date) ?>
                                         </th>
                                         <th>
-                                            x
+                                        <?= _date_format($_event_start_time, 'g:i a') ?>
                                         </th>
                                         <th>
                                             x
