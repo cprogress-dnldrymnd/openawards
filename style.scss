@@ -9761,13 +9761,18 @@ section.single-event-section {
     }
     tr {
         &.active {
-            background-color: var(--sun-orange);
+            background-color: var(--high-violet);
             color: var(--white-color);
             .button-box {
                 &.button-accent {
                     a {
-                        background-color: var(--white-color);
+                        background-color: var(--sun-orange);
                         color: var(--high-violet);
+                        &:hover {
+                            background-color: var(--opal-black);
+                            border-color: var(--opal-black);
+                            color: var(--white-color);
+                        }
                     }
                 }
             }
@@ -9792,9 +9797,9 @@ section.single-event-section {
             color: var(--white-color);
             border: 1px solid var(--high-violet);
             &:hover {
-                background-color: var(--sun-orange) !important;
-                border-color: var(--sun-orange) !important;
-                color: var(--white-color) !important;
+                background-color: var(--sun-orange);
+                border-color: var(--sun-orange);
+                color: var(--white-color);
             }
         }
     }
@@ -9804,7 +9809,7 @@ section.single-event-section {
             color: var(--high-violet);
             border: 1px solid var(--high-violet);
             &:hover {
-                background-color: var(--sun-orange) !important;
+                background-color: var(--sun-orange);
                 border-color: var(--sun-orange);
                 color: var(--white-color);
             }

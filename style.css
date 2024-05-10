@@ -7581,11 +7581,15 @@ section.single-event-section {
     padding-left: 20px;
     padding-right: 20px; }
   .booking-table tr.active {
-    background-color: var(--sun-orange);
+    background-color: var(--high-violet);
     color: var(--white-color); }
     .booking-table tr.active .button-box.button-accent a {
-      background-color: var(--white-color);
+      background-color: var(--sun-orange);
       color: var(--high-violet); }
+      .booking-table tr.active .button-box.button-accent a:hover {
+        background-color: var(--opal-black);
+        border-color: var(--opal-black);
+        color: var(--white-color); }
   .booking-table tr td,
   .booking-table tr th {
     padding: 20px; }
@@ -7600,15 +7604,15 @@ section.single-event-section {
   color: var(--white-color);
   border: 1px solid var(--high-violet); }
   .button-box-v2.button-accent a:hover {
-    background-color: var(--sun-orange) !important;
-    border-color: var(--sun-orange) !important;
-    color: var(--white-color) !important; }
+    background-color: var(--sun-orange);
+    border-color: var(--sun-orange);
+    color: var(--white-color); }
 .button-box-v2.button-bordered a {
   background: var(--white-color);
   color: var(--high-violet);
   border: 1px solid var(--high-violet); }
   .button-box-v2.button-bordered a:hover {
-    background-color: var(--sun-orange) !important;
+    background-color: var(--sun-orange);
     border-color: var(--sun-orange);
     color: var(--white-color); }
 
