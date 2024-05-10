@@ -9764,6 +9764,9 @@ section.single-event-section {
     table {
         margin-bottom: 0;
     }
+    th {
+        width: 33%;
+    }
     tr {
         &.active {
             background-color: var(--high-violet);
