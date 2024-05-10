@@ -39,7 +39,10 @@
                                     'key'   => '_event_code',
                                     'value' => $event_code,
                                 )
-                            )
+                            ),
+                            'meta_key'          => '_event_start_date',
+                            'orderby'           => 'meta_value_num',
+                            'order'             => 'ASC'
                         );
                         $posts = get_posts($args);
                         if ($posts) {
