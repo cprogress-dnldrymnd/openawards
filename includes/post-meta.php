@@ -223,3 +223,20 @@ Container::make('term_meta', __('Success Stories'))
     ->add_fields(array(
         Field::make('textarea', 'flag_svg', __('Flag SVG')),
     ));
+
+
+//Events
+Container::make('post_meta', 'Team Settings')
+    ->set_priority('high')
+    ->or_where('post_type', '=', 'event')
+    ->add_fields(
+        array(
+            Field::make('association', 'related_events', __('Association'))
+                ->set_types(array(
+                    array(
+                        'type'      => 'post',
+                        'post_type' => 'event',
+                    )
+                ))
+        )
+    );
