@@ -29,6 +29,17 @@
                         // This will wrap everything in p tags
                         ?>
 
+                        <?php
+
+                        $args = array(
+                            'post_type' => 'event',
+                            'title' => 'New Provider Administration - 10th July 2024',
+                        );
+                        $posts = get_posts($args);
+
+                        $posts[0]->ID;
+                        ?>
+
                         <?php wp_link_pages(); // This will display pagination links, if applicable to the page 
                         ?>
                     </div>
@@ -39,7 +50,7 @@
             <?php endwhile; // OK, let's stop the page loop once we've displayed it 
             ?>
         <?php endif ?>
-    
+
     </div><!-- #content .site-content -->
 </main>
 <?php get_footer();
