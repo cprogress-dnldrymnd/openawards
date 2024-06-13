@@ -465,8 +465,24 @@ function insert_post_ajax()
 	}
 	echo '<tr>';
 	echo '<td>';
-	echo $post_title;
-
+	?>
+	<div class="accordion" id="accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingTwo">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					<?= $post_title ?>
+				</button>
+			</h2>
+			<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+				<div class="accordion-body">
+					<pre>
+						<?php var_dump($post_data); ?>
+					</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
 	echo '</td>';
 	if ($post_id == false) {
 		// Insert the post into the database
@@ -495,32 +511,6 @@ function insert_post_ajax()
 		}
 	}
 	echo '</tr>';
-	echo '<tr>';
-	echo '<td colspan="2">';
-	echo '<code>';
-	?>
-	<div class="accordion" id="accordionQual">
-		<div class="accordion-item">
-			<h2 class="accordion-header" id="headingTwo">
-				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-				
-				</button>
-			</h2>
-			<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionQual">
-				<div class="accordion-body">
-					<pre>
-						<?php var_dump($post_data); ?>
-					</pre>
-				</div>
-			</div>
-		</div>
-	</div>
-<?php
-
-	echo '</code>';
-	echo '</td>';
-	echo '</tr>';
-
 	die();
 }
 
@@ -537,4 +527,12 @@ function get_unique_meta_values($meta_key)
 	$unique_values = $wpdb->get_col($query);
 
 	return $unique_values;
+}
+
+
+function clean($string)
+{
+	$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+	return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
