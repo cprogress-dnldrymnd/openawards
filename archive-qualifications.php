@@ -40,15 +40,21 @@
                     <div class="col-lg-7">
                         <div class="row">
                             <div class="col">
-                                <select name="" id="">
+                                <?php
+                                $levels = get_unique_meta_values('_level');
+                                ?>
+                                <select name="level" id="level">
                                     <option value="">Level Entry</option>
+                                    <?php foreach ($levels as $level) { ?>
+                                        <option value="<?= $level ?>"><?= $level ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="col">
                                 <?php
                                 $sectors = get_unique_meta_values('_type');
                                 ?>
-                                <select name="" id="">
+                                <select name="sector" id="sector">
                                     <option value="">Sector</option>
                                     <?php foreach ($sectors as $sector) { ?>
                                         <option value="<?= $sector ?>"><?= $sector ?></option>
