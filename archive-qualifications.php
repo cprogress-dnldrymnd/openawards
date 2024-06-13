@@ -6,7 +6,7 @@
         <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
         <?= do_shortcode('[template template_id=3722]') ?>
 
-        <section class="archive-section position-relative">
+        <section class="archive-section archive-section-qualifications position-relative">
             <div class="container">
                 <div id="results">
                     <div class="results-holder">
