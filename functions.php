@@ -468,12 +468,12 @@ function insert_post_ajax()
 	?>
 	<div class="accordion" id="accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
 		<div class="accordion-item">
-			<h2 class="accordion-header" id="headingTwo">
-				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			<h2 class="accordion-header" id="heading<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>" aria-expanded="false" aria-controls="collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>">
 					<?= $post_title ?>
 				</button>
 			</h2>
-			<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+			<div id="collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= clean($post_title) ?>-<?= clean($post_title) ?>" data-bs-parent="#accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
 				<div class="accordion-body">
 					<pre>
 						<?php var_dump($post_data); ?>
