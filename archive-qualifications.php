@@ -30,6 +30,6 @@
 ?>
 <script>
 	jQuery(document).ready(function() {
-		ajax(0);
+		ajax_qualifications(0);
 	});
 </script>

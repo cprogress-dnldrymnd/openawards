@@ -284,6 +284,66 @@ function faqs_ajax()
   <?php } ?>
 
 
+<?php
+
+  die();
+}
+
+add_action('wp_ajax_nopriv_archive_ajax_qualifications', 'archive_ajax_qualifications'); // for not logged in users
+add_action('wp_ajax_archive_ajax_qualifications', 'archive_ajax_qualifications');
+function archive_ajax_qualifications()
+{
+  $category = $_POST['category'];
+  $post_type = $_POST['post_type'];
+  $offset = $_POST['offset'];
+  $posts_per_page = 6;
+
+  $args = array(
+    'post_type' => 'qualifications',
+    'posts_per_page' => $posts_per_page,
+  );
+
+  if ($offset) {
+    $args['offset'] = $offset;
+  }
+
+
+
+  if ($category) {
+    $args['cat'] = $category;
+  }
+
+  $the_query = new WP_Query($args);
+
+  $count = $the_query->found_posts;
+  echo hide_load_more($count, $offset, $posts_per_page);
+?>
+  <?php if (!$offset) { ?>
+    <div class="row g-4">
+    <?php } ?>
+    <?php
+    if ($the_query->have_posts()) {
+      while ($the_query->have_posts()) {
+        $the_query->the_post();
+    ?>
+        <div class="col-lg-4 post-item">
+          <?php
+          echo do_shortcode('[post_box id="' . get_the_ID() . '" class="column-holder -100"]');
+          ?>
+        </div>
+      <?php }
+    } else {
+      ?>
+      <h2>No Results Found</h2>
+    <?php
+    }
+    wp_reset_postdata();
+    ?>
+    <?php if (!$offset) { ?>
+    </div>
+  <?php } ?>
+
+
   <?php
 
   die();
