@@ -48,9 +48,15 @@ function load_more_button_listener($) {
 		ajax_faqs(offset, 'append');
 	});
 
+	jQuery(document).on("click", '#load-more-qualifications', function (event) {
+		event.preventDefault();
+		var offset = jQuery('.post-item').length;
+		ajax_qualifications(offset, 'append');
+	});
 
 
 
+	
 
 }
 
@@ -168,7 +174,7 @@ function ajax($offset, $event_type = 'html') {
 }
 
 function ajax_qualifications($offset, $event_type = 'html') {
-	var $loadmore = jQuery('#load-more');
+	var $loadmore = jQuery('#load-more-qualifications');
 
 	var $archive_section = jQuery('.archive-section');
 
