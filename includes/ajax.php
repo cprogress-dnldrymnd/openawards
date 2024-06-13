@@ -345,15 +345,15 @@ function archive_ajax_qualifications()
                   <?php the_excerpt() ?>
                 </div>
               </div>
-              <div class="button-group-box">
-                <?php if ($fee) { ?>
-                  <div class="fee-box">
-                    <?= $fee ?>
-                  </div>
-                <?php } ?>
-                <div class="button-box button-readmore">
-                  <a href="<?php the_permalink() ?>">Read more</a>
+            </div>
+            <div class="button-group-box">
+              <?php if ($fee) { ?>
+                <div class="fee-box">
+                  <?= $fee ?>
                 </div>
+              <?php } ?>
+              <div class="button-box button-accent">
+                <a href="<?php the_permalink() ?>">Read more</a>
               </div>
             </div>
           </div>
