@@ -7,65 +7,66 @@
         <?= do_shortcode('[template template_id=3722]') ?>
 
         <section class="qualification-filter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <label for="">Search</label>
-                    </div>
-                    <div class="col-lg-7">
-                        <input type="text" name="s" placeholder="Keywords">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-5">
-                        <label for="">Qualifications</label>
-                    </div>
-                    <div class="col-lg-7">
-                        <input type="text" name="s" placeholder="Qualification code">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-5">
-                        <label for="">Units</label>
-                    </div>
-                    <div class="col-lg-7">
-                        <input type="text" name="s" placeholder="Minimum age e.g.16">
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-lg-5">
-                        <label for="">Access to HE</label>
+            <div class="container">
+                <div class="qualification-filter-holder">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <label for="">Search</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="s" placeholder="Keywords">
+                        </div>
                     </div>
-                    <div class="col-lg-7">
-                        <div class="row">
-                            <div class="col">
-                                <?php
-                                $levels = get_unique_meta_values('_level');
-                                ?>
-                                <select name="level" id="level">
-                                    <option value="">Level Entry</option>
-                                    <?php foreach ($levels as $level) { ?>
-                                        <option value="<?= $level ?>"><?= $level ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <?php
-                                $sectors = get_unique_meta_values('_type');
-                                ?>
-                                <select name="sector" id="sector">
-                                    <option value="">Sector</option>
-                                    <?php foreach ($sectors as $sector) { ?>
-                                        <option value="<?= $sector ?>"><?= $sector ?></option>
-                                    <?php } ?>
-                                </select>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <label for="">Qualifications</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="s" placeholder="Qualification code">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <label for="">Units</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="s" placeholder="Minimum age e.g.16">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <label for="">Access to HE</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col">
+                                    <?php
+                                    $levels = get_unique_meta_values('_level');
+                                    ?>
+                                    <select name="level" id="level">
+                                        <option value="">Level Entry</option>
+                                        <?php foreach ($levels as $level) { ?>
+                                            <option value="<?= $level ?>"><?= $level ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <?php
+                                    $sectors = get_unique_meta_values('_type');
+                                    ?>
+                                    <select name="sector" id="sector">
+                                        <option value="">Sector</option>
+                                        <?php foreach ($sectors as $sector) { ?>
+                                            <option value="<?= $sector ?>"><?= $sector ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </section>
         <section class="archive-section archive-section-qualifications position-relative">

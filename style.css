@@ -7671,4 +7671,11 @@ section.archive-section-qualifications .fee-box {
   font-size: 18px;
   font-weight: 500; }
 
+.qualification-filter-holder {
+  padding: 25px 50px;
+  border-radius: 10px;
+  border: 2px solid var(--high-violet); }
+  .qualification-filter-holder > .row:not(:last-child) {
+    margin-bottom: 24px; }
+
 /*# sourceMappingURL=style.css.map */

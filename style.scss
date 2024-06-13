@@ -9901,3 +9901,14 @@ section.archive-section-qualifications {
         font-weight: 500;
     }
 }
+
+.qualification-filter-holder {
+    padding: 25px 50px;
+    border-radius: 10px;
+    border: 2px solid var(--high-violet);
+    > .row {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+}
