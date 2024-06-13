@@ -235,3 +235,29 @@ Container::make('post_meta', 'Event Settings')
             Field::make('text', 'eventbrite_event_url', __('Eventbrite Event URL')),
         )
     );
+
+
+//Events
+Container::make('post_meta', 'Qualifications Settings')
+    ->set_priority('high')
+    ->or_where('post_type', '=', 'qualifications')
+    ->add_fields(
+        array(
+            Field::make('text', 'id', __('ID')),
+            Field::make('text', 'level', __('Level')),
+            Field::make('text', 'type', __('Type')),
+            Field::make('text', 'regulationstartdate', __('Regulation start date')),
+            Field::make('text', 'operationalstartdate', __('Operational start date')),
+            Field::make('text', 'regulationenddate', __('Regulation end date')),
+            Field::make('text', 'reviewdate', __('Review date')),
+            Field::make('text', 'totalcreditsrequired', __('Total credits required')),
+            Field::make('text', 'minimumcreditsatorabove', __('Minimum credits at or above')),
+            Field::make('text', 'qualificationreferencenumber', __('Qualification reference number')),
+            Field::make('text', 'contactdetails', __('Contact details')),
+            Field::make('text', 'minage', __('Min age')),
+            Field::make('text', 'tqt', __('TQT')),
+            Field::make('text', 'glh', __('GLH')),
+            Field::make('text', 'alternativequalificationtitle', __('Alternative qualification Title')),
+            Field::make('text', 'classification1', __('Classification 1')),
+        )
+    );
