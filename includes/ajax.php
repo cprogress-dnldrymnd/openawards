@@ -327,7 +327,12 @@ function archive_ajax_qualifications()
         $the_query->the_post();
         $fee = carbon_get_the_post_meta('fee');
         $level = carbon_get_the_post_meta('level');
-        $level_val = str_replace('E', 'Entry Level', $level);
+        if($level == 'E1' || $level == 'E2' || $level == 'E3') {
+          $level_val = str_replace('E', 'Entry Level ', $level);
+
+        } else {
+          $level_val = str_replace('L', 'Level ', $level);
+        }
     ?>
         <div class="col-lg-4 post-item">
           <div class="post-box">
