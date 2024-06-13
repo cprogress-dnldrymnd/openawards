@@ -293,8 +293,12 @@ add_action('wp_ajax_nopriv_archive_ajax_qualifications', 'archive_ajax_qualifica
 add_action('wp_ajax_archive_ajax_qualifications', 'archive_ajax_qualifications');
 function archive_ajax_qualifications()
 {
-  $category = $_POST['category'];
-  $post_type = $_POST['post_type'];
+  $offset = $_POST['offset'];
+  $sector = $_POST['sector'];
+  $level = $_POST['level'];
+  $code = $_POST['code'];
+  $s = $_POST['s'];
+  $minage = $_POST['minage'];
   $offset = $_POST['offset'];
   $posts_per_page = 6;
 
@@ -306,11 +310,40 @@ function archive_ajax_qualifications()
   if ($offset) {
     $args['offset'] = $offset;
   }
+  if ($s) {
+    $args['s'] = $s;
+  }
 
+  if ($sector) {
+    $args['meta_query'][] = array(
+      'key' => '_type',
+      'value' => array($sector),
+      'compare' => 'IN',
+    );
+  }
 
+  if ($level) {
+    $args['meta_query'][] = array(
+      'key' => '_level',
+      'value' => array($level),
+      'compare' => 'IN',
+    );
+  }
 
-  if ($category) {
-    $args['cat'] = $category;
+  if ($minage) {
+    $args['meta_query'][] = array(
+      'key' => '_minage',
+      'value' => array($minage),
+      'compare' => 'IN',
+    );
+  }
+
+  if ($code) {
+    $args['meta_query'][] = array(
+      'key' => '_qualificationreferencenumber',
+      'value' => array($code),
+      'compare' => 'IN',
+    );
   }
 
   $the_query = new WP_Query($args);

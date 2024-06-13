@@ -23,7 +23,7 @@
                             <label for="">Qualifications</label>
                         </div>
                         <div class="col-lg-7">
-                            <input type="text" name="s" placeholder="Qualification code">
+                            <input type="text" name="code" placeholder="Qualification code">
                         </div>
                     </div>
                     <div class="row">
@@ -31,7 +31,7 @@
                             <label for="">Units</label>
                         </div>
                         <div class="col-lg-7">
-                            <input type="text" name="s" placeholder="Minimum age e.g.16">
+                            <input type="text" name="minage" placeholder="Minimum age e.g.16">
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@
                                     <?php
                                     $levels = get_unique_meta_values('_level');
                                     ?>
-                                    <select name="level" id="level">
+                                    <select class="trigger-ajax-change" name="level" id="level">
                                         <option value="">Level Entry</option>
                                         <?php foreach ($levels as $level) { ?>
                                             <option value="<?= $level ?>"><?= $level ?></option>
@@ -56,7 +56,7 @@
                                     <?php
                                     $sectors = get_unique_meta_values('_type');
                                     ?>
-                                    <select name="sector" id="sector">
+                                    <select class="trigger-ajax-change" name="sector" id="sector">
                                         <option value="">Sector</option>
                                         <?php foreach ($sectors as $sector) { ?>
                                             <option value="<?= $sector ?>"><?= $sector ?></option>
