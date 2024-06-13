@@ -1106,7 +1106,7 @@ body {
   --go-green: #00ed8c;
   --white-color: #fff;
   --black-color: #000;
-  --gray-color: #D4D4D4; }
+  --gray-color: #d4d4d4; }
 
 html {
   overflow-x: hidden; }
@@ -7676,12 +7676,16 @@ section.archive-section-qualifications .fee-box {
   border-radius: 10px;
   border: 2px solid var(--high-violet);
   font-family: var(--primary-font); }
-  .qualification-filter-holder select, .qualification-filter-holder input {
+  .qualification-filter-holder select,
+  .qualification-filter-holder input {
     width: 100%;
     border: 1px solid var(--gray-color);
     padding: 6px 20px;
     border-radius: 4px;
     color: var(--opal-black); }
+    .qualification-filter-holder select::placeholder,
+    .qualification-filter-holder input::placeholder {
+      color: var(--opal-black); }
   .qualification-filter-holder > .row:not(:last-child) {
     margin-bottom: 24px; }
 
