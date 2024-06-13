@@ -325,7 +325,6 @@ function archive_ajax_qualifications()
     if ($the_query->have_posts()) {
       while ($the_query->have_posts()) {
         $the_query->the_post();
-        $id = get_the_ID();
         $fee = get__post_meta('fee');
     ?>
         <div class="col-lg-4 post-item">
