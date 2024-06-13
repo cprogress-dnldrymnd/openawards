@@ -325,7 +325,7 @@ function archive_ajax_qualifications()
     if ($the_query->have_posts()) {
       while ($the_query->have_posts()) {
         $the_query->the_post();
-        $fee = get__post_meta('fee');
+        $fee = carbon_get_the_post_meta('fee');
     ?>
         <div class="col-lg-4 post-item">
           <div class="post-box">
