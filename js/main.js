@@ -212,6 +212,7 @@ function ajax_qualifications($offset, $event_type = 'html') {
 			offset: $offset,
 			sector: $sector,
 			minage: $minage,
+			level: $level,
 			code: $code,
 			s: $s,
 		},
