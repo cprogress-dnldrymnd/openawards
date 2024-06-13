@@ -425,24 +425,89 @@ function _date_format($string, $format = 'D M j Y')
 	return date($format, $date);
 }
 
-function make_google_calendar_link($name, $begin, $end, $location, $details) {
+function make_google_calendar_link($name, $begin, $end, $location, $details)
+{
 	$params = array('&dates=', '/', '&details=', '&location=', '&sf=true&output=xml');
 	$url = 'https://www.google.com/calendar/render?action=TEMPLATE&text=';
 	$arg_list = func_get_args();
-    for ($i = 0; $i < count($arg_list); $i++) {
-    	$current = $arg_list[$i];
-    	if(is_int($current)) {
-    		$t = new DateTime('@' . $current, new DateTimeZone('UTC'));
-    		$current = $t->format('Ymd\THis\Z');
-    		unset($t);
-    	}
-    	else {
-    		$current = urlencode($current);
-    	}
-    	$url .= (string) $current . $params[$i];
-    }
-    return $url;
+	for ($i = 0; $i < count($arg_list); $i++) {
+		$current = $arg_list[$i];
+		if (is_int($current)) {
+			$t = new DateTime('@' . $current, new DateTimeZone('UTC'));
+			$current = $t->format('Ymd\THis\Z');
+			unset($t);
+		} else {
+			$current = urlencode($current);
+		}
+		$url .= (string) $current . $params[$i];
+	}
+	return $url;
 }
+
+
+add_action('wp_ajax_insert_post_ajax', 'insert_post_ajax');
+add_action('wp_ajax_nopriv_insert_post_ajax', 'insert_post_ajax');
+
+function insert_post_ajax()
+{
+	$post_data = array();
+	$post_id = $_POST['post_id'];
+	$post_title = $_POST['post_title'];
+	$post_content = $_POST['post_content'];
+	$meta_input = $_POST['meta_input'];
+
+	$post_data['post_type'] = 'qualifications';
+	$post_data['post_title'] = $post_title;
+	$post_data['post_status'] = 'publish';
+	$post_data['meta_input'] = json_decode(stripslashes($meta_input), true);
+	if ($post_content) {
+		$post_data['post_content'] = html_entity_decode($post_content);
+	}
+	echo '<tr>';
+	echo '<td>';
+	echo $post_title;
+
+	echo '</td>';
+	if ($post_id == false) {
+		// Insert the post into the database
+		$insert = wp_insert_post($post_data);
+
+		if ($insert) {
+			echo '<td>';
+			echo 'Inserted';
+			echo '</td>';
+
+			echo '<td>';
+			echo '<a class="btn btn-primary" target="_blank" href="' . get_permalink($insert) . '"> Visit </a>';
+			echo '</td>';
+		}
+	} else {
+		$post_data['ID'] = $post_id;
+		$update = wp_update_post($post_data);
+		if ($update) {
+			echo '<td>';
+			echo 'Updated';
+			echo '</td>';
+
+			echo '<td>';
+			echo '<a class="btn btn-primary" target="_blank" href="' . get_permalink($post_id) . '"> Visit </a>';
+			echo '</td>';
+		}
+	}
+	echo '</tr>';
+	echo '<tr>';
+	echo '<td colspan="2">';
+	echo '<code>';
+	echo '<pre>';
+	var_dump($post_data);
+	echo '</pre>';
+	echo '</code>';
+	echo '</td>';
+	echo '</tr>';
+
+	die();
+}
+
 
 function get_unique_meta_values($meta_key) {
     global $wpdb;
