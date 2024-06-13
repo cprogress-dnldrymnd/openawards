@@ -7660,7 +7660,8 @@ section.single-event-section {
 
 section.archive-section-qualifications .button-box-v2 a {
   padding: 23px;
-  line-height: 1; }
+  line-height: 1;
+  border-radius: 0; }
 section.archive-section-qualifications .button-group-box {
   border-top: 1px solid var(--gray-color); }
 section.archive-section-qualifications .fee-box {
@@ -7669,7 +7670,5 @@ section.archive-section-qualifications .fee-box {
   line-height: 1;
   font-size: 18px;
   font-weight: 500; }
-  section.archive-section-qualifications .fee-box + .button-box-v2 a {
-    border-radius: 0; }
 
 /*# sourceMappingURL=style.css.map */
