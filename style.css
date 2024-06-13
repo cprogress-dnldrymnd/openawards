@@ -7676,6 +7676,12 @@ section.archive-section-qualifications .fee-box {
   border-radius: 10px;
   border: 2px solid var(--high-violet);
   font-family: var(--primary-font); }
+  .qualification-filter-holder select, .qualification-filter-holder input {
+    width: 100%;
+    border: 1px solid var(--gray-color);
+    padding: 6px 20px;
+    border-radius: 4px;
+    color: var(--opal-black); }
   .qualification-filter-holder > .row:not(:last-child) {
     margin-bottom: 24px; }
 

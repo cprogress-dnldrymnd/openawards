@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-lg-7">
                             <div class="row">
-                                <div class="col">
+                                <div class="col-6">
                                     <?php
                                     $levels = get_unique_meta_values('_level');
                                     ?>
@@ -52,7 +52,7 @@
                                         <?php } ?>
                                     </select>
                                 </div>
-                                <div class="col">
+                                <div class="col-6">
                                     <?php
                                     $sectors = get_unique_meta_values('_type');
                                     ?>
