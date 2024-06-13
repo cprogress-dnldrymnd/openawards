@@ -104,5 +104,9 @@
 <script>
     jQuery(document).ready(function() {
         ajax_qualifications(0);
+
+        jQuery('.trigger-ajax-change').change(function(e) {
+            ajax_qualifications(0);
+        });
     });
 </script>
