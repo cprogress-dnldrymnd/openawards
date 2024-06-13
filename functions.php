@@ -336,7 +336,7 @@ function open_awards_wp_head()
 				background-color: <?= $background_color  ?> !important;
 			}
 		</style>
-<?php
+	<?php
 	}
 }
 add_action('wp_head', 'open_awards_wp_head');
@@ -498,9 +498,25 @@ function insert_post_ajax()
 	echo '<tr>';
 	echo '<td colspan="2">';
 	echo '<code>';
-	echo '<pre>';
-	var_dump($post_data);
-	echo '</pre>';
+	?>
+	<div class="accordion" id="accordionQual">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingTwo">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				
+				</button>
+			</h2>
+			<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionQual">
+				<div class="accordion-body">
+					<pre>
+						<?php var_dump($post_data); ?>
+					</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
+
 	echo '</code>';
 	echo '</td>';
 	echo '</tr>';
@@ -509,15 +525,16 @@ function insert_post_ajax()
 }
 
 
-function get_unique_meta_values($meta_key) {
-    global $wpdb;
+function get_unique_meta_values($meta_key)
+{
+	global $wpdb;
 
-    $query = $wpdb->prepare(
-        "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s", 
-        $meta_key
-    );
-    
-    $unique_values = $wpdb->get_col($query);
+	$query = $wpdb->prepare(
+		"SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s",
+		$meta_key
+	);
 
-    return $unique_values;
+	$unique_values = $wpdb->get_col($query);
+
+	return $unique_values;
 }
