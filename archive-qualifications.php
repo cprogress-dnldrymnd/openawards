@@ -37,7 +37,9 @@
                             <select class="trigger-ajax-change" name="minage" id="minage">
                                 <option value="">Minimum age e.g.16</option>
                                 <?php foreach ($minages as $minage) { ?>
-                                    <option value="<?= $minage ?>"><?= $minage ?></option>
+                                    <?php if ($minage) { ?>
+                                        <option value="<?= $minage ?>"><?= $minage ?></option>
+                                    <?php } ?>
                                 <?php } ?>
                             </select>
                         </div>
