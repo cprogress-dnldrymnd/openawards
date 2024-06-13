@@ -9896,5 +9896,10 @@ section.archive-section-qualifications {
         line-height: 1;
         font-size: 18px;
         font-weight: 500;
+        & + .button-box-v2 {
+            a {
+                border-radius: 0;
+            }
+        }
     }
 }
