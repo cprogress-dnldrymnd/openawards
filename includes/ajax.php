@@ -359,7 +359,7 @@ function archive_ajax_qualifications()
                 </div>
               <?php } ?>
               <div class="button-box-v2 button-accent">
-                <a class="w-100" href="<?php the_permalink() ?>">Read more</a>
+                <a class="w-100 text-center" href="<?php the_permalink() ?>">Read more</a>
               </div>
             </div>
           </div>
