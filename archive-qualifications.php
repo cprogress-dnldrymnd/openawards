@@ -24,6 +24,8 @@
                 </div>
             </div>
         </section>
+
+        <?= do_shortcode('[template template_id=2969]') ?>
     </div><!-- #content .site-content -->
 </div><!-- #primary .content-area -->
 <?php get_footer(); // This fxn gets the footer.php file and renders it 
