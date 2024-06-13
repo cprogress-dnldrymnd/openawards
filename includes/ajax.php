@@ -358,7 +358,7 @@ function archive_ajax_qualifications()
                 </div>
               <?php } ?>
               <div class="button-box-v2 button-accent col">
-                <a class="w-100 text-center" href="<?php the_permalink() ?>">Read more</a>
+                <a class="w-100 text-center" href="<?php the_permalink() ?>">View Course</a>
               </div>
             </div>
           </div>
