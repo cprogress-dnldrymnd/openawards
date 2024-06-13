@@ -35,9 +35,9 @@
                             $minages = get_unique_meta_values('_minage');
                             ?>
                             <select class="trigger-ajax-change" name="minage" id="minage">
-                                <option value="">Level Entry</option>
+                                <option value="">Minimum age e.g.16</option>
                                 <?php foreach ($minages as $minage) { ?>
-                                    <option value="<?= $minage ?>"><?= $level ?></option>
+                                    <option value="<?= $minage ?>"><?= $minage ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -54,7 +54,7 @@
                                     $levels = get_unique_meta_values('_level');
                                     ?>
                                     <select class="trigger-ajax-change" name="level" id="level">
-                                        <option value="">Minimum age e.g.16</option>
+                                        <option value="">Entry level</option>
                                         <?php foreach ($levels as $level) { ?>
                                             <option value="<?= $level ?>"><?= $level ?></option>
                                         <?php } ?>
