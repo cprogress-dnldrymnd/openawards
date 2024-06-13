@@ -444,6 +444,77 @@ function make_google_calendar_link($name, $begin, $end, $location, $details)
 	return $url;
 }
 
+
+add_action('wp_ajax_insert_post_ajax', 'insert_post_ajax');
+add_action('wp_ajax_nopriv_insert_post_ajax', 'insert_post_ajax');
+
+function insert_post_ajax()
+{
+	$post_data = array();
+	$post_id = $_POST['post_id'];
+	$post_title = $_POST['post_title'];
+	$post_content = $_POST['post_content'];
+	$meta_input = $_POST['meta_input'];
+
+	$post_data['post_type'] = 'qualifications';
+	$post_data['post_title'] = $post_title;
+	$post_data['post_status'] = 'publish';
+	$post_data['meta_input'] = json_decode(stripslashes($meta_input), true);
+	if ($post_content) {
+		$post_data['post_content'] = html_entity_decode($post_content);
+	}
+	echo '<tr>';
+	echo '<td>';
+	?>
+	<div class="accordion" id="accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="heading<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>" aria-expanded="false" aria-controls="collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+					<?= $post_title ?>
+				</button>
+			</h2>
+			<div id="collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= clean($post_title) ?>-<?= clean($post_title) ?>" data-bs-parent="#accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+				<div class="accordion-body">
+					<pre>
+						<?php var_dump($post_data); ?>
+					</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
+	echo '</td>';
+	if ($post_id == false) {
+		// Insert the post into the database
+		$insert = wp_insert_post($post_data);
+
+		if ($insert) {
+			echo '<td>';
+			echo 'Inserted';
+			echo '</td>';
+
+			echo '<td>';
+			echo '<a class="btn btn-primary" target="_blank" href="' . get_permalink($insert) . '"> Visit </a>';
+			echo '</td>';
+		}
+	} else {
+		$post_data['ID'] = $post_id;
+		$update = wp_update_post($post_data);
+		if ($update) {
+			echo '<td>';
+			echo 'Updated';
+			echo '</td>';
+
+			echo '<td>';
+			echo '<a class="btn btn-primary" target="_blank" href="' . get_permalink($post_id) . '"> Visit </a>';
+			echo '</td>';
+		}
+	}
+	echo '</tr>';
+	die();
+}
+
+
 function get_unique_meta_values($meta_key)
 {
 	global $wpdb;
@@ -456,4 +527,12 @@ function get_unique_meta_values($meta_key)
 	$unique_values = $wpdb->get_col($query);
 
 	return $unique_values;
+}
+
+
+function clean($string)
+{
+	$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+	return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
