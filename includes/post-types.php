@@ -321,6 +321,15 @@ $Students->show_in_admin_bar = true;
 $Students->has_archive = true;
 
 
+$Qualifications = new newPostType();
+$Qualifications->name = 'Qualifications';
+$Qualifications->singular_name = 'Qualification';
+$Qualifications->icon = 'dashicons-welcome-learn-more';
+$Qualifications->supports = array('title', 'revisions', 'editor', 'page-attributes', 'thumbnail');
+$Qualifications->exclude_from_search = false;
+$Students->publicly_queryable = true;
+$Qualifications->show_in_admin_bar = true;
+$Qualifications->has_archive = true;
 
 
 // Add the custom columns to the slider post type:
