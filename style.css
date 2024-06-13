@@ -7633,4 +7633,9 @@ section.single-event-section {
 .button-group-box > div:not(:last-child) {
   margin-right: 1rem; }
 
+.image-box-placeholder img {
+  object-fit: contain;
+  left: 50%;
+  transform: translateX(-50%); }
+
 /*# sourceMappingURL=style.css.map */

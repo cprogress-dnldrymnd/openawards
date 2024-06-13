@@ -326,11 +326,15 @@ function archive_ajax_qualifications()
       while ($the_query->have_posts()) {
         $the_query->the_post();
         $fee = carbon_get_the_post_meta('fee');
+        $level = carbon_get_the_post_meta('level');
     ?>
         <div class="col-lg-4 post-item">
           <div class="post-box">
-            <div class="image-box">
+            <div class="image-box image-box-placeholder">
               <img src="https://openawards.theprogressteam.com/wp-content/uploads/2023/10/logo-new.svg">
+              <span class="level <?= $level ?>">
+                <?= $level ?>
+              </span>
             </div>
             <div class="content-box content-box-v1">
               <div class="heading-excerpt-box">
