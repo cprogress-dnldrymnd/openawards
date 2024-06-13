@@ -358,8 +358,8 @@ function archive_ajax_qualifications()
                   <?= $fee ?>
                 </div>
               <?php } ?>
-              <div class="button-box button-accent">
-                <a href="<?php the_permalink() ?>">Read more</a>
+              <div class="button-box-v2 button-accent">
+                <a class="w-100" href="<?php the_permalink() ?>">Read more</a>
               </div>
             </div>
           </div>
