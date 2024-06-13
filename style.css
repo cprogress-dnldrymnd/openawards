@@ -7662,7 +7662,7 @@ section.archive-section-qualifications .button-box-v2 a {
   padding: 23px;
   line-height: 1; }
 section.archive-section-qualifications .button-group-box {
-  border-top: 1px solid #D4D4D4; }
+  border-top: 1px solid var(--gray-color); }
 section.archive-section-qualifications .fee-box {
   padding: 23px;
   text-align: center;

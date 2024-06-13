@@ -352,18 +352,11 @@ function archive_ajax_qualifications()
               </div>
             </div>
             <div class="button-group-box row g-0 align-items-center">
-
-              <div class="fee-box col">
-                <?php
-                if ($fee) {
-                  echo $fee;
-                } else {
-                  echo 'None';
-                }
-                ?>
-
-              </div>
-
+              <?php if ($fee) { ?>
+                <div class="fee-box col">
+                  <?= $fee ?>
+                </div>
+              <?php } ?>
               <div class="button-box-v2 button-accent col">
                 <a class="w-100 text-center" href="<?php the_permalink() ?>">Read more</a>
               </div>
