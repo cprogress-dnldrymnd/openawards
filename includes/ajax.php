@@ -351,7 +351,7 @@ function archive_ajax_qualifications()
                 </div>
               </div>
             </div>
-            <div class="button-group-box row g-0">
+            <div class="button-group-box row g-0 align-items-center">
 
               <div class="fee-box col">
                 <?php
