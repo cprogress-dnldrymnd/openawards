@@ -9850,8 +9850,11 @@ section.single-event-section {
     img {
         object-fit: contain;
         left: 50%;
-        width: 80%;
+        width: 60%;
         transform: translateX(-50%);
+        height: auto;
+        top: auto;
+        bottom: 50px;
     }
     .level {
         position: absolute;

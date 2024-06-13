@@ -7638,8 +7638,11 @@ section.single-event-section {
   .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder img {
     object-fit: contain;
     left: 50%;
-    width: 80%;
-    transform: translateX(-50%); }
+    width: 60%;
+    transform: translateX(-50%);
+    height: auto;
+    top: auto;
+    bottom: 50px; }
   .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level {
     position: absolute;
     left: 36px;
