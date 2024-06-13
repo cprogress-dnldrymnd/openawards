@@ -332,6 +332,18 @@ $Qualifications->show_in_admin_bar = true;
 $Qualifications->has_archive = true;
 
 
+$Qualifications_Sector = new newTaxonomy();
+$Qualifications_Sector->taxonomy = 'qualifications_sector';
+$Qualifications_Sector->post_type = 'qualifications';
+$Qualifications_Sector->args = array(
+    'label'        => 'Qualifications Sector',
+    'hierarchical' => true,
+    'query_var'    => false,
+    'has_archive'  => false,
+    'show_in_rest' => false,
+);
+
+
 // Add the custom columns to the slider post type:
 add_filter('manage_slider_posts_columns', 'set_custom_edit_slider_columns');
 function set_custom_edit_slider_columns($columns)
