@@ -351,9 +351,9 @@ function archive_ajax_qualifications()
                 </div>
               </div>
             </div>
-            <div class="button-group-box">
+            <div class="button-group-box row g-0">
 
-              <div class="fee-box">
+              <div class="fee-box col">
                 <?php
                 if ($fee) {
                   echo $fee;
@@ -364,7 +364,7 @@ function archive_ajax_qualifications()
 
               </div>
 
-              <div class="button-box-v2 button-accent">
+              <div class="button-box-v2 button-accent col">
                 <a class="w-100 text-center" href="<?php the_permalink() ?>">Read more</a>
               </div>
             </div>
