@@ -7674,7 +7674,8 @@ section.archive-section-qualifications .fee-box {
 .qualification-filter-holder {
   padding: 25px 50px;
   border-radius: 10px;
-  border: 2px solid var(--high-violet); }
+  border: 2px solid var(--high-violet);
+  font-family: var(--primary-font); }
   .qualification-filter-holder > .row:not(:last-child) {
     margin-bottom: 24px; }
 
