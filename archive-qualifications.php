@@ -23,7 +23,7 @@
                             <label for="">Qualifications</label>
                         </div>
                         <div class="col-lg-7">
-                            <input type="text" name="code" placeholder="Qualification code">
+                            <input type="text" name="code" placeholder="Qualification code" class="trigger-type">
                         </div>
                     </div>
                     <div class="row">
@@ -105,8 +105,21 @@
     jQuery(document).ready(function() {
         ajax_qualifications(0);
 
+
+        var typingTimer;
+        var doneTypingInterval = 500;
+
+        jQuery('.trigger-type').on('keyup', function() {
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(doneTyping, doneTypingInterval);
+        });
+
         jQuery('.trigger-ajax-change').change(function(e) {
             ajax_qualifications(0);
         });
     });
+
+    function doneTyping() {
+        ajax_qualifications(0);
+    }
 </script>
