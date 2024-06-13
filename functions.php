@@ -443,3 +443,16 @@ function make_google_calendar_link($name, $begin, $end, $location, $details) {
     }
     return $url;
 }
+
+function get_unique_meta_values($meta_key) {
+    global $wpdb;
+
+    $query = $wpdb->prepare(
+        "SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = %s", 
+        $meta_key
+    );
+    
+    $unique_values = $wpdb->get_col($query);
+
+    return $unique_values;
+}

@@ -6,6 +6,60 @@
         <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
         <?= do_shortcode('[template template_id=3722]') ?>
 
+        <section class="qualification-filter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label for="">Search</label>
+                    </div>
+                    <div class="col-lg-7">
+                        <input type="text" name="s" placeholder="Keywords">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label for="">Qualifications</label>
+                    </div>
+                    <div class="col-lg-7">
+                        <input type="text" name="s" placeholder="Qualification code">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label for="">Units</label>
+                    </div>
+                    <div class="col-lg-7">
+                        <input type="text" name="s" placeholder="Minimum age e.g.16">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-5">
+                        <label for="">Access to HE</label>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col">
+                                <select name="" id="">
+                                    <option value="">Level Entry</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <?php
+                                $unique_values = get_unique_meta_values('_type');
+                                var_dump($unique_values);
+                                ?>
+                                <select name="" id="">
+                                    <option value="">Sector</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
         <section class="archive-section archive-section-qualifications position-relative">
             <div class="container">
                 <div id="results">
@@ -31,7 +85,7 @@
 <?php get_footer(); // This fxn gets the footer.php file and renders it 
 ?>
 <script>
-	jQuery(document).ready(function() {
-		ajax_qualifications(0);
-	});
+    jQuery(document).ready(function() {
+        ajax_qualifications(0);
+    });
 </script>
