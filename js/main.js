@@ -184,7 +184,7 @@ function ajax_qualifications($offset, $event_type = 'html') {
 
 	var $sector = jQuery("select[name='sector']").val();
 
-	var $minage = jQuery("input[name='minage']").val();
+	var $minage = jQuery("select[name='minage']").val();
 
 	var $code = jQuery("input[name='code']").val();
 

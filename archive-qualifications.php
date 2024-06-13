@@ -31,7 +31,15 @@
                             <label for="">Units</label>
                         </div>
                         <div class="col-lg-7">
-                            <input type="text" name="minage" placeholder="Minimum age e.g.16">
+                            <?php
+                            $minages = get_unique_meta_values('_minage');
+                            ?>
+                            <select class="trigger-ajax-change" name="minage" id="minage">
+                                <option value="">Level Entry</option>
+                                <?php foreach ($minages as $minage) { ?>
+                                    <option value="<?= $minage ?>"><?= $level ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                     </div>
 
