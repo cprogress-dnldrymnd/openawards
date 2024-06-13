@@ -327,13 +327,14 @@ function archive_ajax_qualifications()
         $the_query->the_post();
         $fee = carbon_get_the_post_meta('fee');
         $level = carbon_get_the_post_meta('level');
+        $level_val = str_replace('E', 'Entry Level', $level);
     ?>
         <div class="col-lg-4 post-item">
           <div class="post-box">
             <div class="image-box image-box-placeholder">
               <img src="https://openawards.theprogressteam.com/wp-content/uploads/2023/10/logo-new.svg">
               <span class="level <?= $level ?>">
-                <?= $level ?>
+                <?= $level_val ?>
               </span>
             </div>
             <div class="content-box content-box-v1">
