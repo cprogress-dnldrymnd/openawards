@@ -314,6 +314,8 @@ function archive_ajax_qualifications()
     $args['s'] = $s;
   }
 
+  $args['meta_query']['relation'] = 'AND';
+
   if ($sector) {
     $args['meta_query'][] = array(
       'key' => '_type',
@@ -329,6 +331,7 @@ function archive_ajax_qualifications()
       'compare' => 'IN',
     );
   }
+
 
   if ($minage) {
     $args['meta_query'][] = array(
