@@ -336,7 +336,7 @@ function archive_ajax_qualifications()
         <div class="col-lg-4 post-item">
           <div class="post-box">
             <div class="image-box image-box-placeholder">
-              <img src="https://openawards.theprogressteam.com/wp-content/uploads/2023/10/logo-new.svg">
+              <img src="https://openawards.theprogressteam.com/wp-content/uploads/2023/10/logo-new-w.svg">
               <span class="level <?= $level ?>">
                 &#10004; <?= $level_val ?>
               </span>

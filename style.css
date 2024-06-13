@@ -7633,24 +7633,26 @@ section.single-event-section {
 .button-group-box > div:not(:last-child) {
   margin-right: 1rem; }
 
-.image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder img {
-  object-fit: contain;
-  left: 50%;
-  width: 80%;
-  transform: translateX(-50%); }
-.image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level {
-  position: absolute;
-  left: 36px;
-  top: 28px;
-  padding: 10px 20px;
-  border-radius: 36px;
-  line-height: 1;
-  color: var(--white-color);
-  font-size: 16px; }
-  .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.E1, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.E2, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.E3 {
-    background-color: var(--purple-heather); }
-  .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L1, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L2, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L3, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L4, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L5 {
-    background-color: var(--sun-orange); }
+.image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder {
+  background-color: var(--blush-pink); }
+  .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder img {
+    object-fit: contain;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%); }
+  .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level {
+    position: absolute;
+    left: 36px;
+    top: 28px;
+    padding: 10px 20px;
+    border-radius: 36px;
+    line-height: 1;
+    color: var(--white-color);
+    font-size: 16px; }
+    .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.E1, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.E2, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.E3 {
+      background-color: var(--purple-heather); }
+    .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L1, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L2, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L3, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L4, .image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder .level.L5 {
+      background-color: var(--sun-orange); }
 
 section.archive-section-qualifications .button-box-v2 a {
   padding: 23px;
