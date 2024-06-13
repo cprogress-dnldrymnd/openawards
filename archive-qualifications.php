@@ -46,11 +46,13 @@
                             </div>
                             <div class="col">
                                 <?php
-                                $unique_values = get_unique_meta_values('_type');
-                                var_dump($unique_values);
+                                $sectors = get_unique_meta_values('_type');
                                 ?>
                                 <select name="" id="">
                                     <option value="">Sector</option>
+                                    <?php foreach ($sectors as $sector) { ?>
+                                        <option value="<?= $sector ?>"><?= $sector ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
