@@ -9845,10 +9845,33 @@ section.single-event-section {
     }
 }
 
-.image-box-placeholder {
+.image-box-placeholder.image-box-placeholder.image-box-placeholder.image-box-placeholder {
     img {
         object-fit: contain;
         left: 50%;
+        width: 80%;
         transform: translateX(-50%);
+    }
+    .level {
+        position: absolute;
+        left: 36px;
+        top: 28px;
+        padding: 10px 20px;
+        border-radius: 36px;
+        line-height: 1;
+        color: var(--white-color);
+        font-size: 16px;
+        &.E1,
+        &.E2,
+        &.E3 {
+            background-color: var(--purple-heather);
+        }
+        &.L1,
+        &.L2,
+        &.L3,
+        &.L4,
+        &.L5 {
+            background-color: var(--sun-orange);
+        }
     }
 }
