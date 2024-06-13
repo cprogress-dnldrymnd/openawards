@@ -195,7 +195,7 @@ section.breadcrumbs nav ol.breadcrumb li.active {
     text-align: left; } }
 .separator {
   margin-bottom: 50px;
-  border-bottom: 1px solid #d4d4d4; }
+  border-bottom: 1px solid var(--gray-color); }
 
 span.badge {
   margin-bottom: 15px;
@@ -1105,7 +1105,8 @@ body {
   --blush-pink: #fab0ff;
   --go-green: #00ed8c;
   --white-color: #fff;
-  --black-color: #000; }
+  --black-color: #000;
+  --gray-color: #D4D4D4; }
 
 html {
   overflow-x: hidden; }
@@ -1779,7 +1780,7 @@ body.logged-in .comments-holder ol.commentlist li .comment-body p:not(.comment-m
   color: #492583 !important; }
 
 .list-box ul li:not(.no-chevron) > a {
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid var(--gray-color);
   padding-top: 20px;
   padding-bottom: 20px; }
 
@@ -1810,7 +1811,7 @@ body.logged-in .comments-holder ol.commentlist li .comment-body p:not(.comment-m
   align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #d4d4d4; }
+  border-bottom: 1px solid var(--gray-color); }
 
 .list-box ul li.no-chevron span {
   display: inline;
@@ -2721,7 +2722,7 @@ body.woocommerce-page #content .woocommerce-MyAccount-navigation {
   float: none;
   width: 100%;
   padding-bottom: 45px;
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid var(--gray-color);
   margin-top: -15px;
   margin-bottom: 60px; }
 
@@ -3732,7 +3733,7 @@ ul.product-categories li a:hover {
   .logout-url-mobile {
     display: block; } }
 body.wpb-js-composer .vc_tta-accordion .vc_tta-panels-container .vc_tta-panels .vc_tta-panel {
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid var(--gray-color);
   margin-bottom: 16px; }
 
 body.wpb-js-composer .vc_tta-accordion .vc_tta-panels-container .vc_tta-panels .vc_tta-panel .vc_tta-panel-heading {
@@ -4110,7 +4111,7 @@ section#open-awards-discussion-board table tr td.meta.number {
   margin-left: 10px; }
 
 .event-holder > .row .column-holder .heading-box:not(.heading-box-single) {
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid var(--gray-color);
   padding-bottom: 25px; }
 
 .event-holder > .row .column-holder .button-box {
@@ -4207,7 +4208,7 @@ section#open-awards-discussion-board table tr td.meta.number {
   .event-holder .meta-box .meta-holder {
     margin-bottom: 10px; } }
 .event-holder .meta-box.meta-box-single {
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid var(--gray-color);
   padding-bottom: 25px;
   margin-bottom: 25px; }
 
@@ -5383,7 +5384,7 @@ body.single-product span.sku_wrapper {
 hr.productSeparator,
 .shop-sidebar hr {
   margin-bottom: 40px;
-  border-color: #d4d4d4; }
+  border-color: var(--gray-color); }
 
 .shop-sidebar {
   position: relative;
@@ -6949,7 +6950,7 @@ form#resources_form.searching label {
     display: block !important; }
   #em-wrapper .event-list-holder {
     margin-bottom: 30px;
-    border-top: 1px solid #d4d4d4;
+    border-top: 1px solid var(--gray-color);
     padding-top: 30px;
     margin-top: 30px; }
   #em-wrapper .swiper-nav-holder {
@@ -7021,7 +7022,7 @@ form#resources_form.searching label {
       display: flex;
       justify-content: space-between;
       position: relative;
-      border-top: 1px solid #d4d4d4;
+      border-top: 1px solid var(--gray-color);
       padding-top: 30px; }
 
 .calendar-box.calendar-box {
@@ -7348,7 +7349,7 @@ section.faqs-categories {
 .faqs-category-filter .search-input {
   margin-top: 25px; }
   .faqs-category-filter .search-input input {
-    border: 1px solid #d4d4d4;
+    border: 1px solid var(--gray-color);
     border-radius: 5px;
     padding: 10px 30px;
     max-width: 500px;
@@ -7357,7 +7358,7 @@ section.faqs-categories {
     font-weight: 500;
     color: var(--opal-black); }
     .faqs-category-filter .search-input input:placeholder {
-      color: #d4d4d4; }
+      color: var(--gray-color); }
 
 section.faqs-accordion {
   margin-bottom: 100px; }
@@ -7660,6 +7661,8 @@ section.single-event-section {
 section.archive-section-qualifications .button-box-v2 a {
   padding: 23px;
   line-height: 1; }
+section.archive-section-qualifications .button-group-box {
+  border-top: 1px solid #D4D4D4; }
 section.archive-section-qualifications .fee-box {
   padding: 23px;
   text-align: center;
