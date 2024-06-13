@@ -15,7 +15,7 @@
                             <label for="">Search</label>
                         </div>
                         <div class="col-lg-7">
-                            <input type="text" name="s" placeholder="Keywords">
+                            <input type="text" name="s" placeholder="Keywords" class="trigger-type">
                         </div>
                     </div>
                     <div class="row">
