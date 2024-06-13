@@ -327,9 +327,8 @@ function archive_ajax_qualifications()
         $the_query->the_post();
         $fee = carbon_get_the_post_meta('fee');
         $level = carbon_get_the_post_meta('level');
-        if($level == 'E1' || $level == 'E2' || $level == 'E3') {
+        if ($level == 'E1' || $level == 'E2' || $level == 'E3') {
           $level_val = str_replace('E', 'Entry Level ', $level);
-
         } else {
           $level_val = str_replace('L', 'Level ', $level);
         }
@@ -353,11 +352,18 @@ function archive_ajax_qualifications()
               </div>
             </div>
             <div class="button-group-box">
-              <?php if ($fee) { ?>
-                <div class="fee-box">
-                  <?= $fee ?>
-                </div>
-              <?php } ?>
+
+              <div class="fee-box">
+                <?php
+                if ($fee) {
+                  echo $fee;
+                } else {
+                  echo 'None';
+                }
+                ?>
+
+              </div>
+
               <div class="button-box-v2 button-accent">
                 <a class="w-100 text-center" href="<?php the_permalink() ?>">Read more</a>
               </div>
