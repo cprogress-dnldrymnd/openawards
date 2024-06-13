@@ -325,11 +325,35 @@ function archive_ajax_qualifications()
     if ($the_query->have_posts()) {
       while ($the_query->have_posts()) {
         $the_query->the_post();
+        $id = get_the_ID();
+        $fee = get__post_meta('fee');
     ?>
         <div class="col-lg-4 post-item">
-          <?php
-          echo do_shortcode('[post_box id="' . get_the_ID() . '" class="column-holder -100"]');
-          ?>
+          <div class="post-box">
+            <div class="image-box">
+              <img src="<?= get_the_post_thumbnail_url($id, 'medium') ?>" alt="">
+            </div>
+            <div class="content-box content-box-v1">
+              <div class="heading-excerpt-box">
+                <div class="heading-box">
+                  <h4><?php the_title() ?></h4>
+                </div>
+                <div class="description-box">
+                  <?php the_excerpt() ?>
+                </div>
+              </div>
+              <div class="button-group-box">
+                <?php if ($fee) { ?>
+                  <div class="fee-box">
+                    <?= $fee ?>
+                  </div>
+                <?php } ?>
+                <div class="button-box button-readmore">
+                  <a href="<?php the_permalink() ?>">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       <?php }
     } else {
