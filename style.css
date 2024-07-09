@@ -7304,10 +7304,6 @@ h6 {
 
 section.faqs-categories {
   margin-bottom: 50px; }
-  section.faqs-categories .faqs-img-icon, section.faqs-categories svg {
-    width: 40.98px;
-    height: 51.23px;
-    object-fit: contain; }
   section.faqs-categories .faqs-img {
     object-fit: cover;
     border-radius: 10px; }
@@ -7318,7 +7314,10 @@ section.faqs-categories {
     border-radius: 10px;
     flex-direction: column;
     transition: 500ms; }
-    section.faqs-categories .row-cat a svg {
+    section.faqs-categories .row-cat a .faqs-img-icon, section.faqs-categories .row-cat a svg {
+      width: 40.98px;
+      height: 51.23px;
+      object-fit: contain;
       margin-bottom: 40px; }
     section.faqs-categories .row-cat a .faq-cat-title {
       color: var(--black-color);

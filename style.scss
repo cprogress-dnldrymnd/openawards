@@ -9377,11 +9377,7 @@ h6 {
 
 section.faqs-categories {
     margin-bottom: 50px;
-    .faqs-img-icon,svg {
-        width: 40.98px;
-        height: 51.23px;
-        object-fit: contain;
-    }
+   
     .faqs-img {
         object-fit: cover;
         border-radius: 10px;
@@ -9394,8 +9390,13 @@ section.faqs-categories {
             border-radius: 10px;
             flex-direction: column;
             transition: 500ms;
-            svg {
+       
+            .faqs-img-icon,svg {
+                width: 40.98px;
+                height: 51.23px;
+                object-fit: contain;
                 margin-bottom: 40px;
+
             }
             .faq-cat-title {
                 color: var(--black-color);
