@@ -53,7 +53,7 @@
 ?>>
 <header <?php header_class() ?>>
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row justify-content-between">
 			<div class="col-auto">
 				<div class="logo-holder">
 					<a class="logo" href="<?= get_site_url() ?>">
