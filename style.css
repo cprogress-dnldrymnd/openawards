@@ -244,6 +244,9 @@ header {
   padding: 30px;
   z-index: 99;
   display: block; }
+  @media (max-width: 1090px) {
+    header {
+      padding: 20px 15px; } }
 
 @media screen and (max-width: 575px) {
   header .row .col-xs-6:first-child {
@@ -269,6 +272,9 @@ header .logo-holder {
 
 header .logo-holder a img {
   height: 100%; }
+  @media (max-width: 1090px) {
+    header .logo-holder a img {
+      height: 31px; } }
 
 header nav.navbar {
   float: right; }
@@ -7694,7 +7700,10 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   color: rgba(0, 0, 0, 0.5) !important; }
 
 @media (max-width: 1270px) {
-  div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item.mega-menu-item:not(.sign-in-link):not(.contact-us-link) a {
+  div#mega-menu-wrap-primary
+  ul#mega-menu-primary
+  li.mega-menu-item.mega-menu-item.mega-menu-item:not(.sign-in-link):not(.contact-us-link)
+  a {
     padding: 0 !important; } }
 
 .footer-logos img:not(:last-child) {
