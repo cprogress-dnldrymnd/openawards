@@ -14,7 +14,6 @@ while (have_posts()) {
 ?>
 	<?php
 	get_template_part('template-parts/page', 'breadcrumbs');
-	get_template_part('template-parts/page', 'banner');
 	?>
 	<?php
 
