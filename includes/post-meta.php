@@ -207,7 +207,6 @@ function theme_settings()
     $theme_settings['footer_button_url'] = carbon_get_theme_option('footer_button_url');
     $theme_settings['footer_copyright'] = carbon_get_theme_option('footer_copyright');
     $theme_settings['footer_logos'] = carbon_get_theme_option('footer_logos');
-    
 }
 
 add_action('init', 'theme_settings');
@@ -263,5 +262,14 @@ Container::make('post_meta', 'Qualifications Settings')
             Field::make('text', 'glh', __('GLH')),
             Field::make('text', 'alternativequalificationtitle', __('Alternative qualification Title')),
             Field::make('text', 'classification1', __('Classification 1')),
+        )
+    );
+
+Container::make('theme_options', 'Blog Settings')
+    - set_page_parent('edit.php')
+    ->add_fields(
+        array(
+            Field::make('text', 'blog_page_heading', __('Blog Page Heading')),
+            Field::make('text', 'blog_page_description', __('Blog Page Description')),
         )
     );
