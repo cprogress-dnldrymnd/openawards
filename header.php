@@ -54,14 +54,14 @@
 <header <?php header_class() ?>>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+			<div class="col-auto">
 				<div class="logo-holder">
 					<a class="logo" href="<?= get_site_url() ?>">
 						<img src="<?= logo() ?>" alt="logo" />
 					</a>
 				</div>
 			</div>
-			<div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+			<div class="col-auto">
 				<nav class="navbar navbar-toggleable-md navbar-light">
 					<!--a href="#" class="toggle-mnu navbar-toggler navbar-toggler-right offcanvas" data-toggle="offcanvas" data-target="#navbarSupportedContent"><span></span></a-->
 					<?php
