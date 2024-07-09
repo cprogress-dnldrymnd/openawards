@@ -9928,3 +9928,11 @@ section.archive-section-qualifications {
         }
     }
 }
+
+.footer-logos {
+    img {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}

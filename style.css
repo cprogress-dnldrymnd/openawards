@@ -437,7 +437,7 @@ footer .main-footer {
     padding: 60px 0 15px; } }
 @media screen and (max-width: 767px) {
   footer .main-footer {
-    padding: 50px 0; } }
+    padding: 50px 0 15px; } }
 footer .main-footer .logo-holder {
   position: relative;
   width: 200px; }
@@ -7692,5 +7692,8 @@ section.archive-section-qualifications .fee-box {
       color: var(--opal-black); }
   .qualification-filter-holder > .row:not(:last-child) {
     margin-bottom: 24px; }
+
+.footer-logos img:not(:last-child) {
+  margin-right: 1rem; }
 
 /*# sourceMappingURL=style.css.map */
