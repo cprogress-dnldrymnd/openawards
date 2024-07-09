@@ -8,14 +8,18 @@
 
 get_header(); // This fxn gets the header.php file and renders it 
 if (is_home()) {
-	$blog_page_heading = carbon_get_theme_option('post_page_heading');
-	$blog_page_description = carbon_get_theme_option('post_page_heading');
-
 	$post_type = 'post';
-	$title = $blog_page_heading ? $blog_page_heading : 'Latest News';
+	$heading = carbon_get_theme_option('post_page_heading');
+	$description = carbon_get_theme_option('post_page_heading');
+	$title = $heading ? $heading : 'Latest News';
+	
 } else if (is_post_type_archive('successstories')) {
 	$post_type = 'successstories';
-	$title = 'Success Stories';
+	$heading = carbon_get_theme_option('successstories_page_heading');
+	$description = carbon_get_theme_option('successstories_page_heading');
+
+	$title = $heading ? $heading : 'Success Stories';
+
 }
 ?>
 <div id="primary" class="row-fluid">
@@ -51,7 +55,7 @@ if (is_home()) {
 					</h2>
 				</div>
 				<div class="subheading">
-					<?= wpautop($blog_page_description) ?>
+					<?= wpautop($description) ?>
 				</div>
 			</div>
 		</div>
