@@ -7692,9 +7692,10 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   font-size: 15px !important;
   font-weight: 600 !important;
   color: rgba(0, 0, 0, 0.5) !important; }
-  @media (max-width: 1270px) {
-    div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item.mega-menu-item a {
-      padding: 0 !important; } }
+
+@media (max-width: 1270px) {
+  div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item.mega-menu-item:not(.sign-in-link):not(.contact-us-link) a {
+    padding: 0 !important; } }
 
 .footer-logos img:not(:last-child) {
   margin-right: 1rem; }

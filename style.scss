@@ -9929,11 +9929,13 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     font-size: 15px !important;
     font-weight: 600 !important;
     color: rgba(0, 0, 0, 0.5) !important;
+
+}
+div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item.mega-menu-item:not(.sign-in-link):not(.contact-us-link) a {
     @media (max-width: 1270px) {
         padding: 0 !important;
     }
 }
-
 
 
 .footer-logos {
