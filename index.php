@@ -10,13 +10,13 @@ get_header(); // This fxn gets the header.php file and renders it
 if (is_home()) {
 	$post_type = 'post';
 	$heading = carbon_get_theme_option('post_page_heading');
-	$description = carbon_get_theme_option('post_page_heading');
+	$description = carbon_get_theme_option('post_page_description');
 	$title = $heading ? $heading : 'Latest News';
 	
 } else if (is_post_type_archive('successstories')) {
 	$post_type = 'successstories';
 	$heading = carbon_get_theme_option('successstories_page_heading');
-	$description = carbon_get_theme_option('successstories_page_heading');
+	$description = carbon_get_theme_option('successstories_page_description');
 
 	$title = $heading ? $heading : 'Success Stories';
 
