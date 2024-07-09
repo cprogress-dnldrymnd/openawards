@@ -279,7 +279,7 @@ Container::make('theme_options', 'Success Stories Settings')
     ->set_page_parent('edit.php?post_type=successstories')
     ->add_fields(
         array(
-            Field::make('text', 'successstories_page_heading', __('Blog Page Heading')),
-            Field::make('textarea', 'successstories_page_description', __('Blog Page Description')),
+            Field::make('text', 'successstories_page_heading', __('Success Stories Page Heading')),
+            Field::make('textarea', 'successstories_page_description', __('Success Stories Description')),
         )
     );
