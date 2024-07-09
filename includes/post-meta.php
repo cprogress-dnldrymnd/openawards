@@ -218,6 +218,7 @@ Container::make('term_meta', __('FAQs Category Properties'))
     ->where('term_taxonomy', '=', 'faqs_category')
     ->add_fields(array(
         Field::make('color', 'color', __('Color')),
+        Field::make('image', 'Icon', __('Icon')),
     ));
 
 
