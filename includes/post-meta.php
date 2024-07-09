@@ -270,6 +270,6 @@ Container::make('theme_options', 'Blog Settings')
     ->add_fields(
         array(
             Field::make('text', 'blog_page_heading', __('Blog Page Heading')),
-            Field::make('text', 'blog_page_description', __('Blog Page Description')),
+            Field::make('textarea', 'blog_page_description', __('Blog Page Description')),
         )
     );
