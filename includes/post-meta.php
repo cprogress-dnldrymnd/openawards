@@ -186,6 +186,7 @@ Container::make('theme_options', 'Theme Options')
             Field::make('text', 'footer_button_text', __('Footer Button Text')),
             Field::make('text', 'footer_button_url', __('Footer Button URL')),
             Field::make('textarea', 'footer_copyright', __('Footer Copyright')),
+            Field::make('media_gallery', 'footer_logos', __('Footer Logos')),
         )
     );
 
@@ -205,6 +206,8 @@ function theme_settings()
     $theme_settings['footer_button_text'] = carbon_get_theme_option('footer_button_text');
     $theme_settings['footer_button_url'] = carbon_get_theme_option('footer_button_url');
     $theme_settings['footer_copyright'] = carbon_get_theme_option('footer_copyright');
+    $theme_settings['footer_logos'] = carbon_get_theme_option('footer_logos');
+    
 }
 
 add_action('init', 'theme_settings');
