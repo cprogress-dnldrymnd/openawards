@@ -269,7 +269,17 @@ Container::make('theme_options', 'Blog Settings')
     ->set_page_parent('edit.php')
     ->add_fields(
         array(
-            Field::make('text', 'blog_page_heading', __('Blog Page Heading')),
-            Field::make('textarea', 'blog_page_description', __('Blog Page Description')),
+            Field::make('text', 'post_page_heading', __('Blog Page Heading')),
+            Field::make('textarea', 'post_page_description', __('Blog Page Description')),
+        )
+    );
+
+
+Container::make('theme_options', 'Success Stories Settings')
+    ->set_page_parent('edit.php?post_type=successstories')
+    ->add_fields(
+        array(
+            Field::make('text', 'successstories_page_heading', __('Blog Page Heading')),
+            Field::make('textarea', 'successstories_page_description', __('Blog Page Description')),
         )
     );

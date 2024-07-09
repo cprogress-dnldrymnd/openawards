@@ -8,8 +8,8 @@
 
 get_header(); // This fxn gets the header.php file and renders it 
 if (is_home()) {
-	$blog_page_heading = carbon_get_theme_option('blog_page_heading');
-	$blog_page_description = carbon_get_theme_option('blog_page_description');
+	$blog_page_heading = carbon_get_theme_option('post_page_heading');
+	$blog_page_description = carbon_get_theme_option('post_page_heading');
 
 	$post_type = 'post';
 	$title = $blog_page_heading ? $blog_page_heading : 'Latest News';
