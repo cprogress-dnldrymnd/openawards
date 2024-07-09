@@ -5180,12 +5180,6 @@ img.pay-methods {
 div#mega-menu-wrap-primary {
   background: transparent; }
 
-div#mega-menu-wrap-primary ul li a {
-  font-family: var(--primary-font) !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  color: rgba(0, 0, 0, 0.5) !important; }
-
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link {
   background: transparent;
   color: var(--high-violet) !important; }
@@ -7692,6 +7686,15 @@ section.archive-section-qualifications .fee-box {
       color: var(--opal-black); }
   .qualification-filter-holder > .row:not(:last-child) {
     margin-bottom: 24px; }
+
+div#mega-menu-wrap-primary ul li a {
+  font-family: var(--primary-font) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: rgba(0, 0, 0, 0.5) !important; }
+  @media (max-width: 1270px) {
+    div#mega-menu-wrap-primary ul li a {
+      padding: 0 !important; } }
 
 .footer-logos img:not(:last-child) {
   margin-right: 1rem; }
