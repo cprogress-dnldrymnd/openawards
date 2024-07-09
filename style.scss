@@ -9377,6 +9377,11 @@ h6 {
 
 section.faqs-categories {
     margin-bottom: 50px;
+    .faqs-img-icon,svg {
+        width: 40.98px;
+        height: 51.23px;
+        object-fit: contain;
+    }
     .faqs-img {
         object-fit: cover;
         border-radius: 10px;

@@ -7304,6 +7304,10 @@ h6 {
 
 section.faqs-categories {
   margin-bottom: 50px; }
+  section.faqs-categories .faqs-img-icon, section.faqs-categories svg {
+    width: 40.98px;
+    height: 51.23px;
+    object-fit: contain; }
   section.faqs-categories .faqs-img {
     object-fit: cover;
     border-radius: 10px; }
