@@ -266,7 +266,7 @@ Container::make('post_meta', 'Qualifications Settings')
     );
 
 Container::make('theme_options', 'Blog Settings')
-    - set_page_parent('edit.php')
+    ->set_page_parent('edit.php')
     ->add_fields(
         array(
             Field::make('text', 'blog_page_heading', __('Blog Page Heading')),
