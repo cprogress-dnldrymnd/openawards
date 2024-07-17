@@ -4825,10 +4825,16 @@ body.not-logged-in #bookModal #pseudo-send-booking {
   align-items: center;
   justify-content: center;
   border-radius: 50%; }
+  .hero-slider .swiper-button-next:after,
+  .hero-slider .swiper-button-prev:after {
+    display: none; }
   @media (max-width: 991px) {
     .hero-slider .swiper-button-next,
     .hero-slider .swiper-button-prev {
       display: none; } }
+@media (min-width: 992px) {
+  .hero-slider .swiper-pagination {
+    display: none; } }
 
 @media (min-width: 1300px) {
   .container {
