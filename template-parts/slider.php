@@ -47,13 +47,27 @@ $slider = carbon_get_post_meta($args['slider_id'], 'slides');
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+                    <g id="Group_865" data-name="Group 865" transform="translate(454 1351) rotate(180)">
+                        <g id="Ellipse_275" data-name="Ellipse 275" transform="translate(398 1295)" fill="#fff" stroke="#b57dff" stroke-width="1">
+                            <circle cx="28" cy="28" r="28" stroke="none" />
+                            <circle cx="28" cy="28" r="27.5" fill="none" />
+                        </g>
+                        <g id="Group_577" data-name="Group 577">
+                            <path id="Path_2151" data-name="Path 2151" d="M4506.365,14956l8.41,8.41-8.41,8.408" transform="translate(-4083.57 -13641.41)" fill="none" stroke="#b57dff" stroke-width="4" />
+                        </g>
+                    </g>
                 </svg>
             </div>
             <div class="swiper-button-prev">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                <svg xmlns="http://www.w3.org/2000/svg" id="Group_866" data-name="Group 866" width="56" height="56" viewBox="0 0 56 56">
+                    <g id="Ellipse_275" data-name="Ellipse 275" fill="#fff" stroke="#b57dff" stroke-width="1">
+                        <circle cx="28" cy="28" r="28" stroke="none" />
+                        <circle cx="28" cy="28" r="27.5" fill="none" />
+                    </g>
+                    <g id="Group_577" data-name="Group 577" transform="translate(24.795 19.591)">
+                        <path id="Path_2151" data-name="Path 2151" d="M0,16.818l8.41-8.41L0,0" fill="none" stroke="#b57dff" stroke-width="4" />
+                    </g>
                 </svg>
             </div>
         </div>
