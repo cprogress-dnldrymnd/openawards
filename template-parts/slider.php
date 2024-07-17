@@ -15,7 +15,7 @@ $slider = carbon_get_post_meta($args['slider_id'], 'slides');
                             <div class="container">
                                 <div class="content">
                                     <div class="row">
-                                        <div class="col-lg-6 col-md-6">
+                                        <div class="col-lg-8">
                                             <div class="banner-content">
                                                 <h2><?= $slide['heading'] ?></h2>
                                                 <div class="description-box">
@@ -31,7 +31,7 @@ $slider = carbon_get_post_meta($args['slider_id'], 'slides');
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-6">
+                                        <div class="col-lg-4">
                                             <?php if ($image_url) { ?>
                                                 <div class="banner-image">
                                                     <img src="<?= $image_url ?>" alt="<?= esc_html($slide['heading']) ?>" />
