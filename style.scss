@@ -6052,9 +6052,19 @@ body.not-logged-in #bookModal #pseudo-send-booking {
                 .banner-content {
                     h2 {
                         color: var(--white-color);
+                        font-weight: 600;
                         span {
                             color: var(--blush-pink);
                         }
+                    }
+                    .description-box {
+                         *{
+                            color: var(--white-color);
+                         }
+                    }
+                    .btn-outline-primary {
+                        background-color: var(--opal-black);
+                        color: var(--white-color);
                     }
                 }
             }
