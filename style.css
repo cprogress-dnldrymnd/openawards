@@ -4793,8 +4793,13 @@ body.not-logged-in #bookModal #pseudo-send-booking {
     .hero-slider .mySwiperSlider .swiper-slide section.hero-banner .banner-content .description-box * {
       color: var(--white-color); }
     .hero-slider .mySwiperSlider .swiper-slide section.hero-banner .banner-content .btn-outline-primary {
-      background-color: var(--opal-black);
-      color: var(--white-color); }
+      background-color: var(--opal-black) !important;
+      color: var(--white-color) !important;
+      border-color: var(--opal-black); }
+      .hero-slider .mySwiperSlider .swiper-slide section.hero-banner .banner-content .btn-outline-primary:hover {
+        background-color: var(--white-black) !important;
+        color: var(--opal-color) !important;
+        border-color: var(--opal-black); }
 .hero-slider .row {
   width: 100%; }
   @media (min-width: 768px) {
