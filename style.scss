@@ -6056,14 +6056,17 @@ body.not-logged-in #bookModal #pseudo-send-booking {
                         span {
                             color: var(--blush-pink);
                         }
-                        @media(min-width: 992px) {
+                        @media (min-width: 992px) {
                             font-size: 64px;
                         }
                     }
                     .description-box {
                         * {
-                            font-family: 'Poppins';
+                            max-width: 545px;
+                            font-family: "Poppins";
                             font-size: 18px;
+                            color: var(--white-color);
+                            font-weight: 600;
                         }
                     }
                     .btn-outline-primary {
