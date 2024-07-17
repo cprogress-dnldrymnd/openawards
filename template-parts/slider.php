@@ -14,7 +14,7 @@ $slider = carbon_get_post_meta($args['slider_id'], 'slides');
                         <section class="hero-banner" style="background-image:url('<?= $background ?>')">
                             <div class="container">
                                 <div class="content">
-                                    <div class="row">
+                                    <div class="row align-items-center g-4">
                                         <div class="col-lg-8">
                                             <div class="banner-content">
                                                 <h2><?= $slide['heading'] ?></h2>
