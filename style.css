@@ -727,12 +727,14 @@ main section.hero-banner .container .content .col-lg-6 .banner-content {
   display: block;
   z-index: 5; }
 
+main section.hero-banner .container .content .col-lg-6 .banner-content {
+  font-family: var(--primary-font); }
+
 main section.hero-banner .container .content .col-lg-6 .banner-content h1 {
   margin-bottom: 30px;
-  font-family: var(--primary-font);
   font-weight: 900;
   font-size: 50px;
-  color: var(--opal-black); }
+  color: var(--white-color); }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   main section.hero-banner .container .content .col-lg-6 .banner-content h1 {
@@ -4777,13 +4779,16 @@ body.not-logged-in #bookModal #pseudo-send-booking {
   .hero-slider .mySwiperSlider .swiper-slide section.hero-banner {
     height: 100% !important;
     margin-top: 0 !important;
-    margin-top: -150px;
     padding-top: 120px;
-    padding-bottom: 50px;
+    padding-bottom: 120px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     z-index: -2; }
+    .hero-slider .mySwiperSlider .swiper-slide section.hero-banner .banner-content h2 {
+      color: var(--white-color); }
+      .hero-slider .mySwiperSlider .swiper-slide section.hero-banner .banner-content h2 span {
+        color: var(--blush-pink); }
 .hero-slider .row {
   width: 100%; }
   @media (min-width: 768px) {
