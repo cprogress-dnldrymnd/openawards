@@ -10012,8 +10012,8 @@ div#mega-menu-wrap-primary
         > .vc_row {
             &:not(.vc_row-no-padding) {
                 max-width: 1300px;
-                margin-left: auto;
-                margin-right: auto;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
         }
     }

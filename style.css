@@ -7758,7 +7758,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 
 .page-template-page-fullwidth #content > .vc_row:not(.vc_row-no-padding) {
   max-width: 1300px;
-  margin-left: auto;
-  margin-right: auto; }
+  margin-left: auto !important;
+  margin-right: auto !important; }
 
 /*# sourceMappingURL=style.css.map */
