@@ -16,7 +16,8 @@
             ?>
                 <?php if (!get_field('hide_breadcrumbs')) { ?>
                     <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
-                <?php } else { ?>
+                <?php }  ?>
+                <!--
                     <section class="breadcrumbs wocom">
                         <nav aria-label="breadcrumb">
                             <div class="container<?= container_width() ?>">
@@ -27,8 +28,7 @@
                                 </ol>
                             </div>
                         </nav>
-                    </section>
-                <?php } ?>
+                    </section>-->
 
                 <?php the_content() ?>
 
