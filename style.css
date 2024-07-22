@@ -7756,4 +7756,9 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 .footer-logos img:not(:last-child) {
   margin-right: 1rem; }
 
+.page-template-page-fullwidth #content > .vc_row:not(.vc_row-no-padding) {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto; }
+
 /*# sourceMappingURL=style.css.map */
