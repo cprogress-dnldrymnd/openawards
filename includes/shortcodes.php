@@ -300,6 +300,7 @@ function latest_news() {
 	return ob_get_clean();
 }
 
+add_shortcode('latest_news', 'latest_news');
 
 function post_slider($atts)
 {
