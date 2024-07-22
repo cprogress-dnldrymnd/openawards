@@ -162,7 +162,7 @@
   });
 
 
-  var swiper = new Swiper(".swiperPostSlider", {
+  var swiper = new Swiper(".swiperPostSlider:not(.swiperPostSlider-latestnews)", {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
@@ -175,6 +175,38 @@
       prevEl: ".swiper-button-prev-post",
     },
   });
+
+
+  
+  var swiper = new Swiper(".swiperPostSlider-latestnews", {
+    spaceBetween: 0,
+    loop: true,
+    breakpoints: {
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+      },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-post",
+      prevEl: ".swiper-button-prev-post",
+    },
+  });
+
+
+  swiperPostSlider-latestnews
 </script>
 <?php wp_footer();
 // This fxn allows plugins to insert themselves/scripts/css/files (right here) into the footer of your website. 
