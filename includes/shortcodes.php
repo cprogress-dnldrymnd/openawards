@@ -294,6 +294,12 @@ function e_campus()
 
 add_shortcode('e_campus', 'e_campus');
 
+function latest_news() {
+	ob_start();
+	get_template_part('template-parts/blog/latest-news');
+	return ob_get_clean();
+}
+
 
 function post_slider($atts)
 {
