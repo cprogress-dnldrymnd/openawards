@@ -9,7 +9,7 @@ $posts = get_posts($args);
 
 <section class="post-slider">
     <div class="container">
-        <div class="swiperPostSlider-holder swiperPostSlider-holder-shadow position-relative swiper-button-style-1">
+        <div class="swiperPostSlider-holder position-relative swiper-button-style-1">
             <div class="swiper  swiperPostSlider-latestnews bg-light">
                 <div class="swiper-wrapper">
                     <?php foreach ($posts as $post) { ?>
