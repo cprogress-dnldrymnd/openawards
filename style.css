@@ -7761,4 +7761,9 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   margin-left: auto !important;
   margin-right: auto !important; }
 
+.swiperPostSlider-latestnews .swiper-slide {
+  height: auto; }
+  .swiperPostSlider-latestnews .swiper-slide .post-box.post-box:not(.post-box-slider) {
+    box-shadow: none; }
+
 /*# sourceMappingURL=style.css.map */

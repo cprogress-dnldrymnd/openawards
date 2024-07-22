@@ -10018,3 +10018,12 @@ div#mega-menu-wrap-primary
         }
     }
 }
+
+.swiperPostSlider-latestnews {
+    .swiper-slide {
+        height: auto;
+        .post-box.post-box:not(.post-box-slider) {
+            box-shadow: none;
+        }
+    }
+}
