@@ -9,6 +9,16 @@ $posts = get_posts($args);
 
 <section class="post-slider">
     <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2>Latest News from Open Awards</h2>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="vc_btn3-container vc_btn3-inline"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" href="#" title="">
+                    All News
+                </a></div>
+            </div>
+        </div>
         <div class="swiperPostSlider-holder position-relative swiper-button-style-1">
             <div class="swiper  swiperPostSlider-latestnews ">
                 <div class="swiper-wrapper">
