@@ -162,7 +162,7 @@
   });
 
 
-  var swiper = new Swiper(".swiperPostSlider:not(.swiperPostSlider-latestnews)", {
+  var swiper = new Swiper(".swiperPostSlider", {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
