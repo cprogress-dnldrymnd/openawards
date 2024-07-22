@@ -7764,4 +7764,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 .swiperPostSlider-latestnews .swiper-slide {
   height: auto; }
 
+@media (min-width: 992px) {
+  section.latest-news h2 {
+    font-size: 40px; } }
+
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,7 @@ $args = array(
 $posts = get_posts($args);
 ?>
 
-<section class="post-slider">
+<section class="post-slider latest-news">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8">

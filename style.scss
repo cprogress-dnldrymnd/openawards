@@ -10024,3 +10024,11 @@ div#mega-menu-wrap-primary
         height: auto;
     }
 }
+
+section.latest-news {
+    h2 {
+        @media (min-width: 992px) {
+            font-size: 40px;
+        }
+    }
+}
