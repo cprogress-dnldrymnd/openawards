@@ -11,6 +11,8 @@ $terms = get_terms(array(
     'taxonomy'   => 'faqs_category',
     'hide_empty' => false,
 ));
+
+$faqs_page_heading = carbon_get_theme_option('faqs_page_heading');
 ?>
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
