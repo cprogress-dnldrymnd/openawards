@@ -14,6 +14,8 @@ $terms = get_terms(array(
 
 $faqs_page_heading = carbon_get_theme_option('faqs_page_heading');
 $faqs_page_description = carbon_get_theme_option('faqs_page_description');
+$faqs_image = carbon_get_theme_option('faqs_image');
+$faqs_image_url = wp_get_attachment_image_url($faqs_image, 'large');
 ?>
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
@@ -35,7 +37,7 @@ $faqs_page_description = carbon_get_theme_option('faqs_page_description');
             <div class="container">
                 <div class="row  g-5">
                     <div class="col-lg-4">
-                        <img src="https://openawards.theprogressteam.com/wp-content/uploads/2024/04/pexels-julia-m-cameron-4144222.png" class="h-100 faqs-img">
+                        <img src="<?= $faqs_image_url ?>" class="h-100 faqs-img">
                     </div>
                     <div class="col-lg-8">
                         <div class="row row-cat g-5 h-100">

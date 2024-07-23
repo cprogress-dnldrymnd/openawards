@@ -289,6 +289,7 @@ Container::make('theme_options', 'FAQs Settings')
     ->set_page_parent('edit.php?post_type=faqs')
     ->add_fields(
         array(
+            Field::make('image', 'faqs_image', __('FAQs Image')),
             Field::make('text', 'faqs_page_heading', __('FAQs Page Heading')),
             Field::make('textarea', 'faqs_page_description', __('FAQs Page Description')),
         )
