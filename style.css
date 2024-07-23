@@ -7392,7 +7392,8 @@ section.faqs-categories {
   font-family: var(--primary-font);
   display: inline-block;
   line-height: 1;
-  border-color: var(--color); }
+  border-color: var(--color);
+  margin-bottom: 1rem; }
   .faqs-category-filter .faqs-filter-holder label:hover {
     background-color: var(--color);
     color: var(--white-color); }
