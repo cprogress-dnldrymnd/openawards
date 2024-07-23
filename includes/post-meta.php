@@ -286,7 +286,7 @@ Container::make('theme_options', 'Success Stories Settings')
 
 
 Container::make('theme_options', 'FAQs Settings')
-    ->set_page_parent('edit.php')
+    ->set_page_parent('edit.php?post_type=faqs')
     ->add_fields(
         array(
             Field::make('text', 'faqs_page_heading', __('FAQs Page Heading')),
