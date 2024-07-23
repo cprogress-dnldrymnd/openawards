@@ -13,6 +13,7 @@ $terms = get_terms(array(
 ));
 
 $faqs_page_heading = carbon_get_theme_option('faqs_page_heading');
+$faqs_page_description = carbon_get_theme_option('faqs_page_description');
 ?>
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
@@ -21,11 +22,11 @@ $faqs_page_heading = carbon_get_theme_option('faqs_page_heading');
             <div class="container text-center">
                 <div class="heading-box">
                     <h2>
-                        Frequently Asked Questions
+                        <?= $faqs_page_heading ?>
                     </h2>
                 </div>
                 <div class="subheading">
-                    <p>Open Awards believes in fair and transparent pricing. We believe this enables people to make decisions effectively. View our prices for the 2023/2024 courses below.</p>
+                    <?= wpautop($faqs_page_description) ?>
                 </div>
             </div>
         </div>
