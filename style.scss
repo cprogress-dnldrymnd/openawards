@@ -9115,7 +9115,8 @@ form#resources_form {
         .container {
             max-width: 800px;
         }
-        h2 {
+        h2,
+        h1 {
             @media (min-width: 1200px) {
                 max-width: 1000px;
             }
@@ -9127,7 +9128,8 @@ form#resources_form {
         }
     }
 
-    h2 {
+    h2,
+    h1 {
         color: var(--black-color);
         @media (min-width: 1200px) {
             font-size: 69px;
