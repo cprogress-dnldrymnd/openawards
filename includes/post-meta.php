@@ -283,3 +283,13 @@ Container::make('theme_options', 'Success Stories Settings')
             Field::make('textarea', 'successstories_page_description', __('Success Stories Description')),
         )
     );
+
+
+Container::make('theme_options', 'FAQs Settings')
+    ->set_page_parent('edit.php')
+    ->add_fields(
+        array(
+            Field::make('text', 'faqs_page_heading', __('FAQs Page Heading')),
+            Field::make('textarea', 'faqs_page_description', __('FAQs Page Description')),
+        )
+    );
