@@ -9747,6 +9747,12 @@ section.latest-news {
         }
     }
 
+    &.qualification-filter-holder.searching {
+        .spinner-holder {
+            display: none;
+        }
+    }
+
 
 }
 

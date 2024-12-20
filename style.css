@@ -7174,6 +7174,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
       .qualification-filter-holder .spinner-holder .spinner svg {
         width: 40px;
         height: 40px; }
+  .qualification-filter-holder.qualification-filter-holder.searching .spinner-holder {
+    display: none; }
 
 .qualification-filter-buttons .filter-button button {
   font-size: 18px;

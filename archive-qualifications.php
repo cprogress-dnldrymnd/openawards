@@ -159,11 +159,15 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 
     function search_change() {
         jQuery('.search-change-trigger').click(function (e) {
+            jQuery('.qualification-filter-holder').addClass('searching');
             jQuery('.filter-button').removeClass('filter-active');
             jQuery(this).parent().addClass('filter-active');
             $search_type = jQuery(this).attr('search_type');
             jQuery('.search-field').addClass('d-none');
             jQuery($search_type).removeClass('d-none');
+            setTimeout(function () {
+                jQuery('.qualification-filter-holder').removeClass('searching');
+            }, 500);
             e.preventDefault();
         });
     }
