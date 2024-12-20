@@ -12,7 +12,7 @@
         <div class="key-information-box">
           <h3>Key Information</h3>
           <div class="key-information-holder">
-            <div class="row">
+            <div class="row g-4">
               <div class="col-sm-6">
                 <div class="key-info-items">
                   <div class="key-info-item"><strong>Qualification Code:</strong> 603/6198/0</div>
