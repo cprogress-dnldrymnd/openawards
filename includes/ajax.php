@@ -376,7 +376,9 @@ function archive_ajax_qualifications()
     }
 
     foreach ($resultArray as $result) {
+      echo '<div class="row row-results g-5">';
       echo qual_grid($result);
+      echo '</div>';
     }
     // Output as JSON
     echo '<pre>';
