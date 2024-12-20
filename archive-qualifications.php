@@ -10,8 +10,8 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 
         <section class="qualification-filter">
             <div class="container">
-                <div class="qualification-filter-wrapper">
-                    <div class="qualification-filter-button">
+                <div class="qualification-filter">
+                    <div class="qualification-filter-buttons">
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="filter-button filter-active">
@@ -27,7 +27,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                     </button>
                                 </div>
                             </div>
-                              <div class="col-lg-4">
+                            <div class="col-lg-4">
                                 <div class="filter-button filter-access-to-he">
                                     <button class="w-100 text-center d-flex justify-content-between align-items-center">
                                         Search Qualifications <?= $chev ?>
@@ -36,70 +36,70 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="qualification-filter-holder">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <label for="">Search</label>
+                    <div class="qualification-filter-holder">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <label for="">Search</label>
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="text" name="s" placeholder="Keywords" class="trigger-type">
+                            </div>
                         </div>
-                        <div class="col-lg-7">
-                            <input type="text" name="s" placeholder="Keywords" class="trigger-type">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <label for="">Qualifications</label>
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="text" name="code" placeholder="Qualification code" class="trigger-type">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <label for="">Qualifications</label>
-                        </div>
-                        <div class="col-lg-7">
-                            <input type="text" name="code" placeholder="Qualification code" class="trigger-type">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <label for="">Units</label>
-                        </div>
-                        <div class="col-lg-7">
-                            <?php
-                            $minages = get_unique_meta_values('_minage');
-                            ?>
-                            <select class="trigger-ajax-change" name="minage" id="minage">
-                                <option value="">Minimum age e.g.16</option>
-                                <?php foreach ($minages as $minage) { ?>
-                                    <?php if ($minage) { ?>
-                                        <option value="<?= $minage ?>"><?= $minage ?></option>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <label for="">Units</label>
+                            </div>
+                            <div class="col-lg-7">
+                                <?php
+                                $minages = get_unique_meta_values('_minage');
+                                ?>
+                                <select class="trigger-ajax-change" name="minage" id="minage">
+                                    <option value="">Minimum age e.g.16</option>
+                                    <?php foreach ($minages as $minage) { ?>
+                                        <?php if ($minage) { ?>
+                                            <option value="<?= $minage ?>"><?= $minage ?></option>
+                                        <?php } ?>
                                     <?php } ?>
-                                <?php } ?>
-                            </select>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <label for="">Access to HE</label>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="row">
-                                <div class="col-6">
-                                    <?php
-                                    $levels = get_unique_meta_values('_level');
-                                    ?>
-                                    <select class="trigger-ajax-change" name="level" id="level">
-                                        <option value="">Entry level</option>
-                                        <?php foreach ($levels as $level) { ?>
-                                            <option value="<?= $level ?>"><?= $level ?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                                <div class="col-6">
-                                    <?php
-                                    $sectors = get_unique_meta_values('_type');
-                                    ?>
-                                    <select class="trigger-ajax-change" name="sector" id="sector">
-                                        <option value="">Sector</option>
-                                        <?php foreach ($sectors as $sector) { ?>
-                                            <option value="<?= $sector ?>"><?= $sector ?></option>
-                                        <?php } ?>
-                                    </select>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <label for="">Access to HE</label>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <?php
+                                        $levels = get_unique_meta_values('_level');
+                                        ?>
+                                        <select class="trigger-ajax-change" name="level" id="level">
+                                            <option value="">Entry level</option>
+                                            <?php foreach ($levels as $level) { ?>
+                                                <option value="<?= $level ?>"><?= $level ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <?php
+                                        $sectors = get_unique_meta_values('_type');
+                                        ?>
+                                        <select class="trigger-ajax-change" name="sector" id="sector">
+                                            <option value="">Sector</option>
+                                            <?php foreach ($sectors as $sector) { ?>
+                                                <option value="<?= $sector ?>"><?= $sector ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>

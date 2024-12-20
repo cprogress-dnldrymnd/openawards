@@ -7103,28 +7103,6 @@ section.archive-section-qualifications .fee-box {
   font-size: 18px;
   font-weight: 500; }
 
-.qualification-filter-holder {
-  margin-top: 30px;
-  padding: 25px 50px;
-  border-radius: 10px;
-  border: 2px solid var(--high-violet);
-  font-family: var(--primary-font); }
-  .qualification-filter-holder label {
-    font-weight: 500;
-    color: var(--opal-black); }
-  .qualification-filter-holder select,
-  .qualification-filter-holder input {
-    width: 100%;
-    border: 1px solid var(--gray-color);
-    padding: 6px 20px;
-    border-radius: 4px;
-    color: var(--opal-black); }
-    .qualification-filter-holder select::placeholder,
-    .qualification-filter-holder input::placeholder {
-      color: var(--opal-black); }
-  .qualification-filter-holder > .row:not(:last-child) {
-    margin-bottom: 24px; }
-
 div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item.mega-menu-item a {
   font-family: var(--primary-font) !important;
   font-size: 15px !important;
@@ -7149,6 +7127,34 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 @media (min-width: 992px) {
   section.latest-news h2 {
     font-size: 40px; } }
+
+.qualification-filter-wrapper {
+  margin-top: 50px;
+  background-color: var(--white-color);
+  border: 1px solid #00000008;
+  border-radius: 10px; }
+
+.qualification-filter-holder {
+  margin-top: 30px;
+  padding: 25px 50px;
+  border-radius: 10px;
+  border: 2px solid var(--high-violet);
+  font-family: var(--primary-font); }
+  .qualification-filter-holder label {
+    font-weight: 500;
+    color: var(--opal-black); }
+  .qualification-filter-holder select,
+  .qualification-filter-holder input {
+    width: 100%;
+    border: 1px solid var(--gray-color);
+    padding: 6px 20px;
+    border-radius: 4px;
+    color: var(--opal-black); }
+    .qualification-filter-holder select::placeholder,
+    .qualification-filter-holder input::placeholder {
+      color: var(--opal-black); }
+  .qualification-filter-holder > .row:not(:last-child) {
+    margin-bottom: 24px; }
 
 .qualification-filter-button .filter-button {
   font-size: 18px;
