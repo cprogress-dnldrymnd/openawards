@@ -96,7 +96,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                 <select class="trigger-ajax-change" name="sector" id="sector">
                                     <option value="">Sector</option>
                                     <?php foreach ($sectors as $sector) { ?>
-                                        <option value="<?= $sector->Classification ?>"><?= $sector->Classification ?>
+                                        <option value="<?= $sector->Code ?>"><?= $sector->Classification ?>
                                         </option>
                                     <?php } ?>
                                 </select>
