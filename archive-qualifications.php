@@ -15,7 +15,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="filter-button filter-active">
-                                    <button search_type="Search Qualifications"
+                                    <button search_type=".search-qual"
                                         class="search-change-trigger w-100 text-center d-flex justify-content-between align-items-center">
                                         Search Qualifications <?= $chev ?>
                                     </button>
@@ -23,7 +23,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                             <div class="col-lg-4">
                                 <div class="filter-button filter-units">
-                                    <button search_type="Search Units"
+                                    <button search_type=".search-units"
                                         class="search-change-trigger w-100 text-center d-flex justify-content-between align-items-center">
                                         Search Units <?= $chev ?>
                                     </button>
@@ -31,7 +31,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                             <div class="col-lg-4">
                                 <div class="filter-button filter-access-to-he">
-                                    <button search_type="Search Access To HE"
+                                    <button search_type=".search-access-to-he"
                                         class="search-change-trigger w-100 text-center d-flex justify-content-between align-items-center">
                                         Search Access To HE <?= $chev ?>
                                     </button>
@@ -57,7 +57,8 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                 <input type="text" name="open_awards_unit_id"
                                     placeholder="Open Awards Unit Code e.g. UA33ART12" class="trigger-type">
                             </div>
-                            <div class="col-lg-6 search-field search-units search-access-to-he open-awards-unit-id d-none">
+                            <div
+                                class="col-lg-6 search-field search-units search-access-to-he open-awards-unit-id d-none">
                                 <input type="text" name="open_awards_unit_id"
                                     placeholder="Open Awards Unit ID e.g. CBF498" class="trigger-type">
                             </div>
@@ -150,10 +151,11 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 
     function search_change() {
         jQuery('.search-change-trigger').click(function (e) {
+            jQuery('.filter-button').removeClass('active');
+            jQuery(this).parent().addClass('active');
             $search_type = jQuery(this).attr('search_type');
-            if ($search_type == 'Search Qualifications') {
-
-            }
+            jQuery('.search-field').addClass('d-none');
+            jQuery($search_type).removeClass('d-none');
             e.preventDefault();
         });
     }
