@@ -1,11 +1,14 @@
 <?php
+/** Quba Functions */
+function QUBA_GetQCASectors() {
+
+}
 function search_qualifications($data)
 {
   ob_start();
   // Define the SOAP client
   $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
   // Set the SOAP action
-  $soapAction = 'http://tempuri.org/QUBA_QualificationSearch';
 
   // Create the SOAP request
   $request = array(
