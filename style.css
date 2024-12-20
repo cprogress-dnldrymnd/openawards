@@ -7226,7 +7226,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 
 section.info-boxes {
   font-family: var(--primary-font);
-  padding-top: 30px; }
+  padding-top: 30px;
+  padding-bottom: 100px; }
   section.info-boxes .info-box {
     padding: 45px;
     border-radius: 10px;
