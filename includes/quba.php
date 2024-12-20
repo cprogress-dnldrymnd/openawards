@@ -83,15 +83,12 @@ function search_qualifications($data)
     }
 
     if ($data['qualificationType'] != '') {
-      $resultArray_final = array_filter($resultArray, function ($result, $data) {
-        return $result['Type'] == $data['qualificationType'];
+      $resultArray_final = array_filter($resultArray, function ($result) {
+        return $result['Type'] == 'Vocationally-Related Qualification';
       });
     }
-    else {
-      $resultArray_final = $resultArray;
-    }
     echo '<div class="row row-results g-5">';
-    foreach ($resultArray_final as $result) {
+    foreach ($resultArray as $result) {
 
       echo qual_grid($result);
     }
