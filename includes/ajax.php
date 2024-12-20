@@ -383,8 +383,6 @@ function archive_ajax_qualifications()
     echo json_encode($resultArray, JSON_PRETTY_PRINT);
     echo '</pre>';
 
-
-
   }
   catch (Exception $e) {
     var_dump($e);
@@ -397,10 +395,10 @@ function qual_grid($result): void
 {
   ob_start();
   if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
-    $level_val = str_replace('E', 'Entry Level ', $level);
+    $level_val = str_replace('E', 'Entry Level ', $result['Level']);
   }
   else {
-    $level_val = str_replace('L', 'Level ', $level);
+    $level_val = str_replace('L', 'Level ', subject: $result['Level']);
   }
   ?>
   <div class="col-lg-4 post-item">

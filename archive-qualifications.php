@@ -165,17 +165,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
     jQuery(document).ready(function () {
         search_change();
 
-        var typingTimer;
-        var doneTypingInterval = 500;
-
-        jQuery('.trigger-type').on('keyup', function () {
-            clearTimeout(typingTimer);
-            typingTimer = setTimeout(doneTyping, doneTypingInterval);
-        });
-
-        jQuery('.trigger-ajax-change').change(function (e) {
-            ajax_qualifications(0);
-        });
+        
     });
 
     function search_change() {
