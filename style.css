@@ -7048,6 +7048,14 @@ section.single-event-section {
     background-color: var(--sun-orange) !important;
     border-color: var(--sun-orange) !important;
     color: var(--white-color) !important; }
+.button-box-v2.button-primary a {
+  background: var(--opal-black) !important;
+  color: var(--white-color) !important;
+  border: 1px solid var(--opal-black) !important; }
+  .button-box-v2.button-primary a:hover {
+    background-color: var(--sun-orange) !important;
+    border-color: var(--sun-orange) !important;
+    color: var(--white-color) !important; }
 .button-box-v2.button-bordered a {
   background: var(--white-color) !important;
   color: var(--high-violet) !important;

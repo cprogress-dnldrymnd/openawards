@@ -34,6 +34,41 @@
         </div>
       </div>
     </section>
+
+    <section class="info-boxes">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="info-box">
+              <h2>Purpose Statement<span>.</span></h2>
+              <ul>
+                <li>About the Qualifitcation</li>
+                <li>Qualification Units</li>
+                <li>Delivering this Qualification</li>
+                <li>Appendices and Links</li>
+              </ul>
+              <div class="button-box-v2 button-primary">
+                <a href="#">Purpose Statement</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="info-box">
+              <h2>Purpose Statement<span>.</span></h2>
+              <ul>
+                <li>About the Qualifitcation</li>
+                <li>Qualification Units</li>
+                <li>Delivering this Qualification</li>
+                <li>Appendices and Links</li>
+              </ul>
+              <div class="button-box-v2 button-accent">
+                <a href="#">Purpose Statement</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
 <?php get_footer() ?>
