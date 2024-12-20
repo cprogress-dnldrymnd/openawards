@@ -7225,7 +7225,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
       line-height: 1.8; }
 
 section.info-boxes {
-  font-family: var(--primary-font); }
+  font-family: var(--primary-font);
+  padding-top: 30px; }
   section.info-boxes .info-box {
     padding: 45px;
     border: 1px solid var(--high-violet);
@@ -7234,6 +7235,20 @@ section.info-boxes {
       max-width: 480px;
       margin-left: auto;
       margin-right: auto; }
+      @media (min-width: 1200px) {
+        section.info-boxes .info-box .inner h2 {
+          font-size: 46px; } }
+      section.info-boxes .info-box .inner h2 span {
+        color: var(--high-violet); }
+      section.info-boxes .info-box .inner ul {
+        list-style: none;
+        padding: 0; }
+        section.info-boxes .info-box .inner ul li {
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23B57DFF" class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>');
+          background-repeat: no-repeat;
+          background-position: 0 center;
+          background-size: 25px;
+          padding-left: 30px; }
       section.info-boxes .info-box .inner > *:not(:last-child) {
         margin-bottom: 45px; }
 
