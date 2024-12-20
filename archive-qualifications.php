@@ -134,7 +134,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 <script>
     jQuery(document).ready(function () {
         ajax_qualifications(0);
-
+        search_change();
 
         var typingTimer;
         var doneTypingInterval = 500;
