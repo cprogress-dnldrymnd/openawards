@@ -7167,7 +7167,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   border-radius: 5px;
   color: var(--white-color);
   background-color: var(--opal-black); }
-.qualification-filter-buttons .filter-button.filter-active a {
+.qualification-filter-buttons .filter-button.filter-active button {
   background-color: var(--high-violet); }
 
 /*# sourceMappingURL=style.css.map */
