@@ -9795,6 +9795,7 @@ section.latest-news {
 
     .key-information-box {
         max-width: 820px;
+
         .key-information-holder {
             background-color: #F4F5F7;
             border-radius: 10px;
@@ -9811,6 +9812,7 @@ section.latest-news {
         .key-info-item {
             font-size: 18px;
             color: var(--opal-black);
+            line-height: 1.8;
         }
     }
 }

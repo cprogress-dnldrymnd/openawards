@@ -7213,6 +7213,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
       margin-bottom: 20px; }
     .single-qualification-hero .key-information-box .key-info-item {
       font-size: 18px;
-      color: var(--opal-black); }
+      color: var(--opal-black);
+      line-height: 1.8; }
 
 /*# sourceMappingURL=style.css.map */
