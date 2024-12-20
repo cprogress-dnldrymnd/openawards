@@ -7194,6 +7194,11 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   background-size: cover;
   background-position: center;
   padding-top: 100px;
-  padding-top: 50px; }
+  padding-bottom: 50px;
+  font-family: var(--primary-font); }
+  .single-qualification-hero h1 {
+    color: var(--white-color);
+    font-size: 64px;
+    font-weight: 600; }
 
 /*# sourceMappingURL=style.css.map */
