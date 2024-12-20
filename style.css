@@ -7234,12 +7234,13 @@ section.info-boxes {
     height: 100%; }
     section.info-boxes .info-box:not(.info-box-v2) {
       border: 2px solid var(--high-violet); }
+      section.info-boxes .info-box:not(.info-box-v2) .inner {
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto; }
     section.info-boxes .info-box.info-box-v2 {
       background-color: #F4F5F7; }
     section.info-boxes .info-box .inner {
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
       height: 100%;
       display: flex;
       flex-direction: column;

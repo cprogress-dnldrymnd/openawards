@@ -9843,6 +9843,12 @@ section.info-boxes {
 
         &:not(.info-box-v2) {
             border: 2px solid var(--high-violet);
+
+            .inner {
+                max-width: 480px;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
         &.info-box-v2 {
@@ -9850,9 +9856,7 @@ section.info-boxes {
         }
 
         .inner {
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
+
             height: 100%;
             display: flex;
             flex-direction: column;
