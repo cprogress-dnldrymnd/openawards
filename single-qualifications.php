@@ -119,6 +119,7 @@
         <h2 class="h2-style-1">
           Explore our Qualifications
         </h2>
+        <?= do_shortcode('[related_qualifications]') ?>
       </div>
     </section>
     <?= do_shortcode('[template template_id=2969]') ?>
