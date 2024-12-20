@@ -9791,4 +9791,19 @@ section.latest-news {
         font-size: 64px;
         font-weight: 600;
     }
+    .key-information-box {
+        background-color: #F4F5F7;
+        border-radius: 10px;
+        padding: 30px;
+        h3 {
+            font-size: 35px;
+            color: var(--white-color);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .key-info-item {
+            font-size: 18px;
+            color: var(--opal-black);
+        }
+    }
 }
