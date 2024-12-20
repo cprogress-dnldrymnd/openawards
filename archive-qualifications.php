@@ -7,8 +7,27 @@
         <?= do_shortcode('[template template_id=3722]') ?>
 
         <section class="qualification-filter">
-
             <div class="container">
+                <div class="qualification-filter-wrapper">
+                    <div class="qualification-filter-button">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="button-box-v2 button-accent">
+                                    <a class="w-100 text-center"
+                                        href="https://openawards.theprogressteam.com/qualifications/open-awards-level-3-end-point-assessment-for-st0433-engineering-construction-erector-rigger/">View
+                                        Course</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="button-box button-accent ">
+                                    <a class="w-100 text-center"
+                                        href="https://openawards.theprogressteam.com/qualifications/open-awards-level-3-end-point-assessment-for-st0433-engineering-construction-erector-rigger/">View
+                                        Course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="qualification-filter-holder">
                     <div class="row">
                         <div class="col-lg-5">
@@ -88,10 +107,15 @@
                 </div>
 
                 <div class="vc_btn3-container custom-button text-center mt-5 load-more d-none">
-                    <button class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" title="" id="load-more-qualifications">
+                    <button
+                        class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet"
+                        title="" id="load-more-qualifications">
                         <span>Load More</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path fill="currentColor" d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"></path>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path fill="currentColor"
+                                d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z">
+                            </path>
                         </svg>
                     </button>
                 </div>
@@ -104,19 +128,19 @@
 <?php get_footer(); // This fxn gets the footer.php file and renders it 
 ?>
 <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         ajax_qualifications(0);
 
 
         var typingTimer;
         var doneTypingInterval = 500;
 
-        jQuery('.trigger-type').on('keyup', function() {
+        jQuery('.trigger-type').on('keyup', function () {
             clearTimeout(typingTimer);
             typingTimer = setTimeout(doneTyping, doneTypingInterval);
         });
 
-        jQuery('.trigger-ajax-change').change(function(e) {
+        jQuery('.trigger-ajax-change').change(function (e) {
             ajax_qualifications(0);
         });
     });
