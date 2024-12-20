@@ -374,12 +374,12 @@ function archive_ajax_qualifications()
       }
       $resultArray[] = $qualificationArray;
     }
-
+    echo '<div class="row row-results g-5">';
     foreach ($resultArray as $result) {
-      echo '<div class="row row-results g-5">';
       echo qual_grid($result);
-      echo '</div>';
     }
+    echo '</div>';
+
     // Output as JSON
     echo '<pre>';
     echo json_encode($resultArray, JSON_PRETTY_PRINT);
