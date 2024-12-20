@@ -9734,6 +9734,7 @@ section.latest-news {
         text-align: center;
         background-color: var(--white-color);
         display: none;
+
         .spinner {
             position: absolute;
             left: 50%;
@@ -9777,4 +9778,11 @@ section.latest-news {
             }
         }
     }
+}
+
+.single-qualification-hero {
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-top: 50px;
 }
