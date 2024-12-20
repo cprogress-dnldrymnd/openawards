@@ -169,6 +169,7 @@ function related_qualifications()
   $level = carbon_get_the_post_meta('level');
   $args['post_type'] = 'qualifications';
   $args['numberposts'] = 3;
+  $args['orderby'] = 'rand';
   $args['meta_query']['relation'] = 'AND';
 
   if ($level) {
