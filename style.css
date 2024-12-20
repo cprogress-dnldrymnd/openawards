@@ -7190,4 +7190,10 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 .qualification-filter-buttons .filter-button.filter-active button {
   background-color: var(--high-violet); }
 
+.single-qualification-hero {
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-top: 50px; }
+
 /*# sourceMappingURL=style.css.map */
