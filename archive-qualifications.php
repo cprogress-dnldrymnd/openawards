@@ -91,12 +91,13 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                             <div class="col-lg-6 search-field search-qual search-units search-access-to-he sector">
                                 <?php
-                                $sectors = get_unique_meta_values('_sector');
+                                $sectors = QUBA_GetQCASectors();
                                 ?>
                                 <select class="trigger-ajax-change" name="sector" id="sector">
                                     <option value="">Sector</option>
                                     <?php foreach ($sectors as $sector) { ?>
-                                        <option value="<?= $sector ?>"><?= $sector ?></option>
+                                        <option value="<?= $sector->Classification ?>"><?= $sector->Classification ?>
+                                        </option>
                                     <?php } ?>
                                 </select>
                             </div>

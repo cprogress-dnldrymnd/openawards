@@ -1,7 +1,37 @@
 <?php
 /** Quba Functions */
-function QUBA_GetQCASectors() {
+function QUBA_GetQCASectors()
+{
+  $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
+  // Set the SOAP action
 
+
+  // Call the SOAP method
+  $response = $client->QUBA_GetQCASectors();
+
+  // Assuming $response is the object returned from the SOAP call:
+  $xmlString = $response->QUBA_GetQCASectorsResult->any; // Assuming XML is in the "any" field
+
+  $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <QUBA_GetQCASectorsResponse xmlns="http://tempuri.org/">
+      <QUBA_GetQCASectorsResult namespace="" tableTypeName="">
+        ' . $xmlString . '
+      </QUBA_GetQCASectorsResult>
+    </QUBA_GetQCASectorsResponse>
+  </soap:Body>
+</soap:Envelope>';
+
+
+  try {
+    $xml = new SimpleXMLElement($responseString);
+    $QubaGetSSAReferenceData = $xml->xpath('//QubaGetSSAReferenceData');
+    return $QubaGetSSAReferenceData;
+  }
+  catch (Exception $e) {
+    var_dump($e);
+    // Handle errors (e.g., invalid XML, data extraction issues)
+  }
 }
 function search_qualifications($data)
 {
