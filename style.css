@@ -7224,6 +7224,14 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
       color: var(--opal-black);
       line-height: 1.8; }
 
+h2.h2-style-1.h2-style-1 {
+  color: var(--opal-black); }
+  @media (min-width: 1200px) {
+    h2.h2-style-1.h2-style-1 {
+      font-size: 46px; } }
+  h2.h2-style-1.h2-style-1 span {
+    color: var(--high-violet); }
+
 section.info-boxes {
   font-family: var(--primary-font);
   padding-top: 30px;
@@ -7246,13 +7254,6 @@ section.info-boxes {
       display: flex;
       flex-direction: column;
       justify-content: space-between; }
-      section.info-boxes .info-box .inner h2 {
-        color: var(--opal-black); }
-        @media (min-width: 1200px) {
-          section.info-boxes .info-box .inner h2 {
-            font-size: 46px; } }
-        section.info-boxes .info-box .inner h2 span {
-          color: var(--high-violet); }
       section.info-boxes .info-box .inner ul {
         list-style: none;
         padding: 0; }

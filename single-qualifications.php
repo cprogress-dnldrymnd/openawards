@@ -1,6 +1,6 @@
 <?php get_header() ?>
 <div id="primary" class="row-fluid">
-  <div id="content" role="main" class="span8 offset2">
+  <section id="content" role="main" class="span8 offset2">
     <section class="single-qualification-hero"
       style="background-image: url(https://openawards.theprogressteam.com/wp-content/uploads/2024/12/qual-hero-bg.png)">
       <div class="container">
@@ -41,7 +41,7 @@
           <div class="col-lg-6">
             <div class="info-box">
               <div class="inner">
-                <h2>Purpose Statement<span>.</span></h2>
+                <h2 class="h2-style-1">Purpose Statement<span>.</span></h2>
                 <ul>
                   <li>About the Qualifitcation</li>
                   <li>Qualification Units</li>
@@ -57,7 +57,7 @@
           <div class="col-lg-6">
             <div class="info-box">
               <div class="inner">
-                <h2>Purpose Statement<span>.</span></h2>
+                <h2 class="h2-style-1">Purpose Statement<span>.</span></h2>
                 <ul>
                   <li>Who is it for?</li>
                   <li>What does this qualification cover?</li>
@@ -105,8 +105,8 @@
         </div>
         <div class="back-to mt-4">
           <div class="button-box-v2 button-accent">
-            <a href="/qualifications/"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-chevron-left" viewBox="0 0 16 16">
+            <a href="/qualifications/"><svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                   d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
               </svg> Back to Qualifications</a>
@@ -114,7 +114,14 @@
         </div>
       </div>
     </section>
+    <section class="related-qualifications">
+      <div class="container">
+        <h2 class="h2-style-1">
+          Explore our Qualifications
+        </h2>
+      </div>
+    </section>
     <?= do_shortcode('[template template_id=2969]') ?>
-  </div>
+</div>
 </div>
 <?php get_footer() ?>

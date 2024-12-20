@@ -9831,10 +9831,23 @@ section.latest-news {
     }
 }
 
+h2.h2-style-1.h2-style-1 {
+    color: var(--opal-black);
+
+    @media(min-width: 1200px) {
+        font-size: 46px;
+    }
+
+    span {
+        color: var(--high-violet);
+    }
+}
+
 section.info-boxes {
     font-family: var(--primary-font);
     padding-top: 30px;
     padding-bottom: 100px;
+
     .info-box {
         padding: 45px;
         border-radius: 10px;
@@ -9862,17 +9875,7 @@ section.info-boxes {
             flex-direction: column;
             justify-content: space-between;
 
-            h2 {
-                color: var(--opal-black);
 
-                @media(min-width: 1200px) {
-                    font-size: 46px;
-                }
-
-                span {
-                    color: var(--high-violet);
-                }
-            }
 
             ul {
                 list-style: none;
