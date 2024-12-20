@@ -15,7 +15,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <div class="key-info-items">
-                  <div class="key-info-item"><strong>Key Information Qualification Code:</strong> 603/6198/0</div>
+                  <div class="key-info-item"><strong>Qualification Code:</strong> 603/6198/0</div>
                   <div class="key-info-item"><strong>Sector:</strong> Vocationally-Related Qualification</div>
                   <div class="key-info-item"><strong>Level:</strong> E1</div>
                   <div class="key-info-item"><strong>Start Date:</strong> 31 July 2020</div>
