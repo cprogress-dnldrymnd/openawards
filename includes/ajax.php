@@ -322,7 +322,7 @@ function archive_ajax_qualifications()
   $qualificationTitle = $s;
   $qualificationLevel = $level;
   $qualificationNumber = $code;
-  $provisionType = '';
+  $provisionType = $type;
   $unitID = '';
   $qcaSector = '';
   $includeHub = false;
