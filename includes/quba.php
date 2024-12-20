@@ -171,15 +171,10 @@ function related_qualifications()
     'code'  => '',
     'type'  => '',
   );
-  echo $level;
 
   if ($level) {
     echo search_qualifications($data);
   }
-  else {
-    echo 'sdsds';
-  }
-
 
   return ob_get_clean();
 }
