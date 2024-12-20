@@ -391,7 +391,7 @@ function archive_ajax_qualifications()
   die();
 }
 
-function qual_grid($result): void
+function qual_grid($result)
 {
   ob_start();
   if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
