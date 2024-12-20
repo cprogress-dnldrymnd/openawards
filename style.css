@@ -7158,6 +7158,9 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
       color: var(--opal-black); }
   .qualification-filter-holder > .row:not(:last-child) {
     margin-bottom: 24px; }
+  .qualification-filter-holder .spinner svg {
+    width: 40px;
+    height: 40px; }
 
 .qualification-filter-buttons .filter-button button {
   font-size: 18px;
