@@ -7132,7 +7132,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   margin-top: 50px;
   background-color: var(--white-color);
   border: 1px solid #00000008;
-  border-radius: 10px; }
+  border-radius: 10px;
+  padding: 30px; }
 
 .qualification-filter-holder {
   margin-top: 30px;
@@ -7156,7 +7157,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   .qualification-filter-holder > .row:not(:last-child) {
     margin-bottom: 24px; }
 
-.qualification-filter-button .filter-button {
+.qualification-filter-buttons .filter-button {
   font-size: 18px;
   font-family: 'Poppins';
   font-weight: 500;
@@ -7165,7 +7166,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   border-radius: 5px;
   color: var(--white-color);
   background-color: var(--opal-black); }
-  .qualification-filter-button .filter-button.filter-active {
+  .qualification-filter-buttons .filter-button.filter-active {
     background-color: var(--high-violet); }
 
 /*# sourceMappingURL=style.css.map */

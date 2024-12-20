@@ -10,7 +10,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 
         <section class="qualification-filter">
             <div class="container">
-                <div class="qualification-filter">
+                <div class="qualification-filter-wrapper">
                     <div class="qualification-filter-buttons">
                         <div class="row">
                             <div class="col-lg-4">
