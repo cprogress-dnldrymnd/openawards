@@ -9698,11 +9698,7 @@ section.latest-news {
 
 .qualification-filter-holder {
     margin-top: 25px;
-    padding: 25px 50px;
-    border-radius: 10px;
-    border: 2px solid var(--high-violet);
     font-family: var(--primary-font);
-
     label {
         font-weight: 500;
         color: var(--opal-black);
@@ -9732,7 +9728,7 @@ section.latest-news {
     .filter-button {
         button {
             font-size: 18px;
-            font-family: 'Poppins';
+            font-family: var(--primary-font);
             font-weight: 500;
             padding: 11px 35px;
             border: none;
