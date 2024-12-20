@@ -167,7 +167,9 @@ function related_qualifications()
   $data = array(
     'level' => $level
   );
-  return search_qualifications($data);
+  if ($level) {
+    return search_qualifications($data);
+  }
 }
 
 add_shortcode('related_qualifications', 'related_qualifications');
