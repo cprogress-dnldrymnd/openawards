@@ -9733,7 +9733,7 @@ section.latest-news {
         right: 0;
         text-align: center;
         background-color: var(--white-color);
-
+        display: none;
         .spinner {
             position: absolute;
             left: 50%;
@@ -9749,7 +9749,7 @@ section.latest-news {
 
     &.qualification-filter-holder.searching {
         .spinner-holder {
-            display: none;
+            display: block;
         }
     }
 

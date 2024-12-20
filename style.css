@@ -7165,7 +7165,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     bottom: 0;
     right: 0;
     text-align: center;
-    background-color: var(--white-color); }
+    background-color: var(--white-color);
+    display: none; }
     .qualification-filter-holder .spinner-holder .spinner {
       position: absolute;
       left: 50%;
@@ -7175,7 +7176,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
         width: 40px;
         height: 40px; }
   .qualification-filter-holder.qualification-filter-holder.searching .spinner-holder {
-    display: none; }
+    display: block; }
 
 .qualification-filter-buttons .filter-button button {
   font-size: 18px;
