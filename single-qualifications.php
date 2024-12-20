@@ -105,6 +105,7 @@
         </div>
       </div>
     </section>
+    <?= do_shortcode('[template template_id=2969]') ?>
   </div>
 </div>
 <?php get_footer() ?>
