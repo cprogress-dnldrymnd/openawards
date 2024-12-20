@@ -75,7 +75,7 @@
           <div class="col-12">
             <div class="info-box info-box-v2">
               <div class="inner">
-                <div class="row">
+                <div class="row align-items-center g-3">
                   <div class="col">
                     <p>
                       This occupation is found in horticulture grounds maintenance, landscaping, parks, greenspaces and
