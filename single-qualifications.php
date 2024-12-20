@@ -11,21 +11,23 @@
         </div>
         <div class="key-information-box">
           <h3>Key Information</h3>
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="key-info-items">
-                <div class="key-info-item"><strong>Key Information Qualification Code:</strong> 603/6198/0</div>
-                <div class="key-info-item"><strong>Sector:</strong> Vocationally-Related Qualification</div>
-                <div class="key-info-item"><strong>Level:</strong> E1</div>
-                <div class="key-info-item"><strong>Start Date:</strong> 31 July 2020</div>
+          <div class="key-information-holder">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="key-info-items">
+                  <div class="key-info-item"><strong>Key Information Qualification Code:</strong> 603/6198/0</div>
+                  <div class="key-info-item"><strong>Sector:</strong> Vocationally-Related Qualification</div>
+                  <div class="key-info-item"><strong>Level:</strong> E1</div>
+                  <div class="key-info-item"><strong>Start Date:</strong> 31 July 2020</div>
+                </div>
               </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="key-info-items">
-                <div class="key-info-item"><strong>Review Date:</strong> 30 July 2026</div>
-                <div class="key-info-item"><strong>Guided Learning Hours:</strong> 40</div>
-                <div class="key-info-item"><strong>Min Age:</strong> Pre-16 </div>
-                <div class="key-info-item"><strong>TQT:</strong> 40</div>
+              <div class="col-sm-6">
+                <div class="key-info-items">
+                  <div class="key-info-item"><strong>Review Date:</strong> 30 July 2026</div>
+                  <div class="key-info-item"><strong>Guided Learning Hours:</strong> 40</div>
+                  <div class="key-info-item"><strong>Min Age:</strong> Pre-16 </div>
+                  <div class="key-info-item"><strong>TQT:</strong> 40</div>
+                </div>
               </div>
             </div>
           </div>

@@ -9786,21 +9786,27 @@ section.latest-news {
     padding-top: 100px;
     padding-bottom: 50px;
     font-family: var(--primary-font);
+
     h1 {
         color: var(--white-color);
         font-size: 64px;
         font-weight: 600;
     }
+
     .key-information-box {
-        background-color: #F4F5F7;
-        border-radius: 10px;
-        padding: 30px;
+        .key-information-holder {
+            background-color: #F4F5F7;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
         h3 {
             font-size: 35px;
             color: var(--white-color);
             font-weight: 500;
             margin-bottom: 20px;
         }
+
         .key-info-item {
             font-size: 18px;
             color: var(--opal-black);
