@@ -1,6 +1,8 @@
 <?php get_header() ?>
 
-
+<?php
+$chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/> </svg>';
+?>
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
         <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
@@ -12,18 +14,14 @@
                     <div class="qualification-filter-button">
                         <div class="row">
                             <div class="col-lg-4">
-                                <div class="button-box-v2 button-accent">
-                                    <a class="w-100 text-center"
-                                        href="https://openawards.theprogressteam.com/qualifications/open-awards-level-3-end-point-assessment-for-st0433-engineering-construction-erector-rigger/">View
-                                        Course</a>
+                                <div class="filter-button filter-qual">
+                                    <button class="w-100 text-center d-flex justify-content-between align-items-center">
+                                        Search Qualifications <?= $chev ?>
+                                    </button>
                                 </div>
                             </div>
                             <div class="col-lg-4">
-                                <div class="button-box button-accent ">
-                                    <a class="w-100 text-center"
-                                        href="https://openawards.theprogressteam.com/qualifications/open-awards-level-3-end-point-assessment-for-st0433-engineering-construction-erector-rigger/">View
-                                        Course</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
