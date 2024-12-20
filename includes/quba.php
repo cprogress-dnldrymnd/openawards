@@ -163,7 +163,7 @@ function qual_grid($result)
 
 function related_qualifications()
 {
-  $level = carbon_get_the_post_meta('level');
+  $level = carbon_get_the_post_meta('_level');
   $data = array(
     'level' => $level
   );
