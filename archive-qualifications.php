@@ -10,7 +10,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 
         <section class="qualification-filter">
             <div class="container">
-                <div class="qualification-filter-wrapper">
+                <div class="qualification-filter-wrapper position-relative">
                     <div class="qualification-filter-buttons">
                         <div class="row">
                             <div class="col-lg-4">
@@ -39,7 +39,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                         </div>
                     </div>
-                    <div class="qualification-filter-holder position-relative">
+                    <div class="qualification-filter-holder">
                         <div class="spinner-holder">
                             <div class="spinner d-inline-block"> <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->

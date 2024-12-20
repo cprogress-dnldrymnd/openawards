@@ -7158,9 +7158,22 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
       color: var(--opal-black); }
   .qualification-filter-holder > .row:not(:last-child) {
     margin-bottom: 24px; }
-  .qualification-filter-holder .spinner svg {
-    width: 40px;
-    height: 40px; }
+  .qualification-filter-holder .spinner-holder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    background-color: var(--white-color); }
+    .qualification-filter-holder .spinner-holder .spinner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+      .qualification-filter-holder .spinner-holder .spinner svg {
+        width: 40px;
+        height: 40px; }
 
 .qualification-filter-buttons .filter-button button {
   font-size: 18px;

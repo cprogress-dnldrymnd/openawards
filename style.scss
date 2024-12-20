@@ -9699,6 +9699,7 @@ section.latest-news {
 .qualification-filter-holder {
     margin-top: 25px;
     font-family: var(--primary-font);
+
     label {
         font-weight: 500;
         color: var(--opal-black);
@@ -9712,6 +9713,7 @@ section.latest-news {
         border-radius: 4px;
         color: var(--opal-black);
         height: 44px;
+
         &::placeholder {
             color: var(--opal-black);
         }
@@ -9722,12 +9724,30 @@ section.latest-news {
             margin-bottom: 24px;
         }
     }
-    .spinner {
-        svg {
-            width: 40px;
-            height: 40px;
+
+    .spinner-holder {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        background-color: var(--white-color);
+
+        .spinner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%, );
+
+            svg {
+                width: 40px;
+                height: 40px;
+            }
         }
     }
+
+
 }
 
 .qualification-filter-buttons {
