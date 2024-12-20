@@ -166,7 +166,10 @@ function related_qualifications()
   ob_start();
   $level = carbon_get_the_post_meta('level');
   $data = array(
-    'level' => $level
+    'level' => $level,
+    's'     => '',
+    'code'  => '',
+    'type'  => '',
   );
   echo $level;
 
