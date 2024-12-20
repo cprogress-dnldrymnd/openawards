@@ -294,7 +294,7 @@ add_action('wp_ajax_archive_ajax_qualifications', 'archive_ajax_qualifications')
 function archive_ajax_qualifications()
 {
   $offset = $_POST['offset'];
-  $sector = $_POST['sector'];
+  $type = $_POST['type'];
   $level = $_POST['level'];
   $code = $_POST['code'];
   $s = $_POST['s'];
@@ -316,10 +316,10 @@ function archive_ajax_qualifications()
 
   $args['meta_query']['relation'] = 'AND';
 
-  if ($sector) {
+  if ($type) {
     $args['meta_query'][] = array(
       'key' => '_type',
-      'value' => array($sector),
+      'value' => array($type),
       'compare' => 'IN',
     );
   }
