@@ -7151,7 +7151,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     border: 1px solid var(--gray-color);
     padding: 6px 20px;
     border-radius: 4px;
-    color: var(--opal-black); }
+    color: var(--opal-black);
+    height: 44px; }
     .qualification-filter-holder select::placeholder,
     .qualification-filter-holder input::placeholder {
       color: var(--opal-black); }
