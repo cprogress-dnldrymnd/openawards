@@ -83,6 +83,9 @@ function search_qualifications($data)
     }
     echo '<div class="row row-results g-5">';
     foreach ($resultArray as $result) {
+      if ($data['qualificationType'] != '') {
+        echo $result['Type'];
+      }
       echo qual_grid($result);
     }
     echo '</div>';
@@ -104,15 +107,17 @@ add_action('wp_ajax_nopriv_archive_ajax_qualifications', 'archive_ajax_qualifica
 add_action('wp_ajax_archive_ajax_qualifications', 'archive_ajax_qualifications');
 function archive_ajax_qualifications()
 {
-  $qualificationLevel = $_POST['qualificationLevel'];
-  $qualificationNumber = $_POST['qualificationNumber'];
-  $qualificationTitle = $_POST['qualificationTitle'];
-  $qcaSector = $_POST['qcaSector'];
+  $qualificationLevel = isset($_POST['qualificationLevel']) && $_POST['qualificationLevel'] != '' ? $_POST['qualificationLevel'] : '';
+  $qualificationNumber = isset($_POST['qualificationNumber']) && $_POST['qualificationNumber'] != '' ? $_POST['qualificationNumber'] : '';
+  $qualificationTitle = isset($_POST['qualificationTitle']) && $_POST['qualificationTitle'] != '' ? $_POST['qualificationTitle'] : '';
+  $qualificationType = isset($_POST['qualificationType']) && $_POST['qualificationType'] != '' ? $_POST['qualificationType'] : '';
+  $qcaSector = isset($_POST['qcaSector']) && $_POST['qcaSector'] != '' ? $_POST['qcaSector'] : '';
   $data = array(
     'qualificationLevel'  => $qualificationLevel,
     'qcaSector'           => $qcaSector,
     'qualificationNumber' => $qualificationNumber,
     'qualificationTitle'  => $qualificationTitle,
+    'qualificationType'   => $qualificationType
   );
   echo search_qualifications($data);
   die();

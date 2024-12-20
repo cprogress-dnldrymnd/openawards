@@ -106,7 +106,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                 $types = get_unique_meta_values('_type');
                                 sort($types);
                                 ?>
-                                <select class="trigger-ajax-change" name="type" id="type">
+                                <select class="trigger-ajax-change" name="qualificationType" id="type">
                                     <option value="">Qualification Type</option>
                                     <?php foreach ($types as $type) { ?>
                                         <?php if ($type) { ?>
