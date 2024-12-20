@@ -375,6 +375,7 @@ function archive_ajax_qualifications()
     }
     echo '<div class="row row-results g-5">';
     foreach ($resultArray as $result) {
+
       echo qual_grid($result);
     }
     echo '</div>';
@@ -392,9 +393,35 @@ function archive_ajax_qualifications()
   die();
 }
 
+
+function get_post_id_by_meta_field($meta_key, $meta_value)
+{
+  global $wpdb;
+
+  $query = $wpdb->prepare(
+    "SELECT pm.post_id FROM $wpdb->postmeta pm
+        JOIN $wpdb->posts p ON pm.post_id = p.ID
+        WHERE pm.meta_key = %s AND pm.meta_value = %s
+        AND p.post_status = 'publish' LIMIT 1", // Limit to one result
+    $meta_key,
+    $meta_value
+  );
+
+  $post_id = $wpdb->get_var($query);
+
+  return $post_id;
+}
+
 function qual_grid($result)
 {
   ob_start();
+  $check_qual = get_post_id_by_meta_field('_id', $result['ID']);
+  if ($check_qual) {
+    $post_id = $check_qual;
+  }
+  else {
+    $post_id = 0;
+  }
   if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
     $level_val = str_replace('E', 'Entry Level ', $result['Level']);
   }
@@ -422,7 +449,7 @@ function qual_grid($result)
       </div>
       <div class="button-group-box row g-0 align-items-center">
         <div class="button-box-v2 button-accent col">
-          <a class="w-100 text-center" href="/qualifications/?id=<?= $result['ID'] ?>">View Course</a>
+          <a class="w-100 text-center" href="<?= get_the_permalink($post_id) ?>">View Course</a>
         </div>
       </div>
     </div>
