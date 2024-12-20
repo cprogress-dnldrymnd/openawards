@@ -83,8 +83,9 @@ function search_qualifications($data)
     }
 
     if ($data['qualificationType'] != '') {
-      $resultArray_final = array_filter($resultArray, function ($result) {
-        return $result['Type'] == 'Vocationally-Related Qualification';
+      $qualificationType = $data['qualificationType'];
+      $resultArray_final = array_filter($resultArray, function ($result) use ($qualificationType) {
+        return $result['Type'] == $qualificationType;
       });
     }
     else {
