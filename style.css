@@ -7200,17 +7200,19 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     color: var(--white-color);
     font-size: 64px;
     font-weight: 600; }
-  .single-qualification-hero .key-information-box .key-information-holder {
-    background-color: #F4F5F7;
-    border-radius: 10px;
-    padding: 30px; }
-  .single-qualification-hero .key-information-box h3 {
-    font-size: 35px;
-    color: var(--white-color);
-    font-weight: 500;
-    margin-bottom: 20px; }
-  .single-qualification-hero .key-information-box .key-info-item {
-    font-size: 18px;
-    color: var(--opal-black); }
+  .single-qualification-hero .key-information-box {
+    max-width: 820px; }
+    .single-qualification-hero .key-information-box .key-information-holder {
+      background-color: #F4F5F7;
+      border-radius: 10px;
+      padding: 30px; }
+    .single-qualification-hero .key-information-box h3 {
+      font-size: 35px;
+      color: var(--white-color);
+      font-weight: 500;
+      margin-bottom: 20px; }
+    .single-qualification-hero .key-information-box .key-info-item {
+      font-size: 18px;
+      color: var(--opal-black); }
 
 /*# sourceMappingURL=style.css.map */
