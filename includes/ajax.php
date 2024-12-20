@@ -309,7 +309,6 @@ add_action('wp_ajax_nopriv_archive_ajax_qualifications', 'archive_ajax_qualifica
 add_action('wp_ajax_archive_ajax_qualifications', 'archive_ajax_qualifications');
 function archive_ajax_qualifications()
 {
-  $offset = $_POST['offset'];
   $type = $_POST['type'];
   $level = $_POST['level'];
   $code = $_POST['code'];
@@ -322,7 +321,7 @@ function archive_ajax_qualifications()
   $qualificationID = 0;
   $qualificationTitle = $s;
   $qualificationLevel = $level;
-  $qualificationNumber = '';
+  $qualificationNumber = $code;
   $provisionType = '';
   $unitID = '';
   $qcaSector = '';
