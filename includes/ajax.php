@@ -375,10 +375,15 @@ function archive_ajax_qualifications()
       $resultArray[] = $qualificationArray;
     }
 
+    foreach ($resultArray as $result) {
+      echo qual_grid($result);
+    }
     // Output as JSON
     echo '<pre>';
     echo json_encode($resultArray, JSON_PRETTY_PRINT);
     echo '</pre>';
+
+
 
   }
   catch (Exception $e) {
@@ -388,40 +393,43 @@ function archive_ajax_qualifications()
   die();
 }
 
-function qual_grid()
+function qual_grid($result): void
 {
+  ob_start();
+  if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
+    $level_val = str_replace('E', 'Entry Level ', $level);
+  }
+  else {
+    $level_val = str_replace('L', 'Level ', $level);
+  }
   ?>
   <div class="col-lg-4 post-item">
     <div class="post-box h-100">
       <div class="image-box image-box-placeholder">
         <img src="https://openawards.theprogressteam.com/wp-content/uploads/2023/10/logo-new.svg">
-        <span class="level <?= $level ?>">
+        <span class="level <?= $result['Level'] ?>">
           &#10004; <?= $level_val ?>
         </span>
       </div>
       <div class="content-box content-box-v1">
         <div class="heading-excerpt-box">
           <div class="heading-box">
-            <h4><?php the_title() ?></h4>
+            <h4><?= $result['Title'] ?></h4>
           </div>
-          <div class="description-box">
-            <?php the_excerpt() ?>
+          <div class="description-box d-none">
+            <?php ?>
           </div>
         </div>
       </div>
       <div class="button-group-box row g-0 align-items-center">
-        <?php if ($fee) { ?>
-          <div class="fee-box col">
-            <?= $fee ?>
-          </div>
-        <?php } ?>
         <div class="button-box-v2 button-accent col">
-          <a class="w-100 text-center" href="<?php the_permalink() ?>">View Course</a>
+          <a class="w-100 text-center" href="/qualifications/?id=<?= $result['ID'] ?>">View Course</a>
         </div>
       </div>
     </div>
   </div>
   <?php
+  return ob_get_clean();
 }
 
 
