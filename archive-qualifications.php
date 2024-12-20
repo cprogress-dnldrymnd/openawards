@@ -14,14 +14,25 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                     <div class="qualification-filter-button">
                         <div class="row">
                             <div class="col-lg-4">
-                                <div class="filter-button filter-qual">
+                                <div class="filter-button filter-active">
                                     <button class="w-100 text-center d-flex justify-content-between align-items-center">
                                         Search Qualifications <?= $chev ?>
                                     </button>
                                 </div>
                             </div>
                             <div class="col-lg-4">
-
+                                <div class="filter-button filter-units">
+                                    <button class="w-100 text-center d-flex justify-content-between align-items-center">
+                                        Search Qualifications <?= $chev ?>
+                                    </button>
+                                </div>
+                            </div>
+                              <div class="col-lg-4">
+                                <div class="filter-button filter-access-to-he">
+                                    <button class="w-100 text-center d-flex justify-content-between align-items-center">
+                                        Search Qualifications <?= $chev ?>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
