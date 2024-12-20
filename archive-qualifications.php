@@ -94,13 +94,14 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                             <div class="col-lg-6 search-field search-qual type">
                                 <?php
-                                $minages = get_unique_meta_values('_type');
+                                $types = get_unique_meta_values('_type');
+                                sort($types);
                                 ?>
                                 <select class="trigger-ajax-change" name="type" id="type">
                                     <option value="">Qualification Type</option>
-                                    <?php foreach ($minages as $minage) { ?>
-                                        <?php if ($minage) { ?>
-                                            <option value="<?= $minage ?>"><?= $minage ?></option>
+                                    <?php foreach ($types as $type) { ?>
+                                        <?php if ($type) { ?>
+                                            <option value="<?= $type ?>"><?= $type ?></option>
                                         <?php } ?>
                                     <?php } ?>
                                 </select>
