@@ -9837,8 +9837,14 @@ section.info-boxes {
 
     .info-box {
         padding: 45px;
-        border: 1px solid var(--high-violet);
         border-radius: 10px;
+        font-size: 18px;
+        &:not(.info-box-v2) {
+            border: 2px solid var(--high-violet);
+        }
+        &.info-box-v2 {
+            background-color: #F4F5F7;
+        }
 
         .inner {
             max-width: 480px;

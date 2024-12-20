@@ -7229,8 +7229,12 @@ section.info-boxes {
   padding-top: 30px; }
   section.info-boxes .info-box {
     padding: 45px;
-    border: 1px solid var(--high-violet);
-    border-radius: 10px; }
+    border-radius: 10px;
+    font-size: 18px; }
+    section.info-boxes .info-box:not(.info-box-v2) {
+      border: 2px solid var(--high-violet); }
+    section.info-boxes .info-box.info-box-v2 {
+      background-color: #F4F5F7; }
     section.info-boxes .info-box .inner {
       max-width: 480px;
       margin-left: auto;
