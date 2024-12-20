@@ -105,24 +105,26 @@ function get_post_id_by_meta_field($meta_key, $meta_value)
   return $post_id;
 }
 
-function qual_grid($result)
+function qual_grid($result, $post = false)
 {
   ob_start();
-  $check_qual = get_post_id_by_meta_field('_id', $result['ID']);
-  if ($check_qual) {
-    $post_id = $check_qual;
-  }
-  else {
-    // Insert the post into the database
-    $post_data['post_type'] = 'qualifications';
-    $post_data['post_title'] = $result['Title'];
-    $post_data['post_status'] = 'publish';
-    $post_data['meta_input'] = array(
-      '_id' => $result['ID']
-    );
+  if ($post == false) {
+    $check_qual = get_post_id_by_meta_field('_id', $result['ID']);
+    if ($check_qual) {
+      $post_id = $check_qual;
+    }
+    else {
+      // Insert the post into the database
+      $post_data['post_type'] = 'qualifications';
+      $post_data['post_title'] = $result['Title'];
+      $post_data['post_status'] = 'publish';
+      $post_data['meta_input'] = array(
+        '_id' => $result['ID']
+      );
 
-    $post_id = wp_insert_post($post_data);
+      $post_id = wp_insert_post($post_data);
 
+    }
   }
   if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
     $level_val = str_replace('E', 'Entry Level ', $result['Level']);
@@ -165,16 +167,29 @@ function related_qualifications()
 {
   ob_start();
   $level = carbon_get_the_post_meta('level');
-  $data = array(
-    'level' => $level,
-    's'     => '',
-    'code'  => '',
-    'type'  => '',
-  );
+  $args['post_type'] = 'qualifications';
+  $args['numberposts'] = 3;
+  $args['meta_query']['relation'] = 'AND';
 
   if ($level) {
-    echo search_qualifications($data);
+    $args['meta_query'][] = array(
+      'key'     => '_level',
+      'value'   => array($level),
+      'compare' => 'IN',
+    );
   }
+  $posts = get_posts($args);
+  echo '<div class="row row-results g-5">';
+
+  foreach ($posts as $post) {
+    $data = array(
+      'Level'   => $level,
+      'Title'   => $post->post_title,
+      'post_id' => $post->ID,
+    );
+    echo qual_grid($data, true);
+  }
+  echo '</div>';
 
   return ob_get_clean();
 }
