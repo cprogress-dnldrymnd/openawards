@@ -163,13 +163,22 @@ function qual_grid($result)
 
 function related_qualifications()
 {
+  ob_start();
   $level = carbon_get_the_post_meta('_level');
   $data = array(
     'level' => $level
   );
+  echo $level;
+
   if ($level) {
-    return search_qualifications($data);
+    echo search_qualifications($data);
   }
+  else {
+    echo 'sdsds';
+  }
+
+
+  return ob_get_clean();
 }
 
 add_shortcode('related_qualifications', 'related_qualifications');
