@@ -7135,9 +7135,12 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0px 22px 28px #00000008; }
+  .qualification-filter-wrapper .row {
+    --bs-gutter-x: 25px;
+    --bs-gutter-y: 25px; }
 
 .qualification-filter-holder {
-  margin-top: 30px;
+  margin-top: 25px;
   padding: 25px 50px;
   border-radius: 10px;
   border: 2px solid var(--high-violet);
