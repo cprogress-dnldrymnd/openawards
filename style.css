@@ -7266,4 +7266,7 @@ section.info-boxes {
       section.info-boxes .info-box .inner > *:not(:last-child) {
         margin-bottom: 45px; }
 
+section.related-qualifications {
+  padding-bottom: 50px; }
+
 /*# sourceMappingURL=style.css.map */
