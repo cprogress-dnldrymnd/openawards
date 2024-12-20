@@ -84,7 +84,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                     <?php } ?>
                                 </select>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 search-field search-qual min-age">
                                 <?php
                                 $minages = get_unique_meta_values('_minage');
                                 ?>
