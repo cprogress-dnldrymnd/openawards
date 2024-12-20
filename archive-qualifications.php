@@ -23,14 +23,14 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             <div class="col-lg-4">
                                 <div class="filter-button filter-units">
                                     <button class="w-100 text-center d-flex justify-content-between align-items-center">
-                                        Search Qualifications <?= $chev ?>
+                                        Search Units <?= $chev ?>
                                     </button>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="filter-button filter-access-to-he">
                                     <button class="w-100 text-center d-flex justify-content-between align-items-center">
-                                        Search Qualifications <?= $chev ?>
+                                        Search Access To HE <?= $chev ?>
                                     </button>
                                 </div>
                             </div>
@@ -38,10 +38,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                     </div>
                     <div class="qualification-filter-holder">
                         <div class="row">
-                            <div class="col-lg-5">
-                                <label for="">Search</label>
-                            </div>
-                            <div class="col-lg-7">
+                            <div class="col-lg-12">
                                 <input type="text" name="s" placeholder="Keywords" class="trigger-type">
                             </div>
                         </div>
