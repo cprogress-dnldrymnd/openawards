@@ -183,7 +183,7 @@ function qual_grid($result, $post = false)
       <div class="image-box image-box-placeholder">
         <img src="https://openawards.theprogressteam.com/wp-content/uploads/2023/10/logo-new.svg">
         <span class="level <?= $result['Level'] ?>">
-          &#10004; <?= $level_val ?>   <?= $result['Type'] ?>
+          &#10004; <?= $level_val ?>
         </span>
       </div>
       <div class="content-box content-box-v1">
