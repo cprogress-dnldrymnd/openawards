@@ -37,7 +37,7 @@
 
     <section class="info-boxes">
       <div class="container">
-        <div class="row">
+        <div class="row g-4">
           <div class="col-lg-6">
             <div class="info-box">
               <div class="inner">
