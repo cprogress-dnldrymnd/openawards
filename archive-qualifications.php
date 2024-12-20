@@ -54,7 +54,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                     class="trigger-type">
                             </div>
                             <div class="col-lg-6 search-field search-qual qualification-code">
-                                <input type="text" name="code" placeholder="Qualification Code e.g. 600/5640/X"
+                                <input type="text" name="qualificationNumber" placeholder="Qualification Code e.g. 600/5640/X"
                                     class="trigger-type">
                             </div>
                             <div class="col-lg-6 search-field search-qual regulator">
@@ -93,7 +93,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                 <?php
                                 $sectors = QUBA_GetQCASectors();
                                 ?>
-                                <select class="trigger-ajax-change" name="sector" id="sector">
+                                <select class="trigger-ajax-change" name="qcaSector" id="qcaSector">
                                     <option value="">Sector</option>
                                     <?php foreach ($sectors as $sector) { ?>
                                         <option value="<?= $sector->Code ?>"><?= $sector->Classification ?>

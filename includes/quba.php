@@ -43,12 +43,12 @@ function search_qualifications($data)
   // Create the SOAP request
   $request = array(
     'qualificationID'     => 0,
-    'qualificationTitle'  => $data['s'],
-    'qualificationLevel'  => $data['level'],
-    'qualificationNumber' => $data['code'],
-    'provisionType'       => $data['type'],
+    'qualificationTitle'  => $data['qualificationTitle'],
+    'qualificationLevel'  => $data['qualificationLevel'],
+    'qualificationNumber' => $data['qualificationNumber'],
+    'qcaSector'           => $data['qcaSector'],
+    'provisionType'       => '',
     'unitID'              => '',
-    'qcaSector'           => '',
     'includeHub'          => false,
     'centreID'            => ''
   );
@@ -78,7 +78,6 @@ function search_qualifications($data)
       $qualificationArray = [];
       foreach ($qualification->children() as $child) {
         $qualificationArray[$child->getName()] = htmlentities($child);
-        $metaInputArray[] = $child->getName();
       }
       $resultArray[] = $qualificationArray;
     }
@@ -105,15 +104,15 @@ add_action('wp_ajax_nopriv_archive_ajax_qualifications', 'archive_ajax_qualifica
 add_action('wp_ajax_archive_ajax_qualifications', 'archive_ajax_qualifications');
 function archive_ajax_qualifications()
 {
-  $type = $_POST['type'];
-  $level = $_POST['level'];
-  $code = $_POST['code'];
-  $s = $_POST['s'];
+  $qualificationLevel = $_POST['qualificationLevel'];
+  $qualificationNumber = $_POST['qualificationNumber'];
+  $qualificationTitle = $_POST['qualificationTitle'];
+  $qcaSector = $_POST['qcaSector'];
   $data = array(
-    'type'  => $type,
-    'level' => $level,
-    'code'  => $code,
-    's'     => $s,
+    'qualificationLevel'  => $qualificationLevel,
+    'qcaSector'           => $qcaSector,
+    'qualificationNumber' => $qualificationNumber,
+    'qualificationTitle'  => $qualificationTitle,
   );
   echo search_qualifications($data);
   die();

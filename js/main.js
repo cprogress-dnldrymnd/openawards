@@ -243,7 +243,7 @@ function ajax_qualifications($offset, $event_type = 'html') {
 
 	var $level = jQuery("select[name='level']").val();
 
-	var $sector = jQuery("select[name='sector']").val();
+	var $qcaSector = jQuery("select[name='qcaSector']").val();
 
 	var $minage = jQuery("select[name='minage']").val();
 
@@ -270,12 +270,10 @@ function ajax_qualifications($offset, $event_type = 'html') {
 
 		data: {
 			action: 'archive_ajax_qualifications',
-			offset: $offset,
-			sector: $sector,
-			minage: $minage,
-			level: $level,
-			code: $code,
-			s: $s,
+			qcaSector: $qcaSector,
+			qualificationLevel: $qualificationLevel,
+			qualificationNumber: $qualificationNumber,
+			qualificationTitle: $qualificationTitle,
 		},
 
 		success: function (response) {
