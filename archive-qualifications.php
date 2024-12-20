@@ -39,7 +39,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                         </div>
                     </div>
-                    <div class="qualification-filter-holder">
+                    <div class="qualification-filter-holder position-relative">
                         <div class="spinner d-inline-block"> <svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                 <path
