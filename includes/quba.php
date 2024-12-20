@@ -91,12 +91,18 @@ function search_qualifications($data)
     else {
       $resultArray_final = $resultArray;
     }
-    echo '<div class="row row-results g-5">';
-    foreach ($resultArray_final as $result) {
 
-      echo qual_grid($result);
+    if (count($resultArray_final) != 0) {
+      echo '<div class="row row-results g-5">';
+      foreach ($resultArray_final as $result) {
+
+        echo qual_grid($result);
+      }
+      echo '</div>';
     }
-    echo '</div>';
+    else {
+      echo 'No results found';
+    }
 
     // Output as JSON
     //echo '<pre>';
