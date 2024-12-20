@@ -163,9 +163,11 @@ function qual_grid($result)
 
 function related_qualifications()
 {
-  ?>
-
-  <?php
+  $level = carbon_get_the_post_meta('level');
+  $data = array(
+    'level' => $level
+  );
+  return search_qualifications($data);
 }
 
 add_shortcode('related_qualifications', 'related_qualifications');
