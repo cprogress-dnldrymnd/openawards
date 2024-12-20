@@ -241,7 +241,7 @@ function ajax_qualifications($offset, $event_type = 'html') {
 
 	var $result_holder = jQuery('#results .results-holder');
 
-	var $qualificationLevel = jQuery("select[name='qualificationLevel ']").val();
+	var $qualificationLevel = jQuery("select[name='qualificationLevel]").val();
 
 	var $qcaSector = jQuery("select[name='qcaSector']").val();
 
