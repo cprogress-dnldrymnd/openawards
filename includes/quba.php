@@ -81,11 +81,18 @@ function search_qualifications($data)
       }
       $resultArray[] = $qualificationArray;
     }
+
+    if ($data['qualificationType'] != '') {
+      $resultArray_final = array_filter($resultArray, function ($result, $data) {
+        return $result['Type'] == $data['qualificationType'];
+      });
+    }
+    else {
+      $resultArray_final = $resultArray;
+    }
     echo '<div class="row row-results g-5">';
-    foreach ($resultArray as $result) {
-      if ($data['qualificationType'] != '') {
-        echo $result['Type'];
-      }
+    foreach ($resultArray_final as $result) {
+
       echo qual_grid($result);
     }
     echo '</div>';
