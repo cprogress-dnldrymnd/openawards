@@ -7224,4 +7224,17 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
       color: var(--opal-black);
       line-height: 1.8; }
 
+section.info-boxes {
+  font-family: var(--primary-font); }
+  section.info-boxes .info-box {
+    padding: 45px;
+    border: 1px solid var(--high-violet);
+    border-radius: 10px; }
+    section.info-boxes .info-box .inner {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto; }
+      section.info-boxes .info-box .inner > *:not(:last-child) {
+        margin-bottom: 45px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -9830,3 +9830,26 @@ section.latest-news {
         }
     }
 }
+
+section.info-boxes {
+    font-family: var(--primary-font);
+
+    .info-box {
+        padding: 45px;
+        border: 1px solid var(--high-violet);
+        border-radius: 10px;
+
+        .inner {
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+
+            >* {
+                &:not(:last-child) {
+                    margin-bottom: 45px;
+                }
+            }
+
+        }
+    }
+}
