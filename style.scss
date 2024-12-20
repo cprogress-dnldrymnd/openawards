@@ -9724,17 +9724,23 @@ section.latest-news {
 
 .qualification-filter-buttons {
     .filter-button {
-        font-size: 18px;
-        font-family: 'Poppins';
-        font-weight: 500;
-        padding: 11px 35px;
-        border: none;
-        border-radius: 5px;
-        color: var(--white-color);
-        background-color: var(--opal-black);
+        button {
+            font-size: 18px;
+            font-family: 'Poppins';
+            font-weight: 500;
+            padding: 11px 35px;
+            border: none;
+            border-radius: 5px;
+            color: var(--white-color);
+            background-color: var(--opal-black);
+
+
+        }
 
         &.filter-active {
-            background-color: var(--high-violet);
+            a {
+                background-color: var(--high-violet);
+            }
         }
     }
 }
