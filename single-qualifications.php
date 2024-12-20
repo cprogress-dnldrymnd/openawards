@@ -59,13 +59,15 @@
               <div class="inner">
                 <h2>Purpose Statement<span>.</span></h2>
                 <ul>
-                  <li>About the Qualifitcation</li>
-                  <li>Qualification Units</li>
-                  <li>Delivering this Qualification</li>
-                  <li>Appendices and Links</li>
+                  <li>Who is it for?</li>
+                  <li>What does this qualification cover?</li>
+                  <li>What are the Entry Requirements?</li>
+                  <li>What are the Assessment Methods?</li>
+                  <li>What are the Progression Opportunities?</li>
+                  <li>Who supports this qualification?</li>
                 </ul>
                 <div class="button-box-v2 button-accent">
-                  <a href="#">Purpose Statement</a>
+                  <a href="#">Qualification Guide</a>
                 </div>
               </div>
             </div>
