@@ -114,7 +114,7 @@
         </div>
       </div>
     </section>
-    <section class="related-qualifications">
+    <section class="related-qualifications archive-section archive-section-qualifications">
       <div class="container">
         <h2 class="h2-style-1">
           Explore our Qualifications
