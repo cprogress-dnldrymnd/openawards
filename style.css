@@ -6858,6 +6858,9 @@ section.blog-filter {
     width: 50px;
     height: 50px; }
 
+.text-black * {
+  color: var(--black-color); }
+
 @keyframes spin {
   from {
     transform: rotate(0deg); }
