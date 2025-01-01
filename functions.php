@@ -24,7 +24,7 @@ add_theme_support('woocommerce');
 /*-----------------------------------------------------------------------------------*/
 register_nav_menus(
 	array(
-		'primary'	=>	__('Primary Menu', 'naked'), // Register the Primary menu
+		'primary' => __('Primary Menu', 'naked'), // Register the Primary menu
 		// Copy and paste the line above right here if you want to make another menu, 
 		// just change the 'primary' to another name
 	)
@@ -42,17 +42,20 @@ function get_resource_image($resource_type, $resource_thumbnail)
 	if ($resource_type == 'Brochure') {
 
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-3.jpg"/>';
-	} else if ($resource_type == 'Technical Data') {
+	}
+	else if ($resource_type == 'Technical Data') {
 
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-1.jpg"/>';
-	} else {
+	}
+	else {
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-2.jpg"/>';
 	}
 
 	if ($resource_thumbnail) {
 
 		$return = '<img src="' . wp_get_attachment_image_url($resource_thumbnail, 'large') . '"/>';
-	} else {
+	}
+	else {
 		$return = $thumb;
 	}
 
@@ -75,6 +78,7 @@ require_once('includes/post-types.php');
 require_once('includes/shortcodes.php');
 require_once('includes/woocommerce.php');
 require_once('includes/ajax.php');
+require_once('includes/quba.php');
 require_once('includes/wp-bakery.php');
 
 /*-----------------------------------------------------------------------------------*/
@@ -109,64 +113,64 @@ add_action('wp_enqueue_scripts', 'naked_scripts'); // Register this fxn and allo
 function naked_register_sidebars()
 {
 	register_sidebar(array(				// Start a series of sidebars to register
-		'id' => 'sidebar', 					// Make an ID
-		'name' => 'Sidebar',				// Name it
-		'description' => 'Take it on the side...', // Dumb description for the admin side
+		'id'            => 'sidebar', 					// Make an ID
+		'name'          => 'Sidebar',				// Name it
+		'description'   => 'Take it on the side...', // Dumb description for the admin side
 		'before_widget' => '<div>',	// What to display before each widget
-		'after_widget' => '</div>',	// What to display following each widget
-		'before_title' => '<h3 class="side-title">',	// What to display before each widget's title
-		'after_title' => '</h3>',		// What to display following each widget's title
-		'empty_title' => '',					// What to display in the case of no title defined for a widget
+		'after_widget'  => '</div>',	// What to display following each widget
+		'before_title'  => '<h3 class="side-title">',	// What to display before each widget's title
+		'after_title'   => '</h3>',		// What to display following each widget's title
+		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 		// Copy and paste the lines above right here if you want to make another sidebar, 
 		// just change the values of id and name to another word/name
 	));
 	register_sidebar(array(				// Start a series of sidebars to register
-		'id' => 'footer1', 					// Make an ID
-		'name' => 'Footer 1',				// Name it
+		'id'            => 'footer1', 					// Make an ID
+		'name'          => 'Footer 1',				// Name it
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
-		'after_widget' => '</div>',	// What to display following each widget
-		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
-		'after_title' => '</h5>',		// What to display following each widget's title
-		'empty_title' => '',					// What to display in the case of no title defined for a widget
+		'after_widget'  => '</div>',	// What to display following each widget
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
+		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 
 	register_sidebar(array(				// Start a series of sidebars to register
-		'id' => 'footer2', 					// Make an ID
-		'name' => 'Footer 2',				// Name it
+		'id'            => 'footer2', 					// Make an ID
+		'name'          => 'Footer 2',				// Name it
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
-		'after_widget' => '</div>',	// What to display following each widget
-		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
-		'after_title' => '</h5>',		// What to display following each widget's title
-		'empty_title' => '',					// What to display in the case of no title defined for a widget
+		'after_widget'  => '</div>',	// What to display following each widget
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
+		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 
 	register_sidebar(array(				// Start a series of sidebars to register
-		'id' => 'footer3', 					// Make an ID
-		'name' => 'Footer 3',				// Name it
+		'id'            => 'footer3', 					// Make an ID
+		'name'          => 'Footer 3',				// Name it
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
-		'after_widget' => '</div>',	// What to display following each widget
-		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
-		'after_title' => '</h5>',		// What to display following each widget's title
-		'empty_title' => '',					// What to display in the case of no title defined for a widget
+		'after_widget'  => '</div>',	// What to display following each widget
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
+		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 
 	register_sidebar(array(				// Start a series of sidebars to register
-		'id' => 'footer4', 					// Make an ID
-		'name' => 'Footer Opening Hours',				// Name it
+		'id'            => 'footer4', 					// Make an ID
+		'name'          => 'Footer Opening Hours',				// Name it
 		'before_widget' => '',	// What to display before each widget
-		'after_widget' => '',	// What to display following each widget
-		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
-		'after_title' => '</h5>',		// What to display following each widget's title
-		'empty_title' => '',					// What to display in the case of no title defined for a widget
+		'after_widget'  => '',	// What to display following each widget
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
+		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 	register_sidebar(array(				// Start a series of sidebars to register
-		'id' => 'footer_bottom_links', 					// Make an ID
-		'name' => 'Footer Bottom Links',				// Name it
+		'id'            => 'footer_bottom_links', 					// Make an ID
+		'name'          => 'Footer Bottom Links',				// Name it
 		'before_widget' => '',	// What to display before each widget
-		'after_widget' => '',	// What to display following each widget
-		'before_title' => '<h5 class="widget-title">',	// What to display before each widget's title
-		'after_title' => '</h5>',		// What to display following each widget's title
-		'empty_title' => '',					// What to display in the case of no title defined for a widget
+		'after_widget'  => '',	// What to display following each widget
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
+		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 }
 // adding sidebars to Wordpress (these are created in functions.php)
@@ -216,14 +220,14 @@ function header_class()
 		echo 'class="darkHeader"';
 	}
 	/*if(is_account_page()) {
-		if(is_user_logged_in()) {
-			echo 'class="darkHeader"';
-		}
-	} else {
-		if($post_type == 'location' || $post_type == 'event' || $page_template == 'templates/page-with-dark-header.php'  || $post_type == 'discussion-topics') {
-			echo 'class="darkHeader"';
-		} 
-	}*/
+		 if(is_user_logged_in()) {
+			 echo 'class="darkHeader"';
+		 }
+	 } else {
+		 if($post_type == 'location' || $post_type == 'event' || $page_template == 'templates/page-with-dark-header.php'  || $post_type == 'discussion-topics') {
+			 echo 'class="darkHeader"';
+		 } 
+	 }*/
 	return;
 }
 function logo()
@@ -233,7 +237,8 @@ function logo()
 	$post_type = get_post_type();
 	if ($post_type == 'location' || $page_template == 'templates/page-with-dark-header.php' || $post_type == 'discussion-topics' || $page_template == 'templates/page-community.php') {
 		return $theme_settings['alt_logo_url'];
-	} else {
+	}
+	else {
 		return $theme_settings['logo_url'];
 	}
 }
@@ -250,7 +255,7 @@ function wp_body_classes($classes)
 		$classes[] = 'not-logged-in';
 	}
 
-	if ($post_type == 'location' || $page_template == 'templates/page-with-dark-header.php'  || $page_template == 'templates/page-small-page-banner.php' || $post_type == 'discussion-topics' || $page_template == 'templates/page-community.php') {
+	if ($post_type == 'location' || $page_template == 'templates/page-with-dark-header.php' || $page_template == 'templates/page-small-page-banner.php' || $post_type == 'discussion-topics' || $page_template == 'templates/page-community.php') {
 		$classes[] = 'page-is-dark-header';
 	}
 	return $classes;
@@ -304,10 +309,10 @@ function open_awards_pagination($custom_query)
 		echo paginate_links(array(
 			'prev_text' => '<i class="fas fa-arrow-left"></i>',
 			'next_text' => '<i class="fas fa-arrow-right"></i>',
-			'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-			'format' => '?paged=%#%',
-			'current' => $current_page,
-			'total' => $total_pages,
+			'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+			'format'    => '?paged=%#%',
+			'current'   => $current_page,
+			'total'     => $total_pages,
 
 		));
 	}
@@ -330,13 +335,15 @@ function open_awards_wp_head()
 {
 	$background_color = get_field('background_color') ? get_field('background_color') : 'transparent';
 	if ($background_color) {
-?>
+		?>
 		<style>
 			html body {
-				background-color: <?= $background_color  ?> !important;
+				background-color:
+					<?= $background_color ?>
+					!important;
 			}
 		</style>
-	<?php
+		<?php
 	}
 }
 add_action('wp_head', 'open_awards_wp_head');
@@ -388,7 +395,8 @@ function provider_options($array = false, $option = '', $option_arr = array())
 
 		if ($user->provider_name == $provider->ID) {
 			$selected = 'selected';
-		} else {
+		}
+		else {
 			$selected = '';
 		}
 		$option_arr[$provider->ID] = $provider->post_title . ' - ' . $provider_number;
@@ -399,7 +407,8 @@ function provider_options($array = false, $option = '', $option_arr = array())
 	}
 	if ($array) {
 		return $option_arr;
-	} else {
+	}
+	else {
 		return $option;
 	}
 }
@@ -436,7 +445,8 @@ function make_google_calendar_link($name, $begin, $end, $location, $details)
 			$t = new DateTime('@' . $current, new DateTimeZone('UTC'));
 			$current = $t->format('Ymd\THis\Z');
 			unset($t);
-		} else {
+		}
+		else {
 			$current = urlencode($current);
 		}
 		$url .= (string) $current . $params[$i];
@@ -469,20 +479,24 @@ function insert_post_ajax()
 	<div class="accordion" id="accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="heading<?= clean($post_title) ?>-<?= clean($post_title) ?>">
-				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>" aria-expanded="false" aria-controls="collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+					data-bs-target="#collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>" aria-expanded="false"
+					aria-controls="collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>">
 					<?= $post_title ?>
 				</button>
 			</h2>
-			<div id="collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= clean($post_title) ?>-<?= clean($post_title) ?>" data-bs-parent="#accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
+			<div id="collapse<?= clean($post_title) ?>-<?= clean($post_title) ?>" class="accordion-collapse collapse"
+				aria-labelledby="heading<?= clean($post_title) ?>-<?= clean($post_title) ?>"
+				data-bs-parent="#accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
 				<div class="accordion-body">
 					<pre>
-						<?php var_dump($post_data); ?>
-					</pre>
+							<?php var_dump($post_data); ?>
+						</pre>
 				</div>
 			</div>
 		</div>
 	</div>
-<?php
+	<?php
 	echo '</td>';
 	if ($post_id == false) {
 		// Insert the post into the database
@@ -497,7 +511,8 @@ function insert_post_ajax()
 			echo '<a class="btn btn-primary" target="_blank" href="' . get_permalink($insert) . '"> Visit </a>';
 			echo '</td>';
 		}
-	} else {
+	}
+	else {
 		$post_data['ID'] = $post_id;
 		$update = wp_update_post($post_data);
 		if ($update) {

@@ -50,11 +50,11 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                         </div>
                         <div class="row">
                             <div class="col-lg-12 search-field search-qual search-units search-access-to-he keywords">
-                                <input type="text" name="qualificationTitle" placeholder="Keywords e.g. warehousing"
+                                <input type="text" name="s" placeholder="Keywords e.g. warehousing"
                                     class="trigger-type">
                             </div>
                             <div class="col-lg-6 search-field search-qual qualification-code">
-                                <input type="text" name="qualificationNumber" placeholder="Qualification Code e.g. 600/5640/X"
+                                <input type="text" name="code" placeholder="Qualification Code e.g. 600/5640/X"
                                     class="trigger-type">
                             </div>
                             <div class="col-lg-6 search-field search-qual regulator">
@@ -82,7 +82,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                 <?php
                                 $levels = get_unique_meta_values('_level');
                                 ?>
-                                <select class="trigger-ajax-change" name="qualificationLevel" id="level">
+                                <select class="trigger-ajax-change" name="level" id="level">
                                     <option value="">Level</option>
                                     <?php foreach ($levels as $level) { ?>
                                         <option value="<?= $level ?>"><?= $level ?></option>
@@ -91,13 +91,12 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                             <div class="col-lg-6 search-field search-qual search-units search-access-to-he sector">
                                 <?php
-                                $sectors = QUBA_GetQCASectors();
+                                $sectors = get_unique_meta_values('_sector');
                                 ?>
-                                <select class="trigger-ajax-change" name="qcaSector" id="qcaSector">
+                                <select class="trigger-ajax-change" name="sector" id="sector">
                                     <option value="">Sector</option>
                                     <?php foreach ($sectors as $sector) { ?>
-                                        <option value="<?= $sector->Code ?>"><?= $sector->Classification ?>
-                                        </option>
+                                        <option value="<?= $sector ?>"><?= $sector ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -106,7 +105,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                 $types = get_unique_meta_values('_type');
                                 sort($types);
                                 ?>
-                                <select class="trigger-ajax-change" name="qualificationType" id="type">
+                                <select class="trigger-ajax-change" name="type" id="type">
                                     <option value="">Qualification Type</option>
                                     <?php foreach ($types as $type) { ?>
                                         <?php if ($type) { ?>
