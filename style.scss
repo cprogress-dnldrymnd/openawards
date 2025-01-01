@@ -8268,6 +8268,7 @@ form#resources_form {
     padding: 11px 34px;
     border-radius: 5px;
     display: inline-block;
+    background-image: none;
     &.vc_btn3-style-modern {
         background-image: none;
         font-size: 23px;
@@ -8416,9 +8417,8 @@ form#resources_form {
         padding-left: 15px;
         padding-right: 15px;
         margin-bottom: 30px;
-
         >.vc_column-inner {
-            padding: 200px 40px 0 !important;
+            padding: 200px 40px 40px !important;
             border-radius: 10px;
             background-size: cover !important;
             height: 100%;
@@ -8426,7 +8426,12 @@ form#resources_form {
             align-items: flex-end;
             justify-content: center;
             overflow: hidden;
-
+            > div {
+                width: 100%;
+                > *:last-child {
+                    margin-bottom: 0;
+                }
+            }
             .vc_row.vc_row {
                 margin-left: 0 !important;
                 margin-right: 0 !important;
