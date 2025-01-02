@@ -20,7 +20,7 @@ $faqs_image_url = wp_get_attachment_image_url($faqs_image, 'large');
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
         <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
-        <div class="title-wrapper title-wrapper-v3">
+        <div class="title-wrapper title-wrapper-v3 title-wrapper-v4">
             <div class="container">
                 <div class="heading-box">
                     <h2>
