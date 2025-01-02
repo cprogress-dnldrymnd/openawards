@@ -101,8 +101,11 @@
 
 <script>
   jQuery(document).ready(function() {
-
-  })
+    jQuery('.accordion-button').click(function(e) {
+      console.log('test');
+      e.preventDefault();
+    });
+  });
 </script>
 <script>
   var swiper = new Swiper(".mySwiperSlider", {
@@ -177,24 +180,24 @@
   });
 
 
-  
+
   var swiper = new Swiper(".swiperPostSlider-latestnews", {
     spaceBetween: 0,
     loop: true,
     breakpoints: {
-        480: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 20,
       },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -206,7 +209,7 @@
   });
 
 
-  swiperPostSlider-latestnews
+  swiperPostSlider - latestnews
 </script>
 <?php wp_footer();
 // This fxn allows plugins to insert themselves/scripts/css/files (right here) into the footer of your website. 
