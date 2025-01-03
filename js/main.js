@@ -244,6 +244,8 @@ function ajax_units($offset, $event_type = 'html') {
 
 	var $unitLevel = jQuery("select[name='Level']").val();
 
+	var $qcaSector = jQuery("select[name='qcaSector']").val();
+
 	var $qcaCode = jQuery("input[name='qcaCode']").val();
 
 
@@ -267,8 +269,9 @@ function ajax_units($offset, $event_type = 'html') {
 		url: "/wp-admin/admin-ajax.php",
 
 		data: {
-			action: 'archive_ajax_qualifications',
+			action: 'archive_ajax_units',
 			qcaCode: $qcaCode,
+			qcaSector: $qcaSector,
 			unitLevel: $unitLevel,
 			unitTitle: $unitTitle,
 		},

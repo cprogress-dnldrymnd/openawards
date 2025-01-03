@@ -114,45 +114,29 @@ function QUBA_QualificationSearch($data)
   return ob_get_clean();
 }
 
-function QUBA_UnitSearch()
+function QUBA_UnitSearch($data)
 {
+  ob_start();
   // Define the SOAP client
   $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
   //$unitTitle_array = array('L5');
   $resultArray = [];
-  $metaInputArray = [];
-
-  // Define the SOAP request parameters
-  $unitID = 0;
-  $unitIdAlpha = '';
-  $unitTitle = '';
-  $allOrPartTitle = false;
-  $unitLevel = 'E1';
-  $unitCredits = 0;
-  $qcaSector = '';
-  $learnDirectCode = '';
-  $qcaCode = 'M/650/3686';
-  $unitType = '';
-  $provisionType = '';
-  $includeHub = true;
-  $moduleID = 0;
-  $alternativeUnitCode = '';
   // Create the SOAP request
   $request = array(
-    'unitID' => $unitID,
-    'unitIdAlpha' => $unitIdAlpha,
-    'unitTitle' => $unitTitle,
-    'allOrPartTitle' => $allOrPartTitle,
-    'unitLevel' => $unitLevel,
-    'unitCredits' => $unitCredits,
-    'qcaSector' => $qcaSector,
-    'learnDirectCode' => $learnDirectCode,
-    'qcaCode' => $qcaCode,
-    'unitType' => $unitType,
-    'provisionType' => $provisionType,
-    'includeHub' => $includeHub,
-    'moduleID' => $moduleID,
-    'alternativeUnitCode' => $alternativeUnitCode,
+    'unitID' => 0,
+    'unitIdAlpha' => '',
+    'unitTitle' => $data['unitTitle'],
+    'allOrPartTitle' => false,
+    'unitLevel' => $data['unitLevel'],
+    'unitCredits' => 9,
+    'qcaSector' => $data['qcaSector'],
+    'learnDirectCode' => '',
+    'qcaCode' => $data['qcaCode'],
+    'unitType' => '',
+    'provisionType' => '',
+    'includeHub' => true,
+    'moduleID' => 0,
+    'alternativeUnitCode' => '',
   );
 
   // Call the SOAP method
@@ -180,7 +164,6 @@ function QUBA_UnitSearch()
       $unitArray = [];
       foreach ($unit->children() as $child) {
         $unitArray[$child->getName()] = htmlentities($child);
-        $metaInputArray[] = $child->getName();
       }
       $resultArray[] = $unitArray;
     }
@@ -195,6 +178,8 @@ function QUBA_UnitSearch()
     var_dump($e);
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
+
+  return ob_get_clean();
 }
 
 
@@ -217,6 +202,25 @@ function archive_ajax_qualifications()
   echo QUBA_QualificationSearch($data);
   die();
 }
+
+add_action('wp_ajax_nopriv_archive_ajax_units', 'archive_ajax_units'); // for not logged in users
+add_action('wp_ajax_archive_ajax_units', 'archive_ajax_units');
+function archive_ajax_units()
+{
+  $qcaCode = isset($_POST['qcaCode']) && $_POST['qcaCode'] != '' ? $_POST['qcaCode'] : '';
+  $unitLevel = isset($_POST['unitLevel']) && $_POST['unitLevel'] != '' ? $_POST['unitLevel'] : '';
+  $unitTitle = isset($_POST['unitTitle']) && $_POST['unitTitle'] != '' ? $_POST['unitTitle'] : '';
+  $qcaSector = isset($_POST['qcaSector']) && $_POST['qcaSector'] != '' ? $_POST['qcaSector'] : '';
+  $data = array(
+    'qcaCode'  => $qcaCode,
+    'qcaSector'           => $qcaSector,
+    'unitLevel' => $unitLevel,
+    'unitTitle'  => $unitTitle,
+  );
+  echo QUBA_UnitSearch($data);
+  die();
+}
+
 
 
 
