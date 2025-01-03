@@ -50,7 +50,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                         </div>
                         <div class="row">
                             <div class="col-lg-12 search-field search-qual search-units search-access-to-he keywords">
-                                <input type="text" name="qualificationTitle" placeholder="Keywords e.g. warehousing"
+                                <input type="text" name="Title" placeholder="Keywords e.g. warehousing"
                                     class="trigger-type">
                             </div>
                             <div class="col-lg-6 search-field search-qual qualification-code">
@@ -82,7 +82,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                 <?php
                                 $levels = get_unique_meta_values('_level');
                                 ?>
-                                <select class="trigger-ajax-change" name="qualificationLevel" id="level">
+                                <select class="trigger-ajax-change" name="Level" id="level">
                                     <option value="">Level</option>
                                     <?php foreach ($levels as $level) { ?>
                                         <option value="<?= $level ?>"><?= $level ?></option>
