@@ -8,7 +8,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
         <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
         <?= do_shortcode('[template template_id=3722]') ?>
 
-        <section class="qualification-filter">
+        <section class="qualification-filter" id="qualification-filter" search_type="qualifications">
             <div class="container">
                 <div class="qualification-filter-wrapper ">
                     <div class="qualification-filter-buttons">
@@ -40,7 +40,6 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                         </div>
                     </div>
                     <div class="qualification-filter-holder position-relative">
-                        <input type="hidden" name="post-type" value="qualifications">
                         <div class="spinner-holder">
                             <div class="spinner d-inline-block"> <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -166,7 +165,6 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 <script>
     jQuery(document).ready(function() {
         search_change();
-
         var typingTimer;
         var doneTypingInterval = 500;
 
@@ -189,8 +187,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
             $post_type = jQuery(this).attr('post_type');
             jQuery('.search-field').addClass('d-none');
             jQuery($search_type).removeClass('d-none');
-            jQuery('input[name="post-type"]').val($post_type);
-
+            jQuery('#qualification-filter').attr('search_type', $post_type);
             setTimeout(function() {
                 jQuery('.qualification-filter-holder').removeClass('searching');
             }, 500);
