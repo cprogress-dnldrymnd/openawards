@@ -172,7 +172,7 @@ function QUBA_UnitSearch($data)
 
     echo '<pre>';
 
-    echo var_dump($units);
+    echo var_dump($resultArray);
     echo var_dump($data);
     echo '</pre';
   } catch (Exception $e) {
