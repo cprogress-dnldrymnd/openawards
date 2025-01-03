@@ -248,6 +248,7 @@ function ajax_units($offset, $event_type = 'html') {
 
 	var $qcaCode = jQuery("input[name='qcaCode']").val();
 
+	var $unitID = jQuery("input[name='unitID']").val();
 
 	var $unitTitle = jQuery("input[name='Title']").val();
 
@@ -274,6 +275,7 @@ function ajax_units($offset, $event_type = 'html') {
 			qcaSector: $qcaSector,
 			unitLevel: $unitLevel,
 			unitTitle: $unitTitle,
+			unitID: $unitID,
 		},
 
 		success: function (response) {

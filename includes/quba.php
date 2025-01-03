@@ -123,7 +123,7 @@ function QUBA_UnitSearch($data)
   $resultArray = [];
   // Create the SOAP request
   $request = array(
-    'unitID' => 0,
+    'unitID' => $data['unitID'],
     'unitIdAlpha' => '',
     'unitTitle' => $data['unitTitle'],
     'allOrPartTitle' => false,
@@ -213,11 +213,14 @@ function archive_ajax_units()
   $unitLevel = isset($_POST['unitLevel']) && $_POST['unitLevel'] != '' ? $_POST['unitLevel'] : '';
   $unitTitle = isset($_POST['unitTitle']) && $_POST['unitTitle'] != '' ? $_POST['unitTitle'] : '';
   $qcaSector = isset($_POST['qcaSector']) && $_POST['qcaSector'] != '' ? $_POST['qcaSector'] : '';
+  $unitID = isset($_POST['unitID']) && $_POST['unitID'] != '' ? $_POST['unitID'] : 0;
+
   $data = array(
     'qcaCode'  => $qcaCode,
     'qcaSector'           => $qcaSector,
     'unitLevel' => $unitLevel,
     'unitTitle'  => $unitTitle,
+    'unitID' => $unitID
   );
   echo QUBA_UnitSearch($data);
   die();
