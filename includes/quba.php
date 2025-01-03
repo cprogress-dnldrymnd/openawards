@@ -134,7 +134,7 @@ function QUBA_UnitSearch($data)
     'qcaCode' => $data['qcaCode'],
     'unitType' => '',
     'provisionType' => '',
-    'includeHub' => true,
+    'includeHub' => false,
     'moduleID' => 0,
     'alternativeUnitCode' => '',
   );
