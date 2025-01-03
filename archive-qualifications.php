@@ -74,7 +74,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                     placeholder="Open Awards Unit Code e.g. UA33ART12" class="trigger-type">
                             </div>
                             <div
-                                class="col-lg-6 search-field search-units search-access-to-he open-awards-unit-id d-none" style="display: none !important;">
+                                class="col-lg-6 search-field search-units search-access-to-he open-awards-unit-id d-none">
                                 <input type="text" name="open_awards_unit_id"
                                     placeholder="Open Awards Unit ID e.g. CBF498" class="trigger-type">
                             </div>
