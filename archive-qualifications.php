@@ -177,7 +177,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
             $post_type = jQuery('#qualification-filter').attr('search_type');
             if ($post_type == 'qualifications') {
                 ajax_qualifications(0);
-            } else if ($post_type == 'qualifications') {
+            } else if ($post_type == 'units') {
                 ajax_units(0);
             }
         });
