@@ -42,20 +42,17 @@ function get_resource_image($resource_type, $resource_thumbnail)
 	if ($resource_type == 'Brochure') {
 
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-3.jpg"/>';
-	}
-	else if ($resource_type == 'Technical Data') {
+	} else if ($resource_type == 'Technical Data') {
 
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-1.jpg"/>';
-	}
-	else {
+	} else {
 		$thumb = '<img src="' . get_stylesheet_directory_uri() . '/assets/images/thumb-2.jpg"/>';
 	}
 
 	if ($resource_thumbnail) {
 
 		$return = '<img src="' . wp_get_attachment_image_url($resource_thumbnail, 'large') . '"/>';
-	}
-	else {
+	} else {
 		$return = $thumb;
 	}
 
@@ -237,8 +234,7 @@ function logo()
 	$post_type = get_post_type();
 	if ($post_type == 'location' || $page_template == 'templates/page-with-dark-header.php' || $post_type == 'discussion-topics' || $page_template == 'templates/page-community.php') {
 		return $theme_settings['alt_logo_url'];
-	}
-	else {
+	} else {
 		return $theme_settings['logo_url'];
 	}
 }
@@ -335,15 +331,14 @@ function open_awards_wp_head()
 {
 	$background_color = get_field('background_color') ? get_field('background_color') : 'transparent';
 	if ($background_color) {
-		?>
+?>
 		<style>
 			html body {
 				background-color:
-					<?= $background_color ?>
-					!important;
+					<?= $background_color ?> !important;
 			}
 		</style>
-		<?php
+	<?php
 	}
 }
 add_action('wp_head', 'open_awards_wp_head');
@@ -395,8 +390,7 @@ function provider_options($array = false, $option = '', $option_arr = array())
 
 		if ($user->provider_name == $provider->ID) {
 			$selected = 'selected';
-		}
-		else {
+		} else {
 			$selected = '';
 		}
 		$option_arr[$provider->ID] = $provider->post_title . ' - ' . $provider_number;
@@ -407,8 +401,7 @@ function provider_options($array = false, $option = '', $option_arr = array())
 	}
 	if ($array) {
 		return $option_arr;
-	}
-	else {
+	} else {
 		return $option;
 	}
 }
@@ -445,8 +438,7 @@ function make_google_calendar_link($name, $begin, $end, $location, $details)
 			$t = new DateTime('@' . $current, new DateTimeZone('UTC'));
 			$current = $t->format('Ymd\THis\Z');
 			unset($t);
-		}
-		else {
+		} else {
 			$current = urlencode($current);
 		}
 		$url .= (string) $current . $params[$i];
@@ -465,8 +457,9 @@ function insert_post_ajax()
 	$post_title = $_POST['post_title'];
 	$post_content = $_POST['post_content'];
 	$meta_input = $_POST['meta_input'];
+	$post_type = $_POST['post_type'];
 
-	$post_data['post_type'] = 'qualifications';
+	$post_data['post_type'] = $post_type;
 	$post_data['post_title'] = $post_title;
 	$post_data['post_status'] = 'publish';
 	$post_data['meta_input'] = json_decode(stripslashes($meta_input), true);
@@ -490,13 +483,13 @@ function insert_post_ajax()
 				data-bs-parent="#accordionQual-<?= clean($post_title) ?>-<?= clean($post_title) ?>">
 				<div class="accordion-body">
 					<pre>
-							<?php var_dump($post_data); ?>
-						</pre>
+						<?php var_dump($post_data); ?>
+					</pre>
 				</div>
 			</div>
 		</div>
 	</div>
-	<?php
+<?php
 	echo '</td>';
 	if ($post_id == false) {
 		// Insert the post into the database
@@ -511,8 +504,7 @@ function insert_post_ajax()
 			echo '<a class="btn btn-primary" target="_blank" href="' . get_permalink($insert) . '"> Visit </a>';
 			echo '</td>';
 		}
-	}
-	else {
+	} else {
 		$post_data['ID'] = $post_id;
 		$update = wp_update_post($post_data);
 		if ($update) {

@@ -1,4 +1,5 @@
 <?php
+
 /** Quba Functions */
 function QUBA_GetQCASectors()
 {
@@ -27,13 +28,12 @@ function QUBA_GetQCASectors()
     $xml = new SimpleXMLElement($responseString);
     $QubaGetSSAReferenceData = $xml->xpath('//QubaGetSSAReferenceData');
     return $QubaGetSSAReferenceData;
-  }
-  catch (Exception $e) {
+  } catch (Exception $e) {
     var_dump($e);
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
 }
-function search_qualifications($data)
+function QUBA_QualificationSearch($data)
 {
   ob_start();
   // Define the SOAP client
@@ -87,8 +87,7 @@ function search_qualifications($data)
       $resultArray_final = array_filter($resultArray, function ($result) use ($qualificationType) {
         return $result['Type'] == $qualificationType;
       });
-    }
-    else {
+    } else {
       $resultArray_final = $resultArray;
     }
 
@@ -99,8 +98,7 @@ function search_qualifications($data)
         echo qual_grid($result);
       }
       echo '</div>';
-    }
-    else {
+    } else {
       echo 'No results found';
     }
 
@@ -109,13 +107,96 @@ function search_qualifications($data)
     //echo json_encode($resultArray, JSON_PRETTY_PRINT);
     //echo '</pre>';
 
-  }
-  catch (Exception $e) {
+  } catch (Exception $e) {
     var_dump($e);
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
   return ob_get_clean();
 }
+
+function QUBA_UnitSearch()
+{
+  // Define the SOAP client
+  $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
+  //$unitTitle_array = array('L5');
+  $resultArray = [];
+  $metaInputArray = [];
+
+  // Define the SOAP request parameters
+  $unitID = 0;
+  $unitIdAlpha = '';
+  $unitTitle = '';
+  $allOrPartTitle = false;
+  $unitLevel = 'E1';
+  $unitCredits = 0;
+  $qcaSector = '';
+  $learnDirectCode = '';
+  $qcaCode = 'M/650/3686';
+  $unitType = '';
+  $provisionType = '';
+  $includeHub = true;
+  $moduleID = 0;
+  $alternativeUnitCode = '';
+  // Create the SOAP request
+  $request = array(
+    'unitID' => $unitID,
+    'unitIdAlpha' => $unitIdAlpha,
+    'unitTitle' => $unitTitle,
+    'allOrPartTitle' => $allOrPartTitle,
+    'unitLevel' => $unitLevel,
+    'unitCredits' => $unitCredits,
+    'qcaSector' => $qcaSector,
+    'learnDirectCode' => $learnDirectCode,
+    'qcaCode' => $qcaCode,
+    'unitType' => $unitType,
+    'provisionType' => $provisionType,
+    'includeHub' => $includeHub,
+    'moduleID' => $moduleID,
+    'alternativeUnitCode' => $alternativeUnitCode,
+  );
+
+  // Call the SOAP method
+  $response = $client->QUBA_UnitSearch($request);
+
+  // Assuming $response is the object returned from the SOAP call:
+  $xmlString = $response->QUBA_UnitSearchResult->any; // Assuming XML is in the "any" field
+
+  $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <QUBA_UnitSearchResponse xmlns="http://tempuri.org/">
+      <QUBA_UnitSearchResult namespace="" tableTypeName="">
+      ' . $xmlString . '
+      </QUBA_UnitSearchResult>
+    </QUBA_UnitSearchResponse>
+  </soap:Body>
+</soap:Envelope>';
+  echo $responseString;
+  try {
+    $xml = new SimpleXMLElement($responseString);
+    $units = $xml->xpath('//QubaUnit'); // Extract qualification nodes
+
+    foreach ($units as $unit) {
+      // Extract and process data from each qualification element
+      $unitArray = [];
+      foreach ($unit->children() as $child) {
+        $unitArray[$child->getName()] = htmlentities($child);
+        $metaInputArray[] = $child->getName();
+      }
+      $resultArray[] = $unitArray;
+    }
+
+    // Output as JSON
+
+    echo '<pre>';
+
+    echo var_dump($units);
+    echo '</pre';
+  } catch (Exception $e) {
+    var_dump($e);
+    // Handle errors (e.g., invalid XML, data extraction issues)
+  }
+}
+
 
 add_action('wp_ajax_nopriv_archive_ajax_qualifications', 'archive_ajax_qualifications'); // for not logged in users
 add_action('wp_ajax_archive_ajax_qualifications', 'archive_ajax_qualifications');
@@ -133,9 +214,10 @@ function archive_ajax_qualifications()
     'qualificationTitle'  => $qualificationTitle,
     'qualificationType'   => $qualificationType
   );
-  echo search_qualifications($data);
+  echo QUBA_QualificationSearch($data);
   die();
 }
+
 
 
 function get_post_id_by_meta_field($meta_key, $meta_value)
@@ -163,8 +245,7 @@ function qual_grid($result, $post = false)
     $check_qual = get_post_id_by_meta_field('_id', $result['ID']);
     if ($check_qual) {
       $post_id = $check_qual;
-    }
-    else {
+    } else {
       // Insert the post into the database
       $post_data['post_type'] = 'qualifications';
       $post_data['post_title'] = $result['Title'];
@@ -174,16 +255,14 @@ function qual_grid($result, $post = false)
       );
 
       $post_id = wp_insert_post($post_data);
-
     }
   }
   if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
     $level_val = str_replace('E', 'Entry Level ', $result['Level']);
-  }
-  else {
+  } else {
     $level_val = str_replace('L', 'Level ', subject: $result['Level']);
   }
-  ?>
+?>
   <div class="col-lg-4 post-item">
     <div class="post-box h-100">
       <div class="image-box image-box-placeholder">
@@ -209,7 +288,7 @@ function qual_grid($result, $post = false)
       </div>
     </div>
   </div>
-  <?php
+<?php
   return ob_get_clean();
 }
 

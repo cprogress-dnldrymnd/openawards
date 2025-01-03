@@ -15,7 +15,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="filter-button filter-active">
-                                    <button search_type=".search-qual"
+                                    <button post_type="qualifications" search_type=".search-qual"
                                         class="search-change-trigger w-100 text-center d-flex justify-content-between align-items-center">
                                         Search Qualifications <?= $chev ?>
                                     </button>
@@ -23,7 +23,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                             </div>
                             <div class="col-lg-4">
                                 <div class="filter-button filter-units">
-                                    <button search_type=".search-units"
+                                    <button post_type="units" search_type=".search-units"
                                         class="search-change-trigger w-100 text-center d-flex justify-content-between align-items-center">
                                         Search Units <?= $chev ?>
                                     </button>
@@ -40,6 +40,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                         </div>
                     </div>
                     <div class="qualification-filter-holder position-relative">
+                        <input type="hidden" name="post-type" value="qualifications">
                         <div class="spinner-holder">
                             <div class="spinner d-inline-block"> <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -163,31 +164,34 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 <?php get_footer(); // This fxn gets the footer.php file and renders it 
 ?>
 <script>
-    jQuery(document).ready(function () {
+    jQuery(document).ready(function() {
         search_change();
 
         var typingTimer;
         var doneTypingInterval = 500;
 
-        jQuery('.trigger-type').on('keyup', function () {
+        jQuery('.trigger-type').on('keyup', function() {
             clearTimeout(typingTimer);
             typingTimer = setTimeout(doneTyping, doneTypingInterval);
         });
 
-        jQuery('.trigger-ajax-change').change(function (e) {
+        jQuery('.trigger-ajax-change').change(function(e) {
             ajax_qualifications(0);
         });
     });
 
     function search_change() {
-        jQuery('.search-change-trigger').click(function (e) {
+        jQuery('.search-change-trigger').click(function(e) {
             jQuery('.qualification-filter-holder').addClass('searching');
             jQuery('.filter-button').removeClass('filter-active');
             jQuery(this).parent().addClass('filter-active');
             $search_type = jQuery(this).attr('search_type');
+            $post_type = jQuery(this).attr('post_type');
             jQuery('.search-field').addClass('d-none');
             jQuery($search_type).removeClass('d-none');
-            setTimeout(function () {
+            jQuery('input[name="post-type"]').val($post_type);
+
+            setTimeout(function() {
                 jQuery('.qualification-filter-holder').removeClass('searching');
             }, 500);
             e.preventDefault();
