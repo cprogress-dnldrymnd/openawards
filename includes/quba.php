@@ -128,7 +128,7 @@ function QUBA_UnitSearch($data)
     'unitTitle' => $data['unitTitle'],
     'allOrPartTitle' => false,
     'unitLevel' => $data['unitLevel'],
-    'unitCredits' => 9,
+    'unitCredits' => 0,
     'qcaSector' => $data['qcaSector'],
     'learnDirectCode' => '',
     'qcaCode' => $data['qcaCode'],
@@ -154,7 +154,6 @@ function QUBA_UnitSearch($data)
     </QUBA_UnitSearchResponse>
   </soap:Body>
 </soap:Envelope>';
-  echo $responseString;
   try {
     $xml = new SimpleXMLElement($responseString);
     $units = $xml->xpath('//QubaUnit'); // Extract qualification nodes
