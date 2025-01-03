@@ -170,7 +170,7 @@ function QUBA_UnitSearch($data)
     if (count($unitArray) != 0) {
       echo '<div class="row row-results g-5">';
       foreach ($unitArray as $result) {
-        echo qual_grid($result, false, 'units');
+        echo qual_grid($result, 'units');
       }
       echo '</div>';
     } else {
@@ -244,7 +244,7 @@ function get_post_id_by_meta_field($meta_key, $meta_value)
   return $post_id;
 }
 
-function qual_grid($result, $post = false, $post_type = 'qualifications')
+function qual_grid($result, $post_type = 'qualifications', $post = false)
 {
   ob_start();
   if ($post == false) {
