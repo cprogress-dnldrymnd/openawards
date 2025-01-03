@@ -247,6 +247,7 @@ Container::make('post_meta', 'Qualifications Settings')
     ->add_fields(
         array(
             Field::make('text', 'id', __('ID')),
+            /*
             Field::make('text', 'level', __('Level')),
             Field::make('text', 'type', __('Type')),
             Field::make('text', 'regulationstartdate', __('Regulation start date')),
@@ -261,7 +262,7 @@ Container::make('post_meta', 'Qualifications Settings')
             Field::make('text', 'tqt', __('TQT')),
             Field::make('text', 'glh', __('GLH')),
             Field::make('text', 'alternativequalificationtitle', __('Alternative qualification Title')),
-            Field::make('text', 'classification1', __('Classification 1')),
+            Field::make('text', 'classification1', __('Classification 1')),*/
         )
     );
 
