@@ -167,9 +167,9 @@ function QUBA_UnitSearch($data)
       $resultArray[] = $unitArray;
     }
 
-    if (count($unitArray) != 0) {
+    if (count($resultArray) != 0) {
       echo '<div class="row row-results g-5">';
-      foreach ($unitArray as $result) {
+      foreach ($resultArray as $result) {
         echo qual_grid($result, 'units');
       }
       echo '</div>';
