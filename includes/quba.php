@@ -167,13 +167,15 @@ function QUBA_UnitSearch($data)
       $resultArray[] = $unitArray;
     }
 
-    // Output as JSON
-
-    echo '<pre>';
-
-    echo var_dump($resultArray);
-    echo var_dump($data);
-    echo '</pre';
+    if (count($unitArray) != 0) {
+      echo '<div class="row row-results g-5">';
+      foreach ($unitArray as $result) {
+        echo qual_grid($result, false, 'units');
+      }
+      echo '</div>';
+    } else {
+      echo 'No results found';
+    }
   } catch (Exception $e) {
     var_dump($e);
     // Handle errors (e.g., invalid XML, data extraction issues)
@@ -242,7 +244,7 @@ function get_post_id_by_meta_field($meta_key, $meta_value)
   return $post_id;
 }
 
-function qual_grid($result, $post = false)
+function qual_grid($result, $post = false, $post_type = 'qualifications')
 {
   ob_start();
   if ($post == false) {
@@ -251,7 +253,7 @@ function qual_grid($result, $post = false)
       $post_id = $check_qual;
     } else {
       // Insert the post into the database
-      $post_data['post_type'] = 'qualifications';
+      $post_data['post_type'] = $post_type;
       $post_data['post_title'] = $result['Title'];
       $post_data['post_status'] = 'publish';
       $post_data['meta_input'] = array(

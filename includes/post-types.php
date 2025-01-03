@@ -331,6 +331,16 @@ $Qualifications->publicly_queryable = true;
 $Qualifications->show_in_admin_bar = true;
 $Qualifications->has_archive = true;
 
+$Units = new newPostType();
+$Units->name = 'Units';
+$Units->singular_name = 'Unit';
+$Units->icon = 'dashicons-welcome-learn-more';
+$Units->supports = array('title', 'revisions', 'editor', 'page-attributes', 'thumbnail');
+$Units->exclude_from_search = false;
+$Units->publicly_queryable = true;
+$Units->show_in_admin_bar = true;
+$Units->has_archive = true;
+
 
 $Qualifications_Sector = new newTaxonomy();
 $Qualifications_Sector->taxonomy = 'qualifications_sector';
