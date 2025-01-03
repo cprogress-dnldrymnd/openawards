@@ -66,7 +66,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                 </select>
                             </div>
                             <div class="col-lg-6 search-field search-units unit-code d-none">
-                                <input type="text" name="unit_code" placeholder="Unit Code e.g. Y/505/4889"
+                                <input type="text" name="qcaCode" placeholder="Unit Code e.g. Y/505/4889"
                                     class="trigger-type">
                             </div>
                             <div class="col-lg-6 search-field search-access-to-he open-awards-code d-none">
