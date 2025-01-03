@@ -166,20 +166,15 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
     jQuery(document).ready(function() {
         search_change();
         var typingTimer;
-        var doneTypingInterval = 500;
+        var search_functionInterval = 500;
 
         jQuery('.trigger-type').on('keyup', function() {
             clearTimeout(typingTimer);
-            typingTimer = setTimeout(doneTyping, doneTypingInterval);
+            typingTimer = setTimeout(search_function, search_functionInterval);
         });
 
         jQuery('.trigger-ajax-change').change(function(e) {
-            $post_type = jQuery('#qualification-filter').attr('search_type');
-            if ($post_type == 'qualifications') {
-                ajax_qualifications(0);
-            } else if ($post_type == 'units') {
-                ajax_units(0);
-            }
+            search_function();
         });
     });
 
@@ -200,7 +195,13 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
         });
     }
 
-    function doneTyping() {
-        ajax_qualifications(0);
+    function search_function() {
+        $post_type = jQuery('#qualification-filter').attr('search_type');
+
+        if ($post_type == 'qualifications') {
+            ajax_qualifications(0);
+        } else if ($post_type == 'units') {
+            ajax_units(0);
+        }
     }
 </script>
