@@ -244,6 +244,7 @@ Container::make('post_meta', 'Event Settings')
 Container::make('post_meta', 'Qualifications Settings')
     ->set_priority('high')
     ->or_where('post_type', '=', 'qualifications')
+    ->or_where('post_type', '=', 'units')
     ->add_fields(
         array(
             Field::make('text', 'id', __('ID')),
