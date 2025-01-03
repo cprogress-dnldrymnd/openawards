@@ -174,7 +174,12 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
         });
 
         jQuery('.trigger-ajax-change').change(function(e) {
-            ajax_qualifications(0);
+            $post_type = jQuery('#qualification-filter').attr('search_type');
+            if ($post_type == 'qualifications') {
+                ajax_qualifications(0);
+            } else if ($post_type == 'qualifications') {
+                ajax_units(0);
+            }
         });
     });
 
