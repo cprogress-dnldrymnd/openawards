@@ -512,11 +512,6 @@ footer ul li a {
   font-size: 13px;
   opacity: 1; }
 
-footer ul li a:active,
-footer ul li a:focus,
-footer ul li a:hover {
-  opacity: 1; }
-
 @media screen and (max-width: 991px) {
   footer ul li a {
     font-size: 12px; } }
