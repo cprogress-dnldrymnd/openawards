@@ -510,7 +510,7 @@ footer ul li {
 footer ul li a {
   color: var(--white-color) !important;
   font-size: 13px;
-  opacity: 0.5; }
+  opacity: 1; }
 
 footer ul li a:active,
 footer ul li a:focus,
