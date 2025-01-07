@@ -32,7 +32,7 @@ $posts = get_posts($args);
                 </div>
             </div>
             <div class="swiper-button-next swiper-button-next-post"></div>
-            <div class="swiper-button-prev swiper-button-next-post"></div>
+            <div class="swiper-button-prev swiper-button-prev-post"></div>
         </div>
     </div>
 </section>
