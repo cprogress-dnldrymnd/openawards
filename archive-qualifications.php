@@ -13,7 +13,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                 <div class="qualification-filter-wrapper ">
                     <div class="qualification-filter-buttons">
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="filter-button filter-active">
                                     <button post_type="qualifications" search_type=".search-qual"
                                         class="search-change-trigger w-100 text-center d-flex justify-content-between align-items-center">
@@ -21,7 +21,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                     </button>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="filter-button filter-units">
                                     <button post_type="units" search_type=".search-units"
                                         class="search-change-trigger w-100 text-center d-flex justify-content-between align-items-center">
@@ -29,7 +29,7 @@ $chev = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
                                     </button>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 d-none">
                                 <div class="filter-button filter-access-to-he">
                                     <button search_type=".search-access-to-he"
                                         class="search-change-trigger w-100 text-center d-flex justify-content-between align-items-center">
