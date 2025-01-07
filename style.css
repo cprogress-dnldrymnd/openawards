@@ -7868,4 +7868,11 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   border-radius: 5px;
   color: var(--white-color) !important; }
 
+.main-footer a.btn.btn.btn.btn.btn {
+  background-color: var(--go-green) !important;
+  border-color: var(--go-green) !important; }
+  .main-footer a.btn.btn.btn.btn.btn:hover {
+    background-color: transparent !important;
+    color: var(--go-green); }
+
 /*# sourceMappingURL=style.css.map */

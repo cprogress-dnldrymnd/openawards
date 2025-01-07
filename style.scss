@@ -10484,3 +10484,14 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
         color: var(--white-color) !important;
     }
 }
+
+.main-footer {
+    a.btn.btn.btn.btn.btn {
+        background-color: var(--go-green) !important;
+        border-color: var(--go-green) !important;
+        &:hover {
+            background-color: transparent !important;
+            color: var(--go-green) !important;
+        }
+    }
+}
