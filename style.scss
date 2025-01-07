@@ -10244,11 +10244,7 @@ div#mega-menu-wrap-primary
 
 .footer-logos {
     display: flex;
-    img {
-        &:not(:last-child) {
-            margin-right: 1rem;
-        }
-    }
+    gap: 10px;
 }
 
 .page-template-page-fullwidth {

@@ -28,7 +28,15 @@
             </ul>
           </div>
           <a class="btn btn-outline-primary btn-green light" href="<?php echo $theme_settings['footer_button_url'] ?>"><?php echo $theme_settings['footer_button_text'] ?></a>
-
+          <?php if ($theme_settings['footer_logos']) { ?>
+            <div class="footer-logos mt-4">
+              <?php foreach ($theme_settings['footer_logos'] as $logo) { ?>
+                <div class="footer-logo">
+                  <img src="<?= wp_get_attachment_image_url($logo) ?>">
+                </div>
+              <?php } ?>
+            </div>
+          <?php } ?>
         </div>
         <div class="col-lg-2 col-md-2">
           <?php dynamic_sidebar('footer4'); ?>
@@ -37,15 +45,6 @@
         <?php dynamic_sidebar('footer2'); ?>
         <?php dynamic_sidebar('footer3'); ?>
       </div>
-      <?php if ($theme_settings['footer_logos']) { ?>
-        <div class="footer-logos">
-          <?php foreach ($theme_settings['footer_logos'] as $logo) { ?>
-            <div class="footer-logo">
-              <img src="<?= wp_get_attachment_image_url($logo) ?>">
-            </div>
-          <?php } ?>
-        </div>
-      <?php } ?>
     </div>
   </div>
 
