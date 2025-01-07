@@ -6677,13 +6677,6 @@ div#mega-menu-wrap-primary {
 }
 
 
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:nth-child(6) a.mega-menu-link:hover,
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:nth-child(6) a.mega-menu-link:focus,
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:nth-child(6) a.mega-menu-link:active {
-    background-color: var(--purple-heather) !important;
-    color: var(--white-color) !important;
-    transition: 0.2s all ease-in-out;
-}
 
 @media (max-width: 1199px) and (min-width: 992px) {
     div#mega-menu-wrap-primary ul li a {
@@ -10488,4 +10481,12 @@ section.info-boxes {
 
 section.related-qualifications {
     padding-bottom: 50px;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.header-button {
+    .mega-menu-link {
+        background-color: var(--high-violet);
+        border-radius: 5px;
+        color: var(--white-color) !important;
+    }
 }
