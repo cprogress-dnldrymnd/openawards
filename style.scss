@@ -6186,7 +6186,6 @@ main {
     }
 }
 
-
 footer {
     h5 {
         color: var(--white-color) !important;
@@ -6669,8 +6668,6 @@ div#mega-menu-wrap-primary {
     background: transparent;
     color: var(--high-violet) !important;
 }
-
-
 
 @media (max-width: 1199px) and (min-width: 992px) {
     div#mega-menu-wrap-primary ul li a {
@@ -10475,11 +10472,13 @@ section.related-qualifications {
     padding-bottom: 50px;
 }
 
-div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item.mega-menu-item.header-button {
-    .mega-menu-link {
-        background-color: var(--high-violet);
-        border-radius: 5px;
-        color: var(--white-color) !important;
+div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item.mega-menu-item {
+    &.header-button {
+        .mega-menu-link {
+            background-color: var(--go-green);
+            border-radius: 5px;
+            color: var(--white-color) !important;
+        }
     }
 }
 
