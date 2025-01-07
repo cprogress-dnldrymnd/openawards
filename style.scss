@@ -10483,6 +10483,13 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
             }
         }
     }
+    &.header-button-orange {
+        .mega-menu-link {
+            background-color: var(--sun-orange);
+            border-radius: 5px;
+            color: var(--white-color) !important;
+        }
+    }
 }
 
 .main-footer {
