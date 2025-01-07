@@ -4866,18 +4866,6 @@ main section.hero-banner {
   .wpcf7 {
     padding: 20px; } }
 
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:nth-child(7) a.mega-menu-link {
-  color: var(--white-color) !important;
-  border: none;
-  border-radius: 5px !important;
-  height: 45px !important;
-  line-height: 45px !important;
-  padding: 0 15px !important;
-  background-color: var(--purple-heather); }
-  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:nth-child(7) a.mega-menu-link:hover {
-    background-color: var(--sun-orange);
-    color: var(--white-color) !important; }
-
 footer h5 {
   color: var(--white-color) !important; }
 footer p {
@@ -5240,16 +5228,6 @@ div#mega-menu-wrap-primary {
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-toggle-on > a.mega-menu-link {
   background: transparent;
   color: var(--high-violet) !important; }
-
-#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:nth-child(6) a.mega-menu-link {
-  border: 1px solid var(--purple-heather) !important;
-  border-color: var(--purple-heather) !important;
-  color: var(--purple-heather) !important;
-  border-radius: 5px !important;
-  height: 45px !important;
-  line-height: 45px !important;
-  padding: 0 15px !important;
-  transition: 0.2s all ease-in-out; }
 
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:nth-child(6) a.mega-menu-link:hover,
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item:nth-child(6) a.mega-menu-link:focus,
