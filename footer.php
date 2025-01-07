@@ -40,7 +40,9 @@
       <?php if ($theme_settings['footer_logos']) { ?>
         <div class="footer-logos">
           <?php foreach ($theme_settings['footer_logos'] as $logo) { ?>
-            <img src="<?= wp_get_attachment_image_url($logo) ?>">
+            <div class="footer-logo">
+              <img src="<?= wp_get_attachment_image_url($logo) ?>">
+            </div>
           <?php } ?>
         </div>
       <?php } ?>
