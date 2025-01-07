@@ -10478,6 +10478,9 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
             background-color: var(--go-green);
             border-radius: 5px;
             color: var(--white-color) !important;
+            &:hover {
+                background-color: var(--sun-orange);
+            }
         }
     }
 }

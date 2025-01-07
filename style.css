@@ -7869,6 +7869,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   background-color: var(--go-green);
   border-radius: 5px;
   color: var(--white-color) !important; }
+  div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item.mega-menu-item.header-button .mega-menu-link:hover {
+    background-color: var(--sun-orange); }
 
 .main-footer a.btn.btn.btn.btn.btn {
   background-color: var(--go-green) !important;
