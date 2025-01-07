@@ -7716,7 +7716,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 
 .footer-logos {
   display: flex;
-  gap: 10px; }
+  gap: 10px;
+  max-width: 350px; }
 
 .page-template-page-fullwidth #content > .vc_row:not(.vc_row-no-padding) {
   max-width: 1300px;

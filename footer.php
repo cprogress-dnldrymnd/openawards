@@ -32,7 +32,7 @@
             <div class="footer-logos mt-4">
               <?php foreach ($theme_settings['footer_logos'] as $logo) { ?>
                 <div class="footer-logo">
-                  <img src="<?= wp_get_attachment_image_url($logo) ?>">
+                  <img src="<?= wp_get_attachment_image_url($logo, 'medium') ?>">
                 </div>
               <?php } ?>
             </div>
