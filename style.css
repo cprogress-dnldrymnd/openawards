@@ -3816,7 +3816,7 @@ body.wpb-js-composer .vc_tta-accordion .vc_tta-panels-container .vc_tta-panels .
 
 .vc_custom_heading {
   font-family: var(--primary-font);
-  font-weight: bold;
+  font-weight: 600;
   color: var(--opal-black); }
 
 @media (max-width: 991px) {
