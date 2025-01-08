@@ -6895,7 +6895,8 @@ form#resources_form.searching label {
   border: 2px solid var(--blush-pink); }
 
 .button-bordered-high-violet .vc_btn3.vc_btn3.vc_btn3 {
-  border: 2px solid var(--high-violet); }
+  border: 2px solid var(--high-violet);
+  color: var(--high-violet); }
 
 .heading-dot:after {
   content: ".";
@@ -7893,6 +7894,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   align-items: center; }
   .icon-phone .vc_btn3:before,
   .icon-email .vc_btn3:before {
+    content: "";
     width: 22px;
     height: 22px;
     display: inline-block;
