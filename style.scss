@@ -8865,7 +8865,7 @@ form#resources_form {
     font-weight: 500 !important;
 }
 
-.fw-semibold * {
+.fw-semibold *, .fw-semibold {
     font-weight: 600 !important;
 }
 
@@ -10548,32 +10548,30 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 .fs-18px * {
     font-size: 18px !important;
 }
-.fs-43px {
-    * {
-        font-size: 43px;
-        @media (max-width: 991px) {
-            font-size: 35px;
-        }
-        @media (max-width: 767px) {
-            font-size: 30px;
-        }
-        @media (max-width: 575px) {
-            font-size: 25px;
-        }
+.fs-43px,
+.fs-43px * {
+    font-size: 43px;
+    @media (max-width: 991px) {
+        font-size: 35px;
+    }
+    @media (max-width: 767px) {
+        font-size: 30px;
+    }
+    @media (max-width: 575px) {
+        font-size: 25px;
     }
 }
 
-.fs-32px {
-    * {
-        font-size: 32px;
-        @media (max-width: 991px) {
-            font-size: 28px;
-        }
-        @media (max-width: 767px) {
-            font-size: 24px;
-        }
-        @media (max-width: 575px) {
-            font-size: 20px;
-        }
+.fs-32px,
+.fs-32px * {
+    font-size: 32px;
+    @media (max-width: 991px) {
+        font-size: 28px;
+    }
+    @media (max-width: 767px) {
+        font-size: 24px;
+    }
+    @media (max-width: 575px) {
+        font-size: 20px;
     }
 }
