@@ -7911,4 +7911,28 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 .fs-18px * {
   font-size: 18px !important; }
 
+.fs-43px * {
+  font-size: 43px; }
+  @media (max-width: 991px) {
+    .fs-43px * {
+      font-size: 35px; } }
+  @media (max-width: 767px) {
+    .fs-43px * {
+      font-size: 30px; } }
+  @media (max-width: 575px) {
+    .fs-43px * {
+      font-size: 25px; } }
+
+.fs-32px * {
+  font-size: 32px; }
+  @media (max-width: 991px) {
+    .fs-32px * {
+      font-size: 28px; } }
+  @media (max-width: 767px) {
+    .fs-32px * {
+      font-size: 30px; } }
+  @media (max-width: 575px) {
+    .fs-32px * {
+      font-size: 25px; } }
+
 /*# sourceMappingURL=style.css.map */
