@@ -7889,7 +7889,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 
 .icon-phone .vc_btn3,
 .icon-email .vc_btn3 {
-  display: flex;
+  display: flex !important;
   gap: 10px;
   align-items: center; }
   .icon-phone .vc_btn3:before,
