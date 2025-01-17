@@ -544,8 +544,8 @@ function clean($string)
 	return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
 
-	
-add_post_type_support( 'page', 'excerpt' );
+
+add_post_type_support('page', 'excerpt');
 
 function hero()
 {
@@ -565,6 +565,11 @@ function hero()
 				<h1>
 					<?php the_title() ?>
 				</h1>
+			</div>
+			<div class="desc-box">
+				<p>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.
+				</p>
 			</div>
 		</div>
 	</section>
