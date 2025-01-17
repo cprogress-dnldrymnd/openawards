@@ -10409,6 +10409,9 @@ section.latest-news {
         margin-top: 40px;
         color: var(--white-color);
         max-width: 900px;
+        > *:last-child {
+            margin-bottom: 0;
+        }
     }
     &.hero-style-padding {
         padding-top: 120px;
