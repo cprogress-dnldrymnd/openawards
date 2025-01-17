@@ -548,9 +548,16 @@ function clean($string)
 function hero()
 {
 	ob_start();
+	if (has_post_thumbnail()) {
+		$background = get_the_post_thumbnail_url(get_the_ID(), 'full');
+		$class = 'has-bg';
+	} else {
+		$background = 'wp-content/uploads/2024/12/qual-hero-bg.png';
+		$class = 'no-bg';
+	}
 	?>
-	<section class="hero-style-1"
-		style="background-image: url(https://openawards.theprogressteam.com/wp-content/uploads/2024/12/qual-hero-bg.png)">
+	<section class="hero-style-1 <?= $class ?>"
+		style="background-image: url(<?= $background ?>)">
 		<div class="container">
 			<div class="title-box">
 				<h1>
