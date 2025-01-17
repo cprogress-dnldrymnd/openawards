@@ -538,7 +538,7 @@ function clean($string)
 
 add_post_type_support('page', 'excerpt');
 
-function hero($title = 'default', $description = 'default', $bg_image = true)
+function hero($title = 'default', $description = 'default', $bg_image = true, $section_class)
 {
 	ob_start();
 	if (has_post_thumbnail() && $bg_image == true) {
@@ -564,7 +564,7 @@ function hero($title = 'default', $description = 'default', $bg_image = true)
 		}
 	}
 	?>
-	<section class="hero-style-1 hero-style-padding <?= $class ?>"
+	<section class="hero-style-1 hero-style-padding <?= $class ?> <?= $section_class ?>"
 		style="background-image: url(<?= $background ?>)">
 		<div class="container position-relative">
 			<div class="inner-container">
