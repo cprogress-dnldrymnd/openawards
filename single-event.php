@@ -5,7 +5,7 @@
  */
 ?>
 <?php get_header();  ?>
-<main id="page-components">
+<div id="primary" class="row-fluid">
 
     <div id="content" role="main">
         <?php if (have_posts()) :
@@ -96,6 +96,6 @@
         <?php endif ?>
 
     </div><!-- #content .site-content -->
-</main>
+</div>
 <?php get_footer();
 ?>
