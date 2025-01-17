@@ -19,7 +19,7 @@ echo hide_load_more($count, 0, 10);
     <div id="content" role="main" class="span8 offset2">
         <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
         <?= hero('Frequently Asked Questions') ?>
-        <div class="title-wrapper title-wrapper-v3">
+        <div class="title-wrapper title-wrapper-v3 pt-0">
             <div class="container text-center">
                 <div class="faqs-category-filter">
                     <div class="container">
