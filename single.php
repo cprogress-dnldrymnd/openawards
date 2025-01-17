@@ -51,7 +51,7 @@ while (have_posts()) {
 				</div>
 			</div>
 
-			<?= hero() ?>
+			<?= hero(get_the_title(), false, ) ?>
 
 			<section class="the-content position-relative">
 				<div class="container">

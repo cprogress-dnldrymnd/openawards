@@ -538,7 +538,7 @@ function clean($string)
 
 add_post_type_support('page', 'excerpt');
 
-function hero($title = false, $description = false, $bg_image = true)
+function hero($title = 'default', $description = 'default', $bg_image = true)
 {
 	ob_start();
 	if (has_post_thumbnail() && $bg_image == true) {
@@ -548,7 +548,7 @@ function hero($title = false, $description = false, $bg_image = true)
 		$background = '/wp-content/uploads/2024/12/qual-hero-bg.png';
 		$class = 'no-bg';
 	}
-	if (!$title) {
+	if ($title == 'default') {
 		if (get_field('alt_title')) {
 			$title = get_field('alt_title');
 		} else {
@@ -556,7 +556,7 @@ function hero($title = false, $description = false, $bg_image = true)
 		}
 	}
 
-	if (!$description) {
+	if ($description == 'default') {
 		if (get_the_excerpt()) {
 			$description = get_the_excerpt();
 		}
