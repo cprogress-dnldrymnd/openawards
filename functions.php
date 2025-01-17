@@ -544,6 +544,8 @@ function clean($string)
 	return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 }
 
+	
+add_post_type_support( 'page', 'excerpt' );
 
 function hero()
 {
