@@ -85,13 +85,3 @@
 	</header>
 	<?php restrict_page_to_user_with_pluc() ?>
 	<div class="main-fluid"><!-- start the page containter -->
-		<section class="hero-style-1"
-			style="background-image: url(https://openawards.theprogressteam.com/wp-content/uploads/2024/12/qual-hero-bg.png)">
-			<div class="container">
-				<div class="title-box">
-					<h1>
-						<?php the_title() ?>
-					</h1>
-				</div>
-			</div>
-		</section>
