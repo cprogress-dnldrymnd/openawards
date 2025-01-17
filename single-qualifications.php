@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <div id="primary" class="row-fluid">
-  <section id="content" role="main" class="span8 offset2">
-    <section class="single-qualification-hero"
+  <div id="content" role="main" class="span8 offset2">
+    <section class="hero-style-1"
       style="background-image: url(https://openawards.theprogressteam.com/wp-content/uploads/2024/12/qual-hero-bg.png)">
       <div class="container">
         <div class="title-box">
@@ -123,6 +123,6 @@
       </div>
     </section>
     <?= do_shortcode('[template template_id=2969]') ?>
-</div>
+  </div>
 </div>
 <?php get_footer() ?>

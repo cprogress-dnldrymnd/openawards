@@ -7800,29 +7800,29 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 .qualification-filter-buttons .filter-button.filter-active button {
   background-color: var(--high-violet); }
 
-.single-qualification-hero {
+.hero-style-1 {
   background-size: cover;
   background-position: center;
   padding-top: 100px;
   padding-bottom: 50px;
   font-family: var(--primary-font); }
-  .single-qualification-hero h1 {
+  .hero-style-1 h1 {
     color: var(--white-color);
     font-size: 64px;
     font-weight: 600;
     margin-bottom: 50px; }
-  .single-qualification-hero .key-information-box {
+  .hero-style-1 .key-information-box {
     max-width: 900px; }
-    .single-qualification-hero .key-information-box .key-information-holder {
+    .hero-style-1 .key-information-box .key-information-holder {
       background-color: #f4f5f7;
       border-radius: 10px;
       padding: 30px; }
-    .single-qualification-hero .key-information-box h3 {
+    .hero-style-1 .key-information-box h3 {
       font-size: 35px;
       color: var(--white-color);
       font-weight: 500;
       margin-bottom: 20px; }
-    .single-qualification-hero .key-information-box .key-info-item {
+    .hero-style-1 .key-information-box .key-info-item {
       font-size: 18px;
       color: var(--opal-black);
       line-height: 1.8; }
