@@ -558,7 +558,7 @@ function hero()
 	?>
 	<section class="hero-style-1 <?= $class ?>"
 		style="background-image: url(<?= $background ?>)">
-		<div class="container">
+		<div class="container position-relative">
 			<div class="title-box">
 				<h1>
 					<?php the_title() ?>
