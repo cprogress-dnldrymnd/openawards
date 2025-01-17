@@ -6705,7 +6705,6 @@ div#mega-menu-wrap-primary {
     }
 }
 
-
 /*Shop*/
 body.woocommerce-shop .woocommerce-breadcrumb {
     display: none;
@@ -10394,6 +10393,11 @@ section.latest-news {
             font-size: 40px;
         }
     }
+    &:not(.desc-mw-100) {
+        .desc-box {
+            max-width: 900px;
+        }
+    }
     &.has-bg {
         &:before {
             content: "";
@@ -10408,7 +10412,6 @@ section.latest-news {
     .desc-box {
         margin-top: 40px;
         color: var(--white-color);
-        max-width: 900px;
         > *:last-child {
             margin-bottom: 0;
         }
@@ -10614,7 +10617,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     background-image: none;
 }
 
-#jobs-main .jobs-archive{
+#jobs-main .jobs-archive {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1157" height="866" viewBox="0 0 1157 866"><defs><clipPath id="clip-path"><rect id="Rectangle_442" data-name="Rectangle 442" width="1157" height="866" transform="translate(763 200)" fill="%23fff"/></clipPath><clipPath id="clip-path-2"><rect id="Rectangle_361" data-name="Rectangle 361" width="1740.476" height="975.12" transform="translate(0 -0.001)" fill="none" stroke="%23fab0ff" stroke-width="1"/></clipPath></defs><g id="Mask_Group_15" data-name="Mask Group 15" transform="translate(-763 -200)" clip-path="url(%23clip-path)"><g id="Group_568" data-name="Group 568" transform="translate(2348.325 897.797) rotate(179)" opacity="0.43"><g id="Group_567" data-name="Group 567" clip-path="url(%23clip-path-2)"><path id="Path_2150" data-name="Path 2150" d="M1711.385,588.47c23.708,149.191-77.277,308.074-222.424,349.94s-315.236-38.824-374.626-177.723-.219-317.618,130.327-393.631C1320.7,322.783,1427.565,400,1424.4,487.928s-93.123,156.42-181.088,154.535-167.281-60.53-214.838-134.554S960.316,346,945.376,259.293C922.761,128.049,795.712,23.107,662.559,25.685S406.517,138.048,389,270.068,461.495,540.119,589.368,577.33c45.572,13.262,98.837-7.811,123-48.663s16.977-97.681-16.595-131.232C603.653,305.373,468.2,258.667,338.912,274.388s-249.6,93.53-316.97,204.986" fill="none" stroke="%23fab0ff" stroke-width="51.277"/></g></g></g></svg>');
     background-position: top right;
     background-repeat: no-repeat;
