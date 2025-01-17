@@ -538,7 +538,7 @@ function clean($string)
 
 add_post_type_support('page', 'excerpt');
 
-function hero()
+function hero($title = false, $description = false)
 {
 	ob_start();
 	if (has_post_thumbnail()) {
@@ -548,10 +548,18 @@ function hero()
 		$background = '/wp-content/uploads/2024/12/qual-hero-bg.png';
 		$class = 'no-bg';
 	}
-	if (get_field('alt_title')) {
-		$title = get_field('alt_title');
-	} else {
-		$title = get_the_title();
+	if (!$title) {
+		if (get_field('alt_title')) {
+			$title = get_field('alt_title');
+		} else {
+			$title = get_the_title();
+		}
+	}
+
+	if (!$description) {
+		if (get_the_excerpt()) {
+			$description = get_the_excerpt();
+		}
 	}
 	?>
 	<section class="hero-style-1 hero-style-padding <?= $class ?>"
@@ -563,9 +571,9 @@ function hero()
 						<?= $title ?>
 					</h1>
 				</div>
-				<?php if (get_the_excerpt()) { ?>
+				<?php if ($description) { ?>
 					<div class="desc-box">
-						<?php the_excerpt() ?>
+						<?= wpautop($description) ?>
 					</div>
 				<?php } ?>
 			</div>
