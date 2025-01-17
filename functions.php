@@ -538,10 +538,10 @@ function clean($string)
 
 add_post_type_support('page', 'excerpt');
 
-function hero($title = false, $description = false)
+function hero($title = false, $description = false, $bg_image = true)
 {
 	ob_start();
-	if (has_post_thumbnail()) {
+	if (has_post_thumbnail() && $bg_image == true) {
 		$background = get_the_post_thumbnail_url(get_the_ID(), 'full');
 		$class = 'has-bg';
 	} else {

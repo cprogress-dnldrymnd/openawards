@@ -12,14 +12,12 @@ if (is_home()) {
 	$heading = carbon_get_theme_option('post_page_heading');
 	$description = carbon_get_theme_option('post_page_description');
 	$title = $heading ? $heading : 'Latest News';
-	
 } else if (is_post_type_archive('successstories')) {
 	$post_type = 'successstories';
 	$heading = carbon_get_theme_option('successstories_page_heading');
 	$description = carbon_get_theme_option('successstories_page_description');
 
 	$title = $heading ? $heading : 'Success Stories';
-
 }
 ?>
 <div id="primary" class="row-fluid">
@@ -47,7 +45,7 @@ if (is_home()) {
 		</div>
 
 		<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
-		<?= hero($title, $description) ?>
+		<?= hero($title, $description, false) ?>
 		<?php if ($post_type == 'post') { ?>
 			<?php get_template_part('template-parts/blog/featured-blog') ?>
 
