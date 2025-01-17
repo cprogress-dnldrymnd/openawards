@@ -7809,7 +7809,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     color: var(--white-color);
     font-size: 64px;
     font-weight: 600;
-    margin-bottom: 50px; }
+    margin-bottom: 0; }
   .hero-style-1.has-bg:before {
     content: "";
     position: absolute;
@@ -7818,9 +7818,17 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4); }
+  .hero-style-1.hero-style-padding {
+    padding-top: 100px;
+    padding-bottom: 100px; }
+    @media (max-width: 991px) {
+      .hero-style-1.hero-style-padding {
+        padding-top: 100px;
+        padding-bottom: 100px; } }
 
 .key-information-box.key-information-box.key-information-box {
-  max-width: 900px; }
+  max-width: 900px;
+  margin-top: 50px; }
   .key-information-box.key-information-box.key-information-box .key-information-holder {
     background-color: #f4f5f7;
     border-radius: 10px;

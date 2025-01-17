@@ -10382,7 +10382,7 @@ section.latest-news {
         color: var(--white-color);
         font-size: 64px;
         font-weight: 600;
-        margin-bottom: 50px;
+        margin-bottom: 0;
     }
     &.has-bg {
         &:before {
@@ -10395,10 +10395,18 @@ section.latest-news {
             background-color: rgba(0, 0, 0, 0.4);
         }
     }
+    &.hero-style-padding {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        @media (max-width: 991px) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    }
 }
 .key-information-box.key-information-box.key-information-box {
     max-width: 900px;
-
+    margin-top: 50px;
     .key-information-holder {
         background-color: #f4f5f7;
         border-radius: 10px;

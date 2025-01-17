@@ -558,7 +558,7 @@ function hero()
 		$class = 'no-bg';
 	}
 	?>
-	<section class="hero-style-1 <?= $class ?>"
+	<section class="hero-style-1 hero-style-padding <?= $class ?>"
 		style="background-image: url(<?= $background ?>)">
 		<div class="container position-relative">
 			<div class="title-box">
