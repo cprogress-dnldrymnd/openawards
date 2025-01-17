@@ -21,13 +21,7 @@
                ?>
 
 
-                    <div class="title-section" id="title-section">
-                         <div class="container">
-                              <div class="heading-box text-center">
-                                   <h1>Training And Events For Learners And Visitors</h1>
-                              </div>
-                         </div>
-                    </div>
+                    <?= hero('Training And Events For Learners And Visitors') ?>
                     <div class="container-holder">
                          <div class="container wide width1400">
                               <div class="the-content">
