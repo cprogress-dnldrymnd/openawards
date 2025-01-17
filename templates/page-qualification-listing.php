@@ -11,13 +11,13 @@
                 <?php get_template_part('template-parts/page', 'breadcrumbs');?>
             <?php } ?>
             <section class="page-banner">
-                <div class="container<?= container_width() ?>">
+                <div class="container">
                     <h1>Arts, Media and Publishing</h1>
                 </div>
             </section>
             <?php if(get_the_content()) { ?>
                 <section class="rich-text bg-dirtyWhite">
-                    <div class="container<?= container_width() ?>">
+                    <div class="container">
                         <div class="inner">
                             <?php the_content() ?>
                         </div>
@@ -25,7 +25,7 @@
                 </section>
             <?php } ?>
             <section class="filter-section">
-                <div class="container<?= container_width() ?>">
+                <div class="container">
                     <form action="">
                         <div class="row">
                             <div class="col-md-4">
@@ -64,7 +64,7 @@
                 </div>
             </section>
             <section class="main-content padCon qualification-listing">
-                <div class="container<?= container_width() ?>">
+                <div class="container">
                     <?php 
                     $tabs = array(
                         'Entry Level 1',

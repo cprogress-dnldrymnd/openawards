@@ -1,6 +1,6 @@
  <header class="woocommerce-products-header dark page-dark-header">
      <div class="page-shop-banner <?php the_field('page_banner_text_align') ?>">
-          <div class="container<?= container_width() ?>">
+          <div class="container">
                <?php if(is_account_page()) { ?>
                     <h1 class="woocommerce-products-header__title page-title my-account-header">
                          Hello <?= wp_get_current_user()->display_name ?>!

@@ -25,7 +25,7 @@
 <?php get_template_part('template-parts/page', 'breadcrumbs');?>
           
           <section class="icon-box-section" style="color: #fff;  ">
-               <div class="container<?= container_width() ?>">
+               <div class="container">
                     <?php if($heading) { ?>
                          <div class="heading-box">
                               <h1>

@@ -17,7 +17,7 @@
           <?php } else { ?>
                <section class="breadcrumbs wocom">
                     <nav aria-label="breadcrumb">
-                         <div class="container<?= container_width() ?>">
+                         <div class="container">
                               <ol class="breadcrumb">
                                    <li class="breadcrumb-item"><a href="<?= get_site_url() ?>">Home</a></li>
                                    <li class="breadcrumb-item"><a href="/community/">OpenAwards Community</a></li>
@@ -39,7 +39,7 @@
         </section>
 
         <div class="container-holder">
-          <div class="container<?= container_width() ?>">
+          <div class="container">
 
                <?php while ( have_posts() ) : the_post(); 
                     // If we have a page to show, start a loop that will display it

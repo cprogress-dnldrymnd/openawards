@@ -344,16 +344,7 @@ function open_awards_wp_head()
 add_action('wp_head', 'open_awards_wp_head');
 
 
-/*-----------------------------------------------------------------------------------*/
-/* Get Container Width
-/*-----------------------------------------------------------------------------------*/
-function container_width()
-{
-	$container_width = get_field('container_width');
-	if ($container_width != 'default') {
-		return ' ' . $container_width;
-	}
-}
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Admin Scripts

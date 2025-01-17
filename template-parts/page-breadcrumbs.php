@@ -11,7 +11,7 @@ if (is_single() || is_page()) {
 ?>
 <section class="breadcrumbs wocom position-relative">
     <nav aria-label="breadcrumb">
-        <div class="container<?= container_width() ?>">
+        <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?= get_site_url() ?>">Home</a></li>
                 <?php if (is_tax('faqs_category')) { ?>

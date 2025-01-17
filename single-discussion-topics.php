@@ -18,7 +18,7 @@ get_header(); ?>
 	<?php get_template_part('template-parts/page', 'banner');?>
 	<section class="breadcrumbs wocom">
 		<nav aria-label="breadcrumb">
-			<div class="container<?= container_width() ?>">
+			<div class="container<?= hero-style-1) ?>">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="<?= get_site_url() ?>">Home</a></li>
 					<li class="breadcrumb-item"><a href="/community/">OpenAwards Community</a></li>

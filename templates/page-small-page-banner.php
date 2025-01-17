@@ -17,7 +17,7 @@
           <?php get_template_part('template-parts/page', 'banner');?>
 
           <div class="container-holder">
-               <div class="container<?= container_width() ?>">
+               <div class="container">
 
                     <?php while ( have_posts() ) : the_post(); 
                     // If we have a page to show, start a loop that will display it
