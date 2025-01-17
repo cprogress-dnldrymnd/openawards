@@ -559,6 +559,8 @@ function hero($title = 'default', $description = 'default', $bg_image = true)
 	if ($description == 'default') {
 		if (get_the_excerpt()) {
 			$description = get_the_excerpt();
+		} else {
+			$description = false;
 		}
 	}
 	?>
