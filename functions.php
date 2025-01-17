@@ -538,7 +538,7 @@ function clean($string)
 
 add_post_type_support('page', 'excerpt');
 
-function hero($title = 'default', $description = 'default', $bg_image = true, $section_class)
+function hero($title = 'default', $description = 'default', $bg_image = true, $section_class='')
 {
 	ob_start();
 	if (has_post_thumbnail() && $bg_image == true) {
