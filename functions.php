@@ -584,17 +584,3 @@ function hero($title = 'default', $description = 'default', $bg_image = true)
 <?php
 	return ob_get_clean();
 }
-
-
-function action_after_breadcrumbs()
-{
-	if (is_post_type_archive('jobs')) {
-		echo hero('Job Vacancies', 'We currently have the following vacancies available.<br><br>Open Awards follows a robust Safer Recruitment policy as part of our commitment to:
-1. Safeguarding and protecting all children and young people by implementing robust safer recruitment practices
-2. Responding to concerns about the suitability of applicants during the recruitment process
-3. Responding to concerns about the suitability of employees and volunteers once they have begun their role
-4. Ensuring all new staff and volunteers participate in an induction which includes safeguarding and child protection training.', false);
-	}
-}
-
-add_action('after_breadcrumbs', 'action_after_breadcrumbs');
