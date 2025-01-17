@@ -7819,9 +7819,9 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     @media (max-width: 991px) {
       .hero-style-1 h1 {
         font-size: 44px; } }
-    @media (max-width: 991px) {
+    @media (max-width: 767px) {
       .hero-style-1 h1 {
-        font-size: 44px; } }
+        font-size: 34px; } }
   .hero-style-1.has-bg:before {
     content: "";
     position: absolute;
