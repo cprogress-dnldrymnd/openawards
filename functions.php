@@ -557,16 +557,18 @@ function hero()
 	<section class="hero-style-1 hero-style-padding <?= $class ?>"
 		style="background-image: url(<?= $background ?>)">
 		<div class="container position-relative">
-			<div class="title-box">
-				<h1>
-					<?= $title ?>
-				</h1>
-			</div>
-			<?php if (get_the_excerpt()) { ?>
-				<div class="desc-box">
-					<?php the_excerpt() ?>
+			<div class="inner">
+				<div class="title-box">
+					<h1>
+						<?= $title ?>
+					</h1>
 				</div>
-			<?php } ?>
+				<?php if (get_the_excerpt()) { ?>
+					<div class="desc-box">
+						<?php the_excerpt() ?>
+					</div>
+				<?php } ?>
+			</div>
 		</div>
 	</section>
 <?php
