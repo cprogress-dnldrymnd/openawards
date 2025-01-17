@@ -7821,6 +7821,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     @media (max-width: 767px) {
       .hero-style-1 h1 {
         font-size: 40px; } }
+  .hero-style-1:not(.desc-mw-100) .desc-box {
+    max-width: 900px; }
   .hero-style-1.has-bg:before {
     content: "";
     position: absolute;
@@ -7831,8 +7833,7 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     background-color: rgba(0, 0, 0, 0.4); }
   .hero-style-1 .desc-box {
     margin-top: 40px;
-    color: var(--white-color);
-    max-width: 900px; }
+    color: var(--white-color); }
     .hero-style-1 .desc-box > *:last-child {
       margin-bottom: 0; }
   .hero-style-1.hero-style-padding {
