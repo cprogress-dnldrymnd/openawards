@@ -489,7 +489,7 @@ function insert_post_ajax()
 			</div>
 		</div>
 	</div>
-<?php
+	<?php
 	echo '</td>';
 	if ($post_id == false) {
 		// Insert the post into the database
@@ -542,4 +542,23 @@ function clean($string)
 	$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
 
 	return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+}
+
+
+function hero()
+{
+	ob_start();
+	?>
+	<section class="hero-style-1"
+		style="background-image: url(https://openawards.theprogressteam.com/wp-content/uploads/2024/12/qual-hero-bg.png)">
+		<div class="container">
+			<div class="title-box">
+				<h1>
+					<?php the_title() ?>
+				</h1>
+			</div>
+		</div>
+	</section>
+<?php
+	return ob_get_clean();
 }
