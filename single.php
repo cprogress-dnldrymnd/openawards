@@ -51,6 +51,8 @@ while (have_posts()) {
 				</div>
 			</div>
 
+			<?= hero() ?>
+
 			<section class="the-content position-relative">
 				<div class="container">
 					<?php if ($post_type == 'post') { ?>
