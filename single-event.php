@@ -20,7 +20,7 @@
                 // If we have a page to show, start a loop that will display it
                 $post_id = get_the_ID();
             ?>
-                <?= hero(get_the_title(), 'default', false) ?>
+                <?= hero('default', 'default', false) ?>
 
 
                 <section class="single-event-section">
