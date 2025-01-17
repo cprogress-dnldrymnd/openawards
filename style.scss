@@ -10395,6 +10395,11 @@ section.latest-news {
             background-color: rgba(0, 0, 0, 0.4);
         }
     }
+    .desc-box {
+        margin-top: 40px;;
+        color: var(--white-color);
+        max-width: 745px;
+    }
     &.hero-style-padding {
         padding-top: 100px;
         padding-bottom: 100px;

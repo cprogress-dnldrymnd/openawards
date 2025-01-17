@@ -566,11 +566,11 @@ function hero()
 					<?php the_title() ?>
 				</h1>
 			</div>
-			<div class="desc-box">
-				<p>
-					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.
-				</p>
-			</div>
+			<?php if (get_the_excerpt()) { ?>
+				<div class="desc-box">
+					<?php the_excerpt() ?>
+				</div>
+			<?php } ?>
 		</div>
 	</section>
 <?php
