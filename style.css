@@ -7982,7 +7982,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     .fs-32px * {
       font-size: 20px; } }
 
-#jobs-main {
+#jobs-main.jobs-main-archive {
+  padding-top: 0;
   background-image: none; }
 
 #jobs-main .jobs-archive {
