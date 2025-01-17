@@ -5253,9 +5253,6 @@ div#mega-menu-wrap-primary {
     padding-left: 75px !important;
     height: auto !important;
     line-height: normal !important; } }
-section.breadcrumbs nav .container {
-  padding: 0 !important; }
-
 /*Shop*/
 body.woocommerce-shop .woocommerce-breadcrumb {
   display: none; }
