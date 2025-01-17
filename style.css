@@ -7823,8 +7823,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     color: var(--white-color);
     max-width: 745px; }
   .hero-style-1.hero-style-padding {
-    padding-top: 100px;
-    padding-bottom: 100px; }
+    padding-top: 120px;
+    padding-bottom: 120px; }
     @media (max-width: 991px) {
       .hero-style-1.hero-style-padding {
         padding-top: 50px;
