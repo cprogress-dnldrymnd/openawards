@@ -10386,6 +10386,15 @@ section.latest-news {
         font-size: 64px;
         font-weight: 600;
         margin-bottom: 0;
+        @media (max-width: 1199px) {
+            font-size: 54px;
+        }
+        @media (max-width: 991px) {
+            font-size: 44px;
+        }
+        @media (max-width: 767px) {
+            font-size: 34px;
+        }
     }
     &.has-bg {
         &:before {
@@ -10399,7 +10408,7 @@ section.latest-news {
         }
     }
     .desc-box {
-        margin-top: 40px;;
+        margin-top: 40px;
         color: var(--white-color);
         max-width: 900px;
     }
@@ -10411,7 +10420,6 @@ section.latest-news {
             padding-top: 50px;
             padding-bottom: 50px;
             margin-bottom: 50px;
-
         }
     }
 }
