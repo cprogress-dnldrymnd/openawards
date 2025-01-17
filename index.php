@@ -47,18 +47,7 @@ if (is_home()) {
 		</div>
 
 		<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
-		<div class="title-wrapper">
-			<div class="container text-center">
-				<div class="heading-box">
-					<h2>
-						<?= $title ?>
-					</h2>
-				</div>
-				<div class="subheading">
-					<?= wpautop($description) ?>
-				</div>
-			</div>
-		</div>
+		<?= hero($title, $description) ?>
 		<?php if ($post_type == 'post') { ?>
 			<?php get_template_part('template-parts/blog/featured-blog') ?>
 
