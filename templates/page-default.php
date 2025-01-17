@@ -23,8 +23,7 @@ get_header(); // This fxn gets the header.php file and renders it
                     ?>
 
                          <article class="post">
-                              <h1 class="title"><?php the_title(); // Display the title of the page 
-                                                  ?></h1>
+
                               <div class="the-content">
                                    <?php the_content();
                                    // This call the main content of the page, the stuff in the main text box while composing.
