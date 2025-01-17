@@ -24,3 +24,4 @@ if (is_single() || is_page()) {
         </div>
     </nav>
 </section>
+<?php do_action('after_breadcrumbs') ?>
