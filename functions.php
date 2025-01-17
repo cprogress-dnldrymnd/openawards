@@ -557,13 +557,18 @@ function hero()
 		$background = '/wp-content/uploads/2024/12/qual-hero-bg.png';
 		$class = 'no-bg';
 	}
+	if (get_field('alt_title')) {
+		$title = get_field('alt_title');
+	} else {
+		$title = get_the_title();
+	}
 	?>
 	<section class="hero-style-1 hero-style-padding <?= $class ?>"
 		style="background-image: url(<?= $background ?>)">
 		<div class="container position-relative">
 			<div class="title-box">
 				<h1>
-					<?php the_title() ?>
+					<?= $title ?>
 				</h1>
 			</div>
 			<?php if (get_the_excerpt()) { ?>
