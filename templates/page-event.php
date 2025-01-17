@@ -5,8 +5,7 @@
  */
 ?>
 <?php get_header();  ?>
-<main id="page-components">
-
+<div id="primary" class="row-fluid">
      <div id="content" role="main">
           <?php if (have_posts()) :
                // Do we have any posts/pages in the databse that match our query?
@@ -63,7 +62,7 @@
           <?php endif ?>
 
      </div><!-- #content .site-content -->
-</main>
+</div>
 <?php get_footer();
 ?>
 
