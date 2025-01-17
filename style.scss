@@ -10370,6 +10370,10 @@ section.latest-news {
     }
 }
 
+.inner-container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .hero-style-1 {
     background-size: cover;
     background-position: center;
@@ -10377,10 +10381,7 @@ section.latest-news {
     padding-bottom: 50px;
     position: relative;
     font-family: var(--primary-font);
-    .inner {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+ 
     h1 {
         color: var(--white-color);
         font-size: 64px;

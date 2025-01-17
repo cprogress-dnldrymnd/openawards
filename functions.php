@@ -557,7 +557,7 @@ function hero()
 	<section class="hero-style-1 hero-style-padding <?= $class ?>"
 		style="background-image: url(<?= $background ?>)">
 		<div class="container position-relative">
-			<div class="inner">
+			<div class="inner-container">
 				<div class="title-box">
 					<h1>
 						<?= $title ?>
