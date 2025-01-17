@@ -7798,6 +7798,10 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
 .qualification-filter-buttons .filter-button.filter-active button {
   background-color: var(--high-violet); }
 
+.inner-container {
+  padding-left: 15px;
+  padding-right: 15px; }
+
 .hero-style-1 {
   background-size: cover;
   background-position: center;
@@ -7805,9 +7809,6 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   padding-bottom: 50px;
   position: relative;
   font-family: var(--primary-font); }
-  .hero-style-1 .inner {
-    padding-left: 15px;
-    padding-right: 15px; }
   .hero-style-1 h1 {
     color: var(--white-color);
     font-size: 64px;
