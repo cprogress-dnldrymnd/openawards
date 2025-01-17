@@ -18,13 +18,9 @@ echo hide_load_more($count, 0, 10);
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
         <?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
+        <?= hero('Frequently Asked Questions') ?>
         <div class="title-wrapper title-wrapper-v3">
             <div class="container text-center">
-                <div class="heading-box mb-3">
-                    <h2>
-                        Frequently Asked Questions
-                    </h2>
-                </div>
                 <div class="faqs-category-filter">
                     <div class="container">
                         <div class="row justify-content-center faqs-filter-holder">
