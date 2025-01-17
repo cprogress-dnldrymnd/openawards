@@ -554,7 +554,7 @@ function hero()
 		$background = get_the_post_thumbnail_url(get_the_ID(), 'full');
 		$class = 'has-bg';
 	} else {
-		$background = 'wp-content/uploads/2024/12/qual-hero-bg.png';
+		$background = '/wp-content/uploads/2024/12/qual-hero-bg.png';
 		$class = 'no-bg';
 	}
 	?>
