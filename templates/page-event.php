@@ -20,6 +20,7 @@
                ?>
 
 
+
                     <?= hero('Training And Events For Learners And Visitors', false, false) ?>
                     <div class="container-holder">
                          <div class="container wide width1400">

@@ -20,6 +20,7 @@
                 // If we have a page to show, start a loop that will display it
                 $post_id = get_the_ID();
             ?>
+                <?= hero() ?>
 
 
                 <section class="single-event-section">
@@ -68,7 +69,7 @@
                                         $_event_start = get_post_meta($post->ID, '_event_start', true);
                                         $_event_start_date = get_post_meta($post->ID, '_event_start_date', true);
                                         $_event_start_time = get_post_meta($post->ID, '_event_start_time', true);
-                                        
+
                                         $google_calendar = make_google_calendar_link($title, '1429518000', '1429561200', '', 'Open awards event');
                                         ?>
                                         <tr class="<?= $post->ID == $post_id ? 'active' : '' ?>">
