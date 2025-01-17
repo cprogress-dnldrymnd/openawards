@@ -38,20 +38,9 @@ while (have_posts()) {
 					</g>
 				</svg></div>
 			<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
-			<div class="title-wrapper title-wrapper-v2 position-relative">
-				<div class="container text-center">
-					<div class="heading-box">
-						<h2>
-							<?= get_the_title() ?>
-						</h2>
-					</div>
-					<div class="date-box">
-						<?= get_the_date() ?>
-					</div>
-				</div>
-			</div>
 
-			<?= hero(get_the_title(), false, ) ?>
+
+			<?= hero(get_the_title(), get_the_date(), false) ?>
 
 			<section class="the-content position-relative">
 				<div class="container">
