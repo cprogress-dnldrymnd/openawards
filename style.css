@@ -7824,7 +7824,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
     max-width: 745px; }
   .hero-style-1.hero-style-padding {
     padding-top: 120px;
-    padding-bottom: 120px; }
+    padding-bottom: 120px;
+    margin-bottom: 50px; }
     @media (max-width: 991px) {
       .hero-style-1.hero-style-padding {
         padding-top: 50px;
