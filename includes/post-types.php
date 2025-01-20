@@ -342,16 +342,18 @@ $Units->show_in_admin_bar = true;
 $Units->has_archive = true;
 
 
-$Qualifications_Sector = new newTaxonomy();
-$Qualifications_Sector->taxonomy = 'qualifications_sector';
-$Qualifications_Sector->post_type = 'qualifications';
-$Qualifications_Sector->args = array(
-    'label'        => 'Qualifications Sector',
-    'hierarchical' => true,
-    'query_var'    => false,
-    'has_archive'  => false,
-    'show_in_rest' => false,
-);
+
+$Units = new newPostType();
+$Units->name = 'Courses';
+$Units->singular_name = 'Course';
+$Units->icon = 'dashicons-welcome-learn-more';
+$Units->supports = array('title', 'revisions', 'editor', 'page-attributes', 'thumbnail');
+$Units->exclude_from_search = false;
+$Units->publicly_queryable = true;
+$Units->show_in_admin_bar = true;
+$Units->has_archive = true;
+
+
 
 // Add the custom columns to the slider post type:
 add_filter('manage_slider_posts_columns', 'set_custom_edit_slider_columns');
