@@ -7806,6 +7806,8 @@ div#mega-menu-wrap-primary ul#mega-menu-primary li.mega-menu-item.mega-menu-item
   position: relative;
   font-family: var(--primary-font);
   background-color: var(--high-violet); }
+  .hero-style-1 img {
+    height: auto; }
   .hero-style-1 h1 {
     color: var(--white-color);
     font-size: 64px;

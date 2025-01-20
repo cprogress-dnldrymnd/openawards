@@ -10377,6 +10377,9 @@ section.latest-news {
     position: relative;
     font-family: var(--primary-font);
     background-color: var(--high-violet);
+    img {
+        height: auto;
+    }
     h1 {
         color: var(--white-color);
         font-size: 64px;
