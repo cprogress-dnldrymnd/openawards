@@ -538,10 +538,12 @@ function clean($string)
 
 add_post_type_support('page', 'excerpt');
 
-function hero($title = 'default', $description = 'default', $bg_image = true, $section_class='')
+function hero($title = 'default', $description = 'default', $bg_image = true, $section_class = '')
 {
 	ob_start();
-	if (has_post_thumbnail() && $bg_image == true) {
+	$hero_type = get_field('hero_type');
+	$has_post_thumbnail = has_post_thumbnail();
+	if ($has_post_thumbnail && $bg_image == true) {
 		$background = get_the_post_thumbnail_url(get_the_ID(), 'full');
 		$class = 'has-bg';
 	} else {
@@ -563,11 +565,19 @@ function hero($title = 'default', $description = 'default', $bg_image = true, $s
 			$description = false;
 		}
 	}
+
+
 	?>
 	<section class="hero-style-1 hero-style-padding <?= $class ?> <?= $section_class ?>"
 		style="background-image: url(<?= $background ?>)">
 		<div class="container position-relative">
 			<div class="inner-container">
+				<?php
+				if ($hero_type == 'image_on_right' && $has_post_thumbnail) {
+					echo '<div class="row">';
+					echo '<div class="col-lg-7">';
+				}
+				?>
 				<div class="title-box">
 					<h1>
 						<?= $title ?>
@@ -578,6 +588,16 @@ function hero($title = 'default', $description = 'default', $bg_image = true, $s
 						<?= wpautop($description) ?>
 					</div>
 				<?php } ?>
+				<?php
+				if ($hero_type == 'image_on_right' && $has_post_thumbnail) {
+					echo '</div>';
+
+					echo '<div class="col-lg-5">';
+					echo get_the_post_thumbnail(get_the_ID(), 'large');
+					echo '</div>';
+					echo '</div>';
+				}
+				?>
 			</div>
 		</div>
 	</section>
