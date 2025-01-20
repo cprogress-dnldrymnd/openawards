@@ -574,7 +574,7 @@ function hero($title = 'default', $description = 'default', $bg_image = true, $s
 			<div class="inner-container">
 				<?php
 				if ($hero_type == 'image_on_right' && $has_post_thumbnail) {
-					echo '<div class="row">';
+					echo '<div class="row align-items-center g-4">';
 					echo '<div class="col-lg-7">';
 				}
 				?>
