@@ -543,13 +543,19 @@ function hero($title = 'default', $description = 'default', $bg_image = true, $s
 	ob_start();
 	$hero_type = get_field('hero_type');
 	$has_post_thumbnail = has_post_thumbnail();
-	if ($has_post_thumbnail && $bg_image == true) {
-		$background = get_the_post_thumbnail_url(get_the_ID(), 'full');
-		$class = 'has-bg';
+	if ($hero_type != 'image_on_right') {
+
+		if ($has_post_thumbnail && $bg_image == true) {
+			$background = get_the_post_thumbnail_url(get_the_ID(), 'full');
+			$class = 'has-bg';
+		} else {
+			$background = '/wp-content/uploads/2024/12/qual-hero-bg.png';
+			$class = 'no-bg';
+		}
+		$style = 'style="background-image: url(' . $background . ')"';
 	} else {
-		$background = '/wp-content/uploads/2024/12/qual-hero-bg.png';
-		$class = 'no-bg';
 	}
+
 	if ($title == 'default') {
 		if (get_field('alt_title')) {
 			$title = get_field('alt_title');
@@ -568,8 +574,7 @@ function hero($title = 'default', $description = 'default', $bg_image = true, $s
 
 
 	?>
-	<section class="hero-style-1 hero-style-padding <?= $class ?> <?= $section_class ?>"
-		style="background-image: url(<?= $background ?>)">
+	<section class="hero-style-1 hero-style-padding <?= $class ?> <?= $section_class ?>" <?= $style ?>>
 		<div class="container position-relative">
 			<div class="inner-container">
 				<?php
