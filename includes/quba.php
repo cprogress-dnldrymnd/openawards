@@ -292,6 +292,7 @@ function qual_grid($result, $post_type = 'qualifications', $post = false)
       );
       //$post_id = wp_insert_post($post_data);
     }
+    var_dump($result);
   } else {
     $post_id = $result['post_id'];
   }
