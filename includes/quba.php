@@ -280,35 +280,39 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
   ob_start();
   if ($post == false) {
     $check_qual = get_post_id_by_meta_field('_id', $data['ID']);
+    $post_data['post_type'] = $post_type;
+    $post_data['post_title'] = $data['Title'];
+    $post_data['post_status'] = 'publish';
+    if ($data['QualificationSummary']) {
+      $post_data['post_content'] = 'publish';
+    }
+    $post_data['meta_input'] = array(
+      '_id' => $data['ID'],
+      '_level' => $data['Level'],
+      '_type' => $data['Type'],
+      '_regulationstartdate' => $data['RegulationStartDate'],
+      '_operationalstartdate' => $data['OperationalStartDate'],
+      '_regulationenddate' => $data['RegulationEndDate'],
+      '_reviewdate' => $data['ReviewDate'],
+      '_totalcreditsrequired' => $data['TotalCreditsRequired'],
+      '_minimumcreditsatorabove' => $data['MinimumCreditsAtOrAbove'],
+      '_qualificationreferencenumber' => $data['QualificationReferenceNumber'],
+      '_contactdetails' => $data['ContactDetails'],
+      '_minage' => $data['MinAge'],
+      '_tqt' => $data['TQT'],
+      '_glh' => $data['GLH'],
+      '_alternativequalificationtitle' => $data['AlternativeQualificationTitle'],
+      '_classification1' => $data['Classification1'],
+    );
+
+
     if ($check_qual) {
       $post_id = $check_qual;
+      $post_data['ID'] = $post_id;
+      wp_update_post($post_data);
     } else {
       // Insert the post into the database
-      $post_data['post_type'] = $post_type;
-      $post_data['post_title'] = $data['Title'];
-      $post_data['post_status'] = 'publish';
-      if ($data['QualificationSummary']) {
-        $post_data['post_content'] = 'publish';
-      }
-      $post_data['meta_input'] = array(
-        '_id' => $data['ID'],
-        '_level' => $data['Level'],
-        '_type' => $data['Type'],
-        '_regulationstartdate' => $data['RegulationStartDate'],
-        '_operationalstartdate' => $data['OperationalStartDate'],
-        '_regulationenddate' => $data['RegulationEndDate'],
-        '_reviewdate' => $data['ReviewDate'],
-        '_totalcreditsrequired' => $data['TotalCreditsRequired'],
-        '_minimumcreditsatorabove' => $data['MinimumCreditsAtOrAbove'],
-        '_qualificationreferencenumber' => $data['QualificationReferenceNumber'],
-        '_contactdetails' => $data['ContactDetails'],
-        '_minage' => $data['MinAge'],
-        '_tqt' => $data['TQT'],
-        '_glh' => $data['GLH'],
-        '_alternativequalificationtitle' => $data['AlternativeQualificationTitle'],
-        '_classification1' => $data['Classification1'],
-      );
-      //$post_id = wp_insert_post($post_data);
+      $post_id = wp_insert_post($post_data);
     }
     var_dump($data);
   } else {

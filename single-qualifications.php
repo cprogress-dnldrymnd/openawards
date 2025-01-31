@@ -84,7 +84,7 @@ function key_info($key, $label, $type = 'string')
           <div class="col-lg-6">
             <div class="info-box">
               <div class="inner">
-                <h2 class="h2-style-1">Purpose Statement<span>.</span></h2>
+                <h2 class="h2-style-1">Qualification Guide.<span>.</span></h2>
                 <ul>
                   <li>Who is it for?</li>
                   <li>What does this qualification cover?</li>
