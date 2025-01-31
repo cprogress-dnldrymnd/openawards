@@ -62,6 +62,7 @@ function key_info($key, $label, $type = 'string')
       </div>
     </section>
 
+
     <section class="info-boxes">
       <div class="container">
         <div class="row g-4">
