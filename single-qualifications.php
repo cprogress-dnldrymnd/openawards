@@ -25,7 +25,7 @@ $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-in
   </QUBA_GetQualificationGuideResponse>
 </soap:Body>
 </soap:Envelope>';
-
+echo 'xsdsdsd';
 echo $xmlString;
 try {
   $xml = new SimpleXMLElement($responseString);
