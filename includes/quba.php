@@ -278,14 +278,10 @@ function remove_all_attributes($html)
 {
   // Use a regular expression to remove all attributes.
   $html = preg_replace('/<([a-z][a-z0-9]*)([^>]*?)>/i', '<$1>', $html);
+  $html = preg_replace("/<[^\/>]*>([\s]?)*<\/[^>]*>/", '', $html);
   return $html;
 }
-function remove_empty_tags_and_whitespace($html)
-{
-  $pattern = "/<[^\/>]*>([\s]?)*<\/[^>]*>/";
 
-  return preg_replace($pattern, '', $html);
-}
 function qual_grid($data, $post_type = 'qualifications', $post = false)
 {
   ob_start();
