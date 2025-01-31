@@ -8,6 +8,38 @@ var_dump($Documents);
 var_dump($Guide);
 echo '</pre>';
 
+$client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
+// Set the SOAP action
+
+
+// Call the SOAP method
+$request = array(
+  'qualificationID'     => $id,
+);
+
+$response = $client->QUBA_GetQualificationGuide($request);
+
+// Assuming $response is the object returned from the SOAP call:
+$xmlString = $response->QUBA_QUBA_GetQualificationGuide->any; // Assuming XML is in the "any" field
+
+$responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+  <QUBA_GetQualificationGuideResponse xmlns="http://tempuri.org/">
+    <QUBA_GetQualificationGuideResult>' . $xmlString . '</QUBA_GetQualificationGuideResult>
+  </QUBA_GetQualificationGuideResponse>
+</soap:Body>
+</soap:Envelope>';
+
+echo $xmlString;
+try {
+  $xml = new SimpleXMLElement($responseString);
+  $QubaQualificationDocuments = $xml->xpath('//QubaQualificationGuide');
+  return $QubaQualificationDocuments;
+} catch (Exception $e) {
+  return $e;
+  // Handle errors (e.g., invalid XML, data extraction issues)
+}
+
 function key_info($key, $label, $type = 'string')
 {
   $keyinfo = carbon_get_the_post_meta($key);
