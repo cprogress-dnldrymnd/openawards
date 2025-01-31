@@ -123,11 +123,12 @@ function QUBA_QualificationSearchPost()
   echo "<div class='row row-results g-5'>";
   foreach ($posts as $post) {
     $level = carbon_get_the_post_meta('level');
-    echo qual_grid(array(
-      'ID' => $post->ID,
-      'Title' => $post->post_title,
-      'Level' => $level,
-    ));
+    $data = array(
+      'Level'   => $level,
+      'Title'   => $post->post_title,
+      'post_id' => $post->ID,
+    );
+    echo qual_grid($data, 'qualifications', true);
   }
   echo "</div>";
   return ob_get_clean();
