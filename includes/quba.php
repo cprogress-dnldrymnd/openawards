@@ -94,7 +94,6 @@ function QUBA_QualificationSearch($data)
     if (count($resultArray_final) != 0) {
       echo '<div class="row row-results g-5">';
       foreach ($resultArray_final as $result) {
-
         echo qual_grid($result);
       }
       echo '</div>';
