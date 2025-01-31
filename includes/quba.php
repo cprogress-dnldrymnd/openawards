@@ -277,6 +277,7 @@ function get_post_id_by_meta_field($meta_key, $meta_value)
 function santize_html($html)
 {
   // Use a regular expression to remove all attributes.
+  $html = html_entity_decode($html);
   $html = str_replace('&nbsp;', '', $html);
   $html = preg_replace('/<([a-z][a-z0-9]*)([^>]*?)>/i', '<$1>', $html);
   $html = preg_replace("/<[^\/>]*>([\s]?)*<\/[^>]*>/", '', $html);
@@ -323,9 +324,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       // Insert the post into the database
       $post_id = wp_insert_post($post_data);
     }
-    $html =  html_entity_decode($data['QualificationSummary']);
-    $html_2 = santize_html($html);
-    echo $html_2;
+    echo santize_html($data['QualificationSummary']);
     //var_dump($data);
   } else {
     $post_id = $data['post_id'];
