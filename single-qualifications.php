@@ -9,9 +9,13 @@ $tqt = carbon_get_the_post_meta('tqt');
 $glh = carbon_get_the_post_meta('glh');
 $type = carbon_get_the_post_meta('type');
 
-function key_info($key, $label)
+function key_info($key, $label, $type = 'string')
 {
   $keyinfo = carbon_get_the_post_meta($key);
+  if ($type == 'date') {
+    $originalDate = $keyinfo;
+    $keyinfo = date("d-m-Y", strtotime($originalDate));
+  }
   if ($keyinfo) {
     return "<div class='key-info-item'><strong>$label:</strong> $keyinfo</div>";
   }
@@ -37,7 +41,7 @@ function key_info($key, $label)
                   echo key_info('type', 'Sector');
                   echo key_info('qualificationreferencenumber', 'Qualification Code');
                   echo key_info('level', 'Level');
-                  echo key_info('regulationstartdate', 'Start Date');
+                  echo key_info('regulationstartdate', 'Start Date', 'date');
                   ?>
                   <div class="key-info-item"><strong>Start Date:</strong> 31 July 2020</div>
                 </div>
