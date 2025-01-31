@@ -280,6 +280,22 @@ function remove_all_attributes($html)
   $html = preg_replace('/<([a-z][a-z0-9]*)([^>]*?)>/i', '<$1>', $html);
   return $html;
 }
+function remove_empty_tags_and_whitespace($html)
+{
+  // 1. Remove HTML comments:
+  $html = preg_replace('//s', '', $html);
+
+  // 2. Remove tags with only whitespace inside:
+  $html = preg_replace('/<\s*\/?[^>]*?>/s', '', $html); //Improved regex
+
+  // 3. Remove leading/trailing whitespace from the entire HTML:
+  $html = trim($html);
+
+  // 4. Remove excessive whitespace within the HTML (more than one space):
+  $html = preg_replace('/\s+/s', ' ', $html);  // Replace multiple spaces with single space.
+
+  return $html;
+}
 function qual_grid($data, $post_type = 'qualifications', $post = false)
 {
   ob_start();
@@ -322,7 +338,8 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
     }
     $html =  html_entity_decode($data['QualificationSummary']);
     $html_2 = remove_all_attributes($html);
-    echo $html_2;
+    $html_3 = remove_empty_tags_and_whitespace($html_2);
+    echo $html_3;
     //var_dump($data);
   } else {
     $post_id = $data['post_id'];
