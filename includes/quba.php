@@ -279,7 +279,6 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
 {
   ob_start();
   if ($post == false) {
-    kses_remove_filters(); //This Turns off kses
     $check_qual = get_post_id_by_meta_field('_id', $data['ID']);
     $post_data['post_type'] = $post_type;
     $post_data['post_title'] = $data['Title'];
@@ -316,7 +315,6 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       $post_id = wp_insert_post($post_data);
     }
     var_dump($data);
-    kses_init_filters();
   } else {
     $post_id = $data['post_id'];
   }
