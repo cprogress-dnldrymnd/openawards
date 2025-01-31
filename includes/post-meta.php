@@ -248,8 +248,8 @@ Container::make('post_meta', 'Qualifications Settings')
     ->add_fields(
         array(
             Field::make('text', 'id', __('ID')),
-            /*
             Field::make('text', 'level', __('Level')),
+            /*
             Field::make('text', 'type', __('Type')),
             Field::make('text', 'regulationstartdate', __('Regulation start date')),
             Field::make('text', 'operationalstartdate', __('Operational start date')),
