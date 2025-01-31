@@ -40,7 +40,11 @@ function QUBA_GetQualificationDocuments()
 
 
   // Call the SOAP method
-  $response = $client->QUBA_GetQualificationDocuments();
+  $request = array(
+    'qualificationID'     => 126563,
+  );
+
+  $response = $client->QUBA_GetQualificationDocuments($request);
 
   // Assuming $response is the object returned from the SOAP call:
   $xmlString = $response->QUBA_GetQualificationDocumentsResult->any; // Assuming XML is in the "any" field

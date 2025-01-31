@@ -143,11 +143,7 @@ function key_info($key, $label, $type = 'string')
 
 
   // Call the SOAP method
-  $response = $client->QUBA_GetQCASectors($request);
-
-  $request = array(
-    'qualificationID'     => 126563,
-  );
+  $response = $client->QUBA_GetQCASectors();
 
   // Assuming $response is the object returned from the SOAP call:
   $xmlString = $response->QUBA_GetQCASectorsResult->any; // Assuming XML is in the "any" field
@@ -165,8 +161,7 @@ function key_info($key, $label, $type = 'string')
 
   try {
     $xml = new SimpleXMLElement($responseString);
-    $QubaGetSSAReferenceData = $xml->xpath('//QubaGetSSAReferenceData');
-    echo 'xxx';
+    echo 'xxxx';
     echo $xml;
   } catch (Exception $e) {
     var_dump($e);
