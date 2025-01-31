@@ -286,9 +286,8 @@ function qual_grid($result, $post_type = 'qualifications', $post = false)
       $post_data['post_title'] = $result['Title'];
       $post_data['post_status'] = 'publish';
       $post_data['meta_input'] = array(
-        '_id' => $result['ID']
+        '_id' => $result['ID'],
       );
-
       $post_id = wp_insert_post($post_data);
     }
   }
