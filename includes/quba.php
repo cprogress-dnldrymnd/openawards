@@ -316,7 +316,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       $post_id = wp_insert_post($post_data);
     }
     kses_init_filters();
-    echo $data['QualificationSummary'];
+    echo htmlentities($data['QualificationSummary']);
     //var_dump($data);
   } else {
     $post_id = $data['post_id'];
