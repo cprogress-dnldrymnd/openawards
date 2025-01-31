@@ -93,8 +93,8 @@ function QUBA_QualificationSearch($data)
 
     if (count($resultArray_final) != 0) {
       echo '<div class="row row-results g-5">';
-      foreach ($resultArray_final as $result) {
-        echo qual_grid($result);
+      foreach ($resultArray_final as $data) {
+        echo qual_grid($data);
       }
       echo '</div>';
     } else {
@@ -191,8 +191,8 @@ function QUBA_UnitSearch($data)
 
     if (count($resultArray) != 0) {
       echo '<div class="row row-results g-5">';
-      foreach ($resultArray as $result) {
-        echo qual_grid($result, 'units');
+      foreach ($resultArray as $data) {
+        echo qual_grid($data, 'units');
       }
       echo '</div>';
     } else {
@@ -275,45 +275,63 @@ function get_post_id_by_meta_field($meta_key, $meta_value)
   return $post_id;
 }
 
-function qual_grid($result, $post_type = 'qualifications', $post = false)
+function qual_grid($data, $post_type = 'qualifications', $post = false)
 {
   ob_start();
   if ($post == false) {
-    $check_qual = get_post_id_by_meta_field('_id', $result['ID']);
+    $check_qual = get_post_id_by_meta_field('_id', $data['ID']);
     if ($check_qual) {
       $post_id = $check_qual;
     } else {
       // Insert the post into the database
       $post_data['post_type'] = $post_type;
-      $post_data['post_title'] = $result['Title'];
+      $post_data['post_title'] = $data['Title'];
       $post_data['post_status'] = 'publish';
+      if ($data['QualificationSummary']) {
+        $post_data['post_content'] = 'publish';
+      }
       $post_data['meta_input'] = array(
-        '_id' => $result['ID'],
+        '_id' => $data['ID'],
+        '_level' => $data['Level'],
+        '_type' => $data['Type'],
+        '_regulationstartdate' => $data['RegulationStartDate'],
+        '_operationalstartdate' => $data['OperationalStartDate'],
+        '_regulationenddate' => $data['RegulationEndDate'],
+        '_reviewdate' => $data['ReviewDate'],
+        '_totalcreditsrequired' => $data['TotalCreditsRequired'],
+        '_minimumcreditsatorabove' => $data['MinimumCreditsAtOrAbove'],
+        '_qualificationreferencenumber' => $data['QualificationReferenceNumber'],
+        '_contactdetails' => $data['ContactDetails'],
+        '_minage' => $data['MinAge'],
+        '_tqt' => $data['TQT'],
+        '_glh' => $data['GLH'],
+        '_alternativequalificationtitle' => $data['AlternativeQualificationTitle'],
+        '_classification1' => $data['TotalCreditsRequired'],
       );
       //$post_id = wp_insert_post($post_data);
     }
-    var_dump($result);
+    var_dump($data);
   } else {
-    $post_id = $result['post_id'];
+    $post_id = $data['post_id'];
   }
-  if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
-    $level_val = str_replace('E', 'Entry Level ', $result['Level']);
+  if ($data['Level'] == 'E1' || $data['Level'] == 'E2' || $data['Level'] == 'E3') {
+    $level_val = str_replace('E', 'Entry Level ', $data['Level']);
   } else {
-    $level_val = str_replace('L', 'Level ', subject: $result['Level']);
+    $level_val = str_replace('L', 'Level ', subject: $data['Level']);
   }
 ?>
   <div class="col-lg-4 post-item">
     <div class="post-box h-100">
       <div class="image-box image-box-placeholder">
         <img src="https://openawards.theprogressteam.com/wp-content/uploads/2023/10/logo-new.svg">
-        <span class="level <?= $result['Level'] ?>">
+        <span class="level <?= $data['Level'] ?>">
           &#10004; <?= $level_val ?>
         </span>
       </div>
       <div class="content-box content-box-v1">
         <div class="heading-excerpt-box">
           <div class="heading-box">
-            <h4><?= $result['Title'] ?></h4>
+            <h4><?= $data['Title'] ?></h4>
           </div>
           <div class="description-box d-none">
             <?php ?>
