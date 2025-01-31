@@ -316,6 +316,8 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       $post_id = wp_insert_post($post_data);
     }
     kses_init_filters();
+    echo preg_replace('/ style=("|\')(.*?)("|\')/','',$data['QualificationSummary']);
+    echo '<br></br>';
     echo html_entity_decode(preg_replace('/ style=("|\')(.*?)("|\')/','',$data['QualificationSummary']));
     //var_dump($data);
   } else {
