@@ -118,8 +118,10 @@ function QUBA_QualificationSearchPost()
   ob_start();
   $posts = get_posts(array(
     'post_type' => 'qualifications',
-    'numberposts' => 15
+    'numberposts' => 15,
+    'orderby' => 'rand',
   ));
+
   echo "<div class='row row-results g-5'>";
   foreach ($posts as $post) {
     $level = carbon_get_post_meta($post->ID, 'level');
