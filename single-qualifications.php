@@ -4,9 +4,6 @@ $id = carbon_get_the_post_meta('id');
 $Documents = QUBA_GetQualificationDocuments($id);
 $Guide = QUBA_GetQualificationGuide($id);
 echo '<pre>';
-var_dump($Documents);
-var_dump($Guide);
-
 $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
 // Set the SOAP action
 
