@@ -34,9 +34,7 @@ echo $xmlString;
 try {
   $xml = new SimpleXMLElement($responseString);
   $QubaQualificationDocuments = $xml->xpath('//QubaQualificationGuide');
-  return $QubaQualificationDocuments;
 } catch (Exception $e) {
-  return $e;
   // Handle errors (e.g., invalid XML, data extraction issues)
 }
 
