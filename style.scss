@@ -10509,6 +10509,10 @@ section.info-boxes {
                     border-bottom-width: 1px;
                     box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
                 }
+                & > tbody > tr:nth-of-type(odd) {
+                    --bs-table-accent-bg: var(--bs-table-striped-bg);
+                    color: var(--bs-table-striped-color);
+                }
             }
         }
 
