@@ -158,11 +158,11 @@ function key_info($key, $label, $type = 'string')
 </soap:Body>
 </soap:Envelope>';
 
+  echo $xmlString;
 
   try {
     $xml = new SimpleXMLElement($responseString);
     echo 'xxxx';
-    echo $xml;
   } catch (Exception $e) {
     var_dump($e);
     // Handle errors (e.g., invalid XML, data extraction issues)
