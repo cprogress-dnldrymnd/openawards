@@ -4,6 +4,7 @@ $id = carbon_get_the_post_meta('id');
 $Documents = QUBA_GetQualificationDocuments($id);
 $Guide = QUBA_GetQualificationGuide($id);
 echo '<pre>';
+
 $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
 // Set the SOAP action
 
@@ -15,16 +16,18 @@ $request = array(
 
 $response = $client->QUBA_GetQualificationGuide($request);
 
+// Assuming $response is the object returned from the SOAP call:
+$xmlString = $response->QUBA_QUBA_GetQualificationGuide->any; // Assuming XML is in the "any" field
 
 $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 <soap:Body>
   <QUBA_GetQualificationGuideResponse xmlns="http://tempuri.org/">
-    <QUBA_GetQualificationGuideResult>' . $response . '</QUBA_GetQualificationGuideResult>
+    <QUBA_GetQualificationGuideResult>' . $xmlString . '</QUBA_GetQualificationGuideResult>
   </QUBA_GetQualificationGuideResponse>
 </soap:Body>
 </soap:Envelope>';
-echo 'xsdsdsd';
-var_dump($response);
+
+echo $xmlString;
 try {
   $xml = new SimpleXMLElement($responseString);
   $QubaQualificationDocuments = $xml->xpath('//QubaQualificationGuide');
