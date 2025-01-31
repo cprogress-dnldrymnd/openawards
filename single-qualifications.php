@@ -1,6 +1,21 @@
 <?php get_header() ?>
 <?php
-  
+$level = carbon_get_the_post_meta('level');
+$qualificationreferencenumber = carbon_get_the_post_meta('qualificationreferencenumber');
+$reviewdate = carbon_get_the_post_meta('reviewdate');
+$regulationstartdate = carbon_get_the_post_meta('regulationstartdate');
+$minage = carbon_get_the_post_meta('minage');
+$tqt = carbon_get_the_post_meta('tqt');
+$glh = carbon_get_the_post_meta('glh');
+$type = carbon_get_the_post_meta('type');
+
+function key_info($key, $label)
+{
+  $keyinfo = carbon_get_the_post_meta($key);
+  if ($keyinfo) {
+    return "<div class='key-info-item'><strong>$label:</strong> $keyinfo</div>";
+  }
+}
 ?>
 <div id="primary" class="row-fluid">
   <div id="content" role="main" class="span8 offset2">
@@ -20,7 +35,10 @@
                 <div class="key-info-items">
                   <div class="key-info-item"><strong>Qualification Code:</strong> 603/6198/0</div>
                   <div class="key-info-item"><strong>Sector:</strong> Vocationally-Related Qualification</div>
-                  <div class="key-info-item"><strong>Level:</strong> E1</div>
+                  <?php
+                  echo key_info('qualificationreferencenumber', 'Qualification Code');
+                  ?>
+
                   <div class="key-info-item"><strong>Start Date:</strong> 31 July 2020</div>
                 </div>
               </div>
