@@ -224,7 +224,6 @@ function archive_ajax_qualifications()
   if ($source == 'quba') {
     echo QUBA_QualificationSearch($data);
   } else {
-    echo 'mama mo';
     echo QUBA_QualificationSearchPost($data);
   }
   die();
