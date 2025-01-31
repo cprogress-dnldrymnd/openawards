@@ -174,7 +174,7 @@ function ajax($offset, $event_type = 'html') {
 }
 
 
-function ajax_qualifications($offset, $event_type = 'html') {
+function ajax_qualifications($offset, $source = 'quba', $event_type = 'html') {
 	var $loadmore = jQuery('#load-more-qualifications');
 
 	var $archive_section = jQuery('.archive-section');
@@ -210,11 +210,12 @@ function ajax_qualifications($offset, $event_type = 'html') {
 
 		data: {
 			action: 'archive_ajax_qualifications',
+			source: $source,
 			qcaSector: $qcaSector,
 			qualificationLevel: $qualificationLevel,
 			qualificationNumber: $qualificationNumber,
 			qualificationTitle: $qualificationTitle,
-			qualificationType: $qualificationType
+			qualificationType: $qualificationType,
 		},
 
 		success: function (response) {

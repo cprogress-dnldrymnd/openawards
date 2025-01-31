@@ -188,6 +188,7 @@ add_action('wp_ajax_nopriv_archive_ajax_qualifications', 'archive_ajax_qualifica
 add_action('wp_ajax_archive_ajax_qualifications', 'archive_ajax_qualifications');
 function archive_ajax_qualifications()
 {
+  $source = isset($_POST['source']) && $_POST['source'] != '' ? $_POST['source'] : '';
   $qualificationLevel = isset($_POST['qualificationLevel']) && $_POST['qualificationLevel'] != '' ? $_POST['qualificationLevel'] : '';
   $qualificationNumber = isset($_POST['qualificationNumber']) && $_POST['qualificationNumber'] != '' ? $_POST['qualificationNumber'] : '';
   $qualificationTitle = isset($_POST['qualificationTitle']) && $_POST['qualificationTitle'] != '' ? $_POST['qualificationTitle'] : '';
@@ -200,7 +201,9 @@ function archive_ajax_qualifications()
     'qualificationTitle'  => $qualificationTitle,
     'qualificationType'   => $qualificationType
   );
-  echo QUBA_QualificationSearch($data);
+  if ($source == 'quba') {
+    echo QUBA_QualificationSearch($data);
+  }
   die();
 }
 
