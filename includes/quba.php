@@ -122,7 +122,7 @@ function QUBA_QualificationSearchPost()
   ));
   echo "<div class='row row-results g-5'>";
   foreach ($posts as $post) {
-    $level = carbon_get_the_post_meta('level');
+    $level = carbon_get_post_meta($post->ID, 'level');
     $data = array(
       'Level'   => $level,
       'Title'   => $post->post_title,
