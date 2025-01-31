@@ -287,7 +287,7 @@ function qual_grid($result, $post_type = 'qualifications', $post = false)
       $post_data['meta_input'] = array(
         '_id' => $result['ID'],
       );
-      $post_id = wp_insert_post($post_data);
+      //$post_id = wp_insert_post($post_data);
     }
   }
   if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
