@@ -290,12 +290,16 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
   ob_start();
   if ($post == false) {
     $check_qual = get_post_id_by_meta_field('_id', $data['ID']);
+    if ($data['QualificationSummary']) {
+      $post_content = santize_html($data['QualificationSummary']);
+    } else {
+      $post_content = '';
+    }
     $post_data['post_type'] = $post_type;
     $post_data['post_title'] = $data['Title'];
     $post_data['post_status'] = 'publish';
-    if ($data['QualificationSummary']) {
-      $post_data['post_content'] = santize_html($data['QualificationSummary']);
-    }
+    $post_data['post_content'] = $post_content;
+
     $post_data['meta_input'] = array(
       '_id' => $data['ID'],
       '_level' => $data['Level'],
