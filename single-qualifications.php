@@ -49,7 +49,7 @@ function key_info($key, $label, $type = 'string')
               <div class="col-sm-6">
                 <div class="key-info-items">
                   <?php
-                  echo key_info('reviewdate', 'Review Date');
+                  echo key_info('reviewdate', 'Review Date', 'date');
                   echo key_info('glh', 'Guided Learning Hours');
                   echo key_info('minage', 'Min Age');
                   echo key_info('tqt', 'TQT');
