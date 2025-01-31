@@ -3,7 +3,9 @@
 $id = carbon_get_the_post_meta('id');
 $Documents = QUBA_GetQualificationDocuments($id);
 
-
+echo '<pre>';
+var_dump($Documents);
+echo '</pre>';
 var_dump($Documents);
 
 function key_info($key, $label, $type = 'string')
