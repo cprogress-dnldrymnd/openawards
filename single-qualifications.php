@@ -33,10 +33,11 @@ function key_info($key, $label)
             <div class="row">
               <div class="col-sm-6">
                 <div class="key-info-items">
-                  <div class="key-info-item"><strong>Qualification Code:</strong> 603/6198/0</div>
-                  <div class="key-info-item"><strong>Sector:</strong> Vocationally-Related Qualification</div>
                   <?php
+                  echo key_info('type', 'Sector');
                   echo key_info('qualificationreferencenumber', 'Qualification Code');
+                  echo key_info('level', 'Level');
+                  echo key_info('regulationstartdate', 'Start Date');
                   ?>
 
                   <div class="key-info-item"><strong>Start Date:</strong> 31 July 2020</div>
