@@ -100,36 +100,22 @@ function key_info($key, $label, $type = 'string')
               </div>
             </div>
           </div>
-          <div class="col-12">
-            <div class="info-box info-box-v2">
-              <div class="inner">
-                <div class="row align-items-center g-3">
-                  <div class="col">
-                    <p>
-                      This occupation is found in horticulture grounds maintenance, landscaping, parks, greenspaces and
-                      gardens (historic, botanic, destination and estate). They might be working for a charity, a
-                      consultancy, governmental organisation, private estate/client or commercial contractor. The broad
-                      purpose of the occupation is to develop, build and manage parks, gardens, greenspaces and grounds
-                      (e.g. business parks, schools, retail sites etc..). This includes planning the site, engaging with
-                      clients, customers and visitors, financial management and income generation.
-                    </p>
-                    <p>
-                      Open Awards has
-                      committed, in principle, to develop this End-point Assessment. Development will start in September
-                      2023.
-                    </p>
-                    <p>
-                      To talk to a member of the team about how we can support you with your end-point assessment
-                      needs, please call us on 0151 494 2072 or enquiries@openawards.org.uk
-                    </p>
-                  </div>
-                  <div class="col-auto">
-                    <img src="https://openawards.theprogressteam.com/wp-content/uploads/2024/12/NoPath.png" alt="">
+          <?php if (get_the_content()) { ?>
+            <div class="col-12">
+              <div class="info-box info-box-v2">
+                <div class="inner">
+                  <div class="row align-items-center g-3">
+                    <div class="col">
+                      <?php the_content() ?>
+                    </div>
+                    <div class="col-auto">
+                      <img src="https://openawards.theprogressteam.com/wp-content/uploads/2024/12/NoPath.png" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          <?php } ?>
         </div>
         <div class="back-to mt-4">
           <div class="button-box-v2 button-accent">
