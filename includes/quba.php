@@ -306,7 +306,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
         '_tqt' => $data['TQT'],
         '_glh' => $data['GLH'],
         '_alternativequalificationtitle' => $data['AlternativeQualificationTitle'],
-        '_classification1' => $data['TotalCreditsRequired'],
+        '_classification1' => $data['Classification1'],
       );
       //$post_id = wp_insert_post($post_data);
     }
