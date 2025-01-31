@@ -321,7 +321,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       $post_id = wp_insert_post($post_data);
     }
     $html =  html_entity_decode($data['QualificationSummary']);
-    $html_2 = remove_all_attributes($html_2);
+    $html_2 = remove_all_attributes($html);
     echo $html_2;
     //var_dump($data);
   } else {
