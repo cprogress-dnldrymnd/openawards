@@ -118,7 +118,7 @@ function QUBA_QualificationSearchPost()
   ob_start();
   $posts = get_posts(array(
     'post_type' => 'qualifications',
-    'numberposts' => 16
+    'numberposts' => 15
   ));
   echo "<div class='row row-results g-5'>";
   foreach ($posts as $post) {
