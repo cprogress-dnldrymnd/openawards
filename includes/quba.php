@@ -284,7 +284,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
     $post_data['post_title'] = $data['Title'];
     $post_data['post_status'] = 'publish';
     if ($data['QualificationSummary']) {
-      $post_data['post_content'] = 'publish';
+      $post_data['post_content'] = $data['QualificationSummary'];
     }
     $post_data['meta_input'] = array(
       '_id' => $data['ID'],
