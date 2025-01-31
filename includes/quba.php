@@ -274,9 +274,10 @@ function get_post_id_by_meta_field($meta_key, $meta_value)
 
   return $post_id;
 }
-function remove_all_attributes($html)
+function santize_html($html)
 {
   // Use a regular expression to remove all attributes.
+  $html = str_replace(' ', '', $html);
   $html = preg_replace('/<([a-z][a-z0-9]*)([^>]*?)>/i', '<$1>', $html);
   $html = preg_replace("/<[^\/>]*>([\s]?)*<\/[^>]*>/", '', $html);
   return $html;
@@ -323,7 +324,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       $post_id = wp_insert_post($post_data);
     }
     $html =  html_entity_decode($data['QualificationSummary']);
-    $html_2 = remove_all_attributes($html);
+    $html_2 = santize_html($html);
     echo $html_2;
     //var_dump($data);
   } else {
