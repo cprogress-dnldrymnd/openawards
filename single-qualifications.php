@@ -20,14 +20,14 @@ $response = $client->QUBA_GetQualificationGuide($request);
 $xmlString = $response->QUBA_QUBA_GetQualificationGuide->any; // Assuming XML is in the "any" field
 
 $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-<soap:Body>
-  <QUBA_GetQualificationGuideResponse xmlns="http://tempuri.org/">
-    <QUBA_GetQualificationGuideResult>' . $xmlString . '</QUBA_GetQualificationGuideResult>
-  </QUBA_GetQualificationGuideResponse>
-</soap:Body>
+  <soap:Body>
+    <QUBA_GetQualificationGuide xmlns="http://tempuri.org/">
+      <qualificationID>' . $int . '</qualificationID>
+    </QUBA_GetQualificationGuide>
+  </soap:Body>
 </soap:Envelope>';
 
-echo $xmlString;
+echo $responseString;
 try {
   $xml = new SimpleXMLElement($responseString);
   $QubaQualificationDocuments = $xml->xpath('//QubaQualificationGuide');
