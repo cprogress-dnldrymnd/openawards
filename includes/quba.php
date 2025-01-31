@@ -282,6 +282,7 @@ function santize_html($html)
   $html = str_replace('&nbsp;', '', $html);
   $html = preg_replace('/<([a-z][a-z0-9]*)([^>]*?)>/i', '<$1>', $html);
   $html = preg_replace("/<[^\/>]*>([\s]?)*<\/[^>]*>/", '', $html);
+  $html = trim(preg_replace('/\s\s+/', ' ', $html));
   return $html;
 }
 
