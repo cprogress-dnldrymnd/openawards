@@ -39,16 +39,17 @@ function key_info($key, $label)
                   echo key_info('level', 'Level');
                   echo key_info('regulationstartdate', 'Start Date');
                   ?>
-
                   <div class="key-info-item"><strong>Start Date:</strong> 31 July 2020</div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="key-info-items">
-                  <div class="key-info-item"><strong>Review Date:</strong> 30 July 2026</div>
-                  <div class="key-info-item"><strong>Guided Learning Hours:</strong> 40</div>
-                  <div class="key-info-item"><strong>Min Age:</strong> Pre-16 </div>
-                  <div class="key-info-item"><strong>TQT:</strong> 40</div>
+                  <?php
+                  echo key_info('reviewdate', 'Review Date');
+                  echo key_info('glh', 'Guided Learning Hours');
+                  echo key_info('minage', 'Min Age');
+                  echo key_info('tqt', 'TQT');
+                  ?>
                 </div>
               </div>
             </div>
