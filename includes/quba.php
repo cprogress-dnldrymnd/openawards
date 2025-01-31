@@ -290,6 +290,8 @@ function qual_grid($result, $post_type = 'qualifications', $post = false)
       );
       //$post_id = wp_insert_post($post_data);
     }
+  } else {
+    $post_id = $result['post_id'];
   }
   if ($result['Level'] == 'E1' || $result['Level'] == 'E2' || $result['Level'] == 'E3') {
     $level_val = str_replace('E', 'Entry Level ', $result['Level']);
