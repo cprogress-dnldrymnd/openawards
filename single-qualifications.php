@@ -1,4 +1,7 @@
 <?php get_header() ?>
+<?php
+  
+?>
 <div id="primary" class="row-fluid">
   <div id="content" role="main" class="span8 offset2">
     <section class="hero-style-1"
