@@ -324,8 +324,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
     }
     $html =  html_entity_decode($data['QualificationSummary']);
     $html_2 = remove_all_attributes($html);
-    $html_3 = remove_empty_tags_and_whitespace($html_2);
-    echo $html_3;
+    echo $html_2;
     //var_dump($data);
   } else {
     $post_id = $data['post_id'];
