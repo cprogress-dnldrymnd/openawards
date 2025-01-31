@@ -359,7 +359,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
     }
     $html =  html_entity_decode($data['QualificationSummary']);
     $html_2 = preg_replace('/ style=("|\')(.*?)("|\')/', '', $html);
-    echo preg_replace('\<.*\>\s*\&.*sp;\s*\<\/.*\>|\<.*\>\s*\<\s*br\s*\/\>\s*\&.*sp;\s*\<\/.*\>|\<.*\>\s*\&.*sp;\s*\<\s*br\s*\/\>\<\/.*\>', '', $html_2);
+    echo $html_2;
     //var_dump($data);
   } else {
     $post_id = $data['post_id'];
