@@ -10486,7 +10486,9 @@ section.info-boxes {
 
         &.info-box-v2 {
             background-color: #f4f5f7;
-            
+            br {
+                display: none !important;
+            }
             table {
                 --bs-table-bg: transparent;
                 --bs-table-accent-bg: transparent;

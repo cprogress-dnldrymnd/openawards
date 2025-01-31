@@ -7889,6 +7889,8 @@ section.info-boxes {
         margin-right: auto; }
     section.info-boxes .info-box.info-box-v2 {
       background-color: #f4f5f7; }
+      section.info-boxes .info-box.info-box-v2 br {
+        display: none !important; }
       section.info-boxes .info-box.info-box-v2 table {
         --bs-table-bg: transparent;
         --bs-table-accent-bg: transparent;
