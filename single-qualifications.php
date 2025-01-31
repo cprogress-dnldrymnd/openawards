@@ -108,9 +108,6 @@ function key_info($key, $label, $type = 'string')
                     <div class="col">
                       <?php the_content() ?>
                     </div>
-                    <div class="col-auto">
-                      <img src="https://openawards.theprogressteam.com/wp-content/uploads/2024/12/NoPath.png" alt="">
-                    </div>
                   </div>
                 </div>
               </div>
