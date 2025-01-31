@@ -2,9 +2,10 @@
 <?php
 $id = carbon_get_the_post_meta('id');
 $Documents = QUBA_GetQualificationDocuments($id);
-
+$Guide = QUBA_GetQualificationGuide($id);
 echo '<pre>';
 var_dump($Documents);
+var_dump($Guide);
 echo '</pre>';
 
 function key_info($key, $label, $type = 'string')
