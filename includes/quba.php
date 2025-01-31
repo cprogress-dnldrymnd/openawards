@@ -357,7 +357,8 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       // Insert the post into the database
       $post_id = wp_insert_post($post_data);
     }
-
+    $html =  html_entity_decode($data['QualificationSummary']);
+    echo sanitize_html($html);
     //var_dump($data);
   } else {
     $post_id = $data['post_id'];
