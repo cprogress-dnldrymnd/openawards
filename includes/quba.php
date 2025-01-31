@@ -351,7 +351,7 @@ function related_qualifications()
       'Title'   => $post->post_title,
       'post_id' => $post->ID,
     );
-    echo qual_grid($data, true);
+    echo qual_grid($data, 'qualifications', true);
   }
   echo '</div>';
 
