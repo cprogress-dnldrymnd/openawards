@@ -277,8 +277,8 @@ function get_post_id_by_meta_field($meta_key, $meta_value)
 function santize_html($html)
 {
   // Use a regular expression to remove all attributes.
-  $html = html_entity_decode($html);
   $html = str_replace('&nbsp;', '', $html);
+  $html = html_entity_decode($html);
   $html = preg_replace('/<([a-z][a-z0-9]*)([^>]*?)>/i', '<$1>', $html);
   $html = preg_replace("/<[^\/>]*>([\s]?)*<\/[^>]*>/", '', $html);
   return $html;
