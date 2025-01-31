@@ -67,6 +67,41 @@ function QUBA_GetQualificationDocuments($qualificationID)
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
 }
+
+function QUBA_GetQualificationGuide($qualificationID)
+{
+  $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
+  // Set the SOAP action
+
+
+  // Call the SOAP method
+  $request = array(
+    'qualificationID'     => $qualificationID,
+  );
+
+  $response = $client->QUBA_GetQualificationGuide($request);
+
+  // Assuming $response is the object returned from the SOAP call:
+  $xmlString = $response->QUBA_QUBA_GetQualificationGuide->any; // Assuming XML is in the "any" field
+
+  $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <QUBA_GetQualificationGuideResponse xmlns="http://tempuri.org/">
+      <QUBA_GetQualificationGuideResult>'.$xmlString.'</QUBA_GetQualificationGuideResult>
+    </QUBA_GetQualificationGuideResponse>
+  </soap:Body>
+</soap:Envelope>';
+
+
+  try {
+    $xml = new SimpleXMLElement($responseString);
+    $QubaQualificationDocuments = $xml->xpath('//QubaQualificationGuide');
+    return $QubaQualificationDocuments;
+  } catch (Exception $e) {
+    return $e;
+    // Handle errors (e.g., invalid XML, data extraction issues)
+  }
+}
 function QUBA_QualificationSearch($data)
 {
   ob_start();
