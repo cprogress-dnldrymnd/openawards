@@ -327,7 +327,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
     $post_data['post_status'] = 'publish';
     if ($data['QualificationSummary']) {
       $html =  html_entity_decode($data['QualificationSummary']);
-      $post_data['post_content'] = sanitize_html($html);
+      $post_data['post_content'] = preg_replace('/ style=("|\')(.*?)("|\')/', '', $html);
     }
     $post_data['meta_input'] = array(
       '_id' => $data['ID'],
@@ -358,7 +358,8 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       $post_id = wp_insert_post($post_data);
     }
     $html =  html_entity_decode($data['QualificationSummary']);
-    echo sanitize_html($html);
+    $html_2 = preg_replace('/ style=("|\')(.*?)("|\')/', '', $html);
+    echo preg_replace('<([^>\s]+)[^>]*>(?:\s*(?:<br \/>|&nbsp;|&thinsp;|&ensp;|&emsp;|&#8201;|&#8194;|&#8195;)\s*)*<\/\1>', '', $html_2);
     //var_dump($data);
   } else {
     $post_id = $data['post_id'];
