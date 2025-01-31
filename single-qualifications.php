@@ -1,13 +1,10 @@
 <?php get_header() ?>
 <?php
-$level = carbon_get_the_post_meta('level');
-$qualificationreferencenumber = carbon_get_the_post_meta('qualificationreferencenumber');
-$reviewdate = carbon_get_the_post_meta('reviewdate');
-$regulationstartdate = carbon_get_the_post_meta('regulationstartdate');
-$minage = carbon_get_the_post_meta('minage');
-$tqt = carbon_get_the_post_meta('tqt');
-$glh = carbon_get_the_post_meta('glh');
-$type = carbon_get_the_post_meta('type');
+$id = carbon_get_the_post_meta('id');
+$Documents = QUBA_GetQualificationDocuments($id);
+
+
+var_dump($Documents);
 
 function key_info($key, $label, $type = 'string')
 {
@@ -136,39 +133,5 @@ function key_info($key, $label, $type = 'string')
     <?= do_shortcode('[template template_id=2969]') ?>
   </div>
 
-  <?php
-
-  $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
-  // Set the SOAP action
-
-
-  // Call the SOAP method
-  $request = array(
-    'qualificationID'     => 126563,
-  );
-
-  $response = $client->QUBA_GetQualificationDocuments($request);
-
-  // Assuming $response is the object returned from the SOAP call:
-  $xmlString = $response->QUBA_GetQualificationDocumentsResult->any; // Assuming XML is in the "any" field
-
-  $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-<soap:Body>
-  <QUBA_GetQualificationDocumentsResponse xmlns="http://tempuri.org/">
-    <QUBA_GetQualificationDocumentsResult namespace="" tableTypeName="">' . $xmlString . '</QUBA_GetQualificationDocumentsResult>
-  </QUBA_GetQualificationDocumentsResponse>
-</soap:Body>
-</soap:Envelope>';
-
-  echo $xmlString;
-  try {
-    $xml = new SimpleXMLElement($responseString);
-    $QubaGetSSAReferenceData = $xml->xpath('//QubaGetSSAReferenceData');
-  } catch (Exception $e) {
-    var_dump($e);
-    // Handle errors (e.g., invalid XML, data extraction issues)
-  }
-
-  ?>
 </div>
 <?php get_footer() ?>

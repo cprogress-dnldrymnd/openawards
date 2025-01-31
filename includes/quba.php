@@ -29,11 +29,11 @@ function QUBA_GetQCASectors()
     $QubaGetSSAReferenceData = $xml->xpath('//QubaGetSSAReferenceData');
     return $QubaGetSSAReferenceData;
   } catch (Exception $e) {
-    var_dump($e);
+    return $e;
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
 }
-function QUBA_GetQualificationDocuments()
+function QUBA_GetQualificationDocuments($qualificationID)
 {
   $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
   // Set the SOAP action
@@ -41,7 +41,7 @@ function QUBA_GetQualificationDocuments()
 
   // Call the SOAP method
   $request = array(
-    'qualificationID'     => 126563,
+    'qualificationID'     => $qualificationID,
   );
 
   $response = $client->QUBA_GetQualificationDocuments($request);
@@ -60,10 +60,10 @@ function QUBA_GetQualificationDocuments()
 
   try {
     $xml = new SimpleXMLElement($responseString);
-    $QubaGetSSAReferenceData = $xml->xpath('//QubaGetSSAReferenceData');
-    return $QubaGetSSAReferenceData;
+    $QubaQualificationDocuments = $xml->xpath('//QubaQualificationDocuments');
+    return $QubaQualificationDocuments;
   } catch (Exception $e) {
-    var_dump($e);
+    return $e;
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
 }
@@ -141,7 +141,7 @@ function QUBA_QualificationSearch($data)
     //echo '</pre>';
 
   } catch (Exception $e) {
-    var_dump($e);
+    return $e;
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
   return ob_get_clean();
@@ -233,7 +233,7 @@ function QUBA_UnitSearch($data)
       echo 'No results found';
     }
   } catch (Exception $e) {
-    var_dump($e);
+    return $e;
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
 
