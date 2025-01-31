@@ -113,6 +113,21 @@ function QUBA_QualificationSearch($data)
   return ob_get_clean();
 }
 
+function QUBA_QualificationSearchPost()
+{
+  ob_start();
+  $posts = get_posts(array(
+    'post_type' => 'qualifications',
+    'numberposts' => 16
+  ));
+  foreach ($posts as $post) {
+    echo qual_grid(array(
+      'Title' => $post->post_title,
+    ));
+  }
+  return ob_get_clean();
+}
+
 function QUBA_UnitSearch($data)
 {
   ob_start();
@@ -205,9 +220,11 @@ function archive_ajax_qualifications()
     echo QUBA_QualificationSearch($data);
   } else {
     echo 'mama mo';
+    echo QUBA_QualificationSearchPost($data);
   }
   die();
 }
+
 
 add_action('wp_ajax_nopriv_archive_ajax_units', 'archive_ajax_units'); // for not logged in users
 add_action('wp_ajax_archive_ajax_units', 'archive_ajax_units');
