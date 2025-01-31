@@ -27,7 +27,7 @@ $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-in
 </soap:Body>
 </soap:Envelope>';
 
-echo $response;
+var_dump($response);
 try {
   $xml = new SimpleXMLElement($responseString);
   $QubaQualificationDocuments = $xml->xpath('//QubaQualificationGuide');
