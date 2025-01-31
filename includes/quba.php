@@ -282,19 +282,9 @@ function remove_all_attributes($html)
 }
 function remove_empty_tags_and_whitespace($html)
 {
-  // 1. Remove HTML comments:
-  $html = preg_replace('//s', '', $html);
+  $pattern = "/<[^\/>]*>([\s]?)*<\/[^>]*>/";
 
-  // 2. Remove tags with only whitespace inside:
-  $html = preg_replace('/<\s*\/?[^>]*?>/s', '', $html); //Improved regex
-
-  // 3. Remove leading/trailing whitespace from the entire HTML:
-  $html = trim($html);
-
-  // 4. Remove excessive whitespace within the HTML (more than one space):
-  $html = preg_replace('/\s+/s', ' ', $html);  // Replace multiple spaces with single space.
-
-  return $html;
+  return preg_replace($pattern, '', $html);
 }
 function qual_grid($data, $post_type = 'qualifications', $post = false)
 {
