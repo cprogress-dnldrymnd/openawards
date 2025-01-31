@@ -274,6 +274,48 @@ function get_post_id_by_meta_field($meta_key, $meta_value)
 
   return $post_id;
 }
+function sanitize_html($html)
+{
+  // 1. Remove attributes with whitespace or HTML entities in their values.
+  $html = preg_replace_callback(
+    '/<([a-z][a-z0-9]*)([^>]*?)(>)/i',
+    function ($matches) {
+      $tag = $matches[1];
+      $attributes_string = $matches[2];
+      $attributes = [];
+
+      // Parse attributes
+      preg_match_all('/(\S+)\s*=\s*["\']?((?:.(?!["\']?\s+(?:\S+|$)))*.)["\']?/i', $attributes_string, $attribute_matches, PREG_SET_ORDER);
+
+
+      foreach ($attribute_matches as $match) {
+        $attribute_name = $match[1];
+        $attribute_value = $match[2];
+
+        // Check if the attribute value contains whitespace or HTML entities.
+        if (preg_match('/[\s&]/', $attribute_value)) {
+          // Remove the attribute entirely.  Don't add it to the $attributes array
+        } else {
+          $attributes[] = $match[0]; // Keep the valid attribute
+        }
+      }
+
+      $new_attributes_string = implode(' ', $attributes);
+      return "<{$tag} {$new_attributes_string}>";
+    },
+    $html
+  );
+
+
+  // 2. Remove HTML tags that contain only whitespace.
+  $html = preg_replace('/<(\s*)\/?>/i', '', $html); // Remove empty tags like < > or < />
+  $html = preg_replace('/<\s*\/([a-z][a-z0-9]*)\s*>/i', '', $html); // Remove closing tags with only whitespace inside
+
+  // 3. Remove HTML comments
+  $html = preg_replace('//s', '', $html);
+
+  return $html;
+}
 
 function qual_grid($data, $post_type = 'qualifications', $post = false)
 {
@@ -285,7 +327,7 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
     $post_data['post_status'] = 'publish';
     if ($data['QualificationSummary']) {
       $html =  html_entity_decode($data['QualificationSummary']);
-      $post_data['post_content'] = preg_replace('/ style=("|\')(.*?)("|\')/', '', $html);
+      $post_data['post_content'] = sanitize_html($html);
     }
     $post_data['meta_input'] = array(
       '_id' => $data['ID'],
