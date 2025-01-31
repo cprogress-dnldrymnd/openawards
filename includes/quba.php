@@ -314,7 +314,6 @@ function qual_grid($data, $post_type = 'qualifications', $post = false)
       '_classification1' => $data['Classification1'],
     );
 
-
     if ($check_qual) {
       $post_id = $check_qual;
       $post_data['ID'] = $post_id;
