@@ -143,31 +143,31 @@ function key_info($key, $label, $type = 'string')
 
 
   // Call the SOAP method
-  $response = $client->QUBA_GetQCASectors();
+  $request = array(
+    'qualificationID'     => 126563,
+  );
+
+  $response = $client->QUBA_GetQualificationDocuments($request);
 
   // Assuming $response is the object returned from the SOAP call:
-  $xmlString = $response->QUBA_GetQCASectorsResult->any; // Assuming XML is in the "any" field
+  $xmlString = $response->QUBA_GetQualificationDocumentsResult->any; // Assuming XML is in the "any" field
 
   $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 <soap:Body>
-  <QUBA_GetQCASectorsResponse xmlns="http://tempuri.org/">
-    <QUBA_GetQCASectorsResult namespace="" tableTypeName="">
-      ' . $xmlString . '
-    </QUBA_GetQCASectorsResult>
-  </QUBA_GetQCASectorsResponse>
+  <QUBA_GetQualificationDocumentsResponse xmlns="http://tempuri.org/">
+    <QUBA_GetQualificationDocumentsResult namespace="" tableTypeName="">' . $xmlString . '</QUBA_GetQualificationDocumentsResult>
+  </QUBA_GetQualificationDocumentsResponse>
 </soap:Body>
 </soap:Envelope>';
 
   echo $xmlString;
-
   try {
     $xml = new SimpleXMLElement($responseString);
-    echo 'xxxx';
+    $QubaGetSSAReferenceData = $xml->xpath('//QubaGetSSAReferenceData');
   } catch (Exception $e) {
     var_dump($e);
     // Handle errors (e.g., invalid XML, data extraction issues)
   }
-
 
   ?>
 </div>
