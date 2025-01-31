@@ -16,7 +16,7 @@ $request = array(
 $response = $client->QUBA_GetQualificationGuide($request);
 
 // Assuming $response is the object returned from the SOAP call:
-$xmlString = $response->QUBA_QUBA_GetQualificationGuide->any; // Assuming XML is in the "any" field
+$xmlString = $response->QUBA_GetQualificationGuide->any; // Assuming XML is in the "any" field
 
 $responseString = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
 <soap:Body>
