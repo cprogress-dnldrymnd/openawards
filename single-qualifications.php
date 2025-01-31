@@ -14,7 +14,7 @@ function key_info($key, $label, $type = 'string')
   $keyinfo = carbon_get_the_post_meta($key);
   if ($type == 'date') {
     $originalDate = $keyinfo;
-    $keyinfo = date("d m Y", strtotime($originalDate));
+    $keyinfo = date("d F Y", strtotime($originalDate));
   }
   if ($keyinfo) {
     return "<div class='key-info-item'><strong>$label:</strong> $keyinfo</div>";
