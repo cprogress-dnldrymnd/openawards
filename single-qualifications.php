@@ -6,7 +6,6 @@ $Guide = QUBA_GetQualificationGuide($id);
 echo '<pre>';
 var_dump($Documents);
 var_dump($Guide);
-echo '</pre>';
 
 $client = new SoapClient('https://quba.quartz-system.com/QuartzWSExtra/OCNNWR/WSQUBA_UB_V3.asmx?WSDL');
 // Set the SOAP action
@@ -37,6 +36,7 @@ try {
 } catch (Exception $e) {
   // Handle errors (e.g., invalid XML, data extraction issues)
 }
+echo '</pre>';
 
 function key_info($key, $label, $type = 'string')
 {
