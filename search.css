@@ -70,6 +70,8 @@
 	border-radius: 16px;
 	box-shadow: 0 24px 60px rgba(28, 19, 64, 0.35);
 	padding: 32px;
+	/* Keep the 32px padding inside the 100% width so it can't overflow. */
+	box-sizing: border-box;
 	animation: oaSearchIn 0.18s ease-out;
 }
 
@@ -140,6 +142,10 @@ body.oa-search-open {
 
 .oa-search-modal__input {
 	flex: 1;
+	/* Allow the input to shrink below its intrinsic width so the field row
+	   (input + button) never forces the dialog wider than the screen. */
+	min-width: 0;
+	width: 100%;
 	border: none;
 	outline: none;
 	padding: 16px 8px;
@@ -149,6 +155,8 @@ body.oa-search-open {
 }
 
 .oa-search-modal__submit {
+	flex: 0 0 auto;
+	white-space: nowrap;
 	border: none;
 	background: var(--oa-search-accent);
 	color: #fff;
@@ -301,6 +309,13 @@ body.oa-search-open {
 	color: var(--oa-search-muted);
 }
 
+/* Wrap long words in the modal preview rows too. */
+.oa-search-results__title,
+.oa-search-results__snippet {
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
 .oa-search-results__status {
 	padding: 16px 8px;
 	color: var(--oa-search-muted);
@@ -370,12 +385,18 @@ body.oa-search-open {
 
 .search-results-list {
 	display: grid;
+	/* minmax(0, 1fr) lets the column shrink below content width so long titles
+	   wrap instead of blowing the card out past the screen on mobile. */
+	grid-template-columns: minmax(0, 1fr);
 	gap: 20px;
 	margin-top: 28px;
 }
 
 .oa-result-card {
 	position: relative; /* Anchor for the stretched-link overlay below. */
+	min-width: 0;       /* Allow the card to shrink within the grid track. */
+	max-width: 100%;
+	box-sizing: border-box;
 	border: 1px solid var(--oa-search-border);
 	border-radius: 14px;
 	padding: 24px;
@@ -383,6 +404,15 @@ body.oa-search-open {
 	    display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+/* Wrap long titles / words / URLs so nothing forces horizontal overflow. */
+.oa-result-card__title,
+.oa-result-card__snippet,
+.oa-result-card__title a {
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .oa-result-card:hover {
