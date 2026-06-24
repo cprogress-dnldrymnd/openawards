@@ -27,7 +27,9 @@
 	font-size: 18px;
 	line-height: 1;
 	cursor: pointer;
-	transition: background-color 0.2s ease, color 0.2s ease;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
 }
 
 .oa-search-toggle:hover,
@@ -72,8 +74,14 @@
 }
 
 @keyframes oaSearchIn {
-	from { transform: translateY(-12px); opacity: 0; }
-	to   { transform: translateY(0); opacity: 1; }
+	from {
+		transform: translateY(-12px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 /* Prevent the underlying page from scrolling while the modal is open. */
@@ -232,7 +240,9 @@ body.oa-search-open {
 }
 
 @keyframes oaSpin {
-	to { transform: rotate(360deg); }
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .oa-search-results__viewall {
@@ -287,6 +297,9 @@ body.oa-search-open {
 	border-radius: 14px;
 	padding: 24px;
 	transition: box-shadow 0.2s ease;
+	    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .oa-result-card:hover {
@@ -328,6 +341,7 @@ body.oa-search-open {
 	font-weight: 600;
 	color: var(--oa-search-accent);
 	text-decoration: none;
+	margin-top: auto;
 }
 
 .oa-result-card__more i {
@@ -363,7 +377,10 @@ body.oa-search-open {
 	font-size: 15px;
 	line-height: 1;
 	text-decoration: none;
-	transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease,
+		color 0.15s ease;
 }
 
 .pagination-holder a.page-numbers:hover,
@@ -430,6 +447,18 @@ body.oa-search-open {
 	cursor: pointer;
 }
 
+.search-results .hero-style-1 {
+	margin-bottom: 0;
+}
+
+.search-results .archive-section {
+	padding-top: 50px;
+}
+
+.search-results .archive-section .oa-searchform__field {
+	max-width: 100%;
+}
+
 /* Visually-hidden but screen-reader-available labels. */
 .screen-reader-text {
 	position: absolute !important;
@@ -443,6 +472,10 @@ body.oa-search-open {
 }
 
 @media (max-width: 575px) {
-	.oa-search-modal__dialog { padding: 24px 18px; }
-	.oa-search-modal__submit { padding: 0 14px; }
+	.oa-search-modal__dialog {
+		padding: 24px 18px;
+	}
+	.oa-search-modal__submit {
+		padding: 0 14px;
+	}
 }
