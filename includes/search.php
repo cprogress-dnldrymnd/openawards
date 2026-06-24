@@ -76,6 +76,107 @@ function oa_live_search_limit()
 	return (int) apply_filters('oa_live_search_limit', 6);
 }
 
+/**
+ * Post-type filter options for the search UI (slug => human label).
+ *
+ * Derived from oa_searchable_post_types() so the filter checkboxes always
+ * match the actual search scope. Known slugs get friendly labels; anything
+ * else falls back to its registered post-type label.
+ *
+ * @return array<string,string>
+ */
+function oa_search_filter_options()
+{
+	$labels = array(
+		'qualifications' => __('Qualifications', 'naked'),
+		'units'          => __('Units', 'naked'),
+		'faqs'           => __('FAQs', 'naked'),
+		'post'           => __('Posts', 'naked'),
+		'page'           => __('Pages', 'naked'),
+	);
+
+	$options = array();
+	foreach (oa_searchable_post_types() as $slug) {
+		if (isset($labels[$slug])) {
+			$options[$slug] = $labels[$slug];
+		} else {
+			$obj = get_post_type_object($slug);
+			$options[$slug] = $obj ? $obj->labels->name : $slug;
+		}
+	}
+
+	/**
+	 * Filter the post-type checkbox options shown in search.
+	 *
+	 * @param array<string,string> $options slug => label map.
+	 */
+	return apply_filters('oa_search_filter_options', $options);
+}
+
+/**
+ * Sanitise a raw list of requested post-type filters down to the ones we
+ * actually allow to be searched.
+ *
+ * Returns ONLY the explicitly selected, valid slugs (may be empty). An empty
+ * result is the signal for "no filter — search everything", so callers should
+ * fall back to oa_searchable_post_types() when this is empty.
+ *
+ * @param mixed $raw Raw `oa_types` value from the request.
+ * @return string[]
+ */
+function oa_get_selected_search_types($raw)
+{
+	$allowed  = oa_searchable_post_types();
+	$selected = array();
+
+	foreach ((array) $raw as $type) {
+		$type = sanitize_key($type);
+		if (in_array($type, $allowed, true) && !in_array($type, $selected, true)) {
+			$selected[] = $type;
+		}
+	}
+
+	return $selected;
+}
+
+/**
+ * Render the post-type filter checkbox group.
+ *
+ * Shared by the modal and the search.php refine form so they stay identical.
+ * Checkbox IDs are made unique per render via wp_unique_id(), so multiple
+ * instances on one page (modal + page form) never collide.
+ *
+ * @param string   $context  Short context label (e.g. 'modal', 'page') used
+ *                           for the group's CSS hook.
+ * @param string[] $selected Slugs that should start checked.
+ * @return void
+ */
+function oa_search_filter_checkboxes($context = 'modal', $selected = array())
+{
+	$options = oa_search_filter_options();
+	if (empty($options)) {
+		return;
+	}
+	?>
+	<div class="oa-search-filters oa-search-filters--<?php echo esc_attr($context); ?>" role="group" aria-label="<?php esc_attr_e('Filter results by type', 'naked'); ?>">
+		<span class="oa-search-filters__label"><?php esc_html_e('Search in:', 'naked'); ?></span>
+		<?php foreach ($options as $slug => $label) :
+			$id = wp_unique_id('oa-type-');
+			?>
+			<label class="oa-search-filter" for="<?php echo esc_attr($id); ?>">
+				<input
+					type="checkbox"
+					id="<?php echo esc_attr($id); ?>"
+					name="oa_types[]"
+					value="<?php echo esc_attr($slug); ?>"
+					<?php checked(in_array($slug, (array) $selected, true)); ?> />
+				<span><?php echo esc_html($label); ?></span>
+			</label>
+		<?php endforeach; ?>
+	</div>
+	<?php
+}
+
 /*-----------------------------------------------------------------------------------*/
 /* Asset loading (script + style + localized nonce)
 /*-----------------------------------------------------------------------------------*/
@@ -160,6 +261,8 @@ function oa_render_search_modal()
 						aria-expanded="false" />
 					<button type="submit" class="oa-search-modal__submit"><?php esc_html_e('Search', 'naked'); ?></button>
 				</div>
+
+				<?php oa_search_filter_checkboxes('modal'); ?>
 			</form>
 
 			<div class="oa-search-modal__results" id="oaSearchResults" role="listbox" aria-live="polite"></div>
@@ -203,7 +306,10 @@ function oa_search_pre_get_posts($query)
 		return;
 	}
 
-	$query->set('post_type', oa_searchable_post_types());
+	// Respect the post-type filter checkboxes (?oa_types[]=…) when present,
+	// otherwise search every configured type.
+	$selected = isset($_GET['oa_types']) ? oa_get_selected_search_types($_GET['oa_types']) : array();
+	$query->set('post_type', !empty($selected) ? $selected : oa_searchable_post_types());
 	$query->set('post_status', 'publish');
 
 	// Flag this query so the SQL filters below opt in (instead of touching
@@ -393,9 +499,13 @@ function oa_live_search_callback()
 		));
 	}
 
+	// Honour the post-type filter checkboxes; fall back to all on empty.
+	$selected   = isset($_REQUEST['oa_types']) ? oa_get_selected_search_types($_REQUEST['oa_types']) : array();
+	$post_types = !empty($selected) ? $selected : oa_searchable_post_types();
+
 	$query = new WP_Query(array(
 		's'                   => $term,
-		'post_type'           => oa_searchable_post_types(),
+		'post_type'           => $post_types,
 		'post_status'         => 'publish',
 		'posts_per_page'      => oa_live_search_limit(),
 		'no_found_rows'       => false, // We want a total count for "view all".
@@ -419,11 +529,16 @@ function oa_live_search_callback()
 
 	wp_reset_postdata();
 
+	$view_all_args = array('s' => $term);
+	if (!empty($selected)) {
+		$view_all_args['oa_types'] = $selected;
+	}
+
 	wp_send_json_success(array(
 		'html'       => $html,
 		'count'      => $found,
 		'shown'      => (int) $query->post_count,
-		'viewAllUrl' => esc_url_raw(add_query_arg('s', $term, home_url('/'))),
+		'viewAllUrl' => esc_url_raw(add_query_arg($view_all_args, home_url('/'))),
 	));
 }
 add_action('wp_ajax_oa_live_search', 'oa_live_search_callback');
@@ -459,20 +574,28 @@ function oa_search_count_text($count)
  * results in place; without JS they simply load the next page. Used by BOTH
  * search.php and the AJAX endpoint so the markup is identical in either DOM.
  *
- * @param int    $total_pages  Total number of pages.
- * @param int    $current_page Current page number.
- * @param string $term         The search term.
+ * @param int      $total_pages  Total number of pages.
+ * @param int      $current_page Current page number.
+ * @param string   $term         The search term.
+ * @param string[] $selected     Selected post-type filters to preserve in links.
  * @return string Pagination HTML, or '' when only one page.
  */
-function oa_search_pagination_html($total_pages, $current_page, $term)
+function oa_search_pagination_html($total_pages, $current_page, $term, $selected = array())
 {
 	if ((int) $total_pages < 2) {
 		return '';
 	}
 
+	// Carry the type filter through the pagination links so paging keeps the
+	// same scope.
+	$extra = '';
+	foreach ((array) $selected as $type) {
+		$extra .= '&oa_types%5B%5D=' . rawurlencode($type);
+	}
+
 	return (string) paginate_links(array(
 		'base'      => home_url('/') . '%_%',
-		'format'    => '?s=' . urlencode($term) . '&paged=%#%',
+		'format'    => '?s=' . urlencode($term) . '&paged=%#%' . $extra,
 		'current'   => max(1, (int) $current_page),
 		'total'     => (int) $total_pages,
 		'type'      => 'plain',
@@ -492,9 +615,10 @@ function oa_search_pagination_html($total_pages, $current_page, $term)
  * @param WP_Query $query        The (already-run) results query.
  * @param int      $current_page Current page number, for pagination.
  * @param string   $term         The search term, for pagination links.
+ * @param string[] $selected     Selected post-type filters to preserve in links.
  * @return string
  */
-function oa_render_search_results(WP_Query $query, $current_page, $term)
+function oa_render_search_results(WP_Query $query, $current_page, $term, $selected = array())
 {
 	ob_start();
 
@@ -507,7 +631,7 @@ function oa_render_search_results(WP_Query $query, $current_page, $term)
 		echo '</div>';
 		wp_reset_postdata();
 
-		$pagination = oa_search_pagination_html($query->max_num_pages, $current_page, $term);
+		$pagination = oa_search_pagination_html($query->max_num_pages, $current_page, $term, $selected);
 		if ($pagination) {
 			echo '<div class="pagination-holder text-center">' . $pagination . '</div>';
 		}
@@ -538,9 +662,13 @@ function oa_search_results_callback()
 	$term  = isset($_REQUEST['s']) ? sanitize_text_field(wp_unslash($_REQUEST['s'])) : '';
 	$paged = isset($_REQUEST['paged']) ? max(1, (int) $_REQUEST['paged']) : 1;
 
+	// Honour the post-type filter checkboxes; fall back to all on empty.
+	$selected   = isset($_REQUEST['oa_types']) ? oa_get_selected_search_types($_REQUEST['oa_types']) : array();
+	$post_types = !empty($selected) ? $selected : oa_searchable_post_types();
+
 	$query = new WP_Query(array(
 		's'                   => $term,
-		'post_type'           => oa_searchable_post_types(),
+		'post_type'           => $post_types,
 		'post_status'         => 'publish',
 		'posts_per_page'      => (int) get_option('posts_per_page'),
 		'paged'               => $paged,
@@ -550,13 +678,19 @@ function oa_search_results_callback()
 
 	$count = (int) $query->found_posts;
 
-	// Canonical URL for this state (page 1 omits the paged param).
-	$url = ($paged > 1)
-		? add_query_arg(array('s' => $term, 'paged' => $paged), home_url('/'))
-		: add_query_arg('s', $term, home_url('/'));
+	// Canonical URL for this state (page 1 omits the paged param; the type
+	// filter is included so the link/history entry is fully reproducible).
+	$url_args = array('s' => $term);
+	if ($paged > 1) {
+		$url_args['paged'] = $paged;
+	}
+	if (!empty($selected)) {
+		$url_args['oa_types'] = $selected;
+	}
+	$url = add_query_arg($url_args, home_url('/'));
 
 	wp_send_json_success(array(
-		'html'      => oa_render_search_results($query, $paged, $term),
+		'html'      => oa_render_search_results($query, $paged, $term, $selected),
 		'count'     => $count,
 		'countText' => oa_search_count_text($count),
 		'url'       => esc_url_raw($url),

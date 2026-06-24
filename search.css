@@ -162,6 +162,67 @@ body.oa-search-open {
 	filter: brightness(0.94);
 }
 
+/* --- Post-type filter checkboxes (shared: modal + page) -------------------- */
+.oa-search-filters {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin-top: 14px;
+}
+
+.oa-search-filters__label {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--oa-search-muted);
+	margin-right: 2px;
+}
+
+.oa-search-filter {
+	margin: 0;
+	cursor: pointer;
+	user-select: none;
+}
+
+/* Hide the native box but keep it accessible/focusable. */
+.oa-search-filter input {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+	pointer-events: none;
+}
+
+.oa-search-filter span {
+	display: inline-block;
+	padding: 6px 14px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1;
+	color: var(--oa-search-ink);
+	background: #f4f1fb;
+	border: 1px solid var(--oa-search-border);
+	border-radius: 999px;
+	transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.oa-search-filter:hover span {
+	border-color: var(--oa-search-accent);
+	color: var(--oa-search-accent);
+}
+
+.oa-search-filter input:checked + span {
+	background: var(--oa-search-accent);
+	border-color: var(--oa-search-accent);
+	color: #fff;
+}
+
+/* Keyboard focus ring on the pill. */
+.oa-search-filter input:focus-visible + span {
+	outline: 2px solid var(--oa-search-accent);
+	outline-offset: 2px;
+}
+
 /* --- Live results ---------------------------------------------------------- */
 .oa-search-modal__results {
 	margin-top: 20px;

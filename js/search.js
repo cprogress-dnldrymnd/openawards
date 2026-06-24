@@ -115,12 +115,30 @@
 		if (!term) {
 			return;
 		}
-		var url =
-			OA_SEARCH.resultsUrl +
-			(OA_SEARCH.resultsUrl.indexOf('?') === -1 ? '?' : '&') +
-			's=' +
-			encodeURIComponent(term);
-		window.location.href = url;
+		var params = new URLSearchParams();
+		params.append('s', term);
+		collectTypes(form).forEach(function (t) {
+			params.append('oa_types[]', t);
+		});
+		var sep = OA_SEARCH.resultsUrl.indexOf('?') === -1 ? '?' : '&';
+		window.location.href = OA_SEARCH.resultsUrl + sep + params.toString();
+	}
+
+	/**
+	 * Collect the values of the checked post-type filter checkboxes within a
+	 * given form/scope.
+	 *
+	 * @param {Element} scope The form (or any ancestor) holding the checkboxes.
+	 * @returns {string[]} Selected post-type slugs (empty = "search everything").
+	 */
+	function collectTypes(scope) {
+		if (!scope) {
+			return [];
+		}
+		var boxes = scope.querySelectorAll('input[name="oa_types[]"]:checked');
+		return Array.prototype.map.call(boxes, function (b) {
+			return b.value;
+		});
 	}
 
 	/**
@@ -150,6 +168,9 @@
 		body.append('action', OA_SEARCH.action);
 		body.append('nonce', OA_SEARCH.nonce);
 		body.append('s', term);
+		collectTypes(form).forEach(function (t) {
+			body.append('oa_types[]', t);
+		});
 
 		fetch(OA_SEARCH.ajaxUrl, {
 			method: 'POST',
@@ -227,6 +248,13 @@
 		}, OA_SEARCH.debounce);
 		input.addEventListener('input', debounced);
 
+		// Toggling a type filter re-runs the search immediately.
+		form.querySelectorAll('input[name="oa_types[]"]').forEach(function (box) {
+			box.addEventListener('change', function () {
+				liveSearch(input.value);
+			});
+		});
+
 		// Submit / Enter -> native results page.
 		form.addEventListener('submit', function (e) {
 			e.preventDefault();
@@ -244,6 +272,7 @@
 	 * -------------------------------------------------------------------- */
 
 	var pageArea;        // #oaSearchResultsArea container that gets swapped.
+	var pageForm;        // The refine form (holds input + type checkboxes).
 	var pageInput;       // The refine form input.
 	var pageController;   // AbortController for the in-flight page request.
 
@@ -290,6 +319,9 @@
 		body.append('nonce', OA_SEARCH.nonce);
 		body.append('s', term);
 		body.append('paged', paged || 1);
+		collectTypes(pageForm).forEach(function (t) {
+			body.append('oa_types[]', t);
+		});
 
 		fetch(OA_SEARCH.ajaxUrl, {
 			method: 'POST',
@@ -340,7 +372,7 @@
 			return;
 		}
 
-		var pageForm = document.querySelector('.search-results-section .oa-searchform');
+		pageForm = document.querySelector('.search-results-section .oa-searchform');
 		if (pageForm) {
 			pageInput = pageForm.querySelector('input[name="s"]');
 
@@ -349,6 +381,13 @@
 				fetchPageResults(pageInput.value, 1, false);
 			}, OA_SEARCH.debounce);
 			pageInput.addEventListener('input', debouncedPage);
+
+			// Toggling a type filter re-runs the search from page 1.
+			pageForm.querySelectorAll('input[name="oa_types[]"]').forEach(function (box) {
+				box.addEventListener('change', function () {
+					fetchPageResults(pageInput.value, 1, false);
+				});
+			});
 
 			// Submit / Enter -> live update (no reload) instead of GET.
 			pageForm.addEventListener('submit', function (e) {
@@ -374,7 +413,7 @@
 			fetchPageResults(term, paged, true);
 		});
 
-		// Handle browser back/forward between paginated states.
+		// Handle browser back/forward between paginated / filtered states.
 		window.addEventListener('popstate', function () {
 			var params = new URLSearchParams(window.location.search);
 			var term = params.get('s');
@@ -384,6 +423,13 @@
 			var paged = parseInt(params.get('paged'), 10) || 1;
 			if (pageInput) {
 				pageInput.value = term;
+			}
+			// Restore the type checkboxes to match the URL state.
+			if (pageForm) {
+				var active = params.getAll('oa_types[]');
+				pageForm.querySelectorAll('input[name="oa_types[]"]').forEach(function (box) {
+					box.checked = active.indexOf(box.value) !== -1;
+				});
 			}
 			fetchPageResults(term, paged, false);
 		});

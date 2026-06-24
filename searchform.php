@@ -24,4 +24,13 @@
 			<span class="screen-reader-text"><?php esc_html_e('Search', 'naked'); ?></span>
 		</button>
 	</div>
+
+	<?php
+	// Post-type filter checkboxes, pre-checked from the current ?oa_types[]=…
+	// so the refine form reflects the active scope after a no-JS reload.
+	if (function_exists('oa_search_filter_checkboxes')) {
+		$oa_selected = isset($_GET['oa_types']) ? oa_get_selected_search_types($_GET['oa_types']) : array();
+		oa_search_filter_checkboxes('page', $oa_selected);
+	}
+	?>
 </form>

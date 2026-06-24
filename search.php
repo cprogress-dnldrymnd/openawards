@@ -27,6 +27,10 @@ $hero_desc = $search_query
 	: __('Type a search term to begin.', 'naked');
 
 $current_page = max(1, (int) get_query_var('paged'));
+
+// Currently active post-type filters (from ?oa_types[]=…), for pre-checking
+// the refine form and preserving the scope in pagination links.
+$selected_types = isset($_GET['oa_types']) ? oa_get_selected_search_types($_GET['oa_types']) : array();
 ?>
 <div id="primary" class="row-fluid">
 	<div id="content" role="main" class="span8 offset2">
@@ -51,7 +55,7 @@ $current_page = max(1, (int) get_query_var('paged'));
 				// oa_render_search_results(), so the markup is identical either way.
 				?>
 				<div id="oaSearchResultsArea" class="oa-search-results-area">
-					<?php echo oa_render_search_results($GLOBALS['wp_query'], $current_page, $search_query); ?>
+					<?php echo oa_render_search_results($GLOBALS['wp_query'], $current_page, $search_query, $selected_types); ?>
 				</div>
 
 			</div>
