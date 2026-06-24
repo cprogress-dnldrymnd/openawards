@@ -77,6 +77,7 @@ require_once('includes/shortcodes.php');
 require_once('includes/ajax.php');
 //require_once('includes/quba.php');
 require_once('includes/wp-bakery.php');
+require_once('includes/search.php');
 
 /*-----------------------------------------------------------------------------------*/
 /* Enqueue Styles and Scripts
@@ -90,7 +91,7 @@ function naked_scripts()
 	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
 	wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css');
 	wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
-	wp_enqueue_style('main.css', get_template_directory_uri() . '/style.css');
+	wp_enqueue_style('style.css', get_template_directory_uri() . '/style.css');
 	// add theme scripts
 	//wp_enqueue_script( 'jQuery', '//code.jquery.com/jquery-3.2.1.slim.min.js');
 	wp_enqueue_script('jQuery');
@@ -181,6 +182,11 @@ add_action('widgets_init', 'naked_register_sidebars');
 function __search_by_title_only($search, $wp_query)
 {
 	global $wpdb;
+	// Stand down for queries handled by the advanced search module
+	// (includes/search.php), which searches title + content + meta + terms.
+	if ($wp_query->get('oa_enhanced_search')) {
+		return $search;
+	}
 	if (empty($search))
 		return $search; // skip processing - no search term in query
 	$q = $wp_query->query_vars;

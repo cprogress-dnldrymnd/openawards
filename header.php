@@ -78,6 +78,7 @@
 							'menu_class' => 'navbar-nav mr-auto'
 						));
 						?>
+						<?php if (function_exists('oa_search_toggle_button')) oa_search_toggle_button(); ?>
 					</nav>
 				</div>
 			</div>
