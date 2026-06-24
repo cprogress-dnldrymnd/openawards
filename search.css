@@ -241,7 +241,7 @@ body.oa-search-open {
    pill always matches the badge of the type it filters. Colours come from the
    theme brand palette (:root in style.css). Tweak a type in one line here. */
 .is-type-post              { --oa-type-color: var(--high-violet); }   /* Posts. */
-.is-type-page              { --oa-type-color: var(--dark-color); }    /* Pages. */
+.is-type-page              { --oa-type-color: var(--opal-black); }    /* Pages. */
 .is-type-faqs              { --oa-type-color: var(--sun-orange); --oa-type-ink: var(--opal-black); } /* FAQs. */
 .is-type-qualifications    { --oa-type-color: var(--blush-pink); --oa-type-ink: var(--opal-black); } /* Qualifications. */
 .is-type-units,
