@@ -354,10 +354,11 @@ body.oa-search-open {
 }
 
 .oa-result-card {
+	position: relative; /* Anchor for the stretched-link overlay below. */
 	border: 1px solid var(--oa-search-border);
 	border-radius: 14px;
 	padding: 24px;
-	transition: box-shadow 0.2s ease;
+	transition: box-shadow 0.2s ease, border-color 0.2s ease;
 	    display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -365,6 +366,22 @@ body.oa-search-open {
 
 .oa-result-card:hover {
 	box-shadow: 0 12px 32px rgba(28, 19, 64, 0.12);
+	border-color: var(--oa-search-accent);
+}
+
+/* Make the whole card clickable: the title link's ::after stretches to cover
+   the entire card, so a click anywhere follows it. The real <a> stays on the
+   title for accessibility / SEO (no extra wrapper markup needed). */
+.oa-result-card__title a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
+/* Keep the card title accent on hover anywhere over the card. */
+.oa-result-card:hover .oa-result-card__title a {
+	color: var(--oa-search-accent);
 }
 
 .oa-result-card__type {
@@ -399,10 +416,16 @@ body.oa-search-open {
 }
 
 .oa-result-card__more {
+	position: relative; /* Sit above the stretched-link overlay. */
+	z-index: 2;
 	font-weight: 600;
 	color: var(--oa-search-accent);
 	text-decoration: none;
 	margin-top: auto;
+}
+
+.oa-result-card__more:hover {
+	text-decoration: underline;
 }
 
 .oa-result-card__more i {
