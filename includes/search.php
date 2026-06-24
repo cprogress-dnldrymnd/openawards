@@ -718,10 +718,15 @@ function oa_search_result_item($post_id = 0, $context = 'page')
 {
 	$post_id = $post_id ? $post_id : get_the_ID();
 
-	$title     = get_the_title($post_id);
-	$permalink = get_permalink($post_id);
-	$type_obj  = get_post_type_object(get_post_type($post_id));
-	$type_lbl  = $type_obj ? $type_obj->labels->singular_name : '';
+	$title      = get_the_title($post_id);
+	$permalink  = get_permalink($post_id);
+	$type_slug  = get_post_type($post_id);
+	$type_obj   = get_post_type_object($type_slug);
+	$type_lbl   = $type_obj ? $type_obj->labels->singular_name : '';
+
+	// Per-type CSS hook (e.g. is-type-faqs) so each post type can be coloured
+	// differently. sanitize_html_class keeps it safe for use in a class.
+	$type_class = 'is-type-' . sanitize_html_class($type_slug);
 
 	// Trim a short, plain-text snippet for context.
 	$raw     = has_excerpt($post_id) ? get_the_excerpt($post_id) : get_post_field('post_content', $post_id);
@@ -735,7 +740,7 @@ function oa_search_result_item($post_id = 0, $context = 'page')
 			<a class="oa-search-results__link" href="<?php echo esc_url($permalink); ?>" role="option">
 				<span class="oa-search-results__title"><?php echo esc_html($title); ?></span>
 				<?php if ($type_lbl) : ?>
-					<span class="oa-search-results__type"><?php echo esc_html($type_lbl); ?></span>
+					<span class="oa-search-results__type <?php echo esc_attr($type_class); ?>"><?php echo esc_html($type_lbl); ?></span>
 				<?php endif; ?>
 				<?php if ($snippet) : ?>
 					<span class="oa-search-results__snippet"><?php echo esc_html($snippet); ?></span>
@@ -747,7 +752,7 @@ function oa_search_result_item($post_id = 0, $context = 'page')
 		?>
 		<article class="oa-result-card">
 			<?php if ($type_lbl) : ?>
-				<span class="oa-result-card__type"><?php echo esc_html($type_lbl); ?></span>
+				<span class="oa-result-card__type <?php echo esc_attr($type_class); ?>"><?php echo esc_html($type_lbl); ?></span>
 			<?php endif; ?>
 			<h2 class="oa-result-card__title">
 				<a href="<?php echo esc_url($permalink); ?>"><?php echo esc_html($title); ?></a>

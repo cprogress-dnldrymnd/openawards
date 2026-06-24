@@ -223,6 +223,37 @@ body.oa-search-open {
 	outline-offset: 2px;
 }
 
+/* --- Per-post-type badge colours ------------------------------------------ */
+/* Applies to both the modal badge (.oa-search-results__type) and the results
+   card badge (.oa-result-card__type) via the shared is-type-* hook from the
+   renderer. Adjust / add post types here as needed. */
+.oa-search-results__type.is-type-post,
+.oa-result-card__type.is-type-post {
+	background: #b57cff; /* Posts — brand violet. */
+}
+
+.oa-search-results__type.is-type-page,
+.oa-result-card__type.is-type-page {
+	background: #5b6cff; /* Pages — indigo. */
+}
+
+.oa-search-results__type.is-type-faqs,
+.oa-result-card__type.is-type-faqs {
+	background: #f08c2e; /* FAQs — orange. */
+}
+
+.oa-search-results__type.is-type-qualifications,
+.oa-result-card__type.is-type-qualifications {
+	background: #1f9d6e; /* Qualifications — green. */
+}
+
+.oa-search-results__type.is-type-units,
+.oa-result-card__type.is-type-units,
+.oa-search-results__type.is-type-courses,
+.oa-result-card__type.is-type-courses {
+	background: #e0517a; /* Units / Courses — pink. */
+}
+
 /* --- Live results ---------------------------------------------------------- */
 .oa-search-modal__results {
 	margin-top: 20px;
