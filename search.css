@@ -193,65 +193,55 @@ body.oa-search-open {
 	pointer-events: none;
 }
 
+/* Unchecked pill: white with the type colour as outline + text, so it's clear
+   which type each filter maps to. Checked: filled with the type colour. */
 .oa-search-filter span {
 	display: inline-block;
 	padding: 6px 14px;
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 1;
-	color: var(--oa-search-ink);
-	background: #f4f1fb;
-	border: 1px solid var(--oa-search-border);
+	color: var(--oa-type-color, var(--oa-search-ink));
+	background: #fff;
+	border: 1px solid var(--oa-type-color, var(--oa-search-border));
 	border-radius: 999px;
 	transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .oa-search-filter:hover span {
-	border-color: var(--oa-search-accent);
-	color: var(--oa-search-accent);
+	background: var(--oa-type-color, var(--oa-search-accent));
+	border-color: var(--oa-type-color, var(--oa-search-accent));
+	color: #fff;
 }
 
 .oa-search-filter input:checked + span {
-	background: var(--oa-search-accent);
-	border-color: var(--oa-search-accent);
+	background: var(--oa-type-color, var(--oa-search-accent));
+	border-color: var(--oa-type-color, var(--oa-search-accent));
 	color: #fff;
 }
 
 /* Keyboard focus ring on the pill. */
 .oa-search-filter input:focus-visible + span {
-	outline: 2px solid var(--oa-search-accent);
+	outline: 2px solid var(--oa-type-color, var(--oa-search-accent));
 	outline-offset: 2px;
 }
 
-/* --- Per-post-type badge colours ------------------------------------------ */
-/* Applies to both the modal badge (.oa-search-results__type) and the results
-   card badge (.oa-result-card__type) via the shared is-type-* hook from the
-   renderer. Adjust / add post types here as needed. */
-.oa-search-results__type.is-type-post,
-.oa-result-card__type.is-type-post {
-	background: #b57cff; /* Posts — brand violet. */
-}
+/* --- Per-post-type colour palette ----------------------------------------- */
+/* Single source of truth: each post type sets --oa-type-color on its is-type-*
+   element. Both the result badges AND the "Search in" filter pills read this
+   variable, so a pill always matches the badge of the type it filters. Add /
+   tweak a post type by editing one line here. */
+.is-type-post              { --oa-type-color: #b57cff; } /* Posts — brand violet. */
+.is-type-page              { --oa-type-color: #5b6cff; } /* Pages — indigo. */
+.is-type-faqs              { --oa-type-color: #f08c2e; } /* FAQs — orange. */
+.is-type-qualifications    { --oa-type-color: #1f9d6e; } /* Qualifications — green. */
+.is-type-units,
+.is-type-courses           { --oa-type-color: #e0517a; } /* Units / Courses — pink. */
 
-.oa-search-results__type.is-type-page,
-.oa-result-card__type.is-type-page {
-	background: #5b6cff; /* Pages — indigo. */
-}
-
-.oa-search-results__type.is-type-faqs,
-.oa-result-card__type.is-type-faqs {
-	background: #f08c2e; /* FAQs — orange. */
-}
-
-.oa-search-results__type.is-type-qualifications,
-.oa-result-card__type.is-type-qualifications {
-	background: #1f9d6e; /* Qualifications — green. */
-}
-
-.oa-search-results__type.is-type-units,
-.oa-result-card__type.is-type-units,
-.oa-search-results__type.is-type-courses,
-.oa-result-card__type.is-type-courses {
-	background: #e0517a; /* Units / Courses — pink. */
+/* Badges take the type colour (falling back to the brand accent). */
+.oa-search-results__type,
+.oa-result-card__type {
+	background: var(--oa-type-color, var(--oa-search-accent));
 }
 
 /* --- Live results ---------------------------------------------------------- */
@@ -299,7 +289,7 @@ body.oa-search-open {
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
 	color: #fff;
-	background: var(--oa-search-accent);
+	/* background set by the per-type palette (.is-type-*) above. */
 	padding: 2px 8px;
 	border-radius: 999px;
 }
@@ -421,7 +411,7 @@ body.oa-search-open {
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
 	color: #fff;
-	background: var(--oa-search-accent);
+	/* background set by the per-type palette (.is-type-*) above. */
 	padding: 3px 10px;
 	border-radius: 999px;
 	margin-bottom: 10px;

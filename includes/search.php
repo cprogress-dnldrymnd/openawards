@@ -162,8 +162,11 @@ function oa_search_filter_checkboxes($context = 'modal', $selected = array())
 		<span class="oa-search-filters__label"><?php esc_html_e('Search in:', 'naked'); ?></span>
 		<?php foreach ($options as $slug => $label) :
 			$id = wp_unique_id('oa-type-');
+			// Per-type hook so each pill can be coloured to match its result
+			// badge (see is-type-* rules in search.css).
+			$type_class = 'is-type-' . sanitize_html_class($slug);
 			?>
-			<label class="oa-search-filter" for="<?php echo esc_attr($id); ?>">
+			<label class="oa-search-filter <?php echo esc_attr($type_class); ?>" for="<?php echo esc_attr($id); ?>">
 				<input
 					type="checkbox"
 					id="<?php echo esc_attr($id); ?>"
