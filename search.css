@@ -253,10 +253,22 @@ body.oa-search-open {
 }
 
 /* --- search.php results page ---------------------------------------------- */
+/* Pull the whole results block up tight under the hero (kill the big gap that
+   the theme's .archive-section padding leaves), then keep the refine form and
+   the result list close together. */
+.search-results-section {
+	padding-top: 36px;
+	padding-bottom: 64px;
+}
+
+.search-results-section .oa-searchform {
+	margin: 0 0 8px;
+}
+
 .search-results-list {
 	display: grid;
 	gap: 20px;
-	margin-top: 32px;
+	margin-top: 28px;
 }
 
 .oa-result-card {
@@ -314,6 +326,67 @@ body.oa-search-open {
 .search-no-results {
 	text-align: center;
 	padding: 48px 0;
+}
+
+/* --- Pagination (paginate_links output from open_awards_pagination) -------- */
+.pagination-holder {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 48px;
+}
+
+.pagination-holder .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 46px;
+	height: 46px;
+	padding: 0 14px;
+	border: 1px solid var(--oa-search-border);
+	border-radius: 12px;
+	color: var(--oa-search-ink);
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 1;
+	text-decoration: none;
+	transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.pagination-holder a.page-numbers:hover,
+.pagination-holder a.page-numbers:focus-visible {
+	border-color: var(--oa-search-accent);
+	color: var(--oa-search-accent);
+	outline: none;
+}
+
+.pagination-holder .page-numbers.current {
+	background: var(--oa-search-accent);
+	border-color: var(--oa-search-accent);
+	color: #fff;
+}
+
+/* The "…" gap marker shouldn't look clickable. */
+.pagination-holder .page-numbers.dots {
+	border-color: transparent;
+	min-width: auto;
+	padding: 0 4px;
+	color: var(--oa-search-muted);
+}
+
+/* Prev / next arrow buttons (FontAwesome icons from open_awards_pagination). */
+.pagination-holder .page-numbers.prev,
+.pagination-holder .page-numbers.next {
+	color: var(--oa-search-accent);
+}
+
+.pagination-holder .page-numbers.prev:hover,
+.pagination-holder .page-numbers.next:hover {
+	background: var(--oa-search-accent);
+	border-color: var(--oa-search-accent);
+	color: #fff;
 }
 
 /* --- In-page refine form --------------------------------------------------- */
