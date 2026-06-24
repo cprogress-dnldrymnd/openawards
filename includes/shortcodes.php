@@ -37,6 +37,110 @@ function product_custom_field()
 add_shortcode('product_custom_field', 'product_custom_field');
 
 
+/*-----------------------------------------------------------------------------------*/
+/* Breadcrumbs
+/*-----------------------------------------------------------------------------------*/
+/**
+ * Build the site breadcrumb trail and return it as HTML.
+ *
+ * Context-aware: handles search results, single posts/pages/CPTs (including
+ * FAQs), post-type archives, the blog home and taxonomy archives. If the
+ * visitor arrived from a search results page (same origin, non-empty `s`), the
+ * parent crumb becomes a "Back to search" link to that exact search.
+ *
+ * Registered as the [breadcrumbs] shortcode so it can be dropped into page
+ * content, WPBakery elements or widgets — i.e. used outside the theme
+ * templates. The template-parts/page-breadcrumbs.php partial simply echoes
+ * this, so existing get_template_part() calls keep working unchanged.
+ *
+ * @return string Breadcrumb markup.
+ */
+function open_awards_breadcrumbs()
+{
+	global $post;
+
+	$title = '';
+	if (is_search()) {
+		$title = 'Search results for "' . get_search_query() . '"';
+	} else if (is_single() || is_page()) {
+		$title = get_the_title();
+	} else if (is_post_type_archive()) {
+		$title = post_type_archive_title(false, false);
+	} else if (is_home()) {
+		$title = 'Latest News';
+	} else if (is_tax()) {
+		$title = get_queried_object()->name;
+	}
+
+	// If the visitor arrived from a search results page (same origin, carrying
+	// a non-empty `s` query), offer a quick way back to that search. This takes
+	// priority over the default parent crumb on single/page views.
+	$back_to_search_url = '';
+	$referer = wp_get_referer();
+	if ($referer && parse_url($referer, PHP_URL_HOST) === parse_url(home_url(), PHP_URL_HOST)) {
+		parse_str((string) parse_url($referer, PHP_URL_QUERY), $referer_params);
+		if (!empty($referer_params['s'])) {
+			$back_to_search_url = $referer;
+		}
+	}
+
+	ob_start();
+	?>
+	<section class="breadcrumbs wocom position-relative">
+		<nav aria-label="breadcrumb">
+			<div class="container">
+				<div class="inner-container">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="<?= get_site_url() ?>">Home</a></li>
+						<?php if (is_tax('faqs_category')) { ?>
+							<li class="breadcrumb-item"><a href="<?= get_post_type_archive_link('faqs') ?>">FAQs</a></li>
+						<?php } ?>
+
+						<?php
+						$title_2nd = '';
+						$link = '';
+						if ($back_to_search_url && (is_single() || is_page())) {
+							// Came from search → let this crumb take the user back.
+							$title_2nd = 'Back to search';
+							$link = $back_to_search_url;
+						} else if (is_single()) {
+							if (get_post_type() == 'post') {
+								$title_2nd = 'Latest News';
+								$link = get_permalink(get_option('page_for_posts'));
+							} else if (get_post_type() == 'jobs') {
+								$title_2nd = 'Jobs';
+								$link = get_post_type_archive_link('jobs');
+							} else if (get_post_type() == 'faqs') {
+								$title_2nd = 'FAQs';
+								$link = get_post_type_archive_link('faqs');
+							}
+						} else if (is_page()) {
+							if ($post && $post->post_parent) {
+								$title_2nd = get_the_title($post->post_parent);
+								$link = get_the_permalink($post->post_parent);
+							}
+						}
+						?>
+						<?php if ($title_2nd) { ?>
+							<li class="breadcrumb-item"><a href="<?= esc_url($link) ?>"><?= esc_html($title_2nd) ?></a></li>
+						<?php } ?>
+						<?php if ($title) { ?>
+							<li class="breadcrumb-item"><span><?= ucfirst($title) ?></span></li>
+						<?php } ?>
+					</ol>
+				</div>
+			</div>
+		</nav>
+	</section>
+	<?php
+	do_action('after_breadcrumbs');
+
+	return ob_get_clean();
+}
+
+add_shortcode('breadcrumbs', 'open_awards_breadcrumbs');
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Custom my account shortcode
