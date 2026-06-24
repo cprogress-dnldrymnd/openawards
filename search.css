@@ -245,7 +245,7 @@ body.oa-search-open {
 .is-type-faqs              { --oa-type-color: var(--sun-orange); --oa-type-ink: var(--opal-black); } /* FAQs. */
 .is-type-qualifications    { --oa-type-color: var(--blush-pink); --oa-type-ink: var(--opal-black); } /* Qualifications. */
 .is-type-units,
-.is-type-courses           { --oa-type-color: #e0517a; } /* Units / Courses — pink. */
+.is-type-courses           { --oa-type-color: var(--purple-heather); } /* Units / Courses — pink. */
 
 /* Badges take the type colour (falling back to the brand accent). */
 .oa-search-results__type,

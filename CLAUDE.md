@@ -48,17 +48,18 @@ Fancybox 5, FontAwesome 5.15.
 | `functions.php` | Theme bootstrap: theme supports, asset enqueue, menu + 6 widget areas, helper functions, `require`s of `includes/*`. |
 | `includes/post-types.php` | Custom post types & taxonomies via the `newPostType` / `newTaxonomy` helper classes (Providers, Slider, Teams, Templates, FAQs, Success Stories, Students, Courses). |
 | `includes/post-meta.php` | Carbon Fields meta containers. |
-| `includes/shortcodes.php` | Shortcodes (e.g. `product_custom_field`, custom My Account). |
+| `includes/shortcodes.php` | Shortcodes: `product_custom_field`, `open_awards_breadcrumbs()` / `[breadcrumbs]` (see below), custom My Account, discussion board, event helpers, and more. |
 | `includes/ajax.php` | `admin-ajax` handlers (`resources`, `insert_post_ajax`). |
-| `includes/search.php` | Advanced search module — self-contained, no dependencies. Enqueues assets, widens the native query (`pre_get_posts` + `posts_join`/`posts_search`/`posts_groupby` for meta + taxonomy matching), registers two AJAX endpoints: `oa_live_search` (modal preview) and `oa_search_results` (live refinement on `search.php`). Configurable via `oa_searchable_post_types()` / `oa_searchable_taxonomies()` filters. |
+| `includes/search.php` | Advanced search module — self-contained, no dependencies. Enqueues assets, widens the native query (`pre_get_posts` + `posts_join`/`posts_search`/`posts_groupby` for meta + taxonomy matching), registers two AJAX endpoints: `oa_live_search` (modal preview) and `oa_search_results` (live refinement on `search.php`). Renders post-type filter checkboxes shared by the modal and the refine form. Configurable via `oa_searchable_post_types()` / `oa_searchable_taxonomies()` / `oa_search_filter_options()` filters. |
 | `includes/woocommerce.php`, `includes/wp-bakery.php` | WooCommerce hooks; WPBakery custom elements. |
 | `search.php` | Search results template. Query already widened by `includes/search.php`. Delegates rendering to `oa_render_search_results()` inside `#oaSearchResultsArea` — the same div the JS swaps on live refinement. |
-| `search.css` | Search styles (enqueued by `includes/search.php`): modal overlay + toggle icon, live-results list, full-page result cards (`.oa-result-card`), pagination (`.pagination-holder`), and in-page refine form (`.oa-searchform`). All scoped under `.oa-search*` / `.oa-result*`. |
-| `searchform.php` | `get_search_form()` override rendered inside `search.php` to let users refine results. |
-| `js/search.js` | Vanilla-JS controller for two search surfaces: (1) the global modal (open/close, debounced AJAX, keyboard nav); (2) live refinement on `search.php` (intercepts the refine form + pagination clicks, swaps `#oaSearchResultsArea` via the `oa_search_results` endpoint, updates the URL with `history.pushState` and handles `popstate`). Localised with `OA_SEARCH` config. |
+| `search.css` | Search styles (enqueued by `includes/search.php`): modal overlay + toggle icon, post-type filter checkboxes (`.oa-search-filter` pill toggles, shared by modal and results page), per-type colours via `is-type-{slug}` — each sets `--oa-type-color` which is consumed by **both** the result badge and its matching filter pill (single source of truth; to add a type, add one `.is-type-{slug} { --oa-type-color: …; }` rule). Colors come from the theme brand palette CSS variables (`--high-violet`, `--sun-orange`, etc. defined in `style.css`); light types also set `--oa-type-ink` for legible text (defaults to `#fff`). Live-results list, full-page result cards (`.oa-result-card`), pagination (`.pagination-holder`), and in-page refine form (`.oa-searchform`). Result cards are fully clickable via a stretched-link: `.oa-result-card__title a::after` covers the card with `position: absolute; inset: 0`; any interactive element added inside the card needs `position: relative; z-index: 2` to stay above it (see `.oa-result-card__more`). All scoped under `.oa-search*` / `.oa-result*`. |
+| `searchform.php` | `get_search_form()` override rendered inside `search.php` to let users refine results. Includes `oa_search_filter_checkboxes('page', $selected)` so the type-filter checkboxes are pre-checked to match the current `?oa_types[]=…` URL state (works with JS off via a normal GET reload). |
+| `js/search.js` | Vanilla-JS controller for two search surfaces: (1) the global modal (open/close, debounced AJAX, keyboard nav, post-type filter checkboxes carried in requests); (2) live refinement on `search.php` (intercepts the refine form + pagination clicks, swaps `#oaSearchResultsArea` via the `oa_search_results` endpoint, updates the URL with `history.pushState`, restores checkbox + page state on `popstate`). `collectTypes(scope)` collects checked `oa_types[]` checkboxes from any form/scope. Localised with `OA_SEARCH` config. |
 | Root `*.php` (`single-*`, `archive-*`, `taxonomy-*`, `page-*`, `index`, `header`, `footer`, `sidebar`) | Standard WordPress template hierarchy. |
 | `templates/` | Custom **Page Templates** (selectable in the page editor — files with a `Template Name:` header). |
 | `template-parts/` | Reusable partials pulled in via `get_template_part()`. |
+| `template-parts/page-breadcrumbs.php` | Thin wrapper — just calls `open_awards_breadcrumbs()`. All breadcrumb logic lives in `includes/shortcodes.php`; existing `get_template_part()` calls keep working unchanged. |
 | `woocommerce/`, `plugins/events-manager/` | Plugin template overrides — edit these, not the plugin files. |
 | `js/main.js` | Main theme script (enqueued). `*.backup` files are stale copies. |
 | `assets/` | Fonts and images bundled with the theme. |
@@ -79,6 +80,7 @@ Fancybox 5, FontAwesome 5.15.
 
 ## Key helpers in `functions.php`
 
+- `open_awards_breadcrumbs()` (in `includes/shortcodes.php`) — builds the breadcrumb trail and returns HTML. Context-aware: handles search, singles, pages, CPT archives, taxonomy archives (inserts a "FAQs" parent crumb on `is_tax('faqs_category')`), and blog home. If the visitor arrived via a search result link (which carries `?oa_back=<encoded-search-url>`), the parent crumb becomes a "Back to search" link; same-origin validated. Only real result-link clicks trigger this — not header nav or other in-page links. Also registered as the `[breadcrumbs]` shortcode for use in page content or WPBakery elements.
 - `hero($title, $description, $bg_image, $section_class)` — renders the page hero (returns HTML via `ob_*`).
 - `header_class()` / `logo()` — switch to a dark header + alternate logo for certain post types/templates.
 - `restrict_page_to_user_with_pluc()` — gates community/discussion pages to logged-in providers with a valid PLUC code.
@@ -86,10 +88,14 @@ Fancybox 5, FontAwesome 5.15.
 - `gt_set_post_view()` / `gt_get_post_view()` — per-post view counter stored in `post_views_count` meta.
 - `open_awards_pagination($query)`, `clean($string)`, `_date_format()`, `make_google_calendar_link()`.
 - `oa_search_toggle_button()` (in `includes/search.php`) — echoes the nav icon that opens the search modal; called from `header.php`.
-- `oa_search_result_item($post_id, $context)` — renders one result item; `'live'` = compact modal row, `'page'` = full card.
-- `oa_render_search_results(WP_Query $q, $page, $term)` — renders the swappable results region (cards + pagination or no-results notice) used by both `search.php` (server render) and the `oa_search_results` AJAX endpoint; keeps the two identical.
+- `oa_search_result_item($post_id, $context, $back_url = '')` — renders one result item; `'live'` = compact modal row, `'page'` = full card. Emits `is-type-{slug}` on the type badge span so `search.css` can colour each post type differently. `$back_url` (the originating search URL) is appended as `?oa_back=…` on the result link so `open_awards_breadcrumbs()` can offer a "Back to search" crumb; tagging only result links means the crumb only fires on actual search-result clicks.
+- `oa_render_search_results(WP_Query $q, $page, $term, $selected = [])` — renders the swappable results region (cards + pagination or no-results notice) used by both `search.php` (server render) and the `oa_search_results` AJAX endpoint; keeps the two identical. `$selected` is the active post-type filter slugs, threaded through to pagination links.
 - `oa_search_count_text($count)` — returns a localised, pluralised "N results found." string used in the hero and AJAX response.
-- `oa_search_pagination_html($total_pages, $current_page, $term)` — builds `?s=…&paged=N` pagination markup; JS intercepts clicks for in-place swaps; bare links are JS-free and crawlable.
+- `oa_search_pagination_html($total_pages, $current_page, $term, $selected = [])` — builds `?s=…&paged=N` pagination markup; carries `$selected` as `oa_types[]` params so paging preserves the active type filter. JS intercepts clicks for in-place swaps; bare links are JS-free and crawlable.
+- `oa_search_filter_options()` — returns a `slug => label` map for the post-type filter checkboxes; filterable via `oa_search_filter_options`.
+- `oa_get_selected_search_types($raw)` — sanitises a raw `oa_types` value from `$_GET`/`$_REQUEST` down to the allowed slugs; empty result means "search everything" (callers fall back to `oa_searchable_post_types()`).
+- `oa_search_filter_checkboxes($context, $selected)` — renders the post-type filter checkbox group. `$context` (`'modal'`/`'page'`) adds a CSS modifier; `wp_unique_id()` ensures IDs don't collide when both instances are on-page together. Called inside the modal form and `searchform.php`.
+- `oa_live_search_limit()` — returns the modal preview cap (default `6`); filterable via `oa_live_search_limit`.
 - The legacy `__search_by_title_only` filter in `functions.php` skips any query that has `oa_enhanced_search` set, so the two search paths don't conflict.
 
 ## Conventions
