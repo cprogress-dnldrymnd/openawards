@@ -23,8 +23,10 @@ $hero_title = $search_query
 	: __('Search', 'naked');
 
 $hero_desc = $search_query
-	? sprintf(_n('%d result found.', '%d results found.', $found, 'naked'), $found)
+	? oa_search_count_text($found)
 	: __('Type a search term to begin.', 'naked');
+
+$current_page = max(1, (int) get_query_var('paged'));
 ?>
 <div id="primary" class="row-fluid">
 	<div id="content" role="main" class="span8 offset2">
@@ -38,33 +40,19 @@ $hero_desc = $search_query
 
 				<?php
 				// In-page search form so users can refine without reopening the modal.
+				// The JS controller upgrades this to live, AJAX-driven search; with
+				// JS off it still submits a normal GET and reloads search.php.
 				get_search_form();
 				?>
 
-				<?php if (have_posts()) : ?>
-
-					<div class="search-results-list">
-						<?php
-						while (have_posts()) :
-							the_post();
-							// Shared renderer keeps cards identical to the modal preview.
-							echo oa_search_result_item(get_the_ID(), 'page');
-						endwhile;
-						?>
-					</div>
-
-					<div class="pagination-holder text-center mt-5">
-						<?php open_awards_pagination($GLOBALS['wp_query']); ?>
-					</div>
-
-				<?php else : ?>
-
-					<div class="search-no-results">
-						<h2><?php esc_html_e('No results found', 'naked'); ?></h2>
-						<p><?php esc_html_e('Sorry, nothing matched your search. Try a different keyword.', 'naked'); ?></p>
-					</div>
-
-				<?php endif; ?>
+				<?php
+				// #oaSearchResultsArea is the region the JS swaps on live search /
+				// pagination. The initial render and the AJAX updates both come from
+				// oa_render_search_results(), so the markup is identical either way.
+				?>
+				<div id="oaSearchResultsArea" class="oa-search-results-area">
+					<?php echo oa_render_search_results($GLOBALS['wp_query'], $current_page, $search_query); ?>
+				</div>
 
 			</div>
 		</section>

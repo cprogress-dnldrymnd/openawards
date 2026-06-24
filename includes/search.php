@@ -107,7 +107,8 @@ function oa_search_enqueue_assets()
 	wp_localize_script('oa-search', 'OA_SEARCH', array(
 		'ajaxUrl'    => admin_url('admin-ajax.php'),
 		'nonce'      => wp_create_nonce('oa_search_nonce'),
-		'action'     => 'oa_live_search',
+		'action'     => 'oa_live_search',    // Modal preview endpoint.
+		'pageAction' => 'oa_search_results', // Full results-page endpoint.
 		'resultsUrl' => home_url('/'),       // Base for the ?s= redirect.
 		'minChars'   => 2,                   // Minimum query length before firing.
 		'debounce'   => 300,                 // Debounce window in milliseconds.
@@ -427,6 +428,142 @@ function oa_live_search_callback()
 }
 add_action('wp_ajax_oa_live_search', 'oa_live_search_callback');
 add_action('wp_ajax_nopriv_oa_live_search', 'oa_live_search_callback');
+
+/*-----------------------------------------------------------------------------------*/
+/* Full results-page AJAX (live search on search.php) + shared markup builders
+/*-----------------------------------------------------------------------------------*/
+
+/**
+ * Human-readable, localised "N results found." string.
+ *
+ * Shared by search.php (hero copy) and the AJAX endpoint so the count text is
+ * always phrased and pluralised identically.
+ *
+ * @param int $count Total results found.
+ * @return string
+ */
+function oa_search_count_text($count)
+{
+	$count = (int) $count;
+	return sprintf(
+		_n('%s result found.', '%s results found.', $count, 'naked'),
+		number_format_i18n($count)
+	);
+}
+
+/**
+ * Build the pagination markup for full-page search results.
+ *
+ * Produces real `?s=term&paged=N` links (so it works with JS off and is SEO
+ * crawlable). The JS controller intercepts clicks on these links to swap
+ * results in place; without JS they simply load the next page. Used by BOTH
+ * search.php and the AJAX endpoint so the markup is identical in either DOM.
+ *
+ * @param int    $total_pages  Total number of pages.
+ * @param int    $current_page Current page number.
+ * @param string $term         The search term.
+ * @return string Pagination HTML, or '' when only one page.
+ */
+function oa_search_pagination_html($total_pages, $current_page, $term)
+{
+	if ((int) $total_pages < 2) {
+		return '';
+	}
+
+	return (string) paginate_links(array(
+		'base'      => home_url('/') . '%_%',
+		'format'    => '?s=' . urlencode($term) . '&paged=%#%',
+		'current'   => max(1, (int) $current_page),
+		'total'     => (int) $total_pages,
+		'type'      => 'plain',
+		'prev_text' => '<i class="fas fa-arrow-left" aria-hidden="true"></i>',
+		'next_text' => '<i class="fas fa-arrow-right" aria-hidden="true"></i>',
+	));
+}
+
+/**
+ * Render the full results area (cards + pagination, or a no-results notice)
+ * for a given query.
+ *
+ * Single source of truth for the markup that lives inside #oaSearchResultsArea,
+ * called by search.php for the initial server render and by the AJAX endpoint
+ * for live updates — guaranteeing the two never drift apart.
+ *
+ * @param WP_Query $query        The (already-run) results query.
+ * @param int      $current_page Current page number, for pagination.
+ * @param string   $term         The search term, for pagination links.
+ * @return string
+ */
+function oa_render_search_results(WP_Query $query, $current_page, $term)
+{
+	ob_start();
+
+	if ($query->have_posts()) {
+		echo '<div class="search-results-list">';
+		while ($query->have_posts()) {
+			$query->the_post();
+			echo oa_search_result_item(get_the_ID(), 'page');
+		}
+		echo '</div>';
+		wp_reset_postdata();
+
+		$pagination = oa_search_pagination_html($query->max_num_pages, $current_page, $term);
+		if ($pagination) {
+			echo '<div class="pagination-holder text-center">' . $pagination . '</div>';
+		}
+	} else {
+		?>
+		<div class="search-no-results">
+			<h2><?php esc_html_e('No results found', 'naked'); ?></h2>
+			<p><?php esc_html_e('Sorry, nothing matched your search. Try a different keyword.', 'naked'); ?></p>
+		</div>
+		<?php
+	}
+
+	return ob_get_clean();
+}
+
+/**
+ * AJAX handler for live search ON the search results page.
+ *
+ * Runs the same enhanced, paginated query that search.php renders and returns
+ * the swappable results markup plus the updated count text and canonical URL
+ * (for history.pushState). Served to both logged-in and logged-out visitors.
+ */
+function oa_search_results_callback()
+{
+	// Security: reject requests without a valid, current nonce.
+	check_ajax_referer('oa_search_nonce', 'nonce');
+
+	$term  = isset($_REQUEST['s']) ? sanitize_text_field(wp_unslash($_REQUEST['s'])) : '';
+	$paged = isset($_REQUEST['paged']) ? max(1, (int) $_REQUEST['paged']) : 1;
+
+	$query = new WP_Query(array(
+		's'                   => $term,
+		'post_type'           => oa_searchable_post_types(),
+		'post_status'         => 'publish',
+		'posts_per_page'      => (int) get_option('posts_per_page'),
+		'paged'               => $paged,
+		'ignore_sticky_posts' => true,
+		'oa_enhanced_search'  => true, // Opt in to the shared SQL filters.
+	));
+
+	$count = (int) $query->found_posts;
+
+	// Canonical URL for this state (page 1 omits the paged param).
+	$url = ($paged > 1)
+		? add_query_arg(array('s' => $term, 'paged' => $paged), home_url('/'))
+		: add_query_arg('s', $term, home_url('/'));
+
+	wp_send_json_success(array(
+		'html'      => oa_render_search_results($query, $paged, $term),
+		'count'     => $count,
+		'countText' => oa_search_count_text($count),
+		'url'       => esc_url_raw($url),
+	));
+}
+add_action('wp_ajax_oa_search_results', 'oa_search_results_callback');
+add_action('wp_ajax_nopriv_oa_search_results', 'oa_search_results_callback');
 
 /*-----------------------------------------------------------------------------------*/
 /* Shared result renderer (used by both the AJAX modal and search.php)

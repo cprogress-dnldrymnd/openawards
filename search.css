@@ -265,6 +265,17 @@ body.oa-search-open {
 	margin: 0 0 8px;
 }
 
+/* Dim + lock the results while a live update is fetching. */
+.oa-search-results-area {
+	position: relative;
+	transition: opacity 0.15s ease;
+}
+
+.oa-search-results-area.is-loading {
+	opacity: 0.45;
+	pointer-events: none;
+}
+
 .search-results-list {
 	display: grid;
 	gap: 20px;

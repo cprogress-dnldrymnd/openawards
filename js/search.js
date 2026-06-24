@@ -234,9 +234,169 @@
 		});
 	}
 
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', init);
-	} else {
+	/* ----------------------------------------------------------------------
+	 * Live search ON the search.php results page.
+	 *
+	 * Progressive enhancement: the refine form and pagination links work on
+	 * their own (full reload). When this runs we intercept them, fetch the
+	 * swappable results region via AJAX, and keep the URL / back-button in
+	 * sync with history.pushState.
+	 * -------------------------------------------------------------------- */
+
+	var pageArea;        // #oaSearchResultsArea container that gets swapped.
+	var pageInput;       // The refine form input.
+	var pageController;   // AbortController for the in-flight page request.
+
+	/**
+	 * Update the hero "N results found." line after a live update.
+	 *
+	 * @param {string} text Pre-formatted, pluralised count text from PHP.
+	 */
+	function updateCount(text) {
+		if (!text) {
+			return;
+		}
+		var desc = document.querySelector('.search-results-section')
+			? document.querySelector('.hero-style-1 .desc-box')
+			: null;
+		if (desc) {
+			desc.innerHTML = '<p>' + text + '</p>';
+		}
+	}
+
+	/**
+	 * Fetch a page of full results and swap them into #oaSearchResultsArea.
+	 *
+	 * @param {string}  term   Search term.
+	 * @param {number}  paged  Page number (1-based).
+	 * @param {boolean} scroll Whether to scroll the results into view (used for
+	 *                         pagination, not for typing).
+	 */
+	function fetchPageResults(term, paged, scroll) {
+		term = term.trim();
+		if (term.length < OA_SEARCH.minChars) {
+			return;
+		}
+
+		pageArea.classList.add('is-loading');
+
+		if (pageController) {
+			pageController.abort();
+		}
+		pageController = new AbortController();
+
+		var body = new URLSearchParams();
+		body.append('action', OA_SEARCH.pageAction);
+		body.append('nonce', OA_SEARCH.nonce);
+		body.append('s', term);
+		body.append('paged', paged || 1);
+
+		fetch(OA_SEARCH.ajaxUrl, {
+			method: 'POST',
+			credentials: 'same-origin',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: body.toString(),
+			signal: pageController.signal,
+		})
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (json) {
+				pageArea.classList.remove('is-loading');
+				if (!json || !json.success) {
+					return;
+				}
+				pageArea.innerHTML = json.data.html;
+				updateCount(json.data.countText);
+
+				// Keep the address bar + history in sync.
+				if (json.data.url) {
+					window.history.pushState(
+						{ s: term, paged: paged || 1 },
+						'',
+						json.data.url
+					);
+				}
+
+				if (scroll) {
+					pageArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			})
+			.catch(function (error) {
+				pageArea.classList.remove('is-loading');
+				// Ignore deliberate aborts; leave current results on other errors.
+				if (error && error.name === 'AbortError') {
+					return;
+				}
+			});
+	}
+
+	/**
+	 * Wire up the search results page (only present on search.php).
+	 */
+	function initSearchPage() {
+		pageArea = document.getElementById('oaSearchResultsArea');
+		if (!pageArea) {
+			return;
+		}
+
+		var pageForm = document.querySelector('.search-results-section .oa-searchform');
+		if (pageForm) {
+			pageInput = pageForm.querySelector('input[name="s"]');
+
+			// Debounced live search as the user refines their query.
+			var debouncedPage = debounce(function () {
+				fetchPageResults(pageInput.value, 1, false);
+			}, OA_SEARCH.debounce);
+			pageInput.addEventListener('input', debouncedPage);
+
+			// Submit / Enter -> live update (no reload) instead of GET.
+			pageForm.addEventListener('submit', function (e) {
+				e.preventDefault();
+				fetchPageResults(pageInput.value, 1, true);
+			});
+		}
+
+		// Intercept pagination clicks (event delegation, survives DOM swaps).
+		pageArea.addEventListener('click', function (e) {
+			var link = e.target.closest('.pagination-holder a.page-numbers');
+			if (!link) {
+				return;
+			}
+			e.preventDefault();
+
+			// Pull the term + page straight off the link so it's always correct,
+			// even if the input was edited but not yet submitted.
+			var url = new URL(link.href, window.location.origin);
+			var term = url.searchParams.get('s') || (pageInput ? pageInput.value : '');
+			var paged = parseInt(url.searchParams.get('paged'), 10) || 1;
+
+			fetchPageResults(term, paged, true);
+		});
+
+		// Handle browser back/forward between paginated states.
+		window.addEventListener('popstate', function () {
+			var params = new URLSearchParams(window.location.search);
+			var term = params.get('s');
+			if (term === null) {
+				return;
+			}
+			var paged = parseInt(params.get('paged'), 10) || 1;
+			if (pageInput) {
+				pageInput.value = term;
+			}
+			fetchPageResults(term, paged, false);
+		});
+	}
+
+	function boot() {
 		init();
+		initSearchPage();
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', boot);
+	} else {
+		boot();
 	}
 })();
