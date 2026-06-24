@@ -219,13 +219,13 @@ body.oa-search-open {
 .oa-search-filter:hover span {
 	background: var(--oa-type-color, var(--oa-search-accent));
 	border-color: var(--oa-type-color, var(--oa-search-accent));
-	color: #fff;
+	color: var(--oa-type-ink, #fff);
 }
 
 .oa-search-filter input:checked + span {
 	background: var(--oa-type-color, var(--oa-search-accent));
 	border-color: var(--oa-type-color, var(--oa-search-accent));
-	color: #fff;
+	color: var(--oa-type-ink, #fff);
 }
 
 /* Keyboard focus ring on the pill. */
@@ -235,14 +235,15 @@ body.oa-search-open {
 }
 
 /* --- Per-post-type colour palette ----------------------------------------- */
-/* Single source of truth: each post type sets --oa-type-color on its is-type-*
-   element. Both the result badges AND the "Search in" filter pills read this
-   variable, so a pill always matches the badge of the type it filters. Add /
-   tweak a post type by editing one line here. */
-.is-type-post              { --oa-type-color: #b57cff; } /* Posts — brand violet. */
-.is-type-page              { --oa-type-color: #5b6cff; } /* Pages — indigo. */
-.is-type-faqs              { --oa-type-color: #f08c2e; } /* FAQs — orange. */
-.is-type-qualifications    { --oa-type-color: #1f9d6e; } /* Qualifications — green. */
+/* Single source of truth: each post type sets --oa-type-color (and, for light
+   colours, --oa-type-ink for legible text) on its is-type-* element. Both the
+   result badges AND the "Search in" filter pills read these variables, so a
+   pill always matches the badge of the type it filters. Colours come from the
+   theme brand palette (:root in style.css). Tweak a type in one line here. */
+.is-type-post              { --oa-type-color: var(--high-violet); }   /* Posts. */
+.is-type-page              { --oa-type-color: var(--dark-color); }    /* Pages. */
+.is-type-faqs              { --oa-type-color: var(--sun-orange); --oa-type-ink: var(--opal-black); } /* FAQs. */
+.is-type-qualifications    { --oa-type-color: var(--blush-pink); --oa-type-ink: var(--opal-black); } /* Qualifications. */
 .is-type-units,
 .is-type-courses           { --oa-type-color: #e0517a; } /* Units / Courses — pink. */
 
@@ -296,7 +297,7 @@ body.oa-search-open {
 	font-size: 11px;
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
-	color: #fff;
+	color: var(--oa-type-ink, #fff);
 	/* background set by the per-type palette (.is-type-*) above. */
 	padding: 2px 8px;
 	border-radius: 999px;
@@ -440,7 +441,7 @@ body.oa-search-open {
 	font-size: 11px;
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
-	color: #fff;
+	color: var(--oa-type-ink, #fff);
 	/* background set by the per-type palette (.is-type-*) above. */
 	padding: 3px 10px;
 	border-radius: 999px;
