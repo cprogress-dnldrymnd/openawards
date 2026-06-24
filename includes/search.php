@@ -516,13 +516,21 @@ function oa_live_search_callback()
 		'oa_enhanced_search'  => true,  // Opt in to the shared SQL filters.
 	));
 
+	// The search this modal represents — used both as the "view all" target and
+	// as the "Back to search" tag on each result link.
+	$search_args = array('s' => $term);
+	if (!empty($selected)) {
+		$search_args['oa_types'] = $selected;
+	}
+	$search_url = add_query_arg($search_args, home_url('/'));
+
 	ob_start();
 
 	if ($query->have_posts()) {
 		echo '<ul class="oa-search-results__list">';
 		while ($query->have_posts()) {
 			$query->the_post();
-			echo oa_search_result_item(get_the_ID(), 'live');
+			echo oa_search_result_item(get_the_ID(), 'live', $search_url);
 		}
 		echo '</ul>';
 	}
@@ -532,16 +540,11 @@ function oa_live_search_callback()
 
 	wp_reset_postdata();
 
-	$view_all_args = array('s' => $term);
-	if (!empty($selected)) {
-		$view_all_args['oa_types'] = $selected;
-	}
-
 	wp_send_json_success(array(
 		'html'       => $html,
 		'count'      => $found,
 		'shown'      => (int) $query->post_count,
-		'viewAllUrl' => esc_url_raw(add_query_arg($view_all_args, home_url('/'))),
+		'viewAllUrl' => esc_url_raw($search_url),
 	));
 }
 add_action('wp_ajax_oa_live_search', 'oa_live_search_callback');
@@ -626,10 +629,17 @@ function oa_render_search_results(WP_Query $query, $current_page, $term, $select
 	ob_start();
 
 	if ($query->have_posts()) {
+		// The search URL to return to, tagged onto each result link.
+		$back_args = array('s' => $term);
+		if (!empty($selected)) {
+			$back_args['oa_types'] = $selected;
+		}
+		$back_url = add_query_arg($back_args, home_url('/'));
+
 		echo '<div class="search-results-list">';
 		while ($query->have_posts()) {
 			$query->the_post();
-			echo oa_search_result_item(get_the_ID(), 'page');
+			echo oa_search_result_item(get_the_ID(), 'page', $back_url);
 		}
 		echo '</div>';
 		wp_reset_postdata();
@@ -713,11 +723,15 @@ add_action('wp_ajax_nopriv_oa_search_results', 'oa_search_results_callback');
  * page stay visually and structurally consistent.
  *
  * @param int    $post_id The post to render. Defaults to the current post.
- * @param string $context 'live' for the compact modal row, 'page' for the
- *                        full search.php card.
+ * @param string $context  'live' for the compact modal row, 'page' for the
+ *                         full search.php card.
+ * @param string $back_url Optional search URL to tag onto the result link (as
+ *                         ?oa_back=…) so the destination page can show a
+ *                         "Back to search" breadcrumb. Marking the link itself
+ *                         means only real result clicks trigger the crumb.
  * @return string HTML markup for the result.
  */
-function oa_search_result_item($post_id = 0, $context = 'page')
+function oa_search_result_item($post_id = 0, $context = 'page', $back_url = '')
 {
 	$post_id = $post_id ? $post_id : get_the_ID();
 
@@ -731,6 +745,10 @@ function oa_search_result_item($post_id = 0, $context = 'page')
 	// differently. sanitize_html_class keeps it safe for use in a class.
 	$type_class = 'is-type-' . sanitize_html_class($type_slug);
 
+	// Tag the link with the originating search so the breadcrumb can offer a
+	// "Back to search" link — but only when the user actually clicks a result.
+	$href = $back_url ? add_query_arg('oa_back', rawurlencode($back_url), $permalink) : $permalink;
+
 	// Trim a short, plain-text snippet for context.
 	$raw     = has_excerpt($post_id) ? get_the_excerpt($post_id) : get_post_field('post_content', $post_id);
 	$snippet = wp_trim_words(wp_strip_all_tags(strip_shortcodes($raw)), $context === 'live' ? 18 : 40, '…');
@@ -740,7 +758,7 @@ function oa_search_result_item($post_id = 0, $context = 'page')
 	if ($context === 'live') {
 		?>
 		<li class="oa-search-results__item">
-			<a class="oa-search-results__link" href="<?php echo esc_url($permalink); ?>" role="option">
+			<a class="oa-search-results__link" href="<?php echo esc_url($href); ?>" role="option">
 				<span class="oa-search-results__title"><?php echo esc_html($title); ?></span>
 				<?php if ($type_lbl) : ?>
 					<span class="oa-search-results__type <?php echo esc_attr($type_class); ?>"><?php echo esc_html($type_lbl); ?></span>
@@ -758,12 +776,12 @@ function oa_search_result_item($post_id = 0, $context = 'page')
 				<span class="oa-result-card__type <?php echo esc_attr($type_class); ?>"><?php echo esc_html($type_lbl); ?></span>
 			<?php endif; ?>
 			<h2 class="oa-result-card__title">
-				<a href="<?php echo esc_url($permalink); ?>"><?php echo esc_html($title); ?></a>
+				<a href="<?php echo esc_url($href); ?>"><?php echo esc_html($title); ?></a>
 			</h2>
 			<?php if ($snippet) : ?>
 				<p class="oa-result-card__snippet"><?php echo esc_html($snippet); ?></p>
 			<?php endif; ?>
-			<a class="oa-result-card__more" href="<?php echo esc_url($permalink); ?>"><?php esc_html_e('Read more', 'naked'); ?> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+			<a class="oa-result-card__more" href="<?php echo esc_url($href); ?>"><?php esc_html_e('Read more', 'naked'); ?> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 		</article>
 		<?php
 	}

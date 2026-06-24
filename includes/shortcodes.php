@@ -72,15 +72,17 @@ function open_awards_breadcrumbs()
 		$title = get_queried_object()->name;
 	}
 
-	// If the visitor arrived from a search results page (same origin, carrying
-	// a non-empty `s` query), offer a quick way back to that search. This takes
-	// priority over the default parent crumb on single/page views.
+	// If the visitor clicked through from a search result, that result link
+	// carries an `oa_back` param holding the originating search URL. We use it
+	// to offer a "Back to search" crumb. Because only real result links are
+	// tagged (see oa_search_result_item()), other links off the search page —
+	// header nav etc. — never trigger this. Same-origin validated; escaped on
+	// output. Takes priority over the default parent crumb.
 	$back_to_search_url = '';
-	$referer = wp_get_referer();
-	if ($referer && parse_url($referer, PHP_URL_HOST) === parse_url(home_url(), PHP_URL_HOST)) {
-		parse_str((string) parse_url($referer, PHP_URL_QUERY), $referer_params);
-		if (!empty($referer_params['s'])) {
-			$back_to_search_url = $referer;
+	if (!empty($_GET['oa_back'])) {
+		$candidate = urldecode(wp_unslash($_GET['oa_back']));
+		if (parse_url($candidate, PHP_URL_HOST) === parse_url(home_url(), PHP_URL_HOST)) {
+			$back_to_search_url = $candidate;
 		}
 	}
 
