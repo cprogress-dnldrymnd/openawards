@@ -32,7 +32,7 @@ Code here depends on these being installed and active in WordPress:
 - **Carbon Fields** — post meta defined in `includes/post-meta.php`
 - **Advanced Custom Fields (ACF)** — `get_field()` is used in ~48 places
 - **Events Manager** — template overrides in `plugins/events-manager/`
-- A **discussion board** plugin — `discussion-topics` post type, `_wpdiscussionboard.scss`
+- A **discussion board** plugin — `discussion-topics` post type
 
 Front-end libraries load from CDN in `functions.php`: Bootstrap 5.0.2, Swiper 10,
 Fancybox 5, FontAwesome 5.15.
@@ -50,7 +50,12 @@ Fancybox 5, FontAwesome 5.15.
 | `includes/post-meta.php` | Carbon Fields meta containers. |
 | `includes/shortcodes.php` | Shortcodes (e.g. `product_custom_field`, custom My Account). |
 | `includes/ajax.php` | `admin-ajax` handlers (`resources`, `insert_post_ajax`). |
+| `includes/search.php` | Advanced search module — self-contained, no dependencies. Enqueues assets, widens the native query (`pre_get_posts` + `posts_join`/`posts_search`/`posts_groupby` for meta + taxonomy matching), registers two AJAX endpoints: `oa_live_search` (modal preview) and `oa_search_results` (live refinement on `search.php`). Configurable via `oa_searchable_post_types()` / `oa_searchable_taxonomies()` filters. |
 | `includes/woocommerce.php`, `includes/wp-bakery.php` | WooCommerce hooks; WPBakery custom elements. |
+| `search.php` | Search results template. Query already widened by `includes/search.php`. Delegates rendering to `oa_render_search_results()` inside `#oaSearchResultsArea` — the same div the JS swaps on live refinement. |
+| `search.css` | Search styles (enqueued by `includes/search.php`): modal overlay + toggle icon, live-results list, full-page result cards (`.oa-result-card`), pagination (`.pagination-holder`), and in-page refine form (`.oa-searchform`). All scoped under `.oa-search*` / `.oa-result*`. |
+| `searchform.php` | `get_search_form()` override rendered inside `search.php` to let users refine results. |
+| `js/search.js` | Vanilla-JS controller for two search surfaces: (1) the global modal (open/close, debounced AJAX, keyboard nav); (2) live refinement on `search.php` (intercepts the refine form + pagination clicks, swaps `#oaSearchResultsArea` via the `oa_search_results` endpoint, updates the URL with `history.pushState` and handles `popstate`). Localised with `OA_SEARCH` config. |
 | Root `*.php` (`single-*`, `archive-*`, `taxonomy-*`, `page-*`, `index`, `header`, `footer`, `sidebar`) | Standard WordPress template hierarchy. |
 | `templates/` | Custom **Page Templates** (selectable in the page editor — files with a `Template Name:` header). |
 | `template-parts/` | Reusable partials pulled in via `get_template_part()`. |
@@ -60,18 +65,17 @@ Fancybox 5, FontAwesome 5.15.
 
 ## Styles / build
 
-- **`style.css` (repo root) is the only stylesheet enqueued at runtime** — it is
-  compiled output, not hand-edited (header note: "Start of from main.min.css").
-- **`scss/`** holds the active source partials (`main.scss` imports `variables`,
-  `mixins`, `components`, section styles, and per-plugin overrides). This compiles
-  to `style.css`.
-- **`stylesheets/`** is a large legacy Bootstrap-4 SASS scaffold inherited from
-  the starter theme. It is **not** wired into the runtime (nothing enqueues it);
-  treat it as dormant unless you confirm otherwise.
-- There is **no `package.json`/`gulpfile`/`composer.json`**. SCSS is compiled by
-  an editor extension (the committed `*.css.map` files indicate Live Sass
-  Compiler or similar). To change styles: edit `scss/`, recompile to `style.css`
-  with your Sass tool, and commit both.
+- **`style.css` (repo root) is the only stylesheet enqueued at runtime** (handle
+  `style.css`; header note: "Start of from main.min.css"). **Edit this file
+  directly** — it is the current source of truth for styles.
+- **`scss/`** held the original source partials (`main.scss` → `variables`, `mixins`,
+  `components`, section styles, per-plugin overrides). The live-server sync has
+  deleted these files from disk; they survive only in git history. To restore:
+  `git checkout HEAD -- scss/`. There is no `package.json`/`gulpfile`/`composer.json`
+  — SCSS was compiled by an editor extension (Live Sass Compiler or similar). Note
+  the server sync will likely delete them again.
+- **`stylesheets/`** is a large legacy Bootstrap-4 SASS scaffold from the starter
+  theme. Nothing enqueues it; treat it as dormant.
 
 ## Key helpers in `functions.php`
 
@@ -81,6 +85,12 @@ Fancybox 5, FontAwesome 5.15.
 - `provider_options()` — `<option>` list of the `providers` CPT.
 - `gt_set_post_view()` / `gt_get_post_view()` — per-post view counter stored in `post_views_count` meta.
 - `open_awards_pagination($query)`, `clean($string)`, `_date_format()`, `make_google_calendar_link()`.
+- `oa_search_toggle_button()` (in `includes/search.php`) — echoes the nav icon that opens the search modal; called from `header.php`.
+- `oa_search_result_item($post_id, $context)` — renders one result item; `'live'` = compact modal row, `'page'` = full card.
+- `oa_render_search_results(WP_Query $q, $page, $term)` — renders the swappable results region (cards + pagination or no-results notice) used by both `search.php` (server render) and the `oa_search_results` AJAX endpoint; keeps the two identical.
+- `oa_search_count_text($count)` — returns a localised, pluralised "N results found." string used in the hero and AJAX response.
+- `oa_search_pagination_html($total_pages, $current_page, $term)` — builds `?s=…&paged=N` pagination markup; JS intercepts clicks for in-place swaps; bare links are JS-free and crawlable.
+- The legacy `__search_by_title_only` filter in `functions.php` skips any query that has `oa_enhanced_search` set, so the two search paths don't conflict.
 
 ## Conventions
 
