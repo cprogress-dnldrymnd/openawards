@@ -1,0 +1,87 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+a.btn.btn-outline-primary {
+  border-color: $primary;
+  color: $primary!important;
+  border-radius: 5px;
+  &.small {
+    font-size: 16px;
+    font-family: $font-cabin;
+    padding: 15px 20px;
+    @include respond-to("lg") {
+      font-size: 14px;
+      padding: 10px 15px;
+    }
+  }
+  &.big {
+    font-size: 20px;
+    font-family: $font-cabin;
+    font-weight: 600;
+    padding: 15px 30px;
+    @include respond-to("lg") {
+      font-size: 18px;
+      padding: 12px 25px;
+    }
+    @include respond-to("md") {
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+    @include respond-to("sm-down") {
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+  }
+  &.light {
+    border-color: $white !important;
+    color: $white !important;
+    font-weight: 600;
+    @include on-event {
+      background-color: $white;
+      color: $dark-blue!important;
+    }
+  }
+  @include on-event {
+    background-color: $primary;
+    color: $white!important;
+  }
+}
+
+a.btn.btn-secondary {
+  background-color: $secondary;
+  color: $white !important;
+  border: none;
+  &.small {
+    font-size: 16px;
+    font-family: $font-cabin;
+    padding: 15px 20px;
+    @include respond-to("lg") {
+      font-size: 14px;
+      padding: 10px 15px;
+    }
+  }
+  &.big {
+    font-size: 20px;
+    font-family: $font-cabin;
+    font-weight: 600;
+    padding: 15px 30px;
+    @include respond-to("lg") {
+      font-size: 18px;
+      padding: 12px 25px;
+    }
+    @include respond-to("md") {
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+    @include respond-to("sm-down") {
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+  }
+  @include on-event {
+    background-color: $dark-secondary;
+  }
+}

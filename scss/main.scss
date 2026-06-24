@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import 'variables',
+'mixins';
+
+// 2. Base stuff
+ @import 'components';
+
+// 3. Section styles
+@import 'header',
+'footer',
+'section',
+'404'
+;
+
+// 3. Plugin styles
+@import 'woocommerce',
+'wpbakery',
+'wpdiscussionboard',
+'wpeventmanager'
+;

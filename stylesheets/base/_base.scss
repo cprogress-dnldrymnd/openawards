@@ -1,0 +1,235 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+.btn,
+a {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  text-decoration: none!important;
+}
+
+.padCon {
+  padding: 50px 0;
+  @include respond-to(md) {
+    padding: 35px 0;
+  }
+  @include respond-to(sm-down) {
+    padding: 30px 0;
+  }
+}
+
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+span.highlight {
+    position: relative;
+    z-index: 0;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 25%;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 5px;
+      background-color: $secondary;
+      z-index: -1;
+    }
+}
+
+h2.title-text {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-family: $font-cabin;
+  font-weight: 700;
+  line-height: 55px;
+  color: $dark-grey;
+  @include respond-to("lg") {
+    margin-bottom: 25px;
+    font-size: 35px;
+    line-height: 50px;
+  }
+  @include respond-to("sm-down") {
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+h3 {
+  font-family: $font-cabin;
+  font-size: 22px;
+  font-weight: 700;
+  color: $dark-grey;
+  @include respond-to("lg") {
+    font-size: 20px;
+  }
+  @include respond-to("md") {
+    font-size: 18px;
+  }
+  @include respond-to("sm-down") {
+    font-size: 16px;
+  }
+}
+
+h4 {
+  margin-bottom: 35px;
+  font-family: $font-opensans;
+  color: $light-grey;
+  font-size: 20px;
+  line-height: 36px;
+  @include respond-to("lg") {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+  @include respond-to("md") {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 25px;
+  }
+  @include respond-to("sm-down") {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+h5 {
+  margin-bottom: 18px;
+  font-family: $font-cabin;
+  font-weight: 700;
+  color: $purple;
+  font-size: 18px;
+  @include respond-to("lg") {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  @include respond-to("md") {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  @include respond-to("sm-down") {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+}
+
+.lockscroll {
+    overflow: hidden;
+}
+
+section.breadcrumbs {
+  nav {
+    ol.breadcrumb {
+      background: transparent;
+      padding: 0;
+      li {
+        font-size: 16px;
+        @include respond-to(sm-down) {
+          font-size: 14px;
+        }
+        &:first-child{
+          &:before {
+            display: none;
+          }
+        }
+        &:before {
+          content: "\f054";
+          font-family: "Font Awesome 5 Free";
+          color: $light-grey;
+          font-weight: 600;
+          font-size: 10px;
+        }
+        a {
+          color: $dark-grey;
+        }
+        &.active {
+          opacity: .75;
+        }
+      }
+    }
+  }
+}
+
+.page-banner {
+  position: relative;
+  background: $dark-grey;
+  height: 200px;
+  color: $white;
+  @include respond-to(sm-down) {
+    height: auto;
+    padding: 35px 0;
+  }
+  h1, h3 {
+    line-height: 200px;
+    @include respond-to(sm-down) {
+      line-height: normal;
+    }
+  }
+  h1 {
+    font-family: $font-cabin;
+    @include respond-to(md) {
+      font-size: 32px;
+    }
+    @include respond-to(sm-down) {
+      font-size: 28px;
+    }
+  }
+  h3 {
+    font-family: $font-opensans;
+    color: $white;
+    font-weight: 100;
+    text-align: right;
+    @include respond-to(sm-down) {
+      text-align: left;
+    }
+  }
+}
+
+.separator {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #D4D4D4;
+}
+
+span.badge {
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-family: $font-cabin;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.badge-lightblue { background: $blue-link; }
+.badge-dark { background: $dark-grey; }
+/**
+ * Basic styles for input fields
+ */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-focus-ring-color: none;  outline: none;
+}
