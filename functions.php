@@ -127,8 +127,8 @@ function naked_register_sidebars()
 		'name'          => 'Footer 1',				// Name it
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
 		'after_widget'  => '</div>',	// What to display following each widget
-		'before_title'  => '<h2 class="widget-title">',	// What to display before each widget's title
-		'after_title'   => '</h2>',		// What to display following each widget's title
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
 		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 
@@ -137,8 +137,8 @@ function naked_register_sidebars()
 		'name'          => 'Footer 2',				// Name it
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
 		'after_widget'  => '</div>',	// What to display following each widget
-		'before_title'  => '<h2 class="widget-title">',	// What to display before each widget's title
-		'after_title'   => '</h2>',		// What to display following each widget's title
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
 		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 
@@ -147,8 +147,8 @@ function naked_register_sidebars()
 		'name'          => 'Footer 3',				// Name it
 		'before_widget' => '<div class="col-lg-2 col-md-2">',	// What to display before each widget
 		'after_widget'  => '</div>',	// What to display following each widget
-		'before_title'  => '<h2 class="widget-title">',	// What to display before each widget's title
-		'after_title'   => '</h2>',		// What to display following each widget's title
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
 		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 
@@ -157,8 +157,8 @@ function naked_register_sidebars()
 		'name'          => 'Footer Opening Hours',				// Name it
 		'before_widget' => '',	// What to display before each widget
 		'after_widget'  => '',	// What to display following each widget
-		'before_title'  => '<h2 class="widget-title">',	// What to display before each widget's title
-		'after_title'   => '</h2>',		// What to display following each widget's title
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
 		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 	register_sidebar(array(				// Start a series of sidebars to register
@@ -166,8 +166,8 @@ function naked_register_sidebars()
 		'name'          => 'Footer Bottom Links',				// Name it
 		'before_widget' => '',	// What to display before each widget
 		'after_widget'  => '',	// What to display following each widget
-		'before_title'  => '<h2 class="widget-title">',	// What to display before each widget's title
-		'after_title'   => '</h2>',		// What to display following each widget's title
+		'before_title'  => '<h5 class="widget-title">',	// What to display before each widget's title
+		'after_title'   => '</h5>',		// What to display following each widget's title
 		'empty_title'   => '',					// What to display in the case of no title defined for a widget
 	));
 }
@@ -662,3 +662,9 @@ function add_google_analytics_tags() {
     <?php
 }
 add_action('wp_head', 'add_google_analytics_tags');
+
+add_action('wp_head', function () {
+    ?>
+    <script src="https://cdn-eu.pagesense.io/js/openawards/9d0197a446fa4d3091c178afd25ebdcf.js"></script>
+    <?php
+});

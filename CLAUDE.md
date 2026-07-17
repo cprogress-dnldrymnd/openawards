@@ -32,7 +32,7 @@ Code here depends on these being installed and active in WordPress:
 - **Carbon Fields** — post meta defined in `includes/post-meta.php`
 - **Advanced Custom Fields (ACF)** — `get_field()` is used in ~48 places
 - **Events Manager** — template overrides in `plugins/events-manager/`
-- **Max Mega Menu** — the primary nav (`#mega-menu-primary`, styled in `style.css`); `mmm-walker.php` holds a custom `Mega_Menu_Walker` override (currently untracked/WIP, not yet `require`d from `functions.php`)
+- **Max Mega Menu** — the primary nav (`#mega-menu-primary`, styled in `style.css`); `mmm-walker.php` holds a custom `Mega_Menu_Walker` override (tracked in git, but still not `require`d from `functions.php` — WIP)
 - A **discussion board** plugin — `discussion-topics` post type
 
 Front-end libraries load from CDN in `functions.php`: Bootstrap 5.0.2, Swiper 10,
