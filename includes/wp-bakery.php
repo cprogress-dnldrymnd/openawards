@@ -232,7 +232,7 @@ function action_icon_box($atts)
                                 <div class="content-box">
                                     <?php if ($icon_box_items_heading) { ?>
                                         <div class="heading-box">
-                                            <h4><?= $icon_box_items_heading ?></h4>
+                                            <h3><?= $icon_box_items_heading ?></h3>
                                         </div>
                                     <?php } ?>
                                     <?php if ($icon_box_items_description) { ?>

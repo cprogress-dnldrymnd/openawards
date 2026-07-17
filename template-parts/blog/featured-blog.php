@@ -19,7 +19,7 @@
                                         <div class="column-holder">
                                             <div class="content-box">
                                                 <div class="heading-box">
-                                                    <h4><?php the_title() ?></h4>
+                                                    <h3><?php the_title() ?></h3>
                                                 </div>
                                                 <div class="description-box">
                                                     <?php the_excerpt() ?>

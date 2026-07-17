@@ -8955,7 +8955,7 @@ section.archive-section {
   flex-direction: column;
   justify-content: space-between;
 }
-.post-box.post-box .content-box h4 {
+.post-box.post-box .content-box h3 {
   margin-bottom: 0;
   font-weight: 500;
   color: var(--black-color);
