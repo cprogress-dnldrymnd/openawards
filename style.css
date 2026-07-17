@@ -648,12 +648,12 @@ footer .main-footer a.btn.btn-outline-primary.light {
     margin-bottom: 30px;
   }
 }
-footer .main-footer h5.widget-title {
+footer .main-footer h2.widget-title {
   color: var(--white-color) !important;
 }
 
 @media screen and (max-width: 767px) {
-  footer .main-footer h5.widget-title {
+  footer .main-footer h2.widget-title {
     margin-top: 10px;
   }
 }
@@ -5996,7 +5996,7 @@ main section.hero-banner {
   }
 }
 
-footer h5 {
+footer h2 {
   color: var(--white-color) !important;
 }
 footer p {
