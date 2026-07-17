@@ -445,7 +445,7 @@ function post_box($atts)
 		<div class="content-box content-box-v1">
 			<div class="heading-excerpt-box">
 				<div class="heading-box">
-					<h4><?= get_the_title($id) ?></h4>
+					<h3><?= get_the_title($id) ?></h3>
 				</div>
 				<div class="description-box">
 					<?= get_the_excerpt($id) ?>
