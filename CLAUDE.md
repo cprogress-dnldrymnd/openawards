@@ -32,6 +32,7 @@ Code here depends on these being installed and active in WordPress:
 - **Carbon Fields** — post meta defined in `includes/post-meta.php`
 - **Advanced Custom Fields (ACF)** — `get_field()` is used in ~48 places
 - **Events Manager** — template overrides in `plugins/events-manager/`
+- **Max Mega Menu** — the primary nav (`#mega-menu-primary`, styled in `style.css`); `mmm-walker.php` holds a custom `Mega_Menu_Walker` override (currently untracked/WIP, not yet `require`d from `functions.php`)
 - A **discussion board** plugin — `discussion-topics` post type
 
 Front-end libraries load from CDN in `functions.php`: Bootstrap 5.0.2, Swiper 10,
@@ -109,9 +110,9 @@ Fancybox 5, FontAwesome 5.15.
   in a running WordPress install.
 - Accessibility is being tightened incrementally: `alt` on `<img>`, `aria-label`
   on icon-only links/buttons, `aria-hidden="true" focusable="false"` on
-  decorative inline SVGs, `rel="noopener"` on `target="_blank"` links, and
-  explicit `type="button"` on non-submit `<button>`s. Match this when touching
-  nearby markup.
+  decorative inline SVGs, `rel="noopener"` on `target="_blank"` links, explicit
+  `type="button"` on non-submit `<button>`s, and correct (non-skipped) heading
+  levels on widget/section titles. Match this when touching nearby markup.
 
 ## Watch out for
 
