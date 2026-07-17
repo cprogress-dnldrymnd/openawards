@@ -25,7 +25,7 @@
                                                     <?php the_excerpt() ?>
                                                 </div>
                                                 <div class="button-box button-readmore">
-                                                    <a href="<?php the_permalink() ?>">Read more</a>
+                                                    <a href="<?php the_permalink() ?>">Read the article</a>
                                                 </div>
                                             </div>
                                         </div>

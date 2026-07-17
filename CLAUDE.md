@@ -107,6 +107,11 @@ Fancybox 5, FontAwesome 5.15.
   CPTs/taxonomies via the helper classes in `post-types.php`.
 - No automated tests, linter, or CI. Verify changes by loading the affected page
   in a running WordPress install.
+- Accessibility is being tightened incrementally: `alt` on `<img>`, `aria-label`
+  on icon-only links/buttons, `aria-hidden="true" focusable="false"` on
+  decorative inline SVGs, `rel="noopener"` on `target="_blank"` links, and
+  explicit `type="button"` on non-submit `<button>`s. Match this when touching
+  nearby markup.
 
 ## Watch out for
 

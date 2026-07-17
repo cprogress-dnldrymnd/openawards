@@ -452,7 +452,7 @@ function post_box($atts)
 				</div>
 			</div>
 			<div class="button-box button-readmore">
-				<a href="<?= get_the_permalink($id) ?>">Read more</a>
+				<a href="<?= get_the_permalink($id) ?>">Read the article</a>
 			</div>
 		</div>
 	</div>
