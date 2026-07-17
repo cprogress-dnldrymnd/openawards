@@ -5996,8 +5996,10 @@ main section.hero-banner {
   }
 }
 
-footer h2 {
+footer h2, footer .widget-title.widget-title {
   color: var(--white-color) !important;
+  font-size: 18px;
+  font-weight: 600;
 }
 footer p {
   color: var(--white-color) !important;
