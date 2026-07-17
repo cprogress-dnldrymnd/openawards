@@ -7517,7 +7517,7 @@ div#mega-menu-wrap-primary
     ul#mega-menu-primary
     li.mega-menu-item.mega-menu-item.mega-menu-item:not(.menu-qualification-btn)
     a {
-    color: rgba(0, 0, 0, 0.5) !important;
+    color: rgba(0, 0, 0, 1) !important;
   }
 
   header {
