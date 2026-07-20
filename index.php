@@ -53,7 +53,7 @@ if (is_home()) {
 
 		<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
 		<?= hero($title, $description, $hero_image) ?>
-		<?php if ($post_type == 'post' || $post_type == 'casestudies') { ?>
+		<?php if ($post_type == 'post') { ?>
 			<?php get_template_part('template-parts/blog/featured-blog') ?>
 
 			<?php
