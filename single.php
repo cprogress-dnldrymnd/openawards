@@ -102,7 +102,7 @@ while (have_posts()) {
 					</div>
 				</section>
 			<?php
-			else if ($post_type == 'casestudies') {
+			} else if ($post_type == 'casestudies') {
 			?>
 				<section class="post-slider post-slider-related position-relative">
 					<div class="container">
