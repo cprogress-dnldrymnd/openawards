@@ -19,6 +19,12 @@ if (is_home()) {
 	$description = carbon_get_theme_option('successstories_page_description');
 	$hero_image = 7383;
 	$title = $heading ? $heading : 'Success Stories';
+} else if (is_post_type_archive('casestudies')) {
+	$post_type = 'casestudies';
+	$heading = carbon_get_theme_option('casestudies_page_heading');
+	$description = carbon_get_theme_option('casestudies_page_description');
+	$hero_image = intval(carbon_get_theme_option('post_page_banner'));
+	$title = $heading ? $heading : 'Case Studies';
 }
 ?>
 <div id="primary" class="row-fluid">

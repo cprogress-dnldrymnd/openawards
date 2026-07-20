@@ -330,7 +330,7 @@ $Casestudy->publicly_queryable = true;
 $Casestudy->show_in_admin_bar = true;
 $Casestudy->has_archive = true;
 $Casestudy->rewrite = array(
-    'slug'  => 'casestudy',
+    'slug'  => 'casestudies',
 );
 
 /*
