@@ -102,7 +102,7 @@ while (have_posts()) {
 					</div>
 				</section>
 			<?php
-			} else if ($post_type == 'casestudies') {
+			} else if ($post_type == 'case-studies') {
 			?>
 				<section class="post-slider post-slider-related position-relative">
 					<div class="container">
@@ -116,7 +116,7 @@ while (have_posts()) {
 								<div class="vc_btn3-container vc_btn3-inline"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" href="/casestudies/" title="">All Case Studies</a></div>
 							</div>
 						</div>
-						<?= do_shortcode('[post_slider post_type="casestudies"]'); ?>
+						<?= do_shortcode('[post_slider post_type="case-studies"]'); ?>
 
 					</div>
 				</section>

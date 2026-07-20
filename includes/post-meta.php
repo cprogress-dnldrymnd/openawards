@@ -295,7 +295,7 @@ Container::make('theme_options', 'Blog Settings')
     );
 
 Container::make('theme_options', 'Case Studies Settings')
-    ->set_page_parent('edit.php?post_type=casestudies')
+    ->set_page_parent('edit.php?post_type=case-studies')
     ->add_fields(
         array(
             Field::make('text', 'casestudies_page_heading', __('Case Studies Page Heading')),

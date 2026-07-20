@@ -115,9 +115,9 @@ function open_awards_breadcrumbs()
 							} else if (get_post_type() == 'faqs') {
 								$title_2nd = 'FAQs';
 								$link = get_post_type_archive_link('faqs');
-							} else if (get_post_type() == 'casestudies') {
+							} else if (get_post_type() == 'case-studies') {
 								$title_2nd = 'Case Studies';
-								$link = get_post_type_archive_link('casestudies');
+								$link = get_post_type_archive_link('cases-tudies');
 							}
 						} else if (is_page()) {
 							if ($post && $post->post_parent) {
