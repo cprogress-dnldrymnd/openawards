@@ -294,6 +294,16 @@ Container::make('theme_options', 'Blog Settings')
         )
     );
 
+Container::make('theme_options', 'Case Studies Settings')
+    ->set_page_parent('edit.php')
+    ->add_fields(
+        array(
+            Field::make('text', 'post_page_heading', __('Case Studies Page Heading')),
+            Field::make('textarea', 'post_page_description', __('Case Studies Page Description')),
+            Field::make('image', 'post_page_banner', __('Case Studies Page Hero')),
+        )
+    );
+
 
 Container::make('theme_options', 'Success Stories Settings')
     ->set_page_parent('edit.php?post_type=successstories')
@@ -303,6 +313,7 @@ Container::make('theme_options', 'Success Stories Settings')
             Field::make('textarea', 'successstories_page_description', __('Success Stories Description')),
         )
     );
+
 
 
 Container::make('theme_options', 'FAQs Settings')

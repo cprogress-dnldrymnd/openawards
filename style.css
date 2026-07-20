@@ -9254,7 +9254,8 @@ section.faqs-accordion {
 }
 
 .blog .bg-image,
-.post-type-archive-successstories .bg-image {
+.post-type-archive-successstories .bg-image,
+.post-type-archive-casestudies .bg-image {
   position: absolute;
   left: -30vw;
   top: 147px;
