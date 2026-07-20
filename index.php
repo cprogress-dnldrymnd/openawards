@@ -19,11 +19,11 @@ if (is_home()) {
 	$description = carbon_get_theme_option('successstories_page_description');
 	$hero_image = 7383;
 	$title = $heading ? $heading : 'Success Stories';
-} else if (is_post_type_archive('case-studies')) {
-	$post_type = 'case-studies';
-	$heading = carbon_get_theme_option('case-studies_page_heading');
-	$description = carbon_get_theme_option('case-studies_page_description');
-	$hero_image = intval(carbon_get_theme_option('case-studies_page_banner'));
+} else if (is_post_type_archive('casestudies')) {
+	$post_type = 'casestudies';
+	$heading = carbon_get_theme_option('casestudies_page_heading');
+	$description = carbon_get_theme_option('casestudies_page_description');
+	$hero_image = intval(carbon_get_theme_option('casestudies_page_banner'));
 	$title = $heading ? $heading : 'Case Studies';
 }
 ?>

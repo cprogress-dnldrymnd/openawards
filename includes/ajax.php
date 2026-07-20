@@ -182,7 +182,7 @@ function archive_ajax()
         ?>
         <div class="col-lg-4 post-item">
           <?php
-          if ($post_type == 'post' || $post_type == 'case-studies') {
+          if ($post_type == 'post' || $post_type == 'casestudies') {
             echo do_shortcode('[post_box id="' . get_the_ID() . '" class="column-holder h-100"]');
           }
           else if ($post_type == 'successstories') {
