@@ -320,6 +320,19 @@ $Students->publicly_queryable = true;
 $Students->show_in_admin_bar = true;
 $Students->has_archive = true;
 
+$Casestudy = new newPostType();
+$Casestudy->name = 'Case Studies';
+$Casestudy->singular_name = 'Case Study';
+$Casestudy->icon = 'dashicons-media-document';
+$Casestudy->supports = array('title', 'revisions', 'editor', 'page-attributes', 'thumbnail', 'excerpt');
+$Casestudy->exclude_from_search = false;
+$Casestudy->publicly_queryable = true;
+$Casestudy->show_in_admin_bar = true;
+$Casestudy->has_archive = true;
+$Casestudy->rewrite = array(
+    'slug'  => 'casestudy',
+);
+
 /*
 $Qualifications = new newPostType();
 $Qualifications->name = 'Qualifications';
