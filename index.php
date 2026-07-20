@@ -21,9 +21,9 @@ if (is_home()) {
 	$title = $heading ? $heading : 'Success Stories';
 } else if (is_post_type_archive('case-studies')) {
 	$post_type = 'case-studies';
-	$heading = carbon_get_theme_option('casestudies_page_heading');
-	$description = carbon_get_theme_option('casestudies_page_description');
-	$hero_image = intval(carbon_get_theme_option('casestudies_page_banner'));
+	$heading = carbon_get_theme_option('case-studies_page_heading');
+	$description = carbon_get_theme_option('case-studies_page_description');
+	$hero_image = intval(carbon_get_theme_option('case-studies_page_banner'));
 	$title = $heading ? $heading : 'Case Studies';
 }
 ?>

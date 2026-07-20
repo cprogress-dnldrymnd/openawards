@@ -298,9 +298,9 @@ Container::make('theme_options', 'Case Studies Settings')
     ->set_page_parent('edit.php?post_type=case-studies')
     ->add_fields(
         array(
-            Field::make('text', 'casestudies_page_heading', __('Case Studies Page Heading')),
-            Field::make('textarea', 'casestudies_page_description', __('Case Studies Page Description')),
-            Field::make('image', 'casestudies_page_banner', __('Case Studies Page Hero')),
+            Field::make('text', 'case-studies_page_heading', __('Case Studies Page Heading')),
+            Field::make('textarea', 'case-studies_page_description', __('Case Studies Page Description')),
+            Field::make('image', 'case-studies_page_banner', __('Case Studies Page Hero')),
         )
     );
 
