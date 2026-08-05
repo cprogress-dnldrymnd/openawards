@@ -9258,7 +9258,8 @@ section.faqs-accordion {
 .post-type-archive-casestudies .bg-image {
   position: absolute;
   left: -30vw;
-  top: 147px;
+  top: 120px;
+  z-index: -1;
 }
 
 section.blog-filter {
