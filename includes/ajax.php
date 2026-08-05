@@ -153,7 +153,7 @@ function archive_ajax()
 
   $args = array(
     'post_type'      => $post_type,
-	'post_status'    => 'publish',
+	  'post_status'    => array('publish', 'private'),
     'posts_per_page' => $posts_per_page,
   );
 
