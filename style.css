@@ -9254,14 +9254,18 @@ section.faqs-accordion {
 }
 
 .blog .bg-image,
-.post-type-archive-successstories .bg-image,
-.post-type-archive-casestudies .bg-image {
+.post-type-archive-successstories .bg-image{
   position: absolute;
   left: -30vw;
   top: 120px;
   z-index: -1;
 }
-
+.post-type-archive-casestudies .bg-image{
+  position: absolute;
+  left: -30vw;
+  top: 0;
+  z-index: -1;
+}
 section.blog-filter {
   margin-top: 70px;
 }
