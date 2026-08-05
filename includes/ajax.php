@@ -151,9 +151,15 @@ function archive_ajax()
   $offset = $_POST['offset'];
   $posts_per_page = 6;
 
+  $post_status = array('publish');
+
+  if (current_user_can('read_private_posts')) {
+      $post_status[] = 'private';
+  }
+
   $args = array(
     'post_type'      => $post_type,
-	  'post_status'    => array('publish', 'private'),
+    'post_status'    => $post_status,
     'posts_per_page' => $posts_per_page,
   );
 
