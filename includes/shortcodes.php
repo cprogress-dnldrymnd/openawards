@@ -533,3 +533,7 @@ function gated_file_url_shortcode() {
 
 add_shortcode('gated_fname', 'gated_name_shortcode');
 add_shortcode('gated_file_url', 'gated_file_url_shortcode');
+
+add_shortcode('test123', function() {
+    return 'HELLO WORLD';
+});
