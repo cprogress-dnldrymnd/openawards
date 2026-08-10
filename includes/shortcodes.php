@@ -502,3 +502,34 @@ function event_button_actions($atts)
 	return ob_get_clean();
 }
 add_shortcode('event_button_actions', 'event_button_actions');
+
+
+
+function gated_name_shortcode() {
+    $name = isset($_GET['name'])
+        ? sanitize_text_field(wp_unslash($_GET['name']))
+        : '';
+
+    return esc_html($name);
+}
+
+function gated_file_url_shortcode() {
+    $resource_id = isset($_GET['resource'])
+        ? absint($_GET['resource'])
+        : 0;
+
+    if (!$resource_id) {
+        return '';
+    }
+
+    $file = get_field('gated_file', $resource_id);
+
+    if (!$file || empty($file['url'])) {
+        return '';
+    }
+
+    return esc_url($file['url']);
+}
+
+add_shortcode('gated_name', 'gated_name_shortcode');
+add_shortcode('gated_file_url', 'gated_file_url_shortcode');
