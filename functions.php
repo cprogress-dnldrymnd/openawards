@@ -668,3 +668,47 @@ add_action('wp_head', function () {
     <script src="https://cdn-eu.pagesense.io/js/openawards/9d0197a446fa4d3091c178afd25ebdcf.js"></script>
     <?php
 });
+
+function gated_auto_download() {
+
+    $resource_id = isset($_GET['resource']) ? absint($_GET['resource']) : 0;
+
+    if (!$resource_id) {
+        return;
+    }
+
+    $file = get_field('gated_file', $resource_id);
+
+    if (!$file || empty($file['url'])) {
+        return;
+    }
+
+    $file_url = esc_url($file['url']);
+    ?>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const downloadUrl = <?php echo wp_json_encode($file_url); ?>;
+
+        if (!downloadUrl) {
+            return;
+        }
+
+        const link = document.createElement('a');
+
+        link.href = downloadUrl;
+        link.download = '';
+        link.style.display = 'none';
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+    });
+    </script>
+
+    <?php
+}
+
+add_action('wp_footer', 'gated_auto_download');
