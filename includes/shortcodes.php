@@ -506,8 +506,8 @@ add_shortcode('event_button_actions', 'event_button_actions');
 
 
 function gated_name_shortcode() {
-    $name = isset($_GET['name'])
-        ? sanitize_text_field(wp_unslash($_GET['name']))
+    $name = isset($_GET['fname'])
+        ? sanitize_text_field(wp_unslash($_GET['fname']))
         : '';
 
     return esc_html($name);
@@ -531,5 +531,5 @@ function gated_file_url_shortcode() {
     return esc_url($file['url']);
 }
 
-add_shortcode('gated_name', 'gated_name_shortcode');
+add_shortcode('gated_fname', 'gated_name_shortcode');
 add_shortcode('gated_file_url', 'gated_file_url_shortcode');
