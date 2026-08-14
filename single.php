@@ -40,7 +40,12 @@ while (have_posts()) {
 			<?php get_template_part('template-parts/page', 'breadcrumbs'); ?>
 
 
-			<?= hero(get_the_title(), get_the_date(), false) ?>
+			<?php if ($post_type == 'gated-content') { ?>
+				<?= hero(get_the_title(), get_the_excerpt(), false) ?>
+			<?php } else { ?>
+				<?= hero(get_the_title(), get_the_date(), false) ?>
+			<?php } ?>
+			
 
 			<section class="the-content position-relative">
 				<div class="container">
