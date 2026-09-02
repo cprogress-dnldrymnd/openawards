@@ -1,9 +1,14 @@
 <?php
 $post_type = $args['post_type'];
 
+$post_status = array('publish');
+if (current_user_can('read_private_posts')) {
+    $post_status[] = 'private';
+}
 
 $args = array(
     'post_type' => $post_type,
+    'post_status'    => $post_status,
     'posts_per_page' => 5
 
 );
