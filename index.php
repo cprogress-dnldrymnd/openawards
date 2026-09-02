@@ -110,7 +110,7 @@ if (is_home()) {
 
 			<?php if ($terms || $tags || $voice_choices) { ?>
 				<section class="casestudies-filter position-relative">
-					<div class="container text-end">
+					<div class="container">
 
 						<?php if ($voice_choices) { ?>
 							<select id="archive-form-filter-voice" name="voice">
