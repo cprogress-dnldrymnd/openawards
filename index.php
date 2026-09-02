@@ -109,7 +109,7 @@ if (is_home()) {
 		?>
 
 			<?php if ($terms || $tags || $voice_choices) { ?>
-				<section class="blog-filter position-relative">
+				<section class="casestudies-filter position-relative">
 					<div class="container text-end">
 
 						<?php if ($voice_choices) { ?>
