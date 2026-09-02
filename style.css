@@ -9263,7 +9263,7 @@ section.faqs-accordion {
 .post-type-archive-casestudies .bg-image{
   position: absolute;
   left: -30vw;
-  top: 0;
+  top: -20px;
   z-index: -1;
 }
 section.blog-filter {
