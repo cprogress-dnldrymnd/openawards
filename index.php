@@ -86,15 +86,7 @@ if (is_home()) {
 
 			// Sector (post_tag taxonomy, labeled "Sector")
 			global $wpdb;
-			$check = $wpdb->get_results("
-				SELECT p.post_type, COUNT(*) as cnt
-				FROM {$wpdb->term_relationships} tr
-				INNER JOIN {$wpdb->term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
-				INNER JOIN {$wpdb->posts} p ON tr.object_id = p.ID
-				WHERE tt.taxonomy = 'post_tag'
-				GROUP BY p.post_type
-			");
-			var_dump($check);
+
 			$tag_ids = $wpdb->get_col("
 				SELECT DISTINCT tt.term_id
 				FROM {$wpdb->term_relationships} tr
@@ -102,7 +94,7 @@ if (is_home()) {
 				INNER JOIN {$wpdb->posts} p ON tr.object_id = p.ID
 				WHERE tt.taxonomy = 'post_tag'
 				AND p.post_type = 'casestudies'
-				AND p.post_status = 'publish'
+				AND p.post_status IN ('publish', 'private')
 			");
 
 			$tags = $tag_ids ? get_terms(array(
