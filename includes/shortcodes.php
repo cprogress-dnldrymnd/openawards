@@ -418,7 +418,7 @@ function post_slider($atts)
 		'post_type' => $post_type
 	);
 	ob_start();
-	if ($post_type == 'post') {
+	if ($post_type == 'post' || $post_type == 'casestudies') {
 		get_template_part('template-parts/blog/post-slider', null, $args);
 	} else if ($post_type == 'successstories') {
 		get_template_part('template-parts/blog/success-stories-slider', null, $args);
