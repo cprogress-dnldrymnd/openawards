@@ -712,3 +712,7 @@ function gated_auto_download() {
 }
 
 add_action('wp_footer', 'gated_auto_download');
+
+add_action('init', function() {
+    register_taxonomy_for_object_type('post_tag', 'casestudies');
+}, 20);
