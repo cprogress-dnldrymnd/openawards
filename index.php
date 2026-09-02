@@ -85,10 +85,23 @@ if (is_home()) {
 			));
 
 			// Sector (post_tag taxonomy, labeled "Sector")
-			$tags = get_terms(array(
+			global $wpdb;
+
+			$tag_ids = $wpdb->get_col("
+				SELECT DISTINCT tt.term_id
+				FROM {$wpdb->term_relationships} tr
+				INNER JOIN {$wpdb->term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
+				INNER JOIN {$wpdb->posts} p ON tr.object_id = p.ID
+				WHERE tt.taxonomy = 'post_tag'
+				AND p.post_type = 'casestudies'
+				AND p.post_status = 'publish'
+			");
+
+			$tags = $tag_ids ? get_terms(array(
 				'taxonomy'   => 'post_tag',
 				'hide_empty' => false,
-			));
+				'include'    => $tag_ids,
+			)) : array();
 
 			// Voice (ACF radio field)
 			$voice_field = get_field_object('voice'); // swap 'voice' for the field_key if the name lookup fails

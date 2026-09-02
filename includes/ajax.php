@@ -142,17 +142,18 @@ function resources()
 
   die();
 }
-add_action('wp_ajax_nopriv_archive_ajax', 'archive_ajax'); // for not logged in users
+add_action('wp_ajax_nopriv_archive_ajax', 'archive_ajax');
 add_action('wp_ajax_archive_ajax', 'archive_ajax');
 function archive_ajax()
 {
-  $category = $_POST['category'];
-  $post_type = $_POST['post_type'];
-  $offset = $_POST['offset'];
+  $category   = $_POST['category'] ?? '';   // qualification-type term_id
+  $sector     = $_POST['sector'] ?? '';     // post_tag term_id
+  $voice      = $_POST['voice'] ?? '';      // ACF radio value
+  $post_type  = $_POST['post_type'];
+  $offset     = $_POST['offset'];
   $posts_per_page = 6;
 
   $post_status = array('publish');
-
   if (current_user_can('read_private_posts')) {
       $post_status[] = 'private';
   }
@@ -167,16 +168,53 @@ function archive_ajax()
     $args['offset'] = $offset;
   }
 
+  // Only apply these tax/meta filters for casestudies
+  if ($post_type == 'casestudies') {
 
+    $tax_query = array('relation' => 'AND');
 
-  if ($category) {
-    $args['cat'] = $category;
+    if ($category) {
+      $tax_query[] = array(
+        'taxonomy' => 'qualification-type',
+        'field'    => 'term_id',
+        'terms'    => $category,
+      );
+    }
+
+    if ($sector) {
+      $tax_query[] = array(
+        'taxonomy' => 'post_tag',
+        'field'    => 'term_id',
+        'terms'    => $sector,
+      );
+    }
+
+    if (count($tax_query) > 1) {
+      $args['tax_query'] = $tax_query;
+    }
+
+    if ($voice) {
+      $args['meta_query'] = array(
+        array(
+          'key'     => 'voice', // change to the ACF field key if this doesn't match
+          'value'   => $voice,
+          'compare' => '=',
+        ),
+      );
+    }
+
+  } else {
+    // keep old behavior for posts using the real "category" taxonomy
+    if ($category) {
+      $args['cat'] = $category;
+    }
   }
 
   $the_query = new WP_Query($args);
 
   $count = $the_query->found_posts;
   echo hide_load_more($count, $offset, $posts_per_page);
+
   ?>
   <?php if (!$offset) { ?>
     <div class="row g-4">
