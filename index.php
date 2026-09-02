@@ -75,6 +75,60 @@ if (is_home()) {
 				</section>
 			<?php } ?>
 
+		<?php } else if ($post_type == 'casestudies') { ?>
+
+		<?php
+			// Qualification Type (taxonomy)
+			$terms = get_terms(array(
+				'taxonomy'   => 'qualification-type',
+				'hide_empty' => false,
+			));
+
+			// Sector (post_tag taxonomy, labeled "Sector")
+			$tags = get_terms(array(
+				'taxonomy'   => 'post_tag',
+				'hide_empty' => false,
+			));
+
+			// Voice (ACF radio field)
+			$voice_field = get_field_object('voice'); // swap 'voice' for the field_key if the name lookup fails
+			$voice_choices = $voice_field['choices'] ?? array();
+		?>
+
+			<?php if ($terms || $tags || $voice_choices) { ?>
+				<section class="blog-filter position-relative">
+					<div class="container text-end">
+
+						<?php if ($voice_choices) { ?>
+							<select id="archive-form-filter-voice" name="voice">
+								<option value="">Voice</option>
+								<?php foreach ($voice_choices as $value => $label) { ?>
+									<option value="<?= esc_attr($value) ?>"><?= esc_html($label) ?></option>
+								<?php } ?>
+							</select>
+						<?php } ?>
+
+						<?php if ($terms) { ?>
+							<select id="archive-form-filter-category" name="category">
+								<option value="">Qualification Type</option>
+								<?php foreach ($terms as $term) { ?>
+									<option value="<?= $term->term_id ?>"><?= $term->name ?></option>
+								<?php } ?>
+							</select>
+						<?php } ?>
+
+						<?php if ($tags) { ?>
+							<select id="archive-form-filter-sector" name="sector">
+								<option value="">Sector</option>
+								<?php foreach ($tags as $tag) { ?>
+									<option value="<?= $tag->term_id ?>"><?= $tag->name ?></option>
+								<?php } ?>
+							</select>
+						<?php } ?>
+
+					</div>
+				</section>
+			<?php } ?>
 		<?php } ?>
 
 		<input type="hidden" name="post-type" value="<?= $post_type ?>">
