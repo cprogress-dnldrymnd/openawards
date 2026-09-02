@@ -454,8 +454,15 @@ function post_box($atts)
 					<?= get_the_excerpt($id) ?>
 				</div>
 			</div>
+			<?php
+			$readmore_labels = array(
+				'casestudies'   => 'Read the full case study',
+				'successstories' => 'Read the success story',
+			);
+			$readmore_text = $readmore_labels[get_post_type($id)] ?? 'Read the article';
+			?>
 			<div class="button-box button-readmore">
-				<a href="<?= get_the_permalink($id) ?>">Read the article</a>
+				<a href="<?= get_the_permalink($id) ?>"><?= $readmore_text ?></a>
 			</div>
 		</div>
 	</div>
