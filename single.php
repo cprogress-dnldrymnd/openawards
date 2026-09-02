@@ -49,7 +49,7 @@ while (have_posts()) {
 
 			<section class="the-content position-relative">
 				<div class="container">
-					
+					<?php if ($post_type != 'casestudies') { ?>
 					<div class="content-holder">
 						<?php if ($post_type == 'successstories') { ?>
 							<div class="success-stories-box">
@@ -58,6 +58,9 @@ while (have_posts()) {
 						<?php } ?>
 						<?php the_content() ?>
 					</div>
+					<?php } else {?>
+						<?php the_content() ?>
+					<?php } ?>
 					<?php if ($cta_heading) { ?>
 						<div class="cta-box">
 							<div class="content-holder">
