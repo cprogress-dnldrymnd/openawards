@@ -333,6 +333,18 @@ $Casestudy->rewrite = array(
     'slug'  => 'case-studies',
 );
 
+$Casestudy_Category = new newTaxonomy();
+$Casestudy_Category->taxonomy = 'qualification-type';
+$Casestudy_Category->post_type = 'casestudies';
+$Casestudy_Category->args = array(
+    'label'        => 'Qualification Type',
+    'rewrite'      => array('slug' => 'qualification-type'),
+    'hierarchical' => true,
+    'query_var'    => false,
+    'has_archive'  => false,
+    'show_in_rest' => false,
+);
+
 /*
 $Qualifications = new newPostType();
 $Qualifications->name = 'Qualifications';
