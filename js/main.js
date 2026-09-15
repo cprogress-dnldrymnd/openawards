@@ -3,6 +3,14 @@ jQuery(document).ready(function () {
 	team_modal_trigger();
 	ajax_form();
 	load_more_button_listener();
+
+	// Hydrate filters from the URL, then fire the initial search.
+	// This replaces the inline <script>ajax(0)</script> in the template —
+	// remove that inline call so the archive isn't queried twice on load.
+	loadSavedFilters();
+	if (jQuery('.archive-section').length > 0) {
+		ajax(0);
+	}
 });
 
 function ajax_form() {
@@ -38,6 +46,55 @@ function ajax_form() {
 	function doneTyping() {
 		ajax_faqs(0);
 	}
+}
+
+
+/**
+ * Reads the currently selected category / voice / sector values
+ * and pushes them into the URL as query params.
+ */
+function saveFilters() {
+	var urlParams = new URLSearchParams();
+ 
+	var $category = jQuery("select[name='category']");
+	var $voice = jQuery("select[name='voice']");
+	var $sector = jQuery("select[name='sector']");
+ 
+	if ($category.length && $category.val()) urlParams.set('category', $category.val());
+	if ($voice.length && $voice.val()) urlParams.set('voice', $voice.val());
+	if ($sector.length && $sector.val()) urlParams.set('sector', $sector.val());
+ 
+	var queryString = urlParams.toString() ? '?' + urlParams.toString() : '';
+	var newUrl = window.location.pathname + queryString;
+ 
+	window.history.pushState({}, '', newUrl);
+}
+ 
+/**
+ * Hydrates the filter selects from URL query params on page load
+ * (including after a back/forward-triggered reload).
+ */
+function loadSavedFilters() {
+	var urlParams = new URLSearchParams(window.location.search);
+ 
+	var fields = {
+		category: jQuery("select[name='category']"),
+		voice: jQuery("select[name='voice']"),
+		sector: jQuery("select[name='sector']")
+	};
+ 
+	jQuery.each(fields, function (name, $el) {
+		if (!$el.length) return;
+		var value = urlParams.get(name);
+		if (value) {
+			$el.val(value);
+			// If select2 is active on this field (see footer_functions),
+			// this keeps the visible widget in sync with the hydrated value.
+			if ($el.data('select2')) {
+				$el.trigger('change.select2');
+			}
+		}
+	});
 }
 
 function load_more_button_listener($) {
@@ -465,130 +522,3 @@ window.onpopstate = function(event) {
     // the safest way to ensure all WordPress globals reset correctly.
     window.location.reload();
 };
-
-
-jQuery(document).ready(function ($) {
-    if (typeof csAjaxObj === 'undefined') {
-        return;
-    }
-
-    var currentOffset = 0;
-    var postsPerPage = 6;
-
-    if ($('#case-study-filter').length > 0) {
-        loadSavedFilters();
-        bindFilterTriggers();
-        performSearch(false); // Initial load is always a fresh search
-    }
-
-    /**
-     * Hydrates filter fields from URL query params on page load
-     */
-    function loadSavedFilters() {
-        const urlParams = new URLSearchParams(window.location.search);
-
-        $('.trigger-ajax-change').each(function () {
-            const name = $(this).attr('name');
-            const value = urlParams.get(name);
-            if (value) {
-                $(this).val(value);
-            }
-        });
-    }
-
-    /**
-     * Pushes currently selected filter values into the URL
-     */
-    function saveFilters() {
-        const filters = {};
-
-        $('.trigger-ajax-change').each(function () {
-            const name = $(this).attr('name');
-            const value = $(this).val();
-            if (value) filters[name] = value;
-        });
-
-        const urlParams = new URLSearchParams();
-        for (const key in filters) {
-            urlParams.set(key, filters[key]);
-        }
-
-        const queryString = urlParams.toString() ? '?' + urlParams.toString() : '';
-        const newUrl = window.location.pathname + queryString;
-
-        // pushState (not replaceState) so back/forward moves through filter states
-        window.history.pushState({}, '', newUrl);
-    }
-
-    /**
-     * Binds filter change events and the load-more click
-     */
-    function bindFilterTriggers() {
-        $('.trigger-ajax-change').on('change', function () {
-            saveFilters();
-            currentOffset = 0; // Reset pagination on new filter
-            performSearch(false);
-        });
-
-        $(document).on('click', '.cs-load-more', function (e) {
-            e.preventDefault();
-            var $btn = $(this);
-            currentOffset = parseInt($btn.attr('data-offset'));
-            $btn.text('Loading...').prop('disabled', true);
-            performSearch(true);
-        });
-    }
-
-    /**
-     * Fires the WP AJAX request to fetch filtered case studies
-     */
-    function performSearch(isLoadMore) {
-        var postType = $('#case-study-filter').attr('data-post-type') || 'casestudies';
-
-        var searchData = {
-            action: 'archive_ajax',
-            nonce: csAjaxObj.nonce,
-            post_type: postType,
-            offset: currentOffset,
-            category: $('select[name="category"]').val(),
-            sector: $('select[name="sector"]').val(),
-            voice: $('input[name="voice"]:checked').val()
-        };
-
-        var $resultsHolder = $('.results-holder');
-        var $spinner = $('.spinner-holder');
-
-        if (!isLoadMore) {
-            $spinner.show();
-            $resultsHolder.fadeTo(200, 0.4);
-        }
-
-        $.ajax({
-            url: csAjaxObj.ajaxUrl,
-            type: 'POST',
-            data: searchData,
-            success: function (response) {
-                if (isLoadMore) {
-                    $('#cs-load-more-container').remove();
-                    $('#cs-grid-container').append(response);
-                } else {
-                    $resultsHolder.html(response).fadeTo(200, 1);
-                }
-            },
-            error: function (xhr, status, error) {
-                console.error('Case Study Search Error:', error);
-                if (!isLoadMore) {
-                    $resultsHolder.html('<div class="error-message"><p>Unable to retrieve results. Please try again.</p></div>').fadeTo(200, 1);
-                } else {
-                    alert('Unable to load more items. Please try again.');
-                    $('.cs-load-more').text('Load More').prop('disabled', false);
-                }
-            },
-            complete: function () {
-                if (!isLoadMore) {
-                    $spinner.hide();
-                }
-            }
-        });
-    }
-});
