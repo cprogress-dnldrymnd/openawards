@@ -16,11 +16,13 @@ jQuery(document).ready(function () {
 function ajax_form() {
 	jQuery("#archive-form-filter").change(function (e) {
 		e.preventDefault();
+		saveFilters(); 
 		ajax(0);
 	});
 
 	jQuery("#archive-form-filter-category, #archive-form-filter-voice, #archive-form-filter-sector").change(function (e) {
 		e.preventDefault();
+		saveFilters(); 
 		ajax(0);
 	});
 
@@ -90,8 +92,8 @@ function loadSavedFilters() {
 			$el.val(value);
 			// If select2 is active on this field (see footer_functions),
 			// this keeps the visible widget in sync with the hydrated value.
-			if ($el.data('select')) {
-				$el.trigger('change.select');
+			if ($el.data('select2')) {
+				$el.trigger('change.select2');
 			}
 		}
 	});
@@ -208,6 +210,7 @@ function ajax_faqs($offset, $event_type = 'html') {
 }
 
 function ajax($offset, $event_type = 'html') {
+	saveFilters(); 
 	var $loadmore = jQuery('#load-more');
 	var $archive_section = jQuery('.archive-section');
 	var $result_holder = jQuery('#results .results-holder');
