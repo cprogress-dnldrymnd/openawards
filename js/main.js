@@ -488,11 +488,6 @@ function autoOpenFaq() {
 	}
 }
 jQuery(document).ready(function () {
-	footer_functions();
-	team_modal_trigger();
-	ajax_form();
-	load_more_button_listener();
-
 	// --- ADD THIS HERE ---
 	// 1. Detect when an FAQ is opened and update URL
 	jQuery(document).on('shown.bs.collapse', '.accordion-collapse', function () {
