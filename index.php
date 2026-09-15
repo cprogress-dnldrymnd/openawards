@@ -125,7 +125,7 @@ if (is_home()) {
 							<select id="archive-form-filter-category" name="category">
 								<option value="">Qualification Type</option>
 								<?php foreach ($terms as $term) { ?>
-									<option value="<?= $term->term_id ?>"><?= $term->name ?></option>
+									<option value="<?= esc_attr($term->slug) ?>"><?= $term->name ?></option>
 								<?php } ?>
 							</select>
 						<?php } ?>
@@ -134,7 +134,7 @@ if (is_home()) {
 							<select id="archive-form-filter-sector" name="sector">
 								<option value="">Sector</option>
 								<?php foreach ($tags as $tag) { ?>
-									<option value="<?= $tag->term_id ?>"><?= $tag->name ?></option>
+									<option value="<?= esc_attr($tag->slug) ?>"><?= $tag->name ?></option>
 								<?php } ?>
 							</select>
 						<?php } ?>
