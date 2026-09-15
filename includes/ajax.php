@@ -176,7 +176,7 @@ function archive_ajax()
     if ($category) {
       $tax_query[] = array(
         'taxonomy' => 'qualification-type',
-        'field'    => 'term_id',
+        'field'    => 'slug',
         'terms'    => $category,
       );
     }
@@ -184,7 +184,7 @@ function archive_ajax()
     if ($sector) {
       $tax_query[] = array(
         'taxonomy' => 'post_tag',
-        'field'    => 'term_id',
+        'field'    => 'slug',
         'terms'    => $sector,
       );
     }
