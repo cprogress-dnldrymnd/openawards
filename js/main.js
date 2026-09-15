@@ -90,8 +90,8 @@ function loadSavedFilters() {
 			$el.val(value);
 			// If select2 is active on this field (see footer_functions),
 			// this keeps the visible widget in sync with the hydrated value.
-			if ($el.data('select2')) {
-				$el.trigger('change.select2');
+			if ($el.data('select')) {
+				$el.trigger('change.select');
 			}
 		}
 	});
