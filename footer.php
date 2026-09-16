@@ -182,7 +182,7 @@ jQuery(document).ready(function($) {
       clickable: true,
     },
     breakpoints: {
-      480: {
+      0: {
         slidesPerView: 1,
         spaceBetween: 20,
       },
