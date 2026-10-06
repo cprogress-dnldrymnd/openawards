@@ -13,9 +13,11 @@ $terms = get_terms(array(
 ));
 $current_term_object = get_queried_object();
 $current_term = $current_term_object->term_id;
-$count = $GLOBALS['wp_query']->post_count;
-echo hide_load_more($count, 0, 10);
 
+global $wp_query;
+$shown    = $wp_query->post_count;   // posts rendered now
+$total    = $wp_query->found_posts;  // all posts in this term
+$has_more = $total > $shown;
 ?>
 <div id="primary" class="row-fluid">
     <div id="content" role="main" class="span8 offset2">
@@ -110,7 +112,7 @@ echo hide_load_more($count, 0, 10);
                         </div>
                     </div>
                 </div>
-                <div class="vc_btn3-container custom-button text-center mt-5 load-more d-none">
+                <div class="vc_btn3-container custom-button text-center mt-5 load-more <?= $has_more ? '' : 'd-none' ?>">
                     <button class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-violet" title="" id="load-more-faqs">
                         <span>Load More</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
