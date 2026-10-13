@@ -716,3 +716,16 @@ add_action('wp_footer', 'gated_auto_download');
 add_action('init', function() {
     register_taxonomy_for_object_type('post_tag', 'casestudies');
 }, 20);
+
+/**
+ * Strip page-builder shortcodes (incl. ones with curly-quote attributes)
+ * from auto-generated excerpts, site-wide.
+ */
+add_filter('the_content', function ($content) {
+	// Only touch content while an excerpt is being generated
+	if (!doing_filter('get_the_excerpt')) {
+		return $content;
+	}
+
+	return preg_replace('/\[\/?(?:vc|et_pb|fusion)_[^\]]*\]/u', ' ', $content);
+}, 1);
