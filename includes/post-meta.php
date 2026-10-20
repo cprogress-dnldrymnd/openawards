@@ -19,6 +19,25 @@ Container::make('post_meta', 'Slider Settings')
                         Field::make('image', 'image', __('Image'))->set_width(50),
                         Field::make('image', 'background_image', __('Background Image'))->set_width(50),
                         Field::make('text', 'title', __('Title'))->set_help_text('For labeling purposes only'),
+                        Field::make('select', 'visibility', __('Visibility'))
+                            ->set_options(array(
+                                'publish'   => 'Published',
+                                'scheduled' => 'Scheduled',
+                                'draft'     => 'Draft',
+                            ))
+                            ->set_default_value('publish'),
+                        Field::make('date_time', 'publish_from', __('Show from'))
+                            ->set_help_text('Leave blank to show immediately')
+                            ->set_width(50)
+                            ->set_conditional_logic(array(
+                                array('field' => 'visibility', 'value' => 'scheduled'),
+                            )),
+                        Field::make('date_time', 'publish_until', __('Hide after'))
+                            ->set_help_text('Leave blank to never expire')
+                            ->set_width(50)
+                            ->set_conditional_logic(array(
+                                array('field' => 'visibility', 'value' => 'scheduled'),
+                            )),
                         Field::make('text', 'heading', __('Heading')),
                         Field::make('rich_text', 'description', __('Description')),
                         Field::make('text', 'button_text_1', __('Button Text[1]'))->set_width(50),
@@ -27,7 +46,7 @@ Container::make('post_meta', 'Slider Settings')
                         Field::make('text', 'button_link_2', __('Button Link[2]'))->set_width(50),
                     )
                 )
-                ->set_header_template('<%- title %>')
+                ->set_header_template('<%- title %><% if (visibility === "draft") { %> — Draft<% } else if (visibility === "scheduled") { %> — Scheduled<% } %>')
                 ->set_layout('tabbed-vertical')
         )
     );

@@ -1,5 +1,31 @@
 <?php
 $slider = carbon_get_post_meta($args['slider_id'], 'slides');
+
+$now = current_datetime(); // uses the WP site timezone
+$tz  = wp_timezone();
+
+$slider = array_filter($slider ?: array(), function ($slide) use ($now, $tz) {
+    $visibility = !empty($slide['visibility']) ? $slide['visibility'] : 'publish'; // existing slides stay live
+
+    if ($visibility === 'draft') {
+        return false;
+    }
+
+    if ($visibility === 'scheduled') {
+        if (!empty($slide['publish_from']) && $now < new DateTimeImmutable($slide['publish_from'], $tz)) {
+            return false;
+        }
+        if (!empty($slide['publish_until']) && $now > new DateTimeImmutable($slide['publish_until'], $tz)) {
+            return false;
+        }
+    }
+
+    return true;
+});
+
+if (empty($slider)) {
+    return;
+}
 ?>
 <main>
     <section class="hero-slider">
